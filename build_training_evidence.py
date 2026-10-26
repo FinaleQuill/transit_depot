@@ -1,7 +1,8 @@
-"""Combine frozen teacher evidence and every deployed student's native receipts.
+"""Combine each deployed student's receipts with its required teacher evidence.
 
 Default is a preview. This reads small records and checkpoint hashes only; it
 never loads a model, downloads weights, edits a run, or claims missing evidence.
+Independent supervised-only deployments require no teacher evidence.
 """
 from __future__ import annotations
 
@@ -14,7 +15,7 @@ from deploy_kd import deployment_inventory, read_json, sha256_file, validate_dep
 from package_kd_submission import deployment_members
 
 
-def build_evidence(*, model_dir, teacher_evidence, student_runs, output, execute=False):
+def build_evidence(*, model_dir, student_runs, output, teacher_evidence=None, execute=False):
     model_dir = Path(model_dir).resolve(strict=True)
     config = read_json(model_dir / "config.json")
     validate_deployment_config(config)
@@ -25,18 +26,27 @@ def build_evidence(*, model_dir, teacher_evidence, student_runs, output, execute
     roots = [Path(p).resolve(strict=True) for p in student_runs]
     if len(set(roots)) != len(roots):
         raise ValueError("Each deployed student requires its own training run")
-    teacher_root = Path(teacher_evidence).resolve(strict=True)
-    manifest = deepcopy(read_json(teacher_root / "evidence_manifest.json"))
-    if manifest.get("artifact_type") != "kd_training_evidence" or manifest.get("schema_version") != 1:
-        raise ValueError("Unsupported teacher evidence manifest")
+    needs_teachers = any(m.get("training_mode", "distillation") == "distillation" for m in members)
+    if needs_teachers:
+        if teacher_evidence is None:
+            raise ValueError("Distilled members require the frozen teacher training evidence")
+        teacher_root = Path(teacher_evidence).resolve(strict=True)
+        manifest = deepcopy(read_json(teacher_root / "evidence_manifest.json"))
+        if manifest.get("artifact_type") != "kd_training_evidence" or manifest.get("schema_version") != 1:
+            raise ValueError("Unsupported teacher evidence manifest")
+    else:
+        teacher_root = None
+        manifest = {"schema_version": 1, "artifact_type": "kd_training_evidence",
+                    "source_archives": [], "console_logs": [], "supporting_files": [],
+                    "runs": [], "source_version_timeline": [], "console_coverage": []}
     destination = Path(output).resolve()
     if destination.exists():
         raise FileExistsError("Choose a new evidence directory")
-    for root in [model_dir, teacher_root, *roots]:
+    for root in [model_dir, *([teacher_root] if teacher_root is not None else []), *roots]:
         if destination == root or destination.is_relative_to(root):
             raise ValueError("Evidence output cannot be written into a source run or deployment")
     if not execute:
-        return {"execute": False, "model_dir": str(model_dir), "teacher_evidence": str(teacher_root),
+        return {"execute": False, "model_dir": str(model_dir), "teacher_evidence": str(teacher_root) if teacher_root else None,
                 "student_runs_in_member_order": list(map(str, roots)), "output": str(destination)}
 
     def absolute(value, base):
@@ -65,6 +75,8 @@ def build_evidence(*, model_dir, teacher_evidence, student_runs, output, execute
             raise ValueError(f"Student run {index} differs from the deployed checkpoint")
         if member.get("seed") is not None and run_config.get("seed") != member["seed"]:
             raise ValueError("Student initialization seed differs from deployment ancestry")
+        if run_config.get("training_mode", "distillation") != member.get("training_mode", "distillation"):
+            raise ValueError("Student training mode differs from deployment ancestry")
         if run_config.get("image_size", 512) != member.get("image_size", 512):
             raise ValueError("Student training resolution differs from deployment ancestry")
         if member.get("distillation") is not None and run_config.get("distillation") != member["distillation"]:
@@ -115,7 +127,7 @@ def build_evidence(*, model_dir, teacher_evidence, student_runs, output, execute
             "Complete only with a native fresh-start receipt and finalized logs for every retained invocation; resume logs never erase an earlier gap."})
     destination.mkdir(parents=True)
     manifest["assembly"] = {"model_config_sha256": sha256_file(model_dir / "config.json"),
-                            "teacher_evidence": str(teacher_root), "student_runs": list(map(str, roots)),
+                            "teacher_evidence": str(teacher_root) if teacher_root else None, "student_runs": list(map(str, roots)),
                             "source_runs_modified": False, "models_loaded": False}
     write_json(destination / "evidence_manifest.json", manifest)
     return {"execute": True, "output": str(destination), "member_count": len(members),
@@ -125,7 +137,8 @@ def build_evidence(*, model_dir, teacher_evidence, student_runs, output, execute
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-dir", type=Path, required=True)
-    parser.add_argument("--teacher-evidence", type=Path, required=True)
+    parser.add_argument("--teacher-evidence", type=Path,
+                        help="Required only when at least one deployed member used distillation")
     parser.add_argument("--student-runs", nargs="+", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--execute", action="store_true")

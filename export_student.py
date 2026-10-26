@@ -1,7 +1,8 @@
 """Export a validated single student's EMA weights to a fixed FP16 deployment.
 
-Schema7 Tiny512 identity exports remain supported. Schema8 can declare 512/768
-and fixed identity/hflip2. Choosing TTA never alters the trained checkpoint.
+Schema7 Tiny512 identity exports remain supported. Schema8 KD and schema9
+independent BCE can declare 512/768 and fixed identity/hflip2. Choosing TTA never
+alters the trained checkpoint or its actual teacher ancestry.
 """
 from __future__ import annotations
 
@@ -52,6 +53,7 @@ def make_deployment_config(members: list[dict], *, source_manifest_sha256: str,
               "fp16_validation_status": "pending_same_deployment_validation",
               # Representative source retained for readers of legacy package metadata.
               "pretrained_provenance": first["pretrained_provenance"],
+              "training_mode": first.get("training_mode", "distillation"),
               "teacher_provenance": first["teacher_provenance"],
               "distillation": first.get("distillation", {}),
               "source_validation": first.get("source_validation", {})}
@@ -94,11 +96,16 @@ def export_student(checkpoint_path: str | Path, output: str | Path, *, tta: str 
     del model
     selected_tta = tta or checkpoint.get("deployment_tta", "identity")
     common = {"model_config": model_config, "image_size": checkpoint["image_size"],
+              "training_mode": checkpoint.get("training_mode", "distillation"),
+              "source_checkpoint_schema_version": checkpoint["schema_version"],
               "tta": selected_tta, "preprocessing": checkpoint["preprocessing"],
               "pretrained_provenance": checkpoint["pretrained_provenance"],
               "teacher_provenance": checkpoint["teacher_provenance"],
               "distillation": checkpoint.get("distillation", {}),
               "source_checkpoint_sha256": source_sha256,
+              "source_manifest_sha256": checkpoint["source_manifest_sha256"],
+              "fold_plan_sha256": checkpoint["fold_plan_sha256"],
+              "official_valid_manifest_sha256": checkpoint["official_valid_manifest_sha256"],
               "source_validation": checkpoint.get("validation", {}),
               "weights_source": "ema", "seed": checkpoint.get("training_config", {}).get("seed")}
     output.mkdir(parents=True, exist_ok=False)

@@ -15,7 +15,7 @@
 | 教师训练 | `train_teacher.py`、`run_teachers.py` | 固定轮数最终EMA，外折不参与训练或选模 |
 | 当前教师诊断 | `diagnose_teacher_epochs.py` | E13单因素对照、逐图双视图原始logits、CPU重放；不替换教师 |
 | OOF软标签 | `extract_soft_labels_tta.py`、`distill_tta_data.py`、`teacher_collection.py` | 两视图原始logits，逐图严格折外；保留旧identity入口 |
-| 学生蒸馏 | `run_student_experiments.py`、`train_distill.py` | Tiny512/768、α=.2、T=2、双视图验证、EMA及完整恢复 |
+| 学生对照与蒸馏 | `train_distill.py`、`run_student_experiments.py` | 独立BCE512先行；KD的α=.2、T=2；双视图验证、EMA及完整恢复 |
 | 导出与验证 | `export_student.py`、`compose_students.py`、`validate_student.py`、`validate_teacher_tta.py` | 实际FP16、固定TTA与1–4成员，官方valid诊断 |
 | 最终推理与计时 | `predict.py`、`cost.py`、`deploy_kd.py` | 共享单图预测，Study概率汇总，官方T4口径 |
 | 核验材料 | `build_training_evidence.py`、`package_kd_submission.py`、`audit_trail.py` | 每个实际部署成员的来源、日志、源码与checkpoint证据 |

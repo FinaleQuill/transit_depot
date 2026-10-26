@@ -35,6 +35,7 @@ CODE_FILES = (
     "distill_tta_data.py", "extract_soft_labels_tta.py", "compose_students.py",
     "run_student_experiments.py", "compare_student_candidates.py", "build_training_evidence.py",
     "validate_teacher_tta.py",
+    "diagnose_teacher_epochs.py",
 )
 MANIFEST_FILES = (
     "data/clean_v1_reviewed/train_clean.csv",
@@ -232,6 +233,8 @@ def collect_training_evidence(root: str | Path | None, output: Path,
                     pending.append(f"fixed random seed for {run_id}")
                 if run_id in students:
                     member = students[run_id]
+                    if training_config.get("training_mode", "distillation") != member.get("training_mode", "distillation"):
+                        raise ValueError(f"Training mode differs from deployed member {run_id}")
                     if member.get("seed") is not None and seed != member["seed"]:
                         raise ValueError(f"Training seed differs from deployed member {run_id}")
                     if training_config.get("image_size", 512) != member.get("image_size", 512):
@@ -262,7 +265,8 @@ def collect_training_evidence(root: str | Path | None, output: Path,
                             "dataset.py", "kd_common.py", "cv_splits.py", "runtime_compat.py"}
         required_sources.add("train_distill.py" if run_id in students else "train_teacher.py")
         if run_id in students:
-            required_sources.add("distill_data.py")
+            if students[run_id].get("training_mode", "distillation") == "distillation":
+                required_sources.add("distill_data.py")
             if (students[run_id].get("distillation", {}).get("teacher_tta") not in (None, "identity")
                     or "teacher_views" in students[run_id].get("distillation", {})):
                 required_sources.add("distill_tta_data.py")
@@ -574,6 +578,8 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
         digest = sha256_file(original_plan)
         _, teachers = ancestry_runs(config)
         expected_plans = {teacher["fold_plan_sha256"] for teacher in teachers.values()}
+        if not teachers:
+            expected_plans = {config.get("fold_plan_sha256")}
         if expected_plans != {digest}:
             raise ValueError("Local fold plan differs from the actual teachers' ancestry")
         copy_verified(original_plan, output / "code/data/cv5_overnight/folds.original.json", digest)
@@ -635,6 +641,7 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
         ["D2", "测试集使用声明", "第5/6条", "测试集仅固定推理及脚本运行验证；不生成训练伪标签、不拟合参数", "", ""],
         ["D3", "推理文件实际大小", "第8条", f"model/实际调用文件合计{inventory['total_bytes']} bytes；上限500000000 bytes", "", ""],
         ["D4", "材料状态", "第10条/附录A", readiness["status"] + "；" + "；".join(readiness["pending_items"]), "", ""],
+        ["D5", "实际学生训练模式", "第1/2/10条", "；".join(member.get("training_mode", "distillation") for member in deployment_members(config)), "", ""],
     ])
     write_xlsx(output / "模型核验材料与数据申明清单.xlsx", sheet_rows)
     readme = f"""# 蒸馏模型核验材料
@@ -643,6 +650,7 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
 缺少最终CSV、同一部署的T4计时、FP16官方valid验证或完整训练备查证据时，本目录只是准备材料，不能宣称可正式提交。
 
 model/含{len(deployment_members(config))}个V1 Tiny的实际FP16推理权重及必要config，实际合计{inventory['total_bytes']} bytes；固定TTA={config.get('tta', 'identity')}，集成={config.get('ensemble', False)}。
+各成员训练模式：{[member.get('training_mode', 'distillation') for member in deployment_members(config)]}。纯监督成员不声明教师来源；蒸馏成员须保留完整的折外教师来源与证据。
 pretrain_model/是核验用原始公开预训练权重，不被predict/cost加载；licenses/和modelcards/用于来源核验。
 第8条500MB仅统计实际推理文件，本核验目录总大小可以超过500MB。没有打包比赛图像、旧V2权重或教师训练快照。
 
@@ -672,6 +680,7 @@ code/data/cv5_overnight/folds.original.json如存在，仅为原折表证据，�
               "training_evidence": training_evidence_info,
               "pretraining_sources": pretrain_materials, "copied_sources": copied_sources,
               "runtime_weights": ["model/" + member.get("weights_file", "student_fp16.pt") for member in deployment_members(config)],
+              "training_modes": [member.get("training_mode", "distillation") for member in deployment_members(config)],
               "pretrain_verification_weights_counted_toward_500MB": False,
               "competition_images_included": False, "models_executed": False,
               "downloads_performed": False,

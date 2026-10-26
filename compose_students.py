@@ -43,9 +43,10 @@ def composition_plan(model_dirs: Sequence[str | Path], *, output: str | Path,
         weight_path = root / member["weights_file"]
         if sha256_file(weight_path) != member["weights_sha256"]:
             raise ValueError("Source FP16 weight checksum mismatch")
+        teachers = member.get("teacher_provenance", [])
+        fold_hash = config.get("fold_plan_sha256") or (teachers[0].get("fold_plan_sha256") if teachers else None)
         declared = {"source_manifest_sha256": config.get("source_manifest_sha256"),
-                    "fold_plan_sha256": config.get("fold_plan_sha256") or
-                        member["teacher_provenance"][0].get("fold_plan_sha256"),
+                    "fold_plan_sha256": fold_hash,
                     "official_valid_manifest_sha256": config.get("official_valid_manifest_sha256")}
         if shared is None:
             shared = declared

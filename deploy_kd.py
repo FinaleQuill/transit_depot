@@ -67,10 +67,17 @@ def validate_preprocessing(config: Mapping[str, Any], *, image_size: int = IMAGE
         raise ValueError("Expected fixed EXIF/RGB/LANCZOS-pad/ImageNet preprocessing at the declared size")
 
 
-def validate_provenance(student: Mapping[str, Any], teachers: Any) -> None:
+def validate_provenance(student: Mapping[str, Any], teachers: Any, *,
+                        training_mode: str = "distillation") -> None:
     from kd_common import validate_pretrained_provenance
 
     validate_pretrained_provenance(student, TINY_BACKBONE)
+    if training_mode == "supervised_bce":
+        if not isinstance(teachers, list) or teachers:
+            raise ValueError("An independent supervised student must declare no teacher ancestry")
+        return
+    if training_mode != "distillation":
+        raise ValueError("Unknown student training mode")
     if not isinstance(teachers, list) or len(teachers) != 5:
         raise ValueError("All five OOF teacher provenance records are required")
     folds: set[int] = set()
@@ -107,10 +114,40 @@ def validate_provenance(student: Mapping[str, Any], teachers: Any) -> None:
             raise ValueError("Teacher checkpoint SHA-256 is required")
 
 
+def validate_supervised_protocol(protocol: Mapping[str, Any], *, image_size: int,
+                                 validation_tta: str,
+                                 training: Mapping[str, Any] | None = None) -> None:
+    """Teacher-free ancestry is accepted only for the explicit independent BCE mode."""
+    if (not isinstance(protocol, Mapping) or protocol.get("enabled") is not False
+            or type(protocol.get("alpha")) not in {int, float} or protocol["alpha"] != 0
+            or protocol.get("loss") != "weighted_bce"
+            or protocol.get("class_reduction") != "mean"
+            or protocol.get("study_equal_weighting") is not True
+            or protocol.get("student_training_size") != image_size
+            or validation_tta not in {"identity", "hflip2"}
+            or protocol.get("validation_tta") != validation_tta
+            or protocol.get("deployment_tta") != validation_tta
+            or protocol.get("deployment_ensemble") is not False):
+        raise ValueError("Independent supervised student requires an explicit zero-KD weighted-BCE protocol")
+    forbidden = {"soft_labels_sha256", "soft_metadata_sha256", "teacher_tta", "teacher_views",
+                 "soft_target_aggregation"}
+    if forbidden & set(protocol):
+        raise ValueError("Supervised BCE cannot declare teacher-cache or teacher-view dependencies")
+    if training is not None and (
+            not isinstance(training, Mapping)
+            or training.get("training_mode") != "supervised_bce"
+            or type(training.get("alpha")) not in {int, float} or training["alpha"] != 0
+            or "soft_labels" not in training or training["soft_labels"] is not None
+            or training.get("image_size") != image_size
+            or training.get("validation_tta") != validation_tta):
+        raise ValueError("Supervised checkpoint training configuration contradicts its independent BCE mode")
+
+
 def validate_student_checkpoint(checkpoint: Mapping[str, Any]) -> None:
     schema = checkpoint.get("schema_version")
     size = checkpoint.get("image_size")
-    if (schema not in {7, 8}
+    mode = checkpoint.get("training_mode", "distillation")
+    if (schema not in {7, 8, 9}
             or checkpoint.get("artifact_type") != "kd_student"
             or checkpoint.get("model_name") != "convnext_v1_tiny_gap"
             or checkpoint.get("model_config", {}).get("backbone_name") != TINY_BACKBONE
@@ -120,13 +157,32 @@ def validate_student_checkpoint(checkpoint: Mapping[str, Any]) -> None:
             or checkpoint.get("validation_complete") is not True
             or checkpoint.get("inference_ready") is not True):
         raise ValueError("Export requires a validated approved Tiny EMA student checkpoint")
-    validate_preprocessing(checkpoint.get("preprocessing", {}), image_size=size, allow_tta=schema == 8)
-    validate_provenance(checkpoint.get("pretrained_provenance", {}), checkpoint.get("teacher_provenance"))
+    if ((schema == 9 and mode != "supervised_bce")
+            or (schema in {7, 8} and mode != "distillation")):
+        raise ValueError("Checkpoint schema and student training mode disagree")
+    validate_preprocessing(checkpoint.get("preprocessing", {}), image_size=size, allow_tta=schema in {8, 9})
+    validate_provenance(checkpoint.get("pretrained_provenance", {}), checkpoint.get("teacher_provenance"),
+                        training_mode=mode)
     for teacher in checkpoint["teacher_provenance"]:
         if (teacher.get("source_manifest_sha256") != checkpoint.get("source_manifest_sha256")
                 or teacher.get("fold_plan_sha256") != checkpoint.get("fold_plan_sha256")):
             raise ValueError("Student and teacher ancestry disagree on original train/fold plan")
     distillation = checkpoint.get("distillation", {})
+    if schema == 9:
+        tta = checkpoint.get("validation_tta")
+        if (checkpoint["preprocessing"].get("validation_tta") != tta
+                or checkpoint.get("deployment_tta") != tta
+                or checkpoint.get("deployment_ensemble") is not False):
+            raise ValueError("Supervised checkpoint validation and deployment declarations disagree")
+        for field in ("source_manifest_sha256", "fold_plan_sha256", "official_valid_manifest_sha256"):
+            if not _sha(checkpoint.get(field)):
+                raise ValueError("Supervised checkpoint requires original train/fold/valid SHA256 bindings")
+        validate_supervised_protocol(distillation, image_size=size, validation_tta=tta,
+                                     training=checkpoint.get("training_config", {}))
+        return
+    if (checkpoint.get("training_config", {}).get("training_mode", "distillation") != "distillation"
+            or distillation.get("enabled", True) is not True):
+        raise ValueError("KD checkpoints cannot disguise an independent supervised training configuration")
     if schema == 7:
         if (distillation.get("deployment_tta", "identity") != "identity"
                 or distillation.get("deployment_ensemble", False) is not False):
@@ -222,6 +278,8 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
                 or config.get("ensemble") is not False
                 or "scales" in config and config["scales"] != [512]):
             raise ValueError("Legacy deployments must retain single-Tiny512 identity semantics")
+        if config.get("training_mode", "distillation") != "distillation":
+            raise ValueError("Legacy deployment schema1 cannot declare a new supervised training mode")
         members = deployment_members(config)
     else:
         members = config.get("members")
@@ -234,6 +292,8 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
             raise ValueError("Ensemble declaration disagrees with member count")
         if any(not isinstance(member, dict) or type(member.get("image_size")) is not int or member["image_size"] not in {512, 768} or member.get("tta") not in {"identity", "hflip2"} for member in members):
             raise ValueError("Each member must declare fixed Tiny512/768 and identity/hflip2")
+        if config.get("training_mode", members[0].get("training_mode", "distillation")) != members[0].get("training_mode", "distillation"):
+            raise ValueError("Representative training mode differs from the first deployment member")
         weights = normalized_model_weights(config.get("model_weights"), len(members))
         if np.asarray(config["model_weights"]).shape != weights.shape or not np.allclose(np.asarray(config["model_weights"]), weights, rtol=0, atol=1e-12):
             raise ValueError("Stored model_weights must be normalized Mx10 fixed weights")
@@ -263,7 +323,18 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
         if model_config.get("backbone_name") != TINY_BACKBONE or model_config.get("gradient_checkpointing") is not False:
             raise ValueError("Invalid deployment architecture metadata")
         validate_preprocessing(member.get("preprocessing", {}), image_size=size, allow_tta=schema == 2)
-        validate_provenance(member.get("pretrained_provenance", {}), member.get("teacher_provenance"))
+        mode = member.get("training_mode", "distillation")
+        validate_provenance(member.get("pretrained_provenance", {}), member.get("teacher_provenance"),
+                            training_mode=mode)
+        if mode == "supervised_bce":
+            if member.get("source_checkpoint_schema_version", 9) != 9:
+                raise ValueError("Independent BCE member must originate from a schema9 supervised checkpoint")
+            validate_supervised_protocol(member.get("distillation", {}), image_size=size,
+                validation_tta=member.get("preprocessing", {}).get("validation_tta"))
+        elif member.get("distillation", {}).get("enabled", True) is not True:
+            raise ValueError("A KD member cannot disable teacher dependencies without a supervised mode declaration")
+        elif member.get("source_checkpoint_schema_version", 8) not in {7, 8}:
+            raise ValueError("KD member source schema contradicts its training mode")
         if schema == 2:
             if (not _sha(member.get("weights_sha256")) or not _sha(member.get("source_checkpoint_sha256"))
                     or member.get("weights_source") != "ema"
@@ -271,6 +342,9 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
                     or Path(member["weights_file"]).name != member["weights_file"]
                     or member["weights_file"] in {"", ".", "..", "config.json"}):
                 raise ValueError("Member needs safe FP16 file, EMA source and valid source/weight hashes")
+            for field in ("source_manifest_sha256", "fold_plan_sha256", "official_valid_manifest_sha256"):
+                if field in member and member[field] != config[field]:
+                    raise ValueError("Member source data bindings differ from the shared deployment declaration")
             for teacher in member["teacher_provenance"]:
                 if (teacher.get("source_manifest_sha256") != config["source_manifest_sha256"]
                         or teacher.get("fold_plan_sha256") != config["fold_plan_sha256"]):

@@ -1,4 +1,4 @@
-"""单个 V1 Tiny/512 或 768 离线蒸馏，支持严格 OOF 双视图软目标。
+"""单个 V1 Tiny/512 或 768，支持独立加权BCE与严格OOF离线蒸馏。
 
 每次只训练一个学生；后续模型集成由独立部署配置声明。仅 --execute 才训练。
 """
@@ -32,7 +32,7 @@ from kd_common import (TINY_BACKBONE, prepare_pretrained_provenance, sha256_file
 @dataclass(frozen=True)
 class DistillConfig:
     fold_plan: Path
-    soft_labels: Path
+    soft_labels: Path | None
     output: Path
     image_root: Path
     batch_size: int = 8
@@ -60,6 +60,7 @@ class DistillConfig:
     align_teacher_pos_weight: bool = True
     image_size: int = 512
     validation_tta: str = "hflip2"
+    training_mode: str = "distillation"
     resume: Path | None = None
 
     def model_config(self) -> dict[str, Any]:
@@ -69,6 +70,13 @@ class DistillConfig:
                     "gradient_checkpointing": True})
 
     def validate(self) -> None:
+        if self.training_mode not in ("distillation", "supervised_bce"):
+            raise ValueError("training_mode must be distillation or supervised_bce")
+        if self.training_mode == "supervised_bce":
+            if self.soft_labels is not None or self.alpha != 0:
+                raise ValueError("supervised_bce requires alpha=0 and no soft-label cache")
+        elif self.soft_labels is None:
+            raise ValueError("Distillation requires a strict-OOF soft-label cache")
         for name in ("batch_size", "accumulation_steps", "valid_batch_size", "epochs", "prefetch_factor"):
             if type(getattr(self, name)) is not int or getattr(self, name) < 1:
                 raise ValueError(f"{name} must be a positive integer")
@@ -165,6 +173,39 @@ def distillation_losses(student_logits: torch.Tensor, targets: torch.Tensor,
     return hard, soft
 
 
+def supervised_bce_loss(student_logits: torch.Tensor, targets: torch.Tensor,
+                        student_pos_weights: torch.Tensor) -> torch.Tensor:
+    """Complete coefficient-one weighted BCE; no teacher or KL is evaluated."""
+    if (student_logits.ndim != 2 or student_logits.shape[1] != 10
+            or targets.shape != student_logits.shape or student_pos_weights.shape != (10,)):
+        raise ValueError("Supervised BCE expects Nx10 logits/labels and ten class weights")
+    for value in (student_logits, targets, student_pos_weights):
+        if not bool(torch.isfinite(value).all()):
+            raise FloatingPointError("Nonfinite supervised BCE input")
+    if bool(((targets < 0) | (targets > 1)).any()) or bool((student_pos_weights <= 0).any()):
+        raise ValueError("Supervised BCE requires binary probabilities and positive class weights")
+    return F.binary_cross_entropy_with_logits(student_logits.float(), targets.float(),
+        pos_weight=student_pos_weights.float(), reduction="none").mean(1)
+
+
+def student_batch_losses(config: DistillConfig, student_logits: torch.Tensor, targets: torch.Tensor,
+                         student_weights: torch.Tensor, *, image_ids: list[str], cache: Any = None):
+    """Dispatch without touching teacher arrays in the explicit supervised mode."""
+    if config.training_mode == "supervised_bce":
+        if cache is not None:
+            raise ValueError("A supervised student cannot consume a teacher cache")
+        hard = supervised_bce_loss(student_logits, targets, student_weights)
+        return hard, torch.zeros_like(hard)
+    if cache is None:
+        raise ValueError("Distillation batch is missing its teacher cache")
+    indices = [cache.index[image_id] for image_id in image_ids]
+    teacher = torch.as_tensor(cache.logits[indices], device=student_logits.device, dtype=torch.float32)
+    teacher_weights = torch.as_tensor(cache.teacher_pos_weights[indices],
+                                      device=student_logits.device, dtype=torch.float32)
+    return distillation_losses(student_logits, targets, teacher, teacher_weights, student_weights,
+        temperature=config.temperature, align=config.align_teacher_pos_weight)
+
+
 def _configuration(config: DistillConfig) -> dict[str, Any]:
     return {key: str(value) if isinstance(value, Path) else value
             for key, value in asdict(config).items()}
@@ -221,6 +262,29 @@ def distillation_protocol(config: DistillConfig, cache: Any, *,
     return protocol
 
 
+def supervised_protocol(config: DistillConfig) -> dict[str, Any]:
+    if config.training_mode != "supervised_bce" or config.alpha != 0 or config.soft_labels is not None:
+        raise ValueError("Supervised objective must be independent of all teacher inputs")
+    return {"enabled": False, "alpha": 0.0, "loss": "weighted_bce", "class_reduction": "mean",
+            "study_equal_weighting": True, "student_training_size": config.image_size,
+            "validation_tta": config.validation_tta, "deployment_tta": config.validation_tta,
+            "deployment_ensemble": False}
+
+
+def prepare_student_objective(config: DistillConfig, train_records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Only the KD branch may open the teacher cache or bind teacher provenance."""
+    if config.training_mode == "supervised_bce":
+        return {"cache": None, "protocol": supervised_protocol(config), "schema_version": 9,
+                "teacher_provenance": [], "cache_bindings": []}
+    cache = _load_soft_cache(config.soft_labels, config.fold_plan, train_records)
+    soft_file, meta_file = config.soft_labels / "soft_labels.npz", config.soft_labels / "metadata.json"
+    soft_hash, metadata_hash = sha256_file(soft_file), sha256_file(meta_file)
+    return {"cache": cache, "protocol": distillation_protocol(config, cache,
+                soft_hash=soft_hash, metadata_hash=metadata_hash), "schema_version": 8,
+            "teacher_provenance": cache.metadata["teachers"],
+            "cache_bindings": [(soft_file, soft_hash), (meta_file, metadata_hash)]}
+
+
 def mean_validation_probabilities(view_logits: list[torch.Tensor]) -> torch.Tensor:
     """Average independent class probabilities, never threshold votes or logits."""
     if not view_logits or len(view_logits) not in (1, 2):
@@ -263,6 +327,19 @@ def validate_student_resume(checkpoint: dict[str, Any], config: DistillConfig,
             raise ValueError(f"Student resume protocol mismatch: {key}")
     current = {k: v for k, v in _configuration(config).items() if k != "resume"}
     prior = {k: v for k, v in checkpoint.get("training_config", {}).items() if k != "resume"}
+    if checkpoint.get("schema_version") in (7, 8):
+        prior.setdefault("training_mode", "distillation")
+        if (config.training_mode != "distillation"
+                or checkpoint.get("training_mode", "distillation") != "distillation"):
+            raise ValueError("A KD checkpoint cannot continue as a supervised student")
+    elif checkpoint.get("schema_version") == 9:
+        if (config.training_mode != "supervised_bce"
+                or checkpoint.get("training_mode") != "supervised_bce"
+                or checkpoint.get("teacher_provenance") != []
+                or checkpoint.get("distillation") != supervised_protocol(config)):
+            raise ValueError("Supervised continuation must preserve its teacher-free objective")
+    else:
+        raise ValueError("Unsupported student continuation schema")
     if checkpoint.get("schema_version") == 7:
         # These fields did not exist in the original single-512 training config.
         prior.setdefault("image_size", 512)
@@ -355,9 +432,6 @@ def _train_epoch(model, ema, loader, optimizer, scaler, device, dtype, epoch,
         if len(set(ids)) != len(ids) or seen.intersection(ids) or not set(ids) <= expected:
             raise ValueError("Student training image coverage is invalid")
         seen.update(ids)
-        indices = [cache.index[image_id] for image_id in ids]
-        teacher = torch.as_tensor(cache.logits[indices], device=device, dtype=torch.float32)
-        teacher_weights = torch.as_tensor(cache.teacher_pos_weights[indices], device=device, dtype=torch.float32)
         images = batch["images"].to(device, non_blocking=True, memory_format=torch.channels_last)
         targets = batch["targets"].to(device, non_blocking=True, dtype=torch.float32)
         weights = batch["loss_weights"].to(device, non_blocking=True, dtype=torch.float32)
@@ -365,10 +439,10 @@ def _train_epoch(model, ema, loader, optimizer, scaler, device, dtype, epoch,
             raise ValueError("Invalid student Study weights")
         with torch.autocast(device_type="cuda", dtype=dtype):
             logits = model(images)
-        hard, soft = distillation_losses(logits, targets, teacher, teacher_weights, student_weights,
-                                        temperature=config.temperature, align=config.align_teacher_pos_weight)
+        hard, soft = student_batch_losses(config, logits, targets, student_weights, image_ids=ids, cache=cache)
         alpha = alpha_at(config, epoch, batch_index, len(loader))
-        weighted_sum = ((1 - alpha) * hard + alpha * soft).mul(weights).sum()
+        per_image = hard if config.training_mode == "supervised_bce" else (1 - alpha) * hard + alpha * soft
+        weighted_sum = per_image.mul(weights).sum()
         if not bool(torch.isfinite(weighted_sum)):
             raise FloatingPointError("Nonfinite student loss")
         first = batch_index // config.accumulation_steps * config.accumulation_steps
@@ -430,13 +504,11 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
     for key in ("subject_id", "study_key", "image_id", "file_sha256", "pixel_sha256"):
         if ({row.get(key) for row in train_records} - {None, ""}) & ({row.get(key) for row in valid_records} - {None, ""}):
             raise ValueError(f"Student train/official-valid leakage: {key}")
-    cache = _load_soft_cache(config.soft_labels, config.fold_plan, train_records)
-    soft_file = config.soft_labels / "soft_labels.npz"
-    meta_file = config.soft_labels / "metadata.json"
+    objective = prepare_student_objective(config, train_records)
+    cache, protocol = objective["cache"], objective["protocol"]
+    teacher_provenance = objective["teacher_provenance"]
     loss_config = compute_loss_config(train_records, source_manifest_sha256=plan["source_manifest_sha256"], fold=None)
-    soft_hash, metadata_hash = sha256_file(soft_file), sha256_file(meta_file)
-    protocol = distillation_protocol(config, cache, soft_hash=soft_hash, metadata_hash=metadata_hash)
-    schema_version = 8
+    schema_version = objective["schema_version"]
     preprocessing = student_preprocessing_config(config)
     if not torch.cuda.is_available():
         raise RuntimeError("Student training requires a CUDA GPU")
@@ -481,8 +553,11 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
             raise RuntimeError("Student last.pt changed while loading")
         saved_epoch = checkpoint["epoch"]
         if checkpoint.get("schema_version") == 7:
-            protocol = distillation_protocol(config, cache, soft_hash=soft_hash,
-                                              metadata_hash=metadata_hash, legacy=True)
+            if config.training_mode != "distillation":
+                raise ValueError("Schema7 cannot be resumed in supervised mode")
+            protocol = distillation_protocol(config, cache,
+                soft_hash=objective["protocol"]["soft_labels_sha256"],
+                metadata_hash=objective["protocol"]["soft_metadata_sha256"], legacy=True)
             schema_version = 7
         expected = {"schema_version": schema_version, "artifact_type": "kd_student", "model_name": TINY_MODEL_NAME,
                     "fold_plan_sha256": plan_hash, "source_manifest_sha256": plan["source_manifest_sha256"],
@@ -490,9 +565,11 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                     "loss_config": loss_config, "model_config": config.model_config(),
                     "image_size": config.image_size,
                     "preprocessing": preprocessing, "training_precision": precision,
-                    "teacher_provenance": cache.metadata["teachers"]}
-        if schema_version == 8:
+                    "teacher_provenance": teacher_provenance}
+        if schema_version in (8, 9):
             expected["validation_tta"] = config.validation_tta
+        if schema_version == 9:
+            expected["training_mode"] = config.training_mode
         validate_student_resume(checkpoint, config, expected)
         # 丢失最佳文件时不能把更差的 last 伪装成最佳。
         if not (out / "best.pt").is_file():
@@ -575,7 +652,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
             for path, expected in ((config.fold_plan, plan_hash),
                     (Path(plan["source_train_manifest"]["path"]), plan["source_manifest_sha256"]),
                     (valid_path, plan["official_holdout"]["sha256"]),
-                    (soft_file, protocol["soft_labels_sha256"]), (meta_file, protocol["soft_metadata_sha256"])):
+                    *objective["cache_bindings"]):
                 if sha256_file(path) != expected:
                     raise RuntimeError("A bound student input changed during training")
             auc = validation["metrics"]["macro_auc"]
@@ -594,7 +671,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                 "inference_ready": True, "validation_complete": True, "validation": validation["metrics"],
                 "official_valid_manifest_sha256": sha256_file(valid_path),
                 "source_manifest_sha256": plan["source_manifest_sha256"], "fold_plan_sha256": plan_hash,
-                "pretrained_provenance": provenance, "teacher_provenance": cache.metadata["teachers"],
+                "pretrained_provenance": provenance, "teacher_provenance": teacher_provenance,
                 "distillation": protocol, "loss_config": loss_config, "thresholds": [0.5] * 10,
                 "aggregation": "study_mean_probability", "deployment_tta": config.validation_tta, "deployment_ensemble": False,
                 "validation_precision": precision, "deployment_validation_pending": True,
@@ -602,8 +679,10 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                 "optimizer_state_dict": cpu_tree(optimizer.state_dict()), "scaler_state_dict": cpu_tree(scaler.state_dict()),
                 "rng_state": capture_rng(), "progress": dict(progress), "early_stopping": dict(early),
                 "best_auc": best_auc, "best_epoch": best_epoch, "training_config": serialized}
-            if schema_version == 8:
+            if schema_version in (8, 9):
                 payload["validation_tta"] = config.validation_tta
+            if schema_version == 9:
+                payload["training_mode"] = config.training_mode
             if is_best:
                 best_hash = save_checkpoint(out / "best.pt", payload)
                 record_checkpoint(out / "best.pt", best_hash, epoch=epoch,
@@ -648,9 +727,11 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="Offline OOF V1 Tiny512/768 KD with fixed TTA; dry-run unless --execute")
+    parser = argparse.ArgumentParser(description="V1 Tiny512/768 independent weighted BCE or strict-OOF KD; dry-run unless --execute")
     parser.add_argument("--fold-plan", type=Path, required=True)
-    parser.add_argument("--soft-labels", type=Path, required=True)
+    parser.add_argument("--soft-labels", type=Path,
+                        help="Required for distillation; forbidden for the independent supervised_bce baseline")
+    parser.add_argument("--training-mode", choices=("distillation", "supervised_bce"), default="distillation")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--image-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
     parser.add_argument("--resume", type=Path)
@@ -672,7 +753,9 @@ def main(argv=None) -> int:
     config.validate()
     if not execute:
         print(json.dumps({"dry_run": True, "training_started": False, "config": _configuration(config),
-                          "schema_version": 8, "model_config": config.model_config(),
+                          "schema_version": 9 if config.training_mode == "supervised_bce" else 8,
+                          "teacher_cache_required": config.training_mode == "distillation",
+                          "model_config": config.model_config(),
                           "preprocessing": student_preprocessing_config(config)}, indent=2))
         return 0
     # run_logged creates output/evidence before run_training is called. Protect
