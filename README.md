@@ -3,7 +3,7 @@
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → Tiny512/768学生对照与多seed → FP16固定TTA/多模型候选及官方核验**。
 
 教师采用已冻结的混合轮数：fold0为20轮，fold1–4各12轮；集合入口为 `../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json`。五折教师已于2026-10-26 19:26（香港）全部正常完成。
-用户已批准**固定双视图TTA与多学生概率集成**。先训练同seed的512/768学生，再按十类AUC和实际T4预算补不同seed；教师首轮TTA验证已完成，正在按结果复盘；OOF提取与学生仍未启动。操作以[当前TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)为准。
+用户已批准**固定双视图TTA与多学生概率集成**。教师首轮TTA验证已完成；当前先补E13及原五教师逐图logits诊断，再做独立纯BCE512与KD512对照，之后决定768及额外seed。OOF提取与学生仍未启动。当前指令和各阶段耗时见[诊断与BCE对照手册](docs/EPOCH_DIAGNOSTIC_BCE_USAGE.md)；后续部署见[TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)。
 
 **阶段验收约定：**每个大阶段完成后先核验结果、分析整体/逐类AUC与患者级不确定性、反馈是否需要修改，再确定下一阶段。当前第二步暂停，先看[教师改进复盘](docs/TEACHER_IMPROVEMENT_REVIEW_20261026.md)。
 
@@ -13,6 +13,7 @@
 | --- | --- | --- |
 | 当前教师计划 | `run_mixed_teachers.py`、`run_mixed_teachers.sh` | [现行混合教师操作说明](docs/KD_V1_MIXED_USAGE.md)；不要重复启动运行中的控制器 |
 | 教师训练 | `train_teacher.py`、`run_teachers.py` | 固定轮数最终EMA，外折不参与训练或选模 |
+| 当前教师诊断 | `diagnose_teacher_epochs.py` | E13单因素对照、逐图双视图原始logits、CPU重放；不替换教师 |
 | OOF软标签 | `extract_soft_labels_tta.py`、`distill_tta_data.py`、`teacher_collection.py` | 两视图原始logits，逐图严格折外；保留旧identity入口 |
 | 学生蒸馏 | `run_student_experiments.py`、`train_distill.py` | Tiny512/768、α=.2、T=2、双视图验证、EMA及完整恢复 |
 | 导出与验证 | `export_student.py`、`compose_students.py`、`validate_student.py`、`validate_teacher_tta.py` | 实际FP16、固定TTA与1–4成员，官方valid诊断 |
