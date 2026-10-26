@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Data, training evidence and model binaries stay on the server outside Git.
+/data/
+/artifacts/
+/runs/
+/deliveries/
+/cache/
+/archive/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.npz
+*.npy
+*.csv
+*.log
+*.zip
+*.tar
+*.gz
+*.7z
+*.pdf
+
+# Local environments and credentials.
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_ed25519
