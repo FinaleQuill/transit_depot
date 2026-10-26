@@ -1,6 +1,6 @@
 # 当前方案：教师折外TTA蒸馏与多分辨率学生集成
 
-> 2026-10-27当前阶段：先按[诊断与BCE对照手册](EPOCH_DIAGNOSTIC_BCE_USAGE.md)完成E13及逐图logits诊断、独立BCE512基线复盘，再决定OOF、KD512/768与额外成员。本页后续命令保留为入口，不代表自动推进。分析依据见[教师改进复盘](TEACHER_IMPROVEMENT_REVIEW_20261026.md)。
+> 2026-10-27当前阶段：六检查点logits诊断已完成，按[最新验收与BCE指令](TEACHER_EPOCH_REVIEW_20261027.md)先跑独立BCE512；完成复盘后再决定OOF教师、KD512/768与额外成员。本页后续命令保留为入口，不代表自动推进。各阶段耗时见[诊断与BCE手册](EPOCH_DIAGNOSTIC_BCE_USAGE.md)。
 
 
 用户已批准用固定TTA和多个学生争取成绩。现有五个Base768教师保持原权重与20/12/12/12/12轮协议；学生采用同一ImageNet来源的V1 Tiny，先做512/768同seed对照，再按验证结果补模型。

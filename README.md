@@ -3,7 +3,7 @@
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → Tiny512/768学生对照与多seed → FP16固定TTA/多模型候选及官方核验**。
 
 教师采用已冻结的混合轮数：fold0为20轮，fold1–4各12轮；集合入口为 `../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json`。五折教师已于2026-10-26 19:26（香港）全部正常完成。
-用户已批准**固定双视图TTA与多学生概率集成**。教师首轮TTA验证已完成；当前先补E13及原五教师逐图logits诊断，再做独立纯BCE512与KD512对照，之后决定768及额外seed。OOF提取与学生仍未启动。当前指令和各阶段耗时见[诊断与BCE对照手册](docs/EPOCH_DIAGNOSTIC_BCE_USAGE.md)；后续部署见[TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)。
+用户已批准**固定双视图TTA与多学生概率集成**。教师首轮TTA和六检查点逐图logits诊断均已完成并核验；下一项为独立纯BCE512，之后再决定OOF教师/KD512、768及额外seed。当前结论和单阶段命令见[本次教师验收](docs/TEACHER_EPOCH_REVIEW_20261027.md)，各阶段耗时见[诊断与BCE手册](docs/EPOCH_DIAGNOSTIC_BCE_USAGE.md)；后续部署见[TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)。OOF和学生仍未启动。
 
 **阶段验收约定：**每个大阶段完成后先核验结果、分析整体/逐类AUC与患者级不确定性、反馈是否需要修改，再确定下一阶段。当前第二步暂停，先看[教师改进复盘](docs/TEACHER_IMPROVEMENT_REVIEW_20261026.md)。
 
