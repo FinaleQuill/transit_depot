@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-28复核：真实033双768 25/75已组装及完整valid验证，AUC=.808384442、实际权重/config128,766,272bytes，体积通过；原生4090按100图/另5图预热/batch1串行三轮端到端79.280300ms、三轮CSV与完整valid一致。正式T4与最终test submission.csv/材料仍待，当前不声明完整官方compliance_pass。valid选择已登记，患者区间跨0，不新增测试信息或改历史报告；OOF/非医学初始化/数据隔离保持，test未参与，CLAHE/DALI未加入。当前见[真实部署复盘](DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
+2026-10-28复核：真实033双768 25/75的valid AUC=.808384442、实际权重/config128,766,272bytes、原生4090三轮端到端79.280300ms已核验。现已按冻结版本生成完整test submission.csv，1414Study/14140行及逐图聚合/原图SHA/冻结模型通过审计，test未用于模型选择或拟合，未上传平台。正式T4/对最终CSV的官方cost一致性及最终核验材料仍待，不声明完整官方compliance_pass。OOF/非医学初始化保持，CLAHE/DALI未加入。当前见[CSV交付](SUBMISSION_DUAL768_20261028.md)；新补充来源证据在`artifacts/kd_v1/submission_rules_recheck_20261028/`，旧来源证据保留。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[10月27日正式补充](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。

@@ -1128,3 +1128,12 @@
 - 资源：实际权重/config128,766,272bytes，体积通过；4090端到端三轮均79.280300ms，轮均79.375028/79.242428/79.223445，按每图三轮均值P95=88.537651/max=91.263682；全300次原始最大91.916501ms，无复测/删样本。
 - 核验：CPU独立审计重算指标/切片/100×3时间矩阵，三轮53Study与完整valid概率差0，逐图/Study汇总一致；两FP16来源及152个文件前后SHA不变，执行源码快照与当前推理代码相同，GPU结束后空闲。该审计no_gpu_work仅指CPU审计，不能误称本次主代理未用GPU。
 - 决策：保留033为当前实际部署候选，docs/DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md及ACCEPTANCE登记结果；旧SELECTION保留待验证的历史状态。正式T4/最终test CSV/双学生与教师核验材料仍待，test未参与，CLAHE/DALI未加入，原教师/OOF/训练断点与源码不改，证据artifacts/kd_v1/dual768_deployment_review_20261028/。
+
+
+### 2026-10-28 02:29（香港）· 固定033生成完整测试CSV及补充规则复核
+
+- 执行：用户明确要求按当前版生成CSV，主代理固定033旧43占25%/新44占75%、FP16/hflip2及默认Gate.5，通过原predict.py:main生成test_predictions/submission.csv，入口RNG seed43、exit0、约186.41秒；本次训练0、模型/权重/后处理调整0、平台上传0。
+- 交付：2218图/1414Study/136患者，UTF-8四列14140数据行，686443bytes，SHA ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661；逐图22180行作为核验辅助，提交文件仅submission.csv，见docs/SUBMISSION_DUAL768_20261028.md及SUBMISSION登记。
+- 审计：CPU独立校验身份/十类覆盖/概率合法及逐图到Study汇总，聚合误差0；2218原图SHA与冻结清单相同、53个模型/源码/清单/材料文件前后不变，未计算测试疾病分布或测试指标，不据test改实现或拟合，生成前ACCEPTANCE/SELECTION保留历史状态。
+- 规则：重新读取官网及其10月27正式补充并归档，原规则SHA不变，新补充SHA836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44；明确官方train自监督允许、正式cost二值/排序一致性及评分取整等要求，规则记录先行Git00df855，本版按原冻结配置生成，无新增训练或推理变更。
+- 边界：CSV已本地完整核验但未上传/无平台成绩；正式T4计时、对最终CSV的官方cost一致性及双学生/教师最终材料仍待，4090旧79.28ms不替代T4。原教师/OOF/权重/图像/标签保留，GPU已结束空闲，证据artifacts/kd_v1/dual768_submission_20261028/与submission_rules_recheck_20261028/。

@@ -1,5 +1,9 @@
 # 提交 CSV 格式与历史文件对照
 
+## 2026-10-28 当前V1双768交付
+
+现行`predict.py`已用033固定25/75双Tiny768、FP16、hflip2生成完整测试CSV，四列UTF-8、1414Study/14140数据行、默认Gate=.5；本地完整性核验通过。文件及SHA见[CSV交付](SUBMISSION_DUAL768_20261028.md)。官网及10月27日正式补充已复核，test不参与选模/拟合，T4仍待。下方旧模型、旧`inference.py`及“未生成新工程CSV”等叙述仅属原日期历史记录，不描述当前状态。
+
 ## 2026-10-19 官网更新与本次交付
 
 已重新读取[官网“七、作品提交要求”](https://www.ncccu.org.cn/index/Paper/case1.html)及其新版示例图：示例包含 `Subject_id,Study_id,Predict_class,Probability,Gate`，Gate 位于最后一列，省略自定义值时默认0.5。每个 Study 仍须保留全部十类概率。官网排名以 Macro AUC 优先，只有 AUC 相等才比较 Macro F1。
