@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-27复核：027 E7实际FP16仍为主候选，AUC=.805402258、文件66,995,853bytes；028短日程/029高分辨率训练已完成，未见单768整体点分提升，当前先验收029实际FP16及固定512+768概率诊断，不启动新训练。029及计时组合实际文件约67/129MB，体积通过；4090原生/MPS压力测试与等值加速均不构成真实T4认证。OOF隔离、valid未并训/test未拟合保持，CLAHE/DALI未应用或安装。T4官方≤100ms、完整test CSV及最终材料仍待验收。当前见[Tiny768复盘](TINY768_REVIEW_20261027.md)和[4090计时报告](RESOURCE_STRESS_RESULTS_20261027.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
+2026-10-27复核：029实际FP16=.803983596，027=.805402258，预定50/50融合=.807157435、患者区间跨0；这是保存概率的CPU诊断，未认证实际组合完整valid或T4。用户最新目标双Tiny768，下一项030 seed44只交接训练指令，已CPU预览未启动；未来仅比较三组预定全局权重，任何valid选参如实声明，test不参与。029及现有计时组合实际文件约67/129MB；未来029+030仍须实际导出统计。4090原生/MPS压力测试与等值加速均不构成真实T4认证。OOF隔离、valid未并训/test未拟合保持，CLAHE/DALI未应用或安装。T4官方≤100ms、完整test CSV及最终材料仍待验收。当前见[双Tiny768计划](DUAL_TINY768_PLAN_20261027.md)和[4090计时报告](RESOURCE_STRESS_RESULTS_20261027.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
