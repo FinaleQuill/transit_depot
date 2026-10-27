@@ -1,0 +1,36 @@
+{
+  "selection_date_hk": "2026-10-28",
+  "selected_for": "next_actual_deployment_validation_and_local_timing",
+  "comparison_report": "../deliveries/032_dual_tiny768_fixed_weights_diagnostic/comparison_report.json",
+  "comparison_report_sha256": "710b90b5686bd21155d7ccd78709886bc92a27c5f9b92aae203ea67c35ccda90",
+  "predeclared_candidates": "docs/DUAL_TINY768_WEIGHTS_20261027.json",
+  "selected_candidate": "seed43_25_seed44_75",
+  "member_seeds_in_order": [43, 44],
+  "fixed_probability_weights": [0.25, 0.75],
+  "image_size": 768,
+  "tta": "hflip2",
+  "members": [
+    {
+      "model_dir": "../deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+      "config_sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+    },
+    {
+      "model_dir": "../deliveries/030_tiny768_kd_seed44/fp16_hflip2",
+      "config_sha256": "99f417ad850f31ebdd7110659b8845e52c9d37abd93e3b55b9c7043a80abc4ca",
+      "weights_sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+    }
+  ],
+  "selection_uses_official_valid": true,
+  "test_used_for_selection": false,
+  "continuous_or_per_class_weights_fitted": false,
+  "cached_probability_macro_auc": 0.8083844422198005,
+  "delta_from_single_seed44": 0.0008720190556358309,
+  "patient_paired_delta_ci95_from_existing_report": [-0.0007143987567019282, 0.002738017136572495],
+  "planned_inference_bytes": 128766272,
+  "planned_deployment": "../deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+  "actual_composed_deployment_validated": false,
+  "T4_latency_certified": false,
+  "final_submission_ready": false,
+  "reason": "Treat 25/75 and 50/50 as close in validation point score; provisionally retain the stronger seed44's ranking more heavily while keeping seed43's contribution. This does not establish superiority to 50/50 or a stable gain over a single model."
+}

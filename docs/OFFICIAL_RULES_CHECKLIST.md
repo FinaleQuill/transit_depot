@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-28复核：030 seed44正常E13早停，E8原生BF16=.807569817；原检查点/执行源码/账本、非医学初始化、strictOOF及train/valid绑定核验通过，原run53文件未改。下一阶段只交接030实际FP16/valid及预登记双768三组全局权重CPU诊断，不启动新训练；当前不能给出030患者配对区间或双768分数。此前512/768的实际FP16等权=.807157435、区间跨0仍保留，不能与030不同精度口径直接判胜。任何valid选参如实声明，test不参与；逐图TTA输入共享保持，CLAHE/DALI未加入。预计双Tiny约129MB，未来029+030仍须实际导出统计/同组合验证；4090/MPS不能代替官方T4≤100ms及最终CSV/材料验收。当前见[第二个Tiny768复盘](TINY768_SEED44_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
+2026-10-28复核：030实际FP16=.807512423，单学生文件66,995,857bytes；032三组预登记双768固定概率诊断核验通过，25/75=.808384442、患者区间[-.000714399,+.002738017]跨0。下一阶段选25/75为工程候选，如实登记valid选参，不新增测试信息或改历史报告；真实组装/完整valid/计时仍待。CPU组装预览128,766,272bytes及原105张valid计时图完整性通过，不等于实际部署已验收。OOF/非医学初始化/数据隔离保持，test不参与，CLAHE/DALI未加入。4090/MPS不能代替官方T4≤100ms及最终CSV/材料验收。当前见[双768实际FP16复盘](DUAL_TINY768_FP16_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
