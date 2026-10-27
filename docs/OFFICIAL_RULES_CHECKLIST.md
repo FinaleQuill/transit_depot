@@ -1,12 +1,12 @@
 # 官方规范本地清单
 
-依据并行保留：官网、官网链接的2026-10-23规则PDF、公开在线答疑，以及用户转发的官方备查通知。
+依据并行保留：官网、官网链接的2026-10-23规则PDF及2026-10-27正式补充说明、公开在线答疑，以及用户转发的官方备查通知。正式书面规则/补充的优先顺序和此次复核见[规则适用记录](COMPETITION_RULES.md)。
 公开材料原件、获取时间和SHA256清单位于`artifacts/kd_v1/compliance_repair_20261025/rules/`；官方补充通知原文和用户转发来源声明也在该目录。
 
 | 规范 | 当前执行边界 |
 |---|---|
 | 预训练来源 | 使用公开、非医学、非NC且允许赛事使用与再分发的精确V1权重；保留模型名、链接、固定revision、许可全文、上游数据说明及原始权重SHA256 |
-| 官方数据 | 只用官方train做监督训练与训练集折外软标签；不用外部医学数据、测试伪标签、自监督续训或测试统计拟合 |
+| 官方数据 | 当前只用官方train监督训练与折外软标签，不引入外部医学或测试训练/拟合；正式补充允许仅官方train自监督，本项目当前未采用 |
 | 验证集 | 当前valid未并入训练，可用于诊断与模型比较；若以后并训，不得再用它早停、选checkpoint或调参数 |
 | 固定推理 | 第6条允许预先固定的TTA和多模型投票/平均；最终仅冻结参数前向，不进行测试时训练、随机增强或跨测试样本自适应 |
 | CSV | UTF-8、文件名submission.csv、每Study十类连续概率；当前1414Study共14140条数据行，不能阈值删行 |
@@ -19,10 +19,10 @@
 | 每轮checkpoint证据 | 逐轮追加保存真实时间戳和已有文件SHA256，不覆盖历史记录；恢复历史观察时如实标注时间含义 |
 | 核验材料 | 截止前完整留存并提交要求的材料；缺项不得冒称ready，任何历史缺失不能伪造补齐 |
 
-五项备查要求来自用户转发的官方通知；不因公开PDF中措辞较简略而忽略。旧答疑若与较新的明确PDF限制冲突，采用更严格的PDF边界。
+五项备查要求来自用户转发的官方通知；不因公开PDF中措辞较简略而忽略。页面、FAQ或口头答疑与正式书面规则或补充冲突时，以正式书面文本为准。
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
 2026-10-28复核：真实033双768 25/75已组装及完整valid验证，AUC=.808384442、实际权重/config128,766,272bytes，体积通过；原生4090按100图/另5图预热/batch1串行三轮端到端79.280300ms、三轮CSV与完整valid一致。正式T4与最终test submission.csv/材料仍待，当前不声明完整官方compliance_pass。valid选择已登记，患者区间跨0，不新增测试信息或改历史报告；OOF/非医学初始化/数据隔离保持，test未参与，CLAHE/DALI未加入。当前见[真实部署复盘](DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
 
-来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
+来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[10月27日正式补充](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
