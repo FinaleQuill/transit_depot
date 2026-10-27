@@ -1050,3 +1050,11 @@
 - 决策：保留单KD和BCE候选；当前只交接028短12轮余弦新run，其余alpha/T/seed/数据/增强/EMA/峰值LR/patience均与027相同，从ImageNet新训不续改原run，预计1–1.5小时。原缓存和权重保持原位。
 - 验证：准确训练参数预览通过、028未创建/GPU空闲、空间约6.95GiB；组合只读预览117.55MB未导出，T4及最终CSV/材料仍待验收。未修改运行源码或已验证config，无新GPU/训练。
 - 留存：docs/KD512_FP16_REVIEW_20261027.md含完整逐类/区间/切片与唯一下一训练命令；证据artifacts/kd_v1/kd512_fp16_review_20261027/，下一阶段结束先复盘，不自动扩展768/seed。
+
+
+### 2026-10-27 17:10（香港）· 028短日程中断核查与恢复交接
+
+- 事实：028在E8 batch2000/3791停止输出，当前无训练进程且GPU空闲；E1–7完整、E7最佳.803890563，bad_epochs0/AMP0，不是正常完成或早停。原凭据exit_code null、status遗留running，没有退出原因证据。
+- 核验：CPU生产恢复校验通过best/last，实际SHA绑定status/history、14条账本链、33份归档Python源码一致；train/valid隔离及清单/折表/OOF缓存SHA通过，raw/EMA/优化器/scaler/RNG可恢复，审查前后原run全部文件不变。
+- 交接：docs/KD512_SHORT12_INTERRUPTION_20261027.md给出保持原12轮日程的唯一resume命令；恢复后从E8重跑、最多剩5轮，预计35–45分钟，结束先审查再定下一项，不据未完成点分替换027。
+- 边界：本次仅CPU核查/参数预览与文档更新，未构建模型/前向/启动或恢复训练，不改原状态/权重/运行源码；原始数据与教师/OOF保留，最终T4/体积/材料仍待验收，证据artifacts/kd_v1/short12_interruption_20261027/。
