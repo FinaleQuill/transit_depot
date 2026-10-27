@@ -1,0 +1,233 @@
+# 项目交接：CXR比赛双Tiny768蒸馏方案
+
+更新时间：2026-10-28，Asia/Hong_Kong（UTC+8）。文档加入前的Git基线为`87dcf68`。本文件供没有前文聊天记录的agent接手；先理解当前状态，不重复运行历史命令。
+
+## 1. 当前结论与用户意图
+
+用户目标是在官方规则和可交付约束内尽力提高成绩，已明确以**两个ConvNeXt V1 Tiny768学生、固定TTA、概率加权集成**为当前主线。
+
+**当前033已完成：真实部署组装、完整valid实际FP16验证、4090三轮端到端计时、完整测试CSV生成和独立完整性审计。教师与学生训练均已结束。**
+
+| 状态 | 交接时事实 |
+| --- | --- |
+| 当前部署 | 029 seed43 E8 EMA占25%，030 seed44 E8 EMA占75% |
+| 输入/精度/TTA | 两个768；FP16；每模型原图+hflip，共四次前向 |
+| valid AUC | **0.8083844422198005**，859 Study |
+| valid F1@.5 | 0.4510899186168643 |
+| 实际推理权重+config | **128,766,272bytes**，小于500,000,000bytes |
+| RTX4090端到端 | **79.280300ms/图**，真实双seed、100图/5预热/三轮 |
+| 完整test CSV | **已生成并校验**，2218图、1414 Study、14140数据行 |
+| 平台 | 代理未上传；未收到平台接收或测试成绩反馈 |
+| 正式T4/最终核验包 | **未完成**；当前没有可用T4或已配置的T4连接 |
+| CLAHE/DALI | **未训练、未应用、未安装DALI** |
+
+“未上传”是本代理的执行记录；用户若随后手动上传，以用户最新反馈为准。不要把valid AUC当成测试成绩，也不要将4090时间写成T4认证。
+
+本轮用户只要求生成交接文件。此前“代执行”授权对应的部署、验证、计时和CSV步骤均已完成，不意味着现在应自动启动新训练、重复test预测或上传平台。
+
+## 2. 接手必读与协作方式
+
+先读本项目的`AGENTS.md`、`README.md`、`docs/CLEANING_POLICY.md`、`docs/COMPETITION_RULES.md`和`WORKLOG.md`。本项目是`/home/featurize/work/cloud_project_v2`，不要误读工作区根目录的旧WORKLOG或旧工程记录。
+
+- 用户要求每个大阶段完成后核验：总体/十类AUC、患者不确定性、误差切片和资源成本，反馈改进判断后再进入下一阶段。无测试标签时只做交付完整性核验，不做测试效果分析。
+- 用户通常需要可直接执行的分阶段命令，也会明确要求agent代跑；以当前授权范围行动，已明确授权的动作不要反复确认。长训练使用tmux，运行中不改其执行源码/配置。
+- 重复、技术要求较低的核验任务可委派`gpt-6.1-sol`、`high`，不必用ultra；模型覆盖的子代理使用`fork_turns="none"`并传足够上下文。
+- 每项逻辑修改用Git保存。模型、数据、缓存、日志、证据、原始PDF等被Git忽略，不能盲目`git add .`、改全局Git身份或推送远程。
+- `WORKLOG.md`只追加关键事实/判断，每块3～6条；它有混合历史换行，新块按CRLF字节追加，保留此前字节前缀。检查可用`git -c core.whitespace=cr-at-eol diff --cached --check`。
+- 本机无`rg`；用Python、`find`等替代。不要读取/展示密钥或凭证。
+
+## 3. 最重要的路径
+
+下表均为服务器实际路径。Git克隆只包含代码和记录，**不包含**runs/deliveries/data/artifacts/原图/预训练缓存；异机接手需另行保留这些文件及环境。
+
+| 内容 | 路径 |
+| --- | --- |
+| 代码/Git仓库 | `/home/featurize/work/cloud_project_v2` |
+| 当前CSV | `/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv` |
+| 当前部署目录 | `/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2` |
+| 当前valid结果 | 同033根目录的`valid_fp16_hflip2/` |
+| 当前4090计时 | 同033根目录的`latency4090/local_resource_report.json` |
+| 学生源训练 | `/home/featurize/work/runs/029_tiny768_kd_seed43`、`030_tiny768_kd_seed44` |
+| 教师集合 | `/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json` |
+| 严格OOF缓存 | 同024根目录的`oof_logits_tta_v2/{soft_labels.npz,metadata.json}` |
+| CLI原图根目录 | `/home/featurize/data/cxr_first` |
+| 实际原图/原CSV根目录 | `/home/featurize/data/cxr_first/cxr_first` |
+| 原规则PDF | `/home/featurize/work/rules.pdf` |
+| 最新补充及官网原件 | 项目内`artifacts/kd_v1/submission_rules_recheck_20261028/` |
+
+**不要拿`/home/featurize/work/submission.csv`上传：那是10月18日旧文件。** 工作区的旧zip/tar、`archive_v1/`、旧V2/Tiny文档同样不是当前模型。
+
+CSV采用UTF-8四列：`Subject_id,Study_id,Predict_class,Probability`。1414个Study各十类，14140数据行，另有表头；无自定义Gate，默认.5，不删低概率行。文件686443bytes，生成约186.41秒。
+
+同目录`submission.image_predictions.csv`有2218×10条逐图概率，只作复现/正式cost核验辅助；`submission.csv.report.json`是生成报告。提交预测文件使用`submission.csv`。不从test预测分布反推类别先验、调权重、阈值、归一化或预处理。
+
+## 4. 当前交付的身份校验
+
+```text
+033 config.json:
+9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590
+033 student_00_fp16.pt（029 seed43，25%）:
+edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269
+033 student_01_fp16.pt（030 seed44，75%）:
+87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489
+033 test_predictions/submission.csv:
+ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661
+033 valid_fp16_hflip2/valid_predictions.csv:
+7000ce912c0c285fb36ca251897866a314b9c0d33b21c8ed1d92edc0f11a3f94
+```
+
+两份推理权重各55,712,511bytes、182个有限FP16张量。完整valid实际预测与保存概率的25/75数学融合最大差5.55e-17，十类排序/并列及AUC一致；计时三轮各53个完整Study与完整valid对应预测误差0。
+
+生成test前后53个受保护文件SHA不变，2218张原图SHA与冻结清单一致，逐图到Study独立聚合误差0。审计未分析测试疾病分布、未读答案或做参数选择。
+
+## 5. 环境与数据
+
+固定Python：`/home/featurize/.conda/envs/cxr-kd-v1/bin/python`。已核验Python3.12.15、torch2.10.0+cu128、torchvision0.25.0、timm1.0.30、numpy1.26.4、sklearn1.6.1；推理依赖见`requirements_inference.txt`，训练见`requirements_kd.txt`。不要覆盖官方CUDA环境或随意升级。
+
+当前仅RTX4090 24GB，16逻辑CPU；交接核对时GPU空闲、无训练/预测/cost/MPS进程，工作盘约剩2.88GiB。新任务先检查实时状态和磁盘，不能据此快照保证以后仍空闲。两学生best/last训练断点各约450MB，含优化器，不是推理体积；保留证据，不为省空间随意删。
+
+| 清单，均在项目`data/clean_v1_reviewed/` | 图 | Study | 患者 |
+| --- | ---: | ---: | ---: |
+| `train_clean.csv` | 30328 | 18513 | 11055 |
+| `valid_manifest.csv` | 1422 | 859 | 228 |
+| `test_manifest.csv` | 2218 | 1414 | 136 |
+
+valid从未并训。原图/原CSV只读，不改标签，不无依据补病种或强制No Finding互斥；历史清洗/人工复核见CLEANING_POLICY，不能按模糊度阈值自行删真实胸片。
+
+```text
+train_clean.csv: f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef
+valid_manifest.csv: c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112
+test_manifest.csv: fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3
+data/cv5_overnight/folds.json: e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67
+```
+
+## 6. 教师、预训练与蒸馏逻辑
+
+骨干均为ConvNeXt **V1**：教师`convnext_base.fb_in22k_ft_in1k_384`，学生`convnext_tiny.fb_in22k_ft_in1k_384`；初始化是ImageNet-22k→1k公开权重，模型卡Apache-2.0、上游MIT材料已留存。旧V2 FCMAE的NC来源不得复用。
+
+| 原始初始化 | 固定revision | 原权重SHA256 |
+| --- | --- | --- |
+| Tiny | `32c741ba106f9e062174ef829354a16719c3dcac` | `a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c` |
+| Base | `2b2698d86523262ca8065d0957c7f80d963bb43f` | `bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe` |
+
+原件位于`/home/featurize/.cache/huggingface/hub/models--timm--<backbone>/snapshots/<revision>/model.safetensors`，Tiny约114MB、Base约354MB。每个run的`pretrained_provenance.json`和OOF metadata保留来源及许可全文。新训练的首次HF查询当前仍可能跟随main，后续若需严格对照应使用已核验固定来源；上一轮用`HF_HUB_OFFLINE=1`读取本机缓存，独立许可证URL仍联网。不要默默换成远端新版本。
+
+五教师均768，采用已冻结的20/12/12/12/12轮最终EMA：fold0来自`runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt`，fold1–4来自`runs/023_convnext_v1_base768_teacher12_cv5/fold_N/best.pt`，路径均相对工作区根目录。fold0 E13仅历史诊断，不是当前教师；不重训/替换现成教师或用OOF标签挑epoch。
+
+严格患者OOF：每张train图只让未训练其患者的对应外折教师预测，不能把训练见过该患者的其他教师混入。缓存30328×2×10，identity+hflip，保存FP32原始logits（前向BF16），未预先温度化/对齐；不含valid/test。当前两个学生用完整train，**不是学生CV两折或五折**。
+
+```text
+OOF soft_labels.npz SHA: 573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5
+OOF metadata.json SHA: 39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd
+```
+
+学生α=.2、T=2，独立Bernoulli KL（含正/负项、乘T²）+加权硬BCE，前两轮渐进启用KD、Study等权。每视图先按`teacher_logit - log(teacher_pos_weight) + log(student_pos_weight)`对齐，再除T、sigmoid后平均软目标；十类不用softmax。详见`train_distill.py`/`distill_tta_data.py`，不要重复对缓存应用温度或把概率当logits。
+
+029/030只改seed/output，其余相同：batch8×accum4、有效batch32，25轮余弦上限、patience5/min_delta1e-4、LR5e-5/5e-4、warmup1、min_ratio.05、WD.05、dropout.2、droppath.1、EMA.999、grad_clip1、训练BF16、valid hflip2。两者均13轮早停、E8最佳。best保存任意真实AUC提升，早停参考只在超过min_delta时重置，二者不要混淆。
+
+## 7. 实验结论：哪些结果可比较
+
+| run | 主要设置/最佳轮 | 原生BF16最佳AUC | 实际FP16+hflip2 AUC |
+| --- | --- | ---: | ---: |
+| 026 | Tiny512独立BCE，E6 | .803596642 | .803634677 |
+| 027 | Tiny512 KD seed43，E7 | .805593834 | .805402258 |
+| 028 | Tiny512 KD短12轮日程，E7 | .803890563 | 未额外验证 |
+| 029 | Tiny768 KD seed43，E8 | .804176963 | .803983596 |
+| 030 | Tiny768 KD seed44，E8 | .807569817 | .807512423 |
+| 033 | 029/030概率25/75 | 不适用 | **.808384442** |
+
+已有参考：512+768各50%=.807157435；双768各50%=.808370073；旧43占75%/新44占25%=.806951639。后两行和033只来自预登记三组全局权重，不是密集搜索。25/75与50/50只差.000014369，不宣称25/75显著更好。
+
+033比单44+.000872019，七类升三类降；患者聚类配对1000次、seed20261027的95%区间[-.000714399,+.002738017]跨0。实际部署与数学融合排序/并列一致，沿用该区间而非再跑bootstrap；不修正seed/选epoch/多次比较/valid选参偏差。不能宣称稳定提分，也不能断言全是噪声。
+
+短日程未见改善，不继续围绕余弦长度反复试。后期loss下降而AUC退化，主要稀少类1拖累，并非所有类都下降或数值崩溃；不要据loss振荡任意改alpha、换ASL或恢复已早停run。详细逐类/曲线见各阶段复盘。
+
+## 8. 推理、共享TTA和速度的真实含义
+
+预处理保留EXIF、完整画面、等比例LANCZOS letterbox及ImageNet归一化。已实现灰度先缩放后展开RGB等值提速，同图共用解码/768数组和GPU原图/翻转输入；仍要两模型各两次前向，不能共用不同权重的CNN特征。没有跨图预测缓存，没有CLAHE。
+
+033在4090三轮均值79.375028/79.242428/79.223445ms，总79.280300；每图三轮均值P95=88.537651、max=91.263682，300次原始观测max=91.916501。无复测/删慢样本；模型初始化排除，读图到写CSV包含。原100图来自valid的53完整Study/40患者，另5预热图4Study/4患者。
+
+4090/MPS/16GiB分配器上限均不是T4模拟器。旧`deliveries/031_resource_stress_20261027/portable_t4_diagnostic`包含旧候选及同run E8/E13代理，**不能直接当033最终材料**；迁移需使用033真正两seed和同版源码。当前GPU训练/推理都已结束。
+
+## 9. 官方约束与最新补充
+
+以[官网](https://www.ncccu.org.cn/index/Paper/case1.html)所链[原规则](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)及[10月27正式补充](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf)为准，优先于FAQ/口头说法。
+
+- 非医学、公开可再分发、非NC/非gated的预训练要求同时约束教师和学生；只用官方数据，不引入外部医学数据。补充已明确仅官方train自监督允许，旧文档的概括禁令已过时；本项目未采用。
+- 固定TTA/集成、无拟合的确定性聚合允许；test不得训练、伪标签、估计先验/归一化或用于模型/阈值/权重选择。当前CSV只用于最终预测，之后的实验决定仍只能来自train/valid。
+- 全部实际推理权重与必要配置≤500,000,000bytes；不参与最终推理的教师不计，但须如实申报来源和蒸馏关系。
+- 正式T4按100图、batch1串行、另5图预热、三轮、读图至写出平均≤100ms。补充要求样本二值/Gate及概率排序一致；|Δp|≤1e-3仅在语义一致时允许，不能只放宽allclose就称合规。
+- 超时正式整改阶段不能换权重/改变预测语义。主AUC先保留四位小数再排序，同分比F1，再同分比提交时间。不要据本次test输出优化这些项目。
+
+原规则SHA：`ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6`；补充SHA：`836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44`。原件、来源和时间在`artifacts/kd_v1/submission_rules_recheck_20261028/`；详细边界见`docs/COMPETITION_RULES.md`和`docs/OFFICIAL_RULES_CHECKLIST.md`。
+
+## 10. 明确尚未解决的P0待办
+
+**A. 正式cost与新补充的一致性要求。** `cost.py:compare_predictions`当前只做`np.allclose(rtol=0,atol=1e-7)`，未显式核验样本Gate二值/类别排序/并列。裸`predict.py`、`cost.py`及Predictor也未统一显式seed；此次CSV的seed43来自归档`artifacts/kd_v1/dual768_submission_20261028/run_prediction.py`包装器。不能声称普通CLI已实现相同seed入口。后续需按规则完善一致性检查、随机种子及有意义测试，保持现有模型和CSV语义，不覆盖原执行源码证据。
+
+当前cost认证还要求100图包含所选Study全部视图；不闭合则一致性pending/exit2。若官方样本不闭合，须按正式样本口径核对方案，不能读取目录外预测偷偷补齐或把pending改成通过。保留最终`submission.image_predictions.csv`作核验依据。
+
+**B. 最终教师/双学生训练证据。** `/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/evidence_manifest.json`现含五名完整教师及废弃022 student（complete=false，旧config/账本路径已不存在）。`build_training_evidence.py`预览会早返回；实际执行拒绝teacher-evidence含任何student。不能照旧路径预览成功就宣称能合并。需从真实材料派生**新版本teacher-only索引**，保留旧原件，再按029、030顺序合并学生证据。
+
+教师日志亦需核验：fold0 recovered/live各自partial，已有带说明的group声明组合覆盖完整；保留“tmux恢复非原始stdout字节”“E1精确mtime未留”等事实。fold1–4主要关联controller日志，缺独立console_coverage项；结合真实执行回执、每轮账本及源码档案检查覆盖。不得只删旧student记录便宣称所有材料合格，更不能补造历史时间/日志。
+
+**C. 真正T4及最终包。** 尚无T4资源，不要再做“等效T4”推断。得到T4后迁移033、同版代码/依赖/许可，按官方图片及最终CSV核验。最终包需绑定五教师与029/030两学生的初始化、许可、哈希、源码/环境、完整日志和逐轮证据，当前未组装完成。
+
+用户希望继续提分时，先保留033和CSV，再从train/valid设计单因素对照；CLAHE是候选，不是已证实改进或省时操作。DALI有实现加速可能但当前未装，不能声称已有收益。不要把新增训练、损失/alpha/日程/预处理同时改变。
+
+## 11. 代码入口和执行副作用
+
+| 入口 | 用途/注意 |
+| --- | --- |
+| `model_overnight.py`、`kd_common.py` | V1白名单、初始化来源/许可协议 |
+| `train_overnight.py`、`dataset_overnight.py` | 当前训练仍依赖的共享工具；文件名带overnight不代表废弃，不能直接删 |
+| `train_teacher.py`、`run_mixed_teachers.py` | 教师/混合轮数，当前已完成，不重复启动 |
+| `extract_soft_labels_tta.py`、`distill_tta_data.py` | 严格OOF双视图原始logits及读取 |
+| `train_distill.py` | KD/独立BCE；默认配置预览，`--execute`才训练 |
+| `run_student_experiments.py` | 旧调度工具，不作为当前阶段自动连跑入口 |
+| `compose_students.py` | 默认预览；`--execute`才复制模型并生成config |
+| `export_student.py` | 普通调用立即导出；只有`--estimate-only`为估算 |
+| `predict.py`、`validate_student.py`、`cost.py` | **无默认preview，普通调用执行GPU推理** |
+| `benchmark_local_resources.py` | 默认元数据预览，`--execute`才GPU；不认证T4 |
+| `compare_student_candidates.py` | CPU概率比较、患者区间；`--reference`不改变成员/权重顺序 |
+| `build_training_evidence.py` | 默认preview，`--execute`写证据；preview不等于深核验通过 |
+| `package_kd_submission.py` | **没有preview/--execute，调用即写材料**，缺项返回pending/exit2 |
+| `preflight_kd.py` | 只读环境/清单检查，`--check-files`仅stat；传`--output`才写报告 |
+
+`compose --weights-json`要数组M或M×10；预登记`DUAL_TINY768_WEIGHTS_20261027.json`是映射，只可直接用于compare的`--combinations-json`，不能混传。
+
+最近验证：等值推理优化时完整CPU套件269项/365子测试通过；后加`--reference`定向`test_student_workflow.py`17项通过。不是本次重新跑了完整套件。本轮交接仅只读核对与文档，不需要构建模型或重跑预测。
+
+## 12. 第一轮接手的安全检查
+
+```bash
+cd /home/featurize/work/cloud_project_v2
+git status --short
+git log -6 --oneline
+df -h /home/featurize/work
+nvidia-smi --query-gpu=name,memory.used,utilization.gpu --format=csv,noheader
+nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv,noheader
+sha256sum /home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv
+```
+
+后续修改若Git未配置身份，可局部使用`git -c user.name=Codex -c user.email=codex@localhost commit -m '清楚说明本次改动'`，不改全局设置。不要为核对接手状态运行predict/cost/package；先读元数据和当前用户要求。
+
+## 13. 精确证据与阅读索引
+
+最新状态以[CSV交付](docs/SUBMISSION_DUAL768_20261028.md)、[SUBMISSION登记](docs/DUAL_TINY768_SUBMISSION_20261028.json)、[真实部署复盘](docs/DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)为准。`ACCEPTANCE`的`final_test_csv_generated=false`是生成CSV前快照，`SELECTION`的待验证字段同理，不能当成当前未完成，也不要回写历史。
+
+| 内容 | 项目内记录/证据 |
+| --- | --- |
+| 当前CSV、原图/源码保护审计 | `artifacts/kd_v1/dual768_submission_20261028/{execution.json,audit.json,protected_before.json,source/}` |
+| 实际组合valid/4090独立核验 | `artifacts/kd_v1/dual768_deployment_review_20261028/{actual_integrity.json,rank_equivalence.json,execution_*.json,source/}` |
+| 双768三组概率诊断 | 工作区`deliveries/032_dual_tiny768_fixed_weights_diagnostic/comparison_report.json` |
+| 033之前的十类/区间/切片 | `docs/DUAL_TINY768_FP16_REVIEW_20261028.md` |
+| 030早停及曲线/来源 | `docs/TINY768_SEED44_REVIEW_20261028.md`及`artifacts/kd_v1/tiny768_seed44_review_20261028/` |
+| OOF及教师改进历史 | `docs/OOF_CACHE_REVIEW_20261027.md`、`docs/TEACHER_EPOCH_REVIEW_20261027.md` |
+| 老计时、等值优化/MPS边界 | `docs/RESOURCE_STRESS_RESULTS_20261027.md` |
+| 历史清理/旧方案 | `docs/history/`；只作文字证据，不复用旧V2流程 |
+
+部分审计JSON的`no_gpu_work=true`仅指对应CPU审计，不是全项目或主代理执行记录；实际033部署和测试生成均做过GPU前向。真实训练归档也不是后来部署等值提速的源码版本，不要求把两者伪造成相同。
+
+重要近期提交：`e405596`等值预处理/TTA输入共享；`e664562`比较参照选项；`f374319`真实双768部署/计时；`00df855`官方补充适用；`87dcf68`当前测试CSV交付记录。接手先保住这一可回退版本，再按用户新任务推进。

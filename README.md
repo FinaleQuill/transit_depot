@@ -1,5 +1,7 @@
 # 胸片多标签分类：ConvNeXt V1 离线蒸馏
 
+接手agent先读[项目交接文件](AGENT_HANDOFF.md)：当前CSV/模型、验证证据、规则补充、授权边界及cost/材料待办均已整理；不要从历史命令重启已完成阶段。
+
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → 双Tiny768不同seed学生 → FP16固定hflip2/概率加权集成及官方核验**。
 
 教师采用已冻结的混合轮数：fold0为20轮，fold1–4各12轮；集合入口为 `../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json`。五折教师已于2026-10-26 19:26（香港）全部正常完成。
