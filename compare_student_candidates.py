@@ -33,21 +33,25 @@ def normalized_weights(values, count):
     return weights / sums
 
 
-def paired_intervals(targets, candidates, subjects, *, samples, seed):
+def paired_intervals(targets, candidates, subjects, *, samples, seed, reference=None):
     if type(samples) is not int or not 0 <= samples <= 10000:
         raise ValueError("Bootstrap samples must be in 0..10000")
+    names = list(candidates)
+    if reference is not None and reference not in names:
+        raise ValueError("Bootstrap reference must name a candidate")
     if not samples:
         return {}
+    reference = names[0] if reference is None else reference
+    compared_names = [name for name in names if name != reference]
     groups = [np.flatnonzero(subjects == subject) for subject in np.unique(subjects)]
     rng = np.random.default_rng(seed)
-    names = list(candidates)
-    deltas = {name: [] for name in names[1:]}
+    deltas = {name: [] for name in compared_names}
     for _ in range(samples):
         indices = np.concatenate([groups[i] for i in rng.integers(0, len(groups), len(groups))])
-        reference = class_aucs(targets[indices], candidates[names[0]][indices])
-        for name in names[1:]:
+        reference_aucs = class_aucs(targets[indices], candidates[reference][indices])
+        for name in compared_names:
             auc = class_aucs(targets[indices], candidates[name][indices])
-            row = [None if a is None or b is None else a - b for a, b in zip(auc, reference)]
+            row = [None if a is None or b is None else a - b for a, b in zip(auc, reference_aucs)]
             macro = None if any(v is None for v in row) else float(np.mean(row))
             deltas[name].append(row + [macro])
     result = {}
@@ -58,11 +62,12 @@ def paired_intervals(targets, candidates, subjects, *, samples, seed):
             intervals.append({"valid_resamples": len(valid), "ci_95":
                               None if not valid else np.quantile(valid, [.025, .975]).tolist()})
         result[name] = {"per_class_delta": intervals[:10], "macro_auc_delta": intervals[10]}
-    return {"reference": names[0], "samples": samples, "seed": seed,
+    return {"reference": reference, "samples": samples, "seed": seed,
             "sampling_unit": "patient_with_all_Studies", "paired": True, "results": result}
 
 
-def compare(*, validation_dirs, manifest, output, names=None, combinations_json=None, bootstrap=0, seed=43):
+def compare(*, validation_dirs, manifest, output, names=None, combinations_json=None, bootstrap=0, seed=43,
+            reference=None):
     from dataset import read_manifest
     if not validation_dirs or len(validation_dirs) > 16:
         raise ValueError("Provide 1..16 saved validation runs")
@@ -70,6 +75,9 @@ def compare(*, validation_dirs, manifest, output, names=None, combinations_json=
     names = list(names) if names else [p.name for p in roots]
     if len(names) != len(roots) or len(set(names)) != len(names) or any(not x for x in names):
         raise ValueError("Candidate names must be unique and match the validation runs")
+    if reference is not None and reference not in names:
+        raise ValueError("Reference must name an individual validation candidate")
+    reference = names[0] if reference is None else reference
     output = Path(output).resolve()
     if output.exists():
         raise FileExistsError("Choose a new comparison output")
@@ -122,7 +130,7 @@ def compare(*, validation_dirs, manifest, output, names=None, combinations_json=
         weights = normalized_weights(raw, len(roots))
         candidates[name] = (stack * weights[:, None, :]).sum(0)
         fixed[name] = weights.tolist()
-    reference = class_aucs(targets, candidates[names[0]])
+    reference_aucs = class_aucs(targets, candidates[reference])
     scores = {}
     for name, values in candidates.items():
         aucs = class_aucs(targets, values)
@@ -133,13 +141,14 @@ def compare(*, validation_dirs, manifest, output, names=None, combinations_json=
             slices[label] = {"num_studies": len(indices), "per_class_auc": sliced,
                              "macro_auc": None if any(v is None for v in sliced) else float(np.mean(sliced))}
         scores[name] = {"macro_auc": float(np.mean(aucs)), "per_class_auc": aucs,
-                        "per_class_delta_from_reference": [a - b for a, b in zip(aucs, reference)],
-                        "macro_auc_delta_from_reference": float(np.mean(aucs) - np.mean(reference)), "slices": slices}
+                        "per_class_delta_from_reference": [a - b for a, b in zip(aucs, reference_aucs)],
+                        "macro_auc_delta_from_reference": float(np.mean(aucs) - np.mean(reference_aucs)), "slices": slices}
     result = {"manifest_sha256": manifest_hash, "num_studies": len(keys), "num_patients": len(np.unique(subjects)),
-        "reference": names[0], "candidates": scores, "source_validations": provenance,
+        "reference": reference, "candidates": scores, "source_validations": provenance,
         "fixed_probability_weights": fixed, "weights_fitted": False, "thresholds_fitted": False,
         "deployment_selected": False, "T4_latency_certified": False,
-        "bootstrap": paired_intervals(targets, candidates, subjects, samples=bootstrap, seed=seed),
+        "bootstrap": paired_intervals(targets, candidates, subjects, samples=bootstrap, seed=seed,
+                                      reference=reference),
         "note": "Validation comparisons are exploratory; no early-disease or lesion-size annotation is inferred."}
     output.mkdir(parents=True)
     write_json(output / "comparison_report.json", result)
@@ -150,6 +159,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--validation-dirs", nargs="+", type=Path, required=True)
     parser.add_argument("--names", nargs="+")
+    parser.add_argument("--reference", help="Individual candidate name used for point and bootstrap deltas (default: first input)")
     parser.add_argument("--manifest", type=Path, default=Path(__file__).resolve().parent / "data/clean_v1_reviewed/valid_manifest.csv")
     parser.add_argument("--combinations-json", type=Path)
     parser.add_argument("--bootstrap", type=int, default=0)

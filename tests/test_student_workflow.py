@@ -153,12 +153,85 @@ class SavedProbabilityTests(unittest.TestCase):
             self.assertAlmostEqual(result['candidates']['weighted']['macro_auc'], expected_weighted)
             self.assertEqual(result['num_patients'], 3)
             self.assertEqual(result['num_studies'], 6)
+            self.assertEqual(result['reference'], 'tiny512')
+            self.assertEqual(result['bootstrap']['reference'], 'tiny512')
+            self.assertNotIn('tiny512', result['bootstrap']['results'])
+            self.assertAlmostEqual(result['candidates']['tiny768']['macro_auc_delta_from_reference'],
+                roc_auc_score(targets[:, 0], values[1][:, 0]) -
+                roc_auc_score(targets[:, 0], values[0][:, 0]))
             self.assertTrue(result['bootstrap']['paired'])
             self.assertEqual(result['bootstrap']['sampling_unit'], 'patient_with_all_Studies')
             self.assertEqual(result['bootstrap']['results']['tiny768']['macro_auc_delta']['valid_resamples'], 20)
             self.assertFalse(result['weights_fitted'])
             self.assertFalse(result['deployment_selected'])
             self.assertFalse(result['T4_latency_certified'])
+
+    def test_cli_second_member_reference_preserves_weights_and_paired_deltas(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest, roots, targets, values = self.fixtures(root)
+            weights = root / 'weights.json'
+            write_json(weights, {'weighted': [1, 3]})
+            output = root / 'comparison'
+            with redirect_stdout(io.StringIO()):
+                self.assertEqual(comparison.main(['--validation-dirs', *map(str, roots),
+                    '--names', 'seed43', 'seed44', '--reference', 'seed44',
+                    '--manifest', str(manifest), '--combinations-json', str(weights),
+                    '--bootstrap', '20', '--seed', '43', '--output', str(output)]), 0)
+            result = json.loads((output / 'comparison_report.json').read_text())
+            self.assertEqual(result['reference'], 'seed44')
+            self.assertEqual(result['bootstrap']['reference'], 'seed44')
+            self.assertEqual(list(result['candidates']), ['seed43', 'seed44', 'weighted', 'equal_mean'])
+            self.assertEqual([p['name'] for p in result['source_validations']], ['seed43', 'seed44'])
+            self.assertEqual([p['validation_dir'] for p in result['source_validations']],
+                             [str(p.resolve()) for p in roots])
+            np.testing.assert_array_equal(result['fixed_probability_weights']['weighted'],
+                                          [[.25] * 10, [.75] * 10])
+            matrices = {'seed43': values[0], 'seed44': values[1],
+                        'weighted': .25 * values[0] + .75 * values[1],
+                        'equal_mean': (values[0] + values[1]) / 2}
+            reference_auc = roc_auc_score(targets, values[1], average=None)
+            for name, matrix in matrices.items():
+                aucs = roc_auc_score(targets, matrix, average=None)
+                score = result['candidates'][name]
+                np.testing.assert_allclose(score['per_class_auc'], aucs)
+                np.testing.assert_allclose(score['per_class_delta_from_reference'], aucs - reference_auc)
+                self.assertAlmostEqual(score['macro_auc_delta_from_reference'],
+                                       float(np.mean(aucs - reference_auc)))
+            self.assertEqual(list(result['bootstrap']['results']), ['seed43', 'weighted', 'equal_mean'])
+            # Independently replay patient draws with sklearn, without calling the helper under test.
+            draws = np.random.default_rng(43).integers(0, 3, (20, 3))
+            for name in result['bootstrap']['results']:
+                rows = []
+                for draw in draws:
+                    indices = np.asarray([i for patient in draw for i in (2 * patient, 2 * patient + 1)])
+                    delta = (roc_auc_score(targets[indices], matrices[name][indices], average=None) -
+                             roc_auc_score(targets[indices], values[1][indices], average=None))
+                    rows.append([*delta, float(np.mean(delta))])
+                expected = np.quantile(rows, [.025, .975], axis=0).T
+                actual = result['bootstrap']['results'][name]
+                intervals = actual['per_class_delta'] + [actual['macro_auc_delta']]
+                self.assertEqual([v['valid_resamples'] for v in intervals], [20] * 11)
+                np.testing.assert_allclose([v['ci_95'] for v in intervals], expected, atol=1e-15)
+
+    def test_reference_must_be_an_individual_name_before_creating_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest, roots, _, _ = self.fixtures(root)
+            weights = root / 'weights.json'
+            write_json(weights, {'weighted': [1, 3]})
+            for reference in ('missing', 'weighted', 'equal_mean', '', 'tiny768'):
+                with self.subTest(reference=reference):
+                    output = root / 'not_created' / 'comparison'
+                    with self.assertRaisesRegex(ValueError, 'individual'):
+                        comparison.compare(validation_dirs=roots, names=['seed43', 'seed44'],
+                            manifest=manifest, output=output, combinations_json=weights,
+                            reference=reference)
+                    self.assertFalse(output.parent.exists())
+            with redirect_stdout(io.StringIO()), self.assertRaisesRegex(ValueError, 'individual'):
+                comparison.main(['--validation-dirs', *map(str, roots), '--reference', 'equal_mean',
+                    '--manifest', str(manifest), '--output', str(root / 'cli_invalid')])
+            self.assertFalse((root / 'cli_invalid').exists())
 
     def test_wrong_manifest_or_missing_study_is_rejected_without_output(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -190,6 +263,13 @@ class SavedProbabilityTests(unittest.TestCase):
         second = comparison.paired_intervals(targets, inputs, subjects, samples=12, seed=7)
         self.assertEqual(first, second)
         self.assertEqual(first['results']['identical']['macro_auc_delta']['ci_95'], [0., 0.])
+        explicit = comparison.paired_intervals(targets, inputs, subjects, samples=12, seed=7,
+                                               reference='identical')
+        self.assertEqual(explicit['reference'], 'identical')
+        self.assertEqual(list(explicit['results']), ['reference'])
+        self.assertEqual(explicit['results']['reference']['macro_auc_delta']['ci_95'], [0., 0.])
+        with self.assertRaisesRegex(ValueError, 'reference'):
+            comparison.paired_intervals(targets, inputs, subjects, samples=0, seed=7, reference='missing')
 
     def test_same_auc_cannot_hide_changed_probability_file(self):
         with tempfile.TemporaryDirectory() as directory:
