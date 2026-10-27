@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-27复核：教师、BCE512实际FP16和严格OOF缓存已完成并验收；BCE AUC=.803634677、权重/config55,778,119bytes，体积通过。OOF30328图仅train，各图对应教师训练患者交集0，valid未并训/test未使用；下一项为027单个KD512，尚未启动。T4≤100ms、完整test CSV与最终材料仍待验收，不宣称正式提交全部合格。规则来源见`artifacts/kd_v1/rules_recheck_20261027/`，OOF证据见`artifacts/kd_v1/oof_cache_review_20261027/`。
+2026-10-27复核：教师、BCE实际FP16、严格OOF及027 KD训练已完成验收；KD第12轮正常早停、E7最佳，下一项为KD实际FP16验证。BCE已验证AUC=.803634677、55,778,119bytes；KD实际体积与配对AUC待导出，不直接沿用BCE结果。OOF仅train且患者隔离，valid未并训/test未拟合，当前未发现规则冲突。T4≤100ms、完整test CSV与最终材料仍待验收。来源见`artifacts/kd_v1/rules_recheck_20261027/`，KD证据见`artifacts/kd_v1/kd512_review_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
