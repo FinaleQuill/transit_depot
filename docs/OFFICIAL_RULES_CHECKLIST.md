@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-28复核：030实际FP16=.807512423，单学生文件66,995,857bytes；032三组预登记双768固定概率诊断核验通过，25/75=.808384442、患者区间[-.000714399,+.002738017]跨0。下一阶段选25/75为工程候选，如实登记valid选参，不新增测试信息或改历史报告；真实组装/完整valid/计时仍待。CPU组装预览128,766,272bytes及原105张valid计时图完整性通过，不等于实际部署已验收。OOF/非医学初始化/数据隔离保持，test不参与，CLAHE/DALI未加入。4090/MPS不能代替官方T4≤100ms及最终CSV/材料验收。当前见[双768实际FP16复盘](DUAL_TINY768_FP16_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
+2026-10-28复核：真实033双768 25/75已组装及完整valid验证，AUC=.808384442、实际权重/config128,766,272bytes，体积通过；原生4090按100图/另5图预热/batch1串行三轮端到端79.280300ms、三轮CSV与完整valid一致。正式T4与最终test submission.csv/材料仍待，当前不声明完整官方compliance_pass。valid选择已登记，患者区间跨0，不新增测试信息或改历史报告；OOF/非医学初始化/数据隔离保持，test未参与，CLAHE/DALI未加入。当前见[真实部署复盘](DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。
