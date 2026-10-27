@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-27复核：五教师、E13/原五教师valid logits诊断和独立BCE512均已完成；BCE最佳E6、第11轮早停，valid未并训，OOF/KD尚未启动。当前阶段未发现规则冲突，下一项为实际FP16导出/valid概率核验；完整CSV、实际体积、T4延迟及完整材料仍须后续验收。rules.pdf与已重新下载的官方PDF SHA256一致，规则证据见`artifacts/kd_v1/rules_recheck_20261027/`，BCE证据见`artifacts/kd_v1/bce_baseline_review_20261027/`。
+2026-10-27复核：五教师、教师诊断、BCE512及其实际FP16验证均已完成；FP16 AUC=.803634677、推理权重/config共55,778,119bytes，体积通过。valid未并训，OOF/KD尚未启动，下一项只提取原集合严格OOF。当前未发现规则冲突，T4端到端≤100ms、完整test CSV及材料仍待验收；不因valid/体积通过就宣称正式提交全部合格。rules.pdf来源证据见`artifacts/kd_v1/rules_recheck_20261027/`，FP16证据见`artifacts/kd_v1/bce_fp16_review_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。

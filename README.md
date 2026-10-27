@@ -3,9 +3,9 @@
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → Tiny512/768学生对照与多seed → FP16固定TTA/多模型候选及官方核验**。
 
 教师采用已冻结的混合轮数：fold0为20轮，fold1–4各12轮；集合入口为 `../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json`。五折教师已于2026-10-26 19:26（香港）全部正常完成。
-用户已批准**固定双视图TTA与多学生概率集成**。教师诊断及独立BCE512均已完成并核验；BCE最佳E6 Macro-AUC=0.803596642，第11轮早停，实际约80分钟。下一项先做E6的FP16导出/valid验证，补齐真实部署及逐Study概率，再决定OOF教师/KD512、768及额外seed。当前结论和命令见[BCE基线验收](docs/BCE_BASELINE_REVIEW_20261027.md)，教师选择依据见[教师验收](docs/TEACHER_EPOCH_REVIEW_20261027.md)；后续部署见[TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)。OOF和KD学生尚未启动。
+用户已批准**固定双视图TTA与多学生概率集成**。教师诊断、独立BCE512与E6实际FP16验证均已通过；BCE训练约80分钟，实际部署AUC=0.803634677、推理文件55,778,119bytes，T4计时仍待完成。下一项仅提取原集合20/12/12/12/12的严格OOF逐视图logits，验收后再给KD512训练指令。当前判断和命令见[FP16验收与OOF交接](docs/BCE_FP16_REVIEW_20261027.md)，训练曲线见[BCE基线验收](docs/BCE_BASELINE_REVIEW_20261027.md)；后续部署见[TTA/集成手册](docs/KD_TTA_ENSEMBLE_USAGE.md)。OOF和KD尚未启动，E13候选保留。
 
-**阶段验收约定：**每个大阶段完成后先核验结果、分析整体/逐类AUC与患者级不确定性、反馈是否需要修改，再确定下一阶段；当前OOF与KD暂停，先完成BCE真实部署验证。
+**阶段验收约定：**每个大阶段完成后先核验结果、分析整体/逐类AUC与患者级不确定性、反馈是否需要修改，再确定下一阶段；当前只交接OOF提取，KD仍等待缓存验收，不自动连跑。
 
 ## 操作入口
 
