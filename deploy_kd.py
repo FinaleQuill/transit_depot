@@ -375,11 +375,13 @@ def load_image_arrays(path: str | Path, image_sizes: Sequence[int]) -> dict[int,
     """Decode/EXIF exactly once per source image; deterministic per-size preprocessing."""
     with Image.open(path) as source:
         source.load()
-        upright = ImageOps.exif_transpose(source)
-        if upright.mode in {"I", "F"} or upright.mode.startswith("I;"):
+        ImageOps.exif_transpose(source, in_place=True)
+        if source.mode in {"I", "F"} or source.mode.startswith("I;"):
             raise ValueError("Non-8-bit image requires an explicit intensity policy")
-        rgb = upright.convert("RGB")
-        return {size: image_array(rgb, size) for size in sorted(set(image_sizes))}
+        # LANCZOS treats the identical RGB channels of an L image identically.
+        # Resize its single channel first; letterbox_rgb expands the result on paste.
+        image = source if source.mode == "L" else source.convert("RGB")
+        return {size: image_array(image, size) for size in sorted(set(image_sizes))}
 
 
 def load_image_array(path: str | Path, image_size: int = IMAGE_SIZE) -> np.ndarray:
@@ -442,13 +444,17 @@ class Predictor:
             inputs = {size: torch.from_numpy(array).unsqueeze(0).to(
                 self.device, dtype=torch.float16, memory_format=torch.channels_last)
                 for size, array in arrays.items()}
+            transformed_inputs = {(size, "identity"): image for size, image in inputs.items()}
             for member, model in zip(self.members, self.models):
-                image = inputs[member["image_size"]]
+                size = member["image_size"]
                 views = ("identity", "hflip") if member["tta"] == "hflip2" else ("identity",)
                 probabilities = []
                 for view in views:
-                    transformed = (torch.flip(image, dims=(-1,)).contiguous(memory_format=torch.channels_last)
-                                   if view == "hflip" else image)
+                    key = (size, view)
+                    if key not in transformed_inputs:
+                        transformed_inputs[key] = torch.flip(inputs[size], dims=(-1,)).contiguous(
+                            memory_format=torch.channels_last)
+                    transformed = transformed_inputs[key]
                     logits = model(transformed)
                     if tuple(logits.shape) != (1, 10) or not bool(torch.isfinite(logits).all()):
                         raise FloatingPointError("Invalid single-image student logits")
