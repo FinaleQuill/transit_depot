@@ -57,7 +57,7 @@
 
 用户所述队友方案是CLAHE对比度增强，并非预测缓存。当前训练/上述测试都未加入CLAHE。DALI官方确有支持CPU/GPU的fn.clahe，环境当前未安装；GPU支持不证明本项目batch1端到端会更快，也不证明AUC提高。若采用，要固定参数/操作顺序、验证CPU/GPU实现一致性和依赖复现，计入单图全部成本，不跨测量图片预取隐藏工作。[DALI官方CLAHE](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/operations/nvidia.dali.fn.clahe.html)
 
-当前029完整valid实际FP16及一次固定512+768概率诊断已完成，融合=.807157435、患者区间跨0。用户最新目标为双Tiny768，下一项交接030 Tiny768 seed44，未启动；保留027及原融合参考，新的训练/粗权重协议见[双Tiny768计划](DUAL_TINY768_PLAN_20261027.md)。上述E8/E13计时代理不成为正式精度成员，未来实际029+030须单独验收。
+当前029完整valid实际FP16及一次固定512+768概率诊断已完成，融合=.807157435、患者区间跨0。030 Tiny768 seed44现也已正常完成，E8原生BF16=.807569817，下一项为实际FP16/valid及预登记双768三组全局权重诊断，见[第二个Tiny768复盘](TINY768_SEED44_REVIEW_20261028.md)。上述E8/E13计时代理不成为正式精度成员，未来实际029+030须单独验收。
 
 便携开发计时材料输出于`../deliveries/031_resource_stress_20261027/portable_t4_diagnostic`，复制同一valid清单/105图、权重/config、源码及依赖说明，保持原件不变。迁移到T4时必须运行真实设备，不使用4090的MPS比例；正式验收继续以官方predict.py/cost.py、最终CSV和完整test口径为准。它是开发材料，不是已合格的最终提交包。
 
