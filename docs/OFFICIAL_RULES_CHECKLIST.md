@@ -23,6 +23,6 @@
 
 当前混合计划为fold0固定20轮、fold1–4各固定12轮，完整保留原五折患者隔离；中途第13轮只用于官方valid诊断。教师数量、训练轮数和学生分辨率的调整不免除以上任何要求。
 
-2026-10-27复核：027 E7实际FP16已验收，AUC=.805402258、权重/config66,995,853bytes，体积通过；BCE部署保留，固定组合未采用。OOF患者隔离、valid未并训/test未拟合，下一项仅028短日程新run，当前未发现规则冲突。T4官方≤100ms、完整test CSV及最终材料仍待验收，不能宣称全部合规。来源见`artifacts/kd_v1/rules_recheck_20261027/`，当前证据见`artifacts/kd_v1/kd512_fp16_review_20261027/`。
+2026-10-27复核：027 E7实际FP16仍为主候选，AUC=.805402258、文件66,995,853bytes；028短日程/029高分辨率训练已完成，未见单768整体点分提升，当前先验收029实际FP16及固定512+768概率诊断，不启动新训练。029及计时组合实际文件约67/129MB，体积通过；4090原生/MPS压力测试与等值加速均不构成真实T4认证。OOF隔离、valid未并训/test未拟合保持，CLAHE/DALI未应用或安装。T4官方≤100ms、完整test CSV及最终材料仍待验收。当前见[Tiny768复盘](TINY768_REVIEW_20261027.md)和[4090计时报告](RESOURCE_STRESS_RESULTS_20261027.md)，官方来源证据仍为`artifacts/kd_v1/rules_recheck_20261027/`。
 
 来源：[官网](https://www.ncccu.org.cn/index/Paper/case1.html)、[官方PDF](https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf)、[在线答疑](https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2)。

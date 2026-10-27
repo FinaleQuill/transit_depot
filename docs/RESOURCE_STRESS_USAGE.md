@@ -1,5 +1,7 @@
 # 隔离资源压测与未来T4复测
 
+> 实测与后置等值预处理加速已完成，当前结果见[4090计时报告](RESOURCE_STRESS_RESULTS_20261027.md)。旧MPS表格与新版原生结果分版本保留，不把任何一档命名为等效T4。
+
 本流程在4090上用独立MPS客户端限制计算资源，不修改GPU时钟、功耗、计算模式或既有推理实现。它不是T4仿真器，所有报告明确保留T4未认证。真实T4不可用时，只用于开发阶段了解资源收紧后的端到端耗时。
 
 NVIDIA的MPS支持按客户端设置可用线程比例，部分比例会按硬件粒度取整；本机已验证100/30/20/10%分别得到128/38/24/12个CUDA可见SM，并核对过实际MPS客户端连接。16GiB限制同时声明在MPS客户端与PyTorch分配器；它不把显存带宽、缓存、Tensor Core或CUDA内核变成T4。[MPS官方说明](https://docs.nvidia.com/deploy/mps/latest/appendix-environment-variables.html)
