@@ -626,12 +626,16 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
 
     hook = optimizer.register_step_post_hook(after_step)
     handlers = {sig: signal.signal(sig, request_stop) for sig in (signal.SIGTERM, signal.SIGINT)}
-    state = "paused"
+    state = "running"
     last_hash = None
     last_audit = None
     try:
+        write_json(out / "status.json", {"state": state, **progress, "best_auc": best_auc,
+            "best_epoch": best_epoch, "best_checkpoint_sha256": best_hash,
+            "updated_utc": datetime.now(timezone.utc).isoformat()})
         for epoch in range(progress["completed_epochs"] + 1, config.epochs + 1):
             if stop_requested or (out / "STOP").exists():
+                state = "paused"
                 break
             options = {"image_root": root, "num_workers": config.num_workers,
                        "prefetch_factor": config.prefetch_factor,
@@ -699,7 +703,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                                         "best_checkpoint_sha256": best_hash,
                                         "checkpoint_saved_at_utc": last_audit["saved_at_utc"],
                                         "checkpoint_audit_record_sha256": last_audit["record_sha256"]}) + "\n")
-            state = "completed" if epoch == config.epochs else "paused"
+            state = "completed" if epoch == config.epochs else "running"
             if config.patience and early["bad_epochs"] >= config.patience:
                 state = "early_stopped"
             write_json(out / "status.json", {"state": state, **progress, "best_auc": best_auc,
