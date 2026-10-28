@@ -1,6 +1,23 @@
-# 项目交接：CXR比赛双Tiny768蒸馏方案
+# 本次交接仅测速：033双Tiny768在2080Ti上的原样基准
 
-更新时间：2026-10-28，Asia/Hong_Kong（UTC+8）。文档加入前的Git基线为`87dcf68`。本文件供没有前文聊天记录的agent接手；先理解当前状态，不重复运行历史命令。
+更新时间：2026-10-29，Asia/Hong_Kong（UTC+8）。初版交接前Git基线为`87dcf68`，本次任务前为`d8bf7e8`。本文件供没有前文聊天记录的agent接手；下方历史模型状态继续保留，**顶部本次测速范围优先**。
+
+## 0. 本次任务是测速，禁止顺手优化
+
+用户没有T4且租不到，同一时间只租一台Featurize服务器。当前仅授权准备并在另一张卡上测**原样033双768**；建议先保存/结束4090会话，再租一台RTX2080Ti 22G，完成后带回结果、返回4090，由原代理判断是否及如何优化。3060仅在2080Ti不可用时备用，不要求两台都测，不同时购买。
+
+用户已明确要求做好必要准备，并让新agent自动完成目标机环境检查/隔离环境准备、输入校验、原样GPU测速及结果保存；这些步骤无需重复询问确认。仍不得优化、训练、换模型、上传、购买或归还实例。**新服务器不需要重新下载/解压全量数据集，包内105张图已足够本任务。** 可直接转发给新agent的话见[自动测速任务文本](docs/DUAL768_NEW_AGENT_PROMPT_20261029.md)。
+
+**测速agent先读[仅测速操作交接](docs/DUAL768_PROXY_TIMING_HANDOFF_20261029.md)。不要从下文历史命令启动训练、改Loss/增强/CLAHE/DALI、换模型/TTA/精度/融合权重、优化推理、重做test CSV或上传。** 本轮也不修cost或训练证据工具，只记录其历史待办。
+
+- 唯一对象：033的029/030真实两seed，25%/75%、768、FP16、每模型原图+hflip、四次串行前向。基线4090端到端79.280300ms，固定100张valid图/另5张预热/三轮，不是只测GPU。
+- 精确源码、033权重/config、105张图、原valid manifest及4090参考在工作区`deliveries/034_dual768_proxy_timing_20261029/dual768_timing_only.tar.gz`；不是旧031便携包。包实测266,803,659bytes，SHA256为`ae2703c82d5d704b4fe7ed5a6d2702c14b2cca2e14673c4365ee2f0097b5b7a4`，132文件压缩内容逐项核验及CPU元数据预览通过，详见同目录`packaging_verification.json`。此包不等于完整训练资产备份。
+- 原样用`benchmark_local_resources.py`，显式8GiB allocator上限、真实卡SM、seed43，三轮无插桩基准先跑；可选分段诊断另进程。不加sleep、不启用MPS、不调功耗/时钟，不把倍率当T4认证。
+- 迁移只派生selection的manifest_path，保留原件/图片/manifest字节。报告既要同机三轮一致性，也要与包内4090参考的概率、固定.5二值及排序核对；保留所有慢轮/异常。
+- 工作区Git不含权重/数据。原始数据约52GB在`/home/featurize/data/cxr_first`、不属于work；切换实例前确认可恢复。当前旧conda Python路径实际不存在，目标机先核对Python3.12与固定依赖，勿照抄旧路径。原work约余2.9GB，不在这里下载4.607GB镜像或删除训练资产。
+- 结果保存到持久work，带回`local_resource_report.json`、三轮Study/逐图CSV、日志/退出码、环境/CPU/GPU/磁盘及一致性报告；测完停止并返回4090再分析。当前**尚未在2080Ti/3060测速**。
+
+2026-10-29只读网页快照推荐RTX2080Ti 22G（8核E5-2686 v4、0.69元/小时）；可用量/价格以[购买时页面](https://featurize.cn/vm/available)为准。agent不得自动购买、归还实例或读取凭证。简单重复核验用medium，复杂分析high，不用ultra。
 
 ## 1. 当前结论与用户意图
 
@@ -23,7 +40,7 @@
 
 “未上传”是本代理的执行记录；用户若随后手动上传，以用户最新反馈为准。不要把valid AUC当成测试成绩，也不要将4090时间写成T4认证。
 
-本轮用户只要求生成交接文件。此前“代执行”授权对应的部署、验证、计时和CSV步骤均已完成，不意味着现在应自动启动新训练、重复test预测或上传平台。
+此前“代执行”授权对应的部署、验证、4090计时和CSV步骤均已完成。本次最新授权仅为顶部所述异卡原样测速交接；不能据旧授权自动启动新训练、优化、重复test预测或上传。
 
 ## 2. 接手必读与协作方式
 
@@ -82,7 +99,7 @@ ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661
 
 ## 5. 环境与数据
 
-固定Python：`/home/featurize/.conda/envs/cxr-kd-v1/bin/python`。已核验Python3.12.15、torch2.10.0+cu128、torchvision0.25.0、timm1.0.30、numpy1.26.4、sklearn1.6.1；推理依赖见`requirements_inference.txt`，训练见`requirements_kd.txt`。不要覆盖官方CUDA环境或随意升级。
+历史训练/033执行Python：`/home/featurize/.conda/envs/cxr-kd-v1/bin/python`，历史版本Python3.12.15、torch2.10.0+cu128、torchvision0.25.0、timm1.0.30、numpy1.26.4、Pillow10.4.0。**2026-10-29当前会话未找到该解释器**，不能把历史环境当成当前已验证可运行；目标机先确认Python3.12和固定推理依赖。推理见`requirements_inference.txt`，训练见`requirements_kd.txt`；不覆盖平台全局CUDA或随意升级。测速不需要训练依赖。
 
 当前仅RTX4090 24GB，16逻辑CPU；交接核对时GPU空闲、无训练/预测/cost/MPS进程，工作盘约剩2.88GiB。新任务先检查实时状态和磁盘，不能据此快照保证以后仍空闲。两学生best/last训练断点各约450MB，含优化器，不是推理体积；保留证据，不为省空间随意删。
 
