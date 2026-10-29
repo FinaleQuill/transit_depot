@@ -35,3 +35,12 @@ venv/
 *.key
 id_rsa
 id_ed25519
+
+# Rebuild the optional CPU extension in the fixed evaluation environment.
+/native_lanczos/*.so
+/native_lanczos/build/
+/native_lanczos/dist/
+/build/
+/*.egg-info/
+/_runtime_addons/
+/.prepare-addons-*/

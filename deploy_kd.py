@@ -355,9 +355,11 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
 
 
 def _letterbox_image(image: Image.Image, image_size: int, mode: str) -> Image.Image:
+    from fast_lanczos import resize as exact_lanczos_resize
+
     scale = image_size / max(image.size)
     size = tuple(max(1, min(image_size, round(length * scale))) for length in image.size)
-    resized = image.resize(size, Image.Resampling.LANCZOS)
+    resized = exact_lanczos_resize(image, size)
     canvas = Image.new(mode, (image_size, image_size), 0)
     canvas.paste(resized, ((image_size - size[0]) // 2, (image_size - size[1]) // 2))
     return canvas
@@ -405,6 +407,9 @@ class Predictor:
     """Shared fixed forward-only deployment: source batch1, serial members/views."""
 
     def __init__(self, model_dir: str | Path, *, device: str = "cuda") -> None:
+        from inference_runtime import activate_dependencies
+
+        activate_dependencies()
         import torch
         from model_overnight import build_overnight_model
 
@@ -445,19 +450,37 @@ class Predictor:
             self.models.append(model)
             del state
         self.model = self.models[0]  # Existing diagnostic integrations retain their one-model handle.
+        from inference_inputs import ExactU8Input
+
+        self.input_lookup = ExactU8Input(torch, self.device, MEAN, STD,
+                                        image_sizes=[m["image_size"] for m in self.members])
 
     def synchronize(self) -> None:
         self.torch.cuda.synchronize(self.device)
 
     def predict_image(self, path: str | Path) -> np.ndarray:
+        try:
+            return self._predict_image(path)
+        except BaseException as error:
+            # An early model/shape error may precede the required final D2H.
+            # Finish a pending pinned H2D before a caller retries this predictor.
+            # Successful single-image inference needs no explicit extra fence.
+            if self.input_lookup.staging:
+                try:
+                    self.synchronize()
+                except Exception as sync_error:
+                    error.add_note(f"CUDA staging cleanup also failed: {sync_error}")
+            raise
+
+    def _predict_image(self, path: str | Path) -> np.ndarray:
+        from inference_inputs import load_image_pixels, member_results_to_cpu
+
         torch = self.torch
-        arrays = load_image_arrays(path, [m["image_size"] for m in self.members])
+        pixels = load_image_pixels(path, [m["image_size"] for m in self.members], _letterbox_image)
         results = []
         finite_checks = []
         with torch.inference_mode():
-            inputs = {size: torch.from_numpy(array).unsqueeze(0).to(
-                self.device, dtype=torch.float16, memory_format=torch.channels_last)
-                for size, array in arrays.items()}
+            inputs = {size: self.input_lookup.to_tensor(array) for size, array in pixels.items()}
             transformed_inputs = {(size, "identity"): image for size, image in inputs.items()}
             for member, model in zip(self.members, self.models):
                 size = member["image_size"]
@@ -475,12 +498,9 @@ class Predictor:
                     finite_checks.append(torch.isfinite(logits).all())
                     probabilities.append(torch.sigmoid(logits.float())[0])
                 results.append(torch.stack(probabilities).mean(0))
-            # Check the original logits, since sigmoid can hide infinities. Delay
-            # the host synchronization until all views finish, then transfer all
-            # member means together without changing their probability arithmetic.
-            if not bool(torch.stack(finite_checks).all()):
-                raise FloatingPointError("Invalid single-image student logits")
-            results = torch.stack(results).cpu().numpy()
+            # Preserve raw-logit checks and each member's original arithmetic,
+            # but finish with a single probability+finite-flag host transfer.
+            results = member_results_to_cpu(torch, results, finite_checks)
         return aggregate_member_probabilities(results, self.model_weights)
 
 

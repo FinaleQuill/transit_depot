@@ -155,6 +155,8 @@ class EnsembleTests(unittest.TestCase):
         predictor.members = [member(0, 512), member(1, 768, "identity")]
         predictor.models = [FakeModel(512, [0., 2.]), FakeModel(768, [-1.])]
         predictor.model_weights = [[.25] * 10, [.75] * 10]
+        from inference_inputs import ExactU8Input
+        predictor.input_lookup = ExactU8Input(torch, predictor.device, MEAN, STD)
         with patch("deploy_kd.Image.open", wraps=Image.open) as opened:
             probabilities = predictor.predict_image(image_path)
         expected = .25 * (.5 + 1 / (1 + np.exp(-2))) / 2 + .75 / (1 + np.exp(1))

@@ -175,6 +175,8 @@ class FastInferenceInputTests(unittest.TestCase):
         predictor.members = [{"image_size": 768, "tta": "hflip2"} for _ in range(2)]
         predictor.models = [FakeModel(outputs[:2]), FakeModel(outputs[2:])]
         predictor.model_weights = [[.25] * 10, [.75] * 10]
+        from inference_inputs import ExactU8Input
+        predictor.input_lookup = ExactU8Input(torch, predictor.device, deploy_kd.MEAN, deploy_kd.STD)
         return predictor, predictor.models
 
     def check_tta_sharing(self, sizes):
@@ -201,6 +203,8 @@ class FastInferenceInputTests(unittest.TestCase):
         predictor.members = [{"image_size": size, "tta": "hflip2"} for size in sizes]
         predictor.models = [FakeModel(0), FakeModel(1)]
         predictor.model_weights = [[.25] * 10, [.75] * 10]
+        from inference_inputs import ExactU8Input
+        predictor.input_lookup = ExactU8Input(torch, predictor.device, deploy_kd.MEAN, deploy_kd.STD)
         host_checks, cpu_transfers = [], []
         original_bool, original_cpu = torch.Tensor.__bool__, torch.Tensor.cpu
 
@@ -223,14 +227,14 @@ class FastInferenceInputTests(unittest.TestCase):
             self.assertEqual(flipped.call_count, len(set(sizes)))
             self.assertEqual(converted.call_count, len(set(sizes)))
             self.assertEqual(opened.call_count, 1)
-            self.assertEqual(len(host_checks), 1)
-            self.assertEqual(cpu_transfers, [torch.Size([2, 10])])
+            self.assertEqual(len(host_checks), 0)
+            self.assertEqual(cpu_transfers, [torch.Size([21])])
             second = predictor.predict_image(path)
             self.assertEqual(flipped.call_count, 2 * len(set(sizes)))
             self.assertEqual(converted.call_count, 2 * len(set(sizes)))
             self.assertEqual(opened.call_count, 2)
-            self.assertEqual(len(host_checks), 2)
-            self.assertEqual(cpu_transfers, [torch.Size([2, 10])] * 2)
+            self.assertEqual(len(host_checks), 0)
+            self.assertEqual(cpu_transfers, [torch.Size([21])] * 2)
         expected_members = [torch.stack([torch.sigmoid(x.float())[0] for x in model.outputs[:2]])
                             .mean(0).cpu().numpy() for model in predictor.models]
         expected = deploy_kd.aggregate_member_probabilities(expected_members, predictor.model_weights)
