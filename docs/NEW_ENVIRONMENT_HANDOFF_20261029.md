@@ -1,3 +1,17 @@
+# 2026-10-30恢复入口更新：默认81ms实现，勿回滚v1
+
+**先读[最新完整交接](FINAL_OPTIMIZATION_HANDOFF_20261030.md)。** 当前默认已是AVX2/generic并行LANCZOS＋精确LUT＋一次D2H：本地81.509946ms、NFS80.781137ms，完整038项目副本独立离线重建82.190887ms。当前代码/逐图一致性/seed43/7run证据及完整包均已完成，唯一项目待办是真实T4 cost_report.json。
+
+新环境仍要自动核查挂载、GPU、空间及固定digest镜像、依赖/native。work最后约余1.2GiB，镜像/解压/副本放有空间本地盘；不要重复下载全量数据或两份包内初始化原件。旧tmp、Docker层与610.57.04驱动挂载不可假定保留/适用。
+
+038目录与同级ZIP/SHA回执保持只读。独立包副本有code/vendor，可在固定镜像内从副本根运行`python code/prepare_inference.py --force-build`；源码根没有vendor，必须按最新交接显式传入038的archive/manifest或先恢复旧tmp addon/PYTHONPATH。`--check-only`也不是host Python命令。Git只含原生源码，不含.so；native fallback能运行不等于加速已启用。
+
+034仍仅是105原图/旧源码，不能覆盖当前Git。旧“默认保留v1、先重跑NFS与本地、cost/seed和最终证据未完成”已失效；下文保留10月29日历史恢复命令、镜像/归档SHA及旧实验语境，不作为当前默认版本或自动实验安排。
+
+---
+
+## 以下为2026-10-29历史原文
+
 # 新窗口交接：先重建比赛环境，再继续2080Ti优化
 
 2026-10-29，Asia/Hong_Kong。用户明确：**Featurize新窗口会是新环境，已安装环境会丢失。** 接手必须按环境未配置处理，不能直接照抄“环境已就绪”的旧状态。本文件优先于旧“仅测速/返回4090”和已完成环境快照。

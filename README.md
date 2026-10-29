@@ -4,12 +4,12 @@
 
 **当前默认已采用等值加速（2026-10-30）：**Pillow同系数/22位定点舍入的原生单图并行LANCZOS，运行时AVX2/generic分派；精确uint8→FP16查表、固定TTA及一次概率回传。同环境新测v1本地124.754857ms→**81.509946ms/图**；NFS三轮80.781137ms，完整项目副本离线重建后82.190887ms。原100图/另5图预热、batch1串行三轮全部保留，逐图及Study概率与v1逐字节相同；033模型/config/原CSV未变，无训练或test重生成。证据在`../deliveries/037_dual768_native_optimization_20261029/optimization_summary.json`。
 
-**项目运行准备：**固定比赛镜像中先运行`python prepare_inference.py --force-build`，完成公开附加依赖恢复及原生算子构建，再运行共享`predict.py`/`cost.py`。完整项目在`../deliveries/038_dual768_optimized_project_20261030/`，含原生源码/许可、离线依赖、两份初始化原件和七个真实训练run证据；只剩真实T4的`cost_report.json`待办。2080Ti和固定valid样本结果不替代主办方T4/官方样本复测。历史133.44ms及旧v2/v3/soup记录保留，不重做已拒绝候选。
+**项目运行准备：**源码根没有`vendor/`，新环境须按[最新恢复交接](docs/FINAL_OPTIMIZATION_HANDOFF_20261030.md)给`prepare_inference.py`传038的归档参数；独立提交项目副本则从包根运行`python code/prepare_inference.py --force-build`。在固定比赛镜像完成依赖/native准备后，再运行共享`predict.py`/`cost.py`。完整项目在`../deliveries/038_dual768_optimized_project_20261030/`，含原生源码/许可、离线依赖、两份初始化原件和七个真实训练run证据；只剩真实T4的`cost_report.json`待办。2080Ti和固定valid样本结果不替代主办方T4/官方样本复测。历史133.44ms及旧v2/v3/soup记录保留，不重做已拒绝候选。
 
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → 双Tiny768不同seed学生 → FP16固定hflip2/概率加权集成及官方核验**。
 
 教师采用已冻结的混合轮数：fold0为20轮，fold1–4各12轮；集合入口为 `../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json`。五折教师已于2026-10-26 19:26（香港）全部正常完成。
-用户最新明确**双Tiny768集成**为优化目标。033已按用户授权完成真实组装、完整valid、4090三轮计时及完整test CSV：旧43占25%、新44占75%，各hflip2；实际FP16 valid AUC=.808384442、模型文件128,766,272bytes、本机端到端79.280300ms。最终CSV已生成并核验，1414Study×10类共14140行；见[CSV交付](docs/SUBMISSION_DUAL768_20261028.md)及[submission.csv](../deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv)。未上传平台、未用test选择或拟合，正式T4与最终核验材料仍待。valid/本机复盘见[真实部署复盘](docs/DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)，生成前状态见[当时验收登记](docs/DUAL_TINY768_ACCEPTANCE_20261028.json)，CSV当前状态见[交付登记](docs/DUAL_TINY768_SUBMISSION_20261028.json)。
+用户最新明确**双Tiny768集成**为优化目标。033已按用户授权完成真实组装、完整valid、4090三轮计时及完整test CSV：旧43占25%、新44占75%，各hflip2；实际FP16 valid AUC=.808384442、模型文件128,766,272bytes、本机端到端79.280300ms。最终CSV已生成并核验，1414Study×10类共14140行；见[CSV交付](docs/SUBMISSION_DUAL768_20261028.md)及[submission.csv](../deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv)。未上传平台、未用test选择或拟合，正式T4与主办方最终复测仍待。valid/本机复盘见[真实部署复盘](docs/DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md)，生成前状态见[当时验收登记](docs/DUAL_TINY768_ACCEPTANCE_20261028.json)，CSV当前状态见[交付登记](docs/DUAL_TINY768_SUBMISSION_20261028.json)。
 
 单44实际FP16=.807512423，033点差+.000872019、患者区间跨0；原50/50诊断=.808370073，与25/75仅差.000014369，不宣称稳定收益或25/75显著更优。027及此前参考保留，[预登记](docs/DUAL_TINY768_PLAN_20261027.md)和[选择记录](docs/DUAL_TINY768_SELECTION_20261028.json)不回写历史。共享逐图TTA输入已实现，CLAHE/DALI尚未应用或安装；本次真正双seed计时取代旧同run不同epoch的精度成员代理，但不能替代T4认证。教师、OOF、原模型和执行归档均保留。
 
