@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -9,6 +10,7 @@ import tempfile
 import unittest
 from xml.etree import ElementTree as ET
 import zipfile
+from tests.runtime_package_fixtures import add_runtime_support, passing_cost
 
 from audit_trail import record_checkpoint
 from build_training_evidence import build_evidence
@@ -18,7 +20,7 @@ from export_student import make_deployment_config
 from kd_common import APPROVED_PRETRAINS, text_sha256
 from package_kd_submission import (CODE_FILES, MANIFEST_FILES, SHEET_NS,
                                    collect_training_evidence, package_submission,
-                                   unique_pretrains, verify_reports)
+                                   inference_support_files, unique_pretrains, verify_reports)
 
 
 def source_provenance(backbone, content, root):
@@ -47,6 +49,7 @@ class EnsemblePackageTests(unittest.TestCase):
             path = self.source / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(f"# Synthetic source/manifest fixture: {name}\n")
+        add_runtime_support(self.source, self)
         plan = self.source / "data/cv5_overnight/folds.json"
         plan.parent.mkdir(parents=True)
         plan.write_text('{"synthetic_fold_evidence":true}\n')
@@ -181,6 +184,12 @@ class EnsemblePackageTests(unittest.TestCase):
         self.assertEqual(result["inference_inventory"], deployment_inventory(self.model, self.config))
         self.assertEqual(len(result["pretraining_sources"]), 2)
         self.assertTrue(all((self.root / "package/code" / name).is_file() for name in CODE_FILES))
+        self.assertTrue((self.root / "package/code/native_lanczos/upstream/LICENSE").is_file())
+        self.assertTrue((self.root / "package/code/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so").is_file())
+        self.assertTrue((self.root / "package/code/vendor/competition_addons_archive_manifest.json").is_file())
+        self.assertFalse((self.root / "package/code/native_lanczos/build").exists())
+        self.assertFalse((self.root / "package/code/native_lanczos/dist").exists())
+        self.assertFalse((self.root / "package/code/native_lanczos/__pycache__").exists())
         with zipfile.ZipFile(self.root / "package/模型核验材料与数据申明清单.xlsx") as archive:
             xml = ET.fromstring(archive.read("xl/worksheets/sheet1.xml"))
         texts = [node.text or "" for node in xml.findall(f".//{{{SHEET_NS}}}t")]
@@ -206,11 +215,10 @@ class EnsemblePackageTests(unittest.TestCase):
             "member_count": 2, "members": [{k: m.get(k) for k in ("source_checkpoint_sha256", "weights_sha256", "image_size", "tta", "seed")} for m in self.members],
             "deployment_config_sha256": sha256_file(self.model / "config.json"),
             "macro_auc": .8, "per_class_auc": [.8] * 10}
-        timing = {"inference_files": inventory, "submission_sha256": source_sha,
-            "official_compliance_pass": True,
-            "deployment_config_sha256": sha256_file(self.model / "config.json"),
-            "deployment": {"member_count": 2, "image_sizes": [512, 768], "tta": "hflip2", "ensemble": True}}
-        result = verify_reports(self.config, inventory, submission={"sha256": source_sha},
+        timing = passing_cost(inventory, source_sha, config_sha=sha256_file(self.model / "config.json"))
+        timing["deployment"] = {"member_count": 2, "image_sizes": [512, 768], "tta": "hflip2", "ensemble": True}
+        submission = {"sha256": source_sha, "image_predictions_sha256": "d" * 64}
+        result = verify_reports(self.config, inventory, submission=submission,
                                 cost=timing, validation=validation, training_evidence=evidence)
         self.assertFalse(result["ready_for_organizer_review"])
         self.assertEqual(result["pending_items"], ["training evidence for student_1"])
@@ -219,12 +227,60 @@ class EnsemblePackageTests(unittest.TestCase):
         wrong_member = copy.deepcopy(validation)
         wrong_member["members"][1]["image_size"] = 512
         with self.assertRaisesRegex(ValueError, "member declarations"):
-            verify_reports(self.config, inventory, submission={"sha256": source_sha},
+            verify_reports(self.config, inventory, submission=submission,
                 cost=timing, validation=wrong_member, training_evidence={"complete": True})
         wrong_cost = {**timing, "deployment_config_sha256": "0" * 64}
         with self.assertRaisesRegex(ValueError, "exact multi-member deployment config"):
-            verify_reports(self.config, inventory, submission={"sha256": source_sha},
+            verify_reports(self.config, inventory, submission=submission,
                 cost=wrong_cost, validation=validation, training_evidence={"complete": True})
+
+    def test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest(self):
+        rows = []
+        for index, (subject, study) in enumerate((("subject_1", "study_1"),
+                                                ("subject_1", "study_1"),
+                                                ("subject_2", "study_2"))):
+            rows.append({"image_id": f"test:{index}", "split": "test", "subject_id": subject,
+                         "study_id": study, "study_key": f"{subject}/{study}",
+                         "relative_path": f"test/{subject}/{study}/pic_{index}.jpg", "targets": ""})
+        with (self.source / MANIFEST_FILES[2]).open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        submission = self.root / "submission.csv"
+        with submission.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            writer.writerow(["Subject_id", "Study_id", "Predict_class", "Probability"])
+            for subject, study in (("subject_1", "study_1"), ("subject_2", "study_2")):
+                for c in range(1, 11): writer.writerow([subject, study, c, .2])
+        sidecar = self.root / "submission.image_predictions.csv"
+        with sidecar.open("w", newline="") as stream:
+            writer = csv.writer(stream)
+            writer.writerow(["Image_id", "Subject_id", "Study_id", "Predict_class", "Probability"])
+            for row in rows:
+                for c in range(1, 11): writer.writerow([row["image_id"], row["subject_id"], row["study_id"], c, .2])
+        result = package_submission(model_dir=self.model, output=self.root / "sidecar_package",
+                                    project_root=self.source, submission=submission, expected_studies=2)
+        self.assertEqual((self.root / "sidecar_package/submission.image_predictions.csv").read_bytes(), sidecar.read_bytes())
+        self.assertEqual(result["submission"]["image_predictions_sha256"], sha256_file(sidecar))
+        self.assertEqual(result["submission"]["images"], 3)
+        self.assertFalse(result["ready_for_organizer_review"])
+        sidecar.write_text(sidecar.read_text().replace("test:0", "foreign:0"))
+        with self.assertRaisesRegex(ValueError, "exact original test images"):
+            package_submission(model_dir=self.model, output=self.root / "bad_sidecar_package",
+                               project_root=self.source, submission=submission, expected_studies=2)
+
+    def test_runtime_allowlist_rejects_unprepared_or_tampered_dependencies(self):
+        files = inference_support_files(self.source)
+        self.assertTrue(files)
+        self.assertFalse(any(any(p in relative.parts for p in ("build", "dist", "__pycache__")) for _, relative in files))
+        native = self.source / "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so"
+        original = native.read_bytes()
+        native.unlink()
+        with self.assertRaises(FileNotFoundError): inference_support_files(self.source)
+        native.write_bytes(original)
+        (self.source / "vendor/competition_addons_cp312_linux_x86_64.tar.gz").write_bytes(b"tampered fixture")
+        with self.assertRaisesRegex(ValueError, "SHA binding"):
+            inference_support_files(self.source)
 
     def test_direct_evidence_collection_checks_member_seed_and_resolution(self):
         teachers, students = self.evidence()

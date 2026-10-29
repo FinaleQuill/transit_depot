@@ -7,6 +7,7 @@ from pathlib import Path
 
 from deploy_kd import (CSV_HEADER, IMAGE_CSV_HEADER, Predictor, StudyAccumulator, prediction_records,
                        write_prediction, write_image_prediction, write_json, sha256_file, deployment_members)
+from inference_reproducibility import configure_inference
 
 
 def predict_submission(*, model_dir: str | Path, image_root: str | Path,
@@ -19,6 +20,7 @@ def predict_submission(*, model_dir: str | Path, image_root: str | Path,
     if output.is_relative_to(Path(image_root).resolve()):
         raise ValueError("Prediction output must not be inside the read-only image directory")
     records = prediction_records(image_root, manifest)
+    reproducibility = configure_inference()
     predictor = Predictor(model_dir)
     accumulator = StudyAccumulator(records)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -64,7 +66,8 @@ def predict_submission(*, model_dir: str | Path, image_root: str | Path,
               "deployment_inventory": predictor.inventory,
               "image_predictions": str(image_output),
               "image_predictions_sha256": sha256_file(image_output),
-              "latency_status": "pending_cost_py_T4_measurement"}
+              "latency_status": "pending_cost_py_T4_measurement",
+              "reproducibility": reproducibility}
     write_json(output.with_suffix(output.suffix + ".report.json"), report)
     return report
 

@@ -21,6 +21,7 @@ import zipfile
 
 from deploy_kd import (deployment_inventory, read_json, read_manifest, read_submission,
                        sha256_file, validate_deployment_config, write_json)
+from inference_runtime import ADDONS_ARCHIVE_SHA256
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 CODE_FILES = (
@@ -36,7 +37,18 @@ CODE_FILES = (
     "run_student_experiments.py", "compare_student_candidates.py", "build_training_evidence.py",
     "validate_teacher_tta.py",
     "diagnose_teacher_epochs.py",
+    "inference_reproducibility.py", "inference_runtime.py", "inference_inputs.py",
+    "fast_lanczos.py", "prepare_inference.py",
 )
+NATIVE_SOURCE_FILES = (
+    "native_lanczos/__init__.py", "native_lanczos/resample.c", "native_lanczos/setup.py",
+    "native_lanczos/README.md", "native_lanczos/upstream/LICENSE",
+    "native_lanczos/upstream/PROVENANCE.json", "native_lanczos/upstream/Resample.c",
+    "native_lanczos/upstream/Imaging.h",
+)
+ADDONS_FILES = ("competition_addons_cp312_linux_x86_64.tar.gz",
+                "competition_addons_archive_manifest.json")
+ADDONS_SOURCE = "artifacts/kd_v1/optimization_2080ti_20261029/environment"
 MANIFEST_FILES = (
     "data/clean_v1_reviewed/train_clean.csv",
     "data/clean_v1_reviewed/valid_manifest.csv",
@@ -45,6 +57,56 @@ MANIFEST_FILES = (
 SHEET_NS = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
 REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 MAX_EVIDENCE_FILE_BYTES = 64 * 1024 * 1024
+
+
+def inference_support_files(source: Path) -> list[tuple[Path, Path]]:
+    """Explicit runtime allowlist; never include build/dist/cache directories."""
+    files = [(source / name, Path("code") / name) for name in NATIVE_SOURCE_FILES]
+    extension = source / "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so"
+    files.append((extension, Path("code/native_lanczos") / extension.name))
+    vendor = source / "vendor"
+    if not all((vendor / name).is_file() for name in ADDONS_FILES):
+        vendor = source / ADDONS_SOURCE
+    archive, manifest = [vendor / name for name in ADDONS_FILES]
+    for path, _ in files:
+        if path.is_symlink() or not path.is_file():
+            raise FileNotFoundError(f"Prepared native inference source or CPython3.12 extension missing: {path}")
+    if not archive.is_file() or not manifest.is_file():
+        raise FileNotFoundError("Pinned public-addon archive and manifest are required for an offline project")
+    if (archive.is_symlink() or manifest.is_symlink()
+            or sha256_file(archive) != ADDONS_ARCHIVE_SHA256
+            or read_json(manifest).get("archive_sha256") != ADDONS_ARCHIVE_SHA256):
+        raise ValueError("Pinned public-addon archive or manifest SHA binding differs")
+    files.extend((path, Path("code/vendor") / path.name) for path in (archive, manifest))
+    return files
+
+
+def _cost_semantics_complete(cost: Mapping[str, Any], submission: Mapping[str, Any] | None) -> bool:
+    """Do not upgrade an old boolean-only cost report into current evidence."""
+    protocol, comparison = cost.get("protocol", {}), cost.get("comparison", {})
+    if (cost.get("reproducibility", {}).get("seed") != 43
+            or any(protocol.get(key) != value for key, value in {
+                "measured_images": 100, "warmup_images": 5, "rounds": 3,
+                "batch_size": 1, "execution": "serial"}.items())
+            or comparison.get("status") != "matched"
+            or comparison.get("coverage", {}).get("complete_studies_proven") is not True):
+        return False
+    studies, images = comparison.get("rounds"), comparison.get("image_rounds")
+    if not isinstance(studies, list) or not isinstance(images, list) or len(studies) != 3 or len(images) != 3:
+        return False
+    for report in studies + images:
+        error = report.get("max_absolute_error")
+        if (report.get("match") is not True or report.get("semantic_match") is not True
+                or report.get("identity_coverage_match") is not True
+                or report.get("mismatched_study_count") != 0
+                or report.get("semantic_mismatched_study_count") != 0
+                or not isinstance(error, (int, float)) or not math.isfinite(error) or error > 1e-7):
+            return False
+    if any(report.get("compared_images") != 100 or report.get("expected_images") != 100
+           or report.get("mismatched_image_count") != 0 for report in images):
+        return False
+    return (submission is not None and bool(submission.get("image_predictions_sha256"))
+            and comparison.get("image_submission_sha256") == submission["image_predictions_sha256"])
 
 
 def deployment_members(config: Mapping[str, Any]) -> list[Mapping[str, Any]]:
@@ -483,9 +545,18 @@ def verify_reports(config: Mapping[str, Any], inventory: Mapping[str, Any], *,
             raise ValueError("Timing report does not bind the exact multi-member deployment config")
         if submission is not None and cost.get("submission_sha256") != submission["sha256"]:
             raise ValueError("Timing report does not correspond to the packaged submission")
-        cost_pass = cost.get("official_compliance_pass") is True
+        mean = cost.get("mean_ms")
+        timing_valid = (cost.get("environment", {}).get("official_environment_compatible") is True
+                        and "T4" in str(cost.get("environment", {}).get("gpu_name", ""))
+                        and isinstance(mean, (int, float)) and math.isfinite(mean) and 0 <= mean <= 100)
+        semantic_valid = _cost_semantics_complete(cost, submission)
+        cost_pass = cost.get("official_compliance_pass") is True and timing_valid and semantic_valid
+        if not semantic_valid:
+            missing.append("seed43 and three-round 100-image semantic/sidecar-bound cost evidence")
         if not cost_pass:
             missing.append("passing local T4 timing and CSV agreement")
+    if submission is not None and not submission.get("image_predictions_sha256"):
+        missing.append("final predict.py image-probability sidecar")
     validation_pass = False
     if validation is None:
         missing.append("FP16 official-valid validation_report.json")
@@ -523,6 +594,7 @@ def verify_reports(config: Mapping[str, Any], inventory: Mapping[str, Any], *,
 
 def package_submission(*, model_dir: str | Path, output: str | Path,
                        submission: str | Path | None = None,
+                       image_submission: str | Path | None = None,
                        cost_report: str | Path | None = None,
                        validation_report: str | Path | None = None,
                        pretrain_cache: str | Path | None = None,
@@ -550,12 +622,29 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
     for name in CODE_FILES + MANIFEST_FILES:
         if not (source / name).is_file():
             raise FileNotFoundError(f"Required reproducibility source is missing: {name}")
+    support_files = inference_support_files(source)
     if sha256_file(source / MANIFEST_FILES[0]) != config["source_manifest_sha256"]:
         raise ValueError("Training manifest differs from deployment ancestry")
     if sha256_file(source / MANIFEST_FILES[1]) != config["official_valid_manifest_sha256"]:
         raise ValueError("Validation manifest differs from deployment ancestry")
     submission_info = None if submission is None else validate_submission_material(
         submission, test_manifest=source / MANIFEST_FILES[2], expected_studies=expected_studies)
+    image_reference = (Path(image_submission) if image_submission is not None else
+                       Path(submission).with_suffix(".image_predictions.csv") if submission is not None else None)
+    if image_submission is not None and not image_reference.is_file():
+        raise FileNotFoundError("The specified final image-probability sidecar is missing")
+    if submission_info is not None and image_reference is not None and image_reference.is_file():
+        # Validate format and all declared image identities, without rerunning a model.
+        from cost import read_image_probabilities
+        image_rows = read_image_probabilities(image_reference)
+        image_manifest_rows = read_manifest(source / MANIFEST_FILES[2])
+        original_identities = {(row["subject_id"], row["study_id"], row["image_id"]) for row in image_manifest_rows}
+        discovered_identities = {(row["subject_id"], row["study_id"],
+                                  f"{row['subject_id']}/{row['study_id']}/{Path(row['relative_path']).name}") for row in image_manifest_rows}
+        if set(image_rows) not in (original_identities, discovered_identities):
+            raise ValueError("Final image sidecar does not cover the exact original test images")
+        submission_info["image_predictions_sha256"] = sha256_file(image_reference)
+        submission_info["images"] = len(image_rows)
     cost = None if cost_report is None else read_json(cost_report)
     validation = None if validation_report is None else read_json(validation_report)
     output.mkdir(parents=True, exist_ok=False)
@@ -573,6 +662,11 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
         copy_verified(source / name, target, digest)
         copied_sources.append({"source": name, "package_path": str(target.relative_to(output)), "sha256": digest})
         sheet_rows.append([f"CODE-{len(copied_sources)}", "代码或清单", "附录A", str(target.relative_to(output)), digest, digest if name.endswith(".py") else ""])
+    for path, relative in support_files:
+        digest = sha256_file(path)
+        copy_verified(path, output / relative, digest)
+        copied_sources.append({"source": str(path), "package_path": str(relative), "sha256": digest})
+        sheet_rows.append([f"CODE-{len(copied_sources)}", "原生推理源码/许可/编译产物或公开依赖归档", "第10条/附录A", str(relative), digest, ""])
     original_plan = source / "data/cv5_overnight/folds.json"
     if original_plan.is_file():
         digest = sha256_file(original_plan)
@@ -621,6 +715,9 @@ def package_submission(*, model_dir: str | Path, output: str | Path,
                           (validation_report, "audit/validation_report.json")):
         if arg is not None:
             copy_verified(arg, output / relative, sha256_file(arg))
+    if submission_info is not None and submission_info.get("image_predictions_sha256"):
+        copy_verified(image_reference, output / "submission.image_predictions.csv",
+                      submission_info["image_predictions_sha256"])
     if (model_dir / "export_report.json").is_file():
         path = model_dir / "export_report.json"
         copy_verified(path, output / "audit/export_report.json", sha256_file(path))
@@ -665,13 +762,16 @@ code/data/cv5_overnight/folds.original.json如存在，仅为原折表证据，�
 
 固定推理（输出目录需新建且文件不能已存在；路径按实际原图位置填写）：
 
+    python code/prepare_inference.py --force-build --output /new/preparation.json
+
     python code/predict.py --model-dir model --image-root /path/to/cxr_first --manifest code/data/clean_v1_reviewed/test_manifest.csv --output /new/output/submission.csv
 
 官方口径计时：
 
     python cost.py submission.csv /path/to/pictures_100 /path/to/pictures_5 --model-dir model --manifest code/data/clean_v1_reviewed/test_manifest.csv --output-dir /new/cost_report
 
-计时调用与predict相同的模型加载和单图预测，包含逐图十类sidecar写出和Study结果写出。100图若缺少所选Study的其他视图，CSV一致性不能认证，会标pending；不得读取目录外预测补齐。
+code/prepare_inference.py在官方镜像内离线恢复code/vendor的固定公开附加包并重建原生CPU算子，不覆盖torch/torchvision/NumPy/Pillow/CUDA等核心依赖；准备必须在计时前完成。code/native_lanczos包含源码、上游许可/出处及本次CPython3.12编译产物，不能依赖其他机器的构建目录。
+计时调用与predict相同的模型加载和单图预测，包含逐图十类sidecar写出和Study结果写出；两入口固定seed43。包根submission.image_predictions.csv原字节保留最终逐图输出，正式cost逐张检查概率、二值/Gate、排序和并列，再核Study聚合；缺sidecar或100图缺所选Study其他视图均保持pending，不得读取目录外预测补齐。
 训练与推理依赖分别见code/requirements_kd.txt和code/requirements_inference.txt。推理沿用官方Py3.12、torch2.10.0、CUDA12.8/cuDNN9；不覆盖官方CUDA环境。
 本脚本只复制和核验材料，不下载、不启动训练或模型前向。最终合规与评分以主办方复测为准。
 """
@@ -698,6 +798,8 @@ def main(argv=None) -> int:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--submission", type=Path)
+    parser.add_argument("--image-submission", type=Path,
+                        help="Saved final per-image sidecar; defaults beside submission.csv")
     parser.add_argument("--cost-report", type=Path)
     parser.add_argument("--validation-report", type=Path)
     parser.add_argument("--pretrain-cache", type=Path)

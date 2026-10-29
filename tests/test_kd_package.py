@@ -9,6 +9,7 @@ import tempfile
 import unittest
 from xml.etree import ElementTree as ET
 import zipfile
+from tests.runtime_package_fixtures import add_runtime_support, passing_cost
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from kd_common import APPROVED_PRETRAINS, text_sha256, BASE_BACKBONE, TINY_BACKBONE
@@ -150,9 +151,8 @@ class PackageTests(unittest.TestCase):
         inventory = {"files": [{"path": "student_fp16.pt", "bytes": 10, "sha256": "a" * 64}],
                      "total_bytes": 10, "size_pass": True}
         config = {"official_valid_manifest_sha256": "b" * 64}
-        submission = {"sha256": "c" * 64}
-        cost = {"inference_files": inventory, "submission_sha256": "c" * 64,
-                "official_compliance_pass": True}
+        submission = {"sha256": "c" * 64, "image_predictions_sha256": "d" * 64}
+        cost = passing_cost(inventory, "c" * 64)
         validation = {"deployment_inventory": inventory, "manifest_sha256": "b" * 64,
                       "complete": True, "precision": "float16", "image_size": 512,
                       "tta": "identity", "ensemble": False, "macro_auc": 0.8}
@@ -161,6 +161,41 @@ class PackageTests(unittest.TestCase):
         ready = verify_reports(config, inventory, submission=submission, cost=cost, validation=validation,
                                training_evidence={"complete": True, "pending_items": []})
         self.assertTrue(ready["ready_for_organizer_review"])
+
+    def test_old_boolean_only_cost_cannot_be_upgraded_to_ready(self):
+        inventory = {"files": [{"path": "student_fp16.pt", "bytes": 10, "sha256": "a" * 64}],
+                     "total_bytes": 10, "size_pass": True}
+        config = {"official_valid_manifest_sha256": "b" * 64}
+        submission = {"sha256": "c" * 64, "image_predictions_sha256": "d" * 64}
+        validation = {"deployment_inventory": inventory, "manifest_sha256": "b" * 64,
+                      "complete": True, "precision": "float16", "image_size": 512,
+                      "tta": "identity", "ensemble": False, "macro_auc": .8}
+        cost = {"inference_files": inventory, "submission_sha256": "c" * 64,
+                "official_compliance_pass": True}
+        report = verify_reports(config, inventory, submission=submission, cost=cost, validation=validation,
+                                training_evidence={"complete": True})
+        self.assertFalse(report["ready_for_organizer_review"])
+        self.assertTrue(any("semantic/sidecar" in reason for reason in report["pending_items"]))
+
+    def test_cost_semantics_seed_coverage_and_sidecar_sha_are_required(self):
+        import copy
+        inventory = {"files": [{"path": "student_fp16.pt", "bytes": 10, "sha256": "a" * 64}],
+                     "total_bytes": 10, "size_pass": True}
+        config = {"official_valid_manifest_sha256": "b" * 64}
+        submission = {"sha256": "c" * 64, "image_predictions_sha256": "d" * 64}
+        validation = {"deployment_inventory": inventory, "manifest_sha256": "b" * 64,
+                      "complete": True, "precision": "float16", "image_size": 512,
+                      "tta": "identity", "ensemble": False, "macro_auc": .8}
+        for change in ("seed", "count", "semantic", "sidecar", "timing"):
+            cost = copy.deepcopy(passing_cost(inventory, "c" * 64))
+            if change == "seed": cost["reproducibility"]["seed"] = 44
+            if change == "count": cost["comparison"]["image_rounds"][1]["compared_images"] = 99
+            if change == "semantic": cost["comparison"]["rounds"][0]["semantic_match"] = False
+            if change == "sidecar": cost["comparison"]["image_submission_sha256"] = "0" * 64
+            if change == "timing": cost["mean_ms"] = 101.
+            report = verify_reports(config, inventory, submission=submission, cost=cost, validation=validation,
+                                    training_evidence={"complete": True})
+            self.assertFalse(report["ready_for_organizer_review"], change)
 
     def test_xlsx_is_valid_ooxml_and_sha_remains_text(self):
         path = self.root / "材料.xlsx"
@@ -231,6 +266,7 @@ class PackageTests(unittest.TestCase):
             path = source / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text("# synthetic source or manifest fixture\n", encoding="utf-8")
+        add_runtime_support(source, self)
         model = self.root / "deployment"
         model.mkdir()
         (model / "student_fp16.pt").write_bytes(b"synthetic exported weight bytes")
