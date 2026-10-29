@@ -2,7 +2,9 @@
 
 **新窗口须重建环境：**Featurize已配环境会丢失，旧“已就绪”仅是历史验证。先读[新环境恢复及接手步骤](docs/NEW_ENVIRONMENT_HANDOFF_20261029.md)，不要直接盲用旧`/tmp`解释器或硬编码驱动挂载的容器入口。
 
-**当前在2080Ti继续优化，本轮不训练：**用户已明确留在2080Ti推进，替代旧“测完返回4090”的安排。原样测速已完成，均值138.538797ms/图；比赛镜像现已对齐，默认等值优化在同镜像由149.807432降至133.443058ms/图（仍未达100ms），完整valid概率逐字节不变；并行缩放及参数平均已拒绝，CUDA Graph仅保留实验。先读[主交接文件](AGENT_HANDOFF.md)及[当前优化协议与结果](docs/DUAL768_OPTIMIZATION_2080TI_20261029.md)。保留033、原test CSV和全部慢轮；不得从历史命令启动训练。
+**当前默认已采用等值加速（2026-10-30）：**Pillow同系数/22位定点舍入的原生单图并行LANCZOS，运行时AVX2/generic分派；精确uint8→FP16查表、固定TTA及一次概率回传。同环境新测v1本地124.754857ms→**81.509946ms/图**；NFS三轮80.781137ms，完整项目副本离线重建后82.190887ms。原100图/另5图预热、batch1串行三轮全部保留，逐图及Study概率与v1逐字节相同；033模型/config/原CSV未变，无训练或test重生成。证据在`../deliveries/037_dual768_native_optimization_20261029/optimization_summary.json`。
+
+**项目运行准备：**固定比赛镜像中先运行`python prepare_inference.py --force-build`，完成公开附加依赖恢复及原生算子构建，再运行共享`predict.py`/`cost.py`。完整项目在`../deliveries/038_dual768_optimized_project_20261030/`，含原生源码/许可、离线依赖、两份初始化原件和七个真实训练run证据；只剩真实T4的`cost_report.json`待办。2080Ti和固定valid样本结果不替代主办方T4/官方样本复测。历史133.44ms及旧v2/v3/soup记录保留，不重做已拒绝候选。
 
 当前路线：**V1 Base768五折教师 → 严格OOF逐视图TTA软标签 → 双Tiny768不同seed学生 → FP16固定hflip2/概率加权集成及官方核验**。
 
