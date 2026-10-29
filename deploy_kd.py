@@ -354,21 +354,34 @@ def validate_deployment_config(config: Mapping[str, Any]) -> None:
         raise ValueError("Fixed Gate values must be ten finite probabilities")
 
 
-def letterbox_rgb(image: Image.Image, image_size: int = IMAGE_SIZE) -> Image.Image:
-    """The same geometry and rounding as dataset.letterbox_rgb; no training imports."""
+def _letterbox_image(image: Image.Image, image_size: int, mode: str) -> Image.Image:
     scale = image_size / max(image.size)
     size = tuple(max(1, min(image_size, round(length * scale))) for length in image.size)
     resized = image.resize(size, Image.Resampling.LANCZOS)
-    canvas = Image.new("RGB", (image_size, image_size), (0, 0, 0))
+    canvas = Image.new(mode, (image_size, image_size), 0)
     canvas.paste(resized, ((image_size - size[0]) // 2, (image_size - size[1]) // 2))
     return canvas
 
 
+def letterbox_rgb(image: Image.Image, image_size: int = IMAGE_SIZE) -> Image.Image:
+    """The same geometry and rounding as dataset.letterbox_rgb; no training imports."""
+    return _letterbox_image(image, image_size, "RGB")
+
+
 def image_array(image: Image.Image, image_size: int) -> np.ndarray:
-    pixels = np.asarray(letterbox_rgb(image, image_size), dtype=np.float32)
+    # Keep grayscale pixels single-channel through resize and padding. Normalizing
+    # directly into contiguous CHW planes avoids RGB float32 intermediates and
+    # strided three-channel broadcasting, while retaining each float32 operation.
+    grayscale = image.mode == "L"
+    pixels = np.asarray(_letterbox_image(image, image_size, "L" if grayscale else "RGB"))
+    result = np.empty((3, image_size, image_size), dtype=np.float32)
+    offset = np.asarray(MEAN, dtype=np.float32) * np.float32(255.0)
     denominator = np.asarray(STD, dtype=np.float32) * np.float32(255.0)
-    pixels = (pixels - np.asarray(MEAN, dtype=np.float32) * np.float32(255.0)) / denominator
-    return np.ascontiguousarray(pixels.transpose(2, 0, 1))
+    for channel in range(3):
+        np.copyto(result[channel], pixels if grayscale else pixels[:, :, channel])
+        np.subtract(result[channel], offset[channel], out=result[channel])
+        np.divide(result[channel], denominator[channel], out=result[channel])
+    return result
 
 
 def load_image_arrays(path: str | Path, image_sizes: Sequence[int]) -> dict[int, np.ndarray]:
@@ -379,7 +392,7 @@ def load_image_arrays(path: str | Path, image_sizes: Sequence[int]) -> dict[int,
         if source.mode in {"I", "F"} or source.mode.startswith("I;"):
             raise ValueError("Non-8-bit image requires an explicit intensity policy")
         # LANCZOS treats the identical RGB channels of an L image identically.
-        # Resize its single channel first; letterbox_rgb expands the result on paste.
+        # Keep it single-channel until image_array writes the normalized CHW planes.
         image = source if source.mode == "L" else source.convert("RGB")
         return {size: image_array(image, size) for size in sorted(set(image_sizes))}
 
@@ -440,6 +453,7 @@ class Predictor:
         torch = self.torch
         arrays = load_image_arrays(path, [m["image_size"] for m in self.members])
         results = []
+        finite_checks = []
         with torch.inference_mode():
             inputs = {size: torch.from_numpy(array).unsqueeze(0).to(
                 self.device, dtype=torch.float16, memory_format=torch.channels_last)
@@ -456,10 +470,17 @@ class Predictor:
                             memory_format=torch.channels_last)
                     transformed = transformed_inputs[key]
                     logits = model(transformed)
-                    if tuple(logits.shape) != (1, 10) or not bool(torch.isfinite(logits).all()):
+                    if tuple(logits.shape) != (1, 10):
                         raise FloatingPointError("Invalid single-image student logits")
+                    finite_checks.append(torch.isfinite(logits).all())
                     probabilities.append(torch.sigmoid(logits.float())[0])
-                results.append(torch.stack(probabilities).mean(0).cpu().numpy())
+                results.append(torch.stack(probabilities).mean(0))
+            # Check the original logits, since sigmoid can hide infinities. Delay
+            # the host synchronization until all views finish, then transfer all
+            # member means together without changing their probability arithmetic.
+            if not bool(torch.stack(finite_checks).all()):
+                raise FloatingPointError("Invalid single-image student logits")
+            results = torch.stack(results).cpu().numpy()
         return aggregate_member_probabilities(results, self.model_weights)
 
 

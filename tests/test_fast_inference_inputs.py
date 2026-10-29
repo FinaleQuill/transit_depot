@@ -98,6 +98,15 @@ class FastInferenceInputTests(unittest.TestCase):
                     self.fixture(mode, (1079, 1297)).save(path, quality=91, exif=exif)
                     self.assert_original_parity(path)
 
+    def test_every_uint8_value_keeps_exact_float32_normalization(self):
+        gray = np.tile(np.arange(256, dtype=np.uint8), (512, 2))
+        rgb = np.stack([gray, 255 - gray, np.roll(gray, 73, axis=1)], axis=-1)
+        for pixels in (gray, rgb):
+            with self.subTest(mode="L" if pixels.ndim == 2 else "RGB"):
+                path = self.root / "all-byte-values.png"
+                Image.fromarray(pixels).save(path)
+                self.assert_original_parity(path)
+
     def test_non_eight_bit_modes_keep_the_original_rejection_and_file(self):
         for mode, dtype in (("I", np.int32), ("F", np.float32), ("I;16", np.uint16)):
             with self.subTest(mode=mode):
@@ -114,6 +123,59 @@ class FastInferenceInputTests(unittest.TestCase):
 
     def test_different_resolutions_transform_each_size_once(self):
         self.check_tta_sharing([512, 768])
+
+    def test_nonfinite_original_logits_are_rejected_after_all_views(self):
+        import torch
+
+        path = self.root / "fixture.png"
+        self.fixture("L", (17, 29)).save(path)
+        for bad in (float("inf"), float("-inf"), float("nan")):
+            for bad_view in range(4):
+                with self.subTest(bad=bad, bad_view=bad_view):
+                    outputs = [torch.full((1, 10), .37, dtype=torch.float16) for _ in range(4)]
+                    outputs[bad_view][0, 2] = bad
+                    predictor, models = self.fake_predictor(outputs)
+                    with patch("deploy_kd.aggregate_member_probabilities") as aggregate:
+                        with self.assertRaisesRegex(FloatingPointError, "student logits"):
+                            predictor.predict_image(path)
+                        aggregate.assert_not_called()
+                    # Finite checks are intentionally deferred, but invalid raw
+                    # logits never reach CPU aggregation or become valid output.
+                    self.assertEqual([model.calls for model in models], [2, 2])
+
+    def test_wrong_logit_shape_is_rejected_before_later_forwards(self):
+        import torch
+
+        path = self.root / "fixture.png"
+        self.fixture("L", (17, 29)).save(path)
+        for shape in ((10,), (1, 9), (2, 10)):
+            with self.subTest(shape=shape):
+                predictor, models = self.fake_predictor([
+                    torch.zeros(shape), *(torch.zeros((1, 10)) for _ in range(3))])
+                with self.assertRaisesRegex(FloatingPointError, "student logits"):
+                    predictor.predict_image(path)
+                self.assertEqual([model.calls for model in models], [1, 0])
+
+    @staticmethod
+    def fake_predictor(outputs):
+        import torch
+
+        class FakeModel:
+            def __init__(self, values):
+                self.values, self.calls = values, 0
+
+            def __call__(self, tensor):
+                value = self.values[self.calls]
+                self.calls += 1
+                return value
+
+        predictor = deploy_kd.Predictor.__new__(deploy_kd.Predictor)
+        predictor.torch = torch
+        predictor.device = torch.device("cpu")
+        predictor.members = [{"image_size": 768, "tta": "hflip2"} for _ in range(2)]
+        predictor.models = [FakeModel(outputs[:2]), FakeModel(outputs[2:])]
+        predictor.model_weights = [[.25] * 10, [.75] * 10]
+        return predictor, predictor.models
 
     def check_tta_sharing(self, sizes):
         import torch
@@ -139,19 +201,36 @@ class FastInferenceInputTests(unittest.TestCase):
         predictor.members = [{"image_size": size, "tta": "hflip2"} for size in sizes]
         predictor.models = [FakeModel(0), FakeModel(1)]
         predictor.model_weights = [[.25] * 10, [.75] * 10]
+        host_checks, cpu_transfers = [], []
+        original_bool, original_cpu = torch.Tensor.__bool__, torch.Tensor.cpu
+
+        def checked_bool(tensor):
+            host_checks.append(tensor.shape)
+            return original_bool(tensor)
+
+        def checked_cpu(tensor, *args, **kwargs):
+            cpu_transfers.append(tensor.shape)
+            return original_cpu(tensor, *args, **kwargs)
+
         # All tensors remain CPU tensors; Predictor.__init__ and CUDA are never called.
         with patch.object(torch, "flip", wraps=torch.flip) as flipped, \
                 patch.object(torch, "from_numpy", wraps=torch.from_numpy) as converted, \
+                patch.object(torch.Tensor, "__bool__", new=checked_bool), \
+                patch.object(torch.Tensor, "cpu", new=checked_cpu), \
                 patch("deploy_kd.Image.open", wraps=Image.open) as opened:
             actual = predictor.predict_image(path)
             first_inputs = [list(model.inputs) for model in predictor.models]
             self.assertEqual(flipped.call_count, len(set(sizes)))
             self.assertEqual(converted.call_count, len(set(sizes)))
             self.assertEqual(opened.call_count, 1)
+            self.assertEqual(len(host_checks), 1)
+            self.assertEqual(cpu_transfers, [torch.Size([2, 10])])
             second = predictor.predict_image(path)
             self.assertEqual(flipped.call_count, 2 * len(set(sizes)))
             self.assertEqual(converted.call_count, 2 * len(set(sizes)))
             self.assertEqual(opened.call_count, 2)
+            self.assertEqual(len(host_checks), 2)
+            self.assertEqual(cpu_transfers, [torch.Size([2, 10])] * 2)
         expected_members = [torch.stack([torch.sigmoid(x.float())[0] for x in model.outputs[:2]])
                             .mean(0).cpu().numpy() for model in predictor.models]
         expected = deploy_kd.aggregate_member_probabilities(expected_members, predictor.model_weights)
