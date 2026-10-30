@@ -62,6 +62,9 @@ class DistillConfig:
     validation_tta: str = "hflip2"
     training_mode: str = "distillation"
     resume: Path | None = None
+    pos_weight_power: float = 1.0
+    pretrained_provenance_path: Path | None = None
+    pretrained_weights_path: Path | None = None
 
     def model_config(self) -> dict[str, Any]:
         from model_overnight import validate_model_config
@@ -108,6 +111,10 @@ class DistillConfig:
             raise ValueError("Student validation_tta must be identity or hflip2")
         if self.batch_size * self.accumulation_steps != 32:
             raise ValueError("Student comparisons retain effective batch size 32")
+        if type(self.pos_weight_power) not in (int, float) or self.pos_weight_power not in (1., .5):
+            raise ValueError("Student pos_weight_power must be 1 or 0.5")
+        if (self.pretrained_provenance_path is None) != (self.pretrained_weights_path is None):
+            raise ValueError("Offline initialization requires both provenance and original weights")
         self.model_config()
 
 
@@ -259,6 +266,8 @@ def distillation_protocol(config: DistillConfig, cache: Any, *,
     protocol.update(teacher_views=list(views),
         soft_target_aggregation="mean_sigmoid_after_pos_weight_alignment_and_temperature",
         validation_tta=config.validation_tta)
+    if config.pos_weight_power != 1.:
+        protocol["student_pos_weight_power"] = config.pos_weight_power
     return protocol
 
 
@@ -327,6 +336,9 @@ def validate_student_resume(checkpoint: dict[str, Any], config: DistillConfig,
             raise ValueError(f"Student resume protocol mismatch: {key}")
     current = {k: v for k, v in _configuration(config).items() if k != "resume"}
     prior = {k: v for k, v in checkpoint.get("training_config", {}).items() if k != "resume"}
+    prior.setdefault("pos_weight_power", 1.0)
+    prior.setdefault("pretrained_provenance_path", None)
+    prior.setdefault("pretrained_weights_path", None)
     if checkpoint.get("schema_version") in (7, 8):
         prior.setdefault("training_mode", "distillation")
         if (config.training_mode != "distillation"
@@ -486,7 +498,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
     source_version = capture_source_version(Path(__file__).with_name(name) for name in (
         "train_distill.py", "train_overnight.py", "distill_data.py", "distill_tta_data.py", "model_overnight.py",
         "dataset_overnight.py", "dataset.py", "cv_splits.py", "kd_common.py",
-        "runtime_compat.py", "audit_trail.py"))
+        "runtime_compat.py", "audit_trail.py", "student_experiments.py"))
     from cv_splits import read_fold_plan
     from dataset import read_manifest
     from dataset_overnight import make_overnight_loader
@@ -508,6 +520,11 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
     cache, protocol = objective["cache"], objective["protocol"]
     teacher_provenance = objective["teacher_provenance"]
     loss_config = compute_loss_config(train_records, source_manifest_sha256=plan["source_manifest_sha256"], fold=None)
+    if config.pos_weight_power != 1.:
+        from student_experiments import compute_student_loss_config
+        loss_config = compute_student_loss_config(train_records,
+            source_manifest_sha256=plan["source_manifest_sha256"], fold=None,
+            pos_weight_power=config.pos_weight_power)
     schema_version = objective["schema_version"]
     preprocessing = student_preprocessing_config(config)
     if not torch.cuda.is_available():
@@ -590,7 +607,12 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
         if terminal_resume is not None:
             return terminal_resume
     else:
-        provenance = prepare_pretrained_provenance(TINY_BACKBONE)
+        if config.pretrained_provenance_path is not None:
+            from student_experiments import load_local_pretrained_provenance
+            provenance = load_local_pretrained_provenance(config.pretrained_provenance_path,
+                                config.pretrained_weights_path, TINY_BACKBONE)
+        else:
+            provenance = prepare_pretrained_provenance(TINY_BACKBONE)
     if progress["completed_epochs"] >= config.epochs or config.patience and early["bad_epochs"] >= config.patience:
         return {"state": "already_terminal", **progress, "best_auc": best_auc, "best_epoch": best_epoch}
     model = build_overnight_model(pretrained=checkpoint is None,
@@ -739,6 +761,9 @@ def main(argv=None) -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--image-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
     parser.add_argument("--resume", type=Path)
+    parser.add_argument("--pos-weight-power", type=float, choices=(1., .5), default=1.)
+    parser.add_argument("--pretrained-provenance-path", type=Path)
+    parser.add_argument("--pretrained-weights-path", type=Path)
     parser.add_argument("--execute", action="store_true", help="Explicitly start training")
     parser.add_argument("--image-size", type=int, choices=(512, 768), default=512)
     parser.add_argument("--validation-tta", choices=("identity", "hflip2"), default="hflip2",
