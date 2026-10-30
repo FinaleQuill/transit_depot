@@ -1197,3 +1197,11 @@
 - 按用户要求新增FINAL_OPTIMIZATION_HANDOFF与NEW_AGENT_PROMPT，主交接/旧新环境入口置顶当前AVX2+LUT状态；旧v1待确认、cost/证据待修等明确降为历史。
 - 保存81.509946ms本地、80.781137ms NFS、82.190887ms独立项目三组真实结果及未重跑完整valid边界，038仅真实T4 cost_report待办，不冒称认证。
 - 写明新窗口镜像/依赖/native自动恢复、源码根无vendor参数、038副本验证与原包只读、work约1.2GiB余量及不得重做/训练/改CSV边界；本次仅文档，无新安装、GPU或模型执行。
+
+
+### 2026-10-30 13:11（香港）· 冻结教师阶段接手与环境恢复
+
+- 逐页读取两PDF并核SHA；038的474项文件及ZIP SHA/CRC通过，目录/ZIP/回执设只读；033/清单/OOF匹配，10项正式推理源码前后SHA不变。
+- 新机固定digest镜像、802文件推理addon及14项隔离训练依赖恢复；实际import/CUDA FP16、native AVX2重建和7项像素测试通过，未构建模型或执行模型前向。
+- 用户解压结束后仅核train30328/valid1422原图，全部SHA匹配，test图读取0；当前原图根为单层/home/featurize/data/cxr_first。新回执student_takeover_20261030保留探针首轮导入路径失败及修正后通过。
+- 新增离线学生环境入口（4GiB shm/冻结资产只读）及P2 Tiny、P3 Base学生上限提案；教师/OOF冻结，待用户确认才开训。work约1.2GiB，完整新断点须本地6–8GiB及迁移方案；本轮训练/test重生成/上传/删资产均0，真实T4 cost_report仍待。
