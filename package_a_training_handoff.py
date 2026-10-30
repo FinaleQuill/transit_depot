@@ -172,7 +172,7 @@ def build(output):
 def archive(output):
     output=Path(output).resolve();target=output.with_suffix('.zip')
     if target.exists():raise FileExistsError(target)
-    with zipfile.ZipFile(target,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=3,allowZip64=True) as z:
+    with zipfile.ZipFile(target,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=1,allowZip64=True,strict_timestamps=False) as z:
         for p in sorted(output.rglob('*')):
             if p.is_file() and not any(x in p.relative_to(output).parts for x in ('experiments','__pycache__')):
                 z.write(p,output.name+'/'+str(p.relative_to(output)))
