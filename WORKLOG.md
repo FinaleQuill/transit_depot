@@ -1205,3 +1205,11 @@
 - 新机固定digest镜像、802文件推理addon及14项隔离训练依赖恢复；实际import/CUDA FP16、native AVX2重建和7项像素测试通过，未构建模型或执行模型前向。
 - 用户解压结束后仅核train30328/valid1422原图，全部SHA匹配，test图读取0；当前原图根为单层/home/featurize/data/cxr_first。新回执student_takeover_20261030保留探针首轮导入路径失败及修正后通过。
 - 新增离线学生环境入口（4GiB shm/冻结资产只读）及P2 Tiny、P3 Base学生上限提案；教师/OOF冻结，待用户确认才开训。work约1.2GiB，完整新断点须本地6–8GiB及迁移方案；本轮训练/test重生成/上传/删资产均0，真实T4 cost_report仍待。
+
+
+### 2026-10-30 13:43（香港）· 已批准A→B后台训练与自动验收
+
+- 用户明确无需再次确认按A→B连跑，随后允许结束对话等待训练；A于13:29在2080Ti/FP16启动，host PID9288，E1已到2200/3791批，无新完整epoch/AUC结论。教师与原OOF冻结，A配方除sqrt权重及KD对齐外对030匹配，旧卡/精度混杂保留。
+- 实现并通过P2/旧学生、Base完整Study均值概率P3、独立真实Tiny/Base评估、原子备份与控制器定向CPU验证；固定100+5输入及实际历史checkpoint元数据预检通过。提交bdf0910/b5a309c/d85bd23，正式推理源与033/038原件不改。
+- 自动控制器host PID13107/tmux student_ab_pipeline_20261030已运行：A正常终态与最终日志备份→同机033/A成绩表→B训练→B成绩与identity/hflip2耗时，>50ms标注；不等待第二次确认，不训练教师、不test预测、不做工程瘦身。
+- 完整断点及双副本在本地预留12GiB；work存最佳FP32 EMA/末轮FP16与受限日志元数据，保留80MiB余量。work快照不可完整resume，本地同实例双份不保证跨实例持久；换机前迁移完整localruns，不把模型/数据塞Git或删除旧资产。回执student_upper_bound_20261030/launch_receipt.json。

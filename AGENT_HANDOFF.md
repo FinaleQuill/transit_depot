@@ -1,4 +1,17 @@
-# 当前接手：教师冻结，学生上限提案待用户确认
+# 当前后台任务：A已训练，自动衔接评估与B，无需再确认
+
+2026-10-30 13:42，Asia/Hong_Kong。用户已明确批准A→B连跑、每阶段保存权重/日志/指标，A完成即输出033对比，B完成测identity/hflip2的2080Ti耗时；用户允许结束对话等待数小时，**不是要求停止训练**。旧“待确认/训练0次”仅属前阶段快照。完整配方与实时路径见[已批准实验计划](docs/STUDENT_UPPER_BOUND_PLAN_20261030.md)。
+
+- **A在后台真实训练中**：13:29启动，host训练PID9288，tmux `student_a_20261030`，本地run `/tmp/cloud_student_runs_20261030/039_tiny768_p2_seed44`。13:42已到E1 batch2200/3791、loss=.658397，已前向/反向，无新完整epoch或AUC成绩。本阶段新增训练启动1次，B尚未启动，不能冒称训练已完成或有提分。
+- **自动控制器已运行**：host PID13107，tmux `student_ab_pipeline_20261030`，`run_student_upper_bound.py --execute --attach-a`；状态`artifacts/kd_v1/student_upper_bound_20261030/pipeline_status.json`，日志同根`pipeline.log`。顺序为A真实终态+logger exit0+最终备份→同机033完整valid复评及A表→B训练→B表与单模型identity/hflip2串行三轮耗时。自动衔接不等用户再次确认，失败如实记阶段；不自动工程优化。
+- A日志同证据根`A.train.log`，B启动后`B.training.log`；成绩单同根`reports/{A,B}/REPORT.md`、`metrics.json`。033仅在当前2080Ti复评一次并哈希复用，不用test选参；类1/4/8、完整十类、患者区间和类1逐轮轨迹均保留。B timing使用034原100+5张valid图，>50ms无TTA会标注，不构成T4认证。
+- 完整best/last原件和滚动完整副本都在本地`/tmp/cloud_student_runs_20261030`（A039/B040；副本`full_checkpoint_backups/{A,B}`），至少12GiB预留。work的同证据根`models/{A,B}`保存最佳精确FP32 EMA、末轮FP16及小型完整日志/来源收据，快照显式不可完整续训；work串行原子更新留80MiB余量。本地双副本不保证跨实例持久，换机前迁移完整localruns，不将大模型/数据加入Git、不删旧资产。
+- 已验证A4项、旧学生23项、B17项、独立评估6项、备份9项、控制器6项CPU测试（仅列各定向集，不累加重复执行）；实际历史checkpoint元数据和固定100+5输入预检通过。A仅变平方根pos_weight及KD数学配套对齐，其他配方对030逐项匹配；历史4090/BF16→当前2080Ti/FP16混杂保留，不把033双模与A单模差异当净因果。
+- 实现提交`bdf0910`、`b5a309c`、`d85bd23`；启动回执`launch_receipt.json`。**运行中不要修改A/B已冻结执行源码或配置**，控制器会检查执行源SHA。10项正式推理源SHA不变，038目录/ZIP/回执仍只读，原test CSV SHA不变；未重生成test/上传/删除资产。真实T4 cost_report仍待。
+
+---
+
+# 前阶段接手：教师冻结，学生上限提案待用户确认
 
 2026-10-30 13:11，Asia/Hong_Kong。用户最新任务优先：不重训/修改教师，直接复用024现有严格OOF；暂不以推理100ms限制筛选学生提分实验。**先恢复环境、核验资产、提出1–2项实验，等用户确认才训练。当前确认尚未收到，本轮训练0次。** 详细配方及边界见[学生上限提案](docs/STUDENT_UPPER_BOUND_PLAN_20261030.md)。
 

@@ -1,6 +1,6 @@
 # 冻结教师后的学生上限实验提案
 
-2026-10-30，Asia/Hong_Kong。状态：**提案，等待用户确认；本轮训练0次**。本阶段授权覆盖必要环境恢复与状态核验，不覆盖启动训练。用户明确暂不以T4的100ms限制筛选学生实验；正式交付仍需另行完成规则验收。
+2026-10-30，Asia/Hong_Kong。状态：**用户已批准A→B连续执行，无需再次确认；A于13:29启动，B自动排队**。本阶段授权覆盖学生实现、训练、完整valid比较与B单模型identity/hflip2开发耗时核验。用户明确暂不以T4的100ms限制筛选学生实验；正式交付仍需另行完成规则验收。用户允许后台训练，本轮对话不等待数小时训练结束。
 
 ## 本阶段边界与规则
 
@@ -25,7 +25,7 @@
 
 从原始Tiny ImageNet初始化新训，预先固定seed44。仅将学生硬BCE的`pos_weight`改为`sqrt(negative_studies/positive_studies)`，统计完全来自官方train；其余沿用030：768、α=.2/T=2、两轮KD渐进、EMA=.999、batch8图×accum4、25轮上限/patience5、warmup1、LR5e-5/5e-4、WD=.05、dropout=.2、droppath=.1、grad_clip=1、valid hflip2。
 
-必须同步将KD的学生权重项改为新的平方根权重：`z_teacher - log(w_teacher) + log(w_student_new)`。保留教师各折原权重及OOF logits原字节，不把缓存当概率，也不再次温度化。当前代码尚未提供P2开关，确认后在独立学生实验模块实现，不能直接误用旧命令。
+必须同步将KD的学生权重项改为新的平方根权重：`z_teacher - log(w_teacher) + log(w_student_new)`。保留教师各折原权重及OOF logits原字节，不把缓存当概率，也不再次温度化。已新增学生专用`student_experiments.py`及`train_distill.py --pos-weight-power 0.5`，原默认1.0行为不变，教师训练工具不改。离线原始初始化及单因素配方对照CPU检查通过，A显式命令与030其余配方逐项匹配；旧训练GPU/精度混杂仍保留。
 
 预期作用是缓和稀少阳性的过强梯度，争取减少类1后期排序退化，并观察类4/8。必须重训学生；同卡每轮开销预计约旧Tiny配方的1.0倍（约±10%），不以推理耗时筛选。没有可靠证据预测一定提分。
 
@@ -41,7 +41,7 @@
 
 预期作用是增加学生容量，并让训练硬目标与Study级评分聚合一致，争取整体及1/4/8改善。必须重训学生；按历史4090 Base/Tiny吞吐推算，同卡每轮暂预算为Tiny的2.5–4倍。该范围并非2080Ti实测；完整Study组批、FP16及保存开销均有不确定性，首轮后更新排期。纯FP16 Base权重预计约176MB，最终实际资产大小另核验，500MB规则并未放宽。
 
-Base虽在模型和来源白名单中，现有`train_distill.py`、`export_student.py`、`deploy_kd.py`仍存在Tiny硬编码。确认后需要独立学生实验训练/验证/导出适配，不能把Base冒充Tiny，不能改写当前033部署或038安全基准。
+Base虽在模型和来源白名单中，现有`export_student.py`、`deploy_kd.py`仍存在Tiny硬编码。本轮独立`study_student.py`及`student_experiment_evaluation.py`支持真实Base身份、schema10和通用实验导出，不能把Base冒充Tiny。正式033部署及038安全基准不变。B的17项CPU数值/梯度/覆盖/训练循环/恢复测试通过。
 
 ## 成绩单与停止边界
 
@@ -49,7 +49,7 @@ Base虽在模型和来源白名单中，现有`train_distill.py`、`export_stude
 
 Feature Distillation没有现成中间特征缓存；需重新调用每位患者对应的折外冻结教师提特征。虽然规则允许，但会增加教师推理、缓存和对齐成本，先不列入本批；严禁用见过该患者的其余教师混合训练特征。
 
-确认后每轮保留真实loss/硬BCE/KL、十类AUC、AMP跳步、LR、精度、有效batch、耗时和显存。在当前2080Ti上用相同完整valid、相同评估精度/预处理，重新评估冻结030/033及新候选；这些仅是valid前向，不重训教师或重生成test。
+每轮保留真实loss/硬BCE/KL、十类AUC、AMP跳步、LR、精度、有效batch、耗时和显存。本批自动成绩单在当前2080Ti上用相同完整valid、相同FP16预处理/TTA重新评估冻结033及新候选（033仅复评一次后按哈希复用）；与历史单030另作参考。这些仅是valid前向，不重训教师或重生成test。
 
 最终报告Macro-AUC、十类AUC、1/4/8均值、固定.5的F1、单图/多图Study切片、患者聚类配对置信区间，以及训练资源成本。患者区间不能消除硬件/训练精度/选epoch/valid选参的混杂。若要评估组合，只允许一个预先登记的固定等权组合，不密集扫描、不拟合逐类融合。两个实验结束先交成绩单，等待用户决定下一阶段。
 
@@ -65,9 +65,18 @@ Feature Distillation没有现成中间特征缓存；需重新调用每位患者
 
 推理继续用原`run_in_competition.sh`及其固定8.55MB附加包，不改变当前推理环境。学生入口另加`/tmp/cloud_student_training_addons_cp312`，按030真实`environment_lock.txt`固定14项训练依赖，包括Albumentations2.0.8、OpenCV4.11.0.86、sklearn1.6.1、SciPy1.15.3。训练的sklearn/SciPy覆盖仅发生在独立PYTHONPATH，不覆盖镜像；torch/torchvision/NumPy/Pillow始终来自固定镜像。精确列表及文件SHA保存在本轮回执目录。恢复完成以实际import/CUDA/native回执为准，不能仅凭pip成功宣称可运行。
 
-work约余1.2GiB，本地根盘有充足空间。Tiny完整best/last各约450MB；Base完整断点预计各约1.40GB，保留A/B加原子临时写入、导出与余量应在本地预留至少6–8GiB。不能把新run完整断点写进work或为腾空间删除旧资产。
+work约余1.2GiB，本地根盘有充足空间。Tiny完整best/last各约450MB；Base完整断点预计各约1.40GB。本轮另保留完整滚动副本，含原件、双份及原子临时写入至少预留12GiB本地空间。不能把新run完整断点写进work或为腾空间删除旧资产。
 
-本地根盘与`/tmp`不保证跨Featurize实例持久。训练前需明确本地run目录及完整断点的保留/迁移办法；小型日志、源码和哈希回执同步work不能替代完整恢复断点。用户尚未确认开训，本轮不创建新训练run或承诺持久断点已解决。
+本地根盘与`/tmp`不保证跨Featurize实例持久。完整best/last在`/tmp/cloud_student_runs_20261030/{039_tiny768_p2_seed44,040_base768_p2_p3_seed44}`，另一本地完整副本在同root的`full_checkpoint_backups/{A,B}`。它们同属一个实例，不冒称跨实例备份；换机前必须迁移整个local run目录。
+
+work的`artifacts/kd_v1/student_upper_bound_20261030/models/{A,B}`持久保留最佳FP32 EMA精确权重与末轮FP16权重、来源和指标。这些明确标记`student_ema_snapshot`、`full_training_state_included=false`、`resume_supported=false`，不能代替完整优化器/RNG续训断点。按实际文件大小串行原子更新，保留至少80MiB余量；A/B小型源/日志元数据共50MiB上限，另留50MiB供控制器与成绩单。禁止将模型、数据或敏感资产加入Git；没有为腾空间删除旧资产。
+
+## 后台运行与成绩单位置
+
+- A：tmux `student_a_20261030`，日志`artifacts/kd_v1/student_upper_bound_20261030/A.train.log`；已真实完成前向/反向，启动宿主训练PID9288，PID后续以实际进程为准。
+- 自动控制器：tmux `student_ab_pipeline_20261030`，`run_student_upper_bound.py --execute --attach-a`；日志同证据根`pipeline.log`，状态`pipeline_status.json`。仅当A真实正常终态、原始logger退出0且最终备份完成后，保存A完整033对比表，再自动训练B；B完成后评估并核验identity/hflip2端到端耗时。失败会记录具体阶段，不伪造下一阶段完成。
+- A/B正式valid表：同证据根`reports/{A,B}/REPORT.md`及`metrics.json`，突出1/4/8，并保留患者区间、切片、类1逐轮轨迹。表格未生成前不冒称已有成绩。B无TTA若>50ms自动标注；这是2080Ti开发诊断，不是T4认证。
+- 备份控制器只在已提交断点SHA变化时读取大权重，最终单独刷新小型日志/退出回执，避免反复读取GB文件或遗漏收尾日志。训练与GPU评估串行，不重生成test，不做工程瘦身。
 
 ## 证据索引
 
