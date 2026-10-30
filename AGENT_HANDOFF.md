@@ -1,4 +1,16 @@
-# 当前后台任务：A已训练，自动衔接评估与B，无需再确认
+# 当前状态：A的041候选CSV已交付，B原进程已恢复训练
+
+2026-10-30 19:12，Asia/Hong_Kong。用户追加明确授权“先测A速度、按A生成submission.csv，结束后继续B”，替代此前不生成新test预测的阶段边界；不允许据test输出/榜单反馈调参，B仍沿预先批准的train/valid配方。详见[A测速与交付](docs/A_SUBMISSION_AND_SPEED_20261030.md)。
+
+- A真实FP16/hflip2完整valid Macro-AUC **.809115940852**（033同机.808385242530），类1/4/8均低于033，患者区间跨0，类1后期退化未修复，不称稳定优于033。按用户选定的A E9最佳EMA，使用原export_student/predict/benchmark入口，182个FP16张量及权重文件与原A验证导出逐字节相同。
+- 2080Ti、768/FP16/hflip2、原100valid图+另5预热、batch1串行三轮端到端 **73.935760687ms/图**；三轮73.182002150/74.373183450/74.252096460，全部保留。B容器整体冻结、GPU队列排空后才计时，B CUDA显存上下文仍驻留约4.5GiB，不能称完全空卡或T4认证。每轮53Study/530概率与A原完整valid保存概率FP64字节相同。
+- 新候选CSV在`../deliveries/041_tiny768_p2_A_submission_20261030/submission.csv`，691900bytes，SHA `44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e`。2218图/1414Study/14140行；原图2218 SHA全通过，独立CSV/22180逐图行核验十类覆盖、有限[0,1]、按manifest顺序FP64均值逐bit一致，未分析test分布、未上传。033原CSV与038目录/ZIP/回执及正式推理源不改。
+- **B正在继续训练，原host PID171397、控制器PID13107不变。** 19:06:22.806冻结，19:09:53.537恢复，先检查冻结主线程明确在计算中、排除DataLoader 180秒取数deadline；没有创建中间磁盘断点或重启/回放B。恢复后E1 6100→6200/18513、loss有限；训练原始walltime含210.73秒暂停。新执行回执`artifacts/kd_v1/student_A_submission_20261030/execution.json`。
+- A本地正式部署和全部三轮/预测输出在`/tmp/cloud_student_runs_20261030/041_A_submission_20261030/`；work041含CSV/sidecar/生成及独立审计/测速/身份回执，不额外复制大模型挤占B备份预算。A最佳FP32 EMA已有work备份，完整断点与同实例双副本仍在本地，换机前迁移。真实T4 cost_report继续待办。
+
+---
+
+# 前阶段后台任务：A已训练，自动衔接评估与B，无需再确认
 
 2026-10-30 13:42，Asia/Hong_Kong。用户已明确批准A→B连跑、每阶段保存权重/日志/指标，A完成即输出033对比，B完成测identity/hflip2的2080Ti耗时；用户允许结束对话等待数小时，**不是要求停止训练**。旧“待确认/训练0次”仅属前阶段快照。完整配方与实时路径见[已批准实验计划](docs/STUDENT_UPPER_BOUND_PLAN_20261030.md)。
 
