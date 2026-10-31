@@ -1,5 +1,7 @@
 # 胸片多标签分类：ConvNeXt V1 离线蒸馏
 
+**下一位agent接手入口（2026-10-31）：**先读[独立项目交接文档](NEXT_AGENT_HANDOFF.md)。当前044的valid AUC为0.8166770734、2080Ti平均84.820141ms，CSV及固定模型已交付并审计；用户已停止继续优化，80ms仍保留为后续目标。下方旧阶段说明保留历史语境，不能当作恢复实验的指令。
+
 **新窗口须重建环境：**Featurize已配环境会丢失，旧“已就绪”仅是历史验证。先读[新环境恢复及接手步骤](docs/NEW_ENVIRONMENT_HANDOFF_20261029.md)，不要直接盲用旧`/tmp`解释器或硬编码驱动挂载的容器入口。
 
 **当前默认已采用等值加速（2026-10-30）：**Pillow同系数/22位定点舍入的原生单图并行LANCZOS，运行时AVX2/generic分派；精确uint8→FP16查表、固定TTA及一次概率回传。同环境新测v1本地124.754857ms→**81.509946ms/图**；NFS三轮80.781137ms，完整项目副本离线重建后82.190887ms。原100图/另5图预热、batch1串行三轮全部保留，逐图及Study概率与v1逐字节相同；033模型/config/原CSV未变，无训练或test重生成。证据在`../deliveries/037_dual768_native_optimization_20261029/optimization_summary.json`。
