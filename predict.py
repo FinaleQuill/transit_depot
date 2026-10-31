@@ -11,7 +11,8 @@ from inference_reproducibility import configure_inference
 
 
 def predict_submission(*, model_dir: str | Path, image_root: str | Path,
-                       output: str | Path, manifest: str | Path | None = None) -> dict:
+                       output: str | Path, manifest: str | Path | None = None,
+                       predictor_factory=None) -> dict:
     output = Path(output).resolve()
     if output.name != "submission.csv":
         raise ValueError("Official output filename must be submission.csv")
@@ -21,7 +22,7 @@ def predict_submission(*, model_dir: str | Path, image_root: str | Path,
         raise ValueError("Prediction output must not be inside the read-only image directory")
     records = prediction_records(image_root, manifest)
     reproducibility = configure_inference()
-    predictor = Predictor(model_dir)
+    predictor = (predictor_factory or Predictor)(model_dir)
     accumulator = StudyAccumulator(records)
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_name(output.name + ".tmp")
