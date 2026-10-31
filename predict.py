@@ -56,12 +56,15 @@ def predict_submission(*, model_dir: str | Path, image_root: str | Path,
         temporary.unlink(missing_ok=True)
         image_temporary.unlink(missing_ok=True)
         raise
+    members = getattr(predictor, "members", None)
+    if members is None:
+        members = deployment_members(predictor.config)
     report = {"submission": str(output), "submission_sha256": sha256_file(output),
               "studies": count, "images": len(records), "data_rows": count * 10,
               "batch_size": 1, "precision": "float16", "tta": predictor.config["tta"],
               "ensemble": predictor.config["ensemble"],
-              "member_count": len(deployment_members(predictor.config)),
-              "image_sizes": sorted({m["image_size"] for m in deployment_members(predictor.config)}),
+              "member_count": len(members),
+              "image_sizes": sorted({m["image_size"] for m in members}),
               "deployment_config_sha256": sha256_file(Path(model_dir) / "config.json"),
               "manifest_sha256": sha256_file(manifest) if manifest is not None else None,
               "deployment_inventory": predictor.inventory,
