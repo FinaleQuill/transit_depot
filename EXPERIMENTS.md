@@ -8,4 +8,4 @@
 | 2026-11-02 | 固定96样本主体裁剪对比 | 旧审阅集train/valid各48、4视角各12；非全量 | 固定参数，52裁/44全，40张倍率>1.01、最大1.2159；文字设备保留。身份/几何/全框像素核验通过，未训练。见 docs/TIGHT_CROP_GALLERY_REVIEW_20261102.md。 |
 | 2026-11-02 | Tight Crop后二次纯黑收缩预览 | 冻结96图中的5张(AP/PA/Lateral)，仅出图 | 非零丢失全部0；相对一次裁剪最大放大5.28%，2/5无倍率增益；保留等比补边，无训练或正式切换。图见 artifacts/exact_black_trim_5case_20261102/index.md。 |
 
-| 2026-11-02 | tight_crop_ab_20261102 | 配对Tiny/Base seed48固定E2；A完整letterbox、B主体crop+p=.5擦除 | AP-only主要终点、患者bootstrap1000；启动前预登记 | docs/TIGHT_CROP_AB_PLAN_20261102.json |
+| 2026-11-02 | tight_crop_ab_20261102：配对Tiny/Base seed48固定E2 | train训练、valid评估；A完整letterbox、B主体crop+p=.5擦除 | AP-only主要终点、患者bootstrap1000；控制器PID 28152于03:21（香港）启动。见 docs/TIGHT_CROP_AB_PLAN_20261102.json，实时状态 artifacts/tight_crop_ab_20261102/STATUS.md。 |
