@@ -1326,3 +1326,12 @@
 - 新增独立render_geometry_review.py及docs/GEOMETRY_VISUAL_REVIEW_20261102.md；严格Canny/findContours/凸包与逐边否决框架另存文档，只做设计，未安装依赖或替换检测器。
 - 既有七项审计CSV/summary/预登记文件原样复制至artifacts/geometry_audit_preliminary_20261102，源目标SHA逐项一致；96图、来源哈希与坐标索引在artifacts/geometry_review_20261102，数据不入Git。
 - 本轮无全量几何重扫、模型推理、训练或test读取；正式预处理和原图不变。按用户要求等待肉眼反馈，再决定严格版实施，不自动启动A/B。
+
+
+### 2026-11-02 02:30（香港）· 废弃旧裁边，仅两张train图试跑主体包络原型
+
+- 用户否决旧safe-crop，改为主体tight crop；新建tight_crop.py/preview_tight_crop.py，不使用旧黑带边缘检测器，旧方案文档标历史废弃；原图和正式预处理未改。
+- 固定train:006758/005642，OpenCV正确Otsu亮组织种子+低亮度支持区+闭运算/中心连通域/凸包，外扩5%且至少32原像素，逐轴保守映射后等比768补黑；仅两图源SHA前后及清单匹配，无valid/test读取、全量扫描或训练。
+- 结果：AP_04裁掉43.2783%面积但768线性倍率1.0000；AP_05裁掉1.9672%、倍率1.0201。两图文字设备仍在，未达全部去字目标；原AP_04已有上部截断，不能归因裁剪或声称恢复解剖。
+- 训练增强仅独立函数：p=.5、一个0.5%-2%内容区均匀小黑块，归一化前执行，非训练完全不擦；附固定seed0未触发/seed2触发演示，正式训练管线未接入。
+- 六项合成unittest通过（pytest不可用），覆盖几何/暗孔/回退/坐标/letterbox/擦除；OpenCV4.11隔离安装，本轮完整解码无时延验收。报告docs/TIGHT_CROP_TWO_IMAGE_REVIEW_20261102.md，图与来源证据artifacts/tight_crop_two_image_20261102/；停止在两图汇报，不自动全量切换。
