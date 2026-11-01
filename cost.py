@@ -180,7 +180,8 @@ def summarize_timings(rounds: list[list[float]]) -> tuple[np.ndarray, np.ndarray
 def run_cost(*, submission: str | Path, pictures_100: str | Path, pictures_5: str | Path,
              model_dir: str | Path, output_dir: str | Path,
              manifest: str | Path | None = None,
-             image_submission: str | Path | None = None) -> dict:
+             image_submission: str | Path | None = None,
+             predictor_factory=None) -> dict:
     output_dir = Path(output_dir).resolve()
     if output_dir.exists():
         raise FileExistsError("Choose a new timing output directory")
@@ -197,7 +198,10 @@ def run_cost(*, submission: str | Path, pictures_100: str | Path, pictures_5: st
     image_reference = read_image_probabilities(image_reference_path) if image_reference_path.is_file() else None
     original_ids = source_image_ids(measured, manifest)
     reproducibility = configure_inference()
-    predictor = Predictor(model_dir)  # Loading, validation and initialization are not timed.
+    predictor = (predictor_factory or Predictor)(model_dir)  # Initialization is not timed.
+    members = getattr(predictor, 'members', None)
+    if members is None:
+        members = deployment_members(predictor.config)
     environment = timing_environment(predictor)
     output_dir.mkdir(parents=True, exist_ok=False)
     for record in warmup:
@@ -237,8 +241,8 @@ def run_cost(*, submission: str | Path, pictures_100: str | Path, pictures_5: st
               "environment": environment, "reproducibility": reproducibility,
               "inference_files": predictor.inventory,
               "deployment_config_sha256": sha256_file(Path(model_dir) / "config.json"),
-              "deployment": {"member_count": len(deployment_members(predictor.config)),
-                             "image_sizes": sorted({m["image_size"] for m in deployment_members(predictor.config)}),
+              "deployment": {"member_count": len(members),
+                             "image_sizes": sorted({m["image_size"] for m in members}),
                              "tta": predictor.config["tta"], "ensemble": predictor.config["ensemble"],
                              "aggregation": "fixed_weighted_mean_probability_then_study_mean"},
               "per_image_round_ms": times.T.tolist(), "per_image_mean_ms": per_image_ms.tolist(),
@@ -272,7 +276,8 @@ def main(argv=None) -> int:
                         help="Final predict.py image sidecar; defaults beside submission.csv")
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
-    report = run_cost(**vars(args))
+    from submission_runtime import load_submission_predictor
+    report = run_cost(**vars(args), predictor_factory=load_submission_predictor)
     return 0 if report["official_compliance_pass"] else 2
 
 

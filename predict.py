@@ -85,7 +85,9 @@ def main(argv=None) -> int:
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     import json
-    print(json.dumps(predict_submission(**vars(args)), ensure_ascii=False, indent=2))
+    from submission_runtime import load_submission_predictor
+    print(json.dumps(predict_submission(**vars(args), predictor_factory=load_submission_predictor),
+                     ensure_ascii=False, indent=2))
     return 0
 
 
