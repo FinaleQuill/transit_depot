@@ -16,9 +16,21 @@ STUDENT_INFERENCE_ADDONS='/tmp/dual768_competition_addons'
 STUDENT_TRAINING_ADDONS='/tmp/cloud_student_training_addons_cp312'
 STUDENT_LOCAL_ROOT='/tmp/cloud_student_runs_20261030'
 STUDENT_BASELINE="$STUDENT_WORK_ROOT/deliveries/038_dual768_optimized_project_20261030"
+STUDENT_RUNTIME_MODE="${STUDENT_RUNTIME_MODE:-training}"
+if [[ "$STUDENT_RUNTIME_MODE" != training && "$STUDENT_RUNTIME_MODE" != inference ]]; then
+  printf 'STUDENT_RUNTIME_MODE must be training or inference\n' >&2
+  exit 2
+fi
+STUDENT_PYTHONPATH='/opt/dual768_addons'
+if [[ "$STUDENT_RUNTIME_MODE" == training ]]; then
+  STUDENT_PYTHONPATH="/opt/student_training_addons:$STUDENT_PYTHONPATH"
+  [[ -d "$STUDENT_TRAINING_ADDONS/albumentations-2.0.8.dist-info" ]] || {
+    printf 'Restore the documented training addons first.\n' >&2; exit 2;
+  }
+fi
 
 for STUDENT_PATH in "$STUDENT_DATA_ROOT" "$STUDENT_INFERENCE_ADDONS/timm-1.0.30.dist-info" \
-                    "$STUDENT_TRAINING_ADDONS/albumentations-2.0.8.dist-info" "$STUDENT_BASELINE"; do
+                    "$STUDENT_BASELINE"; do
   if [[ ! -d "$STUDENT_PATH" ]]; then
     printf 'Restore the documented environment first; missing directory: %s\n' "$STUDENT_PATH" >&2
     exit 2
@@ -67,7 +79,7 @@ exec docker run --rm --pull=never --network none --shm-size=4g -i \
   --volume "$STUDENT_INFERENCE_ADDONS:/opt/dual768_addons:ro" \
   --volume "$STUDENT_TRAINING_ADDONS:/opt/student_training_addons:ro" \
   --workdir "$STUDENT_REPO_ROOT" \
-  --env PYTHONPATH=/opt/student_training_addons:/opt/dual768_addons \
+  --env PYTHONPATH="$STUDENT_PYTHONPATH" \
   --env PYTHONNOUSERSITE=1 --env PYTHONDONTWRITEBYTECODE=1 \
   --env PYTHONHASHSEED=44 --env HF_HUB_OFFLINE=1 \
   --env NO_ALBUMENTATIONS_UPDATE=1 --env TZ=Asia/Hong_Kong \
