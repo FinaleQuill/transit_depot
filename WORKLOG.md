@@ -1317,3 +1317,12 @@
 - 计划：四小头固定E12，F1完整Study BCE/锚定对照，F2另含pairwise排序；pure train拟合、CPU代理选最高两登记pair、真实FP16全valid+100×3计时，原02:37香港截止，不自动新test预测。
 - 核验与Git：20项cache/fit/patch、6项proxy、9项actual/pipeline CPU检查通过；b60be39交付，f5f725f训练，4929ffb评估，f2de1b0实际验收/后台控制均已提交，不推送。
 - 保存：新后台PID58479/PPID1，状态frozen_head_20261101/STATUS.md，source SHA冻结防改，新增docs/FROZEN_HEAD_HANDOFF_20261101.md保存全部思路/参数/路径/故障边界；用户接手先看新状态，旧bounded状态不可混用，不重复启动。
+
+
+### 2026-11-02 01:56（香港）· 初步几何候选可视化复核，严格检测器暂不执行
+
+- 按用户本轮授权只重绘旧候选：train/valid × AP/PA/Lateral/Missing 各12张，共96张唯一源图；青色原边界、红色候选框、NO CUT回退及71组带/不带遮罩的1:1条带，源SHA前后匹配清单。
+- 复核发现旧Otsu公式缺少total乘数，train28653/30328及valid1348/1422阈值为254；component未实际约束裁框，原像素映射存在约3px偏差。safe_crop字段不是医学安全结论，旧结果不用于裁剪训练。
+- 新增独立render_geometry_review.py及docs/GEOMETRY_VISUAL_REVIEW_20261102.md；严格Canny/findContours/凸包与逐边否决框架另存文档，只做设计，未安装依赖或替换检测器。
+- 既有七项审计CSV/summary/预登记文件原样复制至artifacts/geometry_audit_preliminary_20261102，源目标SHA逐项一致；96图、来源哈希与坐标索引在artifacts/geometry_review_20261102，数据不入Git。
+- 本轮无全量几何重扫、模型推理、训练或test读取；正式预处理和原图不变。按用户要求等待肉眼反馈，再决定严格版实施，不自动启动A/B。
