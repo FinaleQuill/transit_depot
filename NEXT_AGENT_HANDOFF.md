@@ -1,3 +1,5 @@
+**2026-11-01最新授权与执行：** 用户已恢复提分/训练并允许最多12小时；旧停止说明是历史。当前固定4轮Tiny/Base EMA微调与Study打包，先读[本轮运行交接](docs/BOUNDED_FINETUNE_HANDOFF_20261101.md)，查实际进程再操作，不重复启动。
+
 # 项目交接：043/044实际提交基本持平，valid提分未体现为平台优势
 
 更新时间：2026-10-31，Asia/Hong_Kong（UTC+8）。项目根目录为 `/home/featurize/work/cloud_project_v2`。本文件供没有聊天上下文的下一位agent独立接手；最新用户要求优先于旧交接中的历史阶段。
