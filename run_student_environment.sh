@@ -66,7 +66,12 @@ else
 fi
 
 mkdir -p "$STUDENT_LOCAL_ROOT"
+STUDENT_NAME_ARGS=()
+if [[ -n "${STUDENT_CONTAINER_NAME:-}" ]]; then
+  STUDENT_NAME_ARGS+=(--name "$STUDENT_CONTAINER_NAME")
+fi
 exec docker run --rm --pull=never --network none --shm-size=4g -i \
+  "${STUDENT_NAME_ARGS[@]}" \
   "${STUDENT_GPU_ARGS[@]}" \
   --user "$(id -u):$(id -g)" \
   --volume "$STUDENT_WORK_ROOT:$STUDENT_WORK_ROOT" \

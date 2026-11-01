@@ -158,7 +158,8 @@ def export_experimental_checkpoint(checkpoint_path: Path, output: Path):
     output.mkdir(parents=True, exist_ok=False)
     torch.save(half_state, output / 'student_fp16.pt')
     copied = ('preprocessing', 'pretrained_provenance', 'teacher_provenance', 'distillation',
-              'source_manifest_sha256', 'fold_plan_sha256', 'official_valid_manifest_sha256')
+              'source_manifest_sha256', 'fold_plan_sha256', 'official_valid_manifest_sha256',
+              'student_warm_start')
     config = {key: checkpoint[key] for key in copied if key in checkpoint}
     config.update(schema_version=1, artifact_type='experimental_student_fp16',
                   backbone_name=model_config['backbone_name'], model_config=model_config,

@@ -1,4 +1,4 @@
-"""Explicit Base student training with complete-Study probability-mean supervision.
+"""Explicit V1 Tiny/Base training with complete-Study probability-mean supervision.
 
 The frozen teachers and original OOF cache are read-only inputs. Importing this
 module never initializes a model, opens images, or downloads weights. Only
@@ -26,10 +26,12 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 
 from audit_trail import capture_source_version, record_checkpoint, training_output_has_artifacts
-from kd_common import BASE_BACKBONE, require_training_runtime, sha256_file, write_json
+from kd_common import BASE_BACKBONE, TINY_BACKBONE, require_training_runtime, sha256_file, write_json
 from train_distill import (DistillConfig, _configuration, alpha_at, distillation_losses,
                            evaluate_student, prepare_student_objective,
-                           student_preprocessing_config, validate_output_paths)
+                           student_preprocessing_config, validate_output_paths,
+                           load_student_ema_initialization, initialize_model_from_student_ema,
+                           resume_training_configuration)
 
 SCHEMA_VERSION = 10
 MODEL_NAME = "convnext_v1_base_gap"
@@ -37,6 +39,7 @@ MODEL_NAME = "convnext_v1_base_gap"
 
 @dataclass(frozen=True)
 class StudyConfig(DistillConfig):
+    backbone_name: str = BASE_BACKBONE
     batch_size: int = 1
     accumulation_steps: int = 32
     seed: int = 44
@@ -51,7 +54,7 @@ class StudyConfig(DistillConfig):
 
     def model_config(self) -> dict[str, Any]:
         from model_overnight import validate_model_config
-        return validate_model_config({"backbone_name": BASE_BACKBONE,
+        return validate_model_config({"backbone_name": self.backbone_name,
             "drop_rate": self.dropout, "drop_path_rate": self.drop_path,
             "gradient_checkpointing": True})
 
@@ -63,8 +66,13 @@ class StudyConfig(DistillConfig):
             raise ValueError("P3 uses one complete Study per microbatch and 32 Studies per update")
         if self.pos_weight_power != 0.5 or self.image_size != 768 or self.amp_dtype != "float16":
             raise ValueError("P3 retains its precommitted sqrt weights, 768 input and FP16 training")
-        if self.pretrained_provenance_path is None or self.pretrained_weights_path is None:
+        if (self.init_student_ema is None and self.resume is None
+                and (self.pretrained_provenance_path is None or self.pretrained_weights_path is None)):
             raise ValueError("P3 requires explicit offline original-pretrain materials and weights")
+
+    def model_name(self):
+        from model_overnight import TINY_MODEL_NAME
+        return TINY_MODEL_NAME if self.backbone_name == TINY_BACKBONE else MODEL_NAME
 
 
 def complete_study_groups(records: list[dict[str, Any]]) -> list[list[int]]:
@@ -240,8 +248,8 @@ def validate_study_resume(checkpoint, config, expected):
     for name, value in expected.items():
         if checkpoint.get(name) != value:
             raise ValueError(f"Complete-Study resume protocol changed: {name}")
-    current = {k: v for k, v in _configuration(config).items() if k != "resume"}
-    prior = {k: v for k, v in checkpoint.get("training_config", {}).items() if k != "resume"}
+    current, prior = resume_training_configuration(config, checkpoint)
+    prior.setdefault('backbone_name', BASE_BACKBONE)
     if current != prior:
         raise ValueError("Complete-Study resume configuration changed")
     for name in ("model_state_dict", "raw_model_state_dict", "optimizer_state_dict",
@@ -312,12 +320,24 @@ def run_training(config: StudyConfig):
         "study_equal_weighting": "one_loss_per_complete_Study",
         "sampling": "shuffle_Studies_without_replacement"}
     preprocessing = student_preprocessing_config(config)
-    provenance = load_local_pretrained_provenance(config.pretrained_provenance_path,
-        config.pretrained_weights_path, BASE_BACKBONE)
+    initial_state, student_warm_start = None, None
+    if config.init_student_ema is not None:
+        initial_state, provenance, student_warm_start = load_student_ema_initialization(
+            config.init_student_ema, config, expected={
+                'source_manifest_sha256': plan['source_manifest_sha256'],
+                'fold_plan_sha256': sha256_file(config.fold_plan),
+                'official_valid_manifest_sha256': plan['official_holdout']['sha256'],
+                'teacher_provenance': objective['teacher_provenance']})
+    elif config.resume is None:
+        provenance = load_local_pretrained_provenance(config.pretrained_provenance_path,
+            config.pretrained_weights_path, config.backbone_name)
+    else:
+        # Original pretrain/EMA paths are not required to resume a full new-run checkpoint.
+        provenance = None
     bindings = [(config.fold_plan, sha256_file(config.fold_plan)),
         (train_path, plan["source_manifest_sha256"]),
         (valid_path, plan["official_holdout"]["sha256"]), *objective["cache_bindings"]]
-    expected = {"schema_version": SCHEMA_VERSION, "artifact_type": "kd_student", "model_name": MODEL_NAME,
+    expected = {"schema_version": SCHEMA_VERSION, "artifact_type": "kd_student", "model_name": config.model_name(),
         "model_config": config.model_config(), "image_size": config.image_size,
         "source_manifest_sha256": plan["source_manifest_sha256"], "fold_plan_sha256": bindings[0][1],
         "official_valid_manifest_sha256": bindings[2][1], "preprocessing": preprocessing,
@@ -350,6 +370,11 @@ def run_training(config: StudyConfig):
         source = config.resume if config.resume.is_file() else out / "best.pt"
         digest = sha256_file(source)
         checkpoint = torch.load(source, map_location="cpu", weights_only=True)
+        provenance = checkpoint.get('pretrained_provenance')
+        from kd_common import validate_pretrained_provenance
+        validate_pretrained_provenance(provenance, config.backbone_name)
+        expected['pretrained_provenance'] = provenance
+        student_warm_start = checkpoint.get('student_warm_start')
         if sha256_file(source) != digest:
             raise RuntimeError("Base resume checkpoint changed while loading")
         validate_study_resume(checkpoint, config, expected)
@@ -381,9 +406,13 @@ def run_training(config: StudyConfig):
                       "best_checkpoint_sha256": best_hash, "last_checkpoint_sha256": sha256_file(out / "last.pt")}
             write_json(out / "status.json", result)
             return result
-    model = build_overnight_model(pretrained=checkpoint is None,
-        pretrained_weights_path=provenance["weights_path"] if checkpoint is None else None,
+    use_pretrained = checkpoint is None and initial_state is None
+    model = build_overnight_model(pretrained=use_pretrained,
+        pretrained_weights_path=provenance["weights_path"] if use_pretrained else None,
         **config.model_config()).to(device, memory_format=torch.channels_last)
+    if initial_state is not None:
+        initialize_model_from_student_ema(model, initial_state)
+        del initial_state
     ema = ModelEmaV3(model, decay=config.ema_decay, device=device, use_warmup=True,
                     warmup_power=0.75, exclude_buffers=True, foreach=True)
     ema.module.requires_grad_(False)
@@ -398,7 +427,8 @@ def run_training(config: StudyConfig):
         del checkpoint
     student_weights = torch.tensor(loss_config["pos_weight"], device=device, dtype=torch.float32)
     write_json(out / "config.json", {**_configuration(config), "model_config": config.model_config(),
-        "preprocessing": preprocessing, "distillation": protocol, "loss_config": loss_config})
+        "preprocessing": preprocessing, "distillation": protocol, "loss_config": loss_config,
+        **({'student_warm_start': student_warm_start} if student_warm_start else {})})
     write_json(out / "pretrained_provenance.json", provenance)
     stop_requested = False
 
@@ -454,6 +484,8 @@ def run_training(config: StudyConfig):
                 "rng_state": capture_rng(), "progress": dict(progress), "early_stopping": dict(early),
                 "best_auc": best_auc, "best_epoch": best_epoch, "training_config": _configuration(config),
                 "training_mode": "distillation", "source_version": source_version}
+            if student_warm_start is not None:
+                payload['student_warm_start'] = student_warm_start
             if is_best:
                 best_hash = save_checkpoint(out / "best.pt", payload)
                 record_checkpoint(out / "best.pt", best_hash, epoch=epoch, role="best", source_version=source_version)
@@ -492,13 +524,21 @@ def run_training(config: StudyConfig):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ("fold_plan", "soft_labels", "output", "pretrained_provenance_path", "pretrained_weights_path"):
+    for name in ("fold_plan", "soft_labels", "output"):
         parser.add_argument("--" + name.replace("_", "-"), type=Path, required=True)
+    for name in ('pretrained_provenance_path', 'pretrained_weights_path', 'init_student_ema'):
+        parser.add_argument('--' + name.replace('_', '-'), type=Path)
+    parser.add_argument('--init-student-ema-sha256')
+    parser.add_argument('--backbone-name', choices=(BASE_BACKBONE, TINY_BACKBONE), default=BASE_BACKBONE)
     parser.add_argument("--image-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--execute", action="store_true")
-    for name in ("num_workers", "prefetch_factor", "valid_batch_size", "epochs", "patience", "seed"):
+    for name in ("num_workers", "prefetch_factor", "valid_batch_size", "epochs", "patience", "seed",
+                 'warmup_epochs', 'kd_warmup_epochs'):
         parser.add_argument("--" + name.replace("_", "-"), type=int, default=StudyConfig.__dataclass_fields__[name].default)
+    for name in ('backbone_lr', 'head_lr', 'alpha', 'drop_path', 'min_lr_ratio'):
+        parser.add_argument('--' + name.replace('_', '-'), type=float,
+                            default=StudyConfig.__dataclass_fields__[name].default)
     args = vars(parser.parse_args(argv))
     execute = args.pop("execute")
     config = StudyConfig(**args)

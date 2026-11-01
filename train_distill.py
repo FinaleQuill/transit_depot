@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 import json
@@ -65,6 +66,8 @@ class DistillConfig:
     pos_weight_power: float = 1.0
     pretrained_provenance_path: Path | None = None
     pretrained_weights_path: Path | None = None
+    init_student_ema: Path | None = None
+    init_student_ema_sha256: str | None = None
 
     def model_config(self) -> dict[str, Any]:
         from model_overnight import validate_model_config
@@ -73,6 +76,12 @@ class DistillConfig:
                     "gradient_checkpointing": True})
 
     def validate(self) -> None:
+        if self.resume is not None and self.init_student_ema is not None:
+            raise ValueError("EMA warm-start and exact resume cannot be combined")
+        if self.init_student_ema_sha256 is not None:
+            if (self.init_student_ema is None or len(self.init_student_ema_sha256) != 64
+                    or any(c not in '0123456789abcdef' for c in self.init_student_ema_sha256)):
+                raise ValueError("EMA SHA256 requires a source EMA and a lowercase 64-character digest")
         if self.training_mode not in ("distillation", "supervised_bce"):
             raise ValueError("training_mode must be distillation or supervised_bce")
         if self.training_mode == "supervised_bce":
@@ -116,6 +125,111 @@ class DistillConfig:
         if (self.pretrained_provenance_path is None) != (self.pretrained_weights_path is None):
             raise ValueError("Offline initialization requires both provenance and original weights")
         self.model_config()
+
+
+def _metadata_sha256(value: Any) -> str:
+    import hashlib
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'),
+                                    ensure_ascii=False, allow_nan=False).encode()).hexdigest()
+
+
+def load_student_ema_initialization(path: Path, config: DistillConfig, *,
+                                    expected: dict[str, Any] | None = None):
+    """Load only a verified FP32 EMA; optimizer, scheduler and RNG are never returned."""
+    from model_overnight import validate_model_config, TINY_MODEL_NAME, MODEL_NAME
+    path = Path(path).resolve(strict=True)
+    digest = sha256_file(path)
+    if config.init_student_ema_sha256 is not None and digest != config.init_student_ema_sha256:
+        raise ValueError('Student EMA source SHA256 differs from the registered identity')
+    source = torch.load(path, map_location='cpu', weights_only=True)
+    if sha256_file(path) != digest:
+        raise RuntimeError('Student EMA source changed while loading')
+    full_sha = source.get('original_full_checkpoint_sha256')
+    if (source.get('artifact_type') != 'student_ema_snapshot'
+            or source.get('snapshot_precision') != 'fp32'
+            or source.get('full_training_state_included') is not False
+            or source.get('resume_supported') is not False
+            or source.get('weights_source') != 'ema'
+            or source.get('inference_ready') is not True
+            or source.get('validation_complete') is not True
+            or type(source.get('epoch')) is not int or source['epoch'] < 1
+            or not isinstance(full_sha, str) or len(full_sha) != 64
+            or any(c not in '0123456789abcdef' for c in full_sha)
+            or source.get('source_checkpoint_sha256') != full_sha):
+        raise ValueError('Require an inference-ready FP32 EMA snapshot with complete source identity')
+    architecture = validate_model_config(source.get('model_config'))
+    target = config.model_config()
+    model_name = TINY_MODEL_NAME if target['backbone_name'] == TINY_BACKBONE else MODEL_NAME
+    if (architecture['backbone_name'] != target['backbone_name']
+            or source.get('model_name') != model_name
+            or source.get('image_size') != config.image_size
+            or source.get('class_ids') != list(range(1, 11))):
+        raise ValueError('EMA source backbone, image size or class order differs from the new student')
+    validate_pretrained_provenance(source.get('pretrained_provenance'), target['backbone_name'])
+    for key in ('source_manifest_sha256', 'fold_plan_sha256', 'official_valid_manifest_sha256',
+                'teacher_provenance'):
+        if expected is not None and key in expected and source.get(key) != expected[key]:
+            raise ValueError('EMA source data/teacher identity differs: ' + key)
+    state = source.get('model_state_dict')
+    if not isinstance(state, dict) or not state:
+        raise ValueError('EMA source has no tensor state')
+    for name, tensor in state.items():
+        if (not isinstance(name, str) or not isinstance(tensor, torch.Tensor)
+                or tensor.device.type != 'cpu' or tensor.is_complex()
+                or tensor.is_floating_point() and (
+                    tensor.dtype != torch.float32 or not bool(torch.isfinite(tensor).all()))):
+            raise ValueError('EMA initialization requires finite CPU FP32 tensors: ' + str(name))
+    lineage = {'kind': 'student_ema_warm_start', 'source_path': str(path),
+        'source_snapshot_sha256': digest, 'source_checkpoint_sha256': full_sha,
+        'source_epoch': source['epoch'], 'source_model_config': architecture,
+        'source_loss_config': copy.deepcopy(source.get('loss_config')),
+        'source_distillation': copy.deepcopy(source.get('distillation')),
+        'source_training_config': copy.deepcopy(source.get('training_config')),
+        'source_teacher_provenance_sha256': _metadata_sha256(source.get('teacher_provenance')),
+        'source_pretrained_provenance_sha256': _metadata_sha256(source['pretrained_provenance']),
+        'parent_student_warm_start': copy.deepcopy(source.get('student_warm_start')),
+        'reset_state': ['optimizer', 'scaler', 'rng', 'schedule', 'progress', 'early_stopping', 'ema_updates'],
+        'exact_resume': False}
+    return state, copy.deepcopy(source['pretrained_provenance']), lineage
+
+
+def initialize_model_from_student_ema(model: nn.Module, state: dict[str, Any]) -> None:
+    """Reject shape/name/dtype changes before strict load can cast source tensors."""
+    target = model.state_dict()
+    if set(state) != set(target):
+        raise ValueError('Student EMA tensor names differ from the target architecture')
+    for name, value in state.items():
+        if value.shape != target[name].shape or value.dtype != target[name].dtype:
+            raise ValueError('Student EMA tensor shape/dtype differs: ' + name)
+    model.load_state_dict(state, strict=True)
+
+
+def resume_training_configuration(config: DistillConfig, checkpoint: dict[str, Any]):
+    """Original init paths need not survive an exact continuation of the new run."""
+    ignored = {'resume', 'init_student_ema', 'init_student_ema_sha256'}
+    current = {k: v for k, v in _configuration(config).items() if k not in ignored}
+    prior = {k: v for k, v in checkpoint.get('training_config', {}).items() if k not in ignored}
+    original_init = checkpoint.get('training_config', {}).get('init_student_ema')
+    lineage = checkpoint.get('student_warm_start')
+    if lineage is not None:
+        digest = lineage.get('source_snapshot_sha256') if isinstance(lineage, dict) else None
+        if (not isinstance(lineage, dict) or lineage.get('kind') != 'student_ema_warm_start'
+                or lineage.get('exact_resume') is not False
+                or not isinstance(lineage.get('source_path'), str) or not lineage['source_path']
+                or type(lineage.get('source_epoch')) is not int or lineage['source_epoch'] < 1
+                or not isinstance(digest, str) or len(digest) != 64
+                or any(c not in '0123456789abcdef' for c in digest)):
+            raise ValueError('Invalid warm-start continuation ancestry')
+    if original_init is not None:
+        if (not isinstance(lineage, dict) or lineage.get('exact_resume') is not False
+                or lineage.get('source_path') != str(Path(original_init).resolve())
+                or checkpoint.get('training_config', {}).get('init_student_ema_sha256') not in
+                    (None, lineage.get('source_snapshot_sha256'))):
+            raise ValueError('Warm-start continuation lost its original EMA identity')
+    # An exact continuation omits the init CLI flags. Its subsequent payload
+    # retains ancestry here even though its current training_config has no init
+    # path; another continuation must not mistake that for a new initialization.
+    return current, prior
 
 
 def alpha_at(config: DistillConfig, epoch: int, batch_index: int, batches: int) -> float:
@@ -334,8 +448,7 @@ def validate_student_resume(checkpoint: dict[str, Any], config: DistillConfig,
     for key, value in expected.items():
         if checkpoint.get(key) != value:
             raise ValueError(f"Student resume protocol mismatch: {key}")
-    current = {k: v for k, v in _configuration(config).items() if k != "resume"}
-    prior = {k: v for k, v in checkpoint.get("training_config", {}).items() if k != "resume"}
+    current, prior = resume_training_configuration(config, checkpoint)
     prior.setdefault("pos_weight_power", 1.0)
     prior.setdefault("pretrained_provenance_path", None)
     prior.setdefault("pretrained_weights_path", None)
@@ -559,6 +672,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
     best_auc, best_epoch = None, None
     best_hash = None
     checkpoint = None
+    initial_state, student_warm_start = None, None
     serialized = _configuration(config)
     if config.resume:
         # 第一次 best 已原子提交但第一次 last 未提交时，也可恢复这份完整状态。
@@ -566,6 +680,7 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
         resume_source = config.resume if had_last else out / "best.pt"
         resume_hash = sha256_file(resume_source)
         checkpoint = torch.load(resume_source, map_location="cpu", weights_only=True)
+        student_warm_start = checkpoint.get('student_warm_start')
         if sha256_file(resume_source) != resume_hash:
             raise RuntimeError("Student last.pt changed while loading")
         saved_epoch = checkpoint["epoch"]
@@ -607,7 +722,14 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
         if terminal_resume is not None:
             return terminal_resume
     else:
-        if config.pretrained_provenance_path is not None:
+        if config.init_student_ema is not None:
+            initial_state, provenance, student_warm_start = load_student_ema_initialization(
+                config.init_student_ema, config, expected={
+                    'source_manifest_sha256': plan['source_manifest_sha256'],
+                    'fold_plan_sha256': plan_hash,
+                    'official_valid_manifest_sha256': sha256_file(valid_path),
+                    'teacher_provenance': teacher_provenance})
+        elif config.pretrained_provenance_path is not None:
             from student_experiments import load_local_pretrained_provenance
             provenance = load_local_pretrained_provenance(config.pretrained_provenance_path,
                                 config.pretrained_weights_path, TINY_BACKBONE)
@@ -615,9 +737,13 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
             provenance = prepare_pretrained_provenance(TINY_BACKBONE)
     if progress["completed_epochs"] >= config.epochs or config.patience and early["bad_epochs"] >= config.patience:
         return {"state": "already_terminal", **progress, "best_auc": best_auc, "best_epoch": best_epoch}
-    model = build_overnight_model(pretrained=checkpoint is None,
-                pretrained_weights_path=provenance["weights_path"] if checkpoint is None else None,
+    use_pretrained = checkpoint is None and initial_state is None
+    model = build_overnight_model(pretrained=use_pretrained,
+                pretrained_weights_path=provenance["weights_path"] if use_pretrained else None,
                 **config.model_config()).to(device, memory_format=torch.channels_last)
+    if initial_state is not None:
+        initialize_model_from_student_ema(model, initial_state)
+        del initial_state
     ema = ModelEmaV3(model, decay=config.ema_decay, device=device, use_warmup=True,
                     warmup_power=0.75, exclude_buffers=True, foreach=True)
     ema.module.requires_grad_(False)
@@ -632,7 +758,8 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
         del checkpoint
     student_weights = torch.tensor(loss_config["pos_weight"], device=device, dtype=torch.float32)
     write_json(out / "config.json", {**serialized, "model_config": config.model_config(),
-                                   "preprocessing": preprocessing, "distillation": protocol})
+                                   "preprocessing": preprocessing, "distillation": protocol,
+                                   **({'student_warm_start': student_warm_start} if student_warm_start else {})})
     write_json(out / "pretrained_provenance.json", provenance)
     stop_requested = False
 
@@ -705,6 +832,8 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                 "optimizer_state_dict": cpu_tree(optimizer.state_dict()), "scaler_state_dict": cpu_tree(scaler.state_dict()),
                 "rng_state": capture_rng(), "progress": dict(progress), "early_stopping": dict(early),
                 "best_auc": best_auc, "best_epoch": best_epoch, "training_config": serialized}
+            if student_warm_start is not None:
+                payload['student_warm_start'] = student_warm_start
             if schema_version in (8, 9):
                 payload["validation_tta"] = config.validation_tta
             if schema_version == 9:
@@ -761,6 +890,9 @@ def main(argv=None) -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--image-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
     parser.add_argument("--resume", type=Path)
+    parser.add_argument("--init-student-ema", type=Path,
+                        help="FP32 student EMA for a fresh run; all continuation state resets")
+    parser.add_argument("--init-student-ema-sha256")
     parser.add_argument("--pos-weight-power", type=float, choices=(1., .5), default=1.)
     parser.add_argument("--pretrained-provenance-path", type=Path)
     parser.add_argument("--pretrained-weights-path", type=Path)

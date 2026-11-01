@@ -191,7 +191,7 @@ def backup_run(run_dir: Path, local_backup_dir: Path, persistent_dir: Path) -> d
                         "validation_tta", "deployment_tta", "aggregation", "distillation",
                         "loss_config", "source_manifest_sha256", "fold_plan_sha256",
                         "official_valid_manifest_sha256", "pretrained_provenance", "teacher_provenance",
-                        "best_epoch", "best_auc", "training_config")
+                        "best_epoch", "best_auc", "training_config", "student_warm_start")
                 minimal = {key: checkpoint[key] for key in keys if key in checkpoint}
                 state = checkpoint["model_state_dict"]
                 if not isinstance(state, dict) or not state:
