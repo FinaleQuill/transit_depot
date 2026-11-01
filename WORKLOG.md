@@ -1370,3 +1370,10 @@
 - 官方容器3项loader测试通过；真实双图Study spawn与A/B参考像素一致，两架构EMA/OOF血缘CPU校验通过。AP-only共442Study（单图381、多图61）；评估器提供逐类、切片及患者配对1000次Bootstrap。
 - train:005642真实dataloader增强图已输出：seed48、p=.5触发、遮挡内容区1.3735%，归一化后与实际tensor完全一致；位置半数外围20%/半数均匀，不按亮度擦除；valid关闭。
 - 代码先冻结保存，随后自动顺序训练四run并汇总报告；此条登记时训练尚未启动，实际进程状态见artifacts/tight_crop_ab_20261102/STATUS.md。
+
+
+### 2026-11-02 03:24（香港）· 配对流水线已后台启动并确认实际训练
+
+- 03:21（香港）启动独立会话控制器PID28152，A_tiny训练子进程已实际前向/反向；首个8图/5Study pack的有限loss为0.191206，未把仅有启动PID当成训练成功。
+- 后续自动顺序B_tiny→A_base→B_base，各固定E2；完成后配对AP-only/逐类/患者bootstrap及历史参考评估。实时日志/STATUS与启动证据在artifacts/tight_crop_ab_20261102/，最终表自动写evaluation/REPORT.md。
+- 训练代码冻结提交c10437a，交接入口afdeef1；此刻尚无本轮AUC结果。后台运行不依赖当前会话，不启动重复任务、不做test预测，预计用时需按实际进度修正。
