@@ -1377,3 +1377,11 @@
 - 03:21（香港）启动独立会话控制器PID28152，A_tiny训练子进程已实际前向/反向；首个8图/5Study pack的有限loss为0.191206，未把仅有启动PID当成训练成功。
 - 后续自动顺序B_tiny→A_base→B_base，各固定E2；完成后配对AP-only/逐类/患者bootstrap及历史参考评估。实时日志/STATUS与启动证据在artifacts/tight_crop_ab_20261102/，最终表自动写evaluation/REPORT.md。
 - 训练代码冻结提交c10437a，交接入口afdeef1；此刻尚无本轮AUC结果。后台运行不依赖当前会话，不启动重复任务、不做test预测，预计用时需按实际进度修正。
+
+
+### 2026-11-02 03:45（香港）· 用户修订为A后B及AP早停25轮
+
+- 用户明确授权A两成员全部结束后自动B，并采用最多25轮、AP-only Macro-AUC连续5轮未提升超过0.0001早停；原固定E2是已取代协议，原源码/计划保留不改。
+- 新隔离trainer/controller/evaluator与修订计划已实现；旧A_tiny首轮中写STOP，完成整轮/valid/完整断点后自然交接，新流程不强杀、不丢首轮计算。E1是相同warmup，迁移保留raw/EMA/optimizer/scaler/RNG；E2起cosine25。
+- 同初始化/seed48/共同增强/B擦除p=.5；以AP最佳EMA best.pt评估，实际轮数可不同并报告。AP用于选模后区间仅为探索性，不能宣称独立泛化验证，不读test或自动提交。
+- CPU检查覆盖真实训练循环的五轮耐心和小增益best选择、迁移完整状态/恢复校验、warmup学习率等值、A后B顺序及存活进程防重复；启动与迁移结果后续登记到earlystop25状态及日志。

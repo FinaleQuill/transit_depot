@@ -1,3 +1,5 @@
+**2026-11-02最新修订：** 用户授权先完成A全部成员再自动B，最多25轮，AP-only耐心5轮/min_delta0.0001早停，保存最佳EMA；原两轮协议已被取代。新控制器会等待当前A_tiny首轮完成并安全迁移，不重复训练。请查 `artifacts/tight_crop_ab_20261102/earlystop25/STATUS.md` 和 [新运行说明](docs/TIGHT_CROP_AB_EARLYSTOP_RUN_20261102.md)，不要再次启动训练。
+
 **2026-11-02当前任务：** AP优先的Tight Crop配对训练已授权并由后台控制器启动（启动PID 28152）。先查 `artifacts/tight_crop_ab_20261102/STATUS.md` 和进程，勿重复启动；计划与运行说明见 [A/B运行说明](docs/TIGHT_CROP_AB_RUN_20261102.md)。A/B对应同初始化、seed48、固定E2，B加p=.5随机擦除，自动输出AP-only详细报告；本轮不读test、不自动提交。下方冻结头和旧停止记录均是历史任务。
 
 **2026-11-01最新运行交接：** 045最高valid CSV已交付；冻结旧A/B骨干仅训分类头的新任务已后台启动。用户因token不足要求保存进度，先读[冻结头交接](docs/FROZEN_HEAD_HANDOFF_20261101.md)及`artifacts/kd_v1/frozen_head_20261101/STATUS.md`，不要重复启动。旧bounded_finetune状态是历史已完成任务。
