@@ -40,6 +40,7 @@ MODEL_NAME = "convnext_v1_base_gap"
 @dataclass(frozen=True)
 class StudyConfig(DistillConfig):
     backbone_name: str = BASE_BACKBONE
+    pack_images: int = 0
     batch_size: int = 1
     accumulation_steps: int = 32
     seed: int = 44
@@ -60,6 +61,8 @@ class StudyConfig(DistillConfig):
 
     def validate(self) -> None:
         super().validate()
+        if type(self.pack_images) is not int or self.pack_images not in (0, 8):
+            raise ValueError('Use the original single-Study execution or registered packing cap 8')
         if self.training_mode != "distillation" or self.soft_labels is None:
             raise ValueError("The complete-Study student requires frozen OOF distillation")
         if self.batch_size != 1 or self.accumulation_steps != 32:
@@ -175,6 +178,10 @@ def accumulation_window_size(index: int, total_studies: int, accumulation: int) 
 
 def train_study_epoch(model, ema, loader, optimizer, scaler, device, dtype,
                       epoch, config, progress, cache, student_weights):
+    if config.pack_images:
+        from study_packing import train_packed_study_epoch
+        return train_packed_study_epoch(model, ema, loader, optimizer, scaler, device,
+            dtype, epoch, config, progress, cache, student_weights)
     from train_overnight import set_learning_rates
     model.train()
     expected_ids = {r["image_id"] for r in loader.dataset.records}
@@ -250,6 +257,7 @@ def validate_study_resume(checkpoint, config, expected):
             raise ValueError(f"Complete-Study resume protocol changed: {name}")
     current, prior = resume_training_configuration(config, checkpoint)
     prior.setdefault('backbone_name', BASE_BACKBONE)
+    prior.setdefault('pack_images', 0)
     if current != prior:
         raise ValueError("Complete-Study resume configuration changed")
     for name in ("model_state_dict", "raw_model_state_dict", "optimizer_state_dict",
@@ -293,7 +301,7 @@ def run_training(config: StudyConfig):
     validate_output_paths(config)
     require_training_runtime()
     source_version = capture_source_version(Path(__file__).with_name(name) for name in (
-        "study_student.py", "student_experiments.py", "train_distill.py", "train_overnight.py",
+        "study_student.py", "study_packing.py", "student_experiments.py", "train_distill.py", "train_overnight.py",
         "distill_data.py", "distill_tta_data.py", "model_overnight.py", "dataset_overnight.py",
         "dataset.py", "cv_splits.py", "kd_common.py", "runtime_compat.py", "audit_trail.py"))
     plan = read_fold_plan(config.fold_plan)
@@ -312,6 +320,9 @@ def run_training(config: StudyConfig):
         "hard_target_unit": "complete_Study", "hard_prediction": "mean_image_sigmoid_probability",
         "soft_reduction": "mean_images_within_Study_then_mean_Studies",
         "effective_batch_unit": "Study", "effective_batch_size": 32, "all_Study_views_retained": True}
+    if config.pack_images:
+        protocol['forward_packing_preferred_images'] = config.pack_images
+        protocol['forward_packing_splits_Studies'] = False
     loss_config = compute_student_loss_config(train_records,
         source_manifest_sha256=plan["source_manifest_sha256"], fold=None,
         pos_weight_power=config.pos_weight_power)
@@ -534,7 +545,7 @@ def main(argv=None):
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--execute", action="store_true")
     for name in ("num_workers", "prefetch_factor", "valid_batch_size", "epochs", "patience", "seed",
-                 'warmup_epochs', 'kd_warmup_epochs'):
+                 'warmup_epochs', 'kd_warmup_epochs', 'pack_images'):
         parser.add_argument("--" + name.replace("_", "-"), type=int, default=StudyConfig.__dataclass_fields__[name].default)
     for name in ('backbone_lr', 'head_lr', 'alpha', 'drop_path', 'min_lr_ratio'):
         parser.add_argument('--' + name.replace('_', '-'), type=float,

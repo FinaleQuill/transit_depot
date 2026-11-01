@@ -22,6 +22,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent
 PLAN = ROOT / "docs/BOUNDED_STUDY_FINETUNE_20261101.json"
 PLAN_SHA = "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93"
+PACKING = ROOT / "docs/BOUNDED_STUDY_PACKING_20261101.json"
+PACKING_SHA = "d6ff67eb13776b66e1737bd953f9929919d82039108151edc158625e81cb5471"
 EVIDENCE = ROOT / "artifacts/kd_v1/bounded_finetune_20261101"
 LOCAL = Path("/tmp/cloud_student_runs_20261030/bounded_finetune_20261101")
 BASE_SOURCE = ROOT / "artifacts/kd_v1/student_upper_bound_20261030"
@@ -51,6 +53,8 @@ def write(path, value):
 def registered(stage):
     if sha(PLAN) != PLAN_SHA:
         raise ValueError("Registered plan identity changed")
+    if sha(PACKING) != PACKING_SHA:
+        raise ValueError("Registered execution-packing addendum changed")
     plan = json.loads(PLAN.read_text())
     recipe = plan["training"][stage]
     source_label = "A" if stage == "X1" else "B"
@@ -58,6 +62,10 @@ def registered(stage):
     if sha(snapshot) != recipe["init_sha256"]:
         raise ValueError("Registered initialization EMA identity changed")
     return plan, recipe, snapshot
+
+
+def run_directory(stage):
+    return LOCAL / (stage + '_packed')
 
 
 def command(stage):
@@ -71,7 +79,7 @@ def command(stage):
     arguments = {
         "fold-plan": ROOT / "data/cv5_overnight/folds.json",
         "soft-labels": ROOT.parent / "runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
-        "output": LOCAL / stage,
+        "output": run_directory(stage),
         "image-root": "/home/featurize/data/cxr_first",
         "pretrained-provenance-path": provenance,
         "pretrained-weights-path": pretrain / "model.safetensors",
@@ -85,6 +93,7 @@ def command(stage):
         "kd-warmup-epochs": plan["common"]["kd_warmup_epochs"],
         "min-lr-ratio": plan["common"]["min_lr_ratio"],
         "patience": 0,
+        "pack-images": 8,
     }
     result = ["bash", str(WRAPPER), "-u", str(ROOT / "study_student.py")]
     for name, value in arguments.items():
@@ -93,7 +102,7 @@ def command(stage):
 
 
 def retain_small_files(stage):
-    run, destination = LOCAL / stage, EVIDENCE / "training" / stage
+    run, destination = run_directory(stage), EVIDENCE / "training" / (stage + '_packed')
     candidates = [run / name for name in (
         "config.json", "status.json", "history.jsonl", "checkpoint_audit.jsonl",
         "best_metrics.json", "pretrained_provenance.json", "student_warm_start.json")]
@@ -115,7 +124,7 @@ def retain_small_files(stage):
 def train(stage):
     plan, recipe, _ = registered(stage)
     args = command(stage)
-    run = LOCAL / stage
+    run = run_directory(stage)
     if run.exists():
         raise FileExistsError("Fresh registered runs never overwrite existing training state")
     deadline = datetime.fromisoformat(plan["budget"]["deadline_hong_kong"]).timestamp() - 3600
@@ -126,16 +135,17 @@ def train(stage):
     receipt = {"stage": stage, "registered_plan_sha256": PLAN_SHA,
         "started_hong_kong": stamp(), "command": [*args, "--execute"],
         "wall_seconds_cap": cap_seconds, "final_ema_epoch": recipe["epochs"],
-        "test_used": False, "exact_resume": False, "state": "starting"}
-    record = EVIDENCE / f"{stage}.execution.json"
+        "test_used": False, "exact_resume": False, "state": "starting",
+        "packing_addendum_sha256": PACKING_SHA}
+    record = EVIDENCE / f"{stage}_packed.execution.json"
     if record.exists():
         raise FileExistsError(record)
     write(record, receipt)
-    container = f"codex-bounded-study-{stage.lower()}-20261101"
+    container = f"codex-bounded-study-{stage.lower()}-packed-20261101"
     environment = {**os.environ, "STUDENT_RUNTIME_MODE": "training",
                    "STUDENT_CONTAINER_NAME": container}
     receipt["container_name"] = container
-    with (EVIDENCE / f"{stage}.training.log").open("x") as log:
+    with (EVIDENCE / f"{stage}_packed.training.log").open("x") as log:
         process = subprocess.Popen([*args, "--execute"], cwd=ROOT, env=environment,
             stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
         receipt.update(state="training", host_launcher_pid=os.getpid(), child_pid=process.pid)
@@ -163,7 +173,7 @@ def train(stage):
     complete = code == 0 and status.get("state") == "completed" and status.get("completed_epochs") == recipe["epochs"]
     receipt.update(state="training_complete" if complete else "incomplete_or_failed",
         exit_code=code, finished_hong_kong=stamp(), training_status=status,
-        console_sha256=sha(EVIDENCE / f"{stage}.training.log"))
+        console_sha256=sha(EVIDENCE / f"{stage}_packed.training.log"))
     write(record, receipt)
     if not complete:
         raise RuntimeError("Stage did not complete its registered horizon; no final candidate exported")
@@ -178,7 +188,7 @@ def export_final(stage):
     import torch
     from student_experiment_evaluation import export_experimental_checkpoint
     plan, recipe, _ = registered(stage)
-    source = LOCAL / stage / "last.pt"
+    source = run_directory(stage) / "last.pt"
     before = sha(source)
     checkpoint = torch.load(source, map_location="cpu", weights_only=True)
     warm = checkpoint.get("student_warm_start", {})
@@ -187,9 +197,10 @@ def export_final(stage):
             or checkpoint.get("weights_source") != "ema"
             or checkpoint.get("model_config", {}).get("backbone_name") != recipe["backbone"]
             or checkpoint.get("training_config", {}).get("seed") != recipe["seed"]
+            or checkpoint.get("training_config", {}).get("pack_images") != 8
             or warm.get("source_snapshot_sha256") != recipe["init_sha256"]):
         raise ValueError("Final checkpoint differs from its registered horizon/EMA/initialization")
-    summary = {"registered_plan_sha256": PLAN_SHA, "stage": stage,
+    summary = {"registered_plan_sha256": PLAN_SHA, "packing_addendum_sha256": PACKING_SHA, "stage": stage,
         "source_checkpoint_sha256": before, "source_epoch": checkpoint["epoch"],
         "checkpoint_selection": "fixed_final_epoch_EMA", "student_warm_start": warm,
         "training_config": checkpoint["training_config"], "progress": checkpoint["progress"],
