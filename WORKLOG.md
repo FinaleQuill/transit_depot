@@ -1361,3 +1361,12 @@
 - 独立draft原型新增耗时均值13.309ms/P95 14.845ms；16/16框相同仅代表样本核对，未证明全量等值或低于10ms，未接入训练。
 - 冻结原tight_crop.py及完整解码；保留benchmark脚本、隔离fast模块、证据和两条后续优化路线，不继续预处理调参。
 - 本条仅CPU预检，无训练、GPU模型前向或test读取。
+
+
+### 2026-11-02 03:21（香港）· AP优先配对训练预注册及真实擦除验证
+
+- 用户授权后台A/B并将AP-only列为主要判据；固定Tiny/Base对应同EMA初始化、seed48、2轮、E2 last.pt最终EMA，A原letterbox、B原主体crop加p=.5擦除；历史044仅参考。
+- 新增隔离训练/data/shared preprocess/evaluator与单实例后台控制器；只用官方train优化、valid评估，Study内FP64均值，不跨Study、不读test、不自动部署。
+- 官方容器3项loader测试通过；真实双图Study spawn与A/B参考像素一致，两架构EMA/OOF血缘CPU校验通过。AP-only共442Study（单图381、多图61）；评估器提供逐类、切片及患者配对1000次Bootstrap。
+- train:005642真实dataloader增强图已输出：seed48、p=.5触发、遮挡内容区1.3735%，归一化后与实际tensor完全一致；位置半数外围20%/半数均匀，不按亮度擦除；valid关闭。
+- 代码先冻结保存，随后自动顺序训练四run并汇总报告；此条登记时训练尚未启动，实际进程状态见artifacts/tight_crop_ab_20261102/STATUS.md。
