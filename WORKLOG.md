@@ -1385,3 +1385,11 @@
 - 新隔离trainer/controller/evaluator与修订计划已实现；旧A_tiny首轮中写STOP，完成整轮/valid/完整断点后自然交接，新流程不强杀、不丢首轮计算。E1是相同warmup，迁移保留raw/EMA/optimizer/scaler/RNG；E2起cosine25。
 - 同初始化/seed48/共同增强/B擦除p=.5；以AP最佳EMA best.pt评估，实际轮数可不同并报告。AP用于选模后区间仅为探索性，不能宣称独立泛化验证，不读test或自动提交。
 - CPU检查覆盖真实训练循环的五轮耐心和小增益best选择、迁移完整状态/恢复校验、warmup学习率等值、A后B顺序及存活进程防重复；启动与迁移结果后续登记到earlystop25状态及日志。
+
+
+### 2026-11-02 03:54（香港）· 自动迁移及25轮计划真实续训确认
+
+- 新控制器PID32068已等待旧A_tiny完整E1及旧调度器自然退出；没有发终止信号。真实E1完整断点SHA核对、AP监控复算、迁移和严格resume已自动成功，E2首包loss0.317984，训练PID33036。
+- 原E1总体AUC0.808716575；同声明native验证协议复算总体0.808700868、AP-only0.738964615，重复执行差-0.0000157065如实另存，未覆盖原记录；当前为Tiny单成员首轮，不是A组融合终值。
+- 顺序A_tiny→A_base→B_tiny→B_base，max25/patience5/min_delta0.0001/AP最佳EMA；代码cf194c8，官方容器6项+host控制器4项测试通过，最新状态和最终表在artifacts/tight_crop_ab_20261102/earlystop25。
+- AUC监控PID32284每60秒写AUC_PROGRESS.md与auc_progress.csv（总体/AP各十类）；脚本c2b4177，不读图和checkpoint。用户无需二次操作，后续训练/评估后台连续执行，无test预测。
