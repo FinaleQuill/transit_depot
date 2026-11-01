@@ -1309,3 +1309,11 @@
 - 交付：045/submission.csv SHA7379ac54cf4a8c66dd021e0f7c36a5fdaa69f32f6af2efd7ce3a4cf9bc3920da，1414Study/14140行；2218原图SHA及逐图→Study独立审计通过，误差0。新增最终test预测1次、平台上传0，043/044保留。
 - 新路线：在任何新头valid之前登记旧A/B frozen encoder+FC头，F1完整Study BCE对照/F2 BCE+pairwise rank+原logit锚定，12固定轮/最终头，共四个小头，encoder不更新；只train拟合，不读取045概率选模。
 - 预算：大特征/临时合并权重置/tmp，小patch和血缘持久化，原截止11月2日02:37香港；纯CPU头部训练、精确生产像素特征缓存和补丁loader正在核验，尚未开始真实新头训练。用户提醒Git，源码/计划/交付文档分项提交，不入库模型/数据/日志，不推送。
+
+
+### 2026-11-01 20:47（香港）· token不足时保存冻结头路线与后台交接
+
+- 进度：045最高valid原解码CSV已生成独立审计，随后冻结旧A/B encoder提取精确双视图FC输入；cache在本地/tmp运行（PID57264），已有5000余原train图，尚无新头valid成绩。
+- 计划：四小头固定E12，F1完整Study BCE/锚定对照，F2另含pairwise排序；pure train拟合、CPU代理选最高两登记pair、真实FP16全valid+100×3计时，原02:37香港截止，不自动新test预测。
+- 核验与Git：20项cache/fit/patch、6项proxy、9项actual/pipeline CPU检查通过；b60be39交付，f5f725f训练，4929ffb评估，f2de1b0实际验收/后台控制均已提交，不推送。
+- 保存：新后台PID58479/PPID1，状态frozen_head_20261101/STATUS.md，source SHA冻结防改，新增docs/FROZEN_HEAD_HANDOFF_20261101.md保存全部思路/参数/路径/故障边界；用户接手先看新状态，旧bounded状态不可混用，不重复启动。
