@@ -99,15 +99,15 @@ def select_cases(candidates, count):
     reliable = [c for c in candidates if c["diagnostics"]["applied"]]
     fallback = [c for c in candidates if not c["diagnostics"]["applied"]]
     for reason, order in (
-        ("lowest_detected_body_occupancy", sorted(reliable, key=lambda c: c["diagnostics"]["occupancy_before"])),
-        ("highest_detected_body_occupancy", sorted(reliable, key=lambda c: -c["diagnostics"]["occupancy_before"])),
+        ("lowest_effective_magnification", sorted(reliable, key=lambda c: c["diagnostics"]["effective_magnification"])),
+        ("highest_effective_magnification", sorted(reliable, key=lambda c: -c["diagnostics"]["effective_magnification"])),
         ("widest_frame", sorted(candidates, key=lambda c: -int(c["row"]["width"])/int(c["row"]["height"]))),
         ("tallest_frame", sorted(candidates, key=lambda c: int(c["row"]["width"])/int(c["row"]["height"]))),
         ("smallest_native_image", sorted(candidates, key=lambda c: int(c["row"]["width"])*int(c["row"]["height"]))),
         ("largest_native_image", sorted(candidates, key=lambda c: -int(c["row"]["width"])*int(c["row"]["height"]))),
-        ("largest_removed_background_area", sorted(reliable, key=lambda c: -c["diagnostics"]["source_removed_area_fraction"])),
-        ("source_edge_contact", sorted([c for c in reliable if c["diagnostics"]["source_edge_contact"]], key=lambda c: sample_key(c["row"]))),
-        ("detector_fallback", sorted(fallback, key=lambda c: sample_key(c["row"]))),
+        ("largest_removed_source_area", sorted(reliable, key=lambda c: -c["diagnostics"]["source_removed_area_fraction"])),
+        ("source_edge_contact_veto", sorted([c for c in fallback if c["diagnostics"].get("source_edge_contact")], key=lambda c: sample_key(c["row"]))),
+        ("no_cut_fallback", sorted(fallback, key=lambda c: sample_key(c["row"]))),
     ):
         add_order(reason, order)
     for c in sorted(candidates, key=lambda c: sample_key(c["row"])):
@@ -124,21 +124,20 @@ def comparison(source, baseline, candidate, metadata, label, side=512):
     canvas = Image.new("RGB", (4*side+5*gap, side+head+foot), (28, 32, 37))
     draw = ImageDraw.Draw(canvas)
     draw.text((gap, 7), label, fill="white", font=font(18))
-    before, after = metadata.get("occupancy_before"), metadata.get("occupancy_after")
-    occupancy = "unknown" if before is None else f"{before:.3f} -> {after:.3f}"
-    draw.text((gap, 34), f"{metadata['reason']} | body occupancy {occupancy} | scale vs baseline {metadata['effective_magnification']:.3f}x", fill="white", font=font(16))
+    draw.text((gap, 34), f"{metadata['reason']} | effective magnification {metadata['effective_magnification']:.3f}x", fill="white", font=font(16))
     original, original_meta = letterbox(source, side)
     overlay = original.copy()
     marks = ImageDraw.Draw(overlay)
     ox, oy = original_meta["content_box"][:2]
     scale = original_meta["scale"]
-    for key, color in (("window_box", (255, 80, 70)), ("protected_box", (255, 220, 30)), ("body_box", (60, 230, 130))):
+    for key, color in (("crop_box", (255, 80, 70)), ("proposed_crop_box", (255, 80, 70)),
+                       ("body_box", (60, 230, 130))):
         if key not in metadata:
             continue
         x0, y0, x1, y1 = metadata[key]
         marks.rectangle((ox+x0*scale, oy+y0*scale, ox+(x1-1)*scale, oy+(y1-1)*scale), outline=color, width=3)
     tiles = (original, overlay, baseline.resize((side, side), Image.Resampling.LANCZOS), candidate.resize((side, side), Image.Resampling.LANCZOS))
-    titles = ("Full original", "Green body / yellow margin / red window", "Full-frame letterbox", "Fixed 0.85 occupancy / safe fallback")
+    titles = ("Full original", "Green body / red accepted or proposed crop", "Full-frame letterbox", "Magnify-only crop / exact NO CUT fallback")
     for i, (tile, title) in enumerate(zip(tiles, titles)):
         x = gap+i*(side+gap)
         canvas.paste(tile, (x, head))
@@ -161,9 +160,7 @@ def contact_sheet(items, output, view):
         canvas.paste(baseline, (x, y))
         canvas.paste(candidate, (x+side+gap, y))
         meta = item["diagnostics"]
-        before, after = meta.get("occupancy_before"), meta.get("occupancy_after")
-        occupancy = "fallback" if before is None else f"{before:.3f}->{after:.3f}"
-        draw.text((x, y+side+4), f"{i+1:02d} {item['image_id']} {occupancy}  {meta['effective_magnification']:.3f}x", fill="white", font=font(14))
+        draw.text((x, y+side+4), f"{i+1:02d} {item['image_id']} {meta['effective_magnification']:.3f}x {meta['reason']}", fill="white", font=font(14))
         draw.text((x, y+side+25), item["selection_reason"], fill="white", font=font(13))
     destination = output/f"train_{view}_contact.jpg"
     canvas.save(destination, quality=95, subsampling=0)
@@ -174,7 +171,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=PROJECT/"data/clean_v1_reviewed/train_clean.csv")
     parser.add_argument("--source-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
-    parser.add_argument("--output", type=Path, default=PROJECT/"artifacts/roi_scale_explore_20261103/gallery")
+    parser.add_argument("--output", type=Path, default=PROJECT/"artifacts/roi_magnify_explore_20261103/gallery")
     parser.add_argument("--size", type=int, default=768)
     parser.add_argument("--pool-per-view", type=int, default=64)
     args = parser.parse_args(argv)
@@ -229,6 +226,12 @@ def main(argv=None):
         raise ValueError("Train manifest changed")
     report = {"method_version": VERSION, "split": "train", "test_accessed": False,
               "valid_accessed": False, "training_or_model_inference": False,
+              "safety_policy": {"minimum_effective_magnification": 1.01,
+                  "maximum_effective_magnification": 1.25,
+                  "crop_short_long_ratio_must_not_worsen_vs_source": True,
+                  "minimum_crop_short_long_ratio": .55,
+                  "source_edge_clipped_body_veto": True,
+                  "detector_existing_seed_support_and_removed_area_gates": True},
               "selection": "deterministic metadata + detector extremes and hashed image IDs; labels not used",
               "count": len(records), "counts_by_view": dict(Counter(r["view"] for r in records)),
               "pool_counts": pool_counts, "prevalence_estimate": False,
@@ -236,9 +239,10 @@ def main(argv=None):
               "code_sha256": {name: sha256(PROJECT/name) for name in ("roi_scale.py", "tight_crop.py", Path(__file__).name)},
               "contact_sheets": atlases, "items": records}
     (args.output/"metrics.json").write_text(json.dumps(report, indent=2)+"\n")
-    lines = ["# Train-only ROI scale atlas", "", "12 deliberately varied images per available view; no labels selected, no valid/test read.",
-             "Classical body-envelope heuristic, not a medical segmentation. Source-edge clipping is not repaired.",
-             "Compare full-frame baseline with a fixed 85% body long-edge occupancy. Unsafe estimates use exact baseline fallback.",
+    lines = ["# Train-only ROI magnify atlas", "", "12 deliberately varied images per available view; no labels selected, no valid/test read.",
+             "Classical body-envelope heuristic, not a medical segmentation. Source-edge clipping is rejected, not repaired.",
+             "Crop body envelope with about 2% margin per side; long side fills 768 and short side is padded isotropically.",
+             "Only proposals with effective magnification 1.01-1.25 that do not worsen square padding are applied. Other cases exactly fall back to full-frame letterbox.",
              "Selected-case counts do not estimate train prevalence; no erasing, training, or model inference.", ""]
     for view, atlas in atlases.items():
         lines.extend((f"## {view}", "", f"![{view}]({atlas})", ""))

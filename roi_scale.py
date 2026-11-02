@@ -1,31 +1,34 @@
-"""Classical, deterministic body-envelope scale normalization.
+"""Classical body-envelope crop that may magnify, but never shrink, an image.
 
-This is an image-support heuristic, not lung segmentation.  A reliable envelope
-is mapped to 85% of the output long edge using one isotropic scale.  A virtual
-square frame supplies padding; the detector's protective margin must remain
-inside it.  Unreliable or unsafe proposals use the original full-frame letterbox.
+The detector is an image-support heuristic rather than lung segmentation.  A
+    proposal is used only when it is reliable, preserves the configured geometry
+    envelope, and improves effective input scale within the magnification bounds.
+Otherwise the exact full-frame letterbox is returned.
 """
 from __future__ import annotations
-
-import math
 
 import numpy as np
 from PIL import Image, ImageOps
 
-from tight_crop import TightCropConfig, detect_tight_crop, letterbox
+from tight_crop import detect_tight_crop, letterbox
 
 
-VERSION = "body_envelope_fixed_occupancy_v1"
-TARGET_OCCUPANCY = .85
-DETECTOR_CONFIG = TightCropConfig(margin_fraction=.05, margin_min_original_px=32)
+VERSION = "body_envelope_magnify_only_v2"
+MARGIN_FRACTION = .02
+MIN_EFFECTIVE_MAGNIFICATION = 1.01
+MAX_EFFECTIVE_MAGNIFICATION = 1.25
+MIN_CROP_ASPECT_RELATIVE_TO_SOURCE = 1.0
+MIN_CROP_SHORT_LONG_RATIO = .55
 
 
 def normalize_roi(image: Image.Image, size: int) -> tuple[Image.Image, dict]:
-    """Return an RGB square and JSON-serializable geometric diagnostics.
+    """Return an RGB square and JSON-serializable geometry diagnostics.
 
-    ``body_box`` is a conservative image-support envelope and does not establish
-    that anatomy is complete in the source.  Source-edge contact is recorded.
-    The original image is never modified, stretched, randomly erased, or fitted.
+    Uses the existing classical OpenCV detector, then recomputes a conservative
+    crop around its body envelope with about 2% margin per body-box axis. The
+    source aspect ratio is kept. If the proposal does not magnify
+    relative to full-frame letterboxing or violates a safety guard, it falls
+    back pixel-exactly to that full-frame letterbox.
     """
     if not isinstance(image, Image.Image):
         raise TypeError("image must be a PIL image")
@@ -35,79 +38,97 @@ def normalize_roi(image: Image.Image, size: int) -> tuple[Image.Image, dict]:
     width, height = source.size
     if min(width, height) < 1:
         raise ValueError("source image must be nonempty")
+    base, base_meta = letterbox(source, size)
+    base_scale = float(base_meta["scale"])
     metadata = {
-        "version": VERSION, "method": "classical_body_envelope_fixed_occupancy",
-        "target_occupancy": TARGET_OCCUPANCY, "output_size": size,
-        "source_size": [width, height], "medical_pretrained_model": False,
-        "medical_segmentation": False, "random_erasing": False,
-        "single_isotropic_scale": True, "source_clipping_repaired": False,
+        "version": VERSION, "method": "classical_body_envelope_crop_magnify_only",
+        "output_size": size, "source_size": [width, height],
+        "medical_pretrained_model": False, "medical_segmentation": False,
+        "random_erasing": False, "single_isotropic_scale": True,
+        "source_clipping_repaired": False,
         "text_or_device_removal": "not targeted or guaranteed",
-        "resampling": "one Pillow LANCZOS resize after integer virtual-frame crop",
-        "padding_value_u8": 0,
+        "resampling": "one Pillow LANCZOS resize after conservative crop",
+        "padding_value_u8": 0, "base_scale": base_scale,
+        "crop_policy": {"margin_fraction_of_body_box_axes": MARGIN_FRACTION,
+                        "minimum_margin_original_px": 0,
+                        "maximum_effective_magnification": MAX_EFFECTIVE_MAGNIFICATION,
+                        "minimum_effective_magnification": MIN_EFFECTIVE_MAGNIFICATION,
+                        "minimum_crop_aspect_relative_to_source": MIN_CROP_ASPECT_RELATIVE_TO_SOURCE,
+                        "minimum_crop_short_long_ratio": MIN_CROP_SHORT_LONG_RATIO,
+                        "reject_source_edge_clipped_body": True,
+                        "detector_quality_and_removed_area_gates": "tight_crop.detect_tight_crop unchanged"},
     }
 
     def fallback(reason: str) -> tuple[Image.Image, dict]:
-        output, base = letterbox(source, size)
-        metadata.update(applied=False, reason=reason,
-                        window_box=[0, 0, width, height],
-                        scale=base["scale"], effective_magnification=1.,
+        proposed_box = metadata.get("proposed_crop_box")
+        proposed_magnification = metadata.get("proposed_effective_magnification")
+        metadata.update(applied=False, reason=reason, crop_box=[0, 0, width, height],
+                        scale=base_scale, effective_magnification=1.,
+                        crop_aspect_ratio=width/height,
+                        source_removed_area_fraction=0., retained_area_fraction=1.,
                         protected_margin_retained=True,
-                        source_removed_area_fraction=0.,
-                        source_edge_contact=metadata.get("source_edge_contact", []),
-                        output_content_box=list(base["content_box"]))
-        metadata["occupancy_after"] = metadata.get("occupancy_before")
-        return output, metadata
+                        output_content_box=list(base_meta["content_box"]))
+        if proposed_box is not None:
+            metadata["proposed_crop_box"] = proposed_box
+        if proposed_magnification is not None:
+            metadata["proposed_effective_magnification"] = proposed_magnification
+        return base, metadata
 
     if min(width, height) < 8:
         return fallback("source_too_small_for_detector")
-    gray = np.asarray(source.convert("L"))
-    detected = detect_tight_crop(gray, DETECTOR_CONFIG)
+    gray = np.asarray(source.convert("L"), dtype=np.uint8)
+    detected = detect_tight_crop(gray)
     metadata["detector"] = detected.diagnostics
     metadata["body_box"] = list(detected.body_box)
-    metadata["protected_box"] = list(detected.box)
-    metadata["source_edge_contact"] = detected.diagnostics.get("body_clipped_at_source_edges", [])
+    edge_contact = detected.diagnostics.get("body_clipped_at_source_edges", [])
+    metadata["source_edge_contact"] = edge_contact
     if detected.diagnostics["reason"] != "body_envelope_candidate":
         return fallback("detector_" + detected.diagnostics["reason"])
+    if edge_contact:
+        return fallback("body_envelope_clipped_at_source_edge")
 
     bx0, by0, bx1, by1 = detected.body_box
-    body_long = max(bx1-bx0, by1-by0)
-    metadata["occupancy_before"] = body_long/max(width, height)
-    # The virtual frame, not the crop's longest side, determines a fixed scale.
-    # Ceiling guarantees that rounding never increases occupancy past the target.
-    side = math.ceil(body_long/TARGET_OCCUPANCY)
-    left = math.floor((bx0+bx1-side)/2)
-    top = math.floor((by0+by1-side)/2)
-    window = (left, top, left+side, top+side)
-    px0, py0, px1, py1 = detected.box
-    if not (left <= px0 < px1 <= left+side and top <= py0 < py1 <= top+side):
-        return fallback("protected_margin_outside_normalized_frame")
+    margin_x = int(np.ceil(MARGIN_FRACTION*(bx1-bx0)))
+    margin_y = int(np.ceil(MARGIN_FRACTION*(by1-by0)))
+    box = (max(0, bx0-margin_x), max(0, by0-margin_y),
+           min(width, bx1+margin_x), min(height, by1+margin_y))
+    x0, y0, x1, y1 = box
+    crop_width, crop_height = x1-x0, y1-y0
+    crop_aspect = crop_width/crop_height
+    crop_short_long_ratio = min(crop_width, crop_height)/max(crop_width, crop_height)
+    source_short_long_ratio = min(width, height)/max(width, height)
+    retained_area = crop_width*crop_height/(width*height)
+    side_crops = {"left": x0/width, "top": y0/height,
+                  "right": (width-x1)/width, "bottom": (height-y1)/height}
+    crop_scale = size/max(crop_width, crop_height)
+    magnification = crop_scale/base_scale
+    metadata.update(proposed_crop_box=list(box), margin_original_px=[margin_x, margin_y],
+                    proposed_crop_aspect_ratio=crop_aspect,
+                    proposed_retained_area_fraction=retained_area,
+                    proposed_source_removed_area_fraction=1-retained_area,
+                    removed_fraction_by_side=side_crops,
+                    crop_short_long_ratio=crop_short_long_ratio,
+                    source_short_long_ratio=source_short_long_ratio,
+                    proposed_effective_magnification=magnification,
+                    source_clipping_repaired=False)
 
-    # The existing detector refuses broad support outside its protective box.
-    # Its full mask must also fit this virtual frame after conservative mapping.
-    ys, xs = np.nonzero(detected.mask)
-    if len(xs):
-        ah, aw = detected.mask.shape
-        support = (math.floor(xs.min()*width/aw), math.floor(ys.min()*height/ah),
-                   math.ceil((xs.max()+1)*width/aw), math.ceil((ys.max()+1)*height/ah))
-        if not (left <= support[0] and top <= support[1] and
-                support[2] <= left+side and support[3] <= top+side):
-            return fallback("support_outside_normalized_frame")
-
-    retained = (max(0, left), max(0, top), min(width, left+side), min(height, top+side))
-    retained_area = max(0, retained[2]-retained[0])*max(0, retained[3]-retained[1])
-    output = source.crop(window).resize((size, size), Image.Resampling.LANCZOS)
-    scale = size/side
-    metadata.update(
-        applied=True, reason="fixed_body_envelope_occupancy", window_box=list(window),
-        scale=scale, effective_magnification=max(width, height)/side,
-        occupancy_after=body_long/side, protected_margin_retained=True,
-        source_removed_area_fraction=1-retained_area/(width*height),
-        output_body_box=[(bx0-left)*scale, (by0-top)*scale,
-                         (bx1-left)*scale, (by1-top)*scale],
-        output_content_box=[(retained[0]-left)*scale, (retained[1]-top)*scale,
-                            (retained[2]-left)*scale, (retained[3]-top)*scale],
-        virtual_padding_source_pixels={"left": max(0, -left), "top": max(0, -top),
-                                       "right": max(0, left+side-width),
-                                       "bottom": max(0, top+side-height)},
+    checks = (
+        (crop_width > 0 and crop_height > 0, "invalid_crop_box"),
+        (crop_short_long_ratio >= source_short_long_ratio, "crop_aspect_worsens_padding"),
+        (crop_short_long_ratio >= MIN_CROP_SHORT_LONG_RATIO, "crop_aspect_too_extreme"),
+        (magnification <= MAX_EFFECTIVE_MAGNIFICATION, "maximum_magnification_limit"),
+        (magnification >= MIN_EFFECTIVE_MAGNIFICATION, "minimum_magnification_limit"),
+        (crop_scale >= base_scale*(1-1e-12), "would_shrink_full_frame"),
     )
+    for accepted, reason in checks:
+        if not accepted:
+            return fallback(reason)
+
+    output, resize_meta = letterbox(source.crop(box), size)
+    metadata.update(applied=True, reason="body_envelope_magnify_only", crop_box=list(box),
+                    crop_aspect_ratio=crop_aspect, retained_area_fraction=retained_area,
+                    source_removed_area_fraction=1-retained_area,
+                    effective_magnification=magnification,
+                    scale=resize_meta["scale"], protected_margin_retained=True,
+                    output_content_box=list(resize_meta["content_box"]))
     return output, metadata
