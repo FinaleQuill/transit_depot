@@ -1,4 +1,4 @@
-"""Study-batch preview for the frozen 045 pair or 043 Base export.
+"""Study-batch preview for the frozen 043, 044 or 045 exports.
 
 Without --execute this inspects paths and model metadata only. With --execute it
 compares the original serial Predictor against one forward per complete Study,
@@ -27,7 +27,9 @@ from inference_reproducibility import compare_probability_outputs
 
 SAMPLE_ROOT = Path(__file__).resolve().parent / "artifacts/new_study_cost_20261102/cost_data_test"
 MODEL_045 = Path(__file__).resolve().parent / "artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode"
+MODEL_044 = Path(__file__).resolve().parent.parent / "deliveries/044_tiny_base_class1B_draft768_20261031/model"
 CONFIG_SHA_045 = "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+CONFIG_SHA_044 = "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d"
 CONFIG_SHA_043 = "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
 ROUNDS = 3  # A local preview convention; the new announcement does not prescribe rounds.
 
@@ -57,13 +59,21 @@ def inspect_inputs(model_dir, pictures_100, pictures_5):
                 or [m.get("directory") for m in config.get("members", [])] != ["X1", "B"]):
             raise ValueError("045 config no longer declares the fixed full-decode X1+B pair")
         model_label = "045_X1_B_full_decode"
+    elif digest == CONFIG_SHA_044:
+        if (config.get("artifact_type") != "fixed_classwise_student_pair"
+                or config.get("decoder_candidate") != "JPEG_draft_target768"
+                or config.get("candidate") != "AB_B100_class1"
+                or config.get("view_candidate") is not None
+                or [m.get("directory") for m in config.get("source_members", [])] != ["A", "B"]):
+            raise ValueError("044 config no longer declares the fixed A+B draft pair")
+        model_label = "044_A_B_draft768"
     elif digest == CONFIG_SHA_043:
         if (config.get("artifact_type") != "experimental_student_fp16"
                 or config.get("backbone_name") != "convnext_base.fb_in22k_ft_in1k_384"):
             raise ValueError("043 config no longer declares the original Base model")
         model_label = "043_base_B"
     else:
-        raise ValueError("Only the original 045 full-decode or 043 Base config is supported")
+        raise ValueError("Only the original 043, 044 or 045 config is supported")
     if config.get("image_size") != 768 or config.get("tta") != "hflip2":
         raise ValueError("The preview requires the frozen 768/hflip2 configuration")
     measured = study_groups(discover_images(pictures_100))
@@ -77,6 +87,7 @@ def inspect_inputs(model_dir, pictures_100, pictures_5):
         "model": model_label,
         "model_dir": str(model_dir),
         "config_sha256": digest,
+        "decoder": config.get("decoder_candidate") or "full_decode_exact_reference_v1",
         "pictures_100": str(Path(pictures_100).resolve(strict=True)),
         "pictures_5": str(Path(pictures_5).resolve(strict=True)),
         "measured_studies": len(measured),
@@ -99,6 +110,19 @@ def inspect_inputs(model_dir, pictures_100, pictures_5):
 def make_batch_predictor(predictor, max_study_images):
     from inference_inputs import ExactU8Input
 
+    if predictor.config.get("decoder_candidate") == "JPEG_draft_target768":
+        from student_draft_pair import draft_image_pixels
+
+        def decode(path):
+            return draft_image_pixels(path, [768])[768]
+    elif predictor.config.get("decoder_candidate") is None:
+        from inference_inputs import load_image_pixels
+
+        def decode(path):
+            return load_image_pixels(path, [768], _letterbox_image)[768]
+    else:
+        raise ValueError("Unknown frozen decoder candidate")
+
     # Separate pinned staging per image: the original batch-1 buffer cannot be
     # reused before an asynchronous H2D copy from the previous image completes.
     lookups = [predictor.input_lookup]
@@ -107,14 +131,11 @@ def make_batch_predictor(predictor, max_study_images):
                                     image_sizes=[768]))
 
     def predict_study(rows):
-        from inference_inputs import load_image_pixels
-
         torch = predictor.torch
         if len(rows) > len(lookups):
             raise ValueError("Study exceeds prepared input staging slots")
         with torch.inference_mode():
-            images = [lookup.to_tensor(load_image_pixels(row["path"], [768],
-                                                              _letterbox_image)[768])
+            images = [lookup.to_tensor(decode(row["path"]))
                       for lookup, row in zip(lookups, rows)]
             batch = images[0] if len(images) == 1 else torch.cat(images, dim=0)
             flipped = torch.flip(batch, dims=(-1,)).contiguous(
@@ -239,7 +260,7 @@ def execute(measured, warmup, summary, output_dir):
         raise FileExistsError("Choose a new output directory")
     configure_inference()
     predictor = load_submission_predictor(summary["model_dir"])
-    if (len(predictor.models) != (2 if summary["model"] == "045_X1_B_full_decode" else 1)
+    if (len(predictor.models) != (1 if summary["model"] == "043_base_B" else 2)
             or any(member.get("tta") != "hflip2" or member.get("image_size") != 768
                    for member in predictor.members)):
         raise ValueError("Loaded member configuration differs from the frozen preview")
@@ -271,7 +292,8 @@ def execute(measured, warmup, summary, output_dir):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model-dir", type=Path, default=MODEL_045)
+    parser.add_argument("--model-dir", type=Path, default=MODEL_045,
+                        help=f"Frozen model directory; 044 draft: {MODEL_044}")
     parser.add_argument("--pictures-100", type=Path, default=SAMPLE_ROOT / "pictures_100")
     parser.add_argument("--pictures-5", type=Path, default=SAMPLE_ROOT / "pictures_5")
     parser.add_argument("--output-dir", type=Path, help="New /tmp directory for CSV and JSON results")
