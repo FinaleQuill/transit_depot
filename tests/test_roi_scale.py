@@ -12,11 +12,15 @@ from roi_scale import VERSION, normalize_roi
 from tight_crop import letterbox
 
 
-def proposal(body_box, *, reason="body_envelope_candidate", edge_contact=()):
+def proposal(body_box, *, reason="body_envelope_candidate", edge_contact=(), analysis_gray=None):
+    analysis_gray = (np.zeros((600, 800), dtype=np.uint8) if analysis_gray is None
+                     else np.asarray(analysis_gray, dtype=np.uint8))
     return SimpleNamespace(body_box=body_box, diagnostics={
         "reason": reason, "body_clipped_at_source_edges": list(edge_contact),
         "medical_segmentation": False, "review_required": True,
-    })
+        "analysis_size": [analysis_gray.shape[1], analysis_gray.shape[0]],
+        "low_support_threshold": 5,
+    }, analysis_gray=analysis_gray)
 
 
 class RoiScaleTests(unittest.TestCase):
@@ -93,6 +97,30 @@ class RoiScaleTests(unittest.TestCase):
             output, meta = normalize_roi(source, 768)
         self.assertEqual(meta["reason"], "minimum_magnification_limit")
         self.assertFalse(meta["applied"])
+        self.assertEqual(output.tobytes(), baseline.tobytes())
+
+    def test_broad_low_support_just_outside_two_percent_crop_forces_no_cut(self):
+        source = Image.fromarray(np.full((600, 800), 100, dtype=np.uint8))
+        baseline, _ = letterbox(source, 768)
+        analysis = np.zeros((600, 800), dtype=np.uint8)
+        analysis[100:140, 10:70] = 10
+        detected = proposal((90, 35, 710, 565), analysis_gray=analysis)
+        with patch("roi_scale.detect_tight_crop", return_value=detected):
+            output, meta = normalize_roi(source, 768)
+        self.assertFalse(meta["applied"])
+        self.assertEqual(meta["reason"], "broad_support_outside_final_crop")
+        self.assertEqual(meta["final_crop_support_guard"]["broad_components_outside_crop"], [1])
+        self.assertEqual(output.tobytes(), baseline.tobytes())
+
+    def test_missing_final_crop_support_evidence_forces_no_cut(self):
+        source = Image.fromarray(np.full((600, 800), 100, dtype=np.uint8))
+        baseline, _ = letterbox(source, 768)
+        detected = proposal((90, 35, 710, 565))
+        detected.diagnostics.pop("analysis_size")
+        with patch("roi_scale.detect_tight_crop", return_value=detected):
+            output, meta = normalize_roi(source, 768)
+        self.assertFalse(meta["applied"])
+        self.assertEqual(meta["reason"], "missing_final_crop_support_evidence")
         self.assertEqual(output.tobytes(), baseline.tobytes())
 
     def test_actual_classical_detector_fallback_is_safe(self):
