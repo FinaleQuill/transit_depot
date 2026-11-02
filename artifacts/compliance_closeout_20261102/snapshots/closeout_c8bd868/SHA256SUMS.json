@@ -1,0 +1,18 @@
+{
+  "algorithm": "sha256",
+  "scope": "All snapshot files except this checksum sidecar",
+  "files": {
+    "DELIVERY_RECEIPT.json": {
+      "bytes": 1461,
+      "sha256": "90c124162775fdf4f5839a54ee966c3703499f3a52b31daf48550f467ff57203"
+    },
+    "SNAPSHOT_METADATA.json": {
+      "bytes": 929,
+      "sha256": "6fc4658d3ddf8ede22267a99a4c169d77eda04dfa4a196ff1283ff4551ab3478"
+    },
+    "队伍名待确认_最终提交材料_审查草案.zip": {
+      "bytes": 75272995,
+      "sha256": "77e83aaaa7f26aabe02c22f93c5f8a5c5959e89bef619481969ff126d288fe55"
+    }
+  }
+}

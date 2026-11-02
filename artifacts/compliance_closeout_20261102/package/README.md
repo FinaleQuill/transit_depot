@@ -30,3 +30,7 @@
 `code/requirements.txt` 引用推理依赖；训练依赖在 `code/requirements_kd.txt`。官方3.0版本与历史训练/推理版本分别保存在 `evidence/runtime/`，不混同。native_lanczos 源码、许可和构建文件在 `code/native_lanczos/`；预编译扩展只是CPython3.12历史副本，不证明新环境运行结果相同。
 
 依赖图和源码语法检查为静态核对，见 `evidence/runtime/static_code_closure.json`；没有代替实际运行。剩余阻塞和命名状态见 `scope_and_blockers.md`。包内文档引用以ZIP根目录为基准，`文件:行号` 为文本行号，`XLSX::工作表!单元格` 为工作簿定位。
+
+## Living package 维护入口
+
+2026-11-03 起本目录作为持续维护的主包；见 `LIVING_PACKAGE.md`、`LIVING_PACKAGE.json` 和 `REVIEW2_FREEZE_CHECKLIST_20261103.md`。原 ZIP 为历史只读快照，不再用旧交付回执冒充主包当前哈希。上文 2026-11-02 执行记录保留历史时间语境。最终成员尚未冻结。

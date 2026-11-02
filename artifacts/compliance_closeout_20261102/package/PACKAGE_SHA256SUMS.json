@@ -1,5 +1,5 @@
 {
-  "scope": "All ZIP payload files except this manifest itself",
+  "scope": "All living package files except this manifest itself; historical ZIP has its own unchanged manifest",
   "files": [
     {
       "path": "A1_A5_FREEZE_RECORD.md",
@@ -7,14 +7,34 @@
       "sha256": "a038a85a1918e98250c61ee5b861c2e444275a229992d358ddd7ca7871707826"
     },
     {
+      "path": "LIVING_PACKAGE.json",
+      "bytes": 3927,
+      "sha256": "5eced352519149766e5b41adab9f89c24ad4b875a695512629ed060ff297d168"
+    },
+    {
+      "path": "LIVING_PACKAGE.md",
+      "bytes": 1298,
+      "sha256": "518535fa0b6b6b33b4015f3be2d8437ec9df987a837d9d36c42f0a2b7d41dc00"
+    },
+    {
       "path": "PACKAGE_STRUCTURE.md",
-      "bytes": 1516,
-      "sha256": "a3e61341511c0a5205fda077c5c8b15da6ccd42187b92b8b774315bbd7cd29e2"
+      "bytes": 1857,
+      "sha256": "ba46e1a9daf7f9f3dbb40062178288577afc9522c4f356ce597b11e744be94b1"
     },
     {
       "path": "README.md",
-      "bytes": 3015,
-      "sha256": "9cfd3454052183bc63076df61d077c3cbd2dba89420a6a8a662dddbcf36ea98d"
+      "bytes": 3362,
+      "sha256": "f0794f1199b0f48eef8d9f2f7fb623e91c3d7f7d8591f5fa3081457a72d7bb04"
+    },
+    {
+      "path": "REVIEW2_FREEZE_CHECKLIST_20261103.json",
+      "bytes": 2790,
+      "sha256": "49e32b437f9a4ca939a901e0459cfcf4026f3aab2b78c12ef8bcc73c05479274"
+    },
+    {
+      "path": "REVIEW2_FREEZE_CHECKLIST_20261103.md",
+      "bytes": 2180,
+      "sha256": "235149e5e401bf2e4229b5f9347e7e436e66a17504b4ed01be4b01ce18fd8090"
     },
     {
       "path": "code/audit_trail.py",
@@ -52,6 +72,11 @@
       "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586"
     },
     {
+      "path": "code/demo_training_compliance.py",
+      "bytes": 2509,
+      "sha256": "daf680cc295f6d67a7f7e394289111415bed70f425491381aa4eb21b80557025"
+    },
+    {
       "path": "code/deploy_kd.py",
       "bytes": 38675,
       "sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1"
@@ -82,6 +107,11 @@
       "sha256": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7"
     },
     {
+      "path": "code/frozen_head_fit.py",
+      "bytes": 25925,
+      "sha256": "81fe832d0eb730fe4bfda3a91941bb6f661c558f291bd6f4745e2236f75cf738"
+    },
+    {
       "path": "code/inference_inputs.py",
       "bytes": 6146,
       "sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3"
@@ -100,6 +130,11 @@
       "path": "code/kd_common.py",
       "bytes": 6721,
       "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029"
+    },
+    {
+      "path": "code/manage_living_compliance.py",
+      "bytes": 17301,
+      "sha256": "42194865b7800747efe9ca729344173b285bb649bc9ca91563148070e99a436e"
     },
     {
       "path": "code/model.py",
@@ -223,8 +258,8 @@
     },
     {
       "path": "code/study_student.py",
-      "bytes": 33958,
-      "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+      "bytes": 34580,
+      "sha256": "8632eee31e98ffea7119b623dda022b238441560b439c530eab8eec09186d533"
     },
     {
       "path": "code/submission_runtime.py",
@@ -248,23 +283,33 @@
     },
     {
       "path": "code/train_distill.py",
-      "bytes": 56582,
-      "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+      "bytes": 57501,
+      "sha256": "f9a14a70a4bf010ccfc4c9061eab0e0c4094a5b4649f55ce011900a5b6e12847"
     },
     {
       "path": "code/train_overnight.py",
-      "bytes": 51361,
-      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2"
+      "bytes": 53147,
+      "sha256": "bf04f53cb720a0cddead40e1ef62c4ee92fac1b440d52c901c89f2074ed19887"
     },
     {
       "path": "code/train_teacher.py",
-      "bytes": 22005,
-      "sha256": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+      "bytes": 22688,
+      "sha256": "3435c697c75de6e805bf9ef00a27c913bb6d89dc5ddb790d8fff6d742106f5d7"
+    },
+    {
+      "path": "code/training_compliance.py",
+      "bytes": 12786,
+      "sha256": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
     },
     {
       "path": "code/training_evidence_monitor.py",
       "bytes": 16983,
       "sha256": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb"
+    },
+    {
+      "path": "code/training_hooks.py",
+      "bytes": 4278,
+      "sha256": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9"
     },
     {
       "path": "code/utils.py",

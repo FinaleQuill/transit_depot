@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-03T00:54:31+08:00",
+  "timezone": "Asia/Hong_Kong",
+  "artifact_type": "historical_review_draft_read_only_snapshot",
+  "base_commit": "c8bd868829c2a9f3445aea08eafbad0eeaee4fd5",
+  "archive": {
+    "filename": "队伍名待确认_最终提交材料_审查草案.zip",
+    "bytes": 75272995,
+    "sha256": "77e83aaaa7f26aabe02c22f93c5f8a5c5959e89bef619481969ff126d288fe55"
+  },
+  "receipt": {
+    "bytes": 1461,
+    "sha256": "90c124162775fdf4f5839a54ee966c3703499f3a52b31daf48550f467ff57203"
+  },
+  "source_zip": "/home/featurize/work/cloud_project_v2/artifacts/compliance_closeout_20261102/队伍名待确认_最终提交材料_审查草案.zip",
+  "payload_files_verified": 321,
+  "final_members_frozen": false,
+  "A1_A5_frozen": true,
+  "protection": "Independent file copy; files 0444 and directory 0555. POSIX read-only, not WORM or an administrator-proof immutable flag."
+}

@@ -23,6 +23,8 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
+from training_hooks import compliance_run, start_run, epoch_completed, checkpoint_saved
+
 
 HEAD_KEYS = ("head.fc.weight", "head.fc.bias")
 
@@ -33,6 +35,25 @@ def sha256_file(path: str | Path) -> str:
         for block in iter(lambda: stream.read(4 * 1024**2), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def _save_patch(path: Path, state: dict[str, torch.Tensor]) -> str:
+    """Commit a final head patch durably before exposing its compliance event."""
+    temporary = path.with_name(path.name + f".{os.getpid()}.tmp")
+    try:
+        torch.save(state, temporary)
+        with temporary.open("ab") as stream:
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+        directory_fd = os.open(str(path.parent), os.O_RDONLY | getattr(os, "O_DIRECTORY", 0))
+        try:
+            os.fsync(directory_fd)
+        finally:
+            os.close(directory_fd)
+        return sha256_file(path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
 
 
 def _json(path):
@@ -266,6 +287,7 @@ def _batch(cache, indices):
     return torch.from_numpy(features), torch.from_numpy(mask), torch.from_numpy(cache["labels"][indices].copy())
 
 
+@compliance_run
 def fit(*, cache, plan, plan_sha256, encoder, recipe, output):
     plan = Path(plan).resolve(strict=True)
     _require(_digest(plan_sha256) and sha256_file(plan) == plan_sha256,
@@ -299,6 +321,11 @@ def fit(*, cache, plan, plan_sha256, encoder, recipe, output):
     count = len(values["groups"])
     steps_per_epoch = math.ceil(count / config.batch_studies)
     output.mkdir(parents=True, exist_ok=False)
+    start_run(output, trainer="frozen_head_fit.fit", configuration={
+        "encoder": encoder, "recipe": recipe, "training_config": asdict(config),
+        "plan_sha256": plan_sha256, "cache_root": str(values["root"]),
+        "device": "cpu", "valid_used_for_training": False, "test_used": False},
+        source_files=[__file__, plan], resume=None)
     started = time.monotonic()
     receipt = {"schema_version": 1, "artifact_type": "frozen_fc_training_receipt",
         "state": "running", "encoder": encoder, "recipe": recipe, "started_hong_kong": _stamp(),
@@ -371,6 +398,7 @@ def fit(*, cache, plan, plan_sha256, encoder, recipe, output):
                     "valid_evaluated": False}
                 history.write(json.dumps(row, allow_nan=False) + "\n")
                 history.flush()
+                epoch_completed(epoch, row)
                 receipt.update(completed_epochs=epoch, optimizer_updates=step)
                 _write_json(receipt_path, receipt)
                 print(f"frozen_head encoder={encoder} recipe={recipe} epoch={epoch}/{config.epochs} "
@@ -382,7 +410,7 @@ def fit(*, cache, plan, plan_sha256, encoder, recipe, output):
         _require(all(bool(torch.isfinite(value).all()) for value in final_fp16.values()), "FC patch overflows FP16")
         for precision, state in [("fp32", final_fp32), ("fp16", final_fp16)]:
             path = output / f"patch_{precision}.pt"
-            torch.save(state, path)
+            checkpoint_saved(path, _save_patch(path, state), epoch=config.epochs, role="final")
         for path, digest in values["bindings"].items():
             _require(sha256_file(path) == digest, "A frozen training input changed: " + path)
         receipt.update(state="completed", completed_hong_kong=_stamp(),

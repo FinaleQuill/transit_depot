@@ -16,3 +16,7 @@
 当前机器上的105张字节副本留在cost_inputs/（包外），用于本地复查；不加入Git、不对外上传。
 
 全部成员路径由最终PACKAGE_SHA256SUMS.json列举，可逐字节核对。最终成员冻结及T4/正式计时证据未完，见compliance_matrix.md待补项。
+
+## Living package 增补
+
+2026-11-03 起本目录作为持续维护的主包；见 `LIVING_PACKAGE.md`、`LIVING_PACKAGE.json` 和 `REVIEW2_FREEZE_CHECKLIST_20261103.md`。原 ZIP 为历史只读快照，不再用旧交付回执冒充主包当前哈希。上文 2026-11-02 执行记录保留历史时间语境。最终成员尚未冻结。

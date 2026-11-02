@@ -26,6 +26,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 
 from audit_trail import capture_source_version, record_checkpoint, training_output_has_artifacts
+from training_hooks import compliance_run, start_run, epoch_completed
 from kd_common import BASE_BACKBONE, TINY_BACKBONE, require_training_runtime, sha256_file, write_json
 from train_distill import (DistillConfig, _configuration, alpha_at, distillation_losses,
                            evaluate_student, prepare_student_objective,
@@ -288,6 +289,7 @@ def validate_study_resume(checkpoint, config, expected):
         raise ValueError("Inconsistent complete-Study continuation state")
 
 
+@compliance_run
 def run_training(config: StudyConfig):
     from cv_splits import read_fold_plan
     from dataset import read_manifest
@@ -303,7 +305,8 @@ def run_training(config: StudyConfig):
     source_version = capture_source_version(Path(__file__).with_name(name) for name in (
         "study_student.py", "study_packing.py", "student_experiments.py", "train_distill.py", "train_overnight.py",
         "distill_data.py", "distill_tta_data.py", "model_overnight.py", "dataset_overnight.py",
-        "dataset.py", "cv_splits.py", "kd_common.py", "runtime_compat.py", "audit_trail.py"))
+        "dataset.py", "cv_splits.py", "kd_common.py", "runtime_compat.py", "audit_trail.py",
+        "training_hooks.py", "training_compliance.py"))
     plan = read_fold_plan(config.fold_plan)
     train_path = Path(plan["source_train_manifest"]["path"])
     valid_path = Path(plan["official_holdout"]["path"])
@@ -367,6 +370,9 @@ def run_training(config: StudyConfig):
         out.mkdir(parents=True, exist_ok=True)
     elif config.resume.resolve().parent != out or config.resume.name != "last.pt":
         raise ValueError("Resume must name last.pt in the same local run directory")
+    start_run(out, trainer="study_student.run_training", configuration={
+        **_configuration(config), "binding": expected,
+        "source_version": source_version}, source_files=source_version["files"], resume=config.resume)
     random.seed(config.seed)
     np.random.seed(config.seed)
     torch.manual_seed(config.seed)
@@ -508,6 +514,9 @@ def run_training(config: StudyConfig):
                 stream.write(json.dumps({"epoch": epoch, "training": training, "validation": validation["metrics"],
                     "is_best": is_best, "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash,
                     "checkpoint_saved_at_utc": audit["saved_at_utc"], "checkpoint_audit_record_sha256": audit["record_sha256"]}) + "\n")
+            epoch_completed(epoch, {"training": training, "validation": validation["metrics"],
+                "is_best": is_best, "progress": dict(progress),
+                "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash})
             state = "completed" if epoch == config.epochs else "running"
             if config.patience and early["bad_epochs"] >= config.patience:
                 state = "early_stopped"

@@ -24,6 +24,7 @@ from torch import nn
 import torch.nn.functional as F
 
 from audit_trail import capture_source_version, record_checkpoint, training_output_has_artifacts
+from training_hooks import compliance_run, start_run, epoch_completed
 
 from kd_common import (TINY_BACKBONE, prepare_pretrained_provenance, sha256_file,
                        student_preprocessing, validate_pretrained_provenance, write_json,
@@ -604,6 +605,7 @@ def _train_epoch(model, ema, loader, optimizer, scaler, device, dtype, epoch,
             "gpu_peak_allocated_gib": torch.cuda.max_memory_allocated(device) / 2**30}
 
 
+@compliance_run
 def run_training(config: DistillConfig) -> dict[str, Any]:
     config.validate()
     validate_output_paths(config)
@@ -611,7 +613,8 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
     source_version = capture_source_version(Path(__file__).with_name(name) for name in (
         "train_distill.py", "train_overnight.py", "distill_data.py", "distill_tta_data.py", "model_overnight.py",
         "dataset_overnight.py", "dataset.py", "cv_splits.py", "kd_common.py",
-        "runtime_compat.py", "audit_trail.py", "student_experiments.py"))
+        "runtime_compat.py", "audit_trail.py", "student_experiments.py",
+        "training_hooks.py", "training_compliance.py"))
     from cv_splits import read_fold_plan
     from dataset import read_manifest
     from dataset_overnight import make_overnight_loader
@@ -659,6 +662,13 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
         out.mkdir(parents=True, exist_ok=True)
     elif config.resume.resolve().parent != out or config.resume.name != "last.pt":
         raise ValueError("Resume must use last.pt from the same student output directory")
+    start_run(out, trainer="train_distill.run_training", configuration={
+        **_configuration(config), "training_precision": precision,
+        "fold_plan_sha256": plan_hash, "source_manifest_sha256": plan["source_manifest_sha256"],
+        "official_valid_manifest_sha256": plan["official_holdout"]["sha256"],
+        "distillation": protocol, "teacher_provenance": teacher_provenance,
+        "preprocessing": preprocessing, "loss_config": loss_config},
+        source_files=source_version["files"], resume=config.resume)
     seed = config.seed
     random.seed(seed)
     np.random.seed(seed)
@@ -854,6 +864,9 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
                                         "best_checkpoint_sha256": best_hash,
                                         "checkpoint_saved_at_utc": last_audit["saved_at_utc"],
                                         "checkpoint_audit_record_sha256": last_audit["record_sha256"]}) + "\n")
+            epoch_completed(epoch, {"training": training, "validation": validation["metrics"],
+                "is_best": is_best, "progress": dict(progress),
+                "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash})
             state = "completed" if epoch == config.epochs else "running"
             if config.patience and early["bad_epochs"] >= config.patience:
                 state = "early_stopped"

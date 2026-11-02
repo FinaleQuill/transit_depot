@@ -28,6 +28,8 @@ import torch
 from torch import nn
 
 from model_overnight import MODEL_NAME, build_overnight_model, validate_model_config
+from audit_trail import capture_source_version
+from training_hooks import compliance_run, start_run, epoch_completed
 
 CLASS_IDS = list(range(1, 11))
 TRAINING_SCALES = (768,)
@@ -198,8 +200,25 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 def save_checkpoint(path: Path, payload: dict[str, Any]) -> str:
     temporary = path.with_name(path.name + ".tmp")
     torch.save(payload, temporary)
+    with temporary.open("ab") as stream:
+        os.fsync(stream.fileno())
     os.replace(temporary, path)
-    return sha256(path)
+    # Persist the directory entry before exposing the exact digest to audit.
+    directory_fd = os.open(str(path.parent), os.O_RDONLY)
+    try:
+        os.fsync(directory_fd)
+    finally:
+        os.close(directory_fd)
+    digest = sha256(path)
+    try:
+        from training_hooks import checkpoint_saved
+        payload_epoch = payload.get("epoch")
+        if isinstance(payload_epoch, int) and payload_epoch > 0:
+            checkpoint_saved(path, digest, epoch=payload_epoch,
+                             role="best" if path.name.startswith("best") else "last")
+    except ImportError:
+        pass
+    return digest
 
 
 def cpu_tree(value: Any) -> Any:
@@ -577,6 +596,7 @@ def reconcile_resume_best(checkpoint: dict[str, Any], config: OvernightConfig,
                         "actual_checkpoint_sha256": best_hash if promote else sha256(actual_path)}
 
 
+@compliance_run
 def run_training(config: OvernightConfig) -> dict[str, Any]:
     """Run one fold slice; full continuation does not restart warmup/cosine."""
     config.validate()
@@ -629,6 +649,14 @@ def run_training(config: OvernightConfig) -> dict[str, Any]:
         output.mkdir(parents=True, exist_ok=True)
     elif not output.is_dir() or config.resume.resolve().parent != output:
         raise ValueError("Resume must use a checkpoint in its original output directory")
+    source_version = capture_source_version([Path(__file__), Path(__file__).with_name("model_overnight.py"),
+        Path(__file__).with_name("dataset_overnight.py"), Path(__file__).with_name("dataset.py"),
+        Path(__file__).with_name("cv_splits.py"), Path(__file__).with_name("audit_trail.py"),
+        Path(__file__).with_name("training_hooks.py"), Path(__file__).with_name("training_compliance.py")])
+    start_run(output, trainer="train_overnight.run_training", configuration={
+        **_jsonable(asdict(config)), "plan_sha256": plan_hash,
+        "source_manifest_sha256": source_hash, "training_precision": precision},
+        source_files=source_version["files"], resume=config.resume)
     seed = (config.seed + config.fold * 10007) % 2**32
     random.seed(seed)
     np.random.seed(seed)
@@ -818,6 +846,10 @@ def run_training(config: OvernightConfig) -> dict[str, Any]:
             state = "completed" if epoch >= config.epochs else "paused"
             if config.patience and early["bad_epochs"] >= config.patience:
                 state = "early_stopped"
+            epoch_completed(epoch, {"validation": validation["metrics"], "training": training,
+                "progress": dict(progress), "is_best": is_best,
+                "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash,
+                "state": state})
             result = {"state": state, **progress, "best_auc": best_auc, "best_epoch": best_epoch,
                       "fold": config.fold, "output": str(output), "last_checkpoint_sha256": last_hash,
                       "early_stopping": dict(early), "updated_utc": datetime.now(timezone.utc).isoformat()}

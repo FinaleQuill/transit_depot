@@ -18,6 +18,7 @@ import sys
 from typing import Any, Sequence
 
 from audit_trail import capture_source_version, record_checkpoint, training_output_has_artifacts
+from training_hooks import compliance_run, start_run, epoch_completed
 from planned_handoff import HANDOFF_EXIT_CODE, reject_retired_fold
 from model_overnight import BASE_BACKBONE_NAME, MODEL_NAME, build_overnight_model
 from train_overnight import (
@@ -131,6 +132,7 @@ def _final_payload(payload: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
+@compliance_run
 def run_teacher(config: TeacherConfig) -> dict[str, Any]:
     """仅显式调用此函数才会加载原图、下载预训练权重并执行训练。"""
     import numpy as np
@@ -143,7 +145,7 @@ def run_teacher(config: TeacherConfig) -> dict[str, Any]:
     source_version = capture_source_version(Path(__file__).with_name(name) for name in (
         "train_teacher.py", "train_overnight.py", "model_overnight.py", "dataset_overnight.py",
         "dataset.py", "cv_splits.py", "kd_common.py", "runtime_compat.py", "audit_trail.py",
-        "planned_handoff.py"))
+        "planned_handoff.py", "training_hooks.py", "training_compliance.py"))
     binding, records = teacher_binding(config)
     image_root = config.image_root.resolve(strict=True)
     output = config.output.resolve()
@@ -180,6 +182,10 @@ def run_teacher(config: TeacherConfig) -> dict[str, Any]:
             if prior.get("model_config") != config.model_config() or prior.get("binding") != binding:
                 raise ValueError("--restart-empty refuses a different model/fold/manifest")
     output.mkdir(parents=True, exist_ok=True)
+    start_run(output, trainer="train_teacher.run_teacher", configuration={
+        **_jsonable(asdict(config)), "binding": binding,
+        "training_precision": precision, "selection_protocol": SELECTION_PROTOCOL},
+        source_files=source_version["files"], resume=config.resume)
     progress = {"completed_epochs": 0, "validated_epochs": 0, "backward_batches": 0,
                 "optimizer_updates": 0, "ema_updates": 0, "amp_skipped_steps": 0}
     if checkpoint is not None:
@@ -307,6 +313,9 @@ def run_teacher(config: TeacherConfig) -> dict[str, Any]:
                     "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash,
                     "checkpoint_saved_at_utc": last_audit["saved_at_utc"],
                     "checkpoint_audit_record_sha256": last_audit["record_sha256"]}, allow_nan=False) + "\n")
+            epoch_completed(epoch, {"training": training, "progress": dict(progress),
+                "outer_fold_evaluated": False, "selection_protocol": SELECTION_PROTOCOL,
+                "last_checkpoint_sha256": last_hash, "best_checkpoint_sha256": best_hash})
             print(f"=> teacher fold={config.fold} epoch={epoch}/{config.epochs} "
                   f"train_BCE={training['loss']:.6f} final_ready={complete}", flush=True)
             if complete or stop_requested or stop_file.exists():
