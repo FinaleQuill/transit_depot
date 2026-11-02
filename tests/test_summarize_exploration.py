@@ -7,6 +7,32 @@ from unittest.mock import patch
 import summarize_exploration
 
 
+def review_candidate(auc, members, ap_auc=None, selection=None):
+    if selection is None:
+        selection = ('initialization_reference' if members == ['champion041']
+                     else ['valid_selected_best'] * 2 if len(members) == 2 else 'valid_selected_best')
+    ap_auc = auc - .01 if ap_auc is None else ap_auc
+    return {'selection_kind': selection, 'members': members,
+            'probability_weights': [.5, .5] if len(members) == 2 else [1.],
+            'scores': {'all': {'macro_auc': auc, 'per_class_auc': [auc] * 10},
+                       'ap_only': {'macro_auc': ap_auc, 'per_class_auc': [ap_auc] * 10}}}
+
+
+def review_comparison():
+    values = {'champion041': .80, 'res640': .79, 'res768': .805, 'res896': .81, 'roi': .80, 'mil': .82}
+    return {'candidates': {name + '_hflip2': review_candidate(value, [name])
+                           for name, value in values.items()}, 'comparisons': {}}
+
+
+def add_pair(comparison, members, auc, ap_auc=None, reference='mil', ci=(.001, .007), ap_ci=(-.002, .006)):
+    key = '_'.join(members) + '_equal_hflip2'
+    comparison['candidates'][key] = review_candidate(auc, list(members), ap_auc=ap_auc)
+    comparison['comparisons'][key + '_minus_' + reference + '_hflip2'] = {
+        'slices': {'all': {'delta_macro': {'ci95': list(ci)}},
+                   'ap_only': {'delta_macro': {'ci95': list(ap_ci)}}}}
+    return key
+
+
 class ExplorationSummaryTests(unittest.TestCase):
     def test_report_reads_checkpoint_sha_from_metadata_and_ledger_from_compliance(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -78,31 +104,88 @@ class ExplorationSummaryTests(unittest.TestCase):
 
         self.assertIn('No class is supported', summarize_exploration.resolution_direction(resolution(0))[1])
         self.assertIn('Only 4/10 classes', summarize_exploration.resolution_direction(resolution(4))[1])
-        self.assertIn('majority (5/10)', summarize_exploration.resolution_direction(resolution(5))[1])
+        self.assertIn('Half (5/10)', summarize_exploration.resolution_direction(resolution(5))[1])
+        self.assertIn('majority (6/10)', summarize_exploration.resolution_direction(resolution(6))[1])
         self.assertIsNone(summarize_exploration.resolution_direction({'resolution_sensitivity': []})[0])
 
-    def test_dual_tiny_review_threshold_requires_best_selection_and_fixed_members(self):
-        def item(auc, members, selection='valid_selected_best'):
-            return {'selection_kind':selection, 'members':members, 'probability_weights':[.5, .5],
-                    'scores':{'all':{'macro_auc':auc}}}
-        comparison = {'candidates': {
-            'tiny_a_hflip2': item(.80, ['tiny_a']),
-            'tiny_b_hflip2': item(.81, ['tiny_b']),
-            'tiny_a_tiny_b_equal_hflip2': item(.814, ['tiny_a','tiny_b']),
-        }, 'comparisons': {
-            'tiny_a_tiny_b_equal_hflip2_minus_tiny_b_hflip2':
-                {'slices':{'all':{'delta_macro':{'ci95':[.001,.007]}}}},
-        }}
+    def test_actual_pair_compares_all_singles_and_requires_fixed_best_members(self):
+        comparison = review_comparison()
+        key = add_pair(comparison, ('res768', 'res896'), .824)
         result = summarize_exploration.best_dual_tiny_recommendation(comparison)
         self.assertAlmostEqual(result['gain'], .004)
-        self.assertEqual(result['best_single_name'], 'tiny_b')
+        self.assertEqual(result['best_single_name'], 'mil')
         self.assertEqual(result['paired_ci95'], [.001,.007])
         self.assertTrue(result['recommend_for_human_review'])
-        comparison['candidates']['tiny_a_tiny_b_equal_hflip2']['probability_weights'] = [.6, .4]
+        comparison['candidates'][key]['probability_weights'] = [.6, .4]
         self.assertIsNone(summarize_exploration.best_dual_tiny_recommendation(comparison))
-        comparison['candidates']['tiny_a_tiny_b_equal_hflip2']['probability_weights'] = [.5, .5]
-        comparison['candidates']['tiny_a_hflip2']['selection_kind'] = 'fixed_final_E3'
+        comparison['candidates'][key]['probability_weights'] = [.5, .5]
+        comparison['candidates']['res768_hflip2']['selection_kind'] = 'fixed_final_E3'
         self.assertIsNone(summarize_exploration.best_dual_tiny_recommendation(comparison))
+
+    def test_both_registered_pairs_reported_and_ap_safe_pair_preferred(self):
+        comparison = review_comparison()
+        add_pair(comparison, ('res768', 'res896'), .83, ap_auc=.800)
+        roi_key = add_pair(comparison, ('res768', 'roi'), .825, ap_auc=.813)
+        result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+        self.assertEqual(result['candidate'], roi_key)
+        self.assertEqual(len(result['pair_assessments']), 2)
+        bad = result['pair_assessments'][0]
+        self.assertFalse(bad['recommend_for_human_review'])
+        self.assertIn('AP-only point decline exceeds 0.003', bad['reasons'])
+        self.assertEqual(summarize_exploration.final_local_recommendation(comparison, result)['candidate'], roi_key)
+
+    def test_exact_margins_pass_without_rounding_near_misses_up(self):
+        for auc, ap_auc, expected in ((.824, .807, True), (.8239996, .807, False),
+                                      (.824, .8069996, False)):
+            with self.subTest(auc=auc, ap_auc=ap_auc):
+                comparison = review_comparison()
+                add_pair(comparison, ('res768', 'roi'), auc, ap_auc=ap_auc, ap_ci=(-.009, .003))
+                result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+                self.assertEqual(result['recommend_for_human_review'], expected)
+                self.assertTrue(result['ap_only_ci_allows_decline_over_margin'])
+
+    def test_ci_crossing_zero_and_missing_ap_ci_do_not_establish_reliable_gain(self):
+        for ci in ((-.002, .01), (0., .01)):
+            comparison = review_comparison()
+            add_pair(comparison, ('res768', 'roi'), .825, ci=ci)
+            result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+            self.assertTrue(result['passes_registered_local_gates'])
+            self.assertFalse(result['recommend_for_human_review'])
+        comparison = review_comparison()
+        key = add_pair(comparison, ('res768', 'roi'), .825)
+        del comparison['comparisons'][key + '_minus_mil_hflip2']['slices']['ap_only']
+        result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+        self.assertFalse(result['recommend_for_human_review'])
+        self.assertIn('paired AP-only CI is unavailable', result['reasons'])
+
+    def test_original_snapshot_prevents_recommending_internal_winner_after_regression(self):
+        comparison = review_comparison()
+        comparison['candidates']['champion041_hflip2'] = review_candidate(.84, ['champion041'])
+        add_pair(comparison, ('res768', 'res896'), .83, reference='champion041', ci=(-.02, -.001))
+        result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+        self.assertEqual(result['best_single_name'], 'champion041')
+        self.assertFalse(result['recommend_for_human_review'])
+        final = summarize_exploration.final_local_recommendation(comparison, result)
+        self.assertTrue(final['retain_original_baseline'])
+        self.assertEqual(final['candidate'], 'champion041_hflip2')
+
+    def test_incomplete_registered_single_set_is_not_recommended(self):
+        comparison = review_comparison()
+        add_pair(comparison, ('res768', 'roi'), .825)
+        del comparison['candidates']['res640_hflip2']
+        result = summarize_exploration.best_dual_tiny_recommendation(comparison)
+        self.assertFalse(result['all_registered_singles_available'])
+        self.assertFalse(result['recommend_for_human_review'])
+
+    def test_final_suggestion_can_choose_single_with_paired_gain_over_original(self):
+        comparison = review_comparison()
+        comparison['comparisons']['champion041_hflip2_minus_mil_hflip2'] = {
+            'slices': {'all': {'delta_macro': {'ci95': [-.03, -.01]}},
+                       'ap_only': {'delta_macro': {'ci95': [-.03, -.01]}}}}
+        final = summarize_exploration.final_local_recommendation(comparison, None)
+        self.assertFalse(final['retain_original_baseline'])
+        self.assertEqual(final['candidate'], 'mil_hflip2')
+        self.assertEqual(final['assessment']['paired_ci95'], [.01, .03])
 
     def test_summary_prefers_resolution_labels_uses_timing_fallback_and_reviews_best_dual(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -143,24 +226,26 @@ class ExplorationSummaryTests(unittest.TestCase):
             resolution_best = root/'resolution_best.json'
             with resolution_best.open('w') as stream:
                 json.dump({'candidates': {
+                'champion041_hflip2': candidate(.799, ['champion041'], selection='initialization_reference'),
                 'res640_hflip2': candidate(.79, ['res640']),
                 'res768_hflip2': candidate(.80, ['res768']),
                 'res896_hflip2': candidate(.81, ['res896']),
                 'roi_hflip2': candidate(.78, ['roi']),
                 'mil_hflip2': candidate(.805, ['mil']),
-                'tiny_a_hflip2': candidate(.80, ['tiny_a']),
-                'tiny_b_hflip2': candidate(.81, ['tiny_b']),
-                'tiny_a_tiny_b_equal_hflip2': {
-                    **candidate(.815, ['tiny_a', 'tiny_b']),
-                    'probability_weights': [.5, .5]},
                 'res768_res896_equal_hflip2': candidate(.815, ['res768', 'res896'],
                                                           selection=['valid_selected_best', 'valid_selected_best']),
+                'res768_roi_equal_hflip2': candidate(.812, ['res768', 'roi'],
+                                                       selection=['valid_selected_best', 'valid_selected_best']),
                 }}, stream)
             with resolution_best.open() as stream:
                 best_payload = json.load(stream)
             best_payload['comparisons'] = {
-                'tiny_a_tiny_b_equal_hflip2_minus_tiny_b_hflip2':
-                    {'slices':{'all':{'delta_macro':{'ci95':[.001,.009]}}}}
+                'res768_res896_equal_hflip2_minus_res896_hflip2':
+                    {'slices':{'all':{'delta_macro':{'ci95':[.001,.009]}},
+                              'ap_only':{'delta_macro':{'ci95':[-.004,.01]}}}},
+                'res768_roi_equal_hflip2_minus_res896_hflip2':
+                    {'slices':{'all':{'delta_macro':{'ci95':[-.002,.006]}},
+                              'ap_only':{'delta_macro':{'ci95':[-.002,.006]}}}},
             }
             with resolution_best.open('w') as stream:
                 json.dump(best_payload, stream)
@@ -183,13 +268,35 @@ class ExplorationSummaryTests(unittest.TestCase):
             self.assertIn('| res896 | 0.810000 | 0.800000 | not measured |', markdown)
             self.assertIn('| res768_res896_equal | 0.815000 | 0.805000 | 95.00/120.00 ms |', markdown)
             self.assertIn('| res768_roi_equal | 0.812000 | 0.802000 | 88.00/99.00 ms |', markdown)
-            self.assertIn('tiny_a_tiny_b_equal_hflip2: dual Macro-AUC=0.815000; best matched single tiny_b=0.810000; gain=+0.005000', markdown)
+            self.assertIn('res768_res896_equal_hflip2: dual Macro-AUC=0.815000; best single across the original reference and five registered arms res896=0.810000; gain=+0.005000', markdown)
             self.assertIn('patient-paired 95% CI=[0.001, 0.009]', markdown)
-            self.assertIn('fixed >=0.004 local threshold for human final-member review', markdown)
+            self.assertIn('registered local point gates: gain >=0.004 and AP-only delta >=-0.003', markdown)
+            self.assertIn('One candidate for owner choice: **res768_res896_equal_hflip2**', markdown)
+            self.assertIn('AP-only risk: the paired interval still includes a decline greater than 0.003', markdown)
+            self.assertIn('Online performance is unknown', markdown)
+            self.assertIn('report does not freeze members', markdown)
+            self.assertNotIn('tiny_a_tiny_b', markdown)
             self.assertIn('Best-checkpoint comparison (supplementary)', markdown)
             self.assertIn('| mil | valid_selected_best | 0.805000 | 0.795000 |', markdown)
+            self.assertIn('| champion041 | initialization_reference | 0.799000 | 0.789000 |', markdown)
+            # The metrics table remains contiguous instead of being split by per-class prose.
+            self.assertIn('| res640 | valid_selected_best | 0.790000 | 0.780000 | not measured |\n'
+                          '| res768 | valid_selected_best | 0.800000 | 0.790000 | 61.00/81.00 |', markdown)
             self.assertIn('compare_final', markdown)
             self.assertIn('c' * 64, markdown)
+
+    def test_report_explicitly_retains_original_when_no_comparison_is_complete(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root/'report.md'
+            plan = root/'plan.json'
+            plan.write_text(json.dumps({'status_file': str(root/'missing-status'),
+                'roi_gallery': str(root/'missing-gallery'), 'report_file': str(output)}))
+            with patch('sys.argv', ['summarize_exploration.py', '--plan', str(plan)]):
+                summarize_exploration.main()
+            markdown = output.read_text()
+            self.assertIn('retain the original champion041 baseline', markdown)
+            self.assertIn('do not claim a stronger model from this round', markdown)
 
 
 if __name__ == '__main__':
