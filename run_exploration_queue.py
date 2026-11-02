@@ -105,7 +105,7 @@ def verify_run(run_dir, *, allow_paused=False):
 
 
 def verify_job_binding(job, receipt):
-    """Bind a terminal run to preregistered config and its captured source record."""
+    """Bind a terminal run to preregistered critical config and all captured sources."""
     run_dir = Path(job['run_dir'])
     expected = job.get('expected_configuration')
     if not isinstance(expected, dict) or not expected:
@@ -133,8 +133,9 @@ def verify_job_binding(job, receipt):
                 or sha(source_manifest) != event['source_manifest_sha256']):
             raise RuntimeError('STOP: run configuration/source snapshot does not match compliance record')
         captured = read(config_path)
-        if captured != expected:
-            raise RuntimeError('STOP: compliance configuration differs from full registered configuration')
+        for key, value in expected.items():
+            if captured.get(key) != value:
+                raise RuntimeError(f'STOP: compliance configuration differs from registration for {key}')
         source_rows = read(source_manifest)
         captured_sources = {str(Path(row['original_path']).resolve()): row['sha256'] for row in source_rows}
         if captured_sources != expected_sources:

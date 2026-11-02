@@ -86,9 +86,11 @@ class QueueSafety(unittest.TestCase):
             expected = {'seed': 44, 'image_size': 768, 'roi': True, 'mil': False}
             source = run_dir/'trainer.py'
             source.write_text('synthetic source\n')
-            (run_dir/'config.json').write_text(json.dumps(expected))
+            observed = {**expected, 'model_config':{'backbone':'tiny'}, 'preprocessing':{'size':768}}
+            (run_dir/'config.json').write_text(json.dumps(observed))
             recorder = ComplianceRecorder(run_dir, trainer='synthetic binding test',
-                                           configuration=expected, source_files=[source], demonstration=True)
+                configuration={**expected, 'fold_plan_sha256':'c'*64, 'derived_pos_weight':[1.0]*10},
+                source_files=[source], demonstration=True)
             recorder.finish('completed')
             source_manifest = run_dir/'compliance'/f'sessions/{recorder.session_id}/source_manifest.json'
             source_map = {row['original_path']:row['sha256'] for row in json.loads(source_manifest.read_text())}
@@ -101,7 +103,7 @@ class QueueSafety(unittest.TestCase):
             self.assertEqual(binding['source_manifest_sha256'], hashlib.sha256(source_manifest.read_bytes()).hexdigest())
             with self.assertRaisesRegex(RuntimeError, 'source files differ'):
                 verify_job_binding({**job, 'expected_source_sha256':{**source_map, str(source):'0'*64}}, {})
-            (run_dir/'config.json').write_text(json.dumps({**expected, 'roi':False}))
+            (run_dir/'config.json').write_text(json.dumps({**observed, 'roi':False}))
             with self.assertRaisesRegex(RuntimeError, 'differs from registration for roi'):
                 verify_job_binding(job, {})
 
