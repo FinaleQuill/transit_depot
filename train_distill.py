@@ -69,6 +69,9 @@ class DistillConfig:
     pretrained_weights_path: Path | None = None
     init_student_ema: Path | None = None
     init_student_ema_sha256: str | None = None
+    # Resolution experiments may train at one size while selecting at a fixed
+    # deployment size. None preserves historical same-size validation.
+    validation_size: int | None = None
 
     def model_config(self) -> dict[str, Any]:
         from model_overnight import validate_model_config
@@ -115,8 +118,12 @@ class DistillConfig:
             raise ValueError("Unsupported training precision")
         if type(self.align_teacher_pos_weight) is not bool:
             raise ValueError("Logit alignment must be boolean")
-        if type(self.image_size) is not int or self.image_size not in (512, 768):
-            raise ValueError("Student image_size must be 512 or 768")
+        if type(self.image_size) is not int or self.image_size not in (384, 448, 512, 640, 768, 896):
+            raise ValueError("Student image_size must be one of 384, 448, 512, 640, 768 or 896")
+        if self.validation_size is not None and (
+                type(self.validation_size) is not int
+                or self.validation_size not in (384, 448, 512, 640, 768, 896)):
+            raise ValueError("validation_size must be an approved positive resolution")
         if self.validation_tta not in ("identity", "hflip2"):
             raise ValueError("Student validation_tta must be identity or hflip2")
         if self.batch_size * self.accumulation_steps != 32:
@@ -163,7 +170,7 @@ def load_student_ema_initialization(path: Path, config: DistillConfig, *,
     model_name = TINY_MODEL_NAME if target['backbone_name'] == TINY_BACKBONE else MODEL_NAME
     if (architecture['backbone_name'] != target['backbone_name']
             or source.get('model_name') != model_name
-            or source.get('image_size') != config.image_size
+            or source.get('image_size') not in (384, 448, 512, 640, 768, 896)
             or source.get('class_ids') != list(range(1, 11))):
         raise ValueError('EMA source backbone, image size or class order differs from the new student')
     validate_pretrained_provenance(source.get('pretrained_provenance'), target['backbone_name'])
@@ -335,8 +342,9 @@ def _configuration(config: DistillConfig) -> dict[str, Any]:
 
 def student_preprocessing_config(config: DistillConfig) -> dict[str, Any]:
     """Resolution/TTA metadata without changing the active teachers' shared module."""
+    validation_size = config.validation_size or config.image_size
     return {**student_preprocessing(), "image_size": config.image_size,
-            "validation_size": config.image_size, "training_scales": [config.image_size],
+            "validation_size": validation_size, "training_scales": [config.image_size],
             "validation_tta": config.validation_tta}
 
 
@@ -438,8 +446,10 @@ def evaluate_student(model, loader, records, device, dtype, config: DistillConfi
         image_ids.extend(batch["image_ids"])
     result = aggregate_study_predictions(records, image_ids, np.concatenate(probabilities))
     result["metrics"] = calculate_metrics(result["targets"], result["probabilities"])
-    result["metrics"].update(tta=f"{config.validation_tta}{config.image_size}",
-                             validation_tta=config.validation_tta, image_size=config.image_size)
+    validation_size = config.validation_size or config.image_size
+    result["metrics"].update(tta=f"{config.validation_tta}{validation_size}",
+                             validation_tta=config.validation_tta, image_size=validation_size,
+                             training_image_size=config.image_size)
     return result
 
 
@@ -804,7 +814,8 @@ def run_training(config: DistillConfig) -> dict[str, Any]:
             training = _train_epoch(model, ema, loader, optimizer, scaler, device, dtype,
                                      epoch, config, progress, cache, student_weights)
             del loader
-            valid_loader = make_overnight_loader(valid_records, training=False, image_size=config.image_size,
+            valid_loader = make_overnight_loader(valid_records, training=False,
+                                                image_size=config.validation_size or config.image_size,
                                                 batch_size=config.valid_batch_size, **options)
             validation = evaluate_student(ema.module, valid_loader, valid_records, device, dtype, config)
             if schema_version == 7:
@@ -910,7 +921,10 @@ def main(argv=None) -> int:
     parser.add_argument("--pretrained-provenance-path", type=Path)
     parser.add_argument("--pretrained-weights-path", type=Path)
     parser.add_argument("--execute", action="store_true", help="Explicitly start training")
-    parser.add_argument("--image-size", type=int, choices=(512, 768), default=512)
+    parser.add_argument("--image-size", type=int, choices=(384, 448, 512, 640, 768, 896), default=512)
+    parser.add_argument("--validation-size", type=int,
+                        choices=(384, 448, 512, 640, 768, 896), default=None,
+                        help="Fixed validation resolution; defaults to image-size")
     parser.add_argument("--validation-tta", choices=("identity", "hflip2"), default="hflip2",
                         help="Fixed validation views used for checkpoint selection; schema7 resume requires identity")
     for name in ("batch_size", "accumulation_steps", "valid_batch_size", "num_workers", "prefetch_factor",

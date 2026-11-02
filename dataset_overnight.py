@@ -25,7 +25,7 @@ from dataset import (
 )
 
 
-ALLOWED_IMAGE_SIZES = (384, 448, 512, 768)
+ALLOWED_IMAGE_SIZES = (384, 448, 512, 640, 768, 896)
 
 
 def _transforms(training: bool, seed: int) -> Any:
