@@ -46,22 +46,27 @@ class RoiScaleTests(unittest.TestCase):
         self.assertEqual(meta["output_content_box"][2], 768)
         self.assertLess(meta["output_content_box"][3]-meta["output_content_box"][1], 768)
 
-    def test_source_edge_clipping_and_detector_failures_return_exact_baseline(self):
+    def test_edge_contact_is_preserved_and_detector_failure_returns_exact_baseline(self):
         source = Image.fromarray(np.full((600, 800), 120, dtype=np.uint8))
         baseline, _ = letterbox(source, 768)
         cases = [
-            proposal((0, 25, 750, 575), edge_contact=("left",)),
+            proposal((0, 45, 650, 555), edge_contact=("left",)),
             proposal((20, 20, 780, 580), reason="broad_support_outside_candidate"),
         ]
         with patch("roi_scale.detect_tight_crop", side_effect=cases):
             edge, edge_meta = normalize_roi(source, 768)
             rejected, rejected_meta = normalize_roi(source, 768)
-        self.assertFalse(edge_meta["applied"])
-        self.assertEqual(edge_meta["reason"], "body_envelope_clipped_at_source_edge")
+        self.assertTrue(edge_meta["applied"], edge_meta)
+        self.assertEqual(edge_meta["reason"], "body_envelope_magnify_only")
+        self.assertEqual(edge_meta["source_edge_contact"], ["left"])
+        self.assertEqual(edge_meta["crop_box"][0], 0)
+        self.assertTrue(edge_meta["crop_contains_detector_envelope"])
+        self.assertFalse(edge_meta["crop_policy"]["reject_source_edge_clipped_body"])
+        self.assertGreater(edge_meta["effective_magnification"], 1.)
         self.assertFalse(rejected_meta["applied"])
         self.assertEqual(rejected_meta["reason"], "detector_broad_support_outside_candidate")
-        self.assertEqual(edge.tobytes(), baseline.tobytes())
         self.assertEqual(rejected.tobytes(), baseline.tobytes())
+        self.assertNotEqual(edge.tobytes(), baseline.tobytes())
 
     def test_padding_aspect_extreme_crop_and_magnification_guards(self):
         source = Image.fromarray(np.full((600, 800), 120, dtype=np.uint8))

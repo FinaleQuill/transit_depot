@@ -13,7 +13,7 @@ from PIL import Image, ImageOps
 from tight_crop import detect_tight_crop, letterbox
 
 
-VERSION = "body_envelope_magnify_only_v2"
+VERSION = "body_envelope_magnify_only_v2_1"
 MARGIN_FRACTION = .02
 MIN_EFFECTIVE_MAGNIFICATION = 1.01
 MAX_EFFECTIVE_MAGNIFICATION = 1.25
@@ -55,7 +55,8 @@ def normalize_roi(image: Image.Image, size: int) -> tuple[Image.Image, dict]:
                         "minimum_effective_magnification": MIN_EFFECTIVE_MAGNIFICATION,
                         "minimum_crop_aspect_relative_to_source": MIN_CROP_ASPECT_RELATIVE_TO_SOURCE,
                         "minimum_crop_short_long_ratio": MIN_CROP_SHORT_LONG_RATIO,
-                        "reject_source_edge_clipped_body": True,
+                        "reject_source_edge_clipped_body": False,
+                        "source_edge_contact_role": "diagnostic_only; crop coordinates remain within source bounds",
                         "detector_quality_and_removed_area_gates": "tight_crop.detect_tight_crop unchanged"},
     }
 
@@ -84,9 +85,6 @@ def normalize_roi(image: Image.Image, size: int) -> tuple[Image.Image, dict]:
     metadata["source_edge_contact"] = edge_contact
     if detected.diagnostics["reason"] != "body_envelope_candidate":
         return fallback("detector_" + detected.diagnostics["reason"])
-    if edge_contact:
-        return fallback("body_envelope_clipped_at_source_edge")
-
     bx0, by0, bx1, by1 = detected.body_box
     margin_x = int(np.ceil(MARGIN_FRACTION*(bx1-bx0)))
     margin_y = int(np.ceil(MARGIN_FRACTION*(by1-by0)))
@@ -112,7 +110,12 @@ def normalize_roi(image: Image.Image, size: int) -> tuple[Image.Image, dict]:
                     proposed_effective_magnification=magnification,
                     source_clipping_repaired=False)
 
+    envelope_fits = (x0 <= bx0 and y0 <= by0 and x1 >= bx1 and y1 >= by1)
+    metadata["crop_contains_detector_envelope"] = envelope_fits
+    # The detector's 5% box audits broad support outside its candidate region;
+    # this crop independently must retain the full selected/protected hull box.
     checks = (
+        (envelope_fits, "detector_envelope_outside_crop"),
         (crop_width > 0 and crop_height > 0, "invalid_crop_box"),
         (crop_short_long_ratio >= source_short_long_ratio, "crop_aspect_worsens_padding"),
         (crop_short_long_ratio >= MIN_CROP_SHORT_LONG_RATIO, "crop_aspect_too_extreme"),
