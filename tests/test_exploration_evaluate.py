@@ -235,7 +235,7 @@ class ExplorationEvaluationTests(unittest.TestCase):
             manifest.write_text("synthetic manifest, no real images\n")
             inputs = []
             expected = []
-            for name, offset in (("tiny_a", 0.), ("tiny_b", .02)):
+            for name, offset in (("tiny_a", 0.), ("tiny_b", .02), ("mil", .01), ("champion041", .015)):
                 output = root / name
                 output.mkdir()
                 bundle = evaluate.save_predictions(output, records, predictions_for(records) + offset)
@@ -258,6 +258,9 @@ class ExplorationEvaluationTests(unittest.TestCase):
                                 for row in fusion["member_residual_correlations"]["per_class"]))
             self.assertEqual(report["num_patients"], 12)
             self.assertIn("tiny_a_tiny_b_equal_hflip2_minus_tiny_b_hflip2", report["comparisons"])
+            self.assertIn("tiny_a_tiny_b_equal_hflip2_minus_mil_hflip2", report["comparisons"])
+            self.assertIn("tiny_a_tiny_b_equal_hflip2_minus_champion041_hflip2", report["comparisons"])
+            self.assertIn("mil_hflip2_minus_champion041_hflip2", report["comparisons"])
             with np.load(args.output / "candidate_study_probabilities.npz", allow_pickle=False) as archive:
                 np.testing.assert_allclose(archive["tiny_a_tiny_b_equal_hflip2"], .5 * (expected[0] + expected[1]))
 

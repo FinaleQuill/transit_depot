@@ -194,6 +194,8 @@ def progress(job):
     history_path = run_dir / 'history.jsonl'
     history = [json.loads(v) for v in history_path.read_text().splitlines() if v.strip()] if history_path.exists() else []
     logs = list(run_dir.glob('console_*.log'))
+    if job.get('console_log') and Path(job['console_log']).is_file():
+        logs.append(Path(job['console_log']))
     if (run_dir/'evidence').exists():
         logs.extend((run_dir/'evidence').glob('console_*.log'))
     logs = sorted(logs, key=lambda p:p.stat().st_mtime)
@@ -260,7 +262,7 @@ class Queue:
             estimated_remaining_hours=round(remaining/3600,2) if active else None,
             eta_basis='Observed training epoch speed plus validation; later steps use conservative plan estimates; not a deadline',
             current_arm=job['name'] if job else None, current_job=job['name'] if job else None,
-            current_log=(p.get('current_log') or str(self.root/'logs'/(job['name']+'.log'))) if job else None)
+            current_log=((p or {}).get('current_log') or str(self.root/'logs'/(job['name']+'.log'))) if job else None)
         write(self.status_path, self.status)
         write(self.root/'status.json', self.status)
         lines = [f"State: {self.status['state']}", f"Updated UTC: {self.status['updated_utc']}",
@@ -278,6 +280,9 @@ class Queue:
         for filename, digest in self.plan.get('source_sha256', {}).items():
             if sha(ROOT/filename) != digest:
                 raise RuntimeError('Registered source changed during queue: '+filename)
+        for filename, digest in self.plan.get('registered_input_sha256', {}).items():
+            if sha(filename) != digest:
+                raise RuntimeError('Registered experiment input changed during queue: '+filename)
         pre = self.status.get('current_preregistration')
         if pre and sha(pre['path']) != pre['sha256']:
             raise RuntimeError('Preregistration changed after arm registration')
@@ -378,6 +383,17 @@ class Queue:
         run_receipt = verify_run(job['run_dir']) if job.get('run_dir') else None
         checkpoint = Path(job['checkpoint'])
         digest = run_receipt['checkpoints'][job['checkpoint_role']]['sha256'] if run_receipt else job['checkpoint_sha256']
+        historical_evidence = None
+        if not run_receipt:
+            evidence_path = Path(job['historical_checkpoint_evidence'])
+            if sha(evidence_path) != job['historical_checkpoint_evidence_sha256']:
+                raise RuntimeError('Historical checkpoint evidence changed')
+            historical_evidence = read(evidence_path)
+            best = historical_evidence.get('checkpoints', {}).get('best', {})
+            if (historical_evidence.get('state') != 'complete'
+                    or best.get('snapshot_sha256') != digest
+                    or best.get('snapshot_path') != str(checkpoint)):
+                raise RuntimeError('Historical checkpoint lacks matching snapshot provenance')
         output=Path(job['output'])
         args=['evaluate','--checkpoint',str(checkpoint),'--checkpoint-sha256',digest,'--output',str(output),
               '--train-gap-studies',str(job.get('train_gap_studies',0))]
@@ -419,12 +435,16 @@ class Queue:
             raise RuntimeError('Evaluation missing training compliance binding')
         if job.get('timing', True):
             require_timing_evidence(report, 'hflip2', 'Evaluation')
+            require_timing_evidence(report, 'identity', 'Evaluation')
         score=report['scores']['hflip2']
         self.status['completed_metrics'][job['name']] = {'macro_auc':score['all']['macro_auc'],
              'ap_only_macro_auc':score['ap_only']['macro_auc'], 'per_class_auc':score['all']['per_class_auc'],
              'timing':(report.get('timing') or {}).get('modes'), 'report':str(output/'report.json')}
         return {'verified_at':now(),'checkpoint_sha256':digest,'report_sha256':sha(output/'report.json'),
-                'metadata_sha256':sha(output/'metadata.json'),'training_compliance':run_receipt}
+                'metadata_sha256':sha(output/'metadata.json'),'training_compliance':run_receipt,
+                'historical_checkpoint_evidence': ({'path':job['historical_checkpoint_evidence'],
+                    'sha256':job['historical_checkpoint_evidence_sha256'],
+                    'status':'pre-hook historical snapshot; no new training'} if historical_evidence else None)}
 
     def comparison(self,job,pre):
         args=['compare','--inputs',*job['inputs'],'--output',job['output'],'--bootstrap',str(job.get('bootstrap',2000))]

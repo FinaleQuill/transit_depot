@@ -12,6 +12,19 @@ from run_exploration_queue import (Queue, active_run, preregistered,
 from training_compliance import ComplianceRecorder
 
 class QueueSafety(unittest.TestCase):
+    def test_heartbeat_supports_evaluation_with_no_training_progress(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            plan = root/'plan.json'
+            plan.write_text(json.dumps({'output': str(root/'queue'), 'status_file': str(root/'STATUS.json'),
+                'jobs': [{'name':'eval_fixture', 'kind':'evaluate', 'estimated_seconds':100}]}))
+            queue = Queue(plan)
+            queue.heartbeat('evaluating')
+            status = json.loads((root/'STATUS.json').read_text())
+            self.assertEqual(status['current_job'], 'eval_fixture')
+            self.assertIsNone(status['current_progress'])
+            self.assertTrue(status['current_log'].endswith('eval_fixture.log'))
+
     def test_missing_registration_stops(self):
         with tempfile.TemporaryDirectory() as d:
             with self.assertRaises(RuntimeError):

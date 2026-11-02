@@ -643,7 +643,8 @@ def evaluate(args):
                 "inference_size": 768, "tta": "hflip2", "precision": "float16",
                 "warning": "Descriptive sampled-train versus full-valid gap, not full-train gap; no sample-based fitting or selection."}
         if args.timing:
-            report["timing"] = time_predictors([predictor], records, output / "timing", expected=expected_probabilities(bundle))
+            report["timing"] = time_predictors([predictor], records, output / "timing", modes=MODES,
+                                                expected=expected_probabilities(bundle))
         if sha256(args.checkpoint) != expected_sha:
             raise RuntimeError("Checkpoint path changed during evaluation; retain interrupted evidence")
         predictor.metadata["prediction_files_sha256"] = {name: sha256(output / name) for name in
@@ -762,8 +763,12 @@ def compare(args):
         contrasts[name + "_hflip2_minus_identity"] = (name + "_identity", name + "_hflip2")
     for fusion_name, left, right in fusions:
         for mode in MODES:
-            for member in (left, right):
+            for member in bundles:
                 contrasts[fusion_name + "_" + mode + "_minus_" + member + "_" + mode] = (member + "_" + mode, fusion_name + "_" + mode)
+    if "champion041" in bundles:
+        for name in arrays:
+            if name != "champion041_hflip2":
+                contrasts[name + "_minus_champion041_hflip2"] = ("champion041_hflip2", name)
     comparisons = {name: paired_bootstrap(reference, arrays[a], arrays[b], samples=args.bootstrap, seed=args.seed)
                    for name, (a, b) in contrasts.items()}
     high = comparisons.get("res896_hflip2_minus_res768_hflip2")
