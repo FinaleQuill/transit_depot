@@ -54,6 +54,13 @@ class StudentEmaWarmStartTests(unittest.TestCase):
             resume_training_configuration(current, {'training_config': _configuration(current),
                 'student_warm_start': {**lineage, 'source_snapshot_sha256': 'tampered'}})
 
+    def test_resume_defaults_missing_validation_size_to_historical_same_size(self):
+        config = configuration()
+        prior = _configuration(config)
+        prior.pop('validation_size')
+        current, saved = resume_training_configuration(config, {'training_config': prior})
+        self.assertEqual(current, saved)
+
     def test_tiny_study_recipe_has_explicit_registered_learning_rates_and_views(self):
         config = StudyConfig(fold_plan=Path('/folds'), soft_labels=Path('/oof'),
             output=Path('/new'), image_root=Path('/images'), backbone_name=TINY_BACKBONE,

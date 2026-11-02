@@ -217,6 +217,9 @@ def resume_training_configuration(config: DistillConfig, checkpoint: dict[str, A
     ignored = {'resume', 'init_student_ema', 'init_student_ema_sha256'}
     current = {k: v for k, v in _configuration(config).items() if k not in ignored}
     prior = {k: v for k, v in checkpoint.get('training_config', {}).items() if k not in ignored}
+    # Older checkpoints predate fixed-resolution validation; None means the
+    # historical behavior of validating at the training image size.
+    prior.setdefault('validation_size', None)
     original_init = checkpoint.get('training_config', {}).get('init_student_ema')
     lineage = checkpoint.get('student_warm_start')
     if lineage is not None:
