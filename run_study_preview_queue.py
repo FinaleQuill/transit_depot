@@ -266,7 +266,7 @@ def pipeline():
     CONTROL.mkdir(parents=True, exist_ok=True)
     (CONTROL / "logs").mkdir(exist_ok=True)
     with (CONTROL / ".queue.lock").open("a+") as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        fcntl.flock(lock, fcntl.LOCK_EX)
         status_path = CONTROL / "status.json"
         if status_path.exists():
             prior = read_json(status_path)
