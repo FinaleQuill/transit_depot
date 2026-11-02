@@ -1417,3 +1417,12 @@
 - 新增run_final_stage_review.py；原31+4+15项SHA一致，静态检查和独立只读并发/STOP审核通过，旧失败/blocked状态保留为用户截断证据，不伪造自然早停完成。
 - 用户转交新公告明确按Study计时、同Study可batch；官方cost_data_test.tar安全解压共15Study/28图，无脚本或规则正文。新3.0镜像匿名manifest可读但未下载/运行；版本、规则来源与差异见docs/STUDY_COST_RULE_UPDATE_20261102.md。
 - 独立Study batch预览脚本023018c通过CPU预检与合成等值检查；尚未执行GPU预览，不能冒称新规达标或TensorRT已提速。最终报告待B_base停止及评估产出。
+
+
+### 2026-11-02 16:49（香港）· A/B终局复盘与Study新规部署决策
+
+- B_base按用户STOP完成E3后暂停、最佳E1；补齐真实FP16、9组患者配对1000次Bootstrap及六候选旧100图计时，收尾83862和Study预览85932均completed；未续训、未生成赛事CSV。
+- 融合A/B总体0.817186675/0.817238651，AP-only0.750163451/0.748896664；AP差−0.001266786、95%区间[−0.004323471,+0.001286890]，停止crop＋erase组合，不能分离两者因果贡献；历史KD−BCE约0.00177且区间跨零。
+- 官方样例10Study/18图三轮2080Ti旧镜像实测：043/044/045的Study batch为141.391/144.153/163.798ms，均非T4验收；045比串行190.728ms快1.164倍。覆盖完整但概率非严格等值，样例Study排序未变，045逐图两条排序签名变化保留。
+- docs/FINAL_STAGE_REVIEW_AND_DEPLOYMENT_DECISION_20261102.md保存五模块终局报告、逐类/AP切片/区间/资产与部署矩阵；045原权重为唯一工程主候选，043唯一后备，下一方向仅Study batch＋FP16 TRT，暂停精度训练；新3.0只核manifest尚未拉取。
+- 原31＋4＋15项冻结源码、计时资产及28样例SHA复核；无test统计拟合或新提交，无TRT实测速率承诺。README更新终局入口，旧STOP/failed/blocked证据不覆盖。

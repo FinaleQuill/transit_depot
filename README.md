@@ -1,6 +1,10 @@
-**2026-11-02最新修订：** 用户授权先完成A全部成员再自动B，最多25轮，AP-only耐心5轮/min_delta0.0001早停，保存最佳EMA；原两轮协议已被取代。新控制器会等待当前A_tiny首轮完成并安全迁移，不重复训练。请查 `artifacts/tight_crop_ab_20261102/earlystop25/STATUS.md` 和 [新运行说明](docs/TIGHT_CROP_AB_EARLYSTOP_RUN_20261102.md)，不要再次启动训练。
+**2026-11-02最终复盘：** [当前阶段全局复盘与部署决策报告](docs/FINAL_STAGE_REVIEW_AND_DEPLOYMENT_DECISION_20261102.md)已完成。B_base 在完整 E3 后按用户 STOP 暂停，最佳 E1；全部收尾评估及 Study 计时队列均 completed，不再续训。融合 B−A 的 AP-only 差为 −0.001266786，患者95%区间 [−0.004323471,+0.001286890]，停止裁剪＋擦除分支。部署工程主候选冻结为045（Tiny768＋Base768，hflip2），043单Base唯一后备；不因本轮微小valid涨分换权重，不自动生成赛事CSV。
 
-**2026-11-02当前任务：** AP优先的Tight Crop配对训练已授权并由后台控制器启动（启动PID 28152）。先查 `artifacts/tight_crop_ab_20261102/STATUS.md` 和进程，勿重复启动；计划与运行说明见 [A/B运行说明](docs/TIGHT_CROP_AB_RUN_20261102.md)。A/B对应同初始化、seed48、固定E2，B加p=.5随机擦除，自动输出AP-only详细报告；本轮不读test、不自动提交。下方冻结头和旧停止记录均是历史任务。
+**新规计时实测：** 官方样例的045串行/Study batch为190.728/163.798ms每Study（2080Ti、旧镜像、10 Study、三轮），尚未满足100ms目标，亦非T4认证。下一方向只做冻结模型的Study批处理与FP16 TensorRT工程；新3.0镜像仅查manifest，未拉取/运行或构建引擎。详见[计时规则修订](docs/STUDY_COST_RULE_UPDATE_20261102.md)及最终报告。旧控制器STOP/failed和旧复盘blocked是人工终止记录，不能据此重启；实际收尾状态见 `artifacts/new_study_cost_20261102/finalization/STATUS.md`。
+
+**2026-11-02此前修订（历史）：** 用户授权先完成A全部成员再自动B，最多25轮，AP-only耐心5轮/min_delta0.0001早停，保存最佳EMA；原两轮协议已被取代。新控制器会等待当前A_tiny首轮完成并安全迁移，不重复训练。请查 `artifacts/tight_crop_ab_20261102/earlystop25/STATUS.md` 和 [新运行说明](docs/TIGHT_CROP_AB_EARLYSTOP_RUN_20261102.md)，不要再次启动训练。
+
+**2026-11-02此前启动（历史）：** AP优先的Tight Crop配对训练已授权并由后台控制器启动（启动PID 28152）。先查 `artifacts/tight_crop_ab_20261102/STATUS.md` 和进程，勿重复启动；计划与运行说明见 [A/B运行说明](docs/TIGHT_CROP_AB_RUN_20261102.md)。A/B对应同初始化、seed48、固定E2，B加p=.5随机擦除，自动输出AP-only详细报告；本轮不读test、不自动提交。下方冻结头和旧停止记录均是历史任务。
 
 **2026-11-01最新运行交接：** 045最高valid CSV已交付；冻结旧A/B骨干仅训分类头的新任务已后台启动。用户因token不足要求保存进度，先读[冻结头交接](docs/FROZEN_HEAD_HANDOFF_20261101.md)及`artifacts/kd_v1/frozen_head_20261101/STATUS.md`，不要重复启动。旧bounded_finetune状态是历史已完成任务。
 
