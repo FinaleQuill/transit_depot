@@ -1464,3 +1464,11 @@
 - 类1/4诊断与患者聚合规则原文核对、E1固定患者均值复核落盘；均值Macro下降.029986，放弃当前无条件跨Study均值。报告明确同valid选择偏差、旧错误图册口径及一次过宽检索命中submission派生文本的事件。
 - 用户要求保存并停止：无本轮后台进程，ROI/MIL均未启动；STOP标记和固定STOPPED_BY_USER状态已写，旧FAILED完整归档，后续必须重新授权。交接见docs/EXPLORATION_PAUSED_HANDOFF_20261103.md。
 - 路径回归测试530ed14及修复b849ad9已保存；无新CSV/平台提交/申报修改，正式实验未访问test图像。
+
+
+### 2026-11-03 22:45（香港）· 独立 Study 重构开始执行
+
+- 用户授权执行独立审计方案并自主评估；新 worktree/分支与输出目录隔离，原工程、旧暂停及三份未追踪文件保留。
+- H=原fold4、inner dev=fold0、train=fold1–3；患者及file/pixel精确重复交叉均0，真实train/dev loader与27项CPU接口检查通过，未读H图。
+- 原始公开Base权重及来源SHA核验通过；32Study/52原图的768无KD训练冒烟完成，1次真实更新、有限loss .853929、完整断点已保存；不足十类支持的冒烟AUC明确null，不作效果判断。
+- 完整Study打包/显存布局吞吐验证与首组E0/E1预注册进行中，科学选择仅用内部dev；详见reconstruction/PROTOCOL.md。

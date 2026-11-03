@@ -1,3 +1,5 @@
+> 当前分支是 2026-11-03 用户授权的独立 Study 重构研究。入口：[实验协议](reconstruction/PROTOCOL.md)；运行产物：`../reconstruction_runs_20261103/`。下文历史工程状态保留供追溯。
+
 **2026-11-02最终复盘：** [当前阶段全局复盘与部署决策报告](docs/FINAL_STAGE_REVIEW_AND_DEPLOYMENT_DECISION_20261102.md)已完成。B_base 在完整 E3 后按用户 STOP 暂停，最佳 E1；全部收尾评估及 Study 计时队列均 completed，不再续训。融合 B−A 的 AP-only 差为 −0.001266786，患者95%区间 [−0.004323471,+0.001286890]，停止裁剪＋擦除分支。部署工程主候选冻结为045（Tiny768＋Base768，hflip2），043单Base唯一后备；不因本轮微小valid涨分换权重，不自动生成赛事CSV。
 
 **新规计时实测：** 官方样例的045串行/Study batch为190.728/163.798ms每Study（2080Ti、旧镜像、10 Study、三轮），尚未满足100ms目标，亦非T4认证。下一方向只做冻结模型的Study批处理与FP16 TensorRT工程；新3.0镜像仅查manifest，未拉取/运行或构建引擎。详见[计时规则修订](docs/STUDY_COST_RULE_UPDATE_20261102.md)及最终报告。旧控制器STOP/failed和旧复盘blocked是人工终止记录，不能据此重启；实际收尾状态见 `artifacts/new_study_cost_20261102/finalization/STATUS.md`。
