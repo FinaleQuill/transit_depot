@@ -143,7 +143,7 @@ def main():
             allow_existing_pause_resume=False,console_log=str(QUEUE/'logs'/(name+'.log')))
     def evaluate(name,role='last',retry=None):
         suffix='' if role=='last' else '_best'
-        folder=BASE/'evaluations'/(name+suffix)
+        folder=BASE/'evaluations'/(name+suffix+(f'_retry{retry}' if retry else ''))
         job_name='eval_'+name+suffix+(f'_retry{retry}' if retry else '')
         prereg='eval_'+name+suffix+(f'_retry{retry}' if retry else '')+'.txt'
         register(job_name,'evaluate',prereg,
@@ -154,7 +154,12 @@ def main():
         return folder
     def compare(name,members,prereg,timing=False,best=False):
         folder=BASE/'comparisons'/name
-        inputs=[f'{n}={BASE/"evaluations"/(n+("_best" if best and n != "champion041" else ""))}' for n in members]
+        inputs=[]
+        for n in members:
+            key=n+("_best" if best and n != "champion041" else "")
+            report_path=evaluations.get(key)
+            evaluation_dir=Path(report_path).parent if report_path else BASE/'evaluations'/key
+            inputs.append(f'{n}={evaluation_dir}')
         register('compare_'+name,'compare',prereg,inputs=inputs,output=str(folder),
             bootstrap=2000,timing_fusions=timing,estimated_seconds=1200)
         comparisons[name]=str(folder/'comparison.json')
