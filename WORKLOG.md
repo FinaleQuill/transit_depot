@@ -1472,3 +1472,11 @@
 - H=原fold4、inner dev=fold0、train=fold1–3；患者及file/pixel精确重复交叉均0，真实train/dev loader与27项CPU接口检查通过，未读H图。
 - 原始公开Base权重及来源SHA核验通过；32Study/52原图的768无KD训练冒烟完成，1次真实更新、有限loss .853929、完整断点已保存；不足十类支持的冒烟AUC明确null，不作效果判断。
 - 完整Study打包/显存布局吞吐验证与首组E0/E1预注册进行中，科学选择仅用内部dev；详见reconstruction/PROTOCOL.md。
+
+
+### 2026-11-03 22:57（香港）· E0/E1正式串行对照启动
+
+- 完整Study打包/尾窗/AMP跳步/EMA/恢复等36项CPU检查及控制器11项检查通过；两次真实768冒烟共64Study次、104图次、2次更新，均正常保存，未将冒烟AUC作效果结论。
+- 7组合成吞吐测试仅核执行；最终pack8/chunk8/channels_last/chunks峰值约13.04GiB、13.26图/s，真实短测试仍受启动开销影响，正式日志单列数据等待/计算时间。
+- 源码冻结2cc037b；新控制器PID331369于22:55（香港）启动，E0已完成首个32Study/52图更新，loss .902962、无AMP跳步；随后仅在真实完成核验后进入E1。
+- 首轮阶段尚无完整内部验证AUC，不宣称提分；实时入口../reconstruction_runs_20261103/controller/PROGRESS.md，确认H/官方valid/test均未进入评估，原工程暂停状态保留。
