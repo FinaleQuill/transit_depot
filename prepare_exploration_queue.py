@@ -22,6 +22,8 @@ def write(path, value):
 
 def main():
     plan_path = BASE/'queue_plan.json'
+    recovery_path = QUEUE/'attempts'/'active_recovery.json'
+    recovery = read(recovery_path) if recovery_path.is_file() else None
     archive = QUEUE/'attempts'/'original_resolution_plan.json'
     if not archive.exists():
         write(archive, read(plan_path))
@@ -139,10 +141,12 @@ def main():
             expected_configuration=expected,expected_source_sha256=extension_sources,
             expected_warm_start_sha256=cfg['init_student_ema_sha256'],
             allow_existing_pause_resume=False,console_log=str(QUEUE/'logs'/(name+'.log')))
-    def evaluate(name,role='last'):
+    def evaluate(name,role='last',retry=None):
         suffix='' if role=='last' else '_best'
         folder=BASE/'evaluations'/(name+suffix)
-        register('eval_'+name+suffix,'evaluate','eval_'+name+suffix+'.txt',
+        job_name='eval_'+name+suffix+(f'_retry{retry}' if retry else '')
+        prereg='eval_'+name+suffix+(f'_retry{retry}' if retry else '')+'.txt'
+        register(job_name,'evaluate',prereg,
             run_dir=runs[name],checkpoint=str(Path(runs[name])/(role+'.pt')),checkpoint_role=role,
             output=str(folder),timing=True,train_gap_studies=1000,estimated_seconds=720,
             roi=name=='roi',mil=name=='mil',roi_version=gallery['method_version'] if name=='roi' else None)
@@ -167,7 +171,11 @@ def main():
             historical_checkpoint_evidence_sha256=sha(anchor_receipt))
         evaluations['champion041']=str(folder/'report.json')
     for index,name in enumerate(('res640','res768','res896')):
-        train_resolution(index); evaluate(name)
+        train_resolution(index)
+        if name=='res640' and recovery and recovery.get('retry_job')=='eval_res640_retry1':
+            evaluate(name,retry=1)
+        else:
+            evaluate(name)
     compare('resolution',['res640','res768','res896'],'compare_resolution.txt',timing=True)
     report('report_resolution')
     evaluate_anchor()
@@ -192,13 +200,15 @@ def main():
         'source_sha256':{n:sha(ROOT/n) for n in sorted(source_names)},
         'registered_input_sha256':{str(path):sha(path) for path in (
             BASE/'configs/roi_seed44.json',BASE/'configs/mil_seed44.json',
-            roi_gallery/'metrics.json',review,anchor,anchor_receipt)},
+            roi_gallery/'metrics.json',review,anchor,anchor_receipt,
+            *([recovery_path] if recovery else []))},
         'comparison':'Primary fixed E3 matched budget; secondary valid-selected best; all infer768+hflip2',
         'no_test':True,'no_submission':True,'no_declaration_changes':True,'no_csv':True,
         'latency_not_admission_gate':True,'recommendations_require_human_final_members':True,
         'prior_failed_attempt':str(archived_status),
         'prior_640_recovery':str(QUEUE/'permission_recovery.json'),
-        'reviewed_source_equivalence':str(source_equivalence) if source_equivalence else None}
+        'reviewed_source_equivalence':str(source_equivalence) if source_equivalence else None,
+        'recovery':recovery}
     write(plan_path,plan)
     print(json.dumps({'plan':str(plan_path),'jobs':len(jobs),'names':[j['name'] for j in jobs],
                       'plan_sha256':sha(plan_path)},indent=2))

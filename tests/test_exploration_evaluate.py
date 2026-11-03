@@ -1,4 +1,5 @@
 import hashlib
+import csv
 import json
 from pathlib import Path
 import tempfile
@@ -215,6 +216,40 @@ class ExplorationEvaluationTests(unittest.TestCase):
     def test_official_records_has_no_test_route(self):
         with self.assertRaisesRegex(ValueError, "Only official train/valid"):
             evaluate.official_records(Path("unused"), split="test")
+
+    def test_official_records_decodes_original_json_targets_at_manifest_boundary(self):
+        row = {"targets": "[0,1,0,1,0,1,0,1,0,1]", "study_key": "P/S",
+               "subject_id": "P", "study_id": "S"}
+        with patch("deploy_kd.prediction_records", return_value=[row]) as read_records:
+            with patch.object(evaluate, "TRAIN", Path("official-train-manifest.csv")):
+                records = evaluate.official_records(Path("official-images"), split="train")
+        read_records.assert_called_once_with(Path("official-images"), Path("official-train-manifest.csv"), split="train")
+        self.assertEqual(records[0]["targets"], [0,1,0,1,0,1,0,1,0,1])
+        for invalid in ("[0,1]", "not json", "[0,1,0,1,0,1,0,1,0,0.5]"):
+            with patch("deploy_kd.prediction_records", return_value=[{**row, "targets": invalid}]):
+                with patch.object(evaluate, "TRAIN", Path("official-train-manifest.csv")):
+                    with self.assertRaises(ValueError):
+                        evaluate.official_records(Path("official-images"), split="train")
+
+    def test_csv_manifest_target_text_reaches_aggregation_as_binary_vector(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            image=root/'train/subject_00000/study_00000/pic_000000.jpg'
+            image.parent.mkdir(parents=True)
+            image.write_bytes(b'fixture path only; no image decoding')
+            manifest=root/'train_manifest.csv'
+            fields=['image_id','split','subject_id','study_id','study_key','relative_path','targets']
+            with manifest.open('w',newline='',encoding='utf-8') as stream:
+                writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader()
+                writer.writerow({'image_id':'train:000000','split':'train','subject_id':'subject_00000',
+                    'study_id':'study_00000','study_key':'subject_00000/study_00000',
+                    'relative_path':'train/subject_00000/study_00000/pic_000000.jpg',
+                    'targets':'[0,1,0,1,0,1,0,1,0,1]'})
+            with patch.object(evaluate,'TRAIN',manifest):
+                records=evaluate.official_records(root,split='train')
+            predictions=np.full((1,2,10),.5,dtype=np.float64)
+            bundle=evaluate.aggregate_predictions(records,predictions)
+            np.testing.assert_array_equal(bundle['targets'],[[0,1,0,1,0,1,0,1,0,1]])
 
     def test_train_gap_sample_is_study_complete_stable_and_train_only(self):
         records = [dict(row, split="train") for row in records_for_studies(20, images_per_study=3)]

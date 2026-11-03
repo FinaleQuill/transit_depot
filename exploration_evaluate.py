@@ -449,6 +449,17 @@ def official_records(image_root, *, split="valid"):
         raise ValueError("Only official train/valid records are accepted by this evaluator")
     from deploy_kd import prediction_records
     records = prediction_records(image_root, VALID if split == "valid" else TRAIN, split=split)
+    for row in records:
+        targets = row.get("targets")
+        if isinstance(targets, str):
+            try:
+                targets = json.loads(targets)
+            except json.JSONDecodeError as error:
+                raise ValueError("Official train/valid targets are not valid JSON") from error
+        if (not isinstance(targets, list) or len(targets) != 10
+                or any(type(value) is not int or value not in (0, 1) for value in targets)):
+            raise ValueError("Official train/valid targets must be ten original binary labels")
+        row["targets"] = targets
     if split == "valid" and (len(records) != 1422 or len({r["study_key"] for r in records}) != 859
             or len({r["subject_id"] for r in records}) != 228):
         raise ValueError("Official valid must retain 1422 images / 859 Studies / 228 patients")

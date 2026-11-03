@@ -1450,3 +1450,9 @@
 - 每步四行预注册、训练来源/config/初始化SHA与生命周期完整性门槛；异常即停写FAILED。42项官方容器测试+11项报告测试通过；代码da54617，ROI 00f5db6，报告0dd3b2b。
 - nohup独立session控制器PID132989，已确认由PID1收养且状态RUNNING、640回执落盘、eval_res640实际进程在跑；当前新臂训练尚未开始，后续自动串行。状态/监测/手动STOP见artifacts/resolution_explore_20261103/RUN_GUIDE.md。
 - 原640源码兼容默认差异精确证明、首个shell启动未进入controller的失败尝试均留档；不改旧训练证据。图册发出后按授权继续，不等用户回复；最终成员/线上效果仍待用户判断。
+
+### 2026-11-03 · 标签格式错误与评估恢复预注册
+
+- 本地valid重评完成1422张图前向后，在标签聚合处失败；根因为CSV `targets` 是JSON字符串，评估器直接当整数列表。测试只覆盖列表输入，未覆盖官方清单接口；未触及test。640 E3训练及其compliance receipt已完成、复用，无需重训。
+- 修复 official train/valid 边界解析与十类二元标签验证；增加CSV串行化到Study聚合的真实接口回归测试。官方3.0镜像队列/评估/晨报测试41项通过，完整1422行valid标签CPU审计通过；当前修复版本：exploration_evaluate.py SHA 15221470ed95aa626d5d3cf136923c64d7580198f38a9f8d68df0a101aca02f5。
+- 重试 `eval_res640_retry1` 四行预注册已先写；重新评估将重复完整valid前向，失败目录/原FAILED状态与标记/日志/旧计划先归档，修复后从已完成640训练回执复核，不重复训练，再进入768训练。
