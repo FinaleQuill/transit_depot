@@ -1520,3 +1520,12 @@
 - E0最佳E8 .797839654，E1最佳E7 .799239038，差+.001399385、95%区间[-.001000636,+.003703472]；多图近持平，不能认定跨视角收益或两者等效。
 - 逐类/全部2211患者移除影响/患者等权/PA侧位/弱类候选和学习曲线已存；首要弱项1/4，优先后续独立E2而非直接E3，无H/official valid/test或模型前向。
 - 报告docs/RECONSTRUCTION_E0_E1_REVIEW_20261104.md；新状态controller/closeout_20261104/STATUS.json明确evaluation_complete_user_cutoff，原训练状态不改，README/协议/监督入口同步。
+
+
+### 2026-11-04 14:33（香港）· E2匹配继续训练准备与零轮生命周期修复
+
+- 用户授权依据E0/E1结论继续，登记同E0/E8 EMA的全局对照和全局＋四原图局部，固定各6轮、2088更新尝试；LR5e-6/5e-5，seed20261104，不捆绑E1/水印/患者平滑。
+- 新train_local/runtime_local/controller_local及配置隔离冻结旧源码；零轮完整dev基线可保持best，1–6轮history保持真实，局部开始优化前与对照基线2e-6等值门槛。
+- 实际生命周期测试发现旧记录器拒绝epoch0；新增专用local_compliance并验证真实checkpoint回调及哈希链，不改旧模块、不把零轮伪装训练。官方3.0共29项CPU检查及两臂配置预检通过，训练新增0。
+- 临时addon已丢失，按原准确版本恢复四个通用库17MB到持久assets，逐文件SHA/无网只读挂载/GPU可用性实测通过。正式结果放work，最高7图/35区域冒烟断点放专用本机data磁盘，不删除旧资产。
+- 方案docs/RECONSTRUCTION_E2_PROTOCOL_20261104.md；准备回执E2_20261104/preparation，下一步真实768最高视图数前后向和恢复冒烟，尚未启动正式训练队列。
