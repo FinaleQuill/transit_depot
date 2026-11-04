@@ -1,5 +1,7 @@
 > 当前分支是 2026-11-03 用户授权的独立 Study 重构研究。入口：[实验协议](reconstruction/PROTOCOL.md)；运行产物：`../reconstruction_runs_20261103/`。下文历史工程状态保留供追溯。
 
+**2026-11-04后续用户修订：** E2从原固定6轮改为连续3轮无有效提升早停（min_delta=0.0001、最多6轮），既有轮次计入；第3轮完整保存后迁移，见[早停修订](docs/RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)与运行目录controller/EARLY_STOP_TRANSITION.json。最新答疑已明确允许同患者跨Study固定平滑；恢复为后续独立候选，当前E2不混入该后处理。
+
 **完整规则入口：** 父目录中的 [rules.pdf](../rules.pdf)、[rules_1.pdf](../rules_1.pdf) 和[项目答疑记录](../RULES_QA_CLARIFICATION_20261104.md)共同构成当前完整规则，必须合并阅读。答疑在仓库docs中另留同步Git副本。
 
 **2026-11-04 16:30执行提速：** E2全局臂已完整保存epoch1；新独立控制器PID36434从原断点续跑epoch2，将后续输入执行设置为6workers/prefetch2。科学配置、完整Study和训练预算保持；原11416已退出，勿重复启动。实际覆盖与测试见[性能记录](docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md)，当前进度和安全停止仍见[监督说明](docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)。

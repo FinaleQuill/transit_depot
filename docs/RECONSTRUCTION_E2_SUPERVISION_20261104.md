@@ -1,12 +1,16 @@
 # E2 后台队列监督说明
 
+**最新：用户要求改为连续3轮无有效提升早停。** 两臂同一patience=3、min_delta=0.0001、最多6轮，已完成轮次计入。第3轮完整训练/评估/断点结束后，独立 `controller_earlystop` 接管；当前是否仍在等待、是否已激活及失败原因看 `controller/EARLY_STOP_TRANSITION.json`，新进程与日志看 `early_stopping_launch.json` 和 `controller.early_stopping.launch.log`。下方原固定6+6与旧PID属于历史，勿再据此启动。详见[修订说明](RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)。
+
+迁移期间安全停止须同时创建 `controller/CANCEL_EARLY_STOP_TRANSITION` 与 `controller/STOP`：前者取消尚未完成的后台交接，后者要求当前训练在完整轮次后暂停。迁移完成后，前者无作用，后者继续正常控制新队列。
+
 2026-11-04香港16:30执行提速更新：原控制器在全局臂完整epoch1及评估/断点后暂停，新独立控制器PID36434从原last.pt续跑epoch2；后续两臂实际采用6个读图进程、每进程prefetch2。注册配置中的workers2保留历史值，实际覆盖见 `performance_20261104/loader_workers6_prefetch2.json`、`controller/performance_plan.json` 和新会话的 `execution_profile` / `data_loader_created`。源码、科学配方和原history不改。启动记录改看 `performance_launch.json`，最终实测见 `performance_20261104/LIVE_SPEEDUP.json`；详细说明见仓库 `docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md`。原11416只作历史定位，不要复活旧入口。
 
 16:36核验已完成：连续640Study的稳定速度2.945→4.350Study/s，约1.48倍；等待占比57.45%→0.61%。这是跨轮观测区间，局部正式臂尚未启动，不冒称全部队列同倍率。后台独立性与实际新loader已验，记录在 `PERFORMANCE_BACKGROUND_VERIFIED.json` 和 `performance_20261104/RESULT.json`；无需AI继续监控。
 
 2026-11-04香港14:51已启动，源码`18f90a8`、控制器PID11416。14:53现场核验：PPID1，自有SID/PGID，无TTY，stdin=/dev/null，输出落盘；全局臂epoch0完整开发集评估从129推进到385/3703 Study。此时尚无正式训练后AUC，不把机械验证或进程存活当作提分结果。PID只作历史定位，当前状态必须查看下列文件及真实进程。
 
-队列只执行全局继续训练6轮、全图＋原图局部6轮，然后汇总三项预定义患者配对比较。两臂各自先做完整epoch0基线评估，尚未优化时的模型也可保持最佳。E1第13轮不会恢复，E3/E4不会自动启动。
+队列只执行全局继续训练、全图＋原图局部训练，各臂最多6轮、连续3轮无有效提升即停，然后汇总三项预定义患者配对比较。两臂各自先做完整epoch0基线评估，尚未优化时的模型也可保持最佳。E1第13轮不会恢复，E3/E4不会自动启动。
 
 代码工作树：`/home/featurize/work/cxr_research_20261103`。
 正式运行根目录：`/home/featurize/work/reconstruction_runs_20261103/E2_20261104`。
@@ -18,9 +22,11 @@
 CXR_E2=/home/featurize/work/reconstruction_runs_20261103/E2_20261104
 cat "$CXR_E2/controller/PROGRESS.md"
 cat "$CXR_E2/controller/STATUS.json"
+cat "$CXR_E2/controller/EARLY_STOP_TRANSITION.json"
 tail -n 30 "$CXR_E2"/controller/logs/*.log
 tail -n 30 "$CXR_E2/controller.launch.log"
 tail -n 30 "$CXR_E2/controller.performance.launch.log"
+tail -n 30 "$CXR_E2/controller.early_stopping.launch.log"
 docker ps --format '{{.Names}} {{.Status}}'
 ```
 
@@ -34,11 +40,12 @@ docker ps --format '{{.Names}} {{.Status}}'
 cat /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/comparison/REPORT.md
 ```
 
-必须同时看到控制器 `state: completed`、两臂核验回执以及 `comparison/report.json` 中 `complete: true`。没有容器或退出码0本身不证明科学实验完成。报告包含局部−全局、局部−初始、全局−初始；区间仍是同开发集选模后的探索证据，不自动选择部署模型。
+必须同时看到控制器 `state: completed`、两臂核验回执的 `policy_complete: true` 以及 `comparison/report.json` 中 `complete: true`。正常早停臂的原训练器状态仍保留 `paused`，由新政策证书记录 `policy_state: early_stopped`，不能仅凭paused误判需要续训。没有容器或退出码0本身不证明科学实验完成。报告包含局部−全局、局部−初始、全局−初始；实际轮数可能不同，区间仍是同开发集选模后的探索证据，不自动选择部署模型。
 
 安全停止整个新队列：
 
 ```bash
+touch /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/CANCEL_EARLY_STOP_TRANSITION
 touch /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/STOP
 ```
 
