@@ -1,5 +1,7 @@
 > 当前分支是 2026-11-03 用户授权的独立 Study 重构研究。入口：[实验协议](reconstruction/PROTOCOL.md)；运行产物：`../reconstruction_runs_20261103/`。下文历史工程状态保留供追溯。
 
+**当前已停止训练（2026-11-04香港23:20）：** 用户明确要求安全停止并不再训练。E2局部第3轮已通过SIGTERM中断，保留第2轮完整last、最佳epoch0权重及第3轮日志/中断前进度；训练容器及控制器已退出，GPU无计算进程。所有自动交接已取消，STOP保留。**禁止依据下方历史队列或旧授权恢复训练、启动新实验或自动比较；需用户新的明确指令。** 真实保存核验见运行根 `USER_STOP_RECORD.json`。
+
 **2026-11-04晚间提速：** E2全局已3轮早停；局部已进入第2轮，每轮约135分钟的主要原因是5倍区域计算。正在安排第2轮完整保存后进行限定600秒的激活保留探针，达标才采用，不减少图像/窗口/分辨率或重跑轮次；实际状态看 `controller/CHECKPOINT_SPEED_TRANSITION.json` 与[监督说明](docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)。这不是已取得真实整轮加速的声明，见[计算性能记录](docs/RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)。
 
 **2026-11-04后续用户修订：** E2从原固定6轮改为连续3轮无有效提升早停（min_delta=0.0001、最多6轮），既有轮次计入；第3轮完整保存后迁移，见[早停修订](docs/RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)与运行目录controller/EARLY_STOP_TRANSITION.json。最新答疑已明确允许同患者跨Study固定平滑；恢复为后续独立候选，当前E2不混入该后处理。

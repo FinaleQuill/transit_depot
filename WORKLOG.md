@@ -1635,3 +1635,12 @@
 - CHECKPOINT_SPEED_BACKGROUND_VERIFIED.json与SETUP_RESULT记录‘交接已安排、GPU探针尚未运行、尚未采用新加速’，不把CPU测试或进程存活冒称真实提速。
 - checkpoint_speed_launch.json、controller.checkpoint_speed.launch.log及SUPERVISION落盘；取消待交接需专用CANCEL_CHECKPOINT_SPEED_TRANSITION再STOP，不能只touch既有迁移STOP。
 - 用户要求能提速就用、优化安排完结束；条件流程后台自主完成，get_goal=null，不创建或保持AI轮询目标，下一次返回先查实际结果，不重复启动。
+
+
+### 2026-11-04 23:22（香港）· 用户停止全部训练，现场及完整断点已保存
+
+- 用户明确‘安全停止现在的训练并且保存当前数据，不要再训练’，覆盖此前所有继续训练/自动队列授权；先写controller/run STOP及两个迁移CANCEL，快照当前local3进度。
+- 23:20对唯一训练容器发送SIGTERM，training_hooks真实闭合interrupted；controller90510记录paused后退出，trainer109499/docker客户端退出，docker ps与GPU计算进程均为空。
+- 完整可恢复断点仍为local第2轮，best仍epoch0 AUC0.7978381127；last/best SHA与性能迁移前证书完全一致、真实生命周期/完整history/预测绑定核验通过。第3轮内存参数未保存，不冒称完整轮次。
+- USER_STOP_RECORD.json及user_stop_20261104_231956/VERIFIED_STOP.json保存停机核验、前后状态、进度、日志和checkpoint哈希；原日志/权重/逐轮预测保持。
+- README/PROTOCOL/NEXT_STAGE/SUPERVISION顶部明确已停止、禁止自动恢复/补完/新训练/自动比较；无AI进行中目标，需用户后续明确指令才开展下一任务。

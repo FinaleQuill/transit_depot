@@ -1,5 +1,9 @@
 # E2 后台队列监督说明
 
+**当前状态：已按用户要求停止（2026-11-04香港23:20）。** 当前没有训练容器、控制器或GPU计算进程；停止采用SIGTERM并留下真实interrupted生命周期，未使用SIGKILL。保留完整local第2轮last、最佳epoch0模型、所有已有逐轮预测及第3轮中断前进度/日志；第3轮内存参数未另存。所有自动交接已取消、controller/STOP及取消标记保留。用户明确“不要再训练”，不得复制下面历史命令恢复或追加实验。
+
+停机核验：运行根 `USER_STOP_RECORD.json`；停止现场：`user_stop_20261104_231956/VERIFIED_STOP.json`。控制器paused与训练器interrupted都是此次人工停止的真实状态，不能改写成实验完整完成。新的恢复或后续实验必须依据用户后续明确指令。
+
 **21时后最新提速安排：** 全局组已按3轮规则早停，局部组首轮训练134.79分钟，原因是每图5个768区域，计算量约为全局5倍。局部第2轮完整保存后，独立 `controller_checkpoint_speed` 做最多600秒的训练集激活保留测试；显存/逐步等值/速度及净省时门槛全部通过才用于第3轮，否则按原方法继续。当前是否仍等待、是否采用看 `controller/CHECKPOINT_SPEED_TRANSITION.json`；独立进程入口是 `checkpoint_speed_launch.json`，日志 `controller.checkpoint_speed.launch.log`。详见[计算耗时与优化说明](RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)。目前应先看本段，下面17时的早停迁移已经完成，不再等待全局第3轮。
 
 香港21:30独立条件提速进程PID90510已启动并核验PPID1/独立session/连续心跳；核验时仍等待局部第2轮完整闭合，GPU探针尚未运行。实际进程记录见 `CHECKPOINT_SPEED_BACKGROUND_VERIFIED.json`，后续采用与否必须查看实时结果。

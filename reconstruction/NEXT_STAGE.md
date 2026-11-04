@@ -1,5 +1,7 @@
 # 重构研究续接与后续实验门槛
 
+**最高优先当前状态：用户于2026-11-04香港23:19明确要求停止并不再训练。** 23:20已SIGTERM安全中断local第3轮、取消全部自动交接并保留STOP；controller90510及trainer109499均退出。可恢复last仍是完整第2轮，第3轮只有已落盘进度/日志，未保存内存参数。`USER_STOP_RECORD.json`记录核验。以下计划均为历史或候选，禁止自动恢复、补完第3轮、重跑前两轮或追加实验；新工作须遵从用户后续明确指令。
+
 **晚间当前状态：** 全局组已完整3轮并按新政策early_stopped；局部第2轮正在执行。用户再次要求提速，在该轮完整保存后做独立限定600秒激活保留探针，等值/显存/实测估计速度1.08倍/仅一轮净省时>5分钟全部达标才采用；否则原断点原方法继续。以 `controller/CHECKPOINT_SPEED_TRANSITION.json`、`checkpoint_speed_launch.json` 和[计算性能记录](../docs/RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)为当前入口，不复活下方历史进程。
 
 **当前预算修订：** 用户因时间不足要求连续3轮无有效提升即停（min_delta=0.0001、最多6轮），两臂同规则、既有轮次计入。第3轮完整保存后由独立停止政策控制器接管。实际状态见 `controller/EARLY_STOP_TRANSITION.json`、`early_stopping_launch.json` 与[监督说明](../docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)；下方固定6+6属于原登记，不能再宣称实际相同更新预算。不要重复启动或自动重试。
