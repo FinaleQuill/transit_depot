@@ -34,10 +34,18 @@
 
 运行根：`/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105`。`controller_status.json`看当前阶段，`context512/progress.json`和`opacity512/progress.json`看训练，最终`final_comparison/report.json`。完整断点写本机`/home/featurize/data/cxr_ensemble_sprint_20261105`，每轮FP16 EMA和合规证据持久写work。
 
-训练先估2–3.5小时，末次验证与胜出CSV另估15–30分钟；以真实稳定吞吐更新。运行不依赖对话，无自动重试，不覆盖旧模型。根STOP在轮次保存后暂停，需明确续训才重开。
+训练启动前粗估2–3.5小时；03:47按真实增量吞吐修正为约4–6小时，末次验证与胜出CSV另估15–30分钟。冻结plan内保留原始估计作为历史，不改已启动科学配置；最新预计见本节及运行根BACKGROUND_VERIFIED.json。运行不依赖对话，无自动重试，不覆盖旧模型。根STOP在轮次保存后暂停，需明确续训才重开。
 
 ## 核验
 
 模型/损失4项官方镜像CPU机械检查通过，真实timm Tiny纯FP16合成前向有限；两个父模型SHA/FP32 EMA/原始split/类序与完整train-valid隔离预检通过。这些是运行正确性检查，不是AUC消融或泛化证明。
 
 历史512模型较弱、A与029有共享教师知识，所以互补收益并非已证实。选择此方案是训练新的尺度/关注方式分工；只在唯一最终比较后判断结果。无平台提交或撤销操作。
+
+## 启动与交付链路核验
+
+03:38:50（香港）独立controller PID174948启动，PPID1、独立session、stdin=/dev/null。03:47第一成员已处理2400Study/3892图，74次有效优化器更新、1次AMP跳步，loss有限；唯一训练容器为context512。960→2400Study增量约10.68Study/s，最近连续窗口约12–13Study/s；尚无完整epoch，不以冷启动累计ETA外推确定完成时间。
+
+最终共享predictor/唯一比较5项CPU测试、部署4项CPU测试及可搬移源码隔离导入通过；官方CPU重算缓存Sprint参考Macro为0.8179628779375786。新候选GPU验证0次，训练完成后才自动运行。部署复制已有包初始化文件，避免原项目PYTHONPATH影响独立包加载。
+
+规则、原始train/valid/test清单、保留CSV、原submission_best及Base权重SHA全部与冻结plan一致；12个训练源文件与运行证据一致。后台自动训练→唯一比较→胜出导出链已齐备，最终路径为运行根final_comparison/report.json和deployment_candidate/submission.csv。

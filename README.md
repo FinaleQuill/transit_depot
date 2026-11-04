@@ -1,4 +1,4 @@
-**2026-11-05 03:38（香港）多模型冲刺新授权：** 已保存0.817963成果并生成[CSV](../submission_sprint_0817963.csv)。新固定阵容为冻结Sprint Base768＋context Tiny512（4轮）＋opacity attention Tiny512（6轮），见[执行说明](docs/ENSEMBLE_SPRINT_20261105.md)。后台只运行新独立队列；旧队列不恢复。
+**2026-11-05 03:38（香港）多模型冲刺新授权：** 已保存0.817963成果并生成[CSV](../submission_sprint_0817963.csv)。新固定阵容为冻结Sprint Base768＋context Tiny512（4轮）＋opacity attention Tiny512（6轮），见[执行说明](docs/ENSEMBLE_SPRINT_20261105.md)。独立后台队列已实际推进优化器更新；预计训练约4–6小时，末次比较/胜出CSV另15–30分钟。旧队列不恢复。
 
 **2026-11-05 03:04（香港）冲刺已完成：** 四轮最终EMA唯一valid比较Macro-AUC **0.817963**，相对历史本地最佳+0.000348、类1+0.001198，患者配对区间跨零；类8经10000次患者重采样及十类校正仍显著低于平均。已选研究候选，按用户要求未生成CSV、未读取test。见[结果复盘](docs/SPRINT_RESULTS_20261105.md)。不要恢复下方历史训练队列。
 
