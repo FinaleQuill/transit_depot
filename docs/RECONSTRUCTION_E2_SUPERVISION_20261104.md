@@ -2,6 +2,8 @@
 
 **21时后最新提速安排：** 全局组已按3轮规则早停，局部组首轮训练134.79分钟，原因是每图5个768区域，计算量约为全局5倍。局部第2轮完整保存后，独立 `controller_checkpoint_speed` 做最多600秒的训练集激活保留测试；显存/逐步等值/速度及净省时门槛全部通过才用于第3轮，否则按原方法继续。当前是否仍等待、是否采用看 `controller/CHECKPOINT_SPEED_TRANSITION.json`；独立进程入口是 `checkpoint_speed_launch.json`，日志 `controller.checkpoint_speed.launch.log`。详见[计算耗时与优化说明](RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)。目前应先看本段，下面17时的早停迁移已经完成，不再等待全局第3轮。
 
+香港21:30独立条件提速进程PID90510已启动并核验PPID1/独立session/连续心跳；核验时仍等待局部第2轮完整闭合，GPU探针尚未运行。实际进程记录见 `CHECKPOINT_SPEED_BACKGROUND_VERIFIED.json`，后续采用与否必须查看实时结果。
+
 **当前安全停止：先创建 `controller/CANCEL_CHECKPOINT_SPEED_TRANSITION`，再创建 `controller/STOP`。** 这会取消尚未完成的提速交接，并在完整轮次后暂停正式训练；若提速已经接管，STOP仍正常有效。不要强杀正式训练容器。
 
 **最新：用户要求改为连续3轮无有效提升早停。** 两臂同一patience=3、min_delta=0.0001、最多6轮，已完成轮次计入。第3轮完整训练/评估/断点结束后，独立 `controller_earlystop` 接管；当前是否仍在等待、是否已激活及失败原因看 `controller/EARLY_STOP_TRANSITION.json`，新进程与日志看 `early_stopping_launch.json` 和 `controller.early_stopping.launch.log`。下方原固定6+6与旧PID属于历史，勿再据此启动。详见[修订说明](RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)。

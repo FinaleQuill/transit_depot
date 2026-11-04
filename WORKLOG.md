@@ -1627,3 +1627,11 @@
 - 新adapter对完整train pack<=10区域保留激活，其余继续chunk8重算；原5区域768输入、packing、前向次序、优化器/EMA/LR/3轮早停保持，当前local2完整保存后才有独占GPU有界probe。
 - 探针最多600s，要求逐步全等、显存余量1.5GiB、估计速度>=1.08及扣除实际probe后仅一轮仍净省>5min；有效拒绝/OOM回原方法，异常保存并停不重试，不追加科学实验。
 - 官方无GPU40项联合测试及实际配置预检通过，含含dropout的梯度/Adam/EMA/RNG等值、真实生命周期、证据重放、拒绝/采用/取消/超时隔离；E0/E1/E2/早停冻结计划SHA保持。
+
+
+### 2026-11-04 21:31（香港）· 条件提速交接独立运行并结束对话
+
+- 21:30以f469984启动controller_checkpoint_speed，PID90510/PPID1/独立SID与PGID/stdin空设备；两次心跳持续更新，仍waiting_for_complete_epoch，唯一GPU容器仍为原local2训练。
+- CHECKPOINT_SPEED_BACKGROUND_VERIFIED.json与SETUP_RESULT记录‘交接已安排、GPU探针尚未运行、尚未采用新加速’，不把CPU测试或进程存活冒称真实提速。
+- checkpoint_speed_launch.json、controller.checkpoint_speed.launch.log及SUPERVISION落盘；取消待交接需专用CANCEL_CHECKPOINT_SPEED_TRANSITION再STOP，不能只touch既有迁移STOP。
+- 用户要求能提速就用、优化安排完结束；条件流程后台自主完成，get_goal=null，不创建或保持AI轮询目标，下一次返回先查实际结果，不重复启动。
