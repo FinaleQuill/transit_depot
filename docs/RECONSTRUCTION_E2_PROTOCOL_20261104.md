@@ -22,7 +22,9 @@ E1相对E0的整体增益小、患者配对区间跨零，多图Study近乎持�
 - AdamW重新建立，backbone LR `5e-6`，分类/新头 LR `5e-5`，weight decay `.05`且bias/norm不衰减；1轮共同线性LR warmup，再cosine至峰值10%。不单独预热局部头，不增加辅助损失。
 - 两臂seed `20261104`，dropout `.2`、drop path `.15`，EMA上限`.999`并重置更新计数，FP16 autocast、FP32聚合/损失，梯度裁剪1。加载父EMA是重新微调，不是继续原优化器状态。
 - 继续沿用fold1–3优化、fold0开发；每轮保留全部Study，不补标签、不自动擦除、不做患者跨Study预测平均。增强序号从父最佳epoch8之后开始，即本阶段1–6轮对应增强epoch9–14。
-- 初始执行配置为区域pack上限8、encoder chunk4、channels-last、分块checkpoint；超上限Study完整保留。workers=2、prefetch=1。正式启动前仅允许根据训练集冒烟的显存/吞吐调整执行参数，调整须同步两臂并保留记录，不据开发AUC调整。
+- 正式执行配置为区域pack上限8、encoder chunk8、channels-last、分块checkpoint；超上限Study完整保留。workers=2、prefetch=1。最初chunk4的完整保存/恢复冒烟通过后，仅据训练集显存/计算测试把两臂同步改为chunk8，不据开发AUC调整。
+
+启动前实测：两臂各完成一次训练和一次恢复调用，均为4个最高视图数训练Study、22张源图；局部臂110区域。两臂都连续完成epoch1/2、2次实际更新且0跳步；初始预测最大差为0。独立的7图/35区域探针，各配置预热1次再计时2次，chunk4/8平均2.8407/2.5912秒，峰值分配7.86/13.54 GiB；chunk8约快8.8%，22 GiB设备仍留余量。探针只测单Study完整计算，不代表正式32Study累积的整轮速度或最终推理时限；其权重全部丢弃，不作为疾病效果证据。配置、逐步计时和源SHA保存在 `E2_20261104/preparation/`。
 
 **零轮基线与择优**
 

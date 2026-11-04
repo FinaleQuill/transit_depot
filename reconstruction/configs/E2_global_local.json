@@ -26,7 +26,7 @@
   "min_delta": 0.0001,
   "min_epochs": 6,
   "bootstrap_repeats": 500,
-  "view_chunk_size": 4,
+  "view_chunk_size": 8,
   "smoke_studies": 0,
   "pack_images": 8,
   "checkpoint_mode": "chunks",
