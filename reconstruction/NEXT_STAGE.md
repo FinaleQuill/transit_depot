@@ -1,5 +1,7 @@
 # 重构研究续接与后续实验门槛
 
+**晚间当前状态：** 全局组已完整3轮并按新政策early_stopped；局部第2轮正在执行。用户再次要求提速，在该轮完整保存后做独立限定600秒激活保留探针，等值/显存/实测估计速度1.08倍/仅一轮净省时>5分钟全部达标才采用；否则原断点原方法继续。以 `controller/CHECKPOINT_SPEED_TRANSITION.json`、`checkpoint_speed_launch.json` 和[计算性能记录](../docs/RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)为当前入口，不复活下方历史进程。
+
 **当前预算修订：** 用户因时间不足要求连续3轮无有效提升即停（min_delta=0.0001、最多6轮），两臂同规则、既有轮次计入。第3轮完整保存后由独立停止政策控制器接管。实际状态见 `controller/EARLY_STOP_TRANSITION.json`、`early_stopping_launch.json` 与[监督说明](../docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)；下方固定6+6属于原登记，不能再宣称实际相同更新预算。不要重复启动或自动重试。
 
 2026-11-04香港16:30执行更新：用户要求提速，原E2global完整epoch1保存后由新独立controller_performance（PID36434）续跑epoch2。原plan/config保留，实际6workers/prefetch2以 `E2_20261104/controller/performance_plan.json` 及新session执行记录为准；原2workers只代表迁移前默认值。详见[性能记录](../docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md)。不要按下方历史PID11416重启原controller。

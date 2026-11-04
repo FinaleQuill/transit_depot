@@ -1618,3 +1618,12 @@
 - 两次EARLY_STOP_TRANSITION心跳推进，当前仍waiting_for_complete_epoch，唯一训练容器仍为原global；不能把交接已安排说成第三轮已结束或新政策已实际停训。
 - early_stopping_launch.json、EARLY_STOP_BACKGROUND_VERIFIED.json及RESULT.json保存实际状态；SUPERVISION新增迁移取消标记与STOP组合，失败停机不重试，最多等待2小时。
 - 既有及新队列均不依赖对话；get_goal为null，未创建AI续行/轮询目标。处理结束后退出对话，返回时先查实际进度，不重复启动。
+
+
+### 2026-11-04 21:30（香港）· 局部5倍计算耗时与有界激活保留提速
+
+- 用户再次授权提速且要求完成后结束对话；实查global完整3轮早停，local首轮134.79min/90970区域，global第3轮26.93min/18194区域，5.004倍主要来自5倍区域数，非读图退化。
+- local首轮读图等待32.28s占0.40%；21:14短采样GPU平均89.4%/最高97%、15352MiB占用；DIAGNOSIS及原始GPU样本保存在checkpoint_speed_20261104。
+- 新adapter对完整train pack<=10区域保留激活，其余继续chunk8重算；原5区域768输入、packing、前向次序、优化器/EMA/LR/3轮早停保持，当前local2完整保存后才有独占GPU有界probe。
+- 探针最多600s，要求逐步全等、显存余量1.5GiB、估计速度>=1.08及扣除实际probe后仅一轮仍净省>5min；有效拒绝/OOM回原方法，异常保存并停不重试，不追加科学实验。
+- 官方无GPU40项联合测试及实际配置预检通过，含含dropout的梯度/Adam/EMA/RNG等值、真实生命周期、证据重放、拒绝/采用/取消/超时隔离；E0/E1/E2/早停冻结计划SHA保持。

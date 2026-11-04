@@ -1,5 +1,9 @@
 # E2 后台队列监督说明
 
+**21时后最新提速安排：** 全局组已按3轮规则早停，局部组首轮训练134.79分钟，原因是每图5个768区域，计算量约为全局5倍。局部第2轮完整保存后，独立 `controller_checkpoint_speed` 做最多600秒的训练集激活保留测试；显存/逐步等值/速度及净省时门槛全部通过才用于第3轮，否则按原方法继续。当前是否仍等待、是否采用看 `controller/CHECKPOINT_SPEED_TRANSITION.json`；独立进程入口是 `checkpoint_speed_launch.json`，日志 `controller.checkpoint_speed.launch.log`。详见[计算耗时与优化说明](RECONSTRUCTION_E2_COMPUTE_SPEED_20261104.md)。目前应先看本段，下面17时的早停迁移已经完成，不再等待全局第3轮。
+
+**当前安全停止：先创建 `controller/CANCEL_CHECKPOINT_SPEED_TRANSITION`，再创建 `controller/STOP`。** 这会取消尚未完成的提速交接，并在完整轮次后暂停正式训练；若提速已经接管，STOP仍正常有效。不要强杀正式训练容器。
+
 **最新：用户要求改为连续3轮无有效提升早停。** 两臂同一patience=3、min_delta=0.0001、最多6轮，已完成轮次计入。第3轮完整训练/评估/断点结束后，独立 `controller_earlystop` 接管；当前是否仍在等待、是否已激活及失败原因看 `controller/EARLY_STOP_TRANSITION.json`，新进程与日志看 `early_stopping_launch.json` 和 `controller.early_stopping.launch.log`。下方原固定6+6与旧PID属于历史，勿再据此启动。详见[修订说明](RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)。
 
 香港17:29独立交接进程PID51006已启动，PPID1/独立session/stdin空设备与连续心跳已核验；核验时仍等待第3轮闭合，未重复启动GPU训练。证据在 `EARLY_STOP_BACKGROUND_VERIFIED.json`。当前是否已激活以实时状态文件为准。
@@ -24,11 +28,13 @@
 CXR_E2=/home/featurize/work/reconstruction_runs_20261103/E2_20261104
 cat "$CXR_E2/controller/PROGRESS.md"
 cat "$CXR_E2/controller/STATUS.json"
+cat "$CXR_E2/controller/CHECKPOINT_SPEED_TRANSITION.json"
 cat "$CXR_E2/controller/EARLY_STOP_TRANSITION.json"
 tail -n 30 "$CXR_E2"/controller/logs/*.log
 tail -n 30 "$CXR_E2/controller.launch.log"
 tail -n 30 "$CXR_E2/controller.performance.launch.log"
 tail -n 30 "$CXR_E2/controller.early_stopping.launch.log"
+tail -n 30 "$CXR_E2/controller.checkpoint_speed.launch.log"
 docker ps --format '{{.Names}} {{.Status}}'
 ```
 
@@ -47,6 +53,7 @@ cat /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/com
 安全停止整个新队列：
 
 ```bash
+touch /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/CANCEL_CHECKPOINT_SPEED_TRANSITION
 touch /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/CANCEL_EARLY_STOP_TRANSITION
 touch /home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/STOP
 ```
