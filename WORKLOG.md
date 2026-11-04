@@ -1570,3 +1570,12 @@
 - 按用户要求将完整答疑主文件放到work根目录，与rules.pdf/rules_1.pdf共同构成当前完整规则材料；原两PDF的SHA均与既有登记一致。
 - 仓库docs保留逐字节一致的Git副本，声明后续同步更新；README/AGENTS和当前规则协议交接引用主文件，接手必须合并阅读三份材料。
 - 答疑正文与未决冲突保留，E0/E1/E2冻结源码配置输入SHA复核通过；本次不修改训练或运行队列。
+
+
+### 2026-11-04 16:11（香港）· E2数据等待瓶颈与可审计执行适配
+
+- 用户授权压榨训练性能；E2global首轮数据等待约55%，20秒GPU平均39%，8CPU只用约2.15核；E0原6workers每轮26–29min/等待30–43s，而E2保守2workers估65min，优先恢复输入供给。
+- 已请求原controller完整epoch1训练/评估/断点后STOP，保留当前训练不强杀；尚未切换执行配置。原图本机ext4、低IO压力且无CPU quota节流，不归因为NFS原图瓶颈。
+- 新train_local_performance仅覆盖worker/prefetch，实际profile+源码写每个新session；原科学config和完整恢复evidence不动。新controller_performance保留原plan/队列并独立冻结profile/补充源码/迁移证据。
+- 官方无GPU容器5项adapter+15项controller测试通过，含真实并发逐tensor/顺序/main RNG不变、真实生命周期与恢复联测、历史前缀保护、STOP失败不扩展及零剩余预算结算。
+- 独立global64Study输入6档全部像素与顺序一致；6workers/prefetch2供给11.116Study/s，对2/1的4.066为2.73倍，仅并发CPU探针非正式epoch加速；局部与内存压力仍在测量。
