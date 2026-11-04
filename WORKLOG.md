@@ -1579,3 +1579,11 @@
 - 新train_local_performance仅覆盖worker/prefetch，实际profile+源码写每个新session；原科学config和完整恢复evidence不动。新controller_performance保留原plan/队列并独立冻结profile/补充源码/迁移证据。
 - 官方无GPU容器5项adapter+15项controller测试通过，含真实并发逐tensor/顺序/main RNG不变、真实生命周期与恢复联测、历史前缀保护、STOP失败不扩展及零剩余预算结算。
 - 独立global64Study输入6档全部像素与顺序一致；6workers/prefetch2供给11.116Study/s，对2/1的4.066为2.73倍，仅并发CPU探针非正式epoch加速；局部与内存压力仍在测量。
+
+
+### 2026-11-04 16:21（香港）· E2输入并发与高视图队列压力通过
+
+- 独立benchmark_input仅用固定train的64Study/106图，global6档、local4档全部完整张量/标签/几何和顺序哈希一致；测试与旧训练并行nice10，无GPU、无dev/H/test图像。
+- global2/1→6/2输入供给4.066→11.116Study/s，local1.436→3.909；均约2.7倍但不是正式整轮倍率，profile选择仅按吞吐/内存、不按AUC。
+- 最高工作量32Study/135图/675区域、6workers/prefetch2、每Study延迟2秒的两遍队列压力通过；共享内存峰1.747GiB/4GiB，进程PSS最高3.266GiB，保持原runtime SHM。
+- 选定外部执行profile loader_workers6_prefetch2.json；原科学参数/源码保持，独立适配器20项官方CPU检查与profile预检通过，等待旧epoch1验证保存后从第2轮恢复并观测真实提速。
