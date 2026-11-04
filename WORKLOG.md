@@ -1610,3 +1610,11 @@
 - 用户转交追问原文答复：最高依据书面补充，患者平滑允许；据明确的跨Study问题，恢复同患者跨Study固定聚合作为后续候选，旧否决答复保留并标注被此次澄清取代。
 - 主办方尽量提供患者全部Study并非严格完整性保证，正式采用时核验上下文与cost/CSV一致；不新增测试标签或测试集参数拟合，不热加当前E2。
 - 根目录答疑与Git副本逐字节一致，README/规则/研究协议及后续门槛同步；是否允许已答复，不再重复询问。
+
+
+### 2026-11-04 17:30（香港）· patience3独立后台交接已安排
+
+- 新controller_earlystop于17:29以4b9abc2启动，PID51006/PPID1/自有SID与PGID/stdin空设备/日志落盘；等待旧控制器epoch3闭合释放锁，不另开GPU训练。
+- 两次EARLY_STOP_TRANSITION心跳推进，当前仍waiting_for_complete_epoch，唯一训练容器仍为原global；不能把交接已安排说成第三轮已结束或新政策已实际停训。
+- early_stopping_launch.json、EARLY_STOP_BACKGROUND_VERIFIED.json及RESULT.json保存实际状态；SUPERVISION新增迁移取消标记与STOP组合，失败停机不重试，最多等待2小时。
+- 既有及新队列均不依赖对话；get_goal为null，未创建AI续行/轮询目标。处理结束后退出对话，返回时先查实际进度，不重复启动。

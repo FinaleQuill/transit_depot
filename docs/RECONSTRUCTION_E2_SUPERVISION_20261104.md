@@ -2,6 +2,8 @@
 
 **最新：用户要求改为连续3轮无有效提升早停。** 两臂同一patience=3、min_delta=0.0001、最多6轮，已完成轮次计入。第3轮完整训练/评估/断点结束后，独立 `controller_earlystop` 接管；当前是否仍在等待、是否已激活及失败原因看 `controller/EARLY_STOP_TRANSITION.json`，新进程与日志看 `early_stopping_launch.json` 和 `controller.early_stopping.launch.log`。下方原固定6+6与旧PID属于历史，勿再据此启动。详见[修订说明](RECONSTRUCTION_E2_EARLY_STOPPING_20261104.md)。
 
+香港17:29独立交接进程PID51006已启动，PPID1/独立session/stdin空设备与连续心跳已核验；核验时仍等待第3轮闭合，未重复启动GPU训练。证据在 `EARLY_STOP_BACKGROUND_VERIFIED.json`。当前是否已激活以实时状态文件为准。
+
 迁移期间安全停止须同时创建 `controller/CANCEL_EARLY_STOP_TRANSITION` 与 `controller/STOP`：前者取消尚未完成的后台交接，后者要求当前训练在完整轮次后暂停。迁移完成后，前者无作用，后者继续正常控制新队列。
 
 2026-11-04香港16:30执行提速更新：原控制器在全局臂完整epoch1及评估/断点后暂停，新独立控制器PID36434从原last.pt续跑epoch2；后续两臂实际采用6个读图进程、每进程prefetch2。注册配置中的workers2保留历史值，实际覆盖见 `performance_20261104/loader_workers6_prefetch2.json`、`controller/performance_plan.json` 和新会话的 `execution_profile` / `data_loader_created`。源码、科学配方和原history不改。启动记录改看 `performance_launch.json`，最终实测见 `performance_20261104/LIVE_SPEEDUP.json`；详细说明见仓库 `docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md`。原11416只作历史定位，不要复活旧入口。
