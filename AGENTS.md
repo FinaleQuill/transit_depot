@@ -2,7 +2,7 @@
 
 当前分支为独立Study重构研究，实际阶段见README.md、reconstruction/PROTOCOL.md和WORKLOG.md；原ConvNeXt V1教师/蒸馏路线保留供历史追溯。训练、续训和GPU推理按当前会话授权执行；旧阶段“训练0次”记录不能当成现状。旧工程已完整封存在 archive/legacy_20261016_2345；禁止复用其训练进程或把旧指标当新工程结果。
 
-1. 接手先读 README.md、docs/CLEANING_POLICY.md、docs/COMPETITION_RULES.md 和 WORKLOG.md。
+1. 接手先读 README.md、docs/CLEANING_POLICY.md、docs/COMPETITION_RULES.md 和 WORKLOG.md。完整规则由父目录 `/home/featurize/work/` 下的 `rules.pdf`、`rules_1.pdf`、`RULES_QA_CLARIFICATION_20261104.md` 共同构成，必须合并阅读；答疑主文件与PDF同目录，仓库docs同名文件为同步Git副本，后续更新须保持两份一致。
 2. 原始 cxr_first/、图片缓存 cache/images512/、规则截图 信息文件/ 保持原处且只读。清洗输出写 data/；剔除表示从新训练清单排除，不删除原图、不覆盖原CSV。
 3. 多标签按原始检查级标签解析。无依据不补疾病标签，不强制 No Finding 互斥。模糊、曝光及感知哈希只提供复核候选，不能凭阈值自动删除真实胸片。
 4. 质量阈值、统计量和类别建议只从 train 计算；valid/test保持原始检查覆盖。测试集仅做只读完整性审计，不用于训练选择、伪标签或阈值拟合。
