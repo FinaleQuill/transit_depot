@@ -1,6 +1,6 @@
 # 新工程协作约定
 
-当前工程为ConvNeXt V1教师与学生蒸馏路线，实际阶段见README.md和WORKLOG.md。训练、续训和GPU推理按当前会话授权执行；旧阶段“训练0次”记录不能当成现状。旧工程已完整封存在 archive/legacy_20261016_2345；禁止复用其训练进程或把旧指标当新工程结果。
+当前分支为独立Study重构研究，实际阶段见README.md、reconstruction/PROTOCOL.md和WORKLOG.md；原ConvNeXt V1教师/蒸馏路线保留供历史追溯。训练、续训和GPU推理按当前会话授权执行；旧阶段“训练0次”记录不能当成现状。旧工程已完整封存在 archive/legacy_20261016_2345；禁止复用其训练进程或把旧指标当新工程结果。
 
 1. 接手先读 README.md、docs/CLEANING_POLICY.md、docs/COMPETITION_RULES.md 和 WORKLOG.md。
 2. 原始 cxr_first/、图片缓存 cache/images512/、规则截图 信息文件/ 保持原处且只读。清洗输出写 data/；剔除表示从新训练清单排除，不删除原图、不覆盖原CSV。

@@ -33,3 +33,7 @@
 运行入口 `python -m reconstruction.runtime -- -m reconstruction.train --config reconstruction/configs/E0.json --execute`。长期运行由独立串行 controller 管理，生命周期与断点哈希均留存。`STOP` 在完整 epoch、评估和断点完成后生效；失败保留现场，不自动当作完成。所有输入在容器中只读，容器无网络；测试集不进入实验。
 
 最终实际加载的去重权重、配置及引擎不超过 500,000,000 bytes。研究阶段暂不以推理时限裁剪科学候选；最终仍须按用户更正的 **100 ms / Study** 在指定环境验收。当前没有正式提交或部署授权。
+
+## 2026-11-04 用户截断与评估结论
+
+E0完成14轮并正常早停；E1完成12轮、在第13轮中断，用户随后明确决定不再跑第13轮。本节登记后续决定，不修改上述原25轮上限/早停协议或训练器的interrupted事实。完整结果见[评估收尾](../docs/RECONSTRUCTION_E0_E1_REVIEW_20261104.md)。E1−E0最佳轮Macro-AUC为+0.001399，患者配对95%区间[−0.001001,+0.003703]；尚无稳定收益证据。原控制器保留paused，新增 `controller/closeout_20261104/STATUS.json` 记录评估完成，禁止依据旧未完成队列自动续跑E1。后续优先独立E2，不自动组合E3或启动E4。
