@@ -1538,3 +1538,12 @@
 - 新benchmark_local在同7图/35区域Study比较chunk4/8，预热后2次均值2.8407/2.5912秒，峰值分配7.86/13.54 GiB，6次有效更新0跳步；权重丢弃，不是正式整轮或推理计时。
 - 正式两臂同步选择chunk8，其他科学配方不变；原chunk4配置/失败修复/日志均保留，监督文档登记只执行6+6及固定比较，不自动E3/E4。
 - CPU读取两臂真实完整断点和闭合生命周期均通过：全部Adam step=2、scaler计数2、EMA/RNG完整；最终chunk8两臂配置/父模型预检通过。一次检查包装误用不存在的preflight函数已改为实际validate_config/verify_parent，原失败日志保留，无训练影响。
+
+
+### 2026-11-04 14:54（香港）· E2正式独立后台启动与监督交接
+
+- 以18f90a8启动新controller_local，PID11416；启动前无重复训练/容器、工作盘约7.2GiB余量，原E0/E1源码输入哈希保持，用户禁止的E1第13轮未恢复。
+- 真实PPID1、自有SID/PGID、无TTY、stdin=/dev/null、日志落盘；无网固定镜像容器持续运行，epoch0完整dev评估由129推进至385/3703Study，尚无正式优化或E2训练后AUC。
+- 新队列严格全局6轮→全图＋四局部6轮→三项1000次患者配对比较；源/config/input冻结、断点和完整逐轮指标保留，失败停机，不自动重试或启动E3/E4。
+- E2_20261104/launch.json、BACKGROUND_VERIFIED.json、SUPERVISION.md与preparation核验回执落盘；README/PROTOCOL/NEXT_STAGE同步当前入口和用户想法的后续证据门槛。
+- get_goal实查为null，未创建AI轮询目标；后台可脱离对话继续。当前是等待已确定实验结果，整个研究尚未完成，返回后依据真实结果判断下一阶段。
