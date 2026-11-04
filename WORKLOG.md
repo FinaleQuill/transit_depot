@@ -1587,3 +1587,12 @@
 - global2/1→6/2输入供给4.066→11.116Study/s，local1.436→3.909；均约2.7倍但不是正式整轮倍率，profile选择仅按吞吐/内存、不按AUC。
 - 最高工作量32Study/135图/675区域、6workers/prefetch2、每Study延迟2秒的两遍队列压力通过；共享内存峰1.747GiB/4GiB，进程PSS最高3.266GiB，保持原runtime SHM。
 - 选定外部执行profile loader_workers6_prefetch2.json；原科学参数/源码保持，独立适配器20项官方CPU检查与profile预检通过，等待旧epoch1验证保存后从第2轮恢复并观测真实提速。
+
+
+### 2026-11-04 16:38（香港）· E2性能迁移完成与实测交接
+
+- 原global完整epoch1为11108Study/18194图/348有效更新0跳步，训练3860.27秒；完整验证与断点闭合后paused，STOP/历史原样留档，未重跑第一轮。
+- 16:30新controller_performance PID36434从原last续epoch2，PPID1/独立SID/无TTY/stdin空设备验证通过；实际6workers/prefetch2、增强epoch10/seed20261106登记新会话，原科学config与冻结SHA保持。
+- 启动后连续640Study用147.14秒，稳定2.945→4.350Study/s、实测1.477倍；等待占比57.45%→0.61%，按该段外推纯训练42.6min对原首轮64.34min，非已完成整轮或局部臂倍率。
+- performance_20261104/RESULT.json、LIVE_SPEEDUP.json与PERFORMANCE_BACKGROUND_VERIFIED.json保留现场；监督、README和交接入口更新，仍只跑原6+6及固定比较、失败停机不重试。
+- 用户要求处理完结束对话；本轮性能处理完成，有界测速已结束，无新增AI轮询目标，服务器训练独立继续，科学研究仍待最终结果。

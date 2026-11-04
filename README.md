@@ -2,6 +2,8 @@
 
 **完整规则入口：** 父目录中的 [rules.pdf](../rules.pdf)、[rules_1.pdf](../rules_1.pdf) 和[项目答疑记录](../RULES_QA_CLARIFICATION_20261104.md)共同构成当前完整规则，必须合并阅读。答疑在仓库docs中另留同步Git副本。
 
+**2026-11-04 16:30执行提速：** E2全局臂已完整保存epoch1；新独立控制器PID36434从原断点续跑epoch2，将后续输入执行设置为6workers/prefetch2。科学配置、完整Study和训练预算保持；原11416已退出，勿重复启动。实际覆盖与测试见[性能记录](docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md)，当前进度和安全停止仍见[监督说明](docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)。
+
 **2026-11-04 当前进展：** [E2匹配全局/局部对照](docs/RECONSTRUCTION_E2_PROTOCOL_20261104.md)于香港14:51独立后台启动，控制器PID11416、源码`18f90a8`。队列只执行全局继续训练6轮→全图＋四个原像素局部6轮→固定患者配对比较，各臂先评估epoch0；查看[监督说明](docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)及实际进程/进度，禁止重复启动。机械训练、断点恢复和chunk8显存测试通过，不代表已取得AUC收益；E3/E4不自动展开。
 
 [E0/E1评估收尾](docs/RECONSTRUCTION_E0_E1_REVIEW_20261104.md)已完成：E0最佳第8轮0.797840，E1最佳第7轮0.799239，患者配对差值+0.001399、95%区间跨零。用户明确接受E1前12个完整epoch、第13轮不再跑；原paused/interrupted状态保留，禁止从旧后台说明恢复E1。E2从E0最佳EMA出发。

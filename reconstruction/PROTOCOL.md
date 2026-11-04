@@ -41,3 +41,5 @@ E0完成14轮并正常早停；E1完成12轮、在第13轮中断，用户随后�
 ## 2026-11-04 E2已登记并独立启动
 
 用户随后授权依据上述结果继续。香港14:51以源码`18f90a8`启动新E2控制器PID11416；实际证据在 `E2_20261104/launch.json`、`BACKGROUND_VERIFIED.json` 和 `controller/STATUS.json`。完整配方见[E2协议](../docs/RECONSTRUCTION_E2_PROTOCOL_20261104.md)，查看和停止方式见[监督说明](../docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)。只执行同E0最佳EMA的全局继续训练6轮、全图＋四个60%原图局部6轮以及三项固定患者配对比较；局部臂尚未证明有效，不自动组合E1/E3/E4。epoch0可择优，完整开发集初始等值门槛2e-6；两臂同步chunk8已通过最高7视图/35区域实测。后台队列独立于对话，不创建AI自动轮询目标，整个研究仍在进行中。
+
+香港16:30按用户提速要求新增执行profile：原global完整epoch1保存后，新控制器PID36434从原断点接续epoch2，后续两臂6workers/prefetch2；原科学配置与源SHA保持，实际执行覆盖写独立冻结计划和新会话记录。逐tensor/顺序/main RNG等值与局部队列压力通过，历史epoch1保留2workers事实，不因提速重跑或缩减完整Study。见[性能记录](../docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md)。

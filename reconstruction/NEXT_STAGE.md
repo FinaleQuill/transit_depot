@@ -1,5 +1,7 @@
 # 重构研究续接与后续实验门槛
 
+2026-11-04香港16:30执行更新：用户要求提速，原E2global完整epoch1保存后由新独立controller_performance（PID36434）续跑epoch2。原plan/config保留，实际6workers/prefetch2以 `E2_20261104/controller/performance_plan.json` 及新session执行记录为准；原2workers只代表迁移前默认值。详见[性能记录](../docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md)。不要按下方历史PID11416重启原controller。
+
 本页承接 `PROTOCOL.md` 和独立审计方案。2026-11-03 恢复执行能力后，实际核对 `pwd`、Git 和 Docker；原 E0 容器及串行控制器仍存活，没有重启。恢复快照在 `../reconstruction_runs_20261103/recovery/LIVE_RECOVERY_20261103.json`。本页登记后续准备与决策边界，不表示实验已完成。
 
 2026-11-04香港14:51最新状态：E0/E1评估已收尾，用户接受E1完整12轮并禁止继续第13轮。基于配对增益区间跨零、多图收益近乎持平，用户授权继续后已独立启动E2，PID11416，源码`18f90a8`。当前仅执行全局继续训练6轮→全图＋原图局部6轮→固定比较；不启动E3/E4，不创建AI自动轮询目标。实际状态和安全停止见[新E2监督说明](../docs/RECONSTRUCTION_E2_SUPERVISION_20261104.md)，旧说明不再是启动入口。

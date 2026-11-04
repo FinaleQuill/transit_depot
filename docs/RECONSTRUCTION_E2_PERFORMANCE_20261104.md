@@ -31,3 +31,13 @@
 全图同时测4/1、4/2、6/1、2/2，局部同时测6/1、2/2；6/2为本次候选中最快。典型局部测试6/2进程PSS峰2.739GiB。另取最高工作量32个不同Study（含唯一7图与四个5图Study），共135图/675区域，每次消费人为等待2秒填充队列；两遍均通过，采样共享内存峰1.747GiB/4GiB容量、进程PSS最高3.266GiB。CPU测量不包含GPU pinning/模型，不能冒称全部正式内存峰值；真实队列仍在恢复后观察。
 
 选择 `performance_20261104/loader_workers6_prefetch2.json`，两臂后续均6workers/prefetch2，保持原4GiB SHM。官方CPU适配器5项与控制器15项测试通过，预检通过。当前E2global原完整epoch1仍按原2worker执行，随后才迁移；新配置不追认历史。输入性能不是模型效果指标，也不是正式整轮2.7倍提速的承诺。
+
+## 已完成的正式恢复与速度观察
+
+香港16:29原global epoch1完整闭合：11,108 Study/18,194图、348次有效更新/0跳步，纯训练3860.27秒（64.34分钟）；完整开发评估及best/last保存后正常paused。一次性后台交接保留STOP和历史证据，新controller_performance于16:30启动，PID36434，自有SID/PGID、PPID1、无TTY、stdin=/dev/null，继续原last.pt的epoch2，未重跑epoch1。
+
+香港16:35完成启动后连续640Study实测（epoch2的128→768）：147.14秒、4.350Study/s。迁移前epoch1的update100→230稳定区间为2.945Study/s，观测速度比1.477倍；等待占比从57.45%降至0.61%。按新稳定区间外推纯训练约42.6分钟/轮，完整轮次还包括验证/保存及启动成本，不能宣称新整轮已经在42.6分钟完成。GPU抽样平均50.5%、进程显存最大16508MiB；原20秒样本平均39.05%，窗口不同仅作运行诊断。
+
+截至16:36正式训练继续推进、0 AMP跳步，旧日志前缀、原源码/config/input和新增执行冻结均核验通过。新session实际记录6workers/prefetch2、augmentation_epoch10、sampler seed20261106；注册config的workers2不是当前实际值。当前剩余瓶颈转为模型计算与主进程调度，数据供给已基本覆盖；不把CPU探针2.7倍冒充训练倍率，也不声称局部正式臂已取得同样速度。
+
+证据：运行根目录 `performance_launch.json`、`PERFORMANCE_BACKGROUND_VERIFIED.json`，性能目录 `RESULT.json`、`LIVE_SPEEDUP.json`、`formal_resource_observation.json`。控制器/日志/结果仍在原E2目录，安全停止仍是 `touch E2_20261104/controller/STOP`。有界测速进程已结束；后台仅继续原6+6和固定比较，不新增AI自动轮询目标。用户要求处理完结束对话，本次性能处理已完成，整个科学研究仍等待后台实验结果。

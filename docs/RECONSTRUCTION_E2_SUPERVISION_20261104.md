@@ -1,5 +1,9 @@
 # E2 后台队列监督说明
 
+2026-11-04香港16:30执行提速更新：原控制器在全局臂完整epoch1及评估/断点后暂停，新独立控制器PID36434从原last.pt续跑epoch2；后续两臂实际采用6个读图进程、每进程prefetch2。注册配置中的workers2保留历史值，实际覆盖见 `performance_20261104/loader_workers6_prefetch2.json`、`controller/performance_plan.json` 和新会话的 `execution_profile` / `data_loader_created`。源码、科学配方和原history不改。启动记录改看 `performance_launch.json`，最终实测见 `performance_20261104/LIVE_SPEEDUP.json`；详细说明见仓库 `docs/RECONSTRUCTION_E2_PERFORMANCE_20261104.md`。原11416只作历史定位，不要复活旧入口。
+
+16:36核验已完成：连续640Study的稳定速度2.945→4.350Study/s，约1.48倍；等待占比57.45%→0.61%。这是跨轮观测区间，局部正式臂尚未启动，不冒称全部队列同倍率。后台独立性与实际新loader已验，记录在 `PERFORMANCE_BACKGROUND_VERIFIED.json` 和 `performance_20261104/RESULT.json`；无需AI继续监控。
+
 2026-11-04香港14:51已启动，源码`18f90a8`、控制器PID11416。14:53现场核验：PPID1，自有SID/PGID，无TTY，stdin=/dev/null，输出落盘；全局臂epoch0完整开发集评估从129推进到385/3703 Study。此时尚无正式训练后AUC，不把机械验证或进程存活当作提分结果。PID只作历史定位，当前状态必须查看下列文件及真实进程。
 
 队列只执行全局继续训练6轮、全图＋原图局部6轮，然后汇总三项预定义患者配对比较。两臂各自先做完整epoch0基线评估，尚未优化时的模型也可保持最佳。E1第13轮不会恢复，E3/E4不会自动启动。
@@ -16,6 +20,7 @@ cat "$CXR_E2/controller/PROGRESS.md"
 cat "$CXR_E2/controller/STATUS.json"
 tail -n 30 "$CXR_E2"/controller/logs/*.log
 tail -n 30 "$CXR_E2/controller.launch.log"
+tail -n 30 "$CXR_E2/controller.performance.launch.log"
 docker ps --format '{{.Names}} {{.Status}}'
 ```
 
