@@ -1660,3 +1660,11 @@
 - 启动后384→864 Study用66.48s，稳态7.22Study/s、GPU97%；四轮训练仍估3–4h，累计ETA受首200s冷启动影响，不作为实测整轮。BACKGROUND_VERIFIED.json保存独立进程及进度证据。
 - 赢后独立sprint.deploy自动打可搬移包、固定3Study数值一致性核验及完整test CSV；predict/cost共用实现，原best不覆盖，失败停机无自动新实验。3项官方镜像CPU交付检查通过。
 - 规则/原train-valid清单/041 CSV哈希不变；新模型AUC、完整epoch、最终CSV与T4合规验收均尚未完成。用户可关闭对话，后台不依赖AI轮询。
+
+
+### 2026-11-05 00:50（香港）· 用户明确暂缓CSV生成
+
+- 用户要求先不生成CSV，待训练有结果后另行指示；4轮训练及唯一官方valid对比保持运行，不请求用户选择方案。
+- 因后台controller已运行旧内存版本并会在胜出时调用postrun入口，新增部署模块显式`--generate-submission`门槛；无标志仅写awaiting_user_instruction状态，不打包、不读取test、不写CSV。
+- plan与冲刺交接文档同步此门槛；官方镜像部署CPU测试4项通过，覆盖胜出等待且验证不会访问test/创建部署目录。
+- 修改发生在训练已冻结的源码集合之外；活动训练器已加载原配置，唯一最终valid比较不变，用户下一次明确生成指令时才启动test输出。

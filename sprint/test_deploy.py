@@ -66,6 +66,20 @@ class DeploymentTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'weights changed'):
                 winning_selection(comparison)
 
+    def test_winner_waits_for_explicit_submission_instruction(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            comparison, _ = self._fixture(root)
+            with patch('sprint.deploy.prediction_records') as records:
+                result = publish({'output': str(root)})
+            self.assertEqual(result['state'], 'awaiting_user_instruction')
+            self.assertFalse(result['test_images_read'])
+            self.assertFalse(result['submission_generated'])
+            records.assert_not_called()
+            self.assertFalse((root / 'deployment_candidate').exists())
+            self.assertEqual(json.loads((root / 'deployment_status.json').read_text())['state'],
+                             'awaiting_user_instruction')
+
     def test_package_portable_inventory_and_corruption_detection(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

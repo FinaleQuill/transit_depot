@@ -300,10 +300,21 @@ def check_saved_validation(predictor, config, comparison, output):
     return result
 
 
-def publish(config):
+def publish(config, *, generate_submission=False):
     comparison = Path(config['output']) / 'final_comparison'
     output = Path(config['output']) / 'deployment_candidate'
-    winning_selection(comparison)  # Refuse before any test image access or new output.
+    selection, report = winning_selection(comparison)
+    if not generate_submission:
+        result = {
+            'state': 'awaiting_user_instruction',
+            'selected_candidate': selection['selected'],
+            'candidate_macro_auc': report.get('candidate', {}).get('macro_auc'),
+            'test_images_read': False,
+            'submission_generated': False,
+            'next_action': 'Run sprint.deploy with --generate-submission only after explicit user instruction.',
+        }
+        _write_json(Path(config['output']) / 'deployment_status.json', result)
+        return result
     if output.exists():
         raise FileExistsError('Existing deployment candidate is retained without modification')
     try:
@@ -419,13 +430,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--generate-submission', action='store_true',
+                        help='Explicitly authorize reading the official test images and writing a new CSV')
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
     if not args.execute:
         print(json.dumps({'output': str(Path(config['output']) / 'deployment_candidate'),
                           'requires': 'completed winning sole final comparison', 'test_images_read': False}))
         return
-    print(json.dumps(publish(config), indent=2))
+    print(json.dumps(publish(config, generate_submission=args.generate_submission), indent=2))
 
 
 if __name__ == '__main__':

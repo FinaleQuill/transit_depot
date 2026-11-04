@@ -91,7 +91,7 @@
     "study_aggregation": "all original views; FP64 probability mean",
     "compare_against": "Single final inference; pair with cached actual submission_best 041 and historical local-best A_F2_B_F2",
     "switch_if": "Macro-AUC strictly exceeds both cached baselines and class1 AUC is not below historical-local-best class1; otherwise retain 041. No additional candidates.",
-    "on_win": "Select sprint for next submission; automatically prepare separate deployment_candidate and fixed test CSV, leaving submission_best immutable. Official timing eligibility remains pending."
+    "on_win": "Report the sole local comparison only. Do not read test images, create a deployment package, or generate any CSV unless the user explicitly instructs it after seeing results."
   },
   "data_boundary": {
     "official_train_only": true,
