@@ -1,0 +1,18 @@
+{
+  "repo": "timm/vit_base_patch14_reg4_dinov2.lvd142m",
+  "revision": "3b06466a5548c52b8b98822e1390987695fcbf82",
+  "url": "https://huggingface.co/timm/vit_base_patch14_reg4_dinov2.lvd142m/resolve/3b06466a5548c52b8b98822e1390987695fcbf82/model.safetensors",
+  "license": "apache-2.0",
+  "gated": false,
+  "pretraining_dataset": "LVD-142M",
+  "sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "bytes": 346344168,
+  "source_metadata": {
+    "README.md": "21cc62b20fe1b2afb3ceb9f5fe977d6034f1d788ac2552845ecf490f4bba38d6",
+    "config.json": "e97f09e4eb07acb8218beca463c2f08f240e74a3a623da4a1b9f96e0e8ec4a92",
+    "LICENSE": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+    "MODEL_CARD.md": "70ca59606bee0a5fbb1baec80e7e29a93cd7cfbe26ca1910c52a852c4aab09d0",
+    "hf_api.json": "fa797213abca2b818cd94a1722b05a4a76dddaa750f14c607baf082a7d24c00c",
+    "UPSTREAM_README.md": "d1bc2e9686522bbd66ed6123dc81eb36b3a98e8ea9a2ca97778f54a1c641c9e1"
+  }
+}
