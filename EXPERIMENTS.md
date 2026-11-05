@@ -11,3 +11,5 @@
 | 2026-11-02 | tight_crop_ab_20261102：配对Tiny/Base seed48固定E2 | train训练、valid评估；A完整letterbox、B主体crop+p=.5擦除 | AP-only主要终点、患者bootstrap1000；控制器PID 28152于03:21（香港）启动。见 docs/TIGHT_CROP_AB_PLAN_20261102.json，实时状态 artifacts/tight_crop_ab_20261102/STATUS.md。 |
 
 | 2026-11-02 | tight_crop_ab_20261102/earlystop25：用户修订A后B、最多25轮 | train优化、valid AP-only早停；B原crop+p=.5擦除 | patience5/min_delta0.0001，保留AP最佳EMA；安全迁移原A_tiny E1，见 docs/TIGHT_CROP_AB_EARLYSTOP_PLAN_20261102.json。 |
+
+| 2026-11-05 | DINOv2_B518_fold0123 | 新公开初始化、完整Study BCE、80/20患者折、EMA、最多18轮 | 正在训练，未有开发/平台结果；无新清洗/无标签改写；fold4改为开发 |
