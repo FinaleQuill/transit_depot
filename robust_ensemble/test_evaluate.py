@@ -1,6 +1,7 @@
 from collections import Counter
 from copy import deepcopy
 import csv
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -10,9 +11,40 @@ from sklearn.metrics import roc_auc_score
 
 from deploy_kd import IMAGE_CSV_HEADER
 from robust_ensemble.evaluate import image_cache, sensitivity, uncertainty, weighted_auc_many, selection_checks
+from sprint.evaluate import _write_json
+from student_experiment_evaluation import score_probabilities
 
 
 class EvaluationTests(unittest.TestCase):
+    def test_numpy_prediction_decisions_serialize_through_report_writer(self):
+        keys = [('p' + str(i // 2), str(i)) for i in range(8)]
+        labels = {key: [i % 2] * 10 for i, key in enumerate(keys)}
+        old = {key: np.full(10, (i * 3 % 8) / 8., dtype=np.float64)
+               for i, key in enumerate(keys)}
+        new = {key: value.copy() for key, value in old.items()}
+        counts = {key: 1 if i < 4 else 2 for i, key in enumerate(keys)}
+        records = [{'subject_id': key[0], 'study_id': key[1], 'view_position': 'AP'}
+                   for key in keys]
+        score = score_probabilities(labels, old, counts)
+        sensitive = sensitivity(labels, old, counts, records)
+        for change in (False, True):
+            if change:
+                new[keys[0]][0] = np.nextafter(new[keys[0]][0], np.inf)
+            # Match the original failing path: max over NumPy scalar differences.
+            difference = max(abs(new[k][0] - old[k][0]) for k in keys)
+            self.assertIsInstance(difference, np.floating)
+            checks = selection_checks(score_probabilities(labels, new, counts), score,
+                                      sensitivity(labels, new, counts, records), sensitive, difference)
+            self.assertTrue(all(type(value) is bool for value in checks.values()))
+            self.assertEqual(checks['class1_exactly_preserved'], not change)
+            report = {'candidate': score, 'selection_checks': checks,
+                      'candidate_won': all(checks.values()),
+                      'class1_max_abs_probability_difference': float(difference)}
+            with tempfile.TemporaryDirectory() as temporary:
+                path = Path(temporary) / 'report.json'
+                _write_json(path, report)
+                self.assertEqual(json.loads(path.read_text()), report)
+
     def test_patient_equal_slices_recompute_patient_counts_within_slice(self):
         # Patient a has more total Studies but only one single-image Study.
         # All three single-image patients must therefore have equal weight.

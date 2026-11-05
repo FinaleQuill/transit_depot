@@ -136,13 +136,16 @@ def uncertainty(labels, new, old, counts, *, samples, seed):
 
 
 def selection_checks(new, old, new_sensitive, old_sensitive, class1_difference):
-    return {'macro_strictly_better': new['macro_auc'] > old['macro_auc'],
+    checks = {'macro_strictly_better': new['macro_auc'] > old['macro_auc'],
             'class8_strictly_better': new['per_class_auc'][7] > old['per_class_auc'][7],
             'single_image_macro_not_worse': new['slices']['single_image_study']['macro_auc'] >=
                 old['slices']['single_image_study']['macro_auc'] - 1e-12,
             'patient_equal_macro_not_worse': new_sensitive['patient_equal']['macro_auc'] >=
                 old_sensitive['patient_equal']['macro_auc'] - 1e-12,
             'class1_exactly_preserved': class1_difference == 0.}
+    # Differences computed from saved/model NumPy arrays produce np.bool_.
+    # Keep the same comparisons while returning JSON-native decision values.
+    return {name: bool(value) for name, value in checks.items()}
 
 
 def evaluate(config):
@@ -213,7 +216,7 @@ def evaluate(config):
         new_score = score_probabilities(labels, candidate, counts)
         new_sensitive = sensitivity(labels, candidate, counts, records)
         old_sensitive = sensitivity(labels, reference, counts, records)
-        class1_difference = max(abs(candidate[k][0] - reference[k][0]) for k in labels)
+        class1_difference = float(max(abs(candidate[k][0] - reference[k][0]) for k in labels))
         checks = selection_checks(new_score, old_score, new_sensitive, old_sensitive, class1_difference)
         bootstrap = uncertainty(labels, candidate, reference, counts,
             samples=config['bootstrap_samples'], seed=config['bootstrap_seed'])
