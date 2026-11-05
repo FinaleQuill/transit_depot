@@ -30,3 +30,6 @@
 
 
 2026-11-05 20:37补充：独立CPU配对诊断已运行，PID225021，状态在运行根上级`reassessment/development_comparisons/monitor_status.json`。每个完整epoch后与已核验fold4 CNN参考比较；36小时有界等待、无GPU/无训练改动/无自动提交。原训练源码与配置SHA已复核未变。真实平台反馈和更严格采用原则见[平台泛化复审](PLATFORM_GENERALIZATION_REASSESSMENT_20261105.md)。
+
+
+**2026-11-05 21:25最新状态：用户明确立即停止且不要再训练。** 当前DINO已收到SIGTERM退出，CPU比较监控亦停止；STOP保留。第2轮中断，只有第1轮完整断点/评估。禁止依据上方历史启动/恢复命令继续执行。未来需新的用户训练授权，并改用官方原始未清洗数据；本次没有启动新训练。
