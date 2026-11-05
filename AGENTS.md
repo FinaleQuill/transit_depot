@@ -1,6 +1,6 @@
 # 新工程协作约定
 
-**2026-11-05 13:11（香港）当前执行：** 新授权采用Sprint Base768＋原A_F2 Tiny768＋现成Opacity512，类1保留Base，其余40/40/20；新增训练0次，一个固定候选完整验证。独立后台控制器PID201971，实际状态见`../reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/controller_status.json`，勿重复启动。Macro/类8/单图/患者等权门槛通过才自动生成新CSV；正式时延按用户要求暂缓。见[执行方案](docs/ROBUST_ENSEMBLE_20261105.md)。
+**2026-11-05 13:35（香港）本轮已完成：** 保留双768＋Opacity512固定集成Macro **0.818992**（较Sprint+0.001029），五项门槛通过；新[CSV](../submission_robust_0818992.csv)已审计交付，原两份CSV保留。新增训练0次，报告写入故障已从完整预测CPU恢复，独立复算通过；后台退出，不重复启动。类8仍显著低于均值、增量区间跨零，正式T4时延待验。见[最终复盘](docs/ROBUST_ENSEMBLE_RESULTS_20261105.md)。
 
 
 当前分支为独立Study重构研究，实际阶段见README.md、reconstruction/PROTOCOL.md和WORKLOG.md；原ConvNeXt V1教师/蒸馏路线保留供历史追溯。训练、续训和GPU推理按当前会话授权执行；旧阶段“训练0次”记录不能当成现状。旧工程已完整封存在 archive/legacy_20261016_2345；禁止复用其训练进程或把旧指标当新工程结果。

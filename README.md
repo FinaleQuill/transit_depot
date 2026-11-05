@@ -1,6 +1,6 @@
 **2026-11-05 12:30（香港）三模型最终复盘：** 4＋6轮及唯一valid已08:04完成，Macro **0.817044** 低于保留Sprint **0.817963**；类8小涨但仍显著低于均值，类2/4/6退化抵消收益。保留已交付CSV，新权重留存，后台退出、不自动补实验。见[结果分析](docs/ENSEMBLE_RESULTS_20261105.md)。
 
-**2026-11-05 13:11（香港）当前执行：** 新授权采用Sprint Base768＋原A_F2 Tiny768＋现成Opacity512，类1保留Base，其余40/40/20；新增训练0次，一个固定候选完整验证。独立后台控制器PID201971，实际状态见`../reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/controller_status.json`，勿重复启动。Macro/类8/单图/患者等权门槛通过才自动生成新CSV；正式时延按用户要求暂缓。见[执行方案](docs/ROBUST_ENSEMBLE_20261105.md)。
+**2026-11-05 13:35（香港）本轮已完成：** 保留双768＋Opacity512固定集成Macro **0.818992**（较Sprint+0.001029），五项门槛通过；新[CSV](../submission_robust_0818992.csv)已审计交付，原两份CSV保留。新增训练0次，报告写入故障已从完整预测CPU恢复，独立复算通过；后台退出，不重复启动。类8仍显著低于均值、增量区间跨零，正式T4时延待验。见[最终复盘](docs/ROBUST_ENSEMBLE_RESULTS_20261105.md)。
 
 
 **2026-11-05 03:38（香港）多模型冲刺新授权：** 已保存0.817963成果并生成[CSV](../submission_sprint_0817963.csv)。新固定阵容为冻结Sprint Base768＋context Tiny512（4轮）＋opacity attention Tiny512（6轮），见[执行说明](docs/ENSEMBLE_SPRINT_20261105.md)。独立后台队列已实际推进优化器更新；预计训练约4–6小时，末次比较/胜出CSV另15–30分钟。旧队列不恢复。
