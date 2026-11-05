@@ -1,3 +1,5 @@
+**2026-11-05 20:37（香港）平台退分复审：** 用户明确041/best=76.92、Robust=76.75、033/(2)=76.72、044/submission4=76.91；四份CSV已SHA绑定。当前DINO继续，尚无完整epoch结果；新dev病例构成仍不同于officialvalid，不能凭整体AUC上涨交付。已核验同fold4旧CNN参考并启动CPU逐轮配对/困难患者诊断（PID225021），见[复审决定](docs/PLATFORM_GENERALIZATION_REASSESSMENT_20261105.md)。训练源代码/配置未改，18轮上限与既有早停保留。
+
 **2026-11-05 20:06（香港）新授权独立训练进行中：** 用户要求全盘接管与立即重构训练，覆盖此前停止记录。已重新核对两份PDF/答疑和退分证据，启动公开DINOv2 reg4 Base518新实验；train14,811 Study/8,844患者，fold4开发3,702 Study/2,211患者，最多18轮/至少8轮/patience5。fold4本轮已明确改作开发，不能再称独立H；无旧医学任务权重或KD、未用official valid/test选模。后台PID218075已确认实际优化器更新，详见[方案](docs/BREAKTHROUGH_PLAN_20261105.md)与[监督](docs/BREAKTHROUGH_SUPERVISION_20261105.md)。历史队列保持原状，不重复启动。
 
 **2026-11-05 12:30（香港）三模型最终复盘：** 4＋6轮及唯一valid已08:04完成，Macro **0.817044** 低于保留Sprint **0.817963**；类8小涨但仍显著低于均值，类2/4/6退化抵消收益。保留已交付CSV，新权重留存，后台退出、不自动补实验。见[结果分析](docs/ENSEMBLE_RESULTS_20261105.md)。

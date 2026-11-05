@@ -27,3 +27,6 @@
 安全停止：在运行根创建 `STOP`，训练器在当轮训练、验证和完整断点保存后退出；不需要中断GPU计算。恢复前检查实际进程/锁、failure和最后完整checkpoint，明确保留源码/配置/数据SHA；再用 `python -m breakthrough.launch --config breakthrough/plan.json --execute --resume`。原有STOP需在明确恢复决定后处理。禁止同时启动第二个同名run。若本地盘丢失，先把工作区`last.pt`恢复到配置规定的checkpoint_dir，并恢复已归档的依赖与公开初始化；恢复验证会检查证据一致。
 
 本轮完成后输出是开发结果和可恢复模型；下一步依照方案审查证据，再执行患者折复验或固定全train重训。后台不自动扫描新融合比例，也不上传比赛平台。
+
+
+2026-11-05 20:37补充：独立CPU配对诊断已运行，PID225021，状态在运行根上级`reassessment/development_comparisons/monitor_status.json`。每个完整epoch后与已核验fold4 CNN参考比较；36小时有界等待、无GPU/无训练改动/无自动提交。原训练源码与配置SHA已复核未变。真实平台反馈和更严格采用原则见[平台泛化复审](PLATFORM_GENERALIZATION_REASSESSMENT_20261105.md)。
