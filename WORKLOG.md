@@ -1829,3 +1829,8 @@
 - 新建one_week原始数据/旧OOF适配、混split加载及固定9/25日程；不训练教师，raw30344图全部保留，16缺软目标完整BCE。
 - 冻结A全raw质量基准→B合并valid seed44/43；valid并训后关闭评估，单44主候选/双seed等权备选，不自动上传。
 - 当前为实现和启动前检查，训练实际发生以新监督文件的真实optimizer/EMA计数为准；不把预排队三阶段写成已完成。
+
+### 2026-11-06 19:09（香港）新学生真实启动核验
+- 新控制器20353/PPID1/SID20353，容器cxr-one-week-raw_anchor_seed44，已核验68真实optimizer/EMA更新、AMP跳步0；完整epoch0。
+- 当前实际新学生1个，后续train+valid两seed仅条件排队，新教师0个；13项CPU检查通过。
+- 启动回执ONE_WEEK_20261106/LAUNCH_VERIFIED.json；冠军CSV/最佳FP32与旧STOP均核验保留，无平台提交。
