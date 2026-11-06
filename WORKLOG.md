@@ -1767,3 +1767,11 @@
 - 新raw_rebuild生命周期复用已测DINO数值核心，严格原CSV/OOF患者血缘检查；每轮单体/固定50:50融合、AP/单图/反复检查患者配对诊断，完整后仅best epoch给第二折资格。
 - 30项CPU测试和64Study/101图GPU前反向/完整断点通过；源码b0a4847，21:58控制器244322独立启动，核验25有效更新/0跳步，正式第1轮未完成。max18/min4/patience4，无官方valid/test选择。
 - 完整last仅本地盘，最佳FP16/日志/证据持久化；不冒称已有AUC或平台涨分。完整方案与监督见RAW_REBUILD_PLAN/SUPERVISION_20261105.md；旧STOP/用户未提交文件保持。
+
+
+### 2026-11-06 10:28（香港）· 用户追加5轮，保持原配方续至最多23轮
+
+- 用户明确18→23轮、其余不变；等18轮完整结束，最佳.804635263/stale0/8334有效更新，旧控制器退出0；原last/best与配置/终态均归档并SHA核验。
+- 原18轮cosine保留，新增lr_schedule_epochs=18仅固定日程，第19–23轮沿用head2e-5末端低LR；min4/patience4/0.0002及best/meaningful/stale/Adam/EMA/scaler/RNG不重置，未新增数据或其他超参。
+- 显式receipt仅允许已绑定epoch18父断点和受控源码/配置变更，旧checkpoint不回写；14项回归+7项延期数值/恢复测试通过，源码9907af4。
+- 独立PID314314于10:26:14接续，核验epoch19/23、8350有效更新/0跳步/headLR2e-5，旧最佳字节不变；进度仍用原run路径，详见RAW_REBUILD_EXTENSION_23_20261106.md。
