@@ -1,5 +1,11 @@
 # 新蒸馏训练监督入口
 
+## 当前状态：已停止（2026-11-06 18:11，香港）
+
+用户因比赛仅剩约一周要求停止当前蒸馏思路。KD_REBUILD_20261106根目录`STOP`保留；当前DINOv3-L内折0于第3轮5,408/9,879 Study处收到SIGTERM，最近完整断点为第2轮。退出码130/`KeyboardInterrupt`是用户停止，不是数值失败。controller状态文件保留其`failed`历史字段；单run状态为`interrupted`。容器、控制器、GPU训练进程均已退出，六教师无一完成，未启动学生或生成submission。last和EMA断点SHA已复核，见[USER_STOP_RECORD.json](/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/USER_STOP_RECORD.json)。不得恢复该队列或另开训练，直到用户对新方案另行明确授权。
+
+一周赛期的候选转向方案见[ONE_WEEK_PIVOT_PLAN_20261106.md](ONE_WEEK_PIVOT_PLAN_20261106.md)。以下段落为准备、启动及运行中的历史记录，不代表当前仍在训练。
+
 2026-11-06，香港时间。用户已授权第一阶段；启动状态以以下实时文件和实际进程为准。准备、机械测试与正式训练分别登记，不把GPU试跑当正式完整轮次。
 
 - 实验根：`/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/`

@@ -1,4 +1,4 @@
-**2026-11-06 15:47（香港）蒸馏第一阶段已正式启动并核验。** KD_REBUILD_20261106首个DINOv3-L内折0于15:45:13启动；独立控制器PID12157/PPID1/SID12157、容器训练PID12194，核验真实优化器更新4→7、跳步0，首轮尚未完成。六教师合计132轮，教师完成后停等效果复盘；不得重复启动已有launch.json的队列。完整原始数据政策有效，旧STOP/旧实验保留。见研究仓库[监督入口](docs/KD_REBUILD_SUPERVISION_20261106.md)。
+**2026-11-06 18:11（香港）最新状态：蒸馏教师队列已按用户要求停止。** 首个DINO教师完整保存至第2轮，第3轮被SIGTERM中断；六教师完成0个。旧KD队列STOP保留，无GPU训练。替代短周期路线仅为建议，尚未获启动授权。见[一周转向方案](docs/ONE_WEEK_PIVOT_PLAN_20261106.md)和[停止回执](/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/USER_STOP_RECORD.json)。下方启动记录均为历史。
 
 **2026-11-06（香港）最新用户授权：按蒸馏修订方案启动新训练。** 新实验KD_REBUILD_20261106使用完整原始数据的患者隔离划分，第一阶段为三内折×DINOv3-L/ConvNeXt V1-Large六教师；配置已冻结，实际启动核验见[监督入口](docs/KD_REBUILD_SUPERVISION_20261106.md)。旧STOP、旧raw DINO与clean队列保留。下方停止记录为历史。
 
