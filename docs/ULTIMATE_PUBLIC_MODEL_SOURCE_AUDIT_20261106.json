@@ -1,0 +1,259 @@
+{
+  "created_hong_kong": "2026-11-06T14:46:40.163989+08:00",
+  "scope": "Read-only source and license metadata audit; no model tensor payload downloaded; no training/inference/submission generation. HTTP HEAD made only to verify anonymous checkpoint accessibility.",
+  "license_checks": {
+    "no_700M_or_MAU_term_found": true,
+    "redistribution_rights": "DINOv3 License 1(a) explicitly grants use, reproduce, distribute, copy, create derivative works, modifications.",
+    "redistribution_obligations": "License 1(b)(i): only under terms of DINOv3 Agreement and provide a copy with material or derivatives. 1(b)(ii): acknowledge DINO Materials in published research.",
+    "restricted_uses": "Comply with applicable laws, trade controls, privacy and data protection; do not encourage reverse engineering/decompilation; no ITAR or export-prohibited uses incl military/warfare, nuclear applications, espionage, guns/illegal weapons.",
+    "other_limits": "Non-exclusive, worldwide, non-transferable, royalty-free LIMITED license. Meta may terminate breach; amended license effective immediately on continued use; disclaimer, indemnity, California jurisdiction. Non-standard OSI, so preserve exact text/revision/hash and seek organizer review through competition materials, not assume automatic eligibility.",
+    "non_medical_basis": "Model cards identify LVD-1689M web dataset and general image feature encoder distilled from DINOv3 ViT-7B. No medical-task pretraining declared. Broad web data should not be represented as a proof that every image is non-medical; event rule distinguishes dedicated medical-task pretraining.",
+    "source_permission_boundary": "Public anonymous timm source is observed nongated. No Meta gated endpoint was bypassed or gated model approval represented. Organizer QA states DINOv3 may meet core rights but final eligibility requires event verification."
+  },
+  "note": "Source/metadata hashes only; no checkpoint tensor payload was downloaded, so actual checkpoint SHA256 is not yet available.",
+  "models": [
+    {
+      "id": "timm/vit_large_patch16_dinov3.lvd1689m",
+      "api_url": "https://huggingface.co/api/models/timm/vit_large_patch16_dinov3.lvd1689m",
+      "api_snapshot_sha256": "cb4eca77a86bdfc5d817e987efe3dbc938bbebc6f02c56f938ee16748a3a0b3b",
+      "revision": "30c1109559f65dea34316b0d4842d35c5771fe11",
+      "private": false,
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "F32": 303079424
+        },
+        "total": 303079424
+      },
+      "cardData": {
+        "tags": [
+          "image-feature-extraction",
+          "timm",
+          "transformers"
+        ],
+        "pipeline_tag": "image-feature-extraction",
+        "library_name": "timm",
+        "license": "other",
+        "license_name": "dinov3-license",
+        "license_link": "https://ai.meta.com/resources/models-and-libraries/dinov3-license",
+        "datasets": [
+          "lvd-1689m"
+        ]
+      },
+      "weights_anonymous_HEAD": {
+        "requested_url": "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/resolve/30c1109559f65dea34316b0d4842d35c5771fe11/model.safetensors",
+        "status": 200,
+        "content_length": "1212347640",
+        "content_type": "application/octet-stream",
+        "bytes_read": 0,
+        "final_host": "us.aws.cdn.hf.co"
+      },
+      "source_resources": {
+        "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/README.md": {
+          "status": 200,
+          "sha256": "952719599ab8c896ac9e0eadc53343a07f79d161e39dacdef6c4c08b69743e3f"
+        },
+        "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/LICENSE.md": {
+          "status": 200,
+          "sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e"
+        },
+        "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/config.json": {
+          "status": 200,
+          "sha256": "a71f705b0074e173540d0bdbd3aa940fa8d7d3c6c7f020a683004c46ca605b24"
+        }
+      }
+    },
+    {
+      "id": "timm/vit_base_patch16_dinov3.lvd1689m",
+      "api_url": "https://huggingface.co/api/models/timm/vit_base_patch16_dinov3.lvd1689m",
+      "api_snapshot_sha256": "399a517c8dc2db858b9a66dca08715ccacd2a761331d45baec5320f1d51f43f0",
+      "revision": "c6a5fb7d12bbd3cf3b0079253141c3332aaed7da",
+      "private": false,
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "F32": 85641216
+        },
+        "total": 85641216
+      },
+      "cardData": {
+        "tags": [
+          "image-feature-extraction",
+          "timm",
+          "transformers"
+        ],
+        "pipeline_tag": "image-feature-extraction",
+        "library_name": "timm",
+        "license": "other",
+        "license_name": "dinov3-license",
+        "license_link": "https://ai.meta.com/resources/models-and-libraries/dinov3-license",
+        "datasets": [
+          "lvd-1689m"
+        ]
+      },
+      "weights_anonymous_HEAD": {
+        "requested_url": "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/resolve/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/model.safetensors",
+        "status": 200,
+        "content_length": "342579728",
+        "content_type": "application/octet-stream",
+        "bytes_read": 0,
+        "final_host": "us.aws.cdn.hf.co"
+      },
+      "source_resources": {
+        "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/raw/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/README.md": {
+          "status": 200,
+          "sha256": "cebdbe299e69067797886eb381366e3e353b793a2fed95d2c5a47716f9749b96"
+        },
+        "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/raw/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/LICENSE.md": {
+          "status": 200,
+          "sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e"
+        },
+        "https://huggingface.co/timm/vit_base_patch16_dinov3.lvd1689m/raw/c6a5fb7d12bbd3cf3b0079253141c3332aaed7da/config.json": {
+          "status": 200,
+          "sha256": "5ca17ece8677541aa067db570946330ecca4125b713a51e89be9e7ec97395e94"
+        }
+      }
+    },
+    {
+      "id": "timm/vit_large_patch14_reg4_dinov2.lvd142m",
+      "api_url": "https://huggingface.co/api/models/timm/vit_large_patch14_reg4_dinov2.lvd142m",
+      "api_snapshot_sha256": "5234c287add00686601b982433686337e7b77f780c67c3a65e30f03e24aa23e9",
+      "revision": "f3c408e77602bb412aa65fb03dfa0d5f95cb3832",
+      "private": false,
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "F32": 304370688
+        },
+        "total": 304370688
+      },
+      "cardData": {
+        "license": "apache-2.0",
+        "library_name": "timm",
+        "tags": [
+          "image-feature-extraction",
+          "timm",
+          "transformers"
+        ]
+      },
+      "weights_anonymous_HEAD": {
+        "requested_url": "https://huggingface.co/timm/vit_large_patch14_reg4_dinov2.lvd142m/resolve/f3c408e77602bb412aa65fb03dfa0d5f95cb3832/model.safetensors",
+        "status": 200,
+        "content_length": "1217515128",
+        "content_type": "application/octet-stream",
+        "bytes_read": 0,
+        "final_host": "us.aws.cdn.hf.co"
+      },
+      "source_resources": {
+        "https://huggingface.co/timm/vit_large_patch14_reg4_dinov2.lvd142m/raw/f3c408e77602bb412aa65fb03dfa0d5f95cb3832/README.md": {
+          "status": 200,
+          "sha256": "7d814e06b925da13fae92b02ce9b8b27e6248a27db58c73f437e28987a2bbb81"
+        },
+        "https://huggingface.co/timm/vit_large_patch14_reg4_dinov2.lvd142m/raw/f3c408e77602bb412aa65fb03dfa0d5f95cb3832/LICENSE.md": {
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        "https://huggingface.co/timm/vit_large_patch14_reg4_dinov2.lvd142m/raw/f3c408e77602bb412aa65fb03dfa0d5f95cb3832/config.json": {
+          "status": 200,
+          "sha256": "63039941bb26f4fcf7eefba578a60a1bc3fc6d52b46420f75cc88b31da01ae42"
+        }
+      }
+    },
+    {
+      "id": "timm/convnext_base.fb_in22k_ft_in1k",
+      "api_url": "https://huggingface.co/api/models/timm/convnext_base.fb_in22k_ft_in1k",
+      "api_snapshot_sha256": "740cb4249cd4d48d86352a79de57adb9a8a2c02df623c94819e5253bad232994",
+      "revision": "67758fcbcf9f007ec7630bf8636b74a8f24e52a0",
+      "private": false,
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "F32": 88591464
+        },
+        "total": 88591464
+      },
+      "cardData": {
+        "license": "apache-2.0",
+        "library_name": "timm",
+        "tags": [
+          "image-classification",
+          "timm",
+          "transformers"
+        ],
+        "datasets": [
+          "imagenet-1k",
+          "imagenet-22k"
+        ]
+      },
+      "weights_anonymous_HEAD": {
+        "requested_url": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k/resolve/67758fcbcf9f007ec7630bf8636b74a8f24e52a0/model.safetensors",
+        "status": 200,
+        "content_length": "354400320",
+        "content_type": "application/octet-stream",
+        "bytes_read": 0,
+        "final_host": "us.aws.cdn.hf.co"
+      },
+      "source_resources": {
+        "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k/raw/67758fcbcf9f007ec7630bf8636b74a8f24e52a0/README.md": {
+          "status": 200,
+          "sha256": "c2f8389368950074b8b97d39b04a636aacffaf8b4846f416703d3431f40eecad"
+        },
+        "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k/raw/67758fcbcf9f007ec7630bf8636b74a8f24e52a0/LICENSE.md": {
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k/raw/67758fcbcf9f007ec7630bf8636b74a8f24e52a0/config.json": {
+          "status": 200,
+          "sha256": "df37e92cec6ee325bc0051d897fda7b91af037fa89a20a5a5e4682a3d31e6067"
+        }
+      }
+    },
+    {
+      "id": "timm/convnext_large.fb_in22k_ft_in1k",
+      "api_url": "https://huggingface.co/api/models/timm/convnext_large.fb_in22k_ft_in1k",
+      "api_snapshot_sha256": "007a895faa54fe9db4b19e9374fd3f0b7946e64d4f0901b662382a87fd610c7d",
+      "revision": "dc2e53fad264aa1fb4e5940e0d1c9b79ac6e0854",
+      "private": false,
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "F32": 197767336
+        },
+        "total": 197767336
+      },
+      "cardData": {
+        "license": "apache-2.0",
+        "library_name": "timm",
+        "tags": [
+          "image-classification",
+          "timm",
+          "transformers"
+        ],
+        "datasets": [
+          "imagenet-1k",
+          "imagenet-22k"
+        ]
+      },
+      "weights_anonymous_HEAD": {
+        "requested_url": "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k/resolve/dc2e53fad264aa1fb4e5940e0d1c9b79ac6e0854/model.safetensors",
+        "status": 200,
+        "content_length": "791103952",
+        "content_type": "application/octet-stream",
+        "bytes_read": 0,
+        "final_host": "us.aws.cdn.hf.co"
+      },
+      "source_resources": {
+        "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k/raw/dc2e53fad264aa1fb4e5940e0d1c9b79ac6e0854/README.md": {
+          "status": 200,
+          "sha256": "66f7828cfb6bec12e789349d6d3ded84fe27bf74520371b81376de53d765381b"
+        },
+        "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k/raw/dc2e53fad264aa1fb4e5940e0d1c9b79ac6e0854/LICENSE.md": {
+          "error": "HTTPError: HTTP Error 404: Not Found"
+        },
+        "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k/raw/dc2e53fad264aa1fb4e5940e0d1c9b79ac6e0854/config.json": {
+          "status": 200,
+          "sha256": "46b593174f90f3d333984afb5ba8ea5bc58c0707215f91205f7e7b1edd60ba6c"
+        }
+      }
+    }
+  ],
+  "dinov3_license_text": "# DINOv3 License\n\n*Last Updated: August 19, 2025*\n\n**“Agreement”** means the terms and conditions for use, reproduction, distribution and modification of the DINO Materials set forth herein.\n\n**“DINO Materials”** means, collectively, Documentation and the models, software and algorithms, including machine-learning model code, trained model weights, inference-enabling code, training-enabling code, fine-tuning enabling code, and other elements of the foregoing distributed by Meta and made available under this Agreement.\n\n**“Documentation”** means the specifications, manuals and documentation accompanying\nDINO Materials distributed by Meta.\n\n**“Licensee”** or **“you”** means you, or your employer or any other person or entity (if you are entering into this Agreement on such person or entity’s behalf), of the age required under applicable laws, rules or regulations to provide legal consent and that has legal authority to bind your employer or such other person or entity if you are entering in this Agreement on their behalf.\n\n**“Meta”** or **“we”** means Meta Platforms Ireland Limited (if you are located in or, if you are an entity, your principal place of business is in the EEA or Switzerland) or Meta Platforms, Inc. (if you are located outside of the EEA or Switzerland).\n\n**“Sanctions”** means any economic or trade sanctions or restrictions administered or enforced by the United States (including the Office of Foreign Assets Control of the U.S. Department of the Treasury (“OFAC”), the U.S. Department of State and the U.S. Department of Commerce), the United Nations, the European Union, or the United Kingdom.\n\n**“Trade Controls”** means any of the following: Sanctions and applicable export and import controls.\n\nBy clicking “I Accept” below or by using or distributing any portion or element of the DINO Materials, you agree to be bound by this Agreement.\n\n## 1. License Rights and Redistribution.\n\na. <ins>Grant of Rights</ins>. You are granted a non-exclusive, worldwide, non-transferable and royalty-free limited license under Meta’s intellectual property or other rights owned by Meta embodied in the DINO Materials to use, reproduce, distribute, copy, create derivative works of, and make modifications to the DINO Materials.\n\nb. <ins>Redistribution and Use</ins>.\n\ni. Distribution of DINO Materials, and any derivative works thereof, are subject to the terms of this Agreement. If you distribute or make the DINO Materials, or any derivative works thereof, available to a third party, you may only do so under the terms of this Agreement and you shall provide a copy of this Agreement with any such DINO Materials.\n\nii.  If you submit for publication the results of research you perform on, using, or otherwise in connection with DINO Materials, you must acknowledge the use of DINO Materials in your publication.\n\niii. Your use of the DINO Materials must comply with applicable laws and regulations, including Trade Control Laws and applicable privacy and data protection laws.\n\niv. Your use of the DINO Materials will not involve or encourage others to reverse engineer, decompile or discover the underlying components of the DINO Materials.\n\nv. You are not the target of Trade Controls and your use of DINO Materials must comply with Trade Controls. You agree not to use, or permit others to use, DINO Materials for any activities subject to the International Traffic in Arms Regulations (ITAR) or end uses prohibited by Trade Controls, including those related to military or warfare purposes, nuclear industries or applications, espionage, or the development or use of guns or illegal weapons.\n\n## 2. User Support.\n\nYour use of the DINO Materials is done at your own discretion; Meta does not process any information nor provide any service in relation to such use.  Meta is under no obligation to provide any support services for the DINO Materials. Any support provided is “as is”, “with all faults”, and without warranty of any kind.\n\n## 3. Disclaimer of Warranty.\n\nUNLESS REQUIRED BY APPLICABLE LAW, THE DINO MATERIALS AND ANY OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OF ANY KIND, AND META DISCLAIMS ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE DINO MATERIALS AND ASSUME ANY RISKS ASSOCIATED WITH YOUR USE OF THE DINO MATERIALS AND ANY OUTPUT AND RESULTS.\n\n## 4. Limitation of Liability.\n\nIN NO EVENT WILL META OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, FOR ANY LOST PROFITS OR ANY DIRECT OR INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF META OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING.\n\n## 5. Intellectual Property.\n\na. Subject to Meta’s ownership of DINO Materials and derivatives made by or for Meta, with respect to any derivative works and modifications of the DINO Materials that are made by you, as between you and Meta, you are and will be the owner of such derivative works and modifications.\n\nb. If you institute litigation or other proceedings against Meta or any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the DINO Materials, outputs or results, or any portion of any of the foregoing, constitutes infringement of intellectual property or other rights owned or licensable by you, then any licenses granted to you under this Agreement shall terminate as of the date such litigation or claim is filed or instituted. You will indemnify and hold harmless Meta from and against any claim by any third party arising out of or related to your use or distribution of the DINO Materials.\n\n## 6. Term and Termination.\n\nThe term of this Agreement will commence upon your acceptance of this Agreement or access to the DINO Materials and will continue in full force and effect until terminated in accordance with the terms and conditions herein. Meta may terminate this Agreement if you are in breach of any term or condition of this Agreement. Upon termination of this Agreement, you shall delete and cease use of the DINO Materials. Sections 3, 4 and 7 shall survive the termination of this Agreement.\n\n## 7. Governing Law and Jurisdiction.\n\nThis Agreement will be governed and construed under the laws of the State of California without regard to choice of law principles, and the UN Convention on Contracts for the International Sale of Goods does not apply to this Agreement. The courts of California shall have exclusive jurisdiction of any dispute arising out of this Agreement.\n\n## 8. Modifications and Amendments.\n\nMeta may modify this Agreement from time to time; provided that they are similar in spirit to the current version of the Agreement, but may differ in detail to address new problems or concerns. All such changes will be effective immediately. Your continued use of the DINO Materials after any modification to this Agreement constitutes your agreement to such modification. Except as provided in this Agreement, no modification or addition to any provision of this Agreement will be binding unless it is in writing and signed by an authorized representative of both you and Meta.\n"
+}
