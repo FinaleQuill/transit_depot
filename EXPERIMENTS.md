@@ -17,3 +17,5 @@
 | 2026-11-05 22:02 | RAW_REBUILD DINOv2-B518 | 官方未清洗30,344图完整覆盖；fold0–3训练/fold4开发 | max18/min4/patience4，Macro选轮+固定同折/困难切片晋级 | running，第1轮未完成，无新平台分 | 源码b0a4847，PID244322；零清洗、非旧断点续训 |
 
 | 2026-11-06 13:02 | RAW_REBUILD DINOv2-B518停止复盘 | 原始30344图完整清单，fold0123训练/fold4开发 | 完整21轮/22部分不计，best20 | DINO .804905；固定50:50 .808672；开发证据非平台分 | 用户停止，GPU退出；保留best，禁止自动续训 |
+
+| 2026-11-06 19:05 | ONE_WEEK_20261106 | 完整raw Tiny768/P2 seed44固定E9/25horizon；质量否决后train+valid seed44/43 | 新学生已授权，启动前检查；无新教师，无test选择 | 方案见docs/ONE_WEEK_ULTIMATE_PLAN_20261106.md，实际以监督为准 |

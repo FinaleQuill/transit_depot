@@ -1,3 +1,5 @@
+**2026-11-06 19:05（香港）一周冲刺新授权。** 用户要求方案后立即训练学生、禁止新教师；新建`ONE_WEEK_20261106`，先raw全量Tiny768/P2固定9轮/25轮LR日程，经唯一valid粗质量门槛后冻结train+valid两seed最终拟合。原76.92与旧STOP保留，不自动提交。完整[方案](docs/ONE_WEEK_ULTIMATE_PLAN_20261106.md)与[监督](docs/ONE_WEEK_SUPERVISION_20261106.md)；实际启动以监督/进程为准。
+
 **2026-11-06 18:11（香港）最新状态：蒸馏教师队列已按用户要求停止。** 首个DINO教师完整保存至第2轮，第3轮被SIGTERM中断；六教师完成0个。旧KD队列STOP保留，无GPU训练。替代短周期路线仅为建议，尚未获启动授权。见[一周转向方案](docs/ONE_WEEK_PIVOT_PLAN_20261106.md)和[停止回执](/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/USER_STOP_RECORD.json)。下方启动记录均为历史。
 
 **2026-11-06（香港）最新用户授权：按蒸馏修订方案启动新训练。** 新实验KD_REBUILD_20261106使用完整原始数据的患者隔离划分，第一阶段为三内折×DINOv3-L/ConvNeXt V1-Large六教师；配置已冻结，实际启动核验见[监督入口](docs/KD_REBUILD_SUPERVISION_20261106.md)。旧STOP、旧raw DINO与clean队列保留。下方停止记录为历史。
