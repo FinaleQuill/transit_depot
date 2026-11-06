@@ -1,0 +1,202 @@
+{
+  "created": "2026-08-31T17:50:11.124825692+08:00",
+  "architecture": "amd64",
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:123a078714d5ea9382d4d9f550753aefce8b34ec5ae11ae8273038d3bcbb943f",
+      "sha256:48333cb35865be08958db688da18d15bb98f9c66292109441b96cb9cfa6dafa1",
+      "sha256:768cc27957b5d14f0cd69aba747727d9a0f6fe1b0dd50e41a382434a291861a7",
+      "sha256:0320afbdc3866862aefcbc0a8cef9d6118c72c99d7ea194420e9022192560081",
+      "sha256:d0867f24cbd91969b157dd4871ceba4a982ace1b431f7edf22177ea7d2fb368d",
+      "sha256:a8cbe072eb1a94a5de02497ae6de23f619321846d0e4cab3bfa008b64276937c",
+      "sha256:7d33d85ca85b48d477a346ed886cb6d930a6c8c482051657c1c197c662f89c73",
+      "sha256:08cc8ed170e7d0937983dd0cd0766eef52d0b3ce26a94fb3b15c8d2eeac1745b",
+      "sha256:ab062870d8f0f15d7d348efc42cd4ffd8ede19ffea2f8ba72646cd98745bf0e5",
+      "sha256:9b81909381989284f3a131be482409b0afb959602b29499236d62c0e12e07967"
+    ]
+  },
+  "history": [
+    {
+      "created": "2026-01-13T05:37:25.257066546Z",
+      "created_by": "/bin/sh -c #(nop)  ARG RELEASE",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-13T05:37:25.289342576Z",
+      "created_by": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-13T05:37:25.319788795Z",
+      "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-13T05:37:25.349310826Z",
+      "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-13T05:37:27.616424184Z",
+      "created_by": "/bin/sh -c #(nop) ADD file:3077ee44db3cc7d38740d60a05c81418dd3825a007db473658464f52689e867b in / "
+    },
+    {
+      "created": "2026-01-13T05:37:27.960006802Z",
+      "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "ARG PYTORCH_VERSION=2.10.0",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "ARG TRITON_VERSION=",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "ARG TARGETPLATFORM=linux/amd64",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "ARG CUDA_VERSION=12.8.1",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "LABEL com.nvidia.volumes.needed=nvidia_driver",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:12:37.511145684Z",
+      "created_by": "RUN |4 PYTORCH_VERSION=2.10.0 TRITON_VERSION= TARGETPLATFORM=linux/amd64 CUDA_VERSION=12.8.1 /bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         ca-certificates         libjpeg-dev         libpng-dev         python-is-python3         python3         python3-dev         python3-pip         && rm -rf /var/lib/apt/lists/* # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-01-21T19:16:06.00768226Z",
+      "created_by": "COPY /usr/local/lib/python3.12 /usr/local/lib/python3.12 # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-01-21T19:16:06.216101279Z",
+      "created_by": "COPY /usr/local/bin /usr/local/bin # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "RUN |4 PYTORCH_VERSION=2.10.0 TRITON_VERSION= TARGETPLATFORM=linux/amd64 CUDA_VERSION=12.8.1 /bin/sh -c if test -n \"${CUDA_VERSION}\" -a \"${TARGETPLATFORM}\" != \"linux/arm64\"; then         apt-get update -qq &&         DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends gcc &&         rm -rf /var/lib/apt/lists/*;     fi # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "ENV NVIDIA_VISIBLE_DEVICES=all",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "ENV LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:16:17.19263603Z",
+      "created_by": "ENV PYTORCH_VERSION=2.10.0",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-01-21T19:16:17.288570881Z",
+      "created_by": "WORKDIR /workspace",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2026-08-31T15:47:38.970005425+08:00",
+      "created_by": "/bin/sh -c #(nop)  ENV DEBIAN_FRONTEND=noninteractive",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-08-31T15:48:46.182657733+08:00",
+      "created_by": "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends         tzdata     && rm -rf /var/lib/apt/lists/*"
+    },
+    {
+      "created": "2026-08-31T15:49:27.667265575+08:00",
+      "created_by": "/bin/sh -c #(nop)  ENV TZ=Asia/Shanghai LANG=C.UTF-8 LC_ALL=C.UTF-8 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MPLBACKEND=Agg",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-08-31T15:56:30.110787638+08:00",
+      "created_by": "/bin/sh -c python -m pip install --no-cache-dir --no-deps --break-system-packages         torchvision==0.25.0+cu128         --index-url https://download.pytorch.org/whl/cu128",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-08-31T09:41:31.486968725Z",
+      "created_by": "/bin/sh -c #(nop) COPY file:dbaea5650aec5a91aef8b016b2493906928d91111e640e230ffacc8d11e2e49b in /tmp/requirements.txt "
+    },
+    {
+      "created": "2026-08-31T17:47:42.455239765+08:00",
+      "created_by": "/bin/sh -c python -m pip install --no-cache-dir --break-system-packages         -r /tmp/requirements.txt         -i https://pypi.tuna.tsinghua.edu.cn/simple"
+    },
+    {
+      "created": "2026-08-31T17:48:33.51077035+08:00",
+      "created_by": "/bin/sh -c #(nop) WORKDIR /workspace",
+      "empty_layer": true
+    },
+    {
+      "created": "2026-08-31T17:49:28.262560017+08:00",
+      "created_by": "/bin/sh -c python -c \"import sys, torch, torchvision, numpy, cv2, sklearn, pandas, albumentations; assert sys.version_info[:2] == (3, 12), f'unexpected python {sys.version}'; print('python     :', sys.version.split()[0]); print('torch      :', torch.__version__, '| CUDA build:', torch.version.cuda); print('torchvision:', torchvision.__version__); print('opencv     :', cv2.__version__); import torch.nn as nn; m = nn.Sequential(nn.Conv2d(3, 8, 3), nn.ReLU(), nn.AdaptiveAvgPool2d(1), nn.Flatten(), nn.Linear(8, 1)); x = torch.randn(2, 3, 224, 224); y = torch.sigmoid(m(x)); print('infer      :', tuple(y.shape), 'smoke OK')\""
+    },
+    {
+      "created": "2026-08-31T17:50:11.124825692+08:00",
+      "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+      "empty_layer": true
+    }
+  ],
+  "config": {
+    "Env": [
+      "PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NVIDIA_VISIBLE_DEVICES=all",
+      "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+      "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+      "PYTORCH_VERSION=2.10.0",
+      "DEBIAN_FRONTEND=noninteractive",
+      "TZ=Asia/Shanghai",
+      "LANG=C.UTF-8",
+      "LC_ALL=C.UTF-8",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "MPLBACKEND=Agg"
+    ],
+    "Cmd": [
+      "/bin/bash"
+    ],
+    "WorkingDir": "/workspace",
+    "Labels": {
+      "com.nvidia.volumes.needed": "nvidia_driver",
+      "org.opencontainers.image.ref.name": "ubuntu",
+      "org.opencontainers.image.version": "24.04"
+    }
+  }
+}

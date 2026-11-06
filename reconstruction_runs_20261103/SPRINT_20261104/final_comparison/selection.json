@@ -1,0 +1,59 @@
+{
+  "selected": "sprint_candidate",
+  "selected_current": "sprint_candidate",
+  "deployment_preferred": "sprint_candidate_pending_acceptance",
+  "candidate_won": true,
+  "baseline_macro_auc": 0.8091159408519895,
+  "candidate_macro_auc": 0.8179628779375786,
+  "macro_auc_delta": 0.008846937085589146,
+  "historical_local_best_macro_auc": 0.817614546496497,
+  "macro_auc_delta_vs_historical_local_best": 0.0003483314410815952,
+  "selection_checks": {
+    "beats_submission_best_macro": true,
+    "beats_historical_local_best_macro": true,
+    "class1_not_below_historical_local_best": true
+  },
+  "rule": "candidate Macro-AUC strictly exceeds both submission_best_041 and historical local best; class 1 AUC is at least historical local best; otherwise retain submission_best_041",
+  "candidate_weights": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+  "candidate_weights_sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+  "baseline_directory": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2",
+  "historical_local_best_directory": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/valid",
+  "baseline_submission": "/home/featurize/work/submission_best.csv",
+  "baseline_submission_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+  "tiny_patch_config": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/config.json",
+  "fixed_classwise_probability_weights": [
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "tta": "hflip2",
+  "report": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/final_comparison/report.json",
+  "research_selection_only": true,
+  "deployment_accepted": false,
+  "deployment_requirements": [
+    "official mean <=100ms per Study",
+    "actual inference assets <=500MB",
+    "predict/cost/submission consistency and complete compliance materials"
+  ]
+}

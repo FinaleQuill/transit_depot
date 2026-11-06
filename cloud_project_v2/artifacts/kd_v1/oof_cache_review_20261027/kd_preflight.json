@@ -1,0 +1,87 @@
+{
+  "dry_run": true,
+  "training_started": false,
+  "models_loaded": false,
+  "configuration": {
+    "fold_plan": "data/cv5_overnight/folds.json",
+    "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "output": "../runs/027_tiny512_kd_seed43",
+    "image_root": "/home/featurize/data/cxr_first",
+    "batch_size": 8,
+    "accumulation_steps": 4,
+    "valid_batch_size": 4,
+    "num_workers": 8,
+    "prefetch_factor": 2,
+    "epochs": 25,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "seed": 43,
+    "backbone_lr": 5e-05,
+    "head_lr": 0.0005,
+    "warmup_epochs": 1,
+    "min_lr_ratio": 0.05,
+    "weight_decay": 0.05,
+    "dropout": 0.2,
+    "drop_path": 0.1,
+    "ema_decay": 0.999,
+    "grad_clip": 1.0,
+    "amp_dtype": "auto",
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "kd_warmup_epochs": 2,
+    "align_teacher_pos_weight": true,
+    "image_size": 512,
+    "validation_tta": "hflip2",
+    "training_mode": "distillation",
+    "resume": null
+  },
+  "differences_from_BCE": {
+    "soft_labels": {
+      "BCE": null,
+      "KD": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2"
+    },
+    "output": {
+      "BCE": "../runs/026_tiny512_bce_seed43",
+      "KD": "../runs/027_tiny512_kd_seed43"
+    },
+    "alpha": {
+      "BCE": 0.0,
+      "KD": 0.2
+    },
+    "training_mode": {
+      "BCE": "supervised_bce",
+      "KD": "distillation"
+    }
+  },
+  "all_other_training_settings_equal": true,
+  "loaded_cache_shape": [
+    30328,
+    2,
+    10
+  ],
+  "checkpoint_schema": 8,
+  "distillation_protocol": {
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "warmup_epochs": 2,
+    "loss": "bernoulli_kl_T2_plus_weighted_bce",
+    "class_reduction": "mean",
+    "study_equal_weighting": true,
+    "align_teacher_pos_weight": true,
+    "soft_labels_sha256": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+    "soft_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+    "teacher_tta": "identity_hflip",
+    "student_training_size": 512,
+    "deployment_tta": "hflip2",
+    "deployment_ensemble": false,
+    "teacher_views": [
+      "identity",
+      "hflip"
+    ],
+    "soft_target_aggregation": "mean_sigmoid_after_pos_weight_alignment_and_temperature",
+    "validation_tta": "hflip2"
+  },
+  "teacher_count": 5,
+  "student_output_absent": true,
+  "free_disk_gib": 7.8330078125
+}

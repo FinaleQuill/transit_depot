@@ -1,0 +1,187 @@
+{
+  "schema": "e2_real_train_chunk_mechanics_v1",
+  "state": "completed",
+  "created_at": "2026-11-04T14:46:10.326103+08:00",
+  "config_path": "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_local.json",
+  "config_sha256": "ede03b545c4d1692942b19b7e511ab06bf456b8b9bf265beeec42f125242936c",
+  "source_sha256": "fbe7f291467613133915d3a2389f474b3b0bfd1c202b54e51b0be0926a87167a",
+  "trials": [
+    {
+      "chunk_size": 4,
+      "state": "completed",
+      "samples": [
+        {
+          "phase": "warmup",
+          "index": 1,
+          "seconds": 29.692429392999657,
+          "loss": 0.5265458226203918,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.2737705111503601,
+          "peak_allocated_bytes": 7736001536,
+          "peak_reserved_bytes": 7786725376,
+          "optimizer_state_tensor_bytes": 702784032
+        },
+        {
+          "phase": "timed",
+          "index": 2,
+          "seconds": 2.8001774509993993,
+          "loss": 0.4211471676826477,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.2083320915699005,
+          "peak_allocated_bytes": 8438786560,
+          "peak_reserved_bytes": 8472494080,
+          "optimizer_state_tensor_bytes": 702784032
+        },
+        {
+          "phase": "timed",
+          "index": 3,
+          "seconds": 2.881217278000804,
+          "loss": 0.37738847732543945,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.18948332965373993,
+          "peak_allocated_bytes": 8440359424,
+          "peak_reserved_bytes": 8472494080,
+          "optimizer_state_tensor_bytes": 702784032
+        }
+      ],
+      "attempted_optimizer_updates": 3,
+      "successful_optimizer_updates": 3,
+      "skipped_optimizer_updates": 0,
+      "same_initial_source_and_rng": true,
+      "same_rng_trajectory_across_chunks_claimed": false,
+      "mean_timed_seconds": 2.8406973645001017,
+      "region_inputs_per_second": 12.32091824964931,
+      "comparable_full_update_samples": true
+    },
+    {
+      "chunk_size": 8,
+      "state": "completed",
+      "samples": [
+        {
+          "phase": "warmup",
+          "index": 1,
+          "seconds": 53.09318240599987,
+          "loss": 0.569610595703125,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.2968812882900238,
+          "peak_allocated_bytes": 13846338560,
+          "peak_reserved_bytes": 14516486144,
+          "optimizer_state_tensor_bytes": 702784032
+        },
+        {
+          "phase": "timed",
+          "index": 2,
+          "seconds": 2.5976943859996027,
+          "loss": 0.5239234566688538,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.2919113039970398,
+          "peak_allocated_bytes": 14536016384,
+          "peak_reserved_bytes": 14564720640,
+          "optimizer_state_tensor_bytes": 702784032
+        },
+        {
+          "phase": "timed",
+          "index": 3,
+          "seconds": 2.58464513600029,
+          "loss": 0.39129433035850525,
+          "optimizer_update_skipped": false,
+          "gradient_norm": 0.19517499208450317,
+          "peak_allocated_bytes": 14538113536,
+          "peak_reserved_bytes": 14564720640,
+          "optimizer_state_tensor_bytes": 702784032
+        }
+      ],
+      "attempted_optimizer_updates": 3,
+      "successful_optimizer_updates": 3,
+      "skipped_optimizer_updates": 0,
+      "same_initial_source_and_rng": true,
+      "same_rng_trajectory_across_chunks_claimed": false,
+      "mean_timed_seconds": 2.5911697609999464,
+      "region_inputs_per_second": 13.507412955642593,
+      "comparable_full_update_samples": true
+    }
+  ],
+  "scientific_training_run": false,
+  "efficacy_or_auc_evaluated": false,
+  "model_weights_saved": false,
+  "dev_accessed": false,
+  "holdout_H_accessed": false,
+  "official_validation_accessed": false,
+  "test_accessed": false,
+  "selection_basis": "execution throughput and memory only",
+  "warmup_steps_per_mode": 1,
+  "timed_steps_per_mode": 2,
+  "max_gpu_seconds": 120,
+  "measurement_scope": "one whole high-view Study per optimizer step; includes forward/backward/AdamW/EMA; excludes data loading, initialization, validation and checkpoint I/O",
+  "limitation": "Formal optimization accumulates 32 Studies per update; these six mechanics updates use one Study with loss/32 and are discarded. Not end-to-end epoch throughput or inference timing.",
+  "input_binding": {
+    "train_manifest_path": "/home/featurize/work/reconstruction_runs_20261103/splits/train.csv",
+    "train_manifest_sha256": "5d1ff23588fa26fa9ead1761e0498b5e958736bf651e8d5b94d645bfdf51df3c",
+    "split_plan_sha256": "b7bf913c38756b9b4db42a87847c7d4879f477b8644cc66a62172c50fa3f4827",
+    "parent_checkpoint_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/best.pt",
+    "parent_checkpoint_sha256": "4ce410f7fe05a6a7bf96a74b283eca9adc50175e29bcc945e0b1ee14bd9db468",
+    "parent_epoch": 8,
+    "selected_study_key": "subject_01131/study_01177",
+    "source_images": [
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001900.jpg",
+        "sha256": "a0ad2debd97b5ce04b75f020b2cff4a8f6e92c9a3d4c03eb2cf05bb3d8fb12d3"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001901.jpg",
+        "sha256": "516567c3eadfbcb2ef1a34fec2ee06a72a14be45ff68ec25da2775aa44ff76a8"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001902.jpg",
+        "sha256": "a4035cce870a31e02a84a6bf4ba908991009e6d1bd7ae68f5fa8924369ef7a13"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001903.jpg",
+        "sha256": "448f4d0f43ad447674044db3091bb330956362c0415cec1038aeae449456a060"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001904.jpg",
+        "sha256": "4038337d62e7722548262689d51159b0f22e8660a30e761c3e30ba513d4ad01f"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001905.jpg",
+        "sha256": "1447c6112263d58398c8cde6c1e25f0c2449cff8aceac865470aae0de72de5a1"
+      },
+      {
+        "path": "/home/featurize/data/cxr_first/train/subject_01131/study_01177/pic_001906.jpg",
+        "sha256": "e904c6ad87ede1a968c7ca387db0ab28420641b3bcc81688af217f8f1e33ce0d"
+      }
+    ],
+    "images": 7,
+    "regions_per_image": 5,
+    "maximum_train_views": 7,
+    "tensor_shape": [
+      7,
+      5,
+      3,
+      768,
+      768
+    ],
+    "positive_studies": [
+      373,
+      540,
+      565,
+      861,
+      1442,
+      2331,
+      2382,
+      2707,
+      2793,
+      4009
+    ]
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 Ti",
+    "memory_total_bytes": 23078109184
+  },
+  "comparable": true,
+  "gpu_phase_elapsed_seconds": 108.78583974999947,
+  "total_attempted_optimizer_updates": 6,
+  "total_successful_optimizer_updates": 6,
+  "updated_at": "2026-11-04T14:48:10.022140+08:00"
+}

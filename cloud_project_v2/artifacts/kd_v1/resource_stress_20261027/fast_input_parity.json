@@ -1,0 +1,1973 @@
+{
+  "status": "passed",
+  "comparisons": 210,
+  "images": 105,
+  "sizes": [
+    512,
+    768
+  ],
+  "normalized_arrays_byte_identical": true,
+  "input_files_unchanged": true,
+  "selection_file_unchanged": true,
+  "original_sha256": "fd70c10e83a7fc0daa01782d62d0c941f0b2f06b87e59c0b2af89d9a22395849",
+  "candidate_sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+  "selection_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+  "python": "3.12.15",
+  "pillow": "10.4.0",
+  "numpy": "1.26.4",
+  "cpu_only": true,
+  "gpu_used": false,
+  "model_constructed": false,
+  "labels_read": false,
+  "test_read": false,
+  "timing_scope": "CPU load_image_arrays(path, [size]) only; paired per image with alternating order; no model, GPU, or CSV writes",
+  "timing_is_official_latency": false,
+  "summary": {
+    "all_105": {
+      "512": {
+        "images": 105,
+        "original_mean_ms": 105.31496746666666,
+        "candidate_mean_ms": 55.21774624761905,
+        "original_median_ms": 116.31585,
+        "candidate_median_ms": 59.011427,
+        "speedup_from_means": 1.907266678259397
+      },
+      "768": {
+        "images": 105,
+        "original_mean_ms": 117.3210846,
+        "candidate_mean_ms": 68.36486933333333,
+        "original_median_ms": 128.53428,
+        "candidate_median_ms": 72.21318,
+        "speedup_from_means": 1.7161019357466483
+      }
+    },
+    "measured_100": {
+      "512": {
+        "images": 100,
+        "original_mean_ms": 105.58040101,
+        "candidate_mean_ms": 55.41802162,
+        "original_median_ms": 116.332007,
+        "candidate_median_ms": 58.94421199999999,
+        "speedup_from_means": 1.9051636619936057
+      },
+      "768": {
+        "images": 100,
+        "original_mean_ms": 117.67336986999999,
+        "candidate_mean_ms": 68.6294606,
+        "original_median_ms": 128.4590255,
+        "candidate_median_ms": 72.274796,
+        "speedup_from_means": 1.7146188945859204
+      }
+    },
+    "warmup_5": {
+      "512": {
+        "images": 5,
+        "original_mean_ms": 100.0062966,
+        "candidate_mean_ms": 51.2122388,
+        "original_median_ms": 114.696439,
+        "candidate_median_ms": 59.011427,
+        "speedup_from_means": 1.952781189483948
+      },
+      "768": {
+        "images": 5,
+        "original_mean_ms": 110.2753792,
+        "candidate_mean_ms": 63.073044,
+        "original_median_ms": 129.276252,
+        "candidate_median_ms": 69.200808,
+        "speedup_from_means": 1.748375727672189
+      }
+    }
+  },
+  "timings": [
+    {
+      "group": "warmup",
+      "index": 0,
+      "size": 512,
+      "original_ms": 129.795091,
+      "candidate_ms": 59.39318,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 0,
+      "size": 768,
+      "original_ms": 133.027666,
+      "candidate_ms": 69.200808,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 1,
+      "size": 512,
+      "original_ms": 114.696439,
+      "candidate_ms": 64.366278,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 1,
+      "size": 768,
+      "original_ms": 129.276252,
+      "candidate_ms": 77.578789,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 2,
+      "size": 512,
+      "original_ms": 126.627515,
+      "candidate_ms": 59.011427,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 2,
+      "size": 768,
+      "original_ms": 134.635702,
+      "candidate_ms": 72.362305,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 3,
+      "size": 512,
+      "original_ms": 63.076152,
+      "candidate_ms": 38.757211,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 3,
+      "size": 768,
+      "original_ms": 74.466816,
+      "candidate_ms": 49.999594,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 4,
+      "size": 512,
+      "original_ms": 65.836286,
+      "candidate_ms": 34.533098,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "warmup",
+      "index": 4,
+      "size": 768,
+      "original_ms": 79.97046,
+      "candidate_ms": 46.223724,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 5,
+      "size": 512,
+      "original_ms": 113.034113,
+      "candidate_ms": 59.058928,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 5,
+      "size": 768,
+      "original_ms": 127.744573,
+      "candidate_ms": 75.975993,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 6,
+      "size": 512,
+      "original_ms": 67.604621,
+      "candidate_ms": 35.741834,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 6,
+      "size": 768,
+      "original_ms": 81.170272,
+      "candidate_ms": 47.37272,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 7,
+      "size": 512,
+      "original_ms": 72.935337,
+      "candidate_ms": 39.387457,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 7,
+      "size": 768,
+      "original_ms": 82.753471,
+      "candidate_ms": 55.305832,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 8,
+      "size": 512,
+      "original_ms": 118.364649,
+      "candidate_ms": 57.484624,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 8,
+      "size": 768,
+      "original_ms": 132.4636,
+      "candidate_ms": 70.670847,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 9,
+      "size": 512,
+      "original_ms": 116.050843,
+      "candidate_ms": 66.103368,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 9,
+      "size": 768,
+      "original_ms": 130.757268,
+      "candidate_ms": 79.153674,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 10,
+      "size": 512,
+      "original_ms": 118.031939,
+      "candidate_ms": 57.285004,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 10,
+      "size": 768,
+      "original_ms": 132.571822,
+      "candidate_ms": 70.597706,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 11,
+      "size": 512,
+      "original_ms": 111.840551,
+      "candidate_ms": 61.919554,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 11,
+      "size": 768,
+      "original_ms": 126.446905,
+      "candidate_ms": 75.297736,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 12,
+      "size": 512,
+      "original_ms": 124.048484,
+      "candidate_ms": 58.468452,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 12,
+      "size": 768,
+      "original_ms": 137.291742,
+      "candidate_ms": 71.368826,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 13,
+      "size": 512,
+      "original_ms": 119.274595,
+      "candidate_ms": 65.065179,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 13,
+      "size": 768,
+      "original_ms": 129.733041,
+      "candidate_ms": 77.92462,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 14,
+      "size": 512,
+      "original_ms": 102.579404,
+      "candidate_ms": 52.918658,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 14,
+      "size": 768,
+      "original_ms": 115.719076,
+      "candidate_ms": 65.313031,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 15,
+      "size": 512,
+      "original_ms": 124.323807,
+      "candidate_ms": 65.660283,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 15,
+      "size": 768,
+      "original_ms": 136.645581,
+      "candidate_ms": 83.268365,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 16,
+      "size": 512,
+      "original_ms": 120.0835,
+      "candidate_ms": 59.263167,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 16,
+      "size": 768,
+      "original_ms": 134.450155,
+      "candidate_ms": 72.180174,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 17,
+      "size": 512,
+      "original_ms": 111.460701,
+      "candidate_ms": 61.393925,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 17,
+      "size": 768,
+      "original_ms": 126.228538,
+      "candidate_ms": 74.690323,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 18,
+      "size": 512,
+      "original_ms": 118.793834,
+      "candidate_ms": 57.963344,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 18,
+      "size": 768,
+      "original_ms": 133.451275,
+      "candidate_ms": 71.190197,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 19,
+      "size": 512,
+      "original_ms": 111.923137,
+      "candidate_ms": 61.762999,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 19,
+      "size": 768,
+      "original_ms": 126.461358,
+      "candidate_ms": 74.856162,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 20,
+      "size": 512,
+      "original_ms": 123.503767,
+      "candidate_ms": 62.289692,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 20,
+      "size": 768,
+      "original_ms": 137.712345,
+      "candidate_ms": 75.552798,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 21,
+      "size": 512,
+      "original_ms": 62.227789,
+      "candidate_ms": 39.431354,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 21,
+      "size": 768,
+      "original_ms": 73.386926,
+      "candidate_ms": 50.979838,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 22,
+      "size": 512,
+      "original_ms": 64.259058,
+      "candidate_ms": 34.218507,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 22,
+      "size": 768,
+      "original_ms": 69.409483,
+      "candidate_ms": 45.678896,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 23,
+      "size": 512,
+      "original_ms": 124.184559,
+      "candidate_ms": 69.515983,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 23,
+      "size": 768,
+      "original_ms": 134.911939,
+      "candidate_ms": 83.225861,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 24,
+      "size": 512,
+      "original_ms": 122.184866,
+      "candidate_ms": 61.267237,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 24,
+      "size": 768,
+      "original_ms": 136.662018,
+      "candidate_ms": 74.363753,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 25,
+      "size": 512,
+      "original_ms": 119.280255,
+      "candidate_ms": 64.764308,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 25,
+      "size": 768,
+      "original_ms": 129.756417,
+      "candidate_ms": 78.961878,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 26,
+      "size": 512,
+      "original_ms": 120.384463,
+      "candidate_ms": 59.572451,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 26,
+      "size": 768,
+      "original_ms": 135.091048,
+      "candidate_ms": 72.816699,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 27,
+      "size": 512,
+      "original_ms": 119.456611,
+      "candidate_ms": 65.121304,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 27,
+      "size": 768,
+      "original_ms": 129.952743,
+      "candidate_ms": 78.287786,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 28,
+      "size": 512,
+      "original_ms": 123.399461,
+      "candidate_ms": 62.078275,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 28,
+      "size": 768,
+      "original_ms": 137.130833,
+      "candidate_ms": 74.978557,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 29,
+      "size": 512,
+      "original_ms": 116.998569,
+      "candidate_ms": 63.062653,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 29,
+      "size": 768,
+      "original_ms": 128.089155,
+      "candidate_ms": 76.122153,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 30,
+      "size": 512,
+      "original_ms": 117.244028,
+      "candidate_ms": 56.258034,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 30,
+      "size": 768,
+      "original_ms": 131.668991,
+      "candidate_ms": 69.566911,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 31,
+      "size": 512,
+      "original_ms": 72.151492,
+      "candidate_ms": 42.213712,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 31,
+      "size": 768,
+      "original_ms": 82.202085,
+      "candidate_ms": 54.627756,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 32,
+      "size": 512,
+      "original_ms": 77.668636,
+      "candidate_ms": 39.556273,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 32,
+      "size": 768,
+      "original_ms": 90.244823,
+      "candidate_ms": 52.02698,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 33,
+      "size": 512,
+      "original_ms": 115.388662,
+      "candidate_ms": 61.285745,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 33,
+      "size": 768,
+      "original_ms": 130.022207,
+      "candidate_ms": 78.550491,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 34,
+      "size": 512,
+      "original_ms": 67.314558,
+      "candidate_ms": 36.463719,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 34,
+      "size": 768,
+      "original_ms": 71.833885,
+      "candidate_ms": 47.992722,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 35,
+      "size": 512,
+      "original_ms": 61.544483,
+      "candidate_ms": 38.201078,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 35,
+      "size": 768,
+      "original_ms": 72.980937,
+      "candidate_ms": 50.187267,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 36,
+      "size": 512,
+      "original_ms": 65.217138,
+      "candidate_ms": 34.953391,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 36,
+      "size": 768,
+      "original_ms": 70.232589,
+      "candidate_ms": 46.541563,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 37,
+      "size": 512,
+      "original_ms": 59.908245,
+      "candidate_ms": 36.73683,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 37,
+      "size": 768,
+      "original_ms": 71.226264,
+      "candidate_ms": 48.847205,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 38,
+      "size": 512,
+      "original_ms": 119.289331,
+      "candidate_ms": 58.498649,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 38,
+      "size": 768,
+      "original_ms": 134.458189,
+      "candidate_ms": 71.65068,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 39,
+      "size": 512,
+      "original_ms": 113.507628,
+      "candidate_ms": 63.173039,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 39,
+      "size": 768,
+      "original_ms": 128.786293,
+      "candidate_ms": 76.543138,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 40,
+      "size": 512,
+      "original_ms": 116.348164,
+      "candidate_ms": 58.038118,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 40,
+      "size": 768,
+      "original_ms": 127.343176,
+      "candidate_ms": 71.174264,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 41,
+      "size": 512,
+      "original_ms": 120.226108,
+      "candidate_ms": 66.018141,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 41,
+      "size": 768,
+      "original_ms": 131.565146,
+      "candidate_ms": 79.26198,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 42,
+      "size": 512,
+      "original_ms": 116.377617,
+      "candidate_ms": 55.912216,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 42,
+      "size": 768,
+      "original_ms": 130.852878,
+      "candidate_ms": 68.675342,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 43,
+      "size": 512,
+      "original_ms": 110.43898,
+      "candidate_ms": 60.166143,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 43,
+      "size": 768,
+      "original_ms": 125.264865,
+      "candidate_ms": 73.369082,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 44,
+      "size": 512,
+      "original_ms": 125.012866,
+      "candidate_ms": 60.642399,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 44,
+      "size": 768,
+      "original_ms": 135.841259,
+      "candidate_ms": 73.802593,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 45,
+      "size": 512,
+      "original_ms": 112.71597,
+      "candidate_ms": 62.51972,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 45,
+      "size": 768,
+      "original_ms": 127.369207,
+      "candidate_ms": 75.778209,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 46,
+      "size": 512,
+      "original_ms": 117.922939,
+      "candidate_ms": 57.114021,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 46,
+      "size": 768,
+      "original_ms": 132.382535,
+      "candidate_ms": 70.167052,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 47,
+      "size": 512,
+      "original_ms": 118.897553,
+      "candidate_ms": 64.653644,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 47,
+      "size": 768,
+      "original_ms": 129.312635,
+      "candidate_ms": 77.807216,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 48,
+      "size": 512,
+      "original_ms": 69.14635,
+      "candidate_ms": 37.265793,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 48,
+      "size": 768,
+      "original_ms": 73.70744,
+      "candidate_ms": 48.900086,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 49,
+      "size": 512,
+      "original_ms": 112.617112,
+      "candidate_ms": 62.368413,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 49,
+      "size": 768,
+      "original_ms": 127.35121,
+      "candidate_ms": 75.903858,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 50,
+      "size": 512,
+      "original_ms": 123.487547,
+      "candidate_ms": 58.825371,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 50,
+      "size": 768,
+      "original_ms": 133.909769,
+      "candidate_ms": 72.069219,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 51,
+      "size": 512,
+      "original_ms": 116.568938,
+      "candidate_ms": 62.495531,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 51,
+      "size": 768,
+      "original_ms": 127.336567,
+      "candidate_ms": 75.662797,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 52,
+      "size": 512,
+      "original_ms": 110.033541,
+      "candidate_ms": 54.594118,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 52,
+      "size": 768,
+      "original_ms": 117.882349,
+      "candidate_ms": 67.343223,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 53,
+      "size": 512,
+      "original_ms": 108.755996,
+      "candidate_ms": 57.167761,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 53,
+      "size": 768,
+      "original_ms": 119.324105,
+      "candidate_ms": 75.235915,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 54,
+      "size": 512,
+      "original_ms": 129.027868,
+      "candidate_ms": 64.421285,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 54,
+      "size": 768,
+      "original_ms": 139.261856,
+      "candidate_ms": 77.478114,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 55,
+      "size": 512,
+      "original_ms": 118.571855,
+      "candidate_ms": 64.8377,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 55,
+      "size": 768,
+      "original_ms": 129.254037,
+      "candidate_ms": 77.963562,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 56,
+      "size": 512,
+      "original_ms": 120.932891,
+      "candidate_ms": 58.190549,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 56,
+      "size": 768,
+      "original_ms": 137.42628,
+      "candidate_ms": 71.226434,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 57,
+      "size": 512,
+      "original_ms": 112.533798,
+      "candidate_ms": 62.630636,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 57,
+      "size": 768,
+      "original_ms": 127.269919,
+      "candidate_ms": 75.630689,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 58,
+      "size": 512,
+      "original_ms": 120.745019,
+      "candidate_ms": 57.153359,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 58,
+      "size": 768,
+      "original_ms": 130.505437,
+      "candidate_ms": 70.482548,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 59,
+      "size": 512,
+      "original_ms": 114.348394,
+      "candidate_ms": 64.336497,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 59,
+      "size": 768,
+      "original_ms": 128.383771,
+      "candidate_ms": 77.26911,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 60,
+      "size": 512,
+      "original_ms": 119.780022,
+      "candidate_ms": 58.844891,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 60,
+      "size": 768,
+      "original_ms": 134.017972,
+      "candidate_ms": 72.336412,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 61,
+      "size": 512,
+      "original_ms": 111.742911,
+      "candidate_ms": 61.712127,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 61,
+      "size": 768,
+      "original_ms": 125.961104,
+      "candidate_ms": 74.882546,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 62,
+      "size": 512,
+      "original_ms": 123.513418,
+      "candidate_ms": 61.859148,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 62,
+      "size": 768,
+      "original_ms": 136.986522,
+      "candidate_ms": 75.240823,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 63,
+      "size": 512,
+      "original_ms": 117.627369,
+      "candidate_ms": 67.87368,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 63,
+      "size": 768,
+      "original_ms": 132.571112,
+      "candidate_ms": 80.720844,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 64,
+      "size": 512,
+      "original_ms": 117.252296,
+      "candidate_ms": 55.990013,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 64,
+      "size": 768,
+      "original_ms": 130.868733,
+      "candidate_ms": 69.304019,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 65,
+      "size": 512,
+      "original_ms": 115.981307,
+      "candidate_ms": 66.017844,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 65,
+      "size": 768,
+      "original_ms": 130.429295,
+      "candidate_ms": 79.002853,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 66,
+      "size": 512,
+      "original_ms": 125.999222,
+      "candidate_ms": 60.878194,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 66,
+      "size": 768,
+      "original_ms": 135.757296,
+      "candidate_ms": 74.251078,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 67,
+      "size": 512,
+      "original_ms": 115.250279,
+      "candidate_ms": 64.780796,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 67,
+      "size": 768,
+      "original_ms": 129.287039,
+      "candidate_ms": 78.256243,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 68,
+      "size": 512,
+      "original_ms": 120.822036,
+      "candidate_ms": 59.760697,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 68,
+      "size": 768,
+      "original_ms": 134.732277,
+      "candidate_ms": 73.138758,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 69,
+      "size": 512,
+      "original_ms": 113.043826,
+      "candidate_ms": 63.188024,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 69,
+      "size": 768,
+      "original_ms": 127.458163,
+      "candidate_ms": 76.155959,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 70,
+      "size": 512,
+      "original_ms": 118.515071,
+      "candidate_ms": 57.337488,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 70,
+      "size": 768,
+      "original_ms": 132.151491,
+      "candidate_ms": 70.228277,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 71,
+      "size": 512,
+      "original_ms": 119.114002,
+      "candidate_ms": 64.753535,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 71,
+      "size": 768,
+      "original_ms": 130.184558,
+      "candidate_ms": 78.184636,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 72,
+      "size": 512,
+      "original_ms": 76.103801,
+      "candidate_ms": 37.211423,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 72,
+      "size": 768,
+      "original_ms": 88.093407,
+      "candidate_ms": 49.351295,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 73,
+      "size": 512,
+      "original_ms": 74.656387,
+      "candidate_ms": 40.623168,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 73,
+      "size": 768,
+      "original_ms": 84.463677,
+      "candidate_ms": 57.062184,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 74,
+      "size": 512,
+      "original_ms": 116.31585,
+      "candidate_ms": 61.070594,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 74,
+      "size": 768,
+      "original_ms": 126.078041,
+      "candidate_ms": 73.322825,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 75,
+      "size": 512,
+      "original_ms": 100.413488,
+      "candidate_ms": 51.434574,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 75,
+      "size": 768,
+      "original_ms": 110.44932,
+      "candidate_ms": 68.227542,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 76,
+      "size": 512,
+      "original_ms": 65.783992,
+      "candidate_ms": 35.662567,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 76,
+      "size": 768,
+      "original_ms": 70.138733,
+      "candidate_ms": 47.300275,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 77,
+      "size": 512,
+      "original_ms": 104.077522,
+      "candidate_ms": 58.285452,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 77,
+      "size": 768,
+      "original_ms": 117.707099,
+      "candidate_ms": 70.827257,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 78,
+      "size": 512,
+      "original_ms": 116.664415,
+      "candidate_ms": 56.706871,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 78,
+      "size": 768,
+      "original_ms": 125.686583,
+      "candidate_ms": 70.262008,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 79,
+      "size": 512,
+      "original_ms": 118.248433,
+      "candidate_ms": 68.333462,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 79,
+      "size": 768,
+      "original_ms": 133.027179,
+      "candidate_ms": 81.487627,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 80,
+      "size": 512,
+      "original_ms": 116.903573,
+      "candidate_ms": 55.609584,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 80,
+      "size": 768,
+      "original_ms": 130.506071,
+      "candidate_ms": 68.678671,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 81,
+      "size": 512,
+      "original_ms": 117.982384,
+      "candidate_ms": 63.958792,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 81,
+      "size": 768,
+      "original_ms": 128.53428,
+      "candidate_ms": 76.688379,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 82,
+      "size": 512,
+      "original_ms": 121.826799,
+      "candidate_ms": 60.866308,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 82,
+      "size": 768,
+      "original_ms": 135.570547,
+      "candidate_ms": 74.066973,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 83,
+      "size": 512,
+      "original_ms": 112.192479,
+      "candidate_ms": 62.396056,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 83,
+      "size": 768,
+      "original_ms": 127.754829,
+      "candidate_ms": 75.364663,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 84,
+      "size": 512,
+      "original_ms": 119.03811,
+      "candidate_ms": 57.998662,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 84,
+      "size": 768,
+      "original_ms": 131.977832,
+      "candidate_ms": 70.73559,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 85,
+      "size": 512,
+      "original_ms": 60.137214,
+      "candidate_ms": 39.51995,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 85,
+      "size": 768,
+      "original_ms": 70.182409,
+      "candidate_ms": 49.705537,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 86,
+      "size": 512,
+      "original_ms": 58.826154,
+      "candidate_ms": 30.809519,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 86,
+      "size": 768,
+      "original_ms": 64.059104,
+      "candidate_ms": 41.939744,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 87,
+      "size": 512,
+      "original_ms": 66.64724,
+      "candidate_ms": 40.570559,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 87,
+      "size": 768,
+      "original_ms": 75.245182,
+      "candidate_ms": 52.422899,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 88,
+      "size": 512,
+      "original_ms": 126.812807,
+      "candidate_ms": 61.682403,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 88,
+      "size": 768,
+      "original_ms": 136.819835,
+      "candidate_ms": 75.061598,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 89,
+      "size": 512,
+      "original_ms": 120.884573,
+      "candidate_ms": 66.891097,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 89,
+      "size": 768,
+      "original_ms": 131.322629,
+      "candidate_ms": 79.739833,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 90,
+      "size": 512,
+      "original_ms": 118.461634,
+      "candidate_ms": 57.037508,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 90,
+      "size": 768,
+      "original_ms": 132.132445,
+      "candidate_ms": 70.397703,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 91,
+      "size": 512,
+      "original_ms": 113.435928,
+      "candidate_ms": 63.275816,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 91,
+      "size": 768,
+      "original_ms": 128.006019,
+      "candidate_ms": 76.317664,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 92,
+      "size": 512,
+      "original_ms": 120.094237,
+      "candidate_ms": 59.114559,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 92,
+      "size": 768,
+      "original_ms": 134.168655,
+      "candidate_ms": 72.21318,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 93,
+      "size": 512,
+      "original_ms": 111.680211,
+      "candidate_ms": 61.887613,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 93,
+      "size": 768,
+      "original_ms": 126.34847,
+      "candidate_ms": 75.211062,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 94,
+      "size": 512,
+      "original_ms": 68.176307,
+      "candidate_ms": 36.56275,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 94,
+      "size": 768,
+      "original_ms": 82.030984,
+      "candidate_ms": 48.453387,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 95,
+      "size": 512,
+      "original_ms": 69.973356,
+      "candidate_ms": 39.611778,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 95,
+      "size": 768,
+      "original_ms": 79.205061,
+      "candidate_ms": 55.045656,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 96,
+      "size": 512,
+      "original_ms": 74.654036,
+      "candidate_ms": 40.022726,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 96,
+      "size": 768,
+      "original_ms": 86.165394,
+      "candidate_ms": 51.653232,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 97,
+      "size": 512,
+      "original_ms": 116.683215,
+      "candidate_ms": 58.633346,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 97,
+      "size": 768,
+      "original_ms": 127.841012,
+      "candidate_ms": 76.095079,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 98,
+      "size": 512,
+      "original_ms": 123.196578,
+      "candidate_ms": 57.905433,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 98,
+      "size": 768,
+      "original_ms": 132.596204,
+      "candidate_ms": 70.965866,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 99,
+      "size": 512,
+      "original_ms": 72.37991,
+      "candidate_ms": 42.709091,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 99,
+      "size": 768,
+      "original_ms": 81.64851,
+      "candidate_ms": 54.608982,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 100,
+      "size": 512,
+      "original_ms": 77.257957,
+      "candidate_ms": 39.740402,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 100,
+      "size": 768,
+      "original_ms": 89.111427,
+      "candidate_ms": 51.792072,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 101,
+      "size": 512,
+      "original_ms": 65.326348,
+      "candidate_ms": 38.05482,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 101,
+      "size": 768,
+      "original_ms": 76.225105,
+      "candidate_ms": 53.376761,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 102,
+      "size": 512,
+      "original_ms": 67.861625,
+      "candidate_ms": 36.092704,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 102,
+      "size": 768,
+      "original_ms": 81.939137,
+      "candidate_ms": 47.801157,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 103,
+      "size": 512,
+      "original_ms": 112.303887,
+      "candidate_ms": 61.99218,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 103,
+      "size": 768,
+      "original_ms": 126.4209,
+      "candidate_ms": 75.21648,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 104,
+      "size": 512,
+      "original_ms": 124.225272,
+      "candidate_ms": 59.043533,
+      "array_equal": true,
+      "byte_equal": true
+    },
+    {
+      "group": "measured",
+      "index": 104,
+      "size": 768,
+      "original_ms": 134.283057,
+      "candidate_ms": 71.98,
+      "array_equal": true,
+      "byte_equal": true
+    }
+  ]
+}

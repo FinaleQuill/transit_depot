@@ -1,0 +1,504 @@
+{
+  "arm": "B",
+  "member": "tiny",
+  "epoch": 2,
+  "source_kind": "ap_selected_best",
+  "source_sha256": "e4319c7e1aef8fdcc8e0fc9d84d90fda12370d290aad187e71e04f9aa1597775",
+  "image_probs_sha256": "a355b3eb2ddc7d4b6a4f2cc8fa8a24c9af01e49b0dd2b49628ad4f7eda822c69",
+  "export_weights_sha256": "9d1bc5b3616b48fb631a98c12f17aa24297ac2856ff1200f945fc5c8bcd47e7f",
+  "ap_only_macro_auc": 0.7396798375440519,
+  "all_macro_auc": 0.8087495078309148,
+  "scores": {
+    "all": {
+      "num_studies": 859,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 24,
+          "negative": 835,
+          "eligible": true
+        },
+        {
+          "positive": 37,
+          "negative": 822,
+          "eligible": true
+        },
+        {
+          "positive": 46,
+          "negative": 813,
+          "eligible": true
+        },
+        {
+          "positive": 68,
+          "negative": 791,
+          "eligible": true
+        },
+        {
+          "positive": 115,
+          "negative": 744,
+          "eligible": true
+        },
+        {
+          "positive": 177,
+          "negative": 682,
+          "eligible": true
+        },
+        {
+          "positive": 193,
+          "negative": 666,
+          "eligible": true
+        },
+        {
+          "positive": 214,
+          "negative": 645,
+          "eligible": true
+        },
+        {
+          "positive": 260,
+          "negative": 599,
+          "eligible": true
+        },
+        {
+          "positive": 306,
+          "negative": 553,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.6800898203592813,
+        0.8567764845137108,
+        0.8112733301246056,
+        0.7492191566892243,
+        0.8775712949976625,
+        0.7951273257451498,
+        0.800961583345003,
+        0.7173802796493516,
+        0.9121452420701168,
+        0.8869505608150433
+      ],
+      "macro_auc": 0.8087495078309148
+    },
+    "ap_only": {
+      "num_studies": 442,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 15,
+          "negative": 427,
+          "eligible": true
+        },
+        {
+          "positive": 21,
+          "negative": 421,
+          "eligible": true
+        },
+        {
+          "positive": 32,
+          "negative": 410,
+          "eligible": true
+        },
+        {
+          "positive": 37,
+          "negative": 405,
+          "eligible": true
+        },
+        {
+          "positive": 93,
+          "negative": 349,
+          "eligible": true
+        },
+        {
+          "positive": 127,
+          "negative": 315,
+          "eligible": true
+        },
+        {
+          "positive": 126,
+          "negative": 316,
+          "eligible": true
+        },
+        {
+          "positive": 142,
+          "negative": 300,
+          "eligible": true
+        },
+        {
+          "positive": 187,
+          "negative": 255,
+          "eligible": true
+        },
+        {
+          "positive": 90,
+          "negative": 352,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.5594067135050742,
+        0.8368962787015044,
+        0.7692835365853659,
+        0.6834167500834167,
+        0.8060510829713159,
+        0.7065616797900263,
+        0.7446503918022905,
+        0.6560328638497652,
+        0.8460836741113558,
+        0.7884154040404041
+      ],
+      "macro_auc": 0.7396798375440519
+    },
+    "ap_only_single_image": {
+      "num_studies": 381,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 14,
+          "negative": 367,
+          "eligible": true
+        },
+        {
+          "positive": 18,
+          "negative": 363,
+          "eligible": true
+        },
+        {
+          "positive": 30,
+          "negative": 351,
+          "eligible": true
+        },
+        {
+          "positive": 33,
+          "negative": 348,
+          "eligible": true
+        },
+        {
+          "positive": 75,
+          "negative": 306,
+          "eligible": true
+        },
+        {
+          "positive": 110,
+          "negative": 271,
+          "eligible": true
+        },
+        {
+          "positive": 106,
+          "negative": 275,
+          "eligible": true
+        },
+        {
+          "positive": 133,
+          "negative": 248,
+          "eligible": true
+        },
+        {
+          "positive": 158,
+          "negative": 223,
+          "eligible": true
+        },
+        {
+          "positive": 74,
+          "negative": 307,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.5714285714285714,
+        0.8674625038261402,
+        0.7708452041785375,
+        0.6905259491466388,
+        0.8088453159041394,
+        0.7025830258302583,
+        0.7410291595197256,
+        0.6607749211739025,
+        0.8466396094681273,
+        0.8009948058807994
+      ],
+      "macro_auc": 0.7461129066356841
+    },
+    "ap_only_multiple_image": {
+      "num_studies": 61,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 1,
+          "negative": 60,
+          "eligible": true
+        },
+        {
+          "positive": 3,
+          "negative": 58,
+          "eligible": true
+        },
+        {
+          "positive": 2,
+          "negative": 59,
+          "eligible": true
+        },
+        {
+          "positive": 4,
+          "negative": 57,
+          "eligible": true
+        },
+        {
+          "positive": 18,
+          "negative": 43,
+          "eligible": true
+        },
+        {
+          "positive": 17,
+          "negative": 44,
+          "eligible": true
+        },
+        {
+          "positive": 20,
+          "negative": 41,
+          "eligible": true
+        },
+        {
+          "positive": 9,
+          "negative": 52,
+          "eligible": true
+        },
+        {
+          "positive": 29,
+          "negative": 32,
+          "eligible": true
+        },
+        {
+          "positive": 16,
+          "negative": 45,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.43333333333333335,
+        0.6551724137931034,
+        0.8728813559322034,
+        0.574561403508772,
+        0.7661498708010336,
+        0.7312834224598931,
+        0.773170731707317,
+        0.48504273504273504,
+        0.8448275862068966,
+        0.6958333333333333
+      ],
+      "macro_auc": 0.683225618611862
+    },
+    "non_ap_only": {
+      "num_studies": 417,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 9,
+          "negative": 408,
+          "eligible": true
+        },
+        {
+          "positive": 16,
+          "negative": 401,
+          "eligible": true
+        },
+        {
+          "positive": 14,
+          "negative": 403,
+          "eligible": true
+        },
+        {
+          "positive": 31,
+          "negative": 386,
+          "eligible": true
+        },
+        {
+          "positive": 22,
+          "negative": 395,
+          "eligible": true
+        },
+        {
+          "positive": 50,
+          "negative": 367,
+          "eligible": true
+        },
+        {
+          "positive": 67,
+          "negative": 350,
+          "eligible": true
+        },
+        {
+          "positive": 72,
+          "negative": 345,
+          "eligible": true
+        },
+        {
+          "positive": 73,
+          "negative": 344,
+          "eligible": true
+        },
+        {
+          "positive": 216,
+          "negative": 201,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.8311546840958605,
+        0.8815461346633415,
+        0.8677773839064162,
+        0.8297676750793916,
+        0.9300345224395856,
+        0.8601634877384197,
+        0.8581663113006397,
+        0.7345008051529791,
+        0.9564749920356801,
+        0.9096416067809103
+      ],
+      "macro_auc": 0.8659227603193225
+    },
+    "single_image": {
+      "num_studies": 391,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 15,
+          "negative": 376,
+          "eligible": true
+        },
+        {
+          "positive": 18,
+          "negative": 373,
+          "eligible": true
+        },
+        {
+          "positive": 31,
+          "negative": 360,
+          "eligible": true
+        },
+        {
+          "positive": 37,
+          "negative": 354,
+          "eligible": true
+        },
+        {
+          "positive": 78,
+          "negative": 313,
+          "eligible": true
+        },
+        {
+          "positive": 113,
+          "negative": 278,
+          "eligible": true
+        },
+        {
+          "positive": 106,
+          "negative": 285,
+          "eligible": true
+        },
+        {
+          "positive": 137,
+          "negative": 254,
+          "eligible": true
+        },
+        {
+          "positive": 162,
+          "negative": 229,
+          "eligible": true
+        },
+        {
+          "positive": 75,
+          "negative": 316,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.5886524822695036,
+        0.8684837652666071,
+        0.7709677419354839,
+        0.6992670636738433,
+        0.8041287785696731,
+        0.6980963901445216,
+        0.7484276729559748,
+        0.656014713489281,
+        0.8435899509407515,
+        0.7966244725738396
+      ],
+      "macro_auc": 0.747425303181948
+    },
+    "multiple_image": {
+      "num_studies": 468,
+      "eligible_classes": 10,
+      "class_counts": [
+        {
+          "positive": 9,
+          "negative": 459,
+          "eligible": true
+        },
+        {
+          "positive": 19,
+          "negative": 449,
+          "eligible": true
+        },
+        {
+          "positive": 15,
+          "negative": 453,
+          "eligible": true
+        },
+        {
+          "positive": 31,
+          "negative": 437,
+          "eligible": true
+        },
+        {
+          "positive": 37,
+          "negative": 431,
+          "eligible": true
+        },
+        {
+          "positive": 64,
+          "negative": 404,
+          "eligible": true
+        },
+        {
+          "positive": 87,
+          "negative": 381,
+          "eligible": true
+        },
+        {
+          "positive": 77,
+          "negative": 391,
+          "eligible": true
+        },
+        {
+          "positive": 98,
+          "negative": 370,
+          "eligible": true
+        },
+        {
+          "positive": 231,
+          "negative": 237,
+          "eligible": true
+        }
+      ],
+      "per_class_auc": [
+        0.7988380537400145,
+        0.847145703903411,
+        0.8367917586460633,
+        0.8077803203661328,
+        0.9334671098012166,
+        0.8579053217821783,
+        0.8468338009472953,
+        0.7055169894044574,
+        0.9513513513513513,
+        0.8997935959961276
+      ],
+      "macro_auc": 0.8485424005938247
+    }
+  },
+  "num_images": 1422,
+  "test_used": false,
+  "selection_bias_corrected": false,
+  "plan_sha256": "6f16ebd0023ea626b1be10f137011d0d8d1ed87ee3d6a663f26c50423b35bd32",
+  "earlystop_plan_sha256": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+  "preprocess_sha256": "545d3b48f3037663f7ee9159766bab990de83c903fa36d25a2758bfddd0eb96c",
+  "crop_sha256": "85ec065e2b4a9bb23a0defcafc3681cd474a579563affd3501ddcb4d2426cd8d",
+  "valid_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+}

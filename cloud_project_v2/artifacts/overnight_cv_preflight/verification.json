@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-10-19T02:29:59+08:00",
+  "python": "/environment/miniconda3/envs/cxr-cloud/bin/python",
+  "checks": {
+    "py_compile": "passed",
+    "bash_syntax": "passed",
+    "tmux_command_syntax": "passed",
+    "metadata_dry_run": "passed",
+    "cli_help": "passed",
+    "cpu_logic_tests_passed": 34,
+    "new_run_directory_created": false,
+    "training_started": false,
+    "model_forward_or_backward_calls": 0,
+    "actual_inference_started": false,
+    "raw_images_modified": false,
+    "source_csv_and_old_best_sha_unchanged": true
+  },
+  "actual_hardware": {
+    "gpu": "NVIDIA RTX A4000",
+    "vram_mib": 16376,
+    "cpu_count": 6
+  },
+  "code_sha256": {
+    "model_overnight.py": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+    "dataset_overnight.py": "4cbe7b329ff329d5ca0804dd8b89d531d4356bb47af6ac750fd2ca560e9e5971",
+    "cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "train_overnight.py": "11a2d8ff65269530d520eeb510ec73e59680df6561e9d3af06bba01731938bc4",
+    "inference_overnight.py": "41439c4064c51a7a4f91d68aa3caeac500674d2893254fe70f24142a9f2ee7e6",
+    "inference.py": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e",
+    "run_all_folds.py": "628c600c34d7f9e0efdc6d5f93e3164565ee60701822622d0fedf453a769f7c1",
+    "run_overnight.sh": "2559183113e3025e1ecbc26f1c78cf2cd429a1db86416ec4ca84449dc2b7d8a6"
+  },
+  "protected_sha256": {
+    "/home/featurize/work/submission.csv": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe",
+    "/home/featurize/work/runs/016_a4000_tiny_v2/best.pt": "2c3f88b25e04ea86af20eaf2e41d42db241cb5013657283afa3eabdf54893b4b",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67"
+  },
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "pretrained_cache": {
+    "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnextv2_base.fcmae_ft_in1k/snapshots/7b29800e499fdc06de5b612970f3384dc8d29ca5/model.safetensors",
+    "sha256": "ec152f1e375edc2b3dfac7a81155a449b4c5cbb7c5cf0b9494838f6c87518d73",
+    "model_constructed": false
+  },
+  "launch_command": "tmux new-session -d -s cxr_cv5_night -c /home/featurize/work/cloud_project_v2 'env PYTHON_BIN=/environment/miniconda3/envs/cxr-cloud/bin/python IMAGE_ROOT=/home/featurize/data/cxr_first NUM_WORKERS=4 bash run_overnight.sh' \\; set-option -w -t cxr_cv5_night:0 remain-on-exit on"
+}

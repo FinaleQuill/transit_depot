@@ -1,0 +1,250 @@
+{
+  "audit_type": "independent_saved_output_recheck_no_model_execution",
+  "scope": "Local selected 100 test images in 54 complete Studies plus5warmup; output/identity audit only; not organizer-selected sample set or T4 certification",
+  "method": "Python standard-library csv/json/hashlib; own float64 arithmetic, exact double-byte checks, >=0.5 decisions and exact ranking/tie groups. No deploy/cost comparator imported. Image mapping exclusively subject+study+filename to frozen manifest IDs, never by probability.",
+  "input_file_sha256": {
+    "submission.csv": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+    "evidence/runtime/041_historical/submission.image_predictions.csv": "3cb7e6bd1d936702b3487ec8d06c0f69e4f615ec25823d12f881c07ddb98f82a",
+    "evidence/runtime/cost_inputs/original_test_identity_manifest.csv": "13cdb61730471747963d21d5190b49f67483904a5364a2300c39a4711027c623",
+    "evidence/runtime/cost_inputs/pictures_100_selected_manifest.csv": "67c9d4216e4eb06c7b6def475adcac0913b7ce4681018e8ca1cda32a4fe065b0",
+    "evidence/runtime/cost_inputs/pictures_5_selected_manifest.csv": "356018e5920a63cc51fe7cf73ac0912e847e593c321868eb5bf400ca07ce9a6b",
+    "evidence/runtime/cost100/cost_report.json": "ab4296d50fc8a867a3bfea895ce382deed9bdff26fdc65e8ee8630f79ac13644",
+    "evidence/runtime/cost100/round_1.csv": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+    "evidence/runtime/cost100/round_1.image_predictions.csv": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1",
+    "evidence/runtime/cost100/round_2.csv": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+    "evidence/runtime/cost100/round_2.image_predictions.csv": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1",
+    "evidence/runtime/cost100/round_3.csv": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+    "evidence/runtime/cost100/round_3.image_predictions.csv": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+  },
+  "inputs_unchanged_after_check": true,
+  "sample_coverage": {
+    "measured_images": 100,
+    "complete_studies": 54,
+    "study_image_count_distribution": {
+      "1": 19,
+      "2": 24,
+      "3": 11
+    },
+    "warmup_images": 5,
+    "warmup_image_overlap": 0,
+    "coverage_checked_from_original_identity_manifest": true,
+    "raw_images_opened": 0,
+    "copied_image_integrity": "Selection-manifest recorded hashes agree; this recheck did not reopen raw image bytes."
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "image_data_rows": 1000,
+      "study_data_rows": 540,
+      "image_vs_historical_sidecar": {
+        "compared_items": 100,
+        "probabilities": 1000,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_vs_original_submission": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "independent_manifest_order_fp64_mean_vs_cost_study": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_csv_sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_csv_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    },
+    {
+      "round": 2,
+      "image_data_rows": 1000,
+      "study_data_rows": 540,
+      "image_vs_historical_sidecar": {
+        "compared_items": 100,
+        "probabilities": 1000,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_vs_original_submission": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "independent_manifest_order_fp64_mean_vs_cost_study": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_csv_sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_csv_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    },
+    {
+      "round": 3,
+      "image_data_rows": 1000,
+      "study_data_rows": 540,
+      "image_vs_historical_sidecar": {
+        "compared_items": 100,
+        "probabilities": 1000,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_vs_original_submission": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "independent_manifest_order_fp64_mean_vs_cost_study": {
+        "compared_items": 54,
+        "probabilities": 540,
+        "max_absolute_probability_error": 0.0,
+        "probability_over_1e3_count": 0,
+        "float64_bitwise_different_items": 0,
+        "binary_0_5_mismatched_items": 0,
+        "within_item_class_order_or_tie_mismatched_items": 0,
+        "across_item_per_class_order_or_tie_mismatched_items": 0,
+        "mismatched_keys": {
+          "probability": [],
+          "binary": [],
+          "within_order": [],
+          "cross_order": []
+        }
+      },
+      "study_csv_sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_csv_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    }
+  ],
+  "all_compared_values_and_semantics_exact": true,
+  "all_round_study_csv_bytes_identical": true,
+  "all_round_image_csv_bytes_identical": true,
+  "source_environment_from_actual_report": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "reproducibility_from_actual_report": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  },
+  "native_or_fp16_output_difference_observed": false,
+  "native_or_fp16_causal_isolation_performed": false,
+  "fp32_reference_comparison_performed": false,
+  "official_compliance_pass_from_actual_report": false,
+  "reported_latency_ms_per_image_reference_only": 66.29617746982451,
+  "limitations": [
+    "Local self-selected complete-Study sample, not organizer fixed100set.",
+    "GPU RTX2080Ti not T4.",
+    "Actual cost executable is old image-level timing implementation, not per-Study hard-limit certification.",
+    "FP16/native outputs match historical FP16 pipeline on these100images only; does not establish FP32 equivalence or all-test equivalence."
+  ],
+  "new_forward_runs": 0,
+  "training_runs": 0,
+  "weight_changes": 0,
+  "predictions_changed": false
+}

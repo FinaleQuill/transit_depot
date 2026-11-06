@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-11-04T17:29:48.800105+08:00",
+  "reason": "Explicit user time budget: patience3, max6, prior epochs count",
+  "previous_controller_pid": 36434,
+  "boundary_epoch": 3,
+  "requested_stop_sha256": "91e8b4f234fdff0cb32af217768de964530c2f1ac3000f49eed0a41ad2fe2301",
+  "policy_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/patience3.json",
+  "policy_sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+  "source_sha256": {
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller_earlystop.py": "7624b39a8dd2a1eca4a52799f9013fad61c04f14ffaca8c10d9c045794d4406c",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_earlystop.py": "6b7686330f972e447527c477ba7c5a203e9f9ce485903961f1397fde3ad234e5",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/early_stop_policy.py": "01124f33a853300257f85a4fb6135f20f6c33bdc1e87042a9d4df13fd1ef969a"
+  },
+  "original_plan_sha256": "8f3d01bf5dc13588b372fb0195f18d31ce385ef5dfd5477a7a6ab3cbaeafd820",
+  "performance_plan_sha256": "5635853b41428d473f34116ca4d766982790c7df018d6c9d6f36a85e0db10a95",
+  "authorized_queue": [
+    "global_control",
+    "global_local",
+    "paired_comparison"
+  ],
+  "AI_goal_created": false
+}

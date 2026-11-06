@@ -1,0 +1,63 @@
+{
+  "output": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+  "sources": [
+    {
+      "model_dir": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+      "source_config_sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "source_weights": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt",
+      "target_weights": "student_00_fp16.pt",
+      "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    },
+    {
+      "model_dir": "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2",
+      "source_config_sha256": "99f417ad850f31ebdd7110659b8845e52c9d37abd93e3b55b9c7043a80abc4ca",
+      "source_weights": "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/student_fp16.pt",
+      "target_weights": "student_01_fp16.pt",
+      "weights_sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+      "bytes": 55712511
+    }
+  ],
+  "planned_inference_bytes": 128766272,
+  "limit_bytes": 500000000,
+  "size_pass": true,
+  "latency_status": "pending_T4_measurement",
+  "fp16_validation_status": "pending_same_deployment_validation",
+  "execute": false,
+  "model_built": false,
+  "gpu_work": false,
+  "member_seeds": [
+    43,
+    44
+  ],
+  "image_sizes": [
+    768
+  ],
+  "weights": [
+    [
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    [
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75
+    ]
+  ],
+  "test_used": false
+}

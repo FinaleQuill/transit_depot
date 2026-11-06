@@ -1,0 +1,8 @@
+{
+  "state": "completed",
+  "completed_epochs": 6,
+  "weights": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/opacity512/final_fp16.pt",
+  "weights_sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c",
+  "validation_evaluated": false,
+  "updated_at": "2026-11-05T07:58:37.130629+08:00"
+}

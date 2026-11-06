@@ -1,0 +1,8 @@
+{
+  "log": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/handoff.console.log",
+  "no_AI_goal": true,
+  "pid": 34724,
+  "ready_sha256": "49873ca40551e0fcd82b65355257c24c9f538134480e3687cb1f8c6a5784c408",
+  "source_sha256": "ef655eb5a1c2981830c8d48a36734ea8efc33be268b2cbad4e6a1ab5c972d966",
+  "started_at": "2026-11-04T16:22:00.474018+08:00"
+}

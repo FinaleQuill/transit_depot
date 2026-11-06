@@ -1,0 +1,37 @@
+{
+  "source_policy": "Read existing preserved official documents; no re-download; page markers present in .txt",
+  "files": [
+    {
+      "file": "official_rules.pdf",
+      "source_path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/rules_audit_sources/official_rules.pdf",
+      "source_url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+      "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+      "bytes": 544529,
+      "role": "official PDF source"
+    },
+    {
+      "file": "official_rules.pdf.txt",
+      "source_path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/rules_audit_sources/official_rules.pdf.txt",
+      "source_url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+      "sha256": "85cb028cfa5c527fb7ccc8f559b2cd2b3a06f4f1ecdbb678cf846c15e040a51d",
+      "bytes": 8980,
+      "role": "local full text extraction with page markers; PDF is authoritative"
+    },
+    {
+      "file": "official_supplement.pdf",
+      "source_path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/rules_audit_sources/official_supplement.pdf",
+      "source_url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf",
+      "sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+      "bytes": 220706,
+      "role": "official PDF source"
+    },
+    {
+      "file": "official_supplement.pdf.txt",
+      "source_path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/rules_audit_sources/official_supplement.pdf.txt",
+      "source_url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf",
+      "sha256": "50ed638ac586fd4bebc3962f2c83ad710dfb6e70af16baf69aa669ca19a27bc9",
+      "bytes": 11683,
+      "role": "local full text extraction with page markers; PDF is authoritative"
+    }
+  ]
+}

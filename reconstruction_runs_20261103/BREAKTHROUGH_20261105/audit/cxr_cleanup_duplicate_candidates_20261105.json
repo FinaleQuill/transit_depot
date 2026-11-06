@@ -1,0 +1,76 @@
+{
+  "read_only": true,
+  "deleted": false,
+  "verified_groups": [
+    [
+      {
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+        "bytes": 450343581,
+        "inode": 108967,
+        "nlink": 1,
+        "blocks": 873537,
+        "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+      },
+      {
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+        "bytes": 450343581,
+        "inode": 106964,
+        "nlink": 1,
+        "blocks": 873537,
+        "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+      },
+      {
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/last.pt",
+        "bytes": 450343581,
+        "inode": 94306,
+        "nlink": 1,
+        "blocks": 873537,
+        "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+      }
+    ],
+    [
+      {
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/best.pt",
+        "bytes": 450343581,
+        "inode": 111020,
+        "nlink": 1,
+        "blocks": 873537,
+        "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+      },
+      {
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/best.pt",
+        "bytes": 450343581,
+        "inode": 104687,
+        "nlink": 1,
+        "blocks": 873537,
+        "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+      }
+    ],
+    [
+      {
+        "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+        "bytes": 177397507,
+        "inode": 145582,
+        "nlink": 1,
+        "blocks": 346537,
+        "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+      },
+      {
+        "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/model/sprint_fp16.pt",
+        "bytes": 177397507,
+        "inode": 135499,
+        "nlink": 1,
+        "blocks": 346537,
+        "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+      },
+      {
+        "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/model/base768.pt",
+        "bytes": 177397507,
+        "inode": 147391,
+        "nlink": 1,
+        "blocks": 346537,
+        "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+      }
+    ]
+  ]
+}

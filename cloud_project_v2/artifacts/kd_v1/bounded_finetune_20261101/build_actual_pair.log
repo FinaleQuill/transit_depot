@@ -1,0 +1,120 @@
+{
+  "total_inference_bytes": 241445291,
+  "size_limit_bytes": 500000000,
+  "size_pass": true,
+  "files": [
+    {
+      "path": "B/config.json",
+      "bytes": 5228541,
+      "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+    },
+    {
+      "path": "B/student_fp16.pt",
+      "bytes": 175261029,
+      "sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+    },
+    {
+      "path": "X1/config.json",
+      "bytes": 5233693,
+      "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+    },
+    {
+      "path": "X1/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16"
+    },
+    {
+      "path": "config.json",
+      "bytes": 9517,
+      "sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+    }
+  ],
+  "model_weights": [
+    [
+      0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "config_sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d",
+  "selection_plan_sha256": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+  "registered_rule": {
+    "rule_name": "X1_B_class1_B",
+    "probability_rule_name": "X1_B_class1_B",
+    "member_order": [
+      "X1",
+      "B"
+    ],
+    "normalized_weights": [
+      [
+        0.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "ttas": [
+      "hflip2",
+      "hflip2"
+    ],
+    "decoder_candidate": null,
+    "latency_fallback": false,
+    "requires_new_validation": false,
+    "expected_member_identities": {
+      "X1": {
+        "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+        "epoch": 4
+      },
+      "B": {
+        "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+        "epoch": 10
+      }
+    }
+  },
+  "source_inputs_sha256": {
+    "/home/featurize/work/cloud_project_v2/docs/BOUNDED_STUDY_FINETUNE_20261101.json": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1/config.json": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1/student_fp16.pt": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+    "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B/config.json": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+    "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B/student_fp16.pt": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+  },
+  "source_member_bytes_and_identity_preserved": true,
+  "test_used_for_selection": false
+}

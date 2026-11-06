@@ -1,0 +1,20 @@
+{
+  "kind": "cpu_only_real_native_image_loader",
+  "model_forwards": 0,
+  "optimizer_steps": 0,
+  "training_runs_started": 0,
+  "image_size": 768,
+  "batch_size": 4,
+  "num_workers": 8,
+  "prefetch_factor": 2,
+  "pin_memory": false,
+  "training_augmentation": true,
+  "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "images": 256,
+  "first_batch_seconds": 9.557545650000066,
+  "total_seconds": 13.312879147999865,
+  "steady_images": 240,
+  "steady_seconds": 3.737091785999837,
+  "steady_images_per_second": 64.2210611200681,
+  "note": "Short extracted-prefix benchmark; includes augmentation and source SHA checks. Steady timer includes final worker shutdown; not an end-to-end GPU measurement."
+}

@@ -1,0 +1,25 @@
+{
+  "studies": 4,
+  "patients": 4,
+  "image_sizes": [
+    768
+  ],
+  "fixed_tta": "identity+hflip",
+  "per_class_auc": [
+    null,
+    null,
+    0.0,
+    null,
+    0.6666666666666667,
+    null,
+    null,
+    1.0,
+    0.33333333333333337,
+    0.75
+  ],
+  "macro_auc": null,
+  "inference_selection": false,
+  "H_images_accessed": false,
+  "artifact": "/home/featurize/data/kd_rebuild_20261106/state/mechanics/convnext_l/oof_predictions.npz",
+  "sha256": "233caf917c8ed301ab01a5e16bcfb49cb767c91bd514b61efe7410125bd978b5"
+}

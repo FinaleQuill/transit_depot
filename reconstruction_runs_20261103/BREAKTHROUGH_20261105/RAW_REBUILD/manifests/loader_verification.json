@@ -1,0 +1,25 @@
+{
+  "schema": "raw_manifest_loader_verification_v1",
+  "loader": "reconstruction.data.read_records",
+  "fold_validator": "reconstruction.splits.validate_mapping",
+  "source_images": 30344,
+  "optimization_images": 24277,
+  "development_images": 6067,
+  "official_valid_images": 1422,
+  "complete_coverage": true,
+  "unchanged_rows_across_subsets": true,
+  "all_30328_historical_retained_file_sha_and_labels_match": true,
+  "train_dev_overlap": {
+    "subject_id": 0,
+    "study_key": 0,
+    "file_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "train_valid_overlap": {
+    "subject_id": 0,
+    "study_key": 0,
+    "file_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "unit_tests_passed": 3
+}

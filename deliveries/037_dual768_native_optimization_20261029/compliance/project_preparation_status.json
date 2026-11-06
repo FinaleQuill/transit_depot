@@ -1,0 +1,22 @@
+{
+  "models_executed": false,
+  "gpu_work": false,
+  "training_executed": false,
+  "test_predictions_regenerated": false,
+  "package_tests_passed": 24,
+  "inference_consistency_tests_passed": 17,
+  "earlier_deployment_tests_passed": 12,
+  "earlier_local_resource_tests_passed": 11,
+  "combined_training_evidence_complete": true,
+  "combined_training_evidence_runs": 7,
+  "collected_small_files": 350,
+  "combined_index": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/combined/evidence_manifest.json",
+  "collector_status": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/training_evidence_status.json",
+  "remaining_final_material_gaps": [
+    "Original public Tiny/Base pretraining weight files absent in checked paths",
+    "Actual T4 and official 100+5 timing/semantic report unavailable",
+    "Official timing sample Study closure must be checked; incomplete closure remains pending"
+  ],
+  "original_024_manifest_unchanged": true,
+  "git_committed_by_subagent": false
+}

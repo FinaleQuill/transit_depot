@@ -1,0 +1,9 @@
+{
+  "state": "launched",
+  "launched_at": "2026-11-05T13:11:16.404783+08:00",
+  "controller_pid": 201971,
+  "detached": true,
+  "new_training_runs": 0,
+  "config": "/home/featurize/work/cxr_research_20261103/robust_ensemble/plan.json",
+  "config_sha256": "d0b7689b91ee1bb21c0858216d8fda677ad8e6c29348bdf940e7cb33c7a33e7d"
+}

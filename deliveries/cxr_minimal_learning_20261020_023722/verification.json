@@ -1,0 +1,16 @@
+{
+  "zip": "/home/featurize/work/cxr_minimal_learning.zip",
+  "versioned_zip": "/home/featurize/work/deliveries/cxr_minimal_learning_20261020_023722/cxr_minimal_learning.zip",
+  "size_bytes": 75119,
+  "zip_sha256": "1e91274442ff73a322d9e454ddeceb6f18f8ae37ee152ca87b14b76287f77591",
+  "files": 14,
+  "python_files": 9,
+  "guide": "/home/featurize/work/deliveries/cxr_minimal_learning_20261020_023722/cloud_project_v2/LEARNING_GUIDE.md",
+  "guide_lines": 224,
+  "local_dependency_closure": "passed",
+  "all_mainline_functions_preserved": "passed",
+  "static_syntax_and_global_symbols": "passed",
+  "source_hashes_and_mtimes_unchanged": true,
+  "zip_crc_and_exclusions": "passed",
+  "training_interaction": "none"
+}

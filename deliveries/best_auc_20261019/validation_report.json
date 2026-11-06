@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-10-19T08:28:59+08:00",
+  "status": "passed",
+  "submission": "/home/featurize/work/deliveries/best_auc_20261019/submission.csv",
+  "header": [
+    "Subject_id",
+    "Study_id",
+    "Predict_class",
+    "Probability"
+  ],
+  "rows": 14140,
+  "studies": 1414,
+  "subjects": 136,
+  "classes_per_study": 10,
+  "missing_studies": 0,
+  "duplicate_identities": 0,
+  "missing_study_class_pairs": 0,
+  "template_identity_order_equal": true,
+  "all_probabilities_finite_in_0_1": true,
+  "probability_min": 0.00011796224134741351,
+  "probability_max": 0.9959298968315125,
+  "encoding": "UTF-8 without BOM",
+  "line_endings": "CRLF",
+  "sha256": "c985cf8736ebb342af6c8662acbbb277042fa8ef779524b18751220333969650",
+  "sample_sha256": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3"
+}

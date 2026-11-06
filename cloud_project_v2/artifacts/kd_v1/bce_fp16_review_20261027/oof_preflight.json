@@ -1,0 +1,24 @@
+{
+  "teacher_epochs": [
+    20,
+    12,
+    12,
+    12,
+    12
+  ],
+  "teacher_collection_sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e",
+  "held_out_images_per_fold": [
+    6070,
+    6062,
+    6053,
+    6079,
+    6064
+  ],
+  "held_out_total_images": 30328,
+  "unique_held_out_images": 30328,
+  "gpu_idle": true,
+  "cache_output_absent": true,
+  "free_disk_gib": 7.837890625,
+  "models_loaded": false,
+  "inference_started": false
+}

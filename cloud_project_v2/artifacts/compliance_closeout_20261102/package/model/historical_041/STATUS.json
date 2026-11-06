@@ -1,0 +1,16 @@
+{
+  "artifact_role": "historical_041_restored_deployment_not_final_inference_member",
+  "precision": "FP16",
+  "weight_file": "student_fp16.pt",
+  "weight_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "weight_bytes": 55712511,
+  "config_required_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "config_required_bytes": 11284048,
+  "config_present": true,
+  "restorable_historical_deployment": true,
+  "final_members_frozen": false,
+  "blocking_reason": null,
+  "config_recovery_evidence": "evidence/weights/041_config_recovery.json",
+  "local_cost100_comparison": "matched_three_rounds_max_delta_0",
+  "official_compliance_pass": false
+}

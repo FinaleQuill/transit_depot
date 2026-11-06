@@ -1,0 +1,741 @@
+[
+  {
+    "parameter_names": [
+      "backbone.cls_token",
+      "backbone.reg_token",
+      "backbone.pos_embed",
+      "backbone.patch_embed.proj.bias"
+    ],
+    "lr": 6.871947673600005e-07,
+    "base_lr": 6.871947673600005e-07,
+    "weight_decay": 0.0,
+    "layer": 0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.patch_embed.proj.weight"
+    ],
+    "lr": 6.871947673600005e-07,
+    "base_lr": 6.871947673600005e-07,
+    "weight_decay": 0.05,
+    "layer": 0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.0.norm1.weight",
+      "backbone.blocks.0.norm1.bias",
+      "backbone.blocks.0.attn.qkv.bias",
+      "backbone.blocks.0.attn.proj.bias",
+      "backbone.blocks.0.ls1.gamma",
+      "backbone.blocks.0.norm2.weight",
+      "backbone.blocks.0.norm2.bias",
+      "backbone.blocks.0.mlp.fc1.bias",
+      "backbone.blocks.0.mlp.fc2.bias",
+      "backbone.blocks.0.ls2.gamma"
+    ],
+    "lr": 8.589934592000006e-07,
+    "base_lr": 8.589934592000006e-07,
+    "weight_decay": 0.0,
+    "layer": 1,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.0.attn.qkv.weight",
+      "backbone.blocks.0.attn.proj.weight",
+      "backbone.blocks.0.mlp.fc1.weight",
+      "backbone.blocks.0.mlp.fc2.weight"
+    ],
+    "lr": 8.589934592000006e-07,
+    "base_lr": 8.589934592000006e-07,
+    "weight_decay": 0.05,
+    "layer": 1,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.1.norm1.weight",
+      "backbone.blocks.1.norm1.bias",
+      "backbone.blocks.1.attn.qkv.bias",
+      "backbone.blocks.1.attn.proj.bias",
+      "backbone.blocks.1.ls1.gamma",
+      "backbone.blocks.1.norm2.weight",
+      "backbone.blocks.1.norm2.bias",
+      "backbone.blocks.1.mlp.fc1.bias",
+      "backbone.blocks.1.mlp.fc2.bias",
+      "backbone.blocks.1.ls2.gamma"
+    ],
+    "lr": 1.0737418240000007e-06,
+    "base_lr": 1.0737418240000007e-06,
+    "weight_decay": 0.0,
+    "layer": 2,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.1.attn.qkv.weight",
+      "backbone.blocks.1.attn.proj.weight",
+      "backbone.blocks.1.mlp.fc1.weight",
+      "backbone.blocks.1.mlp.fc2.weight"
+    ],
+    "lr": 1.0737418240000007e-06,
+    "base_lr": 1.0737418240000007e-06,
+    "weight_decay": 0.05,
+    "layer": 2,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.2.norm1.weight",
+      "backbone.blocks.2.norm1.bias",
+      "backbone.blocks.2.attn.qkv.bias",
+      "backbone.blocks.2.attn.proj.bias",
+      "backbone.blocks.2.ls1.gamma",
+      "backbone.blocks.2.norm2.weight",
+      "backbone.blocks.2.norm2.bias",
+      "backbone.blocks.2.mlp.fc1.bias",
+      "backbone.blocks.2.mlp.fc2.bias",
+      "backbone.blocks.2.ls2.gamma"
+    ],
+    "lr": 1.3421772800000008e-06,
+    "base_lr": 1.3421772800000008e-06,
+    "weight_decay": 0.0,
+    "layer": 3,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.2.attn.qkv.weight",
+      "backbone.blocks.2.attn.proj.weight",
+      "backbone.blocks.2.mlp.fc1.weight",
+      "backbone.blocks.2.mlp.fc2.weight"
+    ],
+    "lr": 1.3421772800000008e-06,
+    "base_lr": 1.3421772800000008e-06,
+    "weight_decay": 0.05,
+    "layer": 3,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.3.norm1.weight",
+      "backbone.blocks.3.norm1.bias",
+      "backbone.blocks.3.attn.qkv.bias",
+      "backbone.blocks.3.attn.proj.bias",
+      "backbone.blocks.3.ls1.gamma",
+      "backbone.blocks.3.norm2.weight",
+      "backbone.blocks.3.norm2.bias",
+      "backbone.blocks.3.mlp.fc1.bias",
+      "backbone.blocks.3.mlp.fc2.bias",
+      "backbone.blocks.3.ls2.gamma"
+    ],
+    "lr": 1.6777216000000011e-06,
+    "base_lr": 1.6777216000000011e-06,
+    "weight_decay": 0.0,
+    "layer": 4,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.3.attn.qkv.weight",
+      "backbone.blocks.3.attn.proj.weight",
+      "backbone.blocks.3.mlp.fc1.weight",
+      "backbone.blocks.3.mlp.fc2.weight"
+    ],
+    "lr": 1.6777216000000011e-06,
+    "base_lr": 1.6777216000000011e-06,
+    "weight_decay": 0.05,
+    "layer": 4,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.4.norm1.weight",
+      "backbone.blocks.4.norm1.bias",
+      "backbone.blocks.4.attn.qkv.bias",
+      "backbone.blocks.4.attn.proj.bias",
+      "backbone.blocks.4.ls1.gamma",
+      "backbone.blocks.4.norm2.weight",
+      "backbone.blocks.4.norm2.bias",
+      "backbone.blocks.4.mlp.fc1.bias",
+      "backbone.blocks.4.mlp.fc2.bias",
+      "backbone.blocks.4.ls2.gamma"
+    ],
+    "lr": 2.097152000000001e-06,
+    "base_lr": 2.097152000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 5,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.4.attn.qkv.weight",
+      "backbone.blocks.4.attn.proj.weight",
+      "backbone.blocks.4.mlp.fc1.weight",
+      "backbone.blocks.4.mlp.fc2.weight"
+    ],
+    "lr": 2.097152000000001e-06,
+    "base_lr": 2.097152000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 5,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.5.norm1.weight",
+      "backbone.blocks.5.norm1.bias",
+      "backbone.blocks.5.attn.qkv.bias",
+      "backbone.blocks.5.attn.proj.bias",
+      "backbone.blocks.5.ls1.gamma",
+      "backbone.blocks.5.norm2.weight",
+      "backbone.blocks.5.norm2.bias",
+      "backbone.blocks.5.mlp.fc1.bias",
+      "backbone.blocks.5.mlp.fc2.bias",
+      "backbone.blocks.5.ls2.gamma"
+    ],
+    "lr": 2.621440000000001e-06,
+    "base_lr": 2.621440000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 6,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.5.attn.qkv.weight",
+      "backbone.blocks.5.attn.proj.weight",
+      "backbone.blocks.5.mlp.fc1.weight",
+      "backbone.blocks.5.mlp.fc2.weight"
+    ],
+    "lr": 2.621440000000001e-06,
+    "base_lr": 2.621440000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 6,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.6.norm1.weight",
+      "backbone.blocks.6.norm1.bias",
+      "backbone.blocks.6.attn.qkv.bias",
+      "backbone.blocks.6.attn.proj.bias",
+      "backbone.blocks.6.ls1.gamma",
+      "backbone.blocks.6.norm2.weight",
+      "backbone.blocks.6.norm2.bias",
+      "backbone.blocks.6.mlp.fc1.bias",
+      "backbone.blocks.6.mlp.fc2.bias",
+      "backbone.blocks.6.ls2.gamma"
+    ],
+    "lr": 3.276800000000001e-06,
+    "base_lr": 3.276800000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 7,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.6.attn.qkv.weight",
+      "backbone.blocks.6.attn.proj.weight",
+      "backbone.blocks.6.mlp.fc1.weight",
+      "backbone.blocks.6.mlp.fc2.weight"
+    ],
+    "lr": 3.276800000000001e-06,
+    "base_lr": 3.276800000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 7,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.7.norm1.weight",
+      "backbone.blocks.7.norm1.bias",
+      "backbone.blocks.7.attn.qkv.bias",
+      "backbone.blocks.7.attn.proj.bias",
+      "backbone.blocks.7.ls1.gamma",
+      "backbone.blocks.7.norm2.weight",
+      "backbone.blocks.7.norm2.bias",
+      "backbone.blocks.7.mlp.fc1.bias",
+      "backbone.blocks.7.mlp.fc2.bias",
+      "backbone.blocks.7.ls2.gamma"
+    ],
+    "lr": 4.096000000000001e-06,
+    "base_lr": 4.096000000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 8,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.7.attn.qkv.weight",
+      "backbone.blocks.7.attn.proj.weight",
+      "backbone.blocks.7.mlp.fc1.weight",
+      "backbone.blocks.7.mlp.fc2.weight"
+    ],
+    "lr": 4.096000000000001e-06,
+    "base_lr": 4.096000000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 8,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.8.norm1.weight",
+      "backbone.blocks.8.norm1.bias",
+      "backbone.blocks.8.attn.qkv.bias",
+      "backbone.blocks.8.attn.proj.bias",
+      "backbone.blocks.8.ls1.gamma",
+      "backbone.blocks.8.norm2.weight",
+      "backbone.blocks.8.norm2.bias",
+      "backbone.blocks.8.mlp.fc1.bias",
+      "backbone.blocks.8.mlp.fc2.bias",
+      "backbone.blocks.8.ls2.gamma"
+    ],
+    "lr": 5.120000000000002e-06,
+    "base_lr": 5.120000000000002e-06,
+    "weight_decay": 0.0,
+    "layer": 9,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.8.attn.qkv.weight",
+      "backbone.blocks.8.attn.proj.weight",
+      "backbone.blocks.8.mlp.fc1.weight",
+      "backbone.blocks.8.mlp.fc2.weight"
+    ],
+    "lr": 5.120000000000002e-06,
+    "base_lr": 5.120000000000002e-06,
+    "weight_decay": 0.05,
+    "layer": 9,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.9.norm1.weight",
+      "backbone.blocks.9.norm1.bias",
+      "backbone.blocks.9.attn.qkv.bias",
+      "backbone.blocks.9.attn.proj.bias",
+      "backbone.blocks.9.ls1.gamma",
+      "backbone.blocks.9.norm2.weight",
+      "backbone.blocks.9.norm2.bias",
+      "backbone.blocks.9.mlp.fc1.bias",
+      "backbone.blocks.9.mlp.fc2.bias",
+      "backbone.blocks.9.ls2.gamma"
+    ],
+    "lr": 6.400000000000001e-06,
+    "base_lr": 6.400000000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 10,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.9.attn.qkv.weight",
+      "backbone.blocks.9.attn.proj.weight",
+      "backbone.blocks.9.mlp.fc1.weight",
+      "backbone.blocks.9.mlp.fc2.weight"
+    ],
+    "lr": 6.400000000000001e-06,
+    "base_lr": 6.400000000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 10,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.10.norm1.weight",
+      "backbone.blocks.10.norm1.bias",
+      "backbone.blocks.10.attn.qkv.bias",
+      "backbone.blocks.10.attn.proj.bias",
+      "backbone.blocks.10.ls1.gamma",
+      "backbone.blocks.10.norm2.weight",
+      "backbone.blocks.10.norm2.bias",
+      "backbone.blocks.10.mlp.fc1.bias",
+      "backbone.blocks.10.mlp.fc2.bias",
+      "backbone.blocks.10.ls2.gamma"
+    ],
+    "lr": 8.000000000000001e-06,
+    "base_lr": 8.000000000000001e-06,
+    "weight_decay": 0.0,
+    "layer": 11,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.10.attn.qkv.weight",
+      "backbone.blocks.10.attn.proj.weight",
+      "backbone.blocks.10.mlp.fc1.weight",
+      "backbone.blocks.10.mlp.fc2.weight"
+    ],
+    "lr": 8.000000000000001e-06,
+    "base_lr": 8.000000000000001e-06,
+    "weight_decay": 0.05,
+    "layer": 11,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.11.norm1.weight",
+      "backbone.blocks.11.norm1.bias",
+      "backbone.blocks.11.attn.qkv.bias",
+      "backbone.blocks.11.attn.proj.bias",
+      "backbone.blocks.11.ls1.gamma",
+      "backbone.blocks.11.norm2.weight",
+      "backbone.blocks.11.norm2.bias",
+      "backbone.blocks.11.mlp.fc1.bias",
+      "backbone.blocks.11.mlp.fc2.bias",
+      "backbone.blocks.11.ls2.gamma",
+      "backbone.norm.weight",
+      "backbone.norm.bias"
+    ],
+    "lr": 1e-05,
+    "base_lr": 1e-05,
+    "weight_decay": 0.0,
+    "layer": 12,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "backbone.blocks.11.attn.qkv.weight",
+      "backbone.blocks.11.attn.proj.weight",
+      "backbone.blocks.11.mlp.fc1.weight",
+      "backbone.blocks.11.mlp.fc2.weight"
+    ],
+    "lr": 1e-05,
+    "base_lr": 1e-05,
+    "weight_decay": 0.05,
+    "layer": 12,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "head.0.weight",
+      "head.0.bias",
+      "head.2.bias"
+    ],
+    "lr": 0.0002,
+    "base_lr": 0.0002,
+    "weight_decay": 0.0,
+    "layer": 13,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "parameter_names": [
+      "head.2.weight"
+    ],
+    "lr": 0.0002,
+    "base_lr": 0.0002,
+    "weight_decay": 0.05,
+    "layer": 13,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "kd512": {
+    "preprocessing_ms": 107.82121816911967,
+    "predict_image_ms": 119.4059856896638,
+    "aggregation_and_csv_ms": 0.21526130934944376,
+    "total_ms": 119.62124699901324,
+    "model_forward_event_span_ms": 6.69206848859787
+  },
+  "kd768": {
+    "preprocessing_ms": 116.91573508142028,
+    "predict_image_ms": 127.76827279827558,
+    "aggregation_and_csv_ms": 0.21870805096114054,
+    "total_ms": 127.98698084923672,
+    "model_forward_event_span_ms": 6.789663045406342
+  },
+  "equal512_768": {
+    "preprocessing_ms": 181.86192120134365,
+    "predict_image_ms": 197.45926708885236,
+    "aggregation_and_csv_ms": 0.2025240016519092,
+    "total_ms": 197.66179109050427,
+    "model_forward_event_span_ms": 12.891953909397126
+  }
+}

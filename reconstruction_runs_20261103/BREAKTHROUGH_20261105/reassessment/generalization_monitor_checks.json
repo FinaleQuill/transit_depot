@@ -1,0 +1,7 @@
+{
+  "end_to_end_cli_passed": true,
+  "real_reference_self_delta": 0.0,
+  "label_alignment_rejection_passed": true,
+  "temp_output": "/tmp/cxr_generalization_monitor_test_6p6_je3z",
+  "gpu_used": false
+}

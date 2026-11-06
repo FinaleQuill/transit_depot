@@ -1,0 +1,11 @@
+{
+  "state": "smoke_completed",
+  "best_macro_auc": null,
+  "best_epoch": null,
+  "attempted_updates": 1,
+  "optimizer_updates": 1,
+  "skipped_updates": 0,
+  "updated_at": "2026-11-03T22:35:02.222950+08:00",
+  "confirmation_evaluated": false,
+  "official_valid_evaluated": false
+}

@@ -1,0 +1,638 @@
+{
+  "scope": "Local Study-batch previews; not official cost certification",
+  "model_difference": {
+    "045": "Fixed X1 Tiny + B Base; class 1 B only, other classes equal probability blend",
+    "044": "Fixed A Tiny + B Base; class 1 B only, other classes equal blend; JPEG draft target 768 decoder",
+    "043": "Original B Base alone; all classes use its probability",
+    "shared": "768 input, FP16 and fixed hflip2; 043/045 full decode, 044 JPEG draft decoder"
+  },
+  "models": {
+    "045_X1_B_full_decode": {
+      "preview_json": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/045/preview.json",
+      "model": "045_X1_B_full_decode",
+      "config_sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d",
+      "decoder": "full_decode_exact_reference_v1",
+      "environment": {
+        "python": "3.12.3",
+        "torch": "2.10.0+cu128",
+        "cuda": "12.8",
+        "cudnn": 91002,
+        "gpu": "NVIDIA GeForce RTX 2080 Ti",
+        "gpu_memory_bytes": 23078109184,
+        "compute_capability": [
+          7,
+          5
+        ],
+        "driver": null,
+        "model_inventory_bytes": 241448464,
+        "precision": "float16",
+        "image_size": 768,
+        "tta": "hflip2"
+      },
+      "measured_studies": 10,
+      "measured_images": 18,
+      "sample_study_signature": [
+        [
+          "subject_12068/study_22215",
+          3
+        ],
+        [
+          "subject_12076/study_22117",
+          2
+        ],
+        [
+          "subject_12081/study_21435",
+          1
+        ],
+        [
+          "subject_12081/study_22228",
+          3
+        ],
+        [
+          "subject_12112/study_22362",
+          1
+        ],
+        [
+          "subject_12115/study_21035",
+          1
+        ],
+        [
+          "subject_12118/study_21322",
+          2
+        ],
+        [
+          "subject_12141/study_21818",
+          1
+        ],
+        [
+          "subject_12143/study_21092",
+          3
+        ],
+        [
+          "subject_12146/study_21478",
+          1
+        ]
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "serial_mean_ms_per_study": 202.58422170445556,
+          "batch_mean_ms_per_study": 167.82981660217047,
+          "speedup": 1.2070812314874186,
+          "saved_ms_all_studies": 347.5440510228509,
+          "image_comparison": {
+            "max_absolute_error": 0.00016677379608154297,
+            "semantic_match": false,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 2,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 2
+          },
+          "study_comparison": {
+            "max_absolute_error": 8.402764797210693e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "serial_mean_ms_per_study": 191.05489190114895,
+          "batch_mean_ms_per_study": 158.4273605971248,
+          "speedup": 1.205946316223716,
+          "saved_ms_all_studies": 326.2753130402416,
+          "image_comparison": {
+            "max_absolute_error": 0.00016677379608154297,
+            "semantic_match": false,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 2,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 2
+          },
+          "study_comparison": {
+            "max_absolute_error": 8.402764797210693e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 3,
+          "serial_mean_ms_per_study": 178.54365079983836,
+          "batch_mean_ms_per_study": 165.136216301471,
+          "speedup": 1.081190151976662,
+          "saved_ms_all_studies": 134.07434498367365,
+          "image_comparison": {
+            "max_absolute_error": 0.00016677379608154297,
+            "semantic_match": false,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 2,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 2
+          },
+          "study_comparison": {
+            "max_absolute_error": 8.402764797210693e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        }
+      ],
+      "three_rounds": {
+        "study_round_observations": 30,
+        "serial_mean_ms_per_study": 190.7275881351476,
+        "batch_mean_ms_per_study": 163.79779783358876,
+        "speedup": 1.1644087445480698,
+        "saved_ms_across_three_rounds": 807.8937090467662,
+        "mean_saved_ms_per_round": 269.2979030155887,
+        "max_absolute_error": {
+          "image": 0.00016677379608154297,
+          "study": 8.402764797210693e-05
+        },
+        "by_images_per_study": {
+          "1": {
+            "study_round_observations": 15,
+            "serial_mean_ms_per_study": 118.28687720117159,
+            "batch_mean_ms_per_study": 108.76542140031233,
+            "speedup": 1.087541202693597,
+            "saved_ms_across_three_rounds": 142.82183701288886
+          },
+          "2": {
+            "study_round_observations": 6,
+            "serial_mean_ms_per_study": 198.34817983549632,
+            "batch_mean_ms_per_study": 161.67320266686147,
+            "speedup": 1.2268463577368856,
+            "saved_ms_across_three_rounds": 220.04986301180907
+          },
+          "3": {
+            "study_round_observations": 9,
+            "serial_mean_ms_per_study": 306.3817118915419,
+            "batch_mean_ms_per_study": 256.93482200020094,
+            "speedup": 1.192449156974535,
+            "saved_ms_across_three_rounds": 445.02200902206823
+          }
+        }
+      }
+    },
+    "043_base_B": {
+      "preview_json": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/043/preview.json",
+      "model": "043_base_B",
+      "config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+      "decoder": "full_decode_exact_reference_v1",
+      "environment": {
+        "python": "3.12.3",
+        "torch": "2.10.0+cu128",
+        "cuda": "12.8",
+        "cudnn": 91002,
+        "gpu": "NVIDIA GeForce RTX 2080 Ti",
+        "gpu_memory_bytes": 23078109184,
+        "compute_capability": [
+          7,
+          5
+        ],
+        "driver": null,
+        "model_inventory_bytes": 180489570,
+        "precision": "float16",
+        "image_size": 768,
+        "tta": "hflip2"
+      },
+      "measured_studies": 10,
+      "measured_images": 18,
+      "sample_study_signature": [
+        [
+          "subject_12068/study_22215",
+          3
+        ],
+        [
+          "subject_12076/study_22117",
+          2
+        ],
+        [
+          "subject_12081/study_21435",
+          1
+        ],
+        [
+          "subject_12081/study_22228",
+          3
+        ],
+        [
+          "subject_12112/study_22362",
+          1
+        ],
+        [
+          "subject_12115/study_21035",
+          1
+        ],
+        [
+          "subject_12118/study_21322",
+          2
+        ],
+        [
+          "subject_12141/study_21818",
+          1
+        ],
+        [
+          "subject_12143/study_21092",
+          3
+        ],
+        [
+          "subject_12146/study_21478",
+          1
+        ]
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "serial_mean_ms_per_study": 148.29062069984502,
+          "batch_mean_ms_per_study": 147.38807829999132,
+          "speedup": 1.0061235780414797,
+          "saved_ms_all_studies": 9.025423998537008,
+          "image_comparison": {
+            "max_absolute_error": 0.00027549266815185547,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 0.00014446179072058474,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "serial_mean_ms_per_study": 129.37899509997806,
+          "batch_mean_ms_per_study": 132.6007227980881,
+          "speedup": 0.975703543463969,
+          "saved_ms_all_studies": -32.21727698110044,
+          "image_comparison": {
+            "max_absolute_error": 0.00027549266815185547,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 0.00014446179072058474,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 3,
+          "serial_mean_ms_per_study": 133.4870310005499,
+          "batch_mean_ms_per_study": 144.1844337998191,
+          "speedup": 0.925807505586067,
+          "saved_ms_all_studies": -106.97402799269184,
+          "image_comparison": {
+            "max_absolute_error": 0.00027549266815185547,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 0.00014446179072058474,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        }
+      ],
+      "three_rounds": {
+        "study_round_observations": 30,
+        "serial_mean_ms_per_study": 137.05221560012433,
+        "batch_mean_ms_per_study": 141.3910782992995,
+        "speedup": 0.9693130376303476,
+        "saved_ms_across_three_rounds": -130.16588097525528,
+        "mean_saved_ms_per_round": -43.38862699175176,
+        "max_absolute_error": {
+          "image": 0.00027549266815185547,
+          "study": 0.00014446179072058474
+        },
+        "by_images_per_study": {
+          "1": {
+            "study_round_observations": 15,
+            "serial_mean_ms_per_study": 84.82808773308837,
+            "batch_mean_ms_per_study": 94.10245319935105,
+            "speedup": 0.9014439565500442,
+            "saved_ms_across_three_rounds": -139.1154819939402
+          },
+          "2": {
+            "study_round_observations": 6,
+            "serial_mean_ms_per_study": 136.70772900028774,
+            "batch_mean_ms_per_study": 140.10631783215408,
+            "speedup": 0.9757427867318746,
+            "saved_ms_across_three_rounds": -20.39153299119789
+          },
+          "3": {
+            "study_round_observations": 9,
+            "serial_mean_ms_per_study": 224.3220864450753,
+            "batch_mean_ms_per_study": 221.06196044397723,
+            "speedup": 1.014747566675653,
+            "saved_ms_across_three_rounds": 29.341134009882808
+          }
+        }
+      }
+    },
+    "044_A_B_draft768": {
+      "preview_json": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/044/preview.json",
+      "model": "044_A_B_draft768",
+      "config_sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+      "decoder": "JPEG_draft_target768",
+      "environment": {
+        "python": "3.12.3",
+        "torch": "2.10.0+cu128",
+        "cuda": "12.8",
+        "cudnn": 91002,
+        "gpu": "NVIDIA GeForce RTX 2080 Ti",
+        "gpu_memory_bytes": 23078109184,
+        "compute_capability": [
+          7,
+          5
+        ],
+        "driver": null,
+        "model_inventory_bytes": 241433757,
+        "precision": "float16",
+        "image_size": 768,
+        "tta": "hflip2"
+      },
+      "measured_studies": 10,
+      "measured_images": 18,
+      "sample_study_signature": [
+        [
+          "subject_12068/study_22215",
+          3
+        ],
+        [
+          "subject_12076/study_22117",
+          2
+        ],
+        [
+          "subject_12081/study_21435",
+          1
+        ],
+        [
+          "subject_12081/study_22228",
+          3
+        ],
+        [
+          "subject_12112/study_22362",
+          1
+        ],
+        [
+          "subject_12115/study_21035",
+          1
+        ],
+        [
+          "subject_12118/study_21322",
+          2
+        ],
+        [
+          "subject_12141/study_21818",
+          1
+        ],
+        [
+          "subject_12143/study_21092",
+          3
+        ],
+        [
+          "subject_12146/study_21478",
+          1
+        ]
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "serial_mean_ms_per_study": 151.16831030027242,
+          "batch_mean_ms_per_study": 139.79775330080884,
+          "speedup": 1.0813357634939746,
+          "saved_ms_all_studies": 113.70556999463588,
+          "image_comparison": {
+            "max_absolute_error": 0.0001228228211402893,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 7.833043734228884e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "serial_mean_ms_per_study": 163.39836479892256,
+          "batch_mean_ms_per_study": 141.92296609689947,
+          "speedup": 1.151317290588195,
+          "saved_ms_all_studies": 214.75398702023085,
+          "image_comparison": {
+            "max_absolute_error": 0.0001228228211402893,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 7.833043734228884e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        },
+        {
+          "round": 3,
+          "serial_mean_ms_per_study": 173.53826480248244,
+          "batch_mean_ms_per_study": 150.73727199924178,
+          "speedup": 1.1512631381796226,
+          "saved_ms_all_studies": 228.0099280324066,
+          "image_comparison": {
+            "max_absolute_error": 0.0001228228211402893,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 13,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          },
+          "study_comparison": {
+            "max_absolute_error": 7.833043734228884e-05,
+            "semantic_match": true,
+            "tolerance_match": false,
+            "binary_mismatched_count": 0,
+            "sample_class_order_mismatched_count": 0,
+            "cross_study_class_order_mismatched_count": 0,
+            "probability_mismatched_count": 5,
+            "missing_result_count": 0,
+            "unexpected_result_count": 0,
+            "missing_reference_count": 0,
+            "invalid_probability_count": 0,
+            "any_order_changed_count": 0
+          }
+        }
+      ],
+      "three_rounds": {
+        "study_round_observations": 30,
+        "serial_mean_ms_per_study": 162.70164663389247,
+        "batch_mean_ms_per_study": 144.15266379898335,
+        "speedup": 1.1286759630108196,
+        "saved_ms_across_three_rounds": 556.4694850472733,
+        "mean_saved_ms_per_round": 185.4898283490911,
+        "max_absolute_error": {
+          "image": 0.0001228228211402893,
+          "study": 7.833043734228884e-05
+        },
+        "by_images_per_study": {
+          "1": {
+            "study_round_observations": 15,
+            "serial_mean_ms_per_study": 98.01625506855392,
+            "batch_mean_ms_per_study": 94.88859799845766,
+            "speedup": 1.0329613582250115,
+            "saved_ms_across_three_rounds": 46.914856051444076
+          },
+          "2": {
+            "study_round_observations": 6,
+            "serial_mean_ms_per_study": 170.19892183452612,
+            "batch_mean_ms_per_study": 146.63593783431375,
+            "speedup": 1.1606903760989107,
+            "saved_ms_across_three_rounds": 141.37790400127415
+          },
+          "3": {
+            "study_round_observations": 9,
+            "serial_mean_ms_per_study": 265.5124491090343,
+            "batch_mean_ms_per_study": 224.60392410963928,
+            "speedup": 1.182136287963632,
+            "saved_ms_across_three_rounds": 368.1767249945551
+          }
+        }
+      }
+    }
+  }
+}

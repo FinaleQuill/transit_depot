@@ -1,0 +1,306 @@
+{
+  "recorded_at_utc": "2026-10-25T13:37:25.881960+00:00",
+  "user_decision": "Keep original20/12/12/12/12; proposed15 revoked before any15 training or plan creation.",
+  "original_fold0_status": {
+    "state": "completed",
+    "completed_epochs": 20,
+    "validated_epochs": 0,
+    "backward_batches": 242580,
+    "optimizer_updates": 15180,
+    "ema_updates": 15180,
+    "amp_skipped_steps": 0,
+    "fold": 0,
+    "training_complete": true,
+    "inference_ready": true,
+    "selection_protocol": "fixed_epoch_final_ema",
+    "last_checkpoint_sha256": "af2c4589a410434d61213945b8036ba9da23af4b5600b0b9a6acb97a905b437d",
+    "best_checkpoint_sha256": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+    "updated_utc": "2026-10-25T13:26:28.013100+00:00"
+  },
+  "interruption_command_receipt": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T114605Z_21094c6a.json",
+  "interruption": "SIGINT/KeyboardInterrupt controller at13:07:22UTC before originalfold0 completed13:26:28UTC. Sender unknown.",
+  "planned_handoff_receipt": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/planned_handoff_receipt.json",
+  "checkpoint_events": 21,
+  "checkpoint_epoch_coverage": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "console_marker_coverage": [
+    {
+      "epoch": 1,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 2,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 3,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 4,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 5,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 6,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 7,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 8,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 9,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 10,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 11,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 12,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 13,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 14,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 15,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 16,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 17,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 18,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 19,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "epoch": 20,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    }
+  ],
+  "protected_inputs": {
+    "data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67"
+  },
+  "retained_gaps": "First epoch exact checkpoint mtime unavailable; early console is recovered rendered tmux history. Kept unchanged in manifest.",
+  "repair": "Resume the identical frozen12-epoch plan in a separate process session. tmux observes its log only; terminalinterrupt of viewer cannot signal controller.",
+  "resumed_at_utc": "2026-10-25T13:39:27.332745+00:00",
+  "state_at_resume": {
+    "phase": "validating_epoch13_and_epoch20",
+    "updated_at_utc": "2026-10-25T13:38:27.955881+00:00",
+    "controller_pid": 146121,
+    "original_completed_epochs": 20,
+    "controller_process": {
+      "pid": 146121,
+      "state": "R",
+      "ppid": 146116,
+      "start_ticks": 2944264,
+      "cmdline_sha256": "e0ce4284b90bec18a29602e32dcf33bdade64f743cd275919720d4d05038411a"
+    },
+    "original_scheduler_released": true,
+    "validation_output": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20",
+    "command": {
+      "stage": "validating_epoch13_and_epoch20",
+      "args": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "/home/featurize/work/cloud_project_v2/validate_teacher.py",
+        "--checkpoint",
+        "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_last.pt",
+        "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt",
+        "--fold-plan",
+        "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+        "--manifest",
+        "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+        "--image-root",
+        "/home/featurize/data/cxr_first",
+        "--output-dir",
+        "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20",
+        "--execute"
+      ],
+      "process": {
+        "pid": 146122,
+        "state": "R",
+        "ppid": 146121,
+        "start_ticks": 2944276,
+        "cmdline_sha256": "666cd89cbaafa5f51c0a8c68c74816d804368e04305703c89045ae87f332df02"
+      }
+    }
+  },
+  "source_sha256": {
+    "run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+  },
+  "validation_comparison": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20/comparison_report.json",
+  "validation_results": [
+    {
+      "checkpoint": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_last.pt",
+      "checkpoint_sha256": "571cd8dd2910fb6fe1483f49f48d2d9c1664d792210a74e35f6daa69cbe9eaf7",
+      "epoch": 13,
+      "macro_auc": 0.781233357654685,
+      "macro_auc_delta_from_reference": 0.0,
+      "training_complete": false,
+      "inference_ready": false
+    },
+    {
+      "checkpoint": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt",
+      "checkpoint_sha256": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+      "epoch": 20,
+      "macro_auc": 0.7713447476336297,
+      "macro_auc_delta_from_reference": -0.009888610021055344,
+      "training_complete": true,
+      "inference_ready": true
+    }
+  ],
+  "latest_controller_state": {
+    "phase": "training_folds_1_to_4_twelve_epochs",
+    "updated_at_utc": "2026-10-25T13:40:01.548303+00:00",
+    "controller_pid": 146121,
+    "original_completed_epochs": 20,
+    "controller_process": {
+      "pid": 146121,
+      "state": "R",
+      "ppid": 146116,
+      "start_ticks": 2944264,
+      "cmdline_sha256": "e0ce4284b90bec18a29602e32dcf33bdade64f743cd275919720d4d05038411a"
+    },
+    "original_scheduler_released": true,
+    "validation_output": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20",
+    "command": {
+      "stage": "training_folds_1_to_4_twelve_epochs",
+      "args": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "/home/featurize/work/cloud_project_v2/run_teachers.py",
+        "--run-dir",
+        "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5",
+        "--fold-plan",
+        "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+        "--image-root",
+        "/home/featurize/data/cxr_first",
+        "--batch-size",
+        "2",
+        "--effective-batch-size",
+        "32",
+        "--epochs",
+        "12",
+        "--num-workers",
+        "8",
+        "--prefetch-factor",
+        "2",
+        "--seed",
+        "43",
+        "--folds",
+        "1",
+        "2",
+        "3",
+        "4",
+        "--execute"
+      ],
+      "process": {
+        "pid": 147184,
+        "state": "R",
+        "ppid": 146121,
+        "start_ticks": 2953635,
+        "cmdline_sha256": "b63ba2fd5726705ff454847b2cccbaa23fcd5d679cd1e05b391bc29863d66aa1"
+      }
+    },
+    "comparison_report": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20/comparison_report.json"
+  },
+  "cpu_tests": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "log": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/mixed_teacher_recovery_20261025/tests.txt"
+  }
+}

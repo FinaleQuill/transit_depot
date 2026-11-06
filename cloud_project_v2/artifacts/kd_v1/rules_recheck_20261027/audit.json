@@ -1,0 +1,27 @@
+{
+  "checked_at_hong_kong": "2026-10-27T02:17:04.712325+08:00",
+  "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+  "remote_download_succeeded": true,
+  "remote_sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+  "remote_bytes": 544529,
+  "local_sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+  "remote_matches_local": true,
+  "reviewed_pdf_pages": 6,
+  "source_text": "../compliance_repair_20261025/rules/official_rules_extracted.txt",
+  "text_basis": "Existing complete page text from archived PDF whose SHA256 matches the fresh official download and local rules.pdf.",
+  "scope": "Current teacher valid-only diagnostic and planned supervised/KD student deployment; no final model certification.",
+  "clause_checks": {
+    "1_2_pretraining_data": "V1 Base/Tiny ImageNet22k→1k allowed provenance only; no external medical data or medical pretraining.",
+    "3_validation": "Official valid not trained; E13/E20 and fixed TTA/correction comparisons allowed, subject to honest protocol declaration.",
+    "4_class_weights": "Training class-weighted BCE allowed; correction uses train-only weights, no test priors.",
+    "5_6_test_and_inference": "No test training/fitting/selection. Fixed TTA and fixed ensembles explicitly allowed. eval/inference_mode/frozen deployment.",
+    "7_runtime": "Shared Predictor and CSV writer, batch1 serial100/5warmups/3round mean; actual final T4 measurement still required.",
+    "8_size": "All actually loaded unique member weights and requiredconfig measured; offline teachers excluded; final actual bytes pending.",
+    "10_appendix_materials": "Actual pretrained/license/SHA/source/environment/logs required; incomplete material stayspending."
+  },
+  "project_protocol_distinction": "Strict patient-OOF is a project safeguard, not an official uniform-epoch rule. E13 remains truthful intermediate diagnostic; no automatic source promotion.",
+  "current_stage_rule_violation_found": false,
+  "final_submission_certified": false,
+  "runtime_source_modified": false,
+  "new_training_or_gpu_work_started_by_this_audit": false
+}

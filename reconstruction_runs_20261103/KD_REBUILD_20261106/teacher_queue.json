@@ -1,0 +1,57 @@
+{
+  "schema": "kd_first_stage_teacher_queue_v1",
+  "runs": [
+    {
+      "run_id": "dinov3_l_inner0",
+      "family": "dinov3_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/dinov3_l_inner0.json",
+      "config_sha256": "345b47112f5cef9ba8309d63e002ff07977acfacfb3345b877312e46bda1b9c5",
+      "epochs": 24
+    },
+    {
+      "run_id": "convnext_l_inner0",
+      "family": "convnext_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/convnext_l_inner0.json",
+      "config_sha256": "8ed99c604573d310626b4b437007356115884bd6bb5491e14a41ee6b72fc4386",
+      "epochs": 20
+    },
+    {
+      "run_id": "dinov3_l_inner1",
+      "family": "dinov3_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/dinov3_l_inner1.json",
+      "config_sha256": "a82e8f3b3c80f8c904b26687a2445a830a34ec1aef7a77a9eb151181c2374506",
+      "epochs": 24
+    },
+    {
+      "run_id": "convnext_l_inner1",
+      "family": "convnext_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/convnext_l_inner1.json",
+      "config_sha256": "905c0437c80bc3c3994ad50eb95a4804f4ccd984f4490922eb9e08d165270644",
+      "epochs": 20
+    },
+    {
+      "run_id": "dinov3_l_inner2",
+      "family": "dinov3_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/dinov3_l_inner2.json",
+      "config_sha256": "f58ade8a30d43d41caf306c0beb0258026e38b0ee2f0dd328b5651c2376b234f",
+      "epochs": 24
+    },
+    {
+      "run_id": "convnext_l_inner2",
+      "family": "convnext_l",
+      "config": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/configs/convnext_l_inner2.json",
+      "config_sha256": "c19a902e5e5803d16937a72bc2e0f78d1c3327149fa6214cb4c87117953fd1ca",
+      "epochs": 20
+    }
+  ],
+  "teacher_count": 6,
+  "total_teacher_epochs": 132,
+  "data_plan": "/home/featurize/data/kd_rebuild_20261106/plan.json",
+  "data_plan_sha256": "0d4086d6f932621550781d1cfcbc88fed41f232fd93e19d9b4c048ca3051a974",
+  "after_teachers": "awaiting_teacher_review",
+  "automatic_students": false,
+  "automatic_second_outer_split": false,
+  "automatic_full_train_valid": false,
+  "automatic_submission": false,
+  "user_authorization": "2026-11-06: 按照你的计划，启动训练"
+}

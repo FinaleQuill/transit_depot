@@ -1,0 +1,8 @@
+{
+  "state": "awaiting_user_instruction",
+  "selected_candidate": "sprint_candidate",
+  "candidate_macro_auc": 0.8179628779375786,
+  "test_images_read": false,
+  "submission_generated": false,
+  "next_action": "Run sprint.deploy with --generate-submission only after explicit user instruction."
+}

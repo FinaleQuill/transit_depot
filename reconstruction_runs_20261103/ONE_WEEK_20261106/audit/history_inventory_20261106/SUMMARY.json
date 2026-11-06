@@ -1,0 +1,80 @@
+{
+  "started_at": "2026-11-06T19:03:35.239970+08:00",
+  "completed_at": "2026-11-06T19:04:10.873813+08:00",
+  "root": "/home/featurize/work",
+  "inventory_scope": "Human documents .md/.txt/.rst and structured/log .json/.jsonl/.log/.yaml/.yml/.toml; all matched file contents read and SHA256 computed; no Python source or binaries are claimed line-by-line reviewed.",
+  "files": 3648,
+  "bytes": 465172333,
+  "counts_by_suffix": {
+    ".md": 556,
+    ".json": 2197,
+    ".txt": 356,
+    ".log": 374,
+    ".jsonl": 165
+  },
+  "bytes_by_suffix": {
+    ".md": 4178542,
+    ".json": 390770934,
+    ".txt": 765107,
+    ".log": 66630754,
+    ".jsonl": 2826996
+  },
+  "unique_content_hashes": 2636,
+  "history_files": 76,
+  "unique_history_content_sets": 58,
+  "recorded_positive_epoch_entries_across_unique_histories": 396,
+  "warning_epoch_total_not_independent_runs": "Snapshots/continuations can overlap without identical full-file hashes; no sum is a count of independently executed training.",
+  "status_stop_decision_files": 228,
+  "explicit_failure_named_json_files": 11,
+  "logs_with_exception_matches": 38,
+  "json_parse_failures": [
+    {
+      "path": "cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/environment/official_environment_probe.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "suffix": ".json",
+      "mtime_ns": 1793264788609613378,
+      "changed_during_read": false,
+      "utf8_replacement_characters": 0,
+      "lines": 0,
+      "json_parsed": false,
+      "parse_error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "path": "cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/environment/official_environment_probe_nvidia_runtime.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "suffix": ".json",
+      "mtime_ns": 1793264803972087102,
+      "changed_during_read": false,
+      "utf8_replacement_characters": 0,
+      "lines": 0,
+      "json_parsed": false,
+      "parse_error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  ],
+  "jsonl_with_parse_failures": [],
+  "changed_during_read": [],
+  "read_failures": [],
+  "excluded_counts": {
+    "directory:.ssh": 1,
+    "directory:.config": 1,
+    "not_document_or_structured_log": 7244,
+    "sensitive_hidden_or_symlink": 62,
+    "directory:__pycache__": 19,
+    "directory:.git": 1,
+    "directory:vendor": 1,
+    "directory:wheels": 1,
+    "directory:site": 1,
+    "directory:audit": 1
+  },
+  "exclusions": "Hidden dirs/files (.git/.ssh/.config etc), symlinks, known secret filenames, node_modules/site/site-packages/wheels/vendor/cache/images; binary weights/images/archives/PDF; this audit output. No external tool logs outside work.",
+  "limitations": [
+    "Filesystem inventory is not atomic; active new student logs may change after snapshot.",
+    "All included bytes were accessed mechanically; headings/scalars/exception extraction is not a claim of manual line-by-line review or causal validation.",
+    "Missing/disappeared temp files and outside-work local state are not reconstructed.",
+    "A history line is recorded-complete epoch evidence; an interrupted next epoch is not counted.",
+    "Duplicate history hashes identify exact copies only; nonidentical continuations and mechanical smokes are not independent full experiments.",
+    "Status failure may reflect user STOP/recoverable reporting errors; logs and stop receipts must decide interpretation."
+  ]
+}

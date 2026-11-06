@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-01T19:24:21.280795+00:00",
+  "controller_pid": 28152,
+  "stage_launcher_pid": 28156,
+  "state": "running",
+  "stage": "train_A_tiny",
+  "finite_loss_progress_lines": [
+    "packed_study epoch=1 studies=5/18513 images=8 packs=1 loss=0.191206 alpha=0.2000"
+  ],
+  "training_code_commit": "c10437a",
+  "handoff_commit": "afdeef1",
+  "plan_sha256": "6f16ebd0023ea626b1be10f137011d0d8d1ed87ee3d6a663f26c50423b35bd32",
+  "augmentation_visualization": "augmentation_preview/train_005642_real_augmentation.png",
+  "final_report_after_completion": "evaluation/REPORT.md"
+}

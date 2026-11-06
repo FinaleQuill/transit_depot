@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "file": "run019_v2_run_config.json",
+      "source_path": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/run_config.json",
+      "sha256": "734be7c6ccc235ec9b7645c9b06ead89f6ab5beaaf4e73c2bad5b26e096be289",
+      "bytes": 1979
+    },
+    {
+      "file": "run020_v2_run_config.json",
+      "source_path": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/run_config.json",
+      "sha256": "bfe8e239967c9873c45989d7ad8ba29d53804e9280084f9f1df9772efd54289d",
+      "bytes": 2287
+    },
+    {
+      "file": "run020_v2_runner_status.json",
+      "source_path": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/runner_status.json",
+      "sha256": "c930d353fc1932fa97b1d8825acfab394056d86a48f9a614b5218fe9ab35f111",
+      "bytes": 3301
+    },
+    {
+      "file": "run019_v2_status.json",
+      "source_path": "/home/featurize/work/deliveries/019_convnextv2_base512_cv5_4090/status.json",
+      "sha256": "1e8daf041b96727b6f0a82cb0bf618d7e88af04b279240a6e9ef8a479dfcad04",
+      "bytes": 467
+    },
+    {
+      "file": "run019_v2_valid_metrics.json",
+      "source_path": "/home/featurize/work/deliveries/019_convnextv2_base512_cv5_4090/valid_metrics.json",
+      "sha256": "0f20d0c052ea0ed74d0b524e47b764528c56ef6560c91f27a732627187191b70",
+      "bytes": 2161
+    },
+    {
+      "file": "run016_v1_config.json",
+      "source_path": "/home/featurize/work/runs/016_a4000_tiny_v2/config.json",
+      "sha256": "9f1ba54dca526afeadb01b04448697441a9035b384fb7e6bac788585453c48bf",
+      "bytes": 1120
+    },
+    {
+      "file": "selected_v1_016_provenance.json",
+      "source_path": "/home/featurize/work/deliveries/best_auc_20261019/provenance.json",
+      "sha256": "646149c623aef2803dfb578e7a9b9478c0992e8efa571fee4a6811680bb331b2",
+      "bytes": 2251
+    },
+    {
+      "file": "model_overnight_current.py",
+      "source_path": "/home/featurize/work/cloud_project_v2/model_overnight.py",
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "bytes": 3284
+    },
+    {
+      "file": "kd_common_current.py",
+      "source_path": "/home/featurize/work/cloud_project_v2/kd_common.py",
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "bytes": 6721
+    },
+    {
+      "file": "KD_V1_USAGE.md",
+      "source_path": "/home/featurize/work/cloud_project_v2/docs/KD_V1_USAGE.md",
+      "sha256": "e1776ce477e849811e503155089f4956ab4e8a0db5fe8e4cab6ad54eddbfef0c",
+      "bytes": 11433
+    },
+    {
+      "file": "KD_V1_COMPLIANCE.md",
+      "source_path": "/home/featurize/work/cloud_project_v2/docs/KD_V1_COMPLIANCE.md",
+      "sha256": "3c3784def90391248f91de5ba5b30ce2890239ca4cbe87e4eae0b2ab5da2ca4e",
+      "bytes": 6182
+    },
+    {
+      "file": "CODE_CLEANUP_20261026.md",
+      "source_path": "/home/featurize/work/cloud_project_v2/docs/history/CODE_CLEANUP_20261026.md",
+      "sha256": "c7eeadf6dafd4f75cce21c4c59fee660c119a978808168d3c0bd3014c3a71790",
+      "bytes": 2375
+    },
+    {
+      "file": "README_current_snapshot.md",
+      "source_path": "/home/featurize/work/cloud_project_v2/README.md",
+      "sha256": "9796ea9860a9c9ebe4b0a66c8fdc9fabcea56f014e8d9cfa68e92f9f174bb8f4",
+      "bytes": 11239
+    }
+  ]
+}

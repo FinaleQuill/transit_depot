@@ -1,0 +1,16 @@
+{
+  "archive": "/home/featurize/work/cxr_learning_package.zip",
+  "versioned_archive": "/home/featurize/work/deliveries/cxr_learning_20261020_021015/cxr_learning_package.zip",
+  "guide": "/home/featurize/work/LEARNING_GUIDE.md",
+  "guide_in_zip_root": true,
+  "zip_files": 47,
+  "zip_bytes": 271021,
+  "zip_sha256": "97ce9a072d2380723f0484fc2f1c8f1733c0bcef06b677261347b544e6953f65",
+  "guide_lines": 443,
+  "live_source_files_unchanged": 43,
+  "python_ast_and_tokens_equal": 25,
+  "python_files_commented": 25,
+  "zip_crc_and_contents": "passed",
+  "excluded_content_check": "passed",
+  "no_training_interaction": true
+}

@@ -1,0 +1,17 @@
+{
+  "state": "smoke_completed",
+  "best_macro_auc": null,
+  "best_epoch": null,
+  "attempted_updates": 2,
+  "optimizer_updates": 2,
+  "skipped_updates": 0,
+  "updated_at": "2026-11-05T21:57:53.820666+08:00",
+  "official_valid_evaluated": false,
+  "test_used": false,
+  "stage_decision": {
+    "state": "not_evaluated",
+    "reason": "Smoke or no complete candidate",
+    "automatic_submission": false
+  },
+  "next_action": "Review paired evidence; confirm on another patient fold before full-data refit"
+}

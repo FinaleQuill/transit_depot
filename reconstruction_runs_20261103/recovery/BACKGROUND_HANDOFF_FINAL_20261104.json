@@ -1,0 +1,179 @@
+{
+  "verified_at_hong_kong": "2026-11-04T01:11:16.112976+08:00",
+  "controller_status": {
+    "active_container": "cxr-reconstruct-e0-1793717705_331369",
+    "actual_epoch_auc": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7287554363943574
+      },
+      {
+        "epoch": 2,
+        "macro_auc": 0.7640501061493883
+      },
+      {
+        "epoch": 3,
+        "macro_auc": 0.7774432875814724
+      },
+      {
+        "epoch": 4,
+        "macro_auc": 0.7879218965440287
+      }
+    ],
+    "child_pid": 331372,
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull=never",
+      "--network=none",
+      "--shm-size=4g",
+      "--gpus",
+      "all",
+      "--name",
+      "cxr-reconstruct-e0-1793717705_331369",
+      "--user",
+      "1000:1000",
+      "--volume",
+      "/home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro",
+      "--volume",
+      "/home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro",
+      "--volume",
+      "/home/featurize/data:/home/featurize/data:ro",
+      "--volume",
+      "/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:ro",
+      "--volume",
+      "/tmp/cxr_train_addons_20261103:/opt/cxr_train_addons:ro",
+      "--env",
+      "PYTHONPATH=/opt/cxr_train_addons:/home/featurize/work/cxr_research_20261103",
+      "--env",
+      "PYTHONNOUSERSITE=1",
+      "--env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "--env",
+      "HF_HUB_OFFLINE=1",
+      "--env",
+      "NO_ALBUMENTATIONS_UPDATE=1",
+      "--env",
+      "OMP_NUM_THREADS=1",
+      "--env",
+      "MKL_NUM_THREADS=1",
+      "--env",
+      "OPENBLAS_NUM_THREADS=1",
+      "--env",
+      "TZ=Asia/Hong_Kong",
+      "--env",
+      "PYTHONHASHSEED=20261103",
+      "--env",
+      "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "--workdir",
+      "/home/featurize/work/cxr_research_20261103",
+      "--entrypoint",
+      "python3",
+      "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+      "-u",
+      "-m",
+      "reconstruction.train",
+      "--config",
+      "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json",
+      "--execute"
+    ],
+    "completed_jobs": [],
+    "confirmation_evaluated": false,
+    "controller_pid": 331369,
+    "current_epoch_eta": "2026-11-04T01:38:04.170829+08:00",
+    "current_job": "E0",
+    "job_histories": {
+      "E0": [
+        {
+          "epoch": 1,
+          "macro_auc": 0.7287554363943574
+        },
+        {
+          "epoch": 2,
+          "macro_auc": 0.7640501061493883
+        },
+        {
+          "epoch": 3,
+          "macro_auc": 0.7774432875814724
+        },
+        {
+          "epoch": 4,
+          "macro_auc": 0.7879218965440287
+        }
+      ]
+    },
+    "log_path": "/home/featurize/work/reconstruction_runs_20261103/controller/logs/E0_1793717705_331369.log",
+    "monitor_error": null,
+    "official_valid_evaluated": false,
+    "started_at": "2026-11-03T22:55:05.503065+08:00",
+    "state": "training",
+    "test_accessed": false,
+    "trainer_progress": {
+      "attempted_updates": 1426,
+      "compute_seconds": 149.7613727299031,
+      "data_wait_seconds": 27.60492640110897,
+      "elapsed_seconds": 177.36690550201456,
+      "epoch": 5,
+      "estimated_epoch_seconds": 1810.8378550702,
+      "gradient_norm": 3.6272456645965576,
+      "images_done": 1788,
+      "learning_rates": [
+        1.9271524409495658e-05,
+        1.9271524409495658e-05,
+        0.00019271524409495658,
+        0.00019271524409495658
+      ],
+      "mean_loss": 0.523894655134748,
+      "optimizer_updates": 1425,
+      "peak_gpu_bytes": 14399718912,
+      "skipped_updates": 1,
+      "state": "training",
+      "studies_done": 1088,
+      "studies_total": 11108,
+      "updated_at": "2026-11-04T01:10:49.413473+08:00"
+    },
+    "updated_at": "2026-11-04T01:10:50.698043+08:00"
+  },
+  "actual_controller_process": "    PID    PPID    PGID     SID TT       STAT ELAPSED COMMAND\n 331369       1  331369  331369 ?        Ss      8171 /environment/miniconda3/bin/python -u -m reconstruction.controller --controller-dir /home/featurize/work/reconstruction_runs_20261103/controller --configs reconstruction/configs/E0.json reconstruction/configs/E1.json --execute\n",
+  "controller_standard_streams": {
+    "0": "/dev/null",
+    "1": "/home/featurize/work/reconstruction_runs_20261103/controller.launch.log",
+    "2": "/home/featurize/work/reconstruction_runs_20261103/controller.launch.log"
+  },
+  "docker_ps": "CONTAINER ID                                                       IMAGE                                                                                                                                                  COMMAND                                                                                                                             CREATED       STATUS       PORTS     NAMES\n8232b5eb044b4910bf362a3fede86456975e2d3aeefd91d63ecf9d8bb851c4e2   crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b   \"python3 -u -m reconstruction.train --config /home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json --execute\"   2 hours ago   Up 2 hours             cxr-reconstruct-e0-1793717705_331369\n",
+  "frozen_inputs_match": {
+    "/home/featurize/work/cxr_research_20261103/audit_trail.py": true,
+    "/home/featurize/work/cxr_research_20261103/model_overnight.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/__init__.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/data.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/model.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/provenance.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/runtime.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/splits.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train.py": true,
+    "/home/featurize/work/cxr_research_20261103/runtime_compat.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_compliance.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_hooks.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/train.csv": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E1.json": true
+  },
+  "progress_advanced": true,
+  "supervision_file": "/home/featurize/work/reconstruction_runs_20261103/SUPERVISION.md",
+  "supervision_sha256": "0ed781eb668da000320c378020937d079b775176df8488e5cf5a7b681cd22fd2",
+  "new_training_launch": false,
+  "server_stop_requested": false,
+  "dialogue_goal_observed_state": "paused",
+  "next_action": "Wait for background E0/E1 comparison; user returns for scientific judgment; no AI polling"
+}

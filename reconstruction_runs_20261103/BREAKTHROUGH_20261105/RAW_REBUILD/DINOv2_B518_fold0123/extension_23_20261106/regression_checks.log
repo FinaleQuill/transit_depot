@@ -1,0 +1,21 @@
+test_amp_skipped_update_never_advances_ema (breakthrough.test_train.TrainerTests.test_amp_skipped_update_never_advances_ema) ... ok
+test_changed_input_bytes_and_public_origin_are_rejected (breakthrough.test_train.TrainerTests.test_changed_input_bytes_and_public_origin_are_rejected) ... ok
+test_complete_run_saves_epoch_status_without_duplicate_progress_keywords (breakthrough.test_train.TrainerTests.test_complete_run_saves_epoch_status_without_duplicate_progress_keywords) ... /home/featurize/work/cxr_research_20261103/breakthrough/train.py:245: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  scaler = torch.amp.GradScaler('cuda', init_scale=1024.)
+ok
+test_optimizer_layer_rates_cover_once_and_exclude_tokens_norm_bias_from_decay (breakthrough.test_train.TrainerTests.test_optimizer_layer_rates_cover_once_and_exclude_tokens_norm_bias_from_decay) ... ok
+test_pack_tail_and_complete_study_gradients_match_direct_batch (breakthrough.test_train.TrainerTests.test_pack_tail_and_complete_study_gradients_match_direct_batch) ... ok
+test_positive_weights_count_studies_once_and_cap_rare_classes (breakthrough.test_train.TrainerTests.test_positive_weights_count_studies_once_and_cap_rare_classes) ... ok
+test_real_parsed_targets_pass_strict_80_20_fold_roles (breakthrough.test_train.TrainerTests.test_real_parsed_targets_pass_strict_80_20_fold_roles) ... ok
+test_relabelled_missing_wrongfold_and_official_valid_rows_are_rejected (breakthrough.test_train.TrainerTests.test_relabelled_missing_wrongfold_and_official_valid_rows_are_rejected) ... ok
+test_saved_optimizer_rng_and_progress_reproduce_next_epoch (breakthrough.test_train.TrainerTests.test_saved_optimizer_rng_and_progress_reproduce_next_epoch) ... ok
+test_complete_local_checkpoint_precedes_failed_network_publication (raw_rebuild.test_train.LifecycleTests.test_complete_local_checkpoint_precedes_failed_network_publication) ... ok
+test_final_stage_decision_uses_only_selected_best_epoch (raw_rebuild.test_train.LifecycleTests.test_final_stage_decision_uses_only_selected_best_epoch) ... ok
+test_resume_rejects_changed_configuration_or_source_before_model_creation (raw_rebuild.test_train.LifecycleTests.test_resume_rejects_changed_configuration_or_source_before_model_creation) ... ok
+test_resume_repairs_best_publication_without_repeating_completed_epoch (raw_rebuild.test_train.LifecycleTests.test_resume_repairs_best_publication_without_repeating_completed_epoch) ... ok
+test_stop_preserves_completed_epoch_and_cannot_advance_stage (raw_rebuild.test_train.LifecycleTests.test_stop_preserves_completed_epoch_and_cannot_advance_stage) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.692s
+
+OK

@@ -1,0 +1,972 @@
+{
+  "complete": false,
+  "pending_items": [
+    "checkpoint times/hashes for teacher_fold_0 epochs [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]",
+    "checkpoint ledger binding to deployed ancestry for teacher_fold_0",
+    "completed training evidence for teacher_fold_0",
+    "missing training evidence: /home/featurize/work/runs/022_convnext_v1_tiny512_kd/config.json",
+    "complete console-log coverage for student",
+    "missing training evidence: /home/featurize/work/runs/022_convnext_v1_tiny512_kd/checkpoint_audit.jsonl",
+    "complete checkpoint ledger for student",
+    "checkpoint times/hashes for student epochs [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]",
+    "checkpoint ledger binding to deployed ancestry for student",
+    "completed training evidence for student"
+  ],
+  "files": [
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/evidence_manifest.json",
+      "bytes": 10016,
+      "sha256": "e58d3f87a335ef9f25b716549cd225759e416b95ba3a31588c7de8d3c493521a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916698019620960,
+      "package_path": "evidence_manifest.json"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/AGENTS.md",
+      "bytes": 1370,
+      "sha256": "43e35dd53c62393645aaa5aad84e6a8694492c42ab9711d19a75773be2cb5875",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577252773833,
+      "package_path": "source_archives/0/AGENTS.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/README.md",
+      "bytes": 5175,
+      "sha256": "721efe7453ac5ee38ddd66ed2c05436421f3021db94c1363b456d66d844c876b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577255773530,
+      "package_path": "source_archives/0/README.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/cost.py",
+      "bytes": 9393,
+      "sha256": "c6cc3cda7360a17b0b29c8025dffd729377408bb434e03e162b3890679ab73be",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577257773329,
+      "package_path": "source_archives/0/cost.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/cv_splits.py",
+      "bytes": 14950,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577259773127,
+      "package_path": "source_archives/0/cv_splits.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/dataset.py",
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577261772925,
+      "package_path": "source_archives/0/dataset.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/dataset_highres.py",
+      "bytes": 24804,
+      "sha256": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577263772723,
+      "package_path": "source_archives/0/dataset_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/dataset_overnight.py",
+      "bytes": 13643,
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577266772420,
+      "package_path": "source_archives/0/dataset_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/dataset_tiny.py",
+      "bytes": 8827,
+      "sha256": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577268772218,
+      "package_path": "source_archives/0/dataset_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/deploy_kd.py",
+      "bytes": 21544,
+      "sha256": "84e71bdee954b3d5d2d6542af1d9dd76f57676e001af5c96ac548cd4fd096451",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577270772016,
+      "package_path": "source_archives/0/deploy_kd.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/distill_data.py",
+      "bytes": 17036,
+      "sha256": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577272771814,
+      "package_path": "source_archives/0/distill_data.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/768_PREFLIGHT.md",
+      "bytes": 7671,
+      "sha256": "3af410ee525fc550867545a16ccf1b7c769ffa724c886b4661cbaaf25e5006ee",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577275771512,
+      "package_path": "source_archives/0/docs/768_PREFLIGHT.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/CLEANING_POLICY.md",
+      "bytes": 2346,
+      "sha256": "631c3eef64b899506f50d237eb0211f85597202e3685eb8541b20e4f3dc29fb9",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577277771310,
+      "package_path": "source_archives/0/docs/CLEANING_POLICY.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/CLOUD_MIGRATION.md",
+      "bytes": 13402,
+      "sha256": "764a1425af5c1949a127842c2175a79045ead6f75bf479f53193abcda3679c38",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577280771007,
+      "package_path": "source_archives/0/docs/CLOUD_MIGRATION.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/COMPETITION_RULES.md",
+      "bytes": 3191,
+      "sha256": "a1db54bffab855c8e50ce2e4bf3358a5522c3a80664b6204e5b7f39d534eca14",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577282770805,
+      "package_path": "source_archives/0/docs/COMPETITION_RULES.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/HIGHRES384_USAGE.md",
+      "bytes": 6117,
+      "sha256": "6c479109d5c50adb96ab29e8987bd2ad132de1d022febac3b8853780ec4b890c",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577285770502,
+      "package_path": "source_archives/0/docs/HIGHRES384_USAGE.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/KD_V1_START_HERE.md",
+      "bytes": 13897,
+      "sha256": "75e2c23a0905bd994f76b161543e47c816f0d20b4c6b56a265e4cfa2bdb71401",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577286770401,
+      "package_path": "source_archives/0/docs/KD_V1_START_HERE.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/KD_V1_USAGE.md",
+      "bytes": 10560,
+      "sha256": "cc19ec04a69832c24b22ac1cdacb3a8174a662fc60c2bfbbd562e39a3f03d387",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577288770199,
+      "package_path": "source_archives/0/docs/KD_V1_USAGE.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/OVERNIGHT_CV.md",
+      "bytes": 8986,
+      "sha256": "bd6cc163f7c2c4d351ea33150a71b51da2a1dc14c8087968bf5e2c208b9dd420",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577291769896,
+      "package_path": "source_archives/0/docs/OVERNIGHT_CV.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/PERFORMANCE_20261018.md",
+      "bytes": 18845,
+      "sha256": "0e6eacf91ab47e5dc2522853dd86852f98b9360113927afadad2c3ad3c55ab66",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577294769593,
+      "package_path": "source_archives/0/docs/PERFORMANCE_20261018.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/SSH_TEAMMATE_COMPARISON_20261018.md",
+      "bytes": 11843,
+      "sha256": "4c400986f96a82ca2ccc92ae82857b9e15ef15434b9bb405e19fc9bc24ce1107",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577297769291,
+      "package_path": "source_archives/0/docs/SSH_TEAMMATE_COMPARISON_20261018.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/SUBMISSION_FORMAT.md",
+      "bytes": 8562,
+      "sha256": "ea50941da1fa278884ff70c5c21e4ec0cd8ade6644531b8f7dfef42e217dc650",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577300768988,
+      "package_path": "source_archives/0/docs/SUBMISSION_FORMAT.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/TINY_V2_USAGE.md",
+      "bytes": 7823,
+      "sha256": "2dea369fca6de6512aed8304080d86711c677b21a7d054f3e7c8ece3669cf7c1",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577303768685,
+      "package_path": "source_archives/0/docs/TINY_V2_USAGE.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/USAGE.md",
+      "bytes": 5825,
+      "sha256": "162869586c260686fff379869de65e12c5fa296c52a79b3ab989e062f835a052",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577305768483,
+      "package_path": "source_archives/0/docs/USAGE.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/docs/WARM_RESTART.md",
+      "bytes": 3186,
+      "sha256": "dc21b644ab8c9b2dec184038ee87e6fb9a9e000cb8810428a836538ae81fb82e",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577308768180,
+      "package_path": "source_archives/0/docs/WARM_RESTART.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/export_student.py",
+      "bytes": 5281,
+      "sha256": "610b1fbb10c813b05cfff9a4ce52d72c7e6cbfbd21798322f9de6ebe72fa902b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577310767979,
+      "package_path": "source_archives/0/export_student.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/extract_soft_labels.py",
+      "bytes": 8059,
+      "sha256": "7e5743df99f9c90cb1ed2e8384beab2436fc64ddc4183b0418e785a411d104e1",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577312767776,
+      "package_path": "source_archives/0/extract_soft_labels.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/inference.py",
+      "bytes": 41491,
+      "sha256": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577313767676,
+      "package_path": "source_archives/0/inference.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/inference_overnight.py",
+      "bytes": 30402,
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577315767474,
+      "package_path": "source_archives/0/inference_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/kd_common.py",
+      "bytes": 6721,
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577316767373,
+      "package_path": "source_archives/0/kd_common.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/manifest.json",
+      "bytes": 10598,
+      "sha256": "b42b077fdb33da8824459dbb12073726a497109915da3f00accc8f9dbd844461",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577359763032,
+      "package_path": "source_archives/0/manifest.json"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/model.py",
+      "bytes": 17413,
+      "sha256": "d71b07f1abba5aaec08f1d9e572e49674cb38b19cd355c0995327e448cbceb74",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577317767272,
+      "package_path": "source_archives/0/model.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/model_highres.py",
+      "bytes": 15904,
+      "sha256": "f3433953ce63cfacb3b80b538bfa15d116a102a56ec969f4c5162d696e6531a4",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577319767070,
+      "package_path": "source_archives/0/model_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577321766868,
+      "package_path": "source_archives/0/model_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/model_tiny.py",
+      "bytes": 2871,
+      "sha256": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577322766767,
+      "package_path": "source_archives/0/model_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/package_kd_submission.py",
+      "bytes": 24629,
+      "sha256": "4b4107fd110413c48055cf00c06701a61827f58ad1531a77c4124c6cca0df935",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577324766565,
+      "package_path": "source_archives/0/package_kd_submission.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/predict.py",
+      "bytes": 4061,
+      "sha256": "d4a65092607915b9587aedf5a3c2a0739d935a024178379e93a9f951bd5fcee3",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577326766363,
+      "package_path": "source_archives/0/predict.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/preflight_kd.py",
+      "bytes": 5100,
+      "sha256": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577327766262,
+      "package_path": "source_archives/0/preflight_kd.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/probe_gpu_memory.py",
+      "bytes": 10865,
+      "sha256": "a2db1824dc46449702bccaa4dd3b22ff3653c2aeabb79059bc92cf7ef544e067",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577329766060,
+      "package_path": "source_archives/0/probe_gpu_memory.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/requirements.txt",
+      "bytes": 1160,
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577331765858,
+      "package_path": "source_archives/0/requirements.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/requirements_inference.txt",
+      "bytes": 321,
+      "sha256": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577332765757,
+      "package_path": "source_archives/0/requirements_inference.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/requirements_kd.txt",
+      "bytes": 507,
+      "sha256": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577334765556,
+      "package_path": "source_archives/0/requirements_kd.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/run_all_folds.py",
+      "bytes": 19897,
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577337765253,
+      "package_path": "source_archives/0/run_all_folds.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/run_cloud.sh",
+      "bytes": 7480,
+      "sha256": "4f1067d5bf2fa3d8536d26fcf6739c50ddac8fb2f444cfa5c9786ba31490f5f0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577338765152,
+      "package_path": "source_archives/0/run_cloud.sh"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/run_overnight.sh",
+      "bytes": 1028,
+      "sha256": "d51059216cd9df76643d22e87ca6d15221b5c41b56b1fe8d7c95c049e51e82d5",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577340764950,
+      "package_path": "source_archives/0/run_overnight.sh"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/run_teachers.py",
+      "bytes": 9028,
+      "sha256": "470b34d53b52a296c6364d9f103ed2180b3fe6e821e7490c0740385d81c39b3f",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577342764748,
+      "package_path": "source_archives/0/run_teachers.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/runtime_compat.py",
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577343764647,
+      "package_path": "source_archives/0/runtime_compat.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train.py",
+      "bytes": 59362,
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577345764445,
+      "package_path": "source_archives/0/train.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train_distill.py",
+      "bytes": 28964,
+      "sha256": "6d4064b88c5dbcb83478f6b3db5cd9cde25ac2e30132fc60600bba101e536a2c",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577347764243,
+      "package_path": "source_archives/0/train_distill.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train_highres.py",
+      "bytes": 42047,
+      "sha256": "64ce9ba70cb978e9dbf1959aeacb8e430dc602ab6f4e7b94d6dbe1335bf40ce0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577349764041,
+      "package_path": "source_archives/0/train_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train_overnight.py",
+      "bytes": 51361,
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577351763840,
+      "package_path": "source_archives/0/train_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train_teacher.py",
+      "bytes": 20172,
+      "sha256": "042563ca251c8eba5711e14edbbb41d021f6caeae858da65db3a4ac06166c036",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577353763638,
+      "package_path": "source_archives/0/train_teacher.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/train_tiny.py",
+      "bytes": 51079,
+      "sha256": "a43f7cb74f371b56a015824da39b67da8f6bfa4cf6e4ec219ea6acbb1fa74921",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577355763436,
+      "package_path": "source_archives/0/train_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch/validate_student.py",
+      "bytes": 4696,
+      "sha256": "a0fd612039a5f2fccfd55c72e4b7b8b47d7623e8bd9b682031cdf00a67e5a633",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577357763234,
+      "package_path": "source_archives/0/validate_student.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/AGENTS.md",
+      "bytes": 1370,
+      "sha256": "43e35dd53c62393645aaa5aad84e6a8694492c42ab9711d19a75773be2cb5875",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697874633834,
+      "package_path": "source_archives/1/AGENTS.md"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/audit_trail.py",
+      "bytes": 7976,
+      "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697875633745,
+      "package_path": "source_archives/1/audit_trail.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/cost.py",
+      "bytes": 9393,
+      "sha256": "c6cc3cda7360a17b0b29c8025dffd729377408bb434e03e162b3890679ab73be",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697876633656,
+      "package_path": "source_archives/1/cost.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/cv_splits.py",
+      "bytes": 14950,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697877633567,
+      "package_path": "source_archives/1/cv_splits.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/dataset.py",
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697878633479,
+      "package_path": "source_archives/1/dataset.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/dataset_highres.py",
+      "bytes": 24804,
+      "sha256": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697879633390,
+      "package_path": "source_archives/1/dataset_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/dataset_overnight.py",
+      "bytes": 13643,
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697880633301,
+      "package_path": "source_archives/1/dataset_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/dataset_tiny.py",
+      "bytes": 8827,
+      "sha256": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697881633212,
+      "package_path": "source_archives/1/dataset_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/deploy_kd.py",
+      "bytes": 21544,
+      "sha256": "84e71bdee954b3d5d2d6542af1d9dd76f57676e001af5c96ac548cd4fd096451",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697882633124,
+      "package_path": "source_archives/1/deploy_kd.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/distill_data.py",
+      "bytes": 17036,
+      "sha256": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697883633035,
+      "package_path": "source_archives/1/distill_data.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/environment_lock.txt",
+      "bytes": 1333,
+      "sha256": "5875323f1e238fd2964aa6c2ce3598f5845636e641ac76ef02c214f0578b049a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916698011621670,
+      "package_path": "source_archives/1/environment_lock.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/export_student.py",
+      "bytes": 5281,
+      "sha256": "610b1fbb10c813b05cfff9a4ce52d72c7e6cbfbd21798322f9de6ebe72fa902b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697883633035,
+      "package_path": "source_archives/1/export_student.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/extract_soft_labels.py",
+      "bytes": 8059,
+      "sha256": "7e5743df99f9c90cb1ed2e8384beab2436fc64ddc4183b0418e785a411d104e1",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697884632946,
+      "package_path": "source_archives/1/extract_soft_labels.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/inference.py",
+      "bytes": 41491,
+      "sha256": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697885632857,
+      "package_path": "source_archives/1/inference.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/inference_overnight.py",
+      "bytes": 30402,
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697886632768,
+      "package_path": "source_archives/1/inference_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/kd_common.py",
+      "bytes": 6721,
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697887632680,
+      "package_path": "source_archives/1/kd_common.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/model.py",
+      "bytes": 17413,
+      "sha256": "d71b07f1abba5aaec08f1d9e572e49674cb38b19cd355c0995327e448cbceb74",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697888632591,
+      "package_path": "source_archives/1/model.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/model_highres.py",
+      "bytes": 15904,
+      "sha256": "f3433953ce63cfacb3b80b538bfa15d116a102a56ec969f4c5162d696e6531a4",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697889632502,
+      "package_path": "source_archives/1/model_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697890632413,
+      "package_path": "source_archives/1/model_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/model_tiny.py",
+      "bytes": 2871,
+      "sha256": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697891632325,
+      "package_path": "source_archives/1/model_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/package_kd_submission.py",
+      "bytes": 40764,
+      "sha256": "f3e4c5d307deb769943e025e0771775eaef95ba9d4f439d0465dc4cb6a9dbb7b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697892632236,
+      "package_path": "source_archives/1/package_kd_submission.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/predict.py",
+      "bytes": 4061,
+      "sha256": "d4a65092607915b9587aedf5a3c2a0739d935a024178379e93a9f951bd5fcee3",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697893632147,
+      "package_path": "source_archives/1/predict.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/preflight_kd.py",
+      "bytes": 5100,
+      "sha256": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697893632147,
+      "package_path": "source_archives/1/preflight_kd.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/probe_gpu_memory.py",
+      "bytes": 10865,
+      "sha256": "a2db1824dc46449702bccaa4dd3b22ff3653c2aeabb79059bc92cf7ef544e067",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697894632058,
+      "package_path": "source_archives/1/probe_gpu_memory.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/requirements.txt",
+      "bytes": 1160,
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697895631969,
+      "package_path": "source_archives/1/requirements.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/requirements_inference.txt",
+      "bytes": 321,
+      "sha256": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697896631881,
+      "package_path": "source_archives/1/requirements_inference.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/requirements_kd.txt",
+      "bytes": 507,
+      "sha256": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697897631792,
+      "package_path": "source_archives/1/requirements_kd.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/run_all_folds.py",
+      "bytes": 19897,
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697897631792,
+      "package_path": "source_archives/1/run_all_folds.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/run_cloud.sh",
+      "bytes": 7480,
+      "sha256": "4f1067d5bf2fa3d8536d26fcf6739c50ddac8fb2f444cfa5c9786ba31490f5f0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697898631703,
+      "package_path": "source_archives/1/run_cloud.sh"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/run_overnight.sh",
+      "bytes": 1290,
+      "sha256": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697899631614,
+      "package_path": "source_archives/1/run_overnight.sh"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/run_teachers.py",
+      "bytes": 9208,
+      "sha256": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697900631525,
+      "package_path": "source_archives/1/run_teachers.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/runtime_compat.py",
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697901631437,
+      "package_path": "source_archives/1/runtime_compat.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/source_manifest.json",
+      "bytes": 7986,
+      "sha256": "419471d65ab7528f4b151cff1830fa8c9705075c8341ebd11c28e4ec00e025f6",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916698012621581,
+      "package_path": "source_archives/1/source_manifest.json"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train.py",
+      "bytes": 59362,
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697902631348,
+      "package_path": "source_archives/1/train.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train_distill.py",
+      "bytes": 30909,
+      "sha256": "5c86a48501f12d9bc43dcc0ca4b437481b26340b96f4ca96150d053e83ac23f1",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697903631259,
+      "package_path": "source_archives/1/train_distill.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train_highres.py",
+      "bytes": 42047,
+      "sha256": "64ce9ba70cb978e9dbf1959aeacb8e430dc602ab6f4e7b94d6dbe1335bf40ce0",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697904631170,
+      "package_path": "source_archives/1/train_highres.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train_overnight.py",
+      "bytes": 51361,
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697905631081,
+      "package_path": "source_archives/1/train_overnight.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train_teacher.py",
+      "bytes": 21693,
+      "sha256": "fdbf842d574a8adb5215c17393681cdeb13c650f46c2b487611a8bc8b8bd2ed3",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697906630993,
+      "package_path": "source_archives/1/train_teacher.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/train_tiny.py",
+      "bytes": 51079,
+      "sha256": "a43f7cb74f371b56a015824da39b67da8f6bfa4cf6e4ec219ea6acbb1fa74921",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697907630904,
+      "package_path": "source_archives/1/train_tiny.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/training_evidence_monitor.py",
+      "bytes": 16983,
+      "sha256": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697908630815,
+      "package_path": "source_archives/1/training_evidence_monitor.py"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch/validate_student.py",
+      "bytes": 4696,
+      "sha256": "a0fd612039a5f2fccfd55c72e4b7b8b47d7623e8bd9b682031cdf00a67e5a633",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916697908630815,
+      "package_path": "source_archives/1/validate_student.py"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_recovered_before_attachment.txt",
+      "bytes": 36259,
+      "sha256": "ee0d18e101f3cc1255caefcfa76abcfa25e0137ef57dff00c575bfebd6b8e331",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915577387760205,
+      "package_path": "console_logs/0_console_recovered_before_attachment.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_live.raw.log",
+      "bytes": 13544,
+      "sha256": "d8aa51ee2c28b9e19153a5f51c5fb1b98976557e20e0be0aceb41ddb4e1ae913",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916799234568045,
+      "package_path": "console_logs/1_console_live.raw.log"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_lock.txt",
+      "bytes": 1333,
+      "sha256": "5875323f1e238fd2964aa6c2ce3598f5845636e641ac76ef02c214f0578b049a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916027066844773,
+      "package_path": "supporting_files/0_environment_lock.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_record.json",
+      "bytes": 2160,
+      "sha256": "a345916db7e08ef095bcc3682dbcaa6d9d788a5178af16fd18695777401bc71a",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916027071844278,
+      "package_path": "supporting_files/1_environment_record.json"
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/user_forwarded_official_notice.txt",
+      "bytes": 813,
+      "sha256": "f6cfc89a299ed7d2e694deabf48720aeef1fb742100e0aa2d9779cbd7f66893b",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916005549977313,
+      "package_path": "supporting_files/2_user_forwarded_official_notice.txt"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_status_observation.json",
+      "bytes": 1224,
+      "sha256": "db89287b2a979c8a5ed950413814042f67376533f2af094687c6201bedb41cb7",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915743346083374,
+      "package_path": "supporting_files/3_historic_epoch_1_status_observation.json"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_original_tool_record.json",
+      "bytes": 40586,
+      "sha256": "db10626f1a0b104298ef685fc3ff1f20e5e502def1ee9f7dd89317af8e24c7c4",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792915743344083574,
+      "package_path": "supporting_files/4_historic_epoch_1_original_tool_record.json"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/config.json",
+      "bytes": 955276,
+      "sha256": "4cd3f074f739fda8b5c941c858688351651e2ffbf4d945291707540c35798a3d",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792913229015864335,
+      "package_path": "runs/teacher_fold_0/config.json"
+    },
+    {
+      "source_path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/checkpoint_audit.jsonl",
+      "bytes": 3216,
+      "sha256": "f307ffe83cf4dbfe54a1ce669acd5bb9cb92f0e7b4218d482488832a1aac7577",
+      "stable_during_snapshot": true,
+      "source_mtime_ns": 1792916564277364802,
+      "package_path": "runs/teacher_fold_0/checkpoint_audit.jsonl"
+    }
+  ],
+  "runs": [
+    {
+      "id": "teacher_fold_0",
+      "observed_epochs": [
+        1,
+        2,
+        3
+      ],
+      "expected_epochs": 20,
+      "missing_epochs": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "ledger_records": 3,
+      "historically_recovered_records": 1
+    },
+    {
+      "id": "student",
+      "observed_epochs": [],
+      "expected_epochs": 25,
+      "missing_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "ledger_records": 0,
+      "historically_recovered_records": 0
+    }
+  ],
+  "source_version_timeline": [
+    {
+      "run_id": "teacher_fold_0",
+      "source_archive_id": "source_before_patch",
+      "applies_to": "already_running",
+      "note": "The already running fold0 retains its in-memory code; its checkpoints are recorded by a separate status observer without a restart."
+    },
+    {
+      "run_id": "teacher_folds_1_to_4_and_student",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Future CLI executions additionally capture source and logs at process start; individual command receipts supersede this common after-patch snapshot."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "student",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    }
+  ],
+  "historical_missing_evidence": [
+    {
+      "blocking": false,
+      "detail": "Epoch1 hash and trainer status commit timestamp recovered from an earlier original read-only tool observation. Exact checkpoint file mtime was not retained by the former code and cannot be recreated; no substitute is claimed to be that file mtime."
+    },
+    {
+      "blocking": false,
+      "detail": "Pre-attachment console output is recovered rendered tmux history, with all expected logged batch markers verified. Raw byte-exact stdout/stderr capture begins at 16:06:17 HKT."
+    }
+  ],
+  "checkpoint_binaries_required": false,
+  "timestamp_policy": "saved_at_utc or accurately labelled saved-status observation time",
+  "source_policy": "code/ is packaging-time source; executed versions are archived and attributed separately"
+}

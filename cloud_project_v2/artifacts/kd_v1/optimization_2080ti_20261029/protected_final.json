@@ -1,0 +1,37 @@
+{
+  "all_unchanged": true,
+  "files": [
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/composition_report.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/config.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_00_fp16.pt",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_01_fp16.pt",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,2125 @@
+{
+  "implementation": "avx2",
+  "count": 105,
+  "pillow_version": "10.4.0",
+  "python": "3.12.3",
+  "native_available": true,
+  "no_gpu_work": true,
+  "all_uint8_byte_equal": true,
+  "all_float32_byte_equal": true,
+  "pillow_mean_ms": 52.208836628597055,
+  "native_mean_ms": {
+    "1": 23.936485142890195,
+    "2": 26.990810666683544,
+    "4": 15.549862647570816,
+    "8": 10.58546299999372
+  },
+  "native_p95_ms": {
+    "1": 29.250976599996648,
+    "2": 31.07720280013382,
+    "4": 25.797484399845416,
+    "8": 14.174431999708759
+  },
+  "per_image": [
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11814/study_20175/pic_033347.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 70.4190009996637,
+      "native_ms": {
+        "1": 29.738703000020905,
+        "2": 30.4805910000141,
+        "4": 16.07503400009591,
+        "8": 9.486196000125346
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11814/study_20363/pic_033656.jpg",
+      "source_size": [
+        2597,
+        2539
+      ],
+      "output_size": [
+        768,
+        751
+      ],
+      "pillow_ms": 67.15358000019478,
+      "native_ms": {
+        "1": 33.73941600011676,
+        "2": 33.227971000087564,
+        "4": 17.64271699994424,
+        "8": 9.878691000267281
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11814/study_20363/pic_033657.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 69.3404950002332,
+      "native_ms": {
+        "1": 29.03490500011685,
+        "2": 30.482468999707635,
+        "4": 16.337921999820537,
+        "8": 9.491437000178848
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11817/study_20005/pic_033066.jpg",
+      "source_size": [
+        2431,
+        2539
+      ],
+      "output_size": [
+        735,
+        768
+      ],
+      "pillow_ms": 60.39957900020454,
+      "native_ms": {
+        "1": 29.280999999627966,
+        "2": 31.09625400020377,
+        "4": 16.530761000012717,
+        "8": 9.267477999856055
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11817/study_20259/pic_033488.jpg",
+      "source_size": [
+        2920,
+        2395
+      ],
+      "output_size": [
+        768,
+        630
+      ],
+      "pillow_ms": 65.07317300020077,
+      "native_ms": {
+        "1": 34.21345700007805,
+        "2": 35.66236599999684,
+        "4": 19.027938000363065,
+        "8": 10.705801999847608
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11818/study_20367/pic_033663.jpg",
+      "source_size": [
+        1620,
+        2022
+      ],
+      "output_size": [
+        615,
+        768
+      ],
+      "pillow_ms": 36.433353000120405,
+      "native_ms": {
+        "1": 16.809741000088252,
+        "2": 16.90289699990899,
+        "4": 9.611372000108531,
+        "8": 5.531957000130205
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11818/study_20367/pic_033664.jpg",
+      "source_size": [
+        1560,
+        2022
+      ],
+      "output_size": [
+        593,
+        768
+      ],
+      "pillow_ms": 30.698184000357287,
+      "native_ms": {
+        "1": 14.836685000318539,
+        "2": 16.62979599996106,
+        "4": 9.063042999969184,
+        "8": 5.23743200028548
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11818/study_20367/pic_033665.jpg",
+      "source_size": [
+        2022,
+        1736
+      ],
+      "output_size": [
+        768,
+        659
+      ],
+      "pillow_ms": 33.96954800018648,
+      "native_ms": {
+        "1": 15.539006999915728,
+        "2": 18.208802999652107,
+        "4": 9.907361999921704,
+        "8": 5.678414000158227
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11818/study_20689/pic_034197.jpg",
+      "source_size": [
+        2021,
+        2021
+      ],
+      "output_size": [
+        768,
+        768
+      ],
+      "pillow_ms": 39.55099099994186,
+      "native_ms": {
+        "1": 18.146379999961937,
+        "2": 20.893892999993113,
+        "4": 11.28780499993809,
+        "8": 6.527255000037258
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11818/study_20689/pic_034198.jpg",
+      "source_size": [
+        2021,
+        2021
+      ],
+      "output_size": [
+        768,
+        768
+      ],
+      "pillow_ms": 39.629429999877175,
+      "native_ms": {
+        "1": 18.386840999937704,
+        "2": 21.05471300001227,
+        "4": 11.375046000011935,
+        "8": 6.4450780000697705
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11828/study_20649/pic_034123.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.059700999867346,
+      "native_ms": {
+        "1": 25.129948000085278,
+        "2": 29.89891400011402,
+        "4": 16.016696999940905,
+        "8": 8.848359999774402
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20389/pic_033703.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.311334000132774,
+      "native_ms": {
+        "1": 25.40201000010711,
+        "2": 29.499283999939507,
+        "4": 15.725570000086009,
+        "8": 8.805038999980752
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20757/pic_034302.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 58.30980400014596,
+      "native_ms": {
+        "1": 26.635082999746373,
+        "2": 29.55032799991386,
+        "4": 25.88435899997421,
+        "8": 13.811037999857945
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20757/pic_034303.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 58.419510000021546,
+      "native_ms": {
+        "1": 26.294189000054757,
+        "2": 27.559268999993947,
+        "4": 25.82547899964993,
+        "8": 13.8667220003299
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20757/pic_034304.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 58.348721000129444,
+      "native_ms": {
+        "1": 24.67622200038022,
+        "2": 27.61966400021265,
+        "4": 25.68889099984517,
+        "8": 14.069321999613749
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20757/pic_034305.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 59.286429999701795,
+      "native_ms": {
+        "1": 27.09209699969506,
+        "2": 27.669280000282015,
+        "4": 25.74060200004169,
+        "8": 13.996191999922303
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20856/pic_034479.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 59.89474599982714,
+      "native_ms": {
+        "1": 24.528509999981907,
+        "2": 27.569011000196042,
+        "4": 25.718501000028482,
+        "8": 13.827677999870502
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20856/pic_034480.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 59.933564999937516,
+      "native_ms": {
+        "1": 28.01415400017504,
+        "2": 27.66479599995364,
+        "4": 25.811704999796348,
+        "8": 13.848152999798913
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11829/study_20856/pic_034481.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 60.77064600003723,
+      "native_ms": {
+        "1": 27.12624300011157,
+        "2": 27.657140999963303,
+        "4": 25.864155999897775,
+        "8": 13.904914999784523
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11832/study_20936/pic_034614.jpg",
+      "source_size": [
+        1763,
+        2021
+      ],
+      "output_size": [
+        670,
+        768
+      ],
+      "pillow_ms": 31.939309000335925,
+      "native_ms": {
+        "1": 16.69630900005359,
+        "2": 17.663395999989007,
+        "4": 16.494339000018954,
+        "8": 8.895407000181876
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11832/study_20936/pic_034615.jpg",
+      "source_size": [
+        1796,
+        2021
+      ],
+      "output_size": [
+        682,
+        768
+      ],
+      "pillow_ms": 34.35937200038097,
+      "native_ms": {
+        "1": 16.701630000170553,
+        "2": 17.823501000293618,
+        "4": 16.71291699994981,
+        "8": 9.064122999916435
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11833/study_20287/pic_033530.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 58.239843000137625,
+      "native_ms": {
+        "1": 26.34251299969037,
+        "2": 27.99297600040518,
+        "4": 26.13182400000369,
+        "8": 14.081352999710361
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11833/study_20292/pic_033539.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.705265999880794,
+      "native_ms": {
+        "1": 26.537108999946213,
+        "2": 28.183646999877965,
+        "4": 26.046981000035885,
+        "8": 13.874951000161673
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11833/study_20292/pic_033540.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 57.83421300020564,
+      "native_ms": {
+        "1": 27.010548000362178,
+        "2": 30.07905499998742,
+        "4": 16.011295999760478,
+        "8": 14.021232999766653
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11833/study_20430/pic_033765.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 59.377605999998195,
+      "native_ms": {
+        "1": 24.818261000291386,
+        "2": 29.536754000218934,
+        "4": 15.729219000149897,
+        "8": 13.890327999888541
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20225/pic_033432.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.61936300020898,
+      "native_ms": {
+        "1": 24.833104999743227,
+        "2": 29.424242000004597,
+        "4": 15.759570999762218,
+        "8": 13.923104000241437
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20225/pic_033433.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.14824899996529,
+      "native_ms": {
+        "1": 24.76893300035954,
+        "2": 29.481097000370937,
+        "4": 15.75941100009004,
+        "8": 16.570760999911727
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20371/pic_033670.jpg",
+      "source_size": [
+        2985,
+        2136
+      ],
+      "output_size": [
+        768,
+        550
+      ],
+      "pillow_ms": 47.13702800017927,
+      "native_ms": {
+        "1": 25.62562399998569,
+        "2": 29.38434999987294,
+        "4": 15.620424000189814,
+        "8": 13.65280400023039
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20371/pic_033671.jpg",
+      "source_size": [
+        2988,
+        2138
+      ],
+      "output_size": [
+        768,
+        550
+      ],
+      "pillow_ms": 48.45443200019872,
+      "native_ms": {
+        "1": 25.312828000096488,
+        "2": 29.35381499992218,
+        "4": 15.57189400000425,
+        "8": 13.720403000206716
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20641/pic_034110.jpg",
+      "source_size": [
+        3050,
+        2496
+      ],
+      "output_size": [
+        768,
+        629
+      ],
+      "pillow_ms": 54.92823700024019,
+      "native_ms": {
+        "1": 25.455377000071167,
+        "2": 29.345219999868277,
+        "4": 15.606922999722883,
+        "8": 13.872753999748966
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20659/pic_034142.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 57.68964599974424,
+      "native_ms": {
+        "1": 26.48993699995117,
+        "2": 30.11757199965359,
+        "4": 16.024057999857177,
+        "8": 13.944393000201671
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20659/pic_034143.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.76846500000465,
+      "native_ms": {
+        "1": 25.415595000140456,
+        "2": 30.107864000001427,
+        "4": 16.1012319999827,
+        "8": 14.028535999841552
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20662/pic_034147.jpg",
+      "source_size": [
+        2539,
+        3050
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.44503199982864,
+      "native_ms": {
+        "1": 25.55200500000865,
+        "2": 29.91991999988386,
+        "4": 15.772656000081042,
+        "8": 14.017463000072894
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20662/pic_034148.jpg",
+      "source_size": [
+        2539,
+        3050
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.473611000001256,
+      "native_ms": {
+        "1": 26.274265999745694,
+        "2": 29.975961000218376,
+        "4": 16.048450999733177,
+        "8": 14.00316599983853
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20733/pic_034264.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.402086000161944,
+      "native_ms": {
+        "1": 27.578175000144256,
+        "2": 29.96989399980521,
+        "4": 15.927503000057186,
+        "8": 14.022390999798517
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11836/study_20733/pic_034265.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 58.05038400012563,
+      "native_ms": {
+        "1": 25.93095500014897,
+        "2": 29.74802099970475,
+        "4": 16.016497999771673,
+        "8": 13.928701000168076
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11842/study_20173/pic_033342.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 33.440363999943656,
+      "native_ms": {
+        "1": 16.698396999800025,
+        "2": 18.17504100017686,
+        "4": 9.958986999663466,
+        "8": 8.80162100020243
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11842/study_20173/pic_033343.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 32.39261299995633,
+      "native_ms": {
+        "1": 16.08167600033994,
+        "2": 18.29148900014843,
+        "4": 9.922683999775472,
+        "8": 9.03251999989152
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11844/study_20041/pic_033120.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.50434600011067,
+      "native_ms": {
+        "1": 25.694419000046764,
+        "2": 28.398154999649705,
+        "4": 15.780280999933893,
+        "8": 13.83385899998757
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11844/study_20041/pic_033121.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.09599100009655,
+      "native_ms": {
+        "1": 26.968939999733266,
+        "2": 29.548871000315557,
+        "4": 15.684320999753254,
+        "8": 13.835114000357862
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11848/study_20057/pic_033146.jpg",
+      "source_size": [
+        2690,
+        2374
+      ],
+      "output_size": [
+        768,
+        678
+      ],
+      "pillow_ms": 59.55931500011502,
+      "native_ms": {
+        "1": 28.182304999972985,
+        "2": 31.744097999762744,
+        "4": 16.815430999940872,
+        "8": 15.408044000196242
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11850/study_20460/pic_033814.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.899977999819384,
+      "native_ms": {
+        "1": 26.009040000189998,
+        "2": 29.376443999808544,
+        "4": 15.758560999984184,
+        "8": 13.91843399960635
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11850/study_20460/pic_033815.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 58.911708000323415,
+      "native_ms": {
+        "1": 25.733349000347516,
+        "2": 29.584571999748732,
+        "4": 15.707841999756056,
+        "8": 13.81714999979522
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11851/study_20777/pic_034337.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.05429599993295,
+      "native_ms": {
+        "1": 25.747315999979037,
+        "2": 29.657994999979564,
+        "4": 15.810124999916297,
+        "8": 13.824634999764385
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11854/study_20056/pic_033145.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 57.711925999683444,
+      "native_ms": {
+        "1": 26.763396999740507,
+        "2": 29.813163000198983,
+        "4": 16.030096000122285,
+        "8": 14.080302999900596
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11857/study_20456/pic_033808.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.97901499979707,
+      "native_ms": {
+        "1": 26.39132400008748,
+        "2": 29.50714100006735,
+        "4": 15.730687000086618,
+        "8": 13.806024999666988
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11857/study_20456/pic_033809.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.86026700025104,
+      "native_ms": {
+        "1": 25.39574399997946,
+        "2": 29.620041000271158,
+        "4": 15.648010999939288,
+        "8": 13.80126799995196
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11862/study_20502/pic_033888.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.77248199981477,
+      "native_ms": {
+        "1": 26.334020999911445,
+        "2": 29.493561999970552,
+        "4": 15.63944999998057,
+        "8": 14.026972999999998
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11862/study_20502/pic_033889.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 58.35381699989739,
+      "native_ms": {
+        "1": 26.214328000151,
+        "2": 29.473815000073955,
+        "4": 15.699806999691646,
+        "8": 13.975700999708351
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11868/study_20284/pic_033526.jpg",
+      "source_size": [
+        2316,
+        3056
+      ],
+      "output_size": [
+        582,
+        768
+      ],
+      "pillow_ms": 51.61306199988758,
+      "native_ms": {
+        "1": 23.794525000084832,
+        "2": 27.15112499981842,
+        "4": 14.548310999998648,
+        "8": 12.899178999759897
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11868/study_20284/pic_033527.jpg",
+      "source_size": [
+        2800,
+        2544
+      ],
+      "output_size": [
+        768,
+        698
+      ],
+      "pillow_ms": 56.551677999777894,
+      "native_ms": {
+        "1": 31.60719400011658,
+        "2": 36.7060449998462,
+        "4": 19.138520000069548,
+        "8": 16.633164000268152
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11874/study_20638/pic_034104.jpg",
+      "source_size": [
+        1750,
+        1936
+      ],
+      "output_size": [
+        694,
+        768
+      ],
+      "pillow_ms": 31.829702000322868,
+      "native_ms": {
+        "1": 20.434342000044126,
+        "2": 23.40662799997517,
+        "4": 12.448009999843634,
+        "8": 10.686312999951042
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11888/study_20119/pic_033254.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.720262999988336,
+      "native_ms": {
+        "1": 25.976539000112098,
+        "2": 29.4335969997519,
+        "4": 15.740503999950306,
+        "8": 13.93368900016867
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11889/study_20122/pic_033258.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.69176699964373,
+      "native_ms": {
+        "1": 25.420656999813218,
+        "2": 27.995459000067058,
+        "4": 15.71018799995727,
+        "8": 14.185935999648791
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11890/study_20226/pic_033434.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 58.02426399986871,
+      "native_ms": {
+        "1": 25.855761999991955,
+        "2": 27.61890300007508,
+        "4": 15.661036999972566,
+        "8": 14.12841599994863
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11890/study_20226/pic_033435.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.492420000016864,
+      "native_ms": {
+        "1": 25.818995000008726,
+        "2": 31.000997999854008,
+        "4": 15.792169999713224,
+        "8": 13.97891399983564
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11895/study_20186/pic_033365.jpg",
+      "source_size": [
+        3056,
+        2528
+      ],
+      "output_size": [
+        768,
+        635
+      ],
+      "pillow_ms": 57.05111599991142,
+      "native_ms": {
+        "1": 25.494988999980706,
+        "2": 29.32573699990826,
+        "4": 15.580709999994724,
+        "8": 13.80802899984701
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11895/study_20186/pic_033366.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 56.21886400012954,
+      "native_ms": {
+        "1": 26.168536999648495,
+        "2": 29.511741000078473,
+        "4": 15.737770999749046,
+        "8": 13.711987000078807
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11895/study_20186/pic_033367.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.10989899989727,
+      "native_ms": {
+        "1": 26.356874000157404,
+        "2": 29.638545000125305,
+        "4": 15.883502999713528,
+        "8": 14.366719000008743
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11902/study_20933/pic_034607.jpg",
+      "source_size": [
+        2021,
+        2021
+      ],
+      "output_size": [
+        768,
+        768
+      ],
+      "pillow_ms": 47.24009399978968,
+      "native_ms": {
+        "1": 21.402527000191185,
+        "2": 21.034342999882938,
+        "4": 11.268935999851237,
+        "8": 9.969318000003113
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11902/study_20933/pic_034608.jpg",
+      "source_size": [
+        2021,
+        2021
+      ],
+      "output_size": [
+        768,
+        768
+      ],
+      "pillow_ms": 46.50207499980752,
+      "native_ms": {
+        "1": 20.510166000349273,
+        "2": 21.121316000062507,
+        "4": 11.306048000278679,
+        "8": 6.543846000113263
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11903/study_20432/pic_033768.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 68.48480799999379,
+      "native_ms": {
+        "1": 28.961780000372528,
+        "2": 30.993292999937694,
+        "4": 15.88799299997845,
+        "8": 9.243487000276218
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11903/study_20432/pic_033769.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 70.56208799986052,
+      "native_ms": {
+        "1": 28.788587999770243,
+        "2": 30.074658000103227,
+        "4": 17.934274999788613,
+        "8": 16.06725599958736
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11903/study_20918/pic_034579.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 76.42275700027312,
+      "native_ms": {
+        "1": 29.185543000039615,
+        "2": 29.80359299999691,
+        "4": 15.928480000184209,
+        "8": 9.90017699996315
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11907/study_20158/pic_033315.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 31.064497999977903,
+      "native_ms": {
+        "1": 15.193630999874586,
+        "2": 18.241900999782956,
+        "4": 9.809956000026432,
+        "8": 5.553873000280873
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11907/study_20158/pic_033316.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 31.033228000069357,
+      "native_ms": {
+        "1": 16.03317099988999,
+        "2": 18.29765499996938,
+        "4": 9.701704000235623,
+        "8": 5.6069370002660435
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11914/study_20177/pic_033350.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.780526000035024,
+      "native_ms": {
+        "1": 25.40667500034033,
+        "2": 29.759321000256023,
+        "4": 17.226680000021588,
+        "8": 11.23571699963577
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11914/study_20177/pic_033351.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.40017299972533,
+      "native_ms": {
+        "1": 26.942652000343514,
+        "2": 30.07620800008226,
+        "4": 15.601523999976052,
+        "8": 8.790701000179979
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11916/study_20511/pic_033903.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.16650900017339,
+      "native_ms": {
+        "1": 24.797149999812973,
+        "2": 29.609658000026684,
+        "4": 15.795124000305805,
+        "8": 8.801512999980332
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11916/study_20511/pic_033904.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 54.073950000201876,
+      "native_ms": {
+        "1": 24.554879999868717,
+        "2": 29.83061299983092,
+        "4": 15.757892000237916,
+        "8": 8.81003500035149
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11916/study_20511/pic_033905.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 53.56653200033179,
+      "native_ms": {
+        "1": 24.77081899996847,
+        "2": 29.68299499980276,
+        "4": 15.845026000079088,
+        "8": 8.75790700001744
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11918/study_20549/pic_033964.jpg",
+      "source_size": [
+        1760,
+        2140
+      ],
+      "output_size": [
+        632,
+        768
+      ],
+      "pillow_ms": 33.370598000146856,
+      "native_ms": {
+        "1": 15.762374000132695,
+        "2": 18.48122699993837,
+        "4": 9.80314799971893,
+        "8": 5.730093000238412
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11918/study_20549/pic_033965.jpg",
+      "source_size": [
+        2021,
+        2021
+      ],
+      "output_size": [
+        768,
+        768
+      ],
+      "pillow_ms": 36.32683699970585,
+      "native_ms": {
+        "1": 18.105924999872514,
+        "2": 20.954647000053228,
+        "4": 11.239085999932286,
+        "8": 6.487303000085376
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11919/study_20198/pic_033386.jpg",
+      "source_size": [
+        1760,
+        2140
+      ],
+      "output_size": [
+        632,
+        768
+      ],
+      "pillow_ms": 31.967993999842292,
+      "native_ms": {
+        "1": 14.7289350002211,
+        "2": 18.223980000129814,
+        "4": 9.753660999649583,
+        "8": 5.572907999976451
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11919/study_20198/pic_033387.jpg",
+      "source_size": [
+        2140,
+        1760
+      ],
+      "output_size": [
+        768,
+        632
+      ],
+      "pillow_ms": 32.042616000126145,
+      "native_ms": {
+        "1": 14.871909999783384,
+        "2": 17.4766710001677,
+        "4": 9.801487999993697,
+        "8": 5.672804999903747
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11919/study_20198/pic_033388.jpg",
+      "source_size": [
+        2140,
+        1760
+      ],
+      "output_size": [
+        768,
+        632
+      ],
+      "pillow_ms": 32.11483599989151,
+      "native_ms": {
+        "1": 14.940174000003026,
+        "2": 18.206664999979694,
+        "4": 9.736453999721562,
+        "8": 5.653748999975505
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11920/study_20229/pic_033440.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 31.357625000055123,
+      "native_ms": {
+        "1": 15.119354000034946,
+        "2": 18.298993999906088,
+        "4": 9.754089000125532,
+        "8": 5.58347500009404
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11920/study_20229/pic_033441.jpg",
+      "source_size": [
+        1736,
+        2022
+      ],
+      "output_size": [
+        659,
+        768
+      ],
+      "pillow_ms": 31.67679899979703,
+      "native_ms": {
+        "1": 14.868184000079054,
+        "2": 18.564856000011787,
+        "4": 9.915946000091935,
+        "8": 5.632215999867185
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11938/study_20258/pic_033487.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 53.43288899985055,
+      "native_ms": {
+        "1": 24.07360699999117,
+        "2": 29.726089000178035,
+        "4": 15.751065999666025,
+        "8": 9.317388999988907
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11940/study_20748/pic_034285.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.0595329996213,
+      "native_ms": {
+        "1": 25.494007999895985,
+        "2": 29.33828799996263,
+        "4": 15.748209999856044,
+        "8": 8.753742999942915
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11940/study_20748/pic_034286.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.33178600035171,
+      "native_ms": {
+        "1": 25.158096999803092,
+        "2": 29.332087000057072,
+        "4": 15.857712000070023,
+        "8": 8.888456000022416
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11949/study_20326/pic_033597.jpg",
+      "source_size": [
+        2021,
+        1970
+      ],
+      "output_size": [
+        768,
+        749
+      ],
+      "pillow_ms": 36.128340999766806,
+      "native_ms": {
+        "1": 17.161436000151298,
+        "2": 20.290185999783716,
+        "4": 10.959479000121064,
+        "8": 6.267458999900555
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11949/study_20326/pic_033598.jpg",
+      "source_size": [
+        2021,
+        1970
+      ],
+      "output_size": [
+        768,
+        749
+      ],
+      "pillow_ms": 70.92875800026377,
+      "native_ms": {
+        "1": 24.09730999988824,
+        "2": 20.769623000433057,
+        "4": 11.40471400003662,
+        "8": 9.354502000405773
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11952/study_20591/pic_034032.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 53.78507500017804,
+      "native_ms": {
+        "1": 24.228346000199963,
+        "2": 29.460482000104093,
+        "4": 15.666096000131802,
+        "8": 9.400476000337221
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11952/study_20591/pic_034033.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 55.06684200008749,
+      "native_ms": {
+        "1": 24.81840900009047,
+        "2": 29.191284999797062,
+        "4": 15.610359999755019,
+        "8": 8.802175999790052
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11972/study_20435/pic_033773.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.07295099980547,
+      "native_ms": {
+        "1": 25.547802000346564,
+        "2": 29.240562999802933,
+        "4": 15.702619999956369,
+        "8": 8.827082000152586
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11972/study_20435/pic_033774.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.928827000116144,
+      "native_ms": {
+        "1": 25.45396800041999,
+        "2": 29.28027000007205,
+        "4": 15.758748999814998,
+        "8": 8.798923999620456
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11978/study_20682/pic_034181.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 56.256024000049365,
+      "native_ms": {
+        "1": 25.314595000054396,
+        "2": 29.212301000370644,
+        "4": 15.7060139999885,
+        "8": 8.887875999789685
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11978/study_20682/pic_034182.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.754486999783694,
+      "native_ms": {
+        "1": 24.97661799998241,
+        "2": 29.446487000313937,
+        "4": 15.753363000385434,
+        "8": 8.89700100015034
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11978/study_20682/pic_034183.jpg",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 58.351760000277864,
+      "native_ms": {
+        "1": 26.86661199959417,
+        "2": 29.27809899983913,
+        "4": 15.88096100022085,
+        "8": 8.783336000306008
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11978/study_20682/pic_034184.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 57.923405000110506,
+      "native_ms": {
+        "1": 23.88724299999012,
+        "2": 29.36943400027303,
+        "4": 15.636585999800445,
+        "8": 8.78949800016926
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11984/study_20487/pic_033862.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 52.59436300002562,
+      "native_ms": {
+        "1": 23.424645999966742,
+        "2": 29.33720800001538,
+        "4": 15.689241000018228,
+        "8": 8.88629100018079
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_11984/study_20487/pic_033863.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.120385000009264,
+      "native_ms": {
+        "1": 25.76570500013986,
+        "2": 29.279497000061383,
+        "4": 15.567365999686444,
+        "8": 8.920978999867657
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12004/study_20586/pic_034025.jpg",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "output_size": [
+        768,
+        639
+      ],
+      "pillow_ms": 55.944822000128624,
+      "native_ms": {
+        "1": 25.220883000201866,
+        "2": 29.62647999993351,
+        "4": 15.798632000041835,
+        "8": 8.843651999995927
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12004/study_20586/pic_034026.jpg",
+      "source_size": [
+        1763,
+        2022
+      ],
+      "output_size": [
+        670,
+        768
+      ],
+      "pillow_ms": 31.894006000129593,
+      "native_ms": {
+        "1": 16.216185000303085,
+        "2": 18.29719900024429,
+        "4": 10.48488800006453,
+        "8": 5.7273070001429005
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12005/study_20600/pic_034050.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 54.97480900021401,
+      "native_ms": {
+        "1": 24.94136699988303,
+        "2": 29.333065999708197,
+        "4": 15.77043399993272,
+        "8": 8.772238999881665
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12005/study_20600/pic_034051.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 55.108929999732936,
+      "native_ms": {
+        "1": 25.834555000074033,
+        "2": 29.259168000407954,
+        "4": 15.655704999971931,
+        "8": 8.80662300005497
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12039/study_20819/pic_034405.jpg",
+      "source_size": [
+        2528,
+        3056
+      ],
+      "output_size": [
+        635,
+        768
+      ],
+      "pillow_ms": 55.55742600017766,
+      "native_ms": {
+        "1": 24.94302000013704,
+        "2": 29.08545000036611,
+        "4": 15.591642999879696,
+        "8": 8.663232999879256
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12039/study_20819/pic_034406.jpg",
+      "source_size": [
+        2528,
+        3056
+      ],
+      "output_size": [
+        635,
+        768
+      ],
+      "pillow_ms": 54.473293000228296,
+      "native_ms": {
+        "1": 24.827634000303078,
+        "2": 29.086787000323966,
+        "4": 15.544133999810583,
+        "8": 8.837795999625087
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_100/subject_12039/study_20819/pic_034407.jpg",
+      "source_size": [
+        2528,
+        3056
+      ],
+      "output_size": [
+        635,
+        768
+      ],
+      "pillow_ms": 55.79746600005819,
+      "native_ms": {
+        "1": 24.85363400001006,
+        "2": 27.732689999993454,
+        "4": 15.581930999815086,
+        "8": 8.711468000001332
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_5/subject_11816/study_20093/pic_033208.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 54.982118000225455,
+      "native_ms": {
+        "1": 24.924651000219455,
+        "2": 29.358080999827507,
+        "4": 15.755136999814567,
+        "8": 8.797721000064485
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_5/subject_11827/study_20522/pic_033922.jpg",
+      "source_size": [
+        2539,
+        3014
+      ],
+      "output_size": [
+        647,
+        768
+      ],
+      "pillow_ms": 55.630277000091155,
+      "native_ms": {
+        "1": 29.267334999985906,
+        "2": 33.29387100029635,
+        "4": 17.62718899999527,
+        "8": 9.776507999958994
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_5/subject_11837/study_20050/pic_033136.jpg",
+      "source_size": [
+        2544,
+        3056
+      ],
+      "output_size": [
+        639,
+        768
+      ],
+      "pillow_ms": 54.881174999991345,
+      "native_ms": {
+        "1": 25.47810499982006,
+        "2": 29.605956000068545,
+        "4": 15.675509999709902,
+        "8": 8.844093999869074
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_5/subject_11843/study_20271/pic_033508.jpg",
+      "source_size": [
+        1760,
+        2140
+      ],
+      "output_size": [
+        632,
+        768
+      ],
+      "pillow_ms": 32.96400799990806,
+      "native_ms": {
+        "1": 15.240506999816716,
+        "2": 18.09178299981795,
+        "4": 9.790647000045283,
+        "8": 5.604651999874477
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    },
+    {
+      "path": "/tmp/dual768_2080ti_diagnosis/inputs/pictures_5/subject_11843/study_20271/pic_033509.jpg",
+      "source_size": [
+        1760,
+        2140
+      ],
+      "output_size": [
+        632,
+        768
+      ],
+      "pillow_ms": 32.41646100013895,
+      "native_ms": {
+        "1": 15.259792999586352,
+        "2": 18.072205999942526,
+        "4": 9.802517000025546,
+        "8": 5.666795000252023
+      },
+      "resize_uint8_all_threads_byte_equal": true,
+      "normalized_float32_byte_equal": true
+    }
+  ]
+}

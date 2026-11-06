@@ -1,0 +1,13 @@
+{
+  "state": "failed_or_interrupted",
+  "completed_epochs": 0,
+  "validated_epochs": 0,
+  "backward_batches": 0,
+  "optimizer_updates": 0,
+  "ema_updates": 0,
+  "amp_skipped_steps": 0,
+  "best_epoch": null,
+  "error": "ImportError: Using SOCKS proxy, but the 'socksio' package is not installed. Make sure to install httpx using `pip install httpx[socks]`.",
+  "oom_advice": "",
+  "updated": "2026-10-18T15:22:54+08:00"
+}

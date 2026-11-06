@@ -1,0 +1,9 @@
+{
+  "cpu_audit_only": true,
+  "initial_audit_script_exit_code": 1,
+  "initial_exception": "AssertionError: all_132_bundle_file_hashes_match",
+  "cause": "Audit script initially assumed SHA256SUMS listed all 132 archive files. It actually lists 131 files; SHA256SUMS itself is the remaining archive file. No hash mismatch occurred. Portable selection is an additional derived file, bringing current bundle to 133 files.",
+  "correction": "Corrected only the new independent CPU audit script expected entry count from 132 to 131. No bundle, model, benchmark, probability, threshold, or existing report was altered.",
+  "corrected_audit_exit_code": 0,
+  "corrected_audit_checks_passed": 34
+}

@@ -1,0 +1,23 @@
+{
+  "selected_hong_kong": "2026-10-31T15:51:25.917900+08:00",
+  "candidate": "AB_B100_class1_JPEG_draft_target768",
+  "model_config_sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+  "selection_inputs": "Full original valid scores and original100+5 valid timing only",
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "test_used_for_selection": false,
+  "new_training": false,
+  "formal_T4_certification": false,
+  "user_selected_current_candidate": true,
+  "future_80ms_goal_retained": true,
+  "further_optimization_stopped_by_user": true,
+  "macro_auc": 0.8166770734158482,
+  "mean_ms": 84.82014125668533,
+  "round_mean_ms": [
+    86.07328883005266,
+    85.42330082998433,
+    82.96383411001898
+  ],
+  "meets_requested_auc_and_latency": false,
+  "asset_bytes": 241433757
+}

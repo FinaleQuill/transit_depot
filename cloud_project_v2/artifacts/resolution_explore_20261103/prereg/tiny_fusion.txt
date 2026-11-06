@@ -1,0 +1,4 @@
+Hypothesis: 768-trained and 896-trained Tiny members have preprocessing/resolution-derived error diversity beyond seed variation.
+Expected effect: fixed equal-probability fusion improves Macro-AUC by at least 0.004 over the better single Tiny, with patient-paired CI and residual-error correlation reported.
+Cost: reuse the preregistered 768/896 training arms; compare identity and hflip2 on fixed official valid and measure serial three-image Study P50/P95.
+Failure criterion: fusion gain below 0.004 or any missing compliance receipt, checkpoint provenance, or paired comparison output.

@@ -1,0 +1,415 @@
+    ______              __                _                            
+   / ____/___   ____ _ / /_ __  __ _____ (_)____  ___                  
+  / /_   / _ \ / __ `// __// / / // ___// //_  / / _ \                 
+ / __/  /  __// /_/ // /_ / /_/ // /   / /  / /_/  __/                 
+/_/     \___/ \__,_/ \__/ \__,_//_/   /_/  /___/\___/                  
+======================================================                 
+
+【目录及作用】        
+
++------------------+---------------------------------+---------+---------------------------------------------------------+      
+|  目录名称        | 路径                            | IO 性能 |  说明                                                   |      
++------------------+---------------------------------+---------+---------------------------------------------------------+      
+|  云端同步目录    |  /home/featurize/work           | 慢      |  云同步盘中的数据会一直跟随用户，不会随实例退还被销毁， |     
+|                  |                                 |         |  但其读取/写入性能非常差。                              |      
+|                  |                                 |         |  所以一定不要在这里保存数据集，否则会严重影响训练性能   |     
++------------------+---------------------------------+---------+---------------------------------------------------------+      
+|  数据集下载目录  |  /home/featurize/data           | 快      |  添加数据集会下载并解压至此目录，该目录磁盘为本地高速   |     
+|                  |                                 |         |  磁盘，因此读写很快。实例销毁后自动删除                 |     
++------------------+---------------------------------+---------+---------------------------------------------------------+      
+|  其他目录        |  N / A                          | 快      |  其他目录均为本地高速磁盘，实例销毁后自动删除           |     
++------------------+---------------------------------+---------+---------------------------------------------------------+      
+
+【最佳实践】          
+
+ ✅  始终使用数据集功能来添加数据，添加完成后直接使用，不要再移动数据的位置。            
+ ✅  始终将代码保存至「云端同步目录」中。   
+ ✅  重要的模型文件保存在「云端同步目录」，不重要的模型文件保存在其他位置。 
+ ✅  始终使用 pip 安装依赖，而不是用 conda，如无必要，不要创建虚拟环境，除非你知道自己在做什么。       
+ ✅  常用的包可使用 pip install --user xxx 安装，这样下次使用无需重复安装。 
+
+【注意事项】          
+
+ ⛔️  云端同步目录（work目录）有配额限制，超过配额将产生费用。具体的额度可点击右上角的头像确认，用量请使用 `du -sh ~/work/` 查看。
+ ⛔️  请不要删除 conda 的 base 环境，这会导致无法访问工作区。           
+ ⛔️  Featurize 禁止挖矿，请不要使用 featurize 的实例挖矿，一经发现直接封号恕不退款。     
+
+
+
+(base) ➜ cloud_project_v2 cd /home/featurize/work/cloud_project_v2     
+export KD_PYTHON=/home/featurize/.conda/envs/cxr-kd-v1/bin/python      
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1  
+export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false NO_ALBUMENTATIONS_UPDATE=1        
+
+"$KD_PYTHON" preflight_kd.py --check-files  
+{                     
+  "training_started": false,                
+  "models_built": 0,  
+  "pretrained_downloads": 0,                
+  "approved_backbones": [                   
+    "convnext_base.fb_in22k_ft_in1k_384",   
+    "convnext_tiny.fb_in22k_ft_in1k_384"    
+  ],                  
+  "environment": {    
+    "python": "3.12.15",                    
+    "packages": {     
+      "torch": "2.10.0+cu128",              
+      "torchvision": "0.25.0+cu128",        
+      "timm": "1.0.30",                     
+      "numpy": "1.26.4",                    
+      "Pillow": "10.4.0",                   
+      "opencv-python-headless": "4.11.0.86",                           
+      "albumentations": "2.0.8",            
+      "scikit-learn": "1.6.1",              
+      "safetensors": "0.8.0",               
+      "huggingface-hub": "2.3.0"            
+    },                
+    "training_environment_pass": true,      
+    "problems": [],   
+    "cuda_execution_checked": false         
+  },                  
+  "data": {           
+    "data_pass": true,                      
+    "splits": {       
+      "train": {      
+        "images": 30328,                    
+        "studies": 18513,                   
+        "patients": 11055,                  
+        "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",         
+        "resolved_image_root": "/home/featurize/data/cxr_first/cxr_first"   
+      },              
+      "valid": {      
+        "images": 1422,                     
+        "studies": 859,                     
+        "patients": 228,                    
+        "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",         
+        "resolved_image_root": "/home/featurize/data/cxr_first/cxr_first"   
+      }               
+    },                
+    "folds": [        
+      {               
+        "fold": 0,    
+        "training_images": 24258,           
+        "oof_images": 6070,                 
+        "patient_overlap": 0                
+      },              
+      {               
+        "fold": 1,    
+        "training_images": 24266,           
+        "oof_images": 6062,                 
+        "patient_overlap": 0                
+      },              
+      {               
+        "fold": 2,    
+        "training_images": 24275,           
+        "oof_images": 6053,                 
+        "patient_overlap": 0                
+      },              
+      {               
+        "fold": 3,    
+        "training_images": 24249,           
+        "oof_images": 6079,                 
+        "patient_overlap": 0                
+      },              
+      {               
+        "fold": 4,    
+        "training_images": 24264,           
+        "oof_images": 6064,                 
+        "patient_overlap": 0                
+      }               
+    ],                
+    "missing_or_empty_count": 0,            
+    "missing_image_ids_first20": [],        
+    "image_existence_checked": true,        
+    "image_bytes_sha256_checked": false,    
+    "note": "Training Dataset verifies each accepted image SHA256 when it is read."      
+  },                  
+  "ready_for_training_preflight": true      
+}                     
+(base) ➜ cloud_project_v2 bash run_overnight.sh --execute              
+{                     
+  "execute": true,    
+  "run_dir": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5",            
+  "artifact_type": "kd_teacher_run",        
+  "schema_version": 6,                      
+  "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",               
+  "image_size": 768,  
+  "selection_protocol": "fixed_epoch_final_ema",                       
+  "epochs": 20,       
+  "seed": 43,         
+  "effective_batch_size": 32,               
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",    
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "image_root": "/home/featurize/data/cxr_first",                      
+  "official_valid_used_for_training": false,                           
+  "outer_fold_used_for_selection": false    
+}                     
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 0 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0                     
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.                 
+^[[B^[[B^[[B^[[B^[[B^[[B^[[Bfold=0 epoch=1 size=768 batch=1/12129 loss=0.887430 images=2/24258 updates=0 peak=1.59GiB           
+fold=0 epoch=1 size=768 batch=100/12129 loss=1.295857 images=200/24258 updates=6 peak=2.41GiB          
+fold=0 epoch=1 size=768 batch=200/12129 loss=1.277574 images=400/24258 updates=12 peak=2.41GiB         
+fold=0 epoch=1 size=768 batch=300/12129 loss=1.229898 images=600/24258 updates=18 peak=2.41GiB         
+fold=0 epoch=1 size=768 batch=400/12129 loss=1.244219 images=800/24258 updates=25 peak=2.41GiB         
+fold=0 epoch=1 size=768 batch=500/12129 loss=1.222752 images=1000/24258 updates=31 peak=2.41GiB        
+fold=0 epoch=1 size=768 batch=600/12129 loss=1.208042 images=1200/24258 updates=37 peak=2.41GiB        
+fold=0 epoch=1 size=768 batch=700/12129 loss=1.192803 images=1400/24258 updates=43 peak=2.41GiB        
+fold=0 epoch=1 size=768 batch=800/12129 loss=1.189681 images=1600/24258 updates=50 peak=2.41GiB        
+fold=0 epoch=1 size=768 batch=900/12129 loss=1.197951 images=1800/24258 updates=56 peak=2.41GiB        
+fold=0 epoch=1 size=768 batch=1000/12129 loss=1.191527 images=2000/24258 updates=62 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1100/12129 loss=1.196310 images=2200/24258 updates=68 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1200/12129 loss=1.210448 images=2400/24258 updates=75 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1300/12129 loss=1.219065 images=2600/24258 updates=81 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1400/12129 loss=1.209884 images=2800/24258 updates=87 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1500/12129 loss=1.207286 images=3000/24258 updates=93 peak=2.41GiB       
+fold=0 epoch=1 size=768 batch=1600/12129 loss=1.209821 images=3200/24258 updates=100 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=1700/12129 loss=1.202461 images=3400/24258 updates=106 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=1800/12129 loss=1.200451 images=3600/24258 updates=112 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=1900/12129 loss=1.199545 images=3800/24258 updates=118 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2000/12129 loss=1.193557 images=4000/24258 updates=125 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2100/12129 loss=1.192328 images=4200/24258 updates=131 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2200/12129 loss=1.194161 images=4400/24258 updates=137 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2300/12129 loss=1.191209 images=4600/24258 updates=143 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2400/12129 loss=1.187573 images=4800/24258 updates=150 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2500/12129 loss=1.185327 images=5000/24258 updates=156 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2600/12129 loss=1.187063 images=5200/24258 updates=162 peak=2.41GiB      
+^[[A^[[A^[[A^[[Afold=0 epoch=1 size=768 batch=2700/12129 loss=1.187692 images=5400/24258 updates=168 peak=2.41GiB               
+fold=0 epoch=1 size=768 batch=2800/12129 loss=1.182794 images=5600/24258 updates=175 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=2900/12129 loss=1.186872 images=5800/24258 updates=181 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3000/12129 loss=1.189659 images=6000/24258 updates=187 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3100/12129 loss=1.187808 images=6200/24258 updates=193 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3200/12129 loss=1.188510 images=6400/24258 updates=200 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3300/12129 loss=1.185356 images=6600/24258 updates=206 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3400/12129 loss=1.186471 images=6800/24258 updates=212 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3500/12129 loss=1.188493 images=7000/24258 updates=218 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3600/12129 loss=1.186316 images=7200/24258 updates=225 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3700/12129 loss=1.184932 images=7400/24258 updates=231 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3800/12129 loss=1.182456 images=7600/24258 updates=237 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=3900/12129 loss=1.178074 images=7800/24258 updates=243 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4000/12129 loss=1.176421 images=8000/24258 updates=250 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4100/12129 loss=1.174122 images=8200/24258 updates=256 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4200/12129 loss=1.173512 images=8400/24258 updates=262 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4300/12129 loss=1.171600 images=8600/24258 updates=268 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4400/12129 loss=1.170809 images=8800/24258 updates=275 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4500/12129 loss=1.166354 images=9000/24258 updates=281 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4600/12129 loss=1.164112 images=9200/24258 updates=287 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4700/12129 loss=1.161930 images=9400/24258 updates=293 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4800/12129 loss=1.162373 images=9600/24258 updates=300 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=4900/12129 loss=1.160111 images=9800/24258 updates=306 peak=2.41GiB      
+fold=0 epoch=1 size=768 batch=5000/12129 loss=1.156871 images=10000/24258 updates=312 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5100/12129 loss=1.152467 images=10200/24258 updates=318 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5200/12129 loss=1.151598 images=10400/24258 updates=325 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5300/12129 loss=1.148367 images=10600/24258 updates=331 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5400/12129 loss=1.149295 images=10800/24258 updates=337 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5500/12129 loss=1.149444 images=11000/24258 updates=343 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5600/12129 loss=1.148348 images=11200/24258 updates=350 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5700/12129 loss=1.146112 images=11400/24258 updates=356 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5800/12129 loss=1.144854 images=11600/24258 updates=362 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=5900/12129 loss=1.142923 images=11800/24258 updates=368 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6000/12129 loss=1.143128 images=12000/24258 updates=375 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6100/12129 loss=1.142715 images=12200/24258 updates=381 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6200/12129 loss=1.142706 images=12400/24258 updates=387 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6300/12129 loss=1.142641 images=12600/24258 updates=393 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6400/12129 loss=1.139075 images=12800/24258 updates=400 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6500/12129 loss=1.136333 images=13000/24258 updates=406 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6600/12129 loss=1.135503 images=13200/24258 updates=412 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6700/12129 loss=1.135247 images=13400/24258 updates=418 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6800/12129 loss=1.132766 images=13600/24258 updates=425 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=6900/12129 loss=1.133673 images=13800/24258 updates=431 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7000/12129 loss=1.132562 images=14000/24258 updates=437 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7100/12129 loss=1.131033 images=14200/24258 updates=443 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7200/12129 loss=1.129778 images=14400/24258 updates=450 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7300/12129 loss=1.129144 images=14600/24258 updates=456 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7400/12129 loss=1.128837 images=14800/24258 updates=462 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7500/12129 loss=1.128325 images=15000/24258 updates=468 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7600/12129 loss=1.128217 images=15200/24258 updates=475 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7700/12129 loss=1.126872 images=15400/24258 updates=481 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7800/12129 loss=1.125292 images=15600/24258 updates=487 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=7900/12129 loss=1.124597 images=15800/24258 updates=493 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8000/12129 loss=1.124208 images=16000/24258 updates=500 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8100/12129 loss=1.122554 images=16200/24258 updates=506 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8200/12129 loss=1.121380 images=16400/24258 updates=512 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8300/12129 loss=1.120978 images=16600/24258 updates=518 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8400/12129 loss=1.119628 images=16800/24258 updates=525 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8500/12129 loss=1.118568 images=17000/24258 updates=531 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8600/12129 loss=1.118351 images=17200/24258 updates=537 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8700/12129 loss=1.115277 images=17400/24258 updates=543 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8800/12129 loss=1.114235 images=17600/24258 updates=550 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=8900/12129 loss=1.114772 images=17800/24258 updates=556 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9000/12129 loss=1.112556 images=18000/24258 updates=562 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9100/12129 loss=1.111539 images=18200/24258 updates=568 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9200/12129 loss=1.111115 images=18400/24258 updates=575 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9300/12129 loss=1.110312 images=18600/24258 updates=581 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9400/12129 loss=1.109846 images=18800/24258 updates=587 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9500/12129 loss=1.109846 images=19000/24258 updates=593 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9600/12129 loss=1.108830 images=19200/24258 updates=600 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9700/12129 loss=1.108103 images=19400/24258 updates=606 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9800/12129 loss=1.107694 images=19600/24258 updates=612 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=9900/12129 loss=1.106526 images=19800/24258 updates=618 peak=2.41GiB     
+fold=0 epoch=1 size=768 batch=10000/12129 loss=1.104942 images=20000/24258 updates=625 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10100/12129 loss=1.104756 images=20200/24258 updates=631 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10200/12129 loss=1.104537 images=20400/24258 updates=637 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10300/12129 loss=1.104018 images=20600/24258 updates=643 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10400/12129 loss=1.102738 images=20800/24258 updates=650 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10500/12129 loss=1.100870 images=21000/24258 updates=656 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10600/12129 loss=1.100196 images=21200/24258 updates=662 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10700/12129 loss=1.099422 images=21400/24258 updates=668 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10800/12129 loss=1.097839 images=21600/24258 updates=675 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=10900/12129 loss=1.096940 images=21800/24258 updates=681 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11000/12129 loss=1.096153 images=22000/24258 updates=687 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11100/12129 loss=1.094209 images=22200/24258 updates=693 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11200/12129 loss=1.092566 images=22400/24258 updates=700 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11300/12129 loss=1.091366 images=22600/24258 updates=706 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11400/12129 loss=1.091886 images=22800/24258 updates=712 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11500/12129 loss=1.090946 images=23000/24258 updates=718 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11600/12129 loss=1.090122 images=23200/24258 updates=725 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11700/12129 loss=1.091486 images=23400/24258 updates=731 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11800/12129 loss=1.091525 images=23600/24258 updates=737 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=11900/12129 loss=1.091755 images=23800/24258 updates=743 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=12000/12129 loss=1.091085 images=24000/24258 updates=750 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=12100/12129 loss=1.090681 images=24200/24258 updates=756 peak=2.41GiB    
+fold=0 epoch=1 size=768 batch=12129/12129 loss=1.090881 images=24258/24258 updates=759 peak=2.41GiB    
+=> teacher fold=0 epoch=1/20 train_BCE=1.090881 final_ready=False                                      
+fold=0 epoch=2 size=768 batch=1/12129 loss=0.645759 images=2/24258 updates=759 peak=2.24GiB            
+fold=0 epoch=2 size=768 batch=100/12129 loss=1.157713 images=200/24258 updates=765 peak=2.41GiB        
+fold=0 epoch=2 size=768 batch=200/12129 loss=1.107468 images=400/24258 updates=771 peak=2.41GiB        
+fold=0 epoch=2 size=768 batch=300/12129 loss=1.111922 images=600/24258 updates=777 peak=2.41GiB        
+fold=0 epoch=2 size=768 batch=400/12129 loss=1.093393 images=800/24258 updates=784 peak=2.41GiB        
+fold=0 epoch=2 size=768 batch=500/12129 loss=1.074509 images=1000/24258 updates=790 peak=2.41GiB       
+fold=0 epoch=2 size=768 batch=600/12129 loss=1.083070 images=1200/24258 updates=796 peak=2.41GiB       
+^[[A^[[A^[[A^[[Afold=0 epoch=2 size=768 batch=700/12129 loss=1.092152 images=1400/24258 updates=802 peak=2.41GiB                
+fold=0 epoch=2 size=768 batch=800/12129 loss=1.086725 images=1600/24258 updates=809 peak=2.41GiB       
+fold=0 epoch=2 size=768 batch=900/12129 loss=1.066052 images=1800/24258 updates=815 peak=2.41GiB       
+fold=0 epoch=2 size=768 batch=1000/12129 loss=1.062047 images=2000/24258 updates=821 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1100/12129 loss=1.079230 images=2200/24258 updates=827 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1200/12129 loss=1.079258 images=2400/24258 updates=834 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1300/12129 loss=1.074645 images=2600/24258 updates=840 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1400/12129 loss=1.075733 images=2800/24258 updates=846 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1500/12129 loss=1.079880 images=3000/24258 updates=852 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1600/12129 loss=1.071933 images=3200/24258 updates=859 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1700/12129 loss=1.073040 images=3400/24258 updates=865 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1800/12129 loss=1.067056 images=3600/24258 updates=871 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=1900/12129 loss=1.053122 images=3800/24258 updates=877 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2000/12129 loss=1.046798 images=4000/24258 updates=884 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2100/12129 loss=1.042766 images=4200/24258 updates=890 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2200/12129 loss=1.038558 images=4400/24258 updates=896 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2300/12129 loss=1.037600 images=4600/24258 updates=902 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2400/12129 loss=1.038263 images=4800/24258 updates=909 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2500/12129 loss=1.038055 images=5000/24258 updates=915 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2600/12129 loss=1.038875 images=5200/24258 updates=921 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2700/12129 loss=1.039589 images=5400/24258 updates=927 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2800/12129 loss=1.041632 images=5600/24258 updates=934 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=2900/12129 loss=1.038548 images=5800/24258 updates=940 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3000/12129 loss=1.036551 images=6000/24258 updates=946 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3100/12129 loss=1.038632 images=6200/24258 updates=952 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3200/12129 loss=1.033039 images=6400/24258 updates=959 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3300/12129 loss=1.028275 images=6600/24258 updates=965 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3400/12129 loss=1.025865 images=6800/24258 updates=971 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3500/12129 loss=1.023229 images=7000/24258 updates=977 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3600/12129 loss=1.020824 images=7200/24258 updates=984 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3700/12129 loss=1.021141 images=7400/24258 updates=990 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3800/12129 loss=1.016497 images=7600/24258 updates=996 peak=2.41GiB      
+fold=0 epoch=2 size=768 batch=3900/12129 loss=1.014098 images=7800/24258 updates=1002 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4000/12129 loss=1.010724 images=8000/24258 updates=1009 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4100/12129 loss=1.010358 images=8200/24258 updates=1015 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4200/12129 loss=1.011111 images=8400/24258 updates=1021 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4300/12129 loss=1.010308 images=8600/24258 updates=1027 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4400/12129 loss=1.007730 images=8800/24258 updates=1034 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4500/12129 loss=1.004687 images=9000/24258 updates=1040 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4600/12129 loss=1.005135 images=9200/24258 updates=1046 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4700/12129 loss=1.001065 images=9400/24258 updates=1052 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4800/12129 loss=1.002313 images=9600/24258 updates=1059 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=4900/12129 loss=1.003904 images=9800/24258 updates=1065 peak=2.41GiB     
+fold=0 epoch=2 size=768 batch=5000/12129 loss=1.004895 images=10000/24258 updates=1071 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5100/12129 loss=1.005184 images=10200/24258 updates=1077 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5200/12129 loss=1.003861 images=10400/24258 updates=1084 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5300/12129 loss=1.005302 images=10600/24258 updates=1090 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5400/12129 loss=1.004579 images=10800/24258 updates=1096 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5500/12129 loss=1.003560 images=11000/24258 updates=1102 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5600/12129 loss=1.005367 images=11200/24258 updates=1109 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5700/12129 loss=1.003607 images=11400/24258 updates=1115 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5800/12129 loss=1.003449 images=11600/24258 updates=1121 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=5900/12129 loss=1.004799 images=11800/24258 updates=1127 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6000/12129 loss=1.004383 images=12000/24258 updates=1134 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6100/12129 loss=1.002747 images=12200/24258 updates=1140 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6200/12129 loss=1.003217 images=12400/24258 updates=1146 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6300/12129 loss=1.004454 images=12600/24258 updates=1152 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6400/12129 loss=1.003894 images=12800/24258 updates=1159 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6500/12129 loss=1.003527 images=13000/24258 updates=1165 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6600/12129 loss=1.002524 images=13200/24258 updates=1171 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6700/12129 loss=1.001413 images=13400/24258 updates=1177 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6800/12129 loss=1.000728 images=13600/24258 updates=1184 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=6900/12129 loss=1.001781 images=13800/24258 updates=1190 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7000/12129 loss=1.001562 images=14000/24258 updates=1196 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7100/12129 loss=1.000401 images=14200/24258 updates=1202 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7200/12129 loss=1.000024 images=14400/24258 updates=1209 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7300/12129 loss=1.000472 images=14600/24258 updates=1215 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7400/12129 loss=1.001021 images=14800/24258 updates=1221 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7500/12129 loss=1.000579 images=15000/24258 updates=1227 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7600/12129 loss=0.998646 images=15200/24258 updates=1234 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7700/12129 loss=0.997424 images=15400/24258 updates=1240 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7800/12129 loss=0.996852 images=15600/24258 updates=1246 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=7900/12129 loss=0.995925 images=15800/24258 updates=1252 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8000/12129 loss=0.995678 images=16000/24258 updates=1259 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8100/12129 loss=0.994973 images=16200/24258 updates=1265 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8200/12129 loss=0.995101 images=16400/24258 updates=1271 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8300/12129 loss=0.993969 images=16600/24258 updates=1277 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8400/12129 loss=0.993842 images=16800/24258 updates=1284 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8500/12129 loss=0.993398 images=17000/24258 updates=1290 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8600/12129 loss=0.991968 images=17200/24258 updates=1296 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8700/12129 loss=0.993076 images=17400/24258 updates=1302 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8800/12129 loss=0.992056 images=17600/24258 updates=1309 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=8900/12129 loss=0.993493 images=17800/24258 updates=1315 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9000/12129 loss=0.992718 images=18000/24258 updates=1321 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9100/12129 loss=0.991729 images=18200/24258 updates=1327 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9200/12129 loss=0.991231 images=18400/24258 updates=1334 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9300/12129 loss=0.990012 images=18600/24258 updates=1340 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9400/12129 loss=0.989748 images=18800/24258 updates=1346 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9500/12129 loss=0.989848 images=19000/24258 updates=1352 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9600/12129 loss=0.990931 images=19200/24258 updates=1359 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9700/12129 loss=0.989966 images=19400/24258 updates=1365 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9800/12129 loss=0.990467 images=19600/24258 updates=1371 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=9900/12129 loss=0.990379 images=19800/24258 updates=1377 peak=2.41GiB    
+fold=0 epoch=2 size=768 batch=10000/12129 loss=0.989025 images=20000/24258 updates=1384 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10100/12129 loss=0.988159 images=20200/24258 updates=1390 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10200/12129 loss=0.988612 images=20400/24258 updates=1396 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10300/12129 loss=0.987376 images=20600/24258 updates=1402 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10400/12129 loss=0.987668 images=20800/24258 updates=1409 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10500/12129 loss=0.986279 images=21000/24258 updates=1415 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10600/12129 loss=0.984326 images=21200/24258 updates=1421 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10700/12129 loss=0.983357 images=21400/24258 updates=1427 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10800/12129 loss=0.981908 images=21600/24258 updates=1434 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=10900/12129 loss=0.981583 images=21800/24258 updates=1440 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11000/12129 loss=0.981584 images=22000/24258 updates=1446 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11100/12129 loss=0.980838 images=22200/24258 updates=1452 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11200/12129 loss=0.980649 images=22400/24258 updates=1459 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11300/12129 loss=0.980894 images=22600/24258 updates=1465 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11400/12129 loss=0.981121 images=22800/24258 updates=1471 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11500/12129 loss=0.979683 images=23000/24258 updates=1477 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11600/12129 loss=0.979686 images=23200/24258 updates=1484 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11700/12129 loss=0.980683 images=23400/24258 updates=1490 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11800/12129 loss=0.980215 images=23600/24258 updates=1496 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=11900/12129 loss=0.980089 images=23800/24258 updates=1502 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=12000/12129 loss=0.979559 images=24000/24258 updates=1509 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=12100/12129 loss=0.980660 images=24200/24258 updates=1515 peak=2.41GiB   
+fold=0 epoch=2 size=768 batch=12129/12129 loss=0.980209 images=24258/24258 updates=1518 peak=2.41GiB   
+=> teacher fold=0 epoch=2/20 train_BCE=0.980209 final_ready=False                                      
+fold=0 epoch=3 size=768 batch=1/12129 loss=1.110483 images=2/24258 updates=1518 peak=2.24GiB           
+fold=0 epoch=3 size=768 batch=100/12129 loss=1.065168 images=200/24258 updates=1524 peak=2.41GiB       
+fold=0 epoch=3 size=768 batch=200/12129 loss=0.968550 images=400/24258 updates=1530 peak=2.41GiB       
+fold=0 epoch=3 size=768 batch=300/12129 loss=0.914782 images=600/24258 updates=1536 peak=2.41GiB       
+fold=0 epoch=3 size=768 batch=400/12129 loss=0.981776 images=800/24258 updates=1543 peak=2.41GiB       
+fold=0 epoch=3 size=768 batch=500/12129 loss=0.960469 images=1000/24258 updates=1549 peak=2.41GiB      
+fold=0 epoch=3 size=768 batch=600/12129 loss=0.961628 images=1200/24258 updates=1555 peak=2.41GiB      
+fold=0 epoch=3 size=768 batch=700/12129 loss=0.964696 images=1400/24258 updates=1561 peak=2.41GiB      
+fold=0 epoch=3 size=768 batch=800/12129 loss=0.939020 images=1600/24258 updates=1568 peak=2.41GiB      
+fold=0 epoch=3 size=768 batch=900/12129 loss=0.939679 images=1800/24258 updates=1574 peak=2.41GiB      
+fold=0 epoch=3 size=768 batch=1000/12129 loss=0.926309 images=2000/24258 updates=1580 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1100/12129 loss=0.922659 images=2200/24258 updates=1586 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1200/12129 loss=0.916215 images=2400/24258 updates=1593 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1300/12129 loss=0.917874 images=2600/24258 updates=1599 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1400/12129 loss=0.920834 images=2800/24258 updates=1605 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1500/12129 loss=0.930978 images=3000/24258 updates=1611 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1600/12129 loss=0.930641 images=3200/24258 updates=1618 peak=2.41GiB     
+fold=0 epoch=3 size=768 batch=1700/12129 loss=0.929607 images=3400/24258 updates=1624 peak=2.41GiB     
+

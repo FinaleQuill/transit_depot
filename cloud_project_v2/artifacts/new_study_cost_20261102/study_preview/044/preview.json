@@ -1,0 +1,871 @@
+{
+  "model": "044_A_B_draft768",
+  "model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model",
+  "config_sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+  "decoder": "JPEG_draft_target768",
+  "pictures_100": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/cost_data_test/pictures_100",
+  "pictures_5": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/cost_data_test/pictures_5",
+  "measured_studies": 10,
+  "measured_images": 18,
+  "measured_source_bytes": 28632352,
+  "warmup_studies": 5,
+  "warmup_images": 10,
+  "warmup_source_bytes": 17595775,
+  "measured_images_per_study": {
+    "1": 5,
+    "2": 2,
+    "3": 3
+  },
+  "warmup_images_per_study": {
+    "1": 2,
+    "2": 1,
+    "3": 2
+  },
+  "batch_unit": "one Study; all its pictures in one model forward per TTA view",
+  "rounds": 3,
+  "official_cost_certification": false,
+  "output_dir": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "compute_capability": [
+      7,
+      5
+    ],
+    "driver": null,
+    "model_inventory_bytes": 241433757,
+    "precision": "float16",
+    "image_size": 768,
+    "tta": "hflip2"
+  },
+  "measurement_scope": "local Study preview, not official cost certification",
+  "warmup_protocol": "5 supplied Studies before each route; local convention",
+  "routes": {
+    "serial_image_reference": [
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1511.6831030027242,
+        "mean_ms_per_study": 151.16831030027242,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 92.8047767985845
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 158.445073007897
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 243.58969099800257
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 217.32842100027483
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 140.77334900503047
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 100.71811800298747
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 289.0339649893576
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 88.20611498958897
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 89.56676299567334
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 176.11679701076355
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 86.62315800029319
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 224.40668700437527
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 98.90973000437953
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_1_serial.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_1_serial.image_predictions.csv"
+      },
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1633.9836479892256,
+        "mean_ms_per_study": 163.39836479892256,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 97.01144540158566
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 165.40855849598302
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 272.7031013297771
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 262.7904740074882
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 157.76340498996433
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 103.84587000589818
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 338.45321799162775
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 88.40820800105575
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 88.81494701199699
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 173.0537120020017
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 84.74336999643128
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 216.86561199021526
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 119.2448319925461
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_2_serial.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_2_serial.image_predictions.csv"
+      },
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1735.3826480248244,
+        "mean_ms_per_study": 173.53826480248244,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 104.2325430054916
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 186.74313399969833
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 280.24455499932327
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 253.80107399541885
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 155.46656399965286
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 109.26284499873873
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 314.44214600196574
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 95.8691490086494
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 95.64479200344067
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 218.0197039997438
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 110.7641520065954
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 272.49044500058517
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 109.62177701003384
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_3_serial.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_3_serial.image_predictions.csv"
+      }
+    ],
+    "whole_study_batch": [
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1397.9775330080884,
+        "mean_ms_per_study": 139.79775330080884,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 90.19769000005908
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 142.04329600761412
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 220.96749699752158
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 199.53227498626802
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 127.36897601280361
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 101.81786899920553
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 259.02265700278804
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 87.13479001016822
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 86.95953099231701
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 156.71761600242462
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 85.96450000186451
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 204.34755900350865
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 89.11175999674015
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_1_study_batch.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_1_study_batch.image_predictions.csv"
+      },
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1419.2296609689947,
+        "mean_ms_per_study": 141.92296609689947,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 91.88292239559814
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 144.6108149975771
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 223.53113966528326
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 198.09503700525966
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 125.66200699075125
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 95.89046199107543
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 260.63096699363086
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 85.89975300128572
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 97.1893679961795
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 163.55962300440297
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 85.97014499537181
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 211.86741499695927
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 94.46488399407826
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_2_study_batch.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_2_study_batch.image_predictions.csv"
+      },
+      {
+        "studies": 10,
+        "images": 18,
+        "total_ms": 1507.3727199924178,
+        "mean_ms_per_study": 150.73727199924178,
+        "by_images_per_study": {
+          "1": {
+            "studies": 5,
+            "mean_ms_per_study": 102.58518159971572
+          },
+          "2": {
+            "studies": 2,
+            "mean_ms_per_study": 153.25370249775006
+          },
+          "3": {
+            "studies": 3,
+            "mean_ms_per_study": 229.31313566611303
+          }
+        },
+        "per_study": [
+          {
+            "study": "subject_12068/study_22215",
+            "images": 3,
+            "milliseconds": 203.6793459992623
+          },
+          {
+            "study": "subject_12076/study_22117",
+            "images": 2,
+            "milliseconds": 133.7127269944176
+          },
+          {
+            "study": "subject_12081/study_21435",
+            "images": 1,
+            "milliseconds": 113.78580800374039
+          },
+          {
+            "study": "subject_12081/study_22228",
+            "images": 3,
+            "milliseconds": 274.58767000644
+          },
+          {
+            "study": "subject_12112/study_22362",
+            "images": 1,
+            "milliseconds": 98.2276120048482
+          },
+          {
+            "study": "subject_12115/study_21035",
+            "images": 1,
+            "milliseconds": 106.79478199745063
+          },
+          {
+            "study": "subject_12118/study_21322",
+            "images": 2,
+            "milliseconds": 172.7946780010825
+          },
+          {
+            "study": "subject_12141/study_21818",
+            "images": 1,
+            "milliseconds": 94.95617098582443
+          },
+          {
+            "study": "subject_12143/study_21092",
+            "images": 3,
+            "milliseconds": 209.6723909926368
+          },
+          {
+            "study": "subject_12146/study_21478",
+            "images": 1,
+            "milliseconds": 99.16153500671498
+          }
+        ],
+        "study_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_3_study_batch.csv",
+        "image_csv": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044/round_3_study_batch.image_predictions.csv"
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "image": {
+        "compared_studies": 18,
+        "valid_compared_studies": 18,
+        "expected_studies": 18,
+        "reference_studies": 18,
+        "mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "mismatched_study_count": 13,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0001228228211402893,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      },
+      "study": {
+        "compared_studies": 10,
+        "valid_compared_studies": 10,
+        "expected_studies": 10,
+        "reference_studies": 10,
+        "mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "mismatched_study_count": 5,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 7.833043734228884e-05,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      }
+    },
+    {
+      "image": {
+        "compared_studies": 18,
+        "valid_compared_studies": 18,
+        "expected_studies": 18,
+        "reference_studies": 18,
+        "mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "mismatched_study_count": 13,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0001228228211402893,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      },
+      "study": {
+        "compared_studies": 10,
+        "valid_compared_studies": 10,
+        "expected_studies": 10,
+        "reference_studies": 10,
+        "mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "mismatched_study_count": 5,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 7.833043734228884e-05,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      }
+    },
+    {
+      "image": {
+        "compared_studies": 18,
+        "valid_compared_studies": 18,
+        "expected_studies": 18,
+        "reference_studies": 18,
+        "mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "mismatched_study_count": 13,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215/pic_036630.jpg",
+          "subject_12068/study_22215/pic_036631.jpg",
+          "subject_12068/study_22215/pic_036632.jpg",
+          "subject_12076/study_22117/pic_036472.jpg",
+          "subject_12076/study_22117/pic_036473.jpg",
+          "subject_12081/study_22228/pic_036651.jpg",
+          "subject_12081/study_22228/pic_036652.jpg",
+          "subject_12081/study_22228/pic_036653.jpg",
+          "subject_12118/study_21322/pic_035224.jpg",
+          "subject_12118/study_21322/pic_035225.jpg",
+          "subject_12143/study_21092/pic_034865.jpg",
+          "subject_12143/study_21092/pic_034866.jpg",
+          "subject_12143/study_21092/pic_034867.jpg"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0001228228211402893,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      },
+      "study": {
+        "compared_studies": 10,
+        "valid_compared_studies": 10,
+        "expected_studies": 10,
+        "reference_studies": 10,
+        "mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "mismatched_study_count": 5,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [
+          "subject_12068/study_22215",
+          "subject_12076/study_22117",
+          "subject_12081/study_22228",
+          "subject_12118/study_21322",
+          "subject_12143/study_21092"
+        ],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 7.833043734228884e-05,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": false
+      }
+    }
+  ]
+}

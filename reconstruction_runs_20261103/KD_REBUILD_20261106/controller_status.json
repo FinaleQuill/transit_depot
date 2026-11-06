@@ -1,0 +1,26 @@
+{
+  "state": "failed",
+  "controller_pid": 12157,
+  "ppid": 1,
+  "session_id": 12157,
+  "stdin": "/dev/null",
+  "started_at": "2026-11-06T15:45:13.151304+08:00",
+  "queue": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/teacher_queue.json",
+  "queue_sha256": "8a0fb2d6de377138676b5777ecf585a2657c053cb68f708564f827ecb2bdd29d",
+  "completed": [],
+  "automatic_retries": 0,
+  "automatic_students": false,
+  "automatic_submission": false,
+  "current_index": 0,
+  "current_run": "dinov3_l_inner0",
+  "container": "cxr-kd-20261106-dinov3-l-inner0",
+  "current_started_at": "2026-11-06T15:45:13.155798+08:00",
+  "docker_client_pid": 12158,
+  "exit_code": 130,
+  "trainer_status": {
+    "state": "interrupted",
+    "error": "KeyboardInterrupt: Training interrupted by signal 15",
+    "updated_at": "2026-11-06T18:11:37.298992+08:00"
+  },
+  "finished_at": "2026-11-06T18:11:38.988335+08:00"
+}

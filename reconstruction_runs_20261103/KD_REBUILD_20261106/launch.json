@@ -1,0 +1,15 @@
+{
+  "controller_pid": 12157,
+  "launched_at": "2026-11-06T15:45:13.053434+08:00",
+  "detached": true,
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "teacher_distill_20261106.launch",
+    "--queue",
+    "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/teacher_queue.json",
+    "--controller"
+  ],
+  "scope": "six first-stage teachers only"
+}

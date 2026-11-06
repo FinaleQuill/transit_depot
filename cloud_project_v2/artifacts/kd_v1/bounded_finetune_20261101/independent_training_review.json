@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "reviewed_hong_kong": "2026-11-01T20:01:30.046315+08:00",
+  "reviewer": "independent audit_newer subagent; standard-library CPU arithmetic",
+  "script_sha256": "9436fc796645302b1190a147f5e4ec7b859fd07f27db962b6803a9604003db9c",
+  "input_files_sha256": {
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/comparison_after_X2/comparison_report.json": "ce4ae0f4112af991422b9365e4212b2c1b68adad7448ea41e1fd739b18b20cff",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2/validation_report.json": "a0e1e840815c6c40ff7a7bc8a1dc1e3c43eb9262ca1416702a2665f75dd75e02",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2/valid_predictions.csv": "672cd43cb85c2bc7544fcc0dac0550c3f6b8f878fabc4b80cf20684710bee900",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2/valid.image_predictions.csv": "e994a8d2f7f6742dad83bdd7623bbba499636d881244076320e47658f519406b",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/B/valid_hflip2/validation_report.json": "d8c8da462af3d0b3b413b80cab04dda1d7a3250524c5b99aa79175989b08aabb",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/B/valid_hflip2/valid_predictions.csv": "4fefff394a6263a264cecfea195df3854921828183b78607284eb472500979e5",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/B/valid_hflip2/valid.image_predictions.csv": "9726800e59f8311535c53ce1228bb7c9d43c45b187145ca50339c5032a1f6231",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X1/valid/validation_report.json": "52fc4e510c7a788edfb4693a9746670c993e97f578282d89612fc8b7354ad190",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X1/valid/valid_predictions.csv": "251c92ba214ac0e8660a6aa7564d2c8cf2f7b3c91dbd559fc3c779d5cf016502",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X1/valid/valid.image_predictions.csv": "e233c68ae389be82ab8978d40e084597968e1428b118a2abf6dcfcd8677df12d",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X2/valid/validation_report.json": "3763e2778b471c3b98b374e1890166215aa6b2b9c2f9992c8676c54be916a3d9",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X2/valid/valid_predictions.csv": "783379f290d5b7302f18bc871185311b3228b0c294db4254238104cb034b34e1",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X2/valid/valid.image_predictions.csv": "9f051346ffe2e01da49742f28267d51814b314c39fd79c3bc251f73487de623a",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/X1.final_ema.json": "05a5938a5822c8b0a4dcb35a9dedfe1493440840babe4447a04440ff1505fa80",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1/config.json": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1/student_fp16.pt": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/X1_packed.execution.json": "355c3549e747610bf3bebd8eaa8594c9918a08e6f60ab64bc7bc1216b08448f4",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/status.json": "c806aa3b397c3685fb0f6261986ee382877344473bf3aeb9d27cebc058bbf5ab",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/history.jsonl": "ede458d70da41874c845d20fd8222317faaf0ece3809b209396f867921ab6dad",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X1/final_export_binding.json": "476bd294ab0946c3181036914131c2e84411da66dc3a351a72483d78b9b86507",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/X2.final_ema.json": "9c5b538c1a650f089dc9a672db2a640265d7101a45a7eeb4d1397a4a304950e0",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X2/config.json": "ebbe8dfc70e4be3ca4498104a655587929fb52fd8cc47a25f18461e5a4323780",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X2/student_fp16.pt": "e78ab608bfe471eab289b4be3e229472542b6f159f1402ec827613c4bb788c02",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/X2_packed.execution.json": "e2649157e66720a76b2faa86df74b05571175f4a7840d7692c07715a68d28962",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X2_packed/status.json": "6998416ead4276a525527c106f6c5a540300cfa9d420761132bf60a13bcc38f9",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X2_packed/history.jsonl": "06f192f10688be20d051b05a8ef93c40058d1850cb1160ad7733d1bf90d755f9",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X2/final_export_binding.json": "e824454a3881c469d4b0472e4283838824316fd939b5bc1e769ea8503eee5ba3",
+    "/home/featurize/work/cloud_project_v2/docs/BOUNDED_STUDY_FINETUNE_20261101.json": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+    "/home/featurize/work/cloud_project_v2/docs/BOUNDED_STUDY_PACKING_20261101.json": "d6ff67eb13776b66e1737bd953f9929919d82039108151edc158625e81cb5471"
+  },
+  "complete_valid": {
+    "images": 1422,
+    "studies": 859,
+    "patients": 228,
+    "original_labels_unchanged": true
+  },
+  "model_identity_reviews": {
+    "X1": {
+      "source_epoch": 4,
+      "checkpoint_selection": "fixed_final_epoch_EMA",
+      "full_checkpoint_sha256_as_bound_by_receipt_status_and_config": "b147b4c92afe8f1f02bf056b1d2c7fd87c2d94d6933610c90790d5877442c939",
+      "full_checkpoint_blob_independently_rehashed": false,
+      "fp16_weights_sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+      "config_sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386",
+      "actual_weights_bytes": 55712511,
+      "actual_config_bytes": 5233693,
+      "final_epoch_not_intermediate_best": true,
+      "parent_epoch": 9,
+      "parent_snapshot_sha256": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f",
+      "ancestry_matches_receipt": true,
+      "identity_pass": true
+    },
+    "X2": {
+      "source_epoch": 4,
+      "checkpoint_selection": "fixed_final_epoch_EMA",
+      "full_checkpoint_sha256_as_bound_by_receipt_status_and_config": "e34216e3d894c5deb22c7de52562421b8c9d2e9b1dd94ae6bf4bc5317ef1fab2",
+      "full_checkpoint_blob_independently_rehashed": false,
+      "fp16_weights_sha256": "e78ab608bfe471eab289b4be3e229472542b6f159f1402ec827613c4bb788c02",
+      "config_sha256": "ebbe8dfc70e4be3ca4498104a655587929fb52fd8cc47a25f18461e5a4323780",
+      "actual_weights_bytes": 175261029,
+      "actual_config_bytes": 5234212,
+      "final_epoch_not_intermediate_best": true,
+      "parent_epoch": 10,
+      "parent_snapshot_sha256": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+      "ancestry_matches_receipt": true,
+      "identity_pass": true
+    }
+  },
+  "source_validation_checks": {
+    "A": {
+      "images": 1422,
+      "studies": 859,
+      "source_sha256_match": true,
+      "image_to_study_max_abs_error": 0.0
+    },
+    "B": {
+      "images": 1422,
+      "studies": 859,
+      "source_sha256_match": true,
+      "image_to_study_max_abs_error": 0.0
+    },
+    "X1": {
+      "images": 1422,
+      "studies": 859,
+      "source_sha256_match": true,
+      "image_to_study_max_abs_error": 0.0
+    },
+    "X2": {
+      "images": 1422,
+      "studies": 859,
+      "source_sha256_match": true,
+      "image_to_study_max_abs_error": 0.0
+    }
+  },
+  "independent_scores": {
+    "old_AB": {
+      "macro_auc": 0.8168300303208815,
+      "per_class_auc": [
+        0.743687624750499,
+        0.8588807785888077,
+        0.8088400449221883,
+        0.7602439205770803,
+        0.8836605890603085,
+        0.7940255479894627,
+        0.79978683346559,
+        0.7253712960950518,
+        0.9111788878900732,
+        0.8826247798697539
+      ],
+      "class_1_4_8_mean_auc": 0.7431009471408769,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "macro_auc": 0.7561065607456801,
+          "per_class_auc": [
+            0.6688829787234043,
+            0.8672922252010724,
+            0.7744623655913978,
+            0.7052985188578409,
+            0.8101499139837798,
+            0.6934806137390972,
+            0.7561734524991724,
+            0.6620208057934364,
+            0.8407730874979783,
+            0.7825316455696203
+          ]
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "macro_auc": 0.8528832546773959,
+          "per_class_auc": [
+            0.8172355361897845,
+            0.8585160004688782,
+            0.8225165562913908,
+            0.8244629807337418,
+            0.9372922806797517,
+            0.8605352722772277,
+            0.8382357377741575,
+            0.7193011591988574,
+            0.9518201875344733,
+            0.8989168356256964
+          ]
+        }
+      },
+      "max_abs_per_class_error_from_source": 1.1102230246251565e-16
+    },
+    "new_X1_B": {
+      "macro_auc": 0.8171491901128627,
+      "per_class_auc": [
+        0.743687624750499,
+        0.8559216150457026,
+        0.8142414032835981,
+        0.7560422399048115,
+        0.8822230014025245,
+        0.7954421193896317,
+        0.8016773249933872,
+        0.7243570238353981,
+        0.912373186079363,
+        0.8855263624437116
+      ],
+      "class_1_4_8_mean_auc": 0.7413622961635694,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "macro_auc": 0.756468287669132,
+          "per_class_auc": [
+            0.6688829787234043,
+            0.8628239499553172,
+            0.7812724014336918,
+            0.7021682699648801,
+            0.8070779061194396,
+            0.6974597313299803,
+            0.7552135054617676,
+            0.660756365308351,
+            0.8427408485632648,
+            0.7862869198312237
+          ]
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "macro_auc": 0.852944641717205,
+          "per_class_auc": [
+            0.8172355361897845,
+            0.8554682921111242,
+            0.8251655629139073,
+            0.8193696021259319,
+            0.9370414498024707,
+            0.8612701113861386,
+            0.8405888919057531,
+            0.7194672335337297,
+            0.9528405956977386,
+            0.9009991415054707
+          ]
+        }
+      },
+      "max_abs_per_class_error_from_source": 1.1102230246251565e-16
+    }
+  },
+  "macro_auc_delta_new_minus_old": 0.0003191597919811606,
+  "per_class_auc_delta_new_minus_old": [
+    0.0,
+    -0.0029591635431051033,
+    0.005401358361409758,
+    -0.004201680672268893,
+    -0.0014375876577840119,
+    0.0014165714001690421,
+    0.001890491527797189,
+    -0.0010142722596536702,
+    0.001194298189289844,
+    0.002901582573957784
+  ],
+  "source_bootstrap_reference": "A_B_class1_B_baseline",
+  "source_bootstrap_new_minus_old": {
+    "per_class_delta": [
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.013777381022174856,
+          0.003356251991177759
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.0006329269451806202,
+          0.011595797007149779
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.01338744978197258,
+          0.002699887209721808
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.003736414014742978,
+          0.0004300018572915005
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.002150457774976344,
+          0.005502332039997224
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.0010978791182363833,
+          0.005336027391694076
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.0053958923811629365,
+          0.0035156496418239378
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          0.00032240420874989073,
+          0.0022760422625666098
+        ]
+      },
+      {
+        "valid_resamples": 1000,
+        "ci_95": [
+          -0.00023522203968824316,
+          0.0075124407911977085
+        ]
+      }
+    ],
+    "macro_auc_delta": {
+      "valid_resamples": 1000,
+      "ci_95": [
+        -0.0016263430595138907,
+        0.0018943567743342803
+      ]
+    }
+  },
+  "independent_patient_bootstrap": {
+    "samples_requested": 1000,
+    "valid_resamples": 1000,
+    "seed": 46,
+    "rng": "Python standard-library random.Random (independent of production NumPy RNG)",
+    "sampling_unit": "patient_with_all_Studies",
+    "paired": true,
+    "method": "Draw 228 patient indices with replacement; use multiplicities in exact weighted tie-aware AUC pair counts.",
+    "quantiles": "Linear interpolation at (n-1)*q, q in [0.025,0.975]",
+    "macro_auc_delta_ci95": [
+      -0.0015222779707547102,
+      0.0018702372764283028
+    ],
+    "positive_delta_resample_fraction": 0.587,
+    "selection_bias_corrected": false
+  },
+  "training_resources": {
+    "X1": {
+      "completed_epochs": 4,
+      "training_seconds_excluding_epoch_validation": 5466.828460462,
+      "wall_seconds_execution_receipt": 5805.332903,
+      "peak_gpu_allocated_gib": 2.161548137664795,
+      "optimizer_updates": 2315,
+      "ema_updates": 2315,
+      "amp_skipped_steps": 1,
+      "full_manifest_coverage_all_epochs": true
+    },
+    "X2": {
+      "completed_epochs": 4,
+      "training_seconds_excluding_epoch_validation": 10732.327337093,
+      "wall_seconds_execution_receipt": 11192.065852,
+      "peak_gpu_allocated_gib": 4.109053134918213,
+      "optimizer_updates": 2315,
+      "ema_updates": 2315,
+      "amp_skipped_steps": 1,
+      "full_manifest_coverage_all_epochs": true
+    }
+  },
+  "training_attempt_accounting": {
+    "completed_registered_runs": 2,
+    "completed_epochs_total": 8,
+    "additional_unpacked_X1_interruption": "0 complete epochs, 0 valid; preserved in X1_unpacked_interruption.json"
+  },
+  "audit_actions": {
+    "GPU_calls": 0,
+    "model_forwards": 0,
+    "test_reads": 0,
+    "models_loaded": 0,
+    "training": 0,
+    "source_files_modified": 0
+  },
+  "conclusions": {
+    "target_0_82_reached": false,
+    "new_single_model_improvement": false,
+    "stable_generalization_gain_supported": false,
+    "release_recommendation": "Keep X1+B as an experimental candidate. Complete actual combined full-valid/latency validation, but do not automatically replace delivered versions or claim platform improvement from this small point difference.",
+    "additional_training_or_weight_search_recommended_this_round": false
+  },
+  "limitations": [
+    "Historical checkpoints and class-1 fusion rule were selected on reused official valid; neither bootstrap corrects selection bias.",
+    "Independent RNG results differ slightly from production by design; a positive-bootstrap fraction is descriptive, not a posterior probability or calibrated p-value.",
+    "Only class 9 has an individually positive source CI against old AB; no multiplicity correction was applied across classes and fixed candidates.",
+    "Combined live-model validation, end-to-end latency and real T4 certification are separate pending checks; cached fusion is insufficient for deployment.",
+    "Full local checkpoint blobs were not rehashed or loaded in this audit. Actual persistent FP16 weights and configuration files were independently rehashed.",
+    "This review is written before the root agent's subsequent actual combined-predictor validation and latency measurements."
+  ]
+}

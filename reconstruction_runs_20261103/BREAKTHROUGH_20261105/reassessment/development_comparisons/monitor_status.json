@@ -1,0 +1,12 @@
+{
+  "state": "monitoring",
+  "controller_state": "running",
+  "completed_epochs": [
+    1
+  ],
+  "pid": 225021,
+  "updated_at": "2026-11-05T21:25:40.839382+08:00",
+  "cpu_only": true,
+  "test_accessed": false,
+  "modifies_training": false
+}

@@ -1,0 +1,4 @@
+Hypothesis: the valid-selected best EMA from the 768-trained arm is a secondary candidate, distinct from the fixed-E3 matched reference.
+Expected effect: report all ten valid AUCs, AP-only AUC, sampled-train gap, and 768+hflip2 three-image timing; do not tune or alter inference.
+Cost: one FP16 pass over official valid plus a deterministic 1000-Study official-train diagnostic and 30 three-image Studies over three timing rounds.
+Failure criterion: checkpoint SHA or lifecycle binding mismatch, incomplete official-valid coverage, missing timing evidence, or any test access.

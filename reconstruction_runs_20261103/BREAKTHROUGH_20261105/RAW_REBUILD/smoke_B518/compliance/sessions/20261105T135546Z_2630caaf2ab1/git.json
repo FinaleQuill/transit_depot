@@ -1,0 +1,11 @@
+{
+  "commit": {
+    "unavailable": "FileNotFoundError"
+  },
+  "diff_sha256": {
+    "unavailable": "FileNotFoundError"
+  },
+  "status": {
+    "unavailable": "FileNotFoundError"
+  }
+}

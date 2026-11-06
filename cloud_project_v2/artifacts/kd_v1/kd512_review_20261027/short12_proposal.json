@@ -1,0 +1,63 @@
+{
+  "proposal_only": true,
+  "execute": false,
+  "new_training_started": false,
+  "student_output_created": false,
+  "configuration": {
+    "fold_plan": "data/cv5_overnight/folds.json",
+    "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "output": "../runs/028_tiny512_kd_short12_seed43",
+    "image_root": "/home/featurize/data/cxr_first",
+    "batch_size": 8,
+    "accumulation_steps": 4,
+    "valid_batch_size": 4,
+    "num_workers": 8,
+    "prefetch_factor": 2,
+    "epochs": 12,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "seed": 43,
+    "backbone_lr": 5e-05,
+    "head_lr": 0.0005,
+    "warmup_epochs": 1,
+    "min_lr_ratio": 0.05,
+    "weight_decay": 0.05,
+    "dropout": 0.2,
+    "drop_path": 0.1,
+    "ema_decay": 0.999,
+    "grad_clip": 1.0,
+    "amp_dtype": "auto",
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "kd_warmup_epochs": 2,
+    "align_teacher_pos_weight": true,
+    "image_size": 512,
+    "validation_tta": "hflip2",
+    "training_mode": "distillation",
+    "resume": null
+  },
+  "differences_from_027": {
+    "output": {
+      "027": "../runs/027_tiny512_kd_seed43",
+      "proposed": "../runs/028_tiny512_kd_short12_seed43"
+    },
+    "epochs": {
+      "027": 25,
+      "proposed": 12
+    }
+  },
+  "schedule_scope": "epochs controls both maximum budget and custom cosine horizon; peak LR/warmup/alpha/T unchanged. Fresh run, not an altered resume.",
+  "end_epoch7_learning_rates_original25": {
+    "backbone": 4.3045525202101636e-05,
+    "head": 0.00043045525202101636
+  },
+  "end_epoch7_learning_rates_proposed12": {
+    "backbone": 2.2873242121660814e-05,
+    "head": 0.00022873242121660813
+  },
+  "end_epoch12_learning_rates_proposed12": {
+    "backbone": 2.5e-06,
+    "head": 2.5e-05
+  },
+  "decision_gate": "First export/validate027E7 FP16 and pairedcomparison; only later execute one shorter-horizon trial."
+}

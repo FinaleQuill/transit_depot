@@ -1,0 +1,26 @@
+{
+  "timing_images": 100,
+  "warmup_images": 5,
+  "coverage": {
+    "measured": {
+      "images": 100,
+      "studies": 53,
+      "patients": 40,
+      "complete_studies_proven": true
+    },
+    "warmup": {
+      "images": 5,
+      "studies": 4,
+      "patients": 4,
+      "complete_studies_proven": true
+    },
+    "selection_sha256": "f5858d8273b0f1d1228fa65ae60abe6526cc0b6ebe0a58bcbd9084d978024869",
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "origin_split": "valid",
+    "hashes_verified": true,
+    "patient_disjoint": true
+  },
+  "actual_legacy_checkpoint_metadata_accepted": true,
+  "models_constructed": false,
+  "gpu_work": false
+}

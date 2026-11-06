@@ -1,0 +1,709 @@
+{
+  "project_root": "/tmp/dual768_2080ti_diagnosis/final_project_isolated",
+  "model_dir": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/model",
+  "official_T4_certified": false,
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "sm": 68,
+  "allocator_gib": 8,
+  "external_addons_removed": true,
+  "same_105_image_hashes": true,
+  "protocol": {
+    "measured": 100,
+    "warmup": 5,
+    "rounds": 3,
+    "batch": 1,
+    "serial": true,
+    "timing": "file_read_to_actual_CSV_write",
+    "model_initialization_timed": false
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "mean_ms": 82.19088717006042,
+  "round_mean_ms": [
+    85.2905793800528,
+    75.75184231009189,
+    85.53023982003651
+  ],
+  "per_image_round_ms": [
+    [
+      85.91607599737472,
+      80.62742900074227,
+      86.25333600139129
+    ],
+    [
+      85.04844200069783,
+      79.33041599972057,
+      84.7215089997917
+    ],
+    [
+      92.5246109982254,
+      87.10656100083725,
+      104.5721330010565
+    ],
+    [
+      79.70575700164773,
+      87.66845400168677,
+      80.40495500245015
+    ],
+    [
+      87.67415300098946,
+      86.24959100052365,
+      88.89702400119859
+    ],
+    [
+      62.49062000279082,
+      59.39555199802271,
+      62.10865200046101
+    ],
+    [
+      58.4882680013834,
+      56.46098500074004,
+      58.511834002274554
+    ],
+    [
+      64.64025400055107,
+      65.72158800190664,
+      65.57986400002846
+    ],
+    [
+      63.72348999866517,
+      59.329671999876155,
+      65.17312199866865
+    ],
+    [
+      68.02778999917791,
+      65.45053799709422,
+      73.83937600025092
+    ],
+    [
+      85.47674299916252,
+      78.65685200158623,
+      86.92590799910249
+    ],
+    [
+      82.77805800025817,
+      77.45104600326158,
+      86.23878200160107
+    ],
+    [
+      82.67796300060581,
+      77.7646669994283,
+      86.80980400094995
+    ],
+    [
+      86.161062001338,
+      81.39698900049552,
+      97.63972699875012
+    ],
+    [
+      81.1218769995321,
+      78.52834699951927,
+      144.49765499739442
+    ],
+    [
+      85.68274400022347,
+      75.30847100133542,
+      98.728597000445
+    ],
+    [
+      130.47311699847342,
+      82.16727900071419,
+      107.50739499781048
+    ],
+    [
+      96.23790200203075,
+      76.28773200121941,
+      100.44911699878867
+    ],
+    [
+      121.08512200211408,
+      78.84577499862644,
+      125.44966700079385
+    ],
+    [
+      74.02303300113999,
+      63.42643199968734,
+      87.09988799819257
+    ],
+    [
+      64.57267699806835,
+      60.650352999800816,
+      76.24375199884526
+    ],
+    [
+      88.60847799951443,
+      82.2474560009141,
+      103.95623400108889
+    ],
+    [
+      84.33064800192369,
+      79.19317699997919,
+      103.24228600075003
+    ],
+    [
+      81.50649500021245,
+      76.13086200217367,
+      121.41454399898066
+    ],
+    [
+      89.19958099795622,
+      94.44817099938518,
+      105.59456400005729
+    ],
+    [
+      84.03851899856818,
+      78.1498760006798,
+      124.14705700211925
+    ],
+    [
+      82.89312099805102,
+      78.26511599705555,
+      101.57494299710379
+    ],
+    [
+      94.05037999749766,
+      88.33975399829797,
+      110.19734799992875
+    ],
+    [
+      79.25377700303216,
+      74.10214000265114,
+      94.92701599810971
+    ],
+    [
+      81.48880999942776,
+      76.82984799976111,
+      99.62441199968453
+    ],
+    [
+      83.0718440010969,
+      77.87252399793942,
+      100.42550399884931
+    ],
+    [
+      85.50339800058282,
+      81.02357100142399,
+      99.36650100280531
+    ],
+    [
+      91.59073000046192,
+      80.8801820021472,
+      91.43117900021025
+    ],
+    [
+      142.34255499832216,
+      81.86867899712524,
+      82.66032199753681
+    ],
+    [
+      123.43603399858694,
+      75.93959600126254,
+      77.92720699944766
+    ],
+    [
+      89.99255100206938,
+      77.95782099856297,
+      94.32532499704394
+    ],
+    [
+      64.16861700199661,
+      59.49354999756906,
+      66.98211599723436
+    ],
+    [
+      61.30706499970984,
+      58.434172002307605,
+      91.99299600004451
+    ],
+    [
+      79.05548599956091,
+      73.47653999750037,
+      114.38995500066085
+    ],
+    [
+      78.76133399986429,
+      73.43735000176821,
+      86.7953220003983
+    ],
+    [
+      84.42650000142748,
+      78.2069800006866,
+      118.27045300015016
+    ],
+    [
+      80.37477399921045,
+      76.18082800036063,
+      93.35096799986786
+    ],
+    [
+      83.21120899927337,
+      77.66248299958534,
+      91.82588800103986
+    ],
+    [
+      84.92769100121222,
+      87.97600799880456,
+      92.15250199849834
+    ],
+    [
+      86.44881200234522,
+      81.64600199961569,
+      123.71767600052408
+    ],
+    [
+      82.59648999955971,
+      74.21879100002116,
+      92.50624799824436
+    ],
+    [
+      86.1802670006,
+      81.14481899974635,
+      98.16047599815647
+    ],
+    [
+      78.35988700026064,
+      77.83047500197426,
+      95.95183900091797
+    ],
+    [
+      75.50185100262752,
+      74.68335399971693,
+      91.02346700092312
+    ],
+    [
+      103.96006000155467,
+      76.1125520002679,
+      89.24266000030912
+    ],
+    [
+      96.13894500216702,
+      81.32092899904819,
+      81.85314799993648
+    ],
+    [
+      75.65189699744224,
+      61.6922480003268,
+      66.2098770008015
+    ],
+    [
+      91.32011299880105,
+      78.28271100152051,
+      79.116137996607
+    ],
+    [
+      95.22637000191025,
+      81.66581700061215,
+      81.67193700137432
+    ],
+    [
+      101.43960600180435,
+      93.65164199698484,
+      86.2753250003152
+    ],
+    [
+      96.36203700210899,
+      87.34808200097177,
+      84.02808100072434
+    ],
+    [
+      83.22752299864078,
+      81.43143000052078,
+      81.41404800335295
+    ],
+    [
+      80.59738599695265,
+      77.82693900298909,
+      78.77306600130396
+    ],
+    [
+      120.16747100278735,
+      76.20813099856605,
+      77.06883400169318
+    ],
+    [
+      85.82027299780748,
+      62.78044300051988,
+      62.7077899989672
+    ],
+    [
+      89.60953700079699,
+      63.335160000860924,
+      65.18550300097559
+    ],
+    [
+      105.6439620006131,
+      78.24537500346196,
+      79.53936000194517
+    ],
+    [
+      106.06416500013438,
+      76.36963899858529,
+      81.21411300089676
+    ],
+    [
+      107.60373999801232,
+      89.54249400267145,
+      79.74339399879682
+    ],
+    [
+      80.31113900142373,
+      59.080294999148464,
+      62.90509300015401
+    ],
+    [
+      65.5220949993236,
+      56.760333998681745,
+      57.612507000158075
+    ],
+    [
+      96.41226299936534,
+      74.4887219989323,
+      76.60878300157492
+    ],
+    [
+      93.86177699707332,
+      85.06394900177838,
+      84.92513600140228
+    ],
+    [
+      82.91767899936531,
+      75.0931539987505,
+      76.10496999768657
+    ],
+    [
+      92.68601100120577,
+      85.21279699925799,
+      84.38519999981509
+    ],
+    [
+      92.8277170023648,
+      86.37321099740802,
+      96.05748600006336
+    ],
+    [
+      68.36431099873153,
+      59.17183500059764,
+      62.441506001050584
+    ],
+    [
+      72.00259000092046,
+      62.76804300068761,
+      63.863561998005025
+    ],
+    [
+      69.8781559985946,
+      61.86130200148909,
+      62.40584500119439
+    ],
+    [
+      73.79678500001319,
+      65.44562300041434,
+      67.00642200303264
+    ],
+    [
+      73.95128399730311,
+      66.44987300023786,
+      69.6880899995449
+    ],
+    [
+      70.87232100093388,
+      61.31783399905544,
+      67.8440949996002
+    ],
+    [
+      69.49551700017764,
+      59.48501500097336,
+      61.46680500023649
+    ],
+    [
+      86.1976769992907,
+      76.75399399886373,
+      79.87030100048287
+    ],
+    [
+      87.81758100303705,
+      75.38741399912396,
+      76.87313700080267
+    ],
+    [
+      86.4607879993855,
+      77.52054400043562,
+      79.74801399905118
+    ],
+    [
+      72.10588199814083,
+      61.96831700071925,
+      63.95083600000362
+    ],
+    [
+      72.4749970031553,
+      66.68801299747429,
+      65.99872600054368
+    ],
+    [
+      86.89313200011384,
+      78.67378900118638,
+      76.82683200255269
+    ],
+    [
+      89.82828199805226,
+      91.92805800194037,
+      81.09955100007937
+    ],
+    [
+      95.17241999856196,
+      87.63929400083725,
+      88.76413599864463
+    ],
+    [
+      89.4899759987311,
+      80.65614700171864,
+      81.8308670022816
+    ],
+    [
+      111.69988099936745,
+      78.9559469994856,
+      83.32978800171986
+    ],
+    [
+      99.50070500053698,
+      79.3266879991279,
+      84.06046500022057
+    ],
+    [
+      86.22998999999254,
+      79.79261500076973,
+      82.13910999984364
+    ],
+    [
+      86.8043629998283,
+      82.81902099770377,
+      85.63231000152882
+    ],
+    [
+      78.19955100057996,
+      76.56199099801597,
+      89.40053400147008
+    ],
+    [
+      77.15229599853046,
+      77.02713300022879,
+      79.72483900084626
+    ],
+    [
+      80.12352000150713,
+      83.19080300134374,
+      81.16451499881805
+    ],
+    [
+      63.5456529998919,
+      64.87810099861235,
+      65.17372500093188
+    ],
+    [
+      84.20817899968824,
+      84.71613000074285,
+      86.52190000066184
+    ],
+    [
+      74.2156749984133,
+      74.93248900209437,
+      75.66338899778202
+    ],
+    [
+      82.15087200005655,
+      82.71802299714182,
+      83.48425099757151
+    ],
+    [
+      75.14305299991975,
+      75.53724400349893,
+      77.90399999794317
+    ],
+    [
+      76.75407200076734,
+      77.66204299696255,
+      80.91753699773108
+    ]
+  ],
+  "p95_ms": 97.28374653404899,
+  "max_ms": 108.46018800051145,
+  "image_and_study_CSV_byte_equal_all_rounds": true,
+  "study_comparisons": [
+    {
+      "compared_studies": 53,
+      "valid_compared_studies": 53,
+      "expected_studies": 53,
+      "reference_studies": 53,
+      "mismatched_studies": [],
+      "mismatched_study_count": 0,
+      "missing_result_studies": [],
+      "unexpected_result_studies": [],
+      "missing_reference_studies": [],
+      "reused_reference_studies": [],
+      "uncompared_reference_studies": 0,
+      "reference_superset_allowed": false,
+      "identity_coverage_match": true,
+      "invalid_probability_studies": [],
+      "probability_mismatched_studies": [],
+      "binary_mismatched_studies": [],
+      "gate_mismatched_studies": [],
+      "sample_class_order_mismatched_studies": [],
+      "cross_study_class_order_mismatched_studies": [],
+      "semantic_mismatched_study_count": 0,
+      "semantic_match": true,
+      "absolute_tolerance": 1e-07,
+      "max_absolute_error": 0.0,
+      "binary_threshold": 0.5,
+      "gate_thresholds": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+      "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+      "match": true
+    },
+    {
+      "compared_studies": 53,
+      "valid_compared_studies": 53,
+      "expected_studies": 53,
+      "reference_studies": 53,
+      "mismatched_studies": [],
+      "mismatched_study_count": 0,
+      "missing_result_studies": [],
+      "unexpected_result_studies": [],
+      "missing_reference_studies": [],
+      "reused_reference_studies": [],
+      "uncompared_reference_studies": 0,
+      "reference_superset_allowed": false,
+      "identity_coverage_match": true,
+      "invalid_probability_studies": [],
+      "probability_mismatched_studies": [],
+      "binary_mismatched_studies": [],
+      "gate_mismatched_studies": [],
+      "sample_class_order_mismatched_studies": [],
+      "cross_study_class_order_mismatched_studies": [],
+      "semantic_mismatched_study_count": 0,
+      "semantic_match": true,
+      "absolute_tolerance": 1e-07,
+      "max_absolute_error": 0.0,
+      "binary_threshold": 0.5,
+      "gate_thresholds": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+      "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+      "match": true
+    },
+    {
+      "compared_studies": 53,
+      "valid_compared_studies": 53,
+      "expected_studies": 53,
+      "reference_studies": 53,
+      "mismatched_studies": [],
+      "mismatched_study_count": 0,
+      "missing_result_studies": [],
+      "unexpected_result_studies": [],
+      "missing_reference_studies": [],
+      "reused_reference_studies": [],
+      "uncompared_reference_studies": 0,
+      "reference_superset_allowed": false,
+      "identity_coverage_match": true,
+      "invalid_probability_studies": [],
+      "probability_mismatched_studies": [],
+      "binary_mismatched_studies": [],
+      "gate_mismatched_studies": [],
+      "sample_class_order_mismatched_studies": [],
+      "cross_study_class_order_mismatched_studies": [],
+      "semantic_mismatched_study_count": 0,
+      "semantic_match": true,
+      "absolute_tolerance": 1e-07,
+      "max_absolute_error": 0.0,
+      "binary_threshold": 0.5,
+      "gate_thresholds": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+      "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+      "match": true
+    }
+  ],
+  "inference_inventory": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "module_paths": {
+    "cost": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/cost.py",
+    "deploy_kd": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/deploy_kd.py",
+    "model_overnight": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/model_overnight.py",
+    "inference_inputs": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/inference_inputs.py",
+    "fast_lanczos": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/fast_lanczos.py",
+    "timm": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/_runtime_addons/timm/__init__.py"
+  }
+}

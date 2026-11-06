@@ -1,0 +1,35 @@
+{
+  "schema_version": 4,
+  "epoch": 4,
+  "checkpoint_sha256": "9d299b45990f1ca99babbc4ec583e4e4c86cb689f75d71af3f21c6a3a6b0dcae",
+  "checkpoint_filename": "best.pt",
+  "preprocessing_sha256": "b5df43f465ba88a80830140e735d7d797fc54398c952c0ae1d9c623228d39571",
+  "weights_source": "ema",
+  "inference_precision": "bfloat16",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "thresholds": [
+    0.07055959850549698,
+    0.10521054267883301,
+    0.18359363079071045,
+    0.13305720686912537,
+    0.21706923842430115,
+    0.2658804655075073,
+    0.28937169909477234,
+    0.2436424344778061,
+    0.4227607846260071,
+    0.4077301025390625
+  ],
+  "aggregation": "study_mean_probability",
+  "selection": "complete valid Study metrics; thresholds tuned on same valid"
+}

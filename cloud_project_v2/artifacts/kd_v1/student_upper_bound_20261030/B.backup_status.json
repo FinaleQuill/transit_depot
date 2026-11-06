@@ -1,0 +1,56 @@
+{
+  "state": "complete",
+  "run_dir": "/tmp/cloud_student_runs_20261030/040_base768_p2_p3_seed44",
+  "local_backup_dir": "/tmp/cloud_student_runs_20261030/full_checkpoint_backups/B",
+  "persistent_dir": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B",
+  "limitations": [
+    "Full local backups are on the same host and do not guarantee cross-instance persistence.",
+    "Work EMA snapshots are inference-only; optimizer/raw model/scaler/RNG are absent and resume is unsupported."
+  ],
+  "checkpoints": {
+    "best": {
+      "source_checkpoint_sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb",
+      "source_epoch": 10,
+      "local_full_path": "/tmp/cloud_student_runs_20261030/full_checkpoint_backups/B/best.pt",
+      "local_full_sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb",
+      "local_full_bytes": 1406564380,
+      "snapshot_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/best_ema_fp32.pt",
+      "snapshot_sha256": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+      "snapshot_bytes": 355222245,
+      "snapshot_precision": "fp32",
+      "resume_supported": false
+    },
+    "last": {
+      "source_checkpoint_sha256": "b31f04e53e7e11bae1aa9b05693ec8f2ce3e9c0a5cda9b8b68b4b9f2f25a64bb",
+      "source_epoch": 15,
+      "local_full_path": "/tmp/cloud_student_runs_20261030/full_checkpoint_backups/B/last.pt",
+      "local_full_sha256": "b31f04e53e7e11bae1aa9b05693ec8f2ce3e9c0a5cda9b8b68b4b9f2f25a64bb",
+      "local_full_bytes": 1406564380,
+      "snapshot_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/last_ema_fp16.pt",
+      "snapshot_sha256": "1ac29fb7ddaa7cfc9c488a378f9f60c6c576acc5e0fc260f56ff7ffb10a7e9ef",
+      "snapshot_bytes": 180068837,
+      "snapshot_precision": "fp16",
+      "resume_supported": false
+    }
+  },
+  "local_full_backups": {
+    "best": {
+      "path": "/tmp/cloud_student_runs_20261030/full_checkpoint_backups/B/best.pt",
+      "sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb",
+      "bytes": 1406564380,
+      "source_epoch": 10
+    },
+    "last": {
+      "path": "/tmp/cloud_student_runs_20261030/full_checkpoint_backups/B/last.pt",
+      "sha256": "b31f04e53e7e11bae1aa9b05693ec8f2ce3e9c0a5cda9b8b68b4b9f2f25a64bb",
+      "bytes": 1406564380,
+      "source_epoch": 15
+    }
+  },
+  "small_files": {
+    "state": "complete",
+    "copied_files": 63
+  },
+  "updated_utc": "2026-10-31T06:38:43.570743+00:00",
+  "metadata_refreshed": true
+}

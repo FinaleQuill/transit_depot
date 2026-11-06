@@ -1,0 +1,19 @@
+{
+  "state": "launched",
+  "launched_at": "2026-11-04T23:56:45.402649+08:00",
+  "controller_pid": 124451,
+  "config": "/home/featurize/work/cxr_research_20261103/sprint/plan.json",
+  "config_sha256": "0a3c973ee651dc442f495281fe159b398f8ece5f57341fc77e5d9be90b97bdde",
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "sprint.launch",
+    "--controller",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/sprint/plan.json"
+  ],
+  "detached": true,
+  "log": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/training.log",
+  "status": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/controller_status.json"
+}

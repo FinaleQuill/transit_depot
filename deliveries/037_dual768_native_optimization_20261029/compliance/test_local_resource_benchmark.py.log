@@ -1,0 +1,16 @@
+test_allocator_cap_precedes_predictor_and_native_sm_recorded (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_allocator_cap_precedes_predictor_and_native_sm_recorded) ... ok
+test_csv_missing_class_is_rejected (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_csv_missing_class_is_rejected) ... ok
+test_effective_quota_records_mps_and_device_sm_count (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_effective_quota_records_mps_and_device_sm_count) ... ok
+test_existing_output_rejected_before_cuda_or_input_changes (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_existing_output_rejected_before_cuda_or_input_changes) ... ok
+test_incomplete_study_fails_even_when_selection_and_files_agree (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_incomplete_study_fails_even_when_selection_and_files_agree) ... ok
+test_ineffective_mps_quota_fails_before_cap_model_or_output (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_ineffective_mps_quota_fails_before_cap_model_or_output) ... ok
+test_manifest_hash_identity_and_image_hash_are_independently_checked (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_manifest_hash_identity_and_image_hash_are_independently_checked) ... ok
+test_metadata_preview_never_imports_torch_or_initializes_predictor_or_writes (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_metadata_preview_never_imports_torch_or_initializes_predictor_or_writes) ... ok
+test_prediction_drift_is_reported_without_certification (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_prediction_drift_is_reported_without_certification) ... ok
+test_restricted_quota_requires_matching_mps_environment (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_restricted_quota_requires_matching_mps_environment) ... ok
+test_three_round_aggregation_and_explicit_noncertification_even_on_t4 (test_local_resource_benchmark.LocalResourceBenchmarkTests.test_three_round_aggregation_and_explicit_noncertification_even_on_t4) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.914s
+
+OK

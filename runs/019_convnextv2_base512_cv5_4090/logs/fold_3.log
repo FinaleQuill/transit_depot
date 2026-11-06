@@ -1,0 +1,148 @@
+
+[2026-10-18T19:51:17+00:00] /environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+=> fold=3 convnextv2_base_gap train_images=24249 valid_images=6079 AMP=bfloat16 batch=8 accum=4 workers=4 resume_epoch=0 horizon=20
+fold=3 epoch=1 size=512 batch=1/3032 loss=0.821625 images=8/24249 updates=0 peak=2.84GiB
+fold=3 epoch=1 size=512 batch=100/3032 loss=0.670243 images=800/24249 updates=25 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=200/3032 loss=0.623456 images=1600/24249 updates=50 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=300/3032 loss=0.590364 images=2400/24249 updates=75 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=400/3032 loss=0.561198 images=3200/24249 updates=100 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=500/3032 loss=0.537663 images=4000/24249 updates=125 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=600/3032 loss=0.518456 images=4800/24249 updates=150 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=700/3032 loss=0.503367 images=5600/24249 updates=175 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=800/3032 loss=0.490675 images=6400/24249 updates=200 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=900/3032 loss=0.480390 images=7200/24249 updates=225 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1000/3032 loss=0.471134 images=8000/24249 updates=250 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1100/3032 loss=0.462318 images=8800/24249 updates=275 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1200/3032 loss=0.455138 images=9600/24249 updates=300 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1300/3032 loss=0.449667 images=10400/24249 updates=325 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1400/3032 loss=0.443152 images=11200/24249 updates=350 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1500/3032 loss=0.438595 images=12000/24249 updates=375 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1600/3032 loss=0.433400 images=12800/24249 updates=400 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1700/3032 loss=0.428179 images=13600/24249 updates=425 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1800/3032 loss=0.423818 images=14400/24249 updates=450 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=1900/3032 loss=0.420324 images=15200/24249 updates=475 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2000/3032 loss=0.417541 images=16000/24249 updates=500 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2100/3032 loss=0.415061 images=16800/24249 updates=525 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2200/3032 loss=0.412212 images=17600/24249 updates=550 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2300/3032 loss=0.409520 images=18400/24249 updates=575 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2400/3032 loss=0.407176 images=19200/24249 updates=600 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2500/3032 loss=0.404673 images=20000/24249 updates=625 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2600/3032 loss=0.402147 images=20800/24249 updates=650 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2700/3032 loss=0.400242 images=21600/24249 updates=675 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2800/3032 loss=0.398240 images=22400/24249 updates=700 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=2900/3032 loss=0.396094 images=23200/24249 updates=725 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=3000/3032 loss=0.394433 images=24000/24249 updates=750 peak=3.50GiB
+fold=3 epoch=1 size=512 batch=3032/3032 loss=0.393893 images=24249/24249 updates=758 peak=3.50GiB
+=> fold=3 epoch=1 val_AUC=0.74144208 val_BCE=0.332109 best=0.74144208@1 bad_epochs=0/4 state=paused
+[2026-10-18T20:07:06+00:00] exit_code=0
+
+[2026-10-18T21:05:12+00:00] /environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP --resume /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3/last.pt
+=> fold=3 convnextv2_base_gap train_images=24249 valid_images=6079 AMP=bfloat16 batch=8 accum=4 workers=4 resume_epoch=1 horizon=20
+fold=3 epoch=2 size=448 batch=1/3032 loss=0.217424 images=8/24249 updates=758 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=100/3032 loss=0.351188 images=800/24249 updates=783 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=200/3032 loss=0.346145 images=1600/24249 updates=808 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=300/3032 loss=0.350603 images=2400/24249 updates=833 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=400/3032 loss=0.348923 images=3200/24249 updates=858 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=500/3032 loss=0.344612 images=4000/24249 updates=883 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=600/3032 loss=0.341976 images=4800/24249 updates=908 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=700/3032 loss=0.343241 images=5600/24249 updates=933 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=800/3032 loss=0.342190 images=6400/24249 updates=958 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=900/3032 loss=0.340640 images=7200/24249 updates=983 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1000/3032 loss=0.341068 images=8000/24249 updates=1008 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1100/3032 loss=0.341609 images=8800/24249 updates=1033 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1200/3032 loss=0.340274 images=9600/24249 updates=1058 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1300/3032 loss=0.340591 images=10400/24249 updates=1083 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1400/3032 loss=0.340314 images=11200/24249 updates=1108 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1500/3032 loss=0.339469 images=12000/24249 updates=1133 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1600/3032 loss=0.339220 images=12800/24249 updates=1158 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1700/3032 loss=0.338006 images=13600/24249 updates=1183 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1800/3032 loss=0.338129 images=14400/24249 updates=1208 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=1900/3032 loss=0.337214 images=15200/24249 updates=1233 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2000/3032 loss=0.335870 images=16000/24249 updates=1258 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2100/3032 loss=0.335200 images=16800/24249 updates=1283 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2200/3032 loss=0.334184 images=17600/24249 updates=1308 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2300/3032 loss=0.333979 images=18400/24249 updates=1333 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2400/3032 loss=0.333543 images=19200/24249 updates=1358 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2500/3032 loss=0.333680 images=20000/24249 updates=1383 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2600/3032 loss=0.333460 images=20800/24249 updates=1408 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2700/3032 loss=0.333146 images=21600/24249 updates=1433 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2800/3032 loss=0.332372 images=22400/24249 updates=1458 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=2900/3032 loss=0.331498 images=23200/24249 updates=1483 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=3000/3032 loss=0.331088 images=24000/24249 updates=1508 peak=3.07GiB
+fold=3 epoch=2 size=448 batch=3032/3032 loss=0.331044 images=24249/24249 updates=1516 peak=3.07GiB
+=> fold=3 epoch=2 val_AUC=0.78371525 val_BCE=0.312805 best=0.78371525@2 bad_epochs=0/4 state=paused
+[2026-10-18T21:19:25+00:00] exit_code=0
+
+[2026-10-18T22:21:42+00:00] /environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP --resume /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3/last.pt
+=> fold=3 convnextv2_base_gap train_images=24249 valid_images=6079 AMP=bfloat16 batch=8 accum=4 workers=4 resume_epoch=2 horizon=20
+fold=3 epoch=3 size=512 batch=1/3032 loss=0.188951 images=8/24249 updates=1516 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=100/3032 loss=0.317562 images=800/24249 updates=1541 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=200/3032 loss=0.317090 images=1600/24249 updates=1566 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=300/3032 loss=0.325379 images=2400/24249 updates=1591 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=400/3032 loss=0.324565 images=3200/24249 updates=1616 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=500/3032 loss=0.324850 images=4000/24249 updates=1641 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=600/3032 loss=0.323796 images=4800/24249 updates=1666 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=700/3032 loss=0.323305 images=5600/24249 updates=1691 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=800/3032 loss=0.322653 images=6400/24249 updates=1716 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=900/3032 loss=0.321266 images=7200/24249 updates=1741 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1000/3032 loss=0.321513 images=8000/24249 updates=1766 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1100/3032 loss=0.321485 images=8800/24249 updates=1791 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1200/3032 loss=0.322778 images=9600/24249 updates=1816 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1300/3032 loss=0.323832 images=10400/24249 updates=1841 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1400/3032 loss=0.323585 images=11200/24249 updates=1866 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1500/3032 loss=0.323476 images=12000/24249 updates=1891 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1600/3032 loss=0.323808 images=12800/24249 updates=1916 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1700/3032 loss=0.322434 images=13600/24249 updates=1941 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1800/3032 loss=0.321433 images=14400/24249 updates=1966 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=1900/3032 loss=0.321147 images=15200/24249 updates=1991 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2000/3032 loss=0.321042 images=16000/24249 updates=2016 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2100/3032 loss=0.321222 images=16800/24249 updates=2041 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2200/3032 loss=0.321135 images=17600/24249 updates=2066 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2300/3032 loss=0.320267 images=18400/24249 updates=2091 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2400/3032 loss=0.320186 images=19200/24249 updates=2116 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2500/3032 loss=0.319526 images=20000/24249 updates=2141 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2600/3032 loss=0.318825 images=20800/24249 updates=2166 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2700/3032 loss=0.319198 images=21600/24249 updates=2191 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2800/3032 loss=0.318677 images=22400/24249 updates=2216 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=2900/3032 loss=0.318619 images=23200/24249 updates=2241 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=3000/3032 loss=0.318452 images=24000/24249 updates=2266 peak=3.50GiB
+fold=3 epoch=3 size=512 batch=3032/3032 loss=0.318534 images=24249/24249 updates=2274 peak=3.50GiB
+=> fold=3 epoch=3 val_AUC=0.79442949 val_BCE=0.304666 best=0.79442949@3 bad_epochs=0/4 state=paused
+[2026-10-18T22:37:55+00:00] exit_code=0
+
+[2026-10-18T23:36:11+00:00] /environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP --resume /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3/last.pt
+=> fold=3 convnextv2_base_gap train_images=24249 valid_images=6079 AMP=bfloat16 batch=8 accum=4 workers=4 resume_epoch=3 horizon=20
+fold=3 epoch=4 size=384 batch=1/3032 loss=0.378981 images=8/24249 updates=2274 peak=2.71GiB
+fold=3 epoch=4 size=384 batch=100/3032 loss=0.326115 images=800/24249 updates=2299 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=200/3032 loss=0.311257 images=1600/24249 updates=2324 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=300/3032 loss=0.312212 images=2400/24249 updates=2349 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=400/3032 loss=0.312525 images=3200/24249 updates=2374 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=500/3032 loss=0.309358 images=4000/24249 updates=2399 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=600/3032 loss=0.308363 images=4800/24249 updates=2424 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=700/3032 loss=0.307650 images=5600/24249 updates=2449 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=800/3032 loss=0.308709 images=6400/24249 updates=2474 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=900/3032 loss=0.309879 images=7200/24249 updates=2499 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1000/3032 loss=0.310920 images=8000/24249 updates=2524 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1100/3032 loss=0.312823 images=8800/24249 updates=2549 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1200/3032 loss=0.313721 images=9600/24249 updates=2574 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1300/3032 loss=0.313186 images=10400/24249 updates=2599 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1400/3032 loss=0.312518 images=11200/24249 updates=2624 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1500/3032 loss=0.311579 images=12000/24249 updates=2649 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1600/3032 loss=0.311103 images=12800/24249 updates=2674 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1700/3032 loss=0.311171 images=13600/24249 updates=2699 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1800/3032 loss=0.311011 images=14400/24249 updates=2724 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=1900/3032 loss=0.311988 images=15200/24249 updates=2749 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2000/3032 loss=0.313011 images=16000/24249 updates=2774 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2100/3032 loss=0.312387 images=16800/24249 updates=2799 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2200/3032 loss=0.311651 images=17600/24249 updates=2824 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2300/3032 loss=0.311516 images=18400/24249 updates=2849 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2400/3032 loss=0.311849 images=19200/24249 updates=2874 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2500/3032 loss=0.311622 images=20000/24249 updates=2899 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2600/3032 loss=0.311646 images=20800/24249 updates=2924 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2700/3032 loss=0.311141 images=21600/24249 updates=2949 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2800/3032 loss=0.310706 images=22400/24249 updates=2974 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=2900/3032 loss=0.310529 images=23200/24249 updates=2999 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=3000/3032 loss=0.310171 images=24000/24249 updates=3024 peak=2.72GiB
+fold=3 epoch=4 size=384 batch=3032/3032 loss=0.310451 images=24249/24249 updates=3032 peak=2.72GiB
+=> fold=3 epoch=4 val_AUC=0.79873934 val_BCE=0.307327 best=0.79873934@4 bad_epochs=0/4 state=paused
+[2026-10-18T23:50:39+00:00] exit_code=0

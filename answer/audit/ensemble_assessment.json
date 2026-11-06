@@ -1,0 +1,36 @@
+{
+  "scope": "original official valid, held out from all 5 fold training",
+  "studies": 859,
+  "macro_auc": 0.8002477167909007,
+  "macro_ap": 0.41881471840558115,
+  "macro_f1_at_0_5": 0.42424374963405304,
+  "macro_f1_at_saved_valid_fitted_thresholds": 0.4863894176476788,
+  "thresholds": [
+    0.6833451688289642,
+    0.670484060049057,
+    0.7883686363697053,
+    0.6627991259098054,
+    0.7590648949146271,
+    0.5442855387926102,
+    0.5199432780345281,
+    0.41061471700668334,
+    0.6934940934181214,
+    0.6355322152376175
+  ],
+  "f1_tuned_on_same_valid": true,
+  "probability_submission_uses_gate_column": false,
+  "probability_submission_default_gate": 0.5,
+  "per_class_auc": [
+    0.7144710578842315,
+    0.845761820214375,
+    0.7767795069255041,
+    0.7527701346025135,
+    0.8794062646096307,
+    0.7573272362774823,
+    0.779022545861924,
+    0.7215243063102225,
+    0.9008796712469501,
+    0.8745346239761728
+  ],
+  "same_protocol_as_test": "five equal fold EMA bests; native 768 identity plus horizontal-flip TTA"
+}

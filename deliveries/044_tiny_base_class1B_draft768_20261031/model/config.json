@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "artifact_type": "fixed_classwise_student_pair",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "precision": "float16",
+  "batch_size": 1,
+  "image_size": 768,
+  "tta": "hflip2",
+  "ensemble": true,
+  "gates": null,
+  "source_members": [
+    {
+      "directory": "A",
+      "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+      "weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+    },
+    {
+      "directory": "B",
+      "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+      "config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+      "weights_sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+    }
+  ],
+  "model_weights": [
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "candidate": "AB_B100_class1",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "selection_plan_sha256": "c4831ceca4fad7c0741e15af7317dbdc8146bb344791d64dc3b2434370b7d6d9",
+  "selection_plan": {
+    "batch": 5,
+    "registered_at_utc": "2026-10-31T07:27:45.532047+00:00",
+    "candidates": {
+      "AB_B75_class1": {
+        "A_class1_weight": 0.25,
+        "B_class1_weight": 0.75,
+        "other_classes_A_B_weights": [
+          0.5,
+          0.5
+        ]
+      },
+      "AB_B100_class1": {
+        "A_class1_weight": 0.0,
+        "B_class1_weight": 1.0,
+        "other_classes_A_B_weights": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    "input": "Original frozen A/B FP16 768/hflip2 per-image valid probabilities; fixed linear fusion per image then original Study mean",
+    "reference": "AB_equal",
+    "rationale": "Previously observed A class1 degradation and stronger B class1 motivate explicitly validation-selected class-dependent fixed ensemble",
+    "validation_selected_hyperparameters": true,
+    "validation_fitted_class_weights": true,
+    "optimization_method": "Two manually selected fixed candidate weights only; no numerical optimizer or expanded search",
+    "test_used": false,
+    "new_training": false,
+    "new_model_inference": false,
+    "bootstrap": {
+      "samples": 1000,
+      "seed": 20261031,
+      "sampling_unit": "patient_with_all_Studies",
+      "reference": "AB_equal"
+    },
+    "interpretation": "Fifth exploratory batch after repeated use of same official valid for epoch, candidate and manual hyperparameter selection; not independent confirmation. Class weights explicitly selected using valid, not a no-fitting/no-validation-selection result. Real combined predictor and latency require separate validation; 80ms not promised. Frozen B submission CSV remains unchanged.",
+    "stop_rule": "Evaluate exactly these two candidates and report; do not expand search even if >=.815"
+  },
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "test_used_for_selection": false,
+  "formal_T4_certification": false,
+  "aggregation": "fixed class-wise image probability blend, then original Study probability mean",
+  "decoder_candidate": "JPEG_draft_target768",
+  "decoder_plan_sha256": "188a9e6298e6f86250f7cace2aac92979609df0a33e98dbab33c5402ae82476b",
+  "preprocessing_changes_pixels": true
+}

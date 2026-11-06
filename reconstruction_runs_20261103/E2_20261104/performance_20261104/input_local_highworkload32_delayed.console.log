@@ -1,0 +1,1 @@
+{"workers": 6, "prefetch": 2, "tensor_order_exact": true, "studies_per_second": 0.4879660140669378, "images_per_second": 2.0738555597844854, "peak_sampled_pss_bytes": 3306017792}

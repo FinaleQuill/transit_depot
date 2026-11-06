@@ -1,0 +1,8 @@
+{
+  "path": "/home/featurize/data/one_week_20261106/state/raw_anchor_seed44/last.pt",
+  "sha256": "06d1bafc897ca6d58ef56c327990bcffc6c7403cbc360adb191c27f5d23d48a0",
+  "epoch": 2,
+  "fp16_path": "/home/featurize/work/reconstruction_runs_20261103/ONE_WEEK_20261106/raw_anchor_seed44/latest_ema_fp16.pt",
+  "fp16_sha256": "171be9ac370278c63292bba2a8e1a1fedfa68557a4387af887bd5befe0b12b5f",
+  "complete_optimizer_state_is_local_only": true
+}

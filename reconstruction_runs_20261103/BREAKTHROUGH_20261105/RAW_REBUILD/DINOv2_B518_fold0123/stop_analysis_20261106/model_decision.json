@@ -1,0 +1,45 @@
+{
+  "state": "stopped_by_user_no_stage_advance",
+  "best_epoch": 20,
+  "best_macro_auc": 0.8049053321892679,
+  "completed_epochs": 21,
+  "planned_epochs": 23,
+  "planned_schedule_completed": false,
+  "interrupted_epoch": 22,
+  "interrupted_epoch_used_for_selection": false,
+  "diagnostic_gate_on_completed_best_checkpoint": {
+    "state": "eligible_for_second_fold",
+    "eligible_variants": [
+      "single_candidate",
+      "fixed_50_50_blend"
+    ],
+    "variants": {
+      "single_candidate": {
+        "eligible": true,
+        "reasons": []
+      },
+      "fixed_50_50_blend": {
+        "eligible": true,
+        "reasons": []
+      }
+    },
+    "training_complete": true,
+    "minimum_valid_bootstrap_replicates": 100,
+    "minimum_valid_bootstrap_fraction": 0.9,
+    "difficult_slices": [
+      "ap_projection_only",
+      "single_image_study",
+      "at_least_5_studies_patient"
+    ],
+    "automatic_submission": false,
+    "automatic_training_stop": false,
+    "hidden_test_improvement_established": false,
+    "meaning": "Eligibility for a separately held-out patient-fold confirmation only; absence of significant slice harm is not proof of non-inferiority."
+  },
+  "gate_scope": "Retrospective evaluation of already completed epoch20 only; this does not imply the 23-epoch schedule completed or authorize continuation",
+  "historical_epoch18_stage_decision": "stop_analysis_20261106/stage_decision.json.before_stop_summary",
+  "automatic_submission": false,
+  "automatic_training": false,
+  "user_stop_overrides_diagnostic_eligibility": true,
+  "comparison_sha256": "ce0abc079c9c8a6557f39def0e30e1835ca0220ce05e0bb9242ef79301f72bf5"
+}

@@ -1,0 +1,111 @@
+{
+  "complete": true,
+  "precision": "float16",
+  "image_size": 768,
+  "image_sizes": [
+    768
+  ],
+  "tta": "hflip2",
+  "ensemble": true,
+  "batch_size": 1,
+  "member_count": 2,
+  "training_modes": [
+    "distillation",
+    "distillation"
+  ],
+  "members": [
+    {
+      "source_checkpoint_sha256": "46e06022d963b58d262eaa99ba376de40c3ef182f50a9619f0d09dcf2a0870b7",
+      "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "image_size": 768,
+      "tta": "hflip2",
+      "seed": 43
+    },
+    {
+      "source_checkpoint_sha256": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+      "weights_sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+      "image_size": 768,
+      "tta": "hflip2",
+      "seed": 44
+    }
+  ],
+  "deployment_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "predictions_sha256": "7000ce912c0c285fb36ca251897866a314b9c0d33b21c8ed1d92edc0f11a3f94",
+  "num_images": 1422,
+  "num_studies": 859,
+  "macro_auc": 0.8083844422198005,
+  "per_class_auc": [
+    0.7108283433133733,
+    0.8490169001117905,
+    0.8048826140435318,
+    0.7581988547631442,
+    0.881241234221599,
+    0.7856503802375864,
+    0.7899920646034635,
+    0.7192277041222923,
+    0.9063182226788238,
+    0.8784881041024005
+  ],
+  "macro_f1_fixed_0_5": 0.4510899186168643,
+  "thresholds_fitted": false,
+  "checkpoint_selection_performed": false,
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "deployment_inventory": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "source_training_validation": {
+    "macro_auc": 0.8041769633268219,
+    "per_class_auc": [
+      0.6930638722554889,
+      0.8541789965147629,
+      0.8004171346061286,
+      0.7454636721945416,
+      0.8807737260402057,
+      0.777482313567606,
+      0.7896575331808492,
+      0.7213649206694197,
+      0.9013580326184666,
+      0.8780094316207495
+    ],
+    "macro_ap": 0.42644577727299493,
+    "per_class_ap": [
+      0.07857747237850526,
+      0.32525405434852594,
+      0.18866210720626148,
+      0.22516593814751606,
+      0.4494009275135946,
+      0.4302181228423261,
+      0.5052045160200002,
+      0.4459655352000689,
+      0.7778811173421422,
+      0.8381279817310086
+    ],
+    "loss": 0.46695738437295187,
+    "num_studies": 859,
+    "unit": "Study",
+    "tta": "hflip2768",
+    "validation_tta": "hflip2",
+    "image_size": 768
+  },
+  "auc_difference_from_source": 0.004207478892978678,
+  "note": "FP16 deployment validation is distinct from training-precision validation; no test data is used."
+}

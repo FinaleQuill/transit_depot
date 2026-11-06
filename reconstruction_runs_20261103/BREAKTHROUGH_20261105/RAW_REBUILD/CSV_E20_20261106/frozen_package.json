@@ -1,0 +1,132 @@
+{
+  "frozen_before_test": true,
+  "files": {
+    "cnn.pt": {
+      "bytes": 175572823,
+      "sha256": "b09fbfd316fd03262421e201b0a9da01b58d94e80dcac61568ac9579d8edfb11"
+    },
+    "config.json": {
+      "bytes": 1733,
+      "sha256": "5dfe59a9e361726be558885a3232255688b55b0c33db6c98a0d023e3627d5664"
+    },
+    "cost.py": {
+      "bytes": 198,
+      "sha256": "486d5d460bad9eb384ef990ecaacb12a32a5d61f52f0fc4f31a47350b257692e"
+    },
+    "dino.pt": {
+      "bytes": 175641838,
+      "sha256": "d4ea37cab889f04c4d72714e870b3d4b84f4deb9ab5c3d34fbde88fa141f74cc"
+    },
+    "environment.json": {
+      "bytes": 288,
+      "sha256": "9456a3dacdb1e0b93620196f2385f211e19f4466c783afd573e5ad7408cdb0c2"
+    },
+    "licenses/convnext_base/HF_MODEL_CARD.md": {
+      "bytes": 15748,
+      "sha256": "402776a2dfa17b9dd416ab9a9fe4aa14496a551a0f0f93d1dfb70eca9f41e13a"
+    },
+    "licenses/convnext_base/LICENSE-Apache-2.0.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "licenses/convnext_upstream/LICENSE-MIT.txt": {
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    "licenses/dinov2/LICENSE": {
+      "bytes": 11359,
+      "sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7"
+    },
+    "licenses/dinov2/MODEL_CARD.md": {
+      "bytes": 9152,
+      "sha256": "70ca59606bee0a5fbb1baec80e7e29a93cd7cfbe26ca1910c52a852c4aab09d0"
+    },
+    "licenses/dinov2/README.md": {
+      "bytes": 4347,
+      "sha256": "21cc62b20fe1b2afb3ceb9f5fe977d6034f1d788ac2552845ecf490f4bba38d6"
+    },
+    "licenses/dinov2/UPSTREAM_README.md": {
+      "bytes": 32799,
+      "sha256": "d1bc2e9686522bbd66ed6123dc81eb36b3a98e8ea9a2ca97778f54a1c641c9e1"
+    },
+    "licenses/dinov2/config.json": {
+      "bytes": 617,
+      "sha256": "e97f09e4eb07acb8218beca463c2f08f240e74a3a623da4a1b9f96e0e8ec4a92"
+    },
+    "licenses/dinov2/hf_api.json": {
+      "bytes": 1414,
+      "sha256": "fa797213abca2b818cd94a1722b05a4a76dddaa750f14c607baf082a7d24c00c"
+    },
+    "licenses/dinov2/provenance.json": {
+      "bytes": 995,
+      "sha256": "664e61f9707d77d191dd9b4b60b2a9f329bc34724cabc430429bdaf89d58f839"
+    },
+    "predict.py": {
+      "bytes": 200,
+      "sha256": "98ea83d99bb018549c5fbab12d26a7bf224a253b7010a17dc775f6ede2d42c08"
+    },
+    "source/breakthrough/__init__.py": {
+      "bytes": 59,
+      "sha256": "03061b7516e5156544edfeca8a6fd1f22ccb483bae3ce193fa48830214a2804c"
+    },
+    "source/breakthrough/model.py": {
+      "bytes": 10645,
+      "sha256": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338"
+    },
+    "source/dataset.py": {
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a"
+    },
+    "source/dataset_overnight.py": {
+      "bytes": 13653,
+      "sha256": "2c19932a7d8d5026adf319d1c02f759de48e62548a22b46c8564423a216ea16f"
+    },
+    "source/model_overnight.py": {
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0"
+    },
+    "source/raw_rebuild/__init__.py": {
+      "bytes": 63,
+      "sha256": "a9070e5c9c917a8dc6cbb3438d689b0fe2032ae8404c55c2068a1c1dfa13bdd4"
+    },
+    "source/raw_rebuild/audit_csv.py": {
+      "bytes": 11140,
+      "sha256": "9dcbc69590c572a2c818558f975ed5bf50e5c8212b9da5b63233a624d01a7d45"
+    },
+    "source/raw_rebuild/cost_csv.py": {
+      "bytes": 17518,
+      "sha256": "46382fe53c7c57e6b37b01ea1787f756eaeb88d25af0bb2601fd5b86acc6124f"
+    },
+    "source/raw_rebuild/export_csv.py": {
+      "bytes": 15662,
+      "sha256": "44ab6de5672ea83b38a6b1fc22d6537fdf011c23fe7fb3374fb679d6d15f7f8d"
+    },
+    "source/raw_rebuild/prepare_data.py": {
+      "bytes": 12955,
+      "sha256": "7ea3250b6fc44d34f7fb218afc99a63de44576088e1a873f33347b645f12c11a"
+    },
+    "source/reconstruction/__init__.py": {
+      "bytes": 78,
+      "sha256": "4b6551200ed222f9c975241ff2b5ff5660c5288c5d699a6500f25347028d8551"
+    },
+    "source/reconstruction/data.py": {
+      "bytes": 11986,
+      "sha256": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f"
+    },
+    "source/reconstruction/evaluate.py": {
+      "bytes": 15526,
+      "sha256": "1048f1baeae15e31747f0c4ca8f47d2a5eacfeb55777ddeb399d34852c6a0232"
+    },
+    "source/reconstruction/model.py": {
+      "bytes": 20571,
+      "sha256": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009"
+    },
+    "source/runtime_compat.py": {
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7"
+    }
+  },
+  "total_package_bytes": 351469747,
+  "training": false,
+  "source_note": "Full development used identical numerical recipe before added pre-sigmoid finite assertions; test and cost use this frozen source snapshot."
+}

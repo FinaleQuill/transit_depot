@@ -1,0 +1,23 @@
+{
+  "deleted_hong_kong": "2026-10-30T20:24:13+08:00",
+  "reason": "用户要求保存Git（大文件不入库）后删除ZIP",
+  "removed": [
+    {
+      "path": "/tmp/A_training_handoff_20261030.zip",
+      "type": "file",
+      "bytes": 1079864445
+    },
+    {
+      "path": "/tmp/A_training_handoff_20261030.zip.failed_timestamp",
+      "type": "file",
+      "bytes": 211130
+    },
+    {
+      "path": "/home/featurize/work/deliveries/042_A_training_handoff_20261030/A_training_handoff_20261030.zip",
+      "type": "symlink",
+      "target": "/tmp/A_training_handoff_20261030.zip"
+    }
+  ],
+  "retained_extracted_bundle": "/tmp/A_training_handoff_20261030",
+  "git_contains": "交接代码、说明和打包脚本；不含ZIP、断点、OOF或依赖资产"
+}

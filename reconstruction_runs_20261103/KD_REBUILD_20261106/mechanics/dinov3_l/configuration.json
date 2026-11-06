@@ -1,0 +1,173 @@
+{
+  "configuration": {
+    "schema": "kd_raw_teacher_stage1_v1",
+    "run_id": "smoke_dinov3_l",
+    "family": "dinov3_l",
+    "inner_fold": 0,
+    "seed": 20261106,
+    "source_manifest": "/home/featurize/data/kd_rebuild_20261106/source_train.csv",
+    "R_manifest": "/home/featurize/data/kd_rebuild_20261106/R.csv",
+    "H_manifest": "/home/featurize/data/kd_rebuild_20261106/H.csv",
+    "train_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_0/train.csv",
+    "oof_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_0/oof.csv",
+    "fold_plan": "/home/featurize/data/kd_rebuild_20261106/plan.json",
+    "image_root": "/home/featurize/data/cxr_first",
+    "pretrained_path": "/home/featurize/data/kd_rebuild_20261106/assets/dinov3_l/model.safetensors",
+    "provenance_path": "/home/featurize/data/kd_rebuild_20261106/assets/dinov3_l/source.json",
+    "pretrained_revision": "30c1109559f65dea34316b0d4842d35c5771fe11",
+    "epochs": 2,
+    "resolution_schedule": [
+      {
+        "through_epoch": 1,
+        "image_size": 512
+      },
+      {
+        "through_epoch": 2,
+        "image_size": 768
+      }
+    ],
+    "oof_image_sizes": [
+      512,
+      768
+    ],
+    "effective_studies": 4,
+    "pack_images": 1,
+    "view_chunk_size": 1,
+    "workers": 0,
+    "backbone_lr": 1e-05,
+    "head_lr": 0.0002,
+    "layer_decay": 0.9,
+    "weight_decay": 0.05,
+    "drop_rate": 0.2,
+    "drop_path": 0.1,
+    "clip_grad": 1.0,
+    "ema_decay": 0.999,
+    "selection_policy": "fixed_final_ema_no_H_selection",
+    "source_sha256": {
+      "teacher_distill_20261106/__init__.py": "32e6909b205bde39ce4556a23fed1186072eb873d29f06bbfe1c98226f86eb07",
+      "teacher_distill_20261106/train.py": "0d7468f6edae9bcb5a2b33a00b4659c1f6de48fb408b37ca5de0f41977cd5871",
+      "teacher_distill_20261106/model.py": "ab09a71184769005f5ac69bfc548389a5bf2f8e49c9bf9557cc704d6afc65def",
+      "teacher_distill_20261106/data.py": "1bd5432571983baf2a6bbfe699526836ff3efcd14ba3a17bbfb3327223e1ce86",
+      "teacher_distill_20261106/runtime.py": "4dc58a2ced5f5bc2871a15f839e0646cf7aa54b160b6d6bf16d016fefdbf3e38",
+      "breakthrough/train.py": "39124d0eaad8723426a2668340e07563ea83f52de5e0e5afb34cec5409a3eb8f",
+      "breakthrough/model.py": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338",
+      "reconstruction/data.py": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+      "reconstruction/train.py": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+      "reconstruction/model.py": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+      "training_hooks.py": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+      "training_compliance.py": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
+    },
+    "environment_manifest": "/home/featurize/data/kd_rebuild_20261106/environment/manifest.json",
+    "environment_manifest_sha256": "f212ba9c9bf2b0d23e6e62efca75df8281983805e254d01e2049e588ee1fc42e",
+    "automatic_submission": false,
+    "original_data_policy": "all raw official train, no exclusions",
+    "H_is_independent": false,
+    "H_used_for_early_stopping": false,
+    "output": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/mechanics/dinov3_l",
+    "checkpoint_dir": "/home/featurize/data/kd_rebuild_20261106/state/mechanics/dinov3_l",
+    "input_sha256": {
+      "source_manifest": "4df97bb5f30ec733e5c78b66a63418c26c53396e5e49fb1f494f70ba11e89d7a",
+      "R_manifest": "898c4096282ba765ed8f5f234200cff31f93ffc6ac5bdaf6970616d2f41b9f6e",
+      "H_manifest": "6f35f5272011e5e5f811d31097004e8176f29e845ad5223c14c7234bc9f81d62",
+      "train_manifest": "554622f2088e9540915d9175f84fe0104e1e39c52654c88d49aee51a9213819e",
+      "oof_manifest": "06e18e910d90f52783fc72bc1185012ea33f519e66d4b2b1f76690e78489c175",
+      "fold_plan": "0d4086d6f932621550781d1cfcbc88fed41f232fd93e19d9b4c048ca3051a974",
+      "pretrained_path": "45172f209c9583c40538afc26b60a07033e6fcc2e8c30228338e6b2e932e7941",
+      "provenance_path": "c5207274c1bda0ceaf1aee304af04a3db99aa2068e00acd0abcaf51a3e73027d"
+    }
+  },
+  "public_initialization": {
+    "key": "dinov3_l",
+    "model_id": "timm/vit_large_patch16_dinov3.lvd1689m",
+    "revision": "30c1109559f65dea34316b0d4842d35c5771fe11",
+    "parameters": 303079424,
+    "expected_bytes": 1212347640,
+    "license": "dinov3-license",
+    "license_notes": "Non-standard DINOv3 License; preserve full text for event review",
+    "license_files": {
+      "LICENSE.md": "LICENSE.md"
+    },
+    "repo": "timm/vit_large_patch16_dinov3.lvd1689m",
+    "state": "complete",
+    "started_at": "2026-11-06T15:16:55.015847+08:00",
+    "anonymous": true,
+    "authentication_used": false,
+    "resources": {
+      "api_snapshot.json": {
+        "url": "https://huggingface.co/api/models/timm/vit_large_patch16_dinov3.lvd1689m/revision/30c1109559f65dea34316b0d4842d35c5771fe11",
+        "bytes": 1268,
+        "sha256": "cb4eca77a86bdfc5d817e987efe3dbc938bbebc6f02c56f938ee16748a3a0b3b",
+        "response_status": 200
+      },
+      "tree_snapshot.json": {
+        "url": "https://huggingface.co/api/models/timm/vit_large_patch16_dinov3.lvd1689m/tree/30c1109559f65dea34316b0d4842d35c5771fe11?recursive=true&expand=false",
+        "bytes": 1000,
+        "sha256": "344732a257ad4f14c07ce4e0434afbc8ffd6a9392178af8242997f98830ebf80",
+        "response_status": 200
+      },
+      "README.md": {
+        "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/README.md",
+        "bytes": 7898,
+        "sha256": "952719599ab8c896ac9e0eadc53343a07f79d161e39dacdef6c4c08b69743e3f",
+        "response_status": 200
+      },
+      "config.json": {
+        "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/config.json",
+        "bytes": 671,
+        "sha256": "a71f705b0074e173540d0bdbd3aa940fa8d7d3c6c7f020a683004c46ca605b24",
+        "response_status": 200
+      },
+      "LICENSE.md": {
+        "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/raw/30c1109559f65dea34316b0d4842d35c5771fe11/LICENSE.md",
+        "bytes": 7503,
+        "sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+        "response_status": 200
+      },
+      "model.safetensors": {
+        "url": "https://huggingface.co/timm/vit_large_patch16_dinov3.lvd1689m/resolve/30c1109559f65dea34316b0d4842d35c5771fe11/model.safetensors",
+        "bytes": 1212347640,
+        "sha256": "45172f209c9583c40538afc26b60a07033e6fcc2e8c30228338e6b2e932e7941",
+        "completed_at": "2026-11-06T15:17:00.871106+08:00",
+        "resumed_existing_complete": true
+      }
+    },
+    "private": false,
+    "gated": false,
+    "upstream_training_data": [
+      "lvd-1689m"
+    ],
+    "pretraining_dataset": [
+      "lvd-1689m"
+    ],
+    "parameter_metadata": {
+      "parameters": {
+        "F32": 303079424
+      },
+      "total": 303079424
+    },
+    "public_lfs_sha256": "45172f209c9583c40538afc26b60a07033e6fcc2e8c30228338e6b2e932e7941",
+    "sha256": "45172f209c9583c40538afc26b60a07033e6fcc2e8c30228338e6b2e932e7941",
+    "completed_at": "2026-11-06T15:17:00.871141+08:00"
+  },
+  "source_sha256": {
+    "teacher_distill_20261106/__init__.py": "32e6909b205bde39ce4556a23fed1186072eb873d29f06bbfe1c98226f86eb07",
+    "teacher_distill_20261106/train.py": "0d7468f6edae9bcb5a2b33a00b4659c1f6de48fb408b37ca5de0f41977cd5871",
+    "teacher_distill_20261106/model.py": "ab09a71184769005f5ac69bfc548389a5bf2f8e49c9bf9557cc704d6afc65def",
+    "teacher_distill_20261106/data.py": "1bd5432571983baf2a6bbfe699526836ff3efcd14ba3a17bbfb3327223e1ce86",
+    "teacher_distill_20261106/runtime.py": "4dc58a2ced5f5bc2871a15f839e0646cf7aa54b160b6d6bf16d016fefdbf3e38",
+    "breakthrough/train.py": "39124d0eaad8723426a2668340e07563ea83f52de5e0e5afb34cec5409a3eb8f",
+    "breakthrough/model.py": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338",
+    "reconstruction/data.py": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+    "reconstruction/train.py": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+    "reconstruction/model.py": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+    "training_hooks.py": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "training_compliance.py": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
+  },
+  "original_raw_train_images": 30344,
+  "outer_H_excluded_from_entire_training_chain": true,
+  "official_valid_used": false,
+  "test_used": false,
+  "mechanics_smoke": true,
+  "prior_task_checkpoint_used": false,
+  "selection_policy": "fixed_final_ema_no_H_selection"
+}

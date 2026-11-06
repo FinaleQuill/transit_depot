@@ -1,0 +1,33 @@
+{
+  "reviewed_at_hong_kong": "2026-10-27T02:22:58.733932+08:00",
+  "decision": "No repeat or teacher retraining. Independent Tiny512 supervised baseline first; keep frozen A reference and retain E13 as potential fold0 OOF teacher pending an honest explicit selection protocol. Prior correction remains an unproven candidate.",
+  "teacher_collection_replaced": false,
+  "oof_cache_created": false,
+  "student_started": false,
+  "protected_files_unchanged": {
+    "train_teacher.py": true,
+    "run_teachers.py": true,
+    "run_mixed_teachers.py": true,
+    "run_mixed_teachers.sh": true,
+    "run_overnight.sh": true,
+    "train_overnight.py": true,
+    "model_overnight.py": true,
+    "dataset.py": true,
+    "dataset_overnight.py": true,
+    "cv_splits.py": true,
+    "kd_common.py": true,
+    "runtime_compat.py": true,
+    "audit_trail.py": true,
+    "planned_handoff.py": true,
+    "teacher_collection.py": true,
+    "distill_data.py": true,
+    "training_evidence_monitor.py": true,
+    "data/clean_v1_reviewed/train_clean.csv": true,
+    "data/clean_v1_reviewed/valid_manifest.csv": true,
+    "data/clean_v1_reviewed/test_manifest.csv": true,
+    "data/cv5_overnight/folds.json": true
+  },
+  "gpu_processes": "",
+  "source_git_commit_before_review": "05056a5d7a543003ff812983a46417a576e6f8b0",
+  "new_gpu_or_training_work_from_this_review": false
+}

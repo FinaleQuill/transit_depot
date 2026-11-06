@@ -1,0 +1,65 @@
+{
+  "recorded_at_utc": "2026-10-29T19:01:06.193903+00:00",
+  "version": "1.1.0",
+  "current_so": "/home/featurize/work/cloud_project_v2/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+  "current_so_sha256": "565419dc32e7f45e7d0c1c155c2d8b4b1da74d298299a43199563f1711ea391f",
+  "wheel": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/native/avx2/wheel/cloud_native_lanczos-1.1.0-cp312-cp312-linux_x86_64.whl",
+  "wheel_sha256": "2da965c87d512e1170aeeaa96f811c7a73ec419e22d6ca1b7c0257c1e475e621",
+  "wheel_bytes": 36908,
+  "wheel_extension_sha256": "565419dc32e7f45e7d0c1c155c2d8b4b1da74d298299a43199563f1711ea391f",
+  "wheel_extension_matches_validated_inplace_so": true,
+  "wheel_record_entries_verified": 10,
+  "wheel_contents": [
+    "fast_lanczos.py",
+    "native_lanczos/README.md",
+    "native_lanczos/__init__.py",
+    "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+    "native_lanczos/setup.py",
+    "native_lanczos/upstream/LICENSE",
+    "native_lanczos/upstream/PROVENANCE.json",
+    "cloud_native_lanczos-1.1.0.dist-info/METADATA",
+    "cloud_native_lanczos-1.1.0.dist-info/WHEEL",
+    "cloud_native_lanczos-1.1.0.dist-info/top_level.txt",
+    "cloud_native_lanczos-1.1.0.dist-info/RECORD"
+  ],
+  "wheel_metadata": "Metadata-Version: 2.4\nName: cloud-native-lanczos\nVersion: 1.1.0\nSummary: Exact Pillow 10.4 grayscale LANCZOS, parallel within one image\nLicense: HPND\nDynamic: license\nDynamic: summary\n",
+  "snapshot_sha256": {
+    "fast_lanczos.py": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7",
+    "test_native_lanczos.py": "37035a68b096098990babaecc340cd8f586bfac618ad7c632ecbda1c41c8c266",
+    "native_lanczos/__init__.py": "18a083aec5668338b823deeb26758f44cb09b4b0f17de8278eadeaddf1a16729",
+    "native_lanczos/setup.py": "8b7d3509aa17d48b282af37cf92db0034b0da22ee606f851658ca614296814b9",
+    "native_lanczos/README.md": "2e4cf441c822ce414e85f054d5cd978651c9deb0e3fa3f663c631e41caee8fe8",
+    "native_lanczos/.gitignore": "8f3a41303f7da319e1d437b69130aeea5a894013f93d502c8b9b12fabcac13c7",
+    "native_lanczos/resample.c": "813f452e4f9e98899479939df74d6325ea6739256e0b5fbe74320c301ceaf7af",
+    "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so": "565419dc32e7f45e7d0c1c155c2d8b4b1da74d298299a43199563f1711ea391f",
+    "native_lanczos/upstream/PROVENANCE.json": "dbba2e6e6d65ba676c1ac4a727f68008207c9f53a3e9012e0a5bbb14624d787a",
+    "native_lanczos/upstream/Resample.c": "150216c594b1adbaee8fc4757f13ccc8b5829cfa032d00a784221ce9f3cf5aea",
+    "native_lanczos/upstream/Imaging.h": "2623c2fddf516d402e9bbca7a26512238feaaef4ff73328269b25204efb98dbf",
+    "native_lanczos/upstream/LICENSE": "cf234c27a3f275f5a050f4df3946f8855704226fe4e7ca8b33928cbcecbced37"
+  },
+  "unit_tests": {
+    "count": 7,
+    "exit_code": 0
+  },
+  "fixed_105_cpu": {
+    "count": 105,
+    "implementation": "avx2",
+    "all_uint8_byte_equal": true,
+    "all_float32_byte_equal": true,
+    "pillow_mean_ms": 52.208836628597055,
+    "native_mean_ms": {
+      "1": 23.936485142890195,
+      "2": 26.990810666683544,
+      "4": 15.549862647570816,
+      "8": 10.58546299999372
+    },
+    "native_p95_ms": {
+      "1": 29.250976599996648,
+      "2": 31.07720280013382,
+      "4": 25.797484399845416,
+      "8": 14.174431999708759
+    }
+  },
+  "avx2_gpu_or_e2e_status": "Not run by this child agent; primary agent owns subsequent GPU/E2E validation.",
+  "no_global_install": true
+}

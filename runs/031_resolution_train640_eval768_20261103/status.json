@@ -1,0 +1,14 @@
+{
+  "state": "completed",
+  "completed_epochs": 3,
+  "validated_epochs": 3,
+  "backward_batches": 22746,
+  "optimizer_updates": 2842,
+  "ema_updates": 2842,
+  "amp_skipped_steps": 2,
+  "best_auc": 0.8032223602009431,
+  "best_epoch": 1,
+  "last_checkpoint_sha256": "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8",
+  "best_checkpoint_sha256": "c0ab39552c5af89b8cda931aea67234340656cd0733a7be4c95fe69c5671a316",
+  "updated_utc": "2026-11-02T19:38:22.110203+00:00"
+}

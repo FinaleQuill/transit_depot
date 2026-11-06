@@ -1,0 +1,28 @@
+test_first_best_is_a_complete_resume_source (test_kd_student.ResumeTests.test_first_best_is_a_complete_resume_source) ... ok
+test_new_best_commit_is_promoted_after_interruption (test_kd_student.ResumeTests.test_new_best_commit_is_promoted_after_interruption) ... ok
+test_normal_resume_retains_last (test_kd_student.ResumeTests.test_normal_resume_retains_last) ... ok
+test_progress_and_missing_best_bindings_are_rejected (test_kd_student.ResumeTests.test_progress_and_missing_best_bindings_are_rejected) ... ok
+test_nc_and_unpinned_sources_rejected (test_kd_student.SourceTests.test_nc_and_unpinned_sources_rejected) ... ok
+test_valid_provenance_and_tampering (test_kd_student.SourceTests.test_valid_provenance_and_tampering) ... ok
+test_alpha_warmup_and_no_kd_baseline (test_kd_student.StudentMathTests.test_alpha_warmup_and_no_kd_baseline) ... ok
+test_bad_labels_weights_temperature_and_shape_rejected (test_kd_student.StudentMathTests.test_bad_labels_weights_temperature_and_shape_rejected) ... ok
+test_extreme_logits_remain_finite (test_kd_student.StudentMathTests.test_extreme_logits_remain_finite) ... ok
+test_identical_scores_zero_kl_even_with_many_simultaneous_positives (test_kd_student.StudentMathTests.test_identical_scores_zero_kl_even_with_many_simultaneous_positives) ... ok
+test_independent_bernoulli_kl_matches_scalar_reference (test_kd_student.StudentMathTests.test_independent_bernoulli_kl_matches_scalar_reference) ... ok
+test_student_preprocessing_is_fixed_512 (test_kd_student.StudentMathTests.test_student_preprocessing_is_fixed_512) ... ok
+test_weighted_logit_alignment_uses_both_teacher_and_student_prior (test_kd_student.StudentMathTests.test_weighted_logit_alignment_uses_both_teacher_and_student_prior) ... ok
+test_alignment_and_temperature_precede_mean_probability (test_kd_student_tta.MultiViewLossTests.test_alignment_and_temperature_precede_mean_probability) ... ok
+test_invalid_view_counts_and_nonfinite_values_are_rejected (test_kd_student_tta.MultiViewLossTests.test_invalid_view_counts_and_nonfinite_values_are_rejected) ... ok
+test_saturated_views_and_student_remain_finite (test_kd_student_tta.MultiViewLossTests.test_saturated_views_and_student_remain_finite) ... ok
+test_single_view_cache_is_equivalent_to_legacy_raw_cache (test_kd_student_tta.MultiViewLossTests.test_single_view_cache_is_equivalent_to_legacy_raw_cache) ... ok
+test_declared_views_must_match_cached_view_axis (test_kd_student_tta.StudentProtocolTests.test_declared_views_must_match_cached_view_axis) ... ok
+test_execute_rejects_image_output_overlap_before_logger_or_training (test_kd_student_tta.StudentProtocolTests.test_execute_rejects_image_output_overlap_before_logger_or_training) ... ok
+test_resolution_and_fixed_validation_views_are_declared (test_kd_student_tta.StudentProtocolTests.test_resolution_and_fixed_validation_views_are_declared) ... ok
+test_schema7_resume_defaults_missing_new_fields_to_identity512 (test_kd_student_tta.StudentProtocolTests.test_schema7_resume_defaults_missing_new_fields_to_identity512) ... ok
+test_tta_averages_probabilities_without_thresholding (test_kd_student_tta.StudentProtocolTests.test_tta_averages_probabilities_without_thresholding) ... ok
+test_view_cache_temperature_remains_a_student_loss_parameter (test_kd_student_tta.StudentProtocolTests.test_view_cache_temperature_remains_a_student_loss_parameter) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.076s
+
+OK

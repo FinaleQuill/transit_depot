@@ -1,0 +1,166 @@
+{
+  "audited_at_hk": "2026-10-27T17:10:25.954869+08:00",
+  "conclusion": "interrupted_in_epoch_8_not_terminal",
+  "exit_reason": "not_recorded_unknown",
+  "run": "/home/featurize/work/runs/028_tiny512_kd_short12_seed43",
+  "status_is_stale": true,
+  "status": {
+    "state": "running",
+    "completed_epochs": 7,
+    "validated_epochs": 7,
+    "backward_batches": 26537,
+    "optimizer_updates": 6636,
+    "ema_updates": 6636,
+    "amp_skipped_steps": 0,
+    "best_auc": 0.8038905628482913,
+    "best_epoch": 7,
+    "last_checkpoint_sha256": "2f89f16aa80d3025faa7d42f7e94fd2ca6a34d004ea8c02319167f5faa90d1b3",
+    "best_checkpoint_sha256": "4e08a64bb236431c40b0e8e05ad91feee628c5b63385c3f7eceb2b4ccb380b70",
+    "updated_utc": "2026-10-27T08:11:53.337259+00:00"
+  },
+  "command_receipt": {
+    "started_at": "2026-10-27T07:21:15.009692+00:00",
+    "command": [
+      "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+      "-u",
+      "/home/featurize/work/cloud_project_v2/train_distill.py",
+      "--fold-plan",
+      "data/cv5_overnight/folds.json",
+      "--soft-labels",
+      "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+      "--training-mode",
+      "distillation",
+      "--alpha",
+      "0.2",
+      "--temperature",
+      "2",
+      "--image-size",
+      "512",
+      "--seed",
+      "43",
+      "--validation-tta",
+      "hflip2",
+      "--batch-size",
+      "8",
+      "--accumulation-steps",
+      "4",
+      "--epochs",
+      "12",
+      "--patience",
+      "5",
+      "--output",
+      "../runs/028_tiny512_kd_short12_seed43",
+      "--execute"
+    ],
+    "cwd": "/home/featurize/work/cloud_project_v2",
+    "source_archive": "/home/featurize/work/runs/028_tiny512_kd_short12_seed43/evidence/source_20261027T072114Z_1f9391cf",
+    "console_log": "/home/featurize/work/runs/028_tiny512_kd_short12_seed43/evidence/console_20261027T072114Z_1f9391cf.log",
+    "preexisting_run_artifacts": [],
+    "coverage_from_start": "complete",
+    "exit_code": null,
+    "child_pid": 917434
+  },
+  "last_console_line": "student epoch=8 batch=2000/3791 loss=0.625755 alpha=0.2000",
+  "validated_epochs": 7,
+  "next_epoch_on_resume": 8,
+  "remaining_max_epochs": 5,
+  "best_epoch": 7,
+  "best_auc": 0.8038905628482913,
+  "progress": {
+    "completed_epochs": 7,
+    "validated_epochs": 7,
+    "backward_batches": 26537,
+    "optimizer_updates": 6636,
+    "ema_updates": 6636,
+    "amp_skipped_steps": 0
+  },
+  "early_stopping": {
+    "reference_auc": 0.8038905628482913,
+    "bad_epochs": 0
+  },
+  "checkpoint_sha256": {
+    "best.pt": "4e08a64bb236431c40b0e8e05ad91feee628c5b63385c3f7eceb2b4ccb380b70",
+    "last.pt": "2f89f16aa80d3025faa7d42f7e94fd2ca6a34d004ea8c02319167f5faa90d1b3"
+  },
+  "native_resume_validation": "passed_both_checkpoints",
+  "ledger_chain": "passed",
+  "ledger_records": 14,
+  "archived_python_files_equal_current": 33,
+  "raw_ema_optimizer_scaler_rng_present": true,
+  "input_hashes_and_train_valid_isolation": "passed",
+  "soft_cache_bindings": "passed",
+  "original_run_files_unchanged": true,
+  "no_model_construction_or_forward": true,
+  "no_training_started": true,
+  "resume_config": {
+    "fold_plan": "data/cv5_overnight/folds.json",
+    "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "output": "../runs/028_tiny512_kd_short12_seed43",
+    "image_root": "/home/featurize/data/cxr_first",
+    "batch_size": 8,
+    "accumulation_steps": 4,
+    "valid_batch_size": 4,
+    "num_workers": 8,
+    "prefetch_factor": 2,
+    "epochs": 12,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "seed": 43,
+    "backbone_lr": 5e-05,
+    "head_lr": 0.0005,
+    "warmup_epochs": 1,
+    "min_lr_ratio": 0.05,
+    "weight_decay": 0.05,
+    "dropout": 0.2,
+    "drop_path": 0.1,
+    "ema_decay": 0.999,
+    "grad_clip": 1.0,
+    "amp_dtype": "auto",
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "kd_warmup_epochs": 2,
+    "align_teacher_pos_weight": true,
+    "image_size": 512,
+    "validation_tta": "hflip2",
+    "training_mode": "distillation",
+    "resume": "../runs/028_tiny512_kd_short12_seed43/last.pt"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "auc": 0.7286217109052239,
+      "seconds": 408.98165453600814
+    },
+    {
+      "epoch": 2,
+      "auc": 0.765069463504781,
+      "seconds": 384.337173256994
+    },
+    {
+      "epoch": 3,
+      "auc": 0.7904490110260596,
+      "seconds": 385.42804095099564
+    },
+    {
+      "epoch": 4,
+      "auc": 0.7989692451601691,
+      "seconds": 378.3112075960089
+    },
+    {
+      "epoch": 5,
+      "auc": 0.8022214455969404,
+      "seconds": 380.64384638299816
+    },
+    {
+      "epoch": 6,
+      "auc": 0.8031106199526528,
+      "seconds": 381.6982552690024
+    },
+    {
+      "epoch": 7,
+      "auc": 0.8038905628482913,
+      "seconds": 379.7804463909997
+    }
+  ],
+  "gpu": "NVIDIA GeForce RTX 4090, 1 MiB, 0 %"
+}

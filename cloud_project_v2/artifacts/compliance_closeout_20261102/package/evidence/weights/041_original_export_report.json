@@ -1,0 +1,31 @@
+{
+  "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+  "num_classes": 10,
+  "estimated_parameters": 27827818,
+  "fp16_parameter_bytes": 55655636,
+  "fp32_parameter_bytes": 111311272,
+  "limit_bytes": 500000000,
+  "size_status": "measured",
+  "latency_status": "pending_T4_measurement",
+  "note": "Each additional Tiny member adds this parameter count; actual serialization/configuration must be measured.",
+  "files": [
+    {
+      "path": "student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+    },
+    {
+      "path": "config.json",
+      "bytes": 11284048,
+      "sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39"
+    }
+  ],
+  "total_bytes": 66996559,
+  "size_pass": true,
+  "source_checkpoint_sha256": "65cdb72f63a5ec0d36486d4d8dcb34dd2fde5ed85aa52d3a10be2b0dbf633f42",
+  "export_directory": "/tmp/cloud_student_runs_20261030/041_A_submission_20261030/model",
+  "image_size": 768,
+  "tta": "hflip2",
+  "member_count": 1,
+  "fp16_validation_status": "pending_same_deployment_validation"
+}

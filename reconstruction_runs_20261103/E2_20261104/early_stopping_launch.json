@@ -1,0 +1,26 @@
+{
+  "AI_goal_created": false,
+  "argv": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "reconstruction.controller_earlystop",
+    "--controller-dir",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller",
+    "--transition-request",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/transition_request.json",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cxr_research_20261103",
+  "git_commit": "4b9abc2dbab59930d89173407b98ee170f82801c",
+  "log": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller.early_stopping.launch.log",
+  "pid": 51006,
+  "policy_sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+  "queue": "global at most6/patience3, then independently initialized local at most6/patience3, then fixed CPU comparison",
+  "request": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/transition_request.json",
+  "request_sha256": "08cbdf38b4298265789b992daa900d71b00dec928e5dd7aa232dbfa10c4c83ca",
+  "start_new_session": true,
+  "started_at": "2026-11-04T17:29:48.815268+08:00",
+  "state_at_launch": "waiting_for_complete_epoch3",
+  "stdin": "/dev/null"
+}

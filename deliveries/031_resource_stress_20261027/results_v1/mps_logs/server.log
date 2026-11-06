@@ -1,0 +1,254 @@
+[2026-10-27 12:40:18.819 Server 997531] Startup
+[2026-10-27 12:40:18.819 Server 997531] Connecting to control daemon on socket: /tmp/cxr-resource-mps-bjxzt2oy/pipe/control
+[2026-10-27 12:40:18.819 Server 997531] Initializing server process
+[2026-10-27 12:40:18.893 Server 997531] Creating server context on device 0 (NVIDIA GeForce RTX 4090)
+[2026-10-27 12:40:18.954 Server 997531] Created anonymous shared memory region mps.shm.1000.997531
+[2026-10-27 12:40:18.954 Server 997531] CUDA MPS Server for Linux/Unix. Binary version: 13030
+[2026-10-27 12:40:18.954 Server 997531] Display Driver version: 610
+[2026-10-27 12:40:18.954 Server 997531] Active Threads Percentage set to 100.0
+[2026-10-27 12:40:18.954 Server 997531] Server Priority set to 0
+[2026-10-27 12:40:18.954 Server 997531] Static Partitioning mode disabled
+[2026-10-27 12:40:18.954 Server 997531] Server has started
+[2026-10-27 12:40:18.955 Server 997531] Received new client request from PID 997522
+[2026-10-27 12:40:18.955 Server 997531] Priority level of client {997522} is: 0 (NORMAL)
+[2026-10-27 12:40:18.955 Server 997531] Client {PID: 997522, Context ID: 0} connected
+[2026-10-27 12:40:18.955 Server 997531] Creating worker thread for client {PID: 997522, Context ID: 0}
+[2026-10-27 12:40:19.027 Server 997531] Received new client request from PID 997522
+[2026-10-27 12:40:19.027 Server 997531] Priority level of client {997522} is: 0 (NORMAL)
+[2026-10-27 12:40:19.027 Server 997531] Client {PID: 997522, Context ID: 1} connected
+[2026-10-27 12:40:19.027 Server 997531] Creating worker thread for client {PID: 997522, Context ID: 1}
+[2026-10-27 12:40:19.027 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:40:19.027 Server 997531] Status of client {PID: 997522, Context ID: 1} is ACTIVE
+[2026-10-27 12:40:19.028 Client 997522] Static partitioning mode disabled
+[2026-10-27 12:40:19.677 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997522, Context ID: 1} exit
+[2026-10-27 12:40:19.677 Server 997531] Client {PID: 997522, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:40:19.790 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997522, Context ID: 0} exit
+[2026-10-27 12:40:19.790 Server 997531] Client process 997522 disconnected
+[2026-10-27 12:40:21.468 Server 997531] Received new client request from PID 997543
+[2026-10-27 12:40:21.468 Server 997531] Priority level of client {997543} is: 0 (NORMAL)
+[2026-10-27 12:40:21.468 Server 997531] Client {PID: 997543, Context ID: 0} connected
+[2026-10-27 12:40:21.468 Server 997531] Creating worker thread for client {PID: 997543, Context ID: 0}
+[2026-10-27 12:40:23.157 Server 997531] Received new client request from PID 997543
+[2026-10-27 12:40:23.157 Server 997531] Priority level of client {997543} is: 0 (NORMAL)
+[2026-10-27 12:40:23.157 Server 997531] Client {PID: 997543, Context ID: 1} connected
+[2026-10-27 12:40:23.157 Server 997531] Creating worker thread for client {PID: 997543, Context ID: 1}
+[2026-10-27 12:40:23.157 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:40:23.157 Server 997531] Status of client {PID: 997543, Context ID: 1} is ACTIVE
+[2026-10-27 12:40:23.158 Client 997543] Static partitioning mode disabled
+[2026-10-27 12:41:01.232 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997543, Context ID: 1} exit
+[2026-10-27 12:41:01.232 Server 997531] Client {PID: 997543, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:41:01.369 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997543, Context ID: 0} exit
+[2026-10-27 12:41:01.369 Server 997531] Client process 997543 disconnected
+[2026-10-27 12:41:02.964 Server 997531] Received new client request from PID 997694
+[2026-10-27 12:41:02.964 Server 997531] Priority level of client {997694} is: 0 (NORMAL)
+[2026-10-27 12:41:02.964 Server 997531] Client {PID: 997694, Context ID: 0} connected
+[2026-10-27 12:41:02.964 Server 997531] Creating worker thread for client {PID: 997694, Context ID: 0}
+[2026-10-27 12:41:04.624 Server 997531] Received new client request from PID 997694
+[2026-10-27 12:41:04.624 Server 997531] Priority level of client {997694} is: 0 (NORMAL)
+[2026-10-27 12:41:04.624 Server 997531] Client {PID: 997694, Context ID: 1} connected
+[2026-10-27 12:41:04.624 Server 997531] Creating worker thread for client {PID: 997694, Context ID: 1}
+[2026-10-27 12:41:04.624 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:41:04.624 Server 997531] Status of client {PID: 997694, Context ID: 1} is ACTIVE
+[2026-10-27 12:41:04.625 Client 997694] Static partitioning mode disabled
+[2026-10-27 12:41:48.077 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997694, Context ID: 1} exit
+[2026-10-27 12:41:48.077 Server 997531] Client {PID: 997694, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:41:48.264 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997694, Context ID: 0} exit
+[2026-10-27 12:41:48.264 Server 997531] Client process 997694 disconnected
+[2026-10-27 12:41:49.915 Server 997531] Received new client request from PID 997900
+[2026-10-27 12:41:49.915 Server 997531] Priority level of client {997900} is: 0 (NORMAL)
+[2026-10-27 12:41:49.915 Server 997531] Client {PID: 997900, Context ID: 0} connected
+[2026-10-27 12:41:49.915 Server 997531] Creating worker thread for client {PID: 997900, Context ID: 0}
+[2026-10-27 12:41:51.661 Server 997531] Received new client request from PID 997900
+[2026-10-27 12:41:51.661 Server 997531] Priority level of client {997900} is: 0 (NORMAL)
+[2026-10-27 12:41:51.661 Server 997531] Client {PID: 997900, Context ID: 1} connected
+[2026-10-27 12:41:51.661 Server 997531] Creating worker thread for client {PID: 997900, Context ID: 1}
+[2026-10-27 12:41:51.661 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:41:51.661 Server 997531] Status of client {PID: 997900, Context ID: 1} is ACTIVE
+[2026-10-27 12:41:51.662 Client 997900] Static partitioning mode disabled
+[2026-10-27 12:43:06.043 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997900, Context ID: 1} exit
+[2026-10-27 12:43:06.043 Server 997531] Client {PID: 997900, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:43:06.182 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 997900, Context ID: 0} exit
+[2026-10-27 12:43:06.182 Server 997531] Client process 997900 disconnected
+[2026-10-27 12:43:07.395 Server 997531] Received new client request from PID 998222
+[2026-10-27 12:43:07.395 Server 997531] Priority level of client {998222} is: 0 (NORMAL)
+[2026-10-27 12:43:07.395 Server 997531] Client {PID: 998222, Context ID: 0} connected
+[2026-10-27 12:43:07.395 Server 997531] Creating worker thread for client {PID: 998222, Context ID: 0}
+[2026-10-27 12:43:07.435 Server 997531] Received new client request from PID 998222
+[2026-10-27 12:43:07.435 Server 997531] Priority level of client {998222} is: 0 (NORMAL)
+[2026-10-27 12:43:07.435 Server 997531] Client {PID: 998222, Context ID: 1} connected
+[2026-10-27 12:43:07.435 Server 997531] Creating worker thread for client {PID: 998222, Context ID: 1}
+[2026-10-27 12:43:07.435 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:43:07.435 Server 997531] Status of client {PID: 998222, Context ID: 1} is ACTIVE
+[2026-10-27 12:43:07.436 Client 998222] Static partitioning mode disabled
+[2026-10-27 12:43:08.047 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998222, Context ID: 1} exit
+[2026-10-27 12:43:08.047 Server 997531] Client {PID: 998222, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:43:08.145 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998222, Context ID: 0} exit
+[2026-10-27 12:43:08.145 Server 997531] Client process 998222 disconnected
+[2026-10-27 12:43:09.742 Server 997531] Received new client request from PID 998239
+[2026-10-27 12:43:09.742 Server 997531] Priority level of client {998239} is: 0 (NORMAL)
+[2026-10-27 12:43:09.742 Server 997531] Client {PID: 998239, Context ID: 0} connected
+[2026-10-27 12:43:09.742 Server 997531] Creating worker thread for client {PID: 998239, Context ID: 0}
+[2026-10-27 12:43:11.417 Server 997531] Received new client request from PID 998239
+[2026-10-27 12:43:11.417 Server 997531] Priority level of client {998239} is: 0 (NORMAL)
+[2026-10-27 12:43:11.417 Server 997531] Client {PID: 998239, Context ID: 1} connected
+[2026-10-27 12:43:11.417 Server 997531] Creating worker thread for client {PID: 998239, Context ID: 1}
+[2026-10-27 12:43:11.417 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:43:11.417 Server 997531] Status of client {PID: 998239, Context ID: 1} is ACTIVE
+[2026-10-27 12:43:11.418 Client 998239] Static partitioning mode disabled
+[2026-10-27 12:43:50.100 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998239, Context ID: 1} exit
+[2026-10-27 12:43:50.100 Server 997531] Client {PID: 998239, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:43:50.232 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998239, Context ID: 0} exit
+[2026-10-27 12:43:50.232 Server 997531] Client process 998239 disconnected
+[2026-10-27 12:43:51.804 Server 997531] Received new client request from PID 998295
+[2026-10-27 12:43:51.805 Server 997531] Priority level of client {998295} is: 0 (NORMAL)
+[2026-10-27 12:43:51.805 Server 997531] Client {PID: 998295, Context ID: 0} connected
+[2026-10-27 12:43:51.805 Server 997531] Creating worker thread for client {PID: 998295, Context ID: 0}
+[2026-10-27 12:43:53.484 Server 997531] Received new client request from PID 998295
+[2026-10-27 12:43:53.484 Server 997531] Priority level of client {998295} is: 0 (NORMAL)
+[2026-10-27 12:43:53.484 Server 997531] Client {PID: 998295, Context ID: 1} connected
+[2026-10-27 12:43:53.484 Server 997531] Creating worker thread for client {PID: 998295, Context ID: 1}
+[2026-10-27 12:43:53.484 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:43:53.484 Server 997531] Status of client {PID: 998295, Context ID: 1} is ACTIVE
+[2026-10-27 12:43:53.485 Client 998295] Static partitioning mode disabled
+[2026-10-27 12:44:38.777 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998295, Context ID: 1} exit
+[2026-10-27 12:44:38.777 Server 997531] Client {PID: 998295, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:44:38.910 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998295, Context ID: 0} exit
+[2026-10-27 12:44:38.910 Server 997531] Client process 998295 disconnected
+[2026-10-27 12:44:40.571 Server 997531] Received new client request from PID 998409
+[2026-10-27 12:44:40.571 Server 997531] Priority level of client {998409} is: 0 (NORMAL)
+[2026-10-27 12:44:40.571 Server 997531] Client {PID: 998409, Context ID: 0} connected
+[2026-10-27 12:44:40.571 Server 997531] Creating worker thread for client {PID: 998409, Context ID: 0}
+[2026-10-27 12:44:42.415 Server 997531] Received new client request from PID 998409
+[2026-10-27 12:44:42.415 Server 997531] Priority level of client {998409} is: 0 (NORMAL)
+[2026-10-27 12:44:42.416 Server 997531] Client {PID: 998409, Context ID: 1} connected
+[2026-10-27 12:44:42.416 Server 997531] Creating worker thread for client {PID: 998409, Context ID: 1}
+[2026-10-27 12:44:42.416 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:44:42.416 Server 997531] Status of client {PID: 998409, Context ID: 1} is ACTIVE
+[2026-10-27 12:44:42.416 Client 998409] Static partitioning mode disabled
+[2026-10-27 12:45:51.225 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998409, Context ID: 1} exit
+[2026-10-27 12:45:51.225 Server 997531] Client {PID: 998409, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:45:51.401 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998409, Context ID: 0} exit
+[2026-10-27 12:45:51.401 Server 997531] Client process 998409 disconnected
+[2026-10-27 12:45:52.518 Server 997531] Received new client request from PID 998485
+[2026-10-27 12:45:52.519 Server 997531] Priority level of client {998485} is: 0 (NORMAL)
+[2026-10-27 12:45:52.519 Server 997531] Client {PID: 998485, Context ID: 0} connected
+[2026-10-27 12:45:52.519 Server 997531] Creating worker thread for client {PID: 998485, Context ID: 0}
+[2026-10-27 12:45:52.550 Server 997531] Received new client request from PID 998485
+[2026-10-27 12:45:52.550 Server 997531] Priority level of client {998485} is: 0 (NORMAL)
+[2026-10-27 12:45:52.550 Server 997531] Client {PID: 998485, Context ID: 1} connected
+[2026-10-27 12:45:52.550 Server 997531] Creating worker thread for client {PID: 998485, Context ID: 1}
+[2026-10-27 12:45:52.550 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:45:52.550 Server 997531] Status of client {PID: 998485, Context ID: 1} is ACTIVE
+[2026-10-27 12:45:52.551 Client 998485] Static partitioning mode disabled
+[2026-10-27 12:45:53.222 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998485, Context ID: 1} exit
+[2026-10-27 12:45:53.222 Server 997531] Client {PID: 998485, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:45:53.337 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998485, Context ID: 0} exit
+[2026-10-27 12:45:53.337 Server 997531] Client process 998485 disconnected
+[2026-10-27 12:45:54.916 Server 997531] Received new client request from PID 998492
+[2026-10-27 12:45:54.916 Server 997531] Priority level of client {998492} is: 0 (NORMAL)
+[2026-10-27 12:45:54.916 Server 997531] Client {PID: 998492, Context ID: 0} connected
+[2026-10-27 12:45:54.916 Server 997531] Creating worker thread for client {PID: 998492, Context ID: 0}
+[2026-10-27 12:45:56.600 Server 997531] Received new client request from PID 998492
+[2026-10-27 12:45:56.600 Server 997531] Priority level of client {998492} is: 0 (NORMAL)
+[2026-10-27 12:45:56.600 Server 997531] Client {PID: 998492, Context ID: 1} connected
+[2026-10-27 12:45:56.600 Server 997531] Creating worker thread for client {PID: 998492, Context ID: 1}
+[2026-10-27 12:45:56.600 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:45:56.600 Server 997531] Status of client {PID: 998492, Context ID: 1} is ACTIVE
+[2026-10-27 12:45:56.601 Client 998492] Static partitioning mode disabled
+[2026-10-27 12:46:35.176 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998492, Context ID: 1} exit
+[2026-10-27 12:46:35.176 Server 997531] Client {PID: 998492, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:46:35.312 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998492, Context ID: 0} exit
+[2026-10-27 12:46:35.312 Server 997531] Client process 998492 disconnected
+[2026-10-27 12:46:36.879 Server 997531] Received new client request from PID 998553
+[2026-10-27 12:46:36.879 Server 997531] Priority level of client {998553} is: 0 (NORMAL)
+[2026-10-27 12:46:36.879 Server 997531] Client {PID: 998553, Context ID: 0} connected
+[2026-10-27 12:46:36.879 Server 997531] Creating worker thread for client {PID: 998553, Context ID: 0}
+[2026-10-27 12:46:38.585 Server 997531] Received new client request from PID 998553
+[2026-10-27 12:46:38.585 Server 997531] Priority level of client {998553} is: 0 (NORMAL)
+[2026-10-27 12:46:38.585 Server 997531] Client {PID: 998553, Context ID: 1} connected
+[2026-10-27 12:46:38.585 Server 997531] Creating worker thread for client {PID: 998553, Context ID: 1}
+[2026-10-27 12:46:38.585 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:46:38.585 Server 997531] Status of client {PID: 998553, Context ID: 1} is ACTIVE
+[2026-10-27 12:46:38.586 Client 998553] Static partitioning mode disabled
+[2026-10-27 12:47:25.474 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998553, Context ID: 1} exit
+[2026-10-27 12:47:25.475 Server 997531] Client {PID: 998553, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:47:25.609 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998553, Context ID: 0} exit
+[2026-10-27 12:47:25.609 Server 997531] Client process 998553 disconnected
+[2026-10-27 12:47:27.285 Server 997531] Received new client request from PID 998621
+[2026-10-27 12:47:27.285 Server 997531] Priority level of client {998621} is: 0 (NORMAL)
+[2026-10-27 12:47:27.285 Server 997531] Client {PID: 998621, Context ID: 0} connected
+[2026-10-27 12:47:27.285 Server 997531] Creating worker thread for client {PID: 998621, Context ID: 0}
+[2026-10-27 12:47:29.038 Server 997531] Received new client request from PID 998621
+[2026-10-27 12:47:29.038 Server 997531] Priority level of client {998621} is: 0 (NORMAL)
+[2026-10-27 12:47:29.038 Server 997531] Client {PID: 998621, Context ID: 1} connected
+[2026-10-27 12:47:29.038 Server 997531] Creating worker thread for client {PID: 998621, Context ID: 1}
+[2026-10-27 12:47:29.038 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:47:29.039 Server 997531] Status of client {PID: 998621, Context ID: 1} is ACTIVE
+[2026-10-27 12:47:29.039 Client 998621] Static partitioning mode disabled
+[2026-10-27 12:48:39.778 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998621, Context ID: 1} exit
+[2026-10-27 12:48:39.778 Server 997531] Client {PID: 998621, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:48:39.957 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998621, Context ID: 0} exit
+[2026-10-27 12:48:39.957 Server 997531] Client process 998621 disconnected
+[2026-10-27 12:48:41.137 Server 997531] Received new client request from PID 998706
+[2026-10-27 12:48:41.137 Server 997531] Priority level of client {998706} is: 0 (NORMAL)
+[2026-10-27 12:48:41.137 Server 997531] Client {PID: 998706, Context ID: 0} connected
+[2026-10-27 12:48:41.138 Server 997531] Creating worker thread for client {PID: 998706, Context ID: 0}
+[2026-10-27 12:48:41.170 Server 997531] Received new client request from PID 998706
+[2026-10-27 12:48:41.170 Server 997531] Priority level of client {998706} is: 0 (NORMAL)
+[2026-10-27 12:48:41.170 Server 997531] Client {PID: 998706, Context ID: 1} connected
+[2026-10-27 12:48:41.170 Server 997531] Creating worker thread for client {PID: 998706, Context ID: 1}
+[2026-10-27 12:48:41.170 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:48:41.170 Server 997531] Status of client {PID: 998706, Context ID: 1} is ACTIVE
+[2026-10-27 12:48:41.171 Client 998706] Static partitioning mode disabled
+[2026-10-27 12:48:42.023 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998706, Context ID: 1} exit
+[2026-10-27 12:48:42.023 Server 997531] Client {PID: 998706, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:48:42.117 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998706, Context ID: 0} exit
+[2026-10-27 12:48:42.117 Server 997531] Client process 998706 disconnected
+[2026-10-27 12:48:43.686 Server 997531] Received new client request from PID 998713
+[2026-10-27 12:48:43.686 Server 997531] Priority level of client {998713} is: 0 (NORMAL)
+[2026-10-27 12:48:43.686 Server 997531] Client {PID: 998713, Context ID: 0} connected
+[2026-10-27 12:48:43.686 Server 997531] Creating worker thread for client {PID: 998713, Context ID: 0}
+[2026-10-27 12:48:45.384 Server 997531] Received new client request from PID 998713
+[2026-10-27 12:48:45.384 Server 997531] Priority level of client {998713} is: 0 (NORMAL)
+[2026-10-27 12:48:45.384 Server 997531] Client {PID: 998713, Context ID: 1} connected
+[2026-10-27 12:48:45.384 Server 997531] Creating worker thread for client {PID: 998713, Context ID: 1}
+[2026-10-27 12:48:45.384 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:48:45.384 Server 997531] Status of client {PID: 998713, Context ID: 1} is ACTIVE
+[2026-10-27 12:48:45.385 Client 998713] Static partitioning mode disabled
+[2026-10-27 12:49:41.264 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998713, Context ID: 1} exit
+[2026-10-27 12:49:41.264 Server 997531] Client {PID: 998713, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:49:41.435 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998713, Context ID: 0} exit
+[2026-10-27 12:49:41.436 Server 997531] Client process 998713 disconnected
+[2026-10-27 12:49:46.869 Server 997531] Received new client request from PID 998802
+[2026-10-27 12:49:46.869 Server 997531] Priority level of client {998802} is: 0 (NORMAL)
+[2026-10-27 12:49:46.869 Server 997531] Client {PID: 998802, Context ID: 0} connected
+[2026-10-27 12:49:46.870 Server 997531] Creating worker thread for client {PID: 998802, Context ID: 0}
+[2026-10-27 12:49:48.564 Server 997531] Received new client request from PID 998802
+[2026-10-27 12:49:48.564 Server 997531] Priority level of client {998802} is: 0 (NORMAL)
+[2026-10-27 12:49:48.564 Server 997531] Client {PID: 998802, Context ID: 1} connected
+[2026-10-27 12:49:48.564 Server 997531] Creating worker thread for client {PID: 998802, Context ID: 1}
+[2026-10-27 12:49:48.564 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:49:48.564 Server 997531] Status of client {PID: 998802, Context ID: 1} is ACTIVE
+[2026-10-27 12:49:48.565 Client 998802] Static partitioning mode disabled
+[2026-10-27 12:50:40.576 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998802, Context ID: 1} exit
+[2026-10-27 12:50:40.576 Server 997531] Client {PID: 998802, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:50:40.707 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 998802, Context ID: 0} exit
+[2026-10-27 12:50:40.707 Server 997531] Client process 998802 disconnected
+[2026-10-27 12:50:42.427 Server 997531] Received new client request from PID 999157
+[2026-10-27 12:50:42.427 Server 997531] Priority level of client {999157} is: 0 (NORMAL)
+[2026-10-27 12:50:42.427 Server 997531] Client {PID: 999157, Context ID: 0} connected
+[2026-10-27 12:50:42.427 Server 997531] Creating worker thread for client {PID: 999157, Context ID: 0}
+[2026-10-27 12:50:44.312 Server 997531] Received new client request from PID 999157
+[2026-10-27 12:50:44.312 Server 997531] Priority level of client {999157} is: 0 (NORMAL)
+[2026-10-27 12:50:44.312 Server 997531] Client {PID: 999157, Context ID: 1} connected
+[2026-10-27 12:50:44.312 Server 997531] Creating worker thread for client {PID: 999157, Context ID: 1}
+[2026-10-27 12:50:44.312 Server 997531] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated
+[2026-10-27 12:50:44.312 Server 997531] Status of client {PID: 999157, Context ID: 1} is ACTIVE
+[2026-10-27 12:50:44.313 Client 999157] Static partitioning mode disabled
+[2026-10-27 12:52:02.824 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 999157, Context ID: 1} exit
+[2026-10-27 12:52:02.824 Server 997531] Client {PID: 999157, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-10-27 12:52:02.961 Server 997531] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 999157, Context ID: 0} exit
+[2026-10-27 12:52:02.961 Server 997531] Client process 999157 disconnected
+[2026-10-27 12:52:02.997 Server 997531] Server has been notified to shutdown
+[2026-10-27 12:52:02.997 Server 997531] Waiting for current clients to finish
+[2026-10-27 12:52:02.997 Server 997531] Exiting

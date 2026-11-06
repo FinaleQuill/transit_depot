@@ -1,0 +1,11 @@
+Source: /home/featurize/work/cost_data_test.tar
+SHA-256: 7c88a0f8df4d4a1e79ddb5e6de0165ed8ffd33597530e516676635cda60e6c18
+Source bytes: 46267392
+Archive type: POSIX tar archive (GNU), per file(1)
+Archive entries: 60 (32 directories, 28 regular files)
+Uncompressed file bytes: 46228127
+Destination: /home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/cost_data_test
+Safety check: no absolute or parent-traversal member paths; no links, devices, FIFOs, or other special entries
+Extraction: tar --no-same-owner --no-same-permissions -xf /home/featurize/work/cost_data_test.tar -C /home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102
+Verification: SHA-256 compared member-by-member between tar stream and extracted file; 28/28 matched, zero extra files
+Content: 28 JPG files only; no README, script, CSV, JSON, or rule document

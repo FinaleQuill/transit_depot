@@ -1,0 +1,127 @@
+[ALLOCATOR] requested=8 GiB (8589934592 bytes); applied_fraction=0.372211368077; device_total_bytes=23078109184
+{
+  "diagnostic_only": true,
+  "instrumented": true,
+  "replaces_primary_benchmark": false,
+  "T4_latency_certified": false,
+  "official_compliance_pass": false,
+  "protocol": {
+    "warmup_images": 5,
+    "measured_images": 100,
+    "rounds": 1,
+    "batch_size": 1,
+    "seed": 43,
+    "allocator_limit_gib": 8
+  },
+  "cuda_event_interpretation": "Root forward CUDA event spans may include host submission gaps; not pure kernel busy time.",
+  "started_utc": "2026-10-28T18:06:48.556068+00:00",
+  "resources": {
+    "requested_thread_percentage": null,
+    "baseline_sm_count": 68,
+    "cuda_visible_sm_count": 68,
+    "native_baseline_sm_count": 68,
+    "mode": "native",
+    "environment": {
+      "CUDA_MPS_PIPE_DIRECTORY": null,
+      "CUDA_MPS_LOG_DIRECTORY": null,
+      "CUDA_MPS_ACTIVE_THREAD_PERCENTAGE": null,
+      "CUDA_MPS_ENABLE_PER_CTX_DEVICE_MULTIPROCESSOR_PARTITIONING": null,
+      "CUDA_MPS_PINNED_DEVICE_MEM_LIMIT": null,
+      "CUDA_VISIBLE_DEVICES": null
+    },
+    "physical_device_name": "NVIDIA GeForce RTX 2080 Ti",
+    "allocator": {
+      "requested_limit_gib": 8,
+      "requested_limit_bytes": 8589934592,
+      "applied_fraction": 0.3722113680766959,
+      "device_total_bytes": 23078109184,
+      "scope": "PyTorch caching allocator only; no bandwidth or hardware-capacity equivalence"
+    }
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.15",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false
+  },
+  "coverage": {
+    "measured": {
+      "images": 100,
+      "studies": 53,
+      "patients": 40,
+      "complete_studies_proven": true
+    },
+    "warmup": {
+      "images": 5,
+      "studies": 4,
+      "patients": 4,
+      "complete_studies_proven": true
+    },
+    "selection_sha256": "79aad246fd6486001529be8f9732a56ebe061833afd8401c5e6fd7dcc6b7880b",
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "origin_split": "valid",
+    "hashes_verified": true,
+    "patient_disjoint": true
+  },
+  "inventory": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "round_output": {
+    "path": "round_1.csv",
+    "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+    "image_predictions": "round_1.image_predictions.csv",
+    "image_predictions_sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+    "studies": 53,
+    "study_classes": 10,
+    "image_classes": 10
+  },
+  "status": "completed",
+  "measured_images_completed": 100,
+  "e2e_mean_ms": 138.30055311000365,
+  "e2e_max_ms": 155.61026299997138,
+  "cpu_preprocess_mean_ms": 98.70954722999727,
+  "forward_event_sum_mean_ms": 36.35639298439026,
+  "per_forward_event_mean_ms": [
+    9.24475266456604,
+    9.044434843063355,
+    9.040166740417481,
+    9.027038736343384
+  ],
+  "e2e_p95_ms": 153.6653741499947,
+  "peak_allocated_bytes": 212289536,
+  "peak_reserved_bytes": 249561088,
+  "entries_recorded": 100,
+  "ended_utc": "2026-10-28T18:07:21.202844+00:00",
+  "wall_seconds": 32.64678372900005,
+  "exit_code": 0
+}

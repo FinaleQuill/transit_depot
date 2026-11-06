@@ -1,0 +1,67 @@
+{
+  "schema": "cxr_sprint_deployment_v1",
+  "candidate_weights": "sprint_fp16.pt",
+  "candidate_weights_sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+  "tiny_patch_config": "tiny_patch/config.json",
+  "image_size": 768,
+  "tta": "hflip2",
+  "fixed_classwise_probability_weights": [
+    [
+      0.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "inference_files": [
+    {
+      "path": "sprint_fp16.pt",
+      "bytes": 177397507,
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+    },
+    {
+      "path": "tiny/config.json",
+      "bytes": 5228097,
+      "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+    },
+    {
+      "path": "tiny/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+    },
+    {
+      "path": "tiny_patch/config.json",
+      "bytes": 1743,
+      "sha256": "61b743411f100836c1944bf1cff741787e78755780ca6d788fcba3df2452bb14"
+    },
+    {
+      "path": "tiny_patch/patch_fp16.pt",
+      "bytes": 17277,
+      "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3"
+    }
+  ],
+  "patient_smoothing": false,
+  "selection_sha256": "69b4f10047220c99d57f140e82a4910b293c546832b8921566a4f54328555bf4",
+  "comparison_sha256": "a2a6fa0e2594f290c7fa18e1fdecb2d26f49c3a40dcbd0081fb2d5db3bc3a1d0",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "formal_T4_certification": false,
+  "deployment_accepted": false
+}

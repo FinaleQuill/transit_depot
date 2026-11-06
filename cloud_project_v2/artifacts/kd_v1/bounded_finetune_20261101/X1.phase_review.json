@@ -1,0 +1,22 @@
+{
+  "stage": "X1",
+  "reviewed_hong_kong": "2026-11-01T16:41:05.282446+08:00",
+  "valid_scores": {
+    "A": 0.8091159408519895,
+    "B": 0.8105695698808949,
+    "X1": 0.8057123012655584,
+    "A_B_class1_B_baseline": 0.8168300303208815,
+    "X1_single": 0.8057123012655584,
+    "X1_B_class1_B": 0.8171491901128627
+  },
+  "history_epoch_seconds": [
+    1594.767625289,
+    1399.8881505060003,
+    1239.1244404119998,
+    1233.048244255
+  ],
+  "comparison_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/comparison_after_X1/comparison_report.json",
+  "test_used": false,
+  "decision_basis": "Fixed recipes and final epochs; no extension or new weight search based on intermediate valid.",
+  "limitations": "Reused official valid; paired intervals do not correct historical selection. Final timing and real T4 retest remain pending."
+}

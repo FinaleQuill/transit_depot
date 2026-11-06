@@ -1,0 +1,37 @@
+{
+  "schema_version": 4,
+  "epoch": 5,
+  "checkpoint_sha256": "2c3f88b25e04ea86af20eaf2e41d42db241cb5013657283afa3eabdf54893b4b",
+  "checkpoint_filename": "best.pt",
+  "preprocessing_sha256": "b5df43f465ba88a80830140e735d7d797fc54398c952c0ae1d9c623228d39571",
+  "weights_source": "ema",
+  "inference_precision": "bfloat16",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "thresholds": [
+    0.06606084108352661,
+    0.0818309634923935,
+    0.2133771777153015,
+    0.10196448862552643,
+    0.2568320035934448,
+    0.2523840367794037,
+    0.2193019688129425,
+    0.23350277543067932,
+    0.38331663608551025,
+    0.35870736837387085
+  ],
+  "aggregation": "study_mean_probability",
+  "selection": "complete valid Study metrics; thresholds tuned on same valid",
+  "original_thresholds_file": "/home/featurize/work/runs/016_a4000_tiny_v2/thresholds.json",
+  "original_thresholds_sha256": "9ff807c2109af7ea31876135d3942220a994ad042074719aea4fdffb09da7da1"
+}

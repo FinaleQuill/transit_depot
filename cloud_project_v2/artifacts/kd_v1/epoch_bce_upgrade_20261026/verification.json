@@ -1,0 +1,46 @@
+{
+  "checked_at_hong_kong": "2026-10-27T02:07:17.348331+08:00",
+  "protected_sources_manifests_collection_plan_unchanged": {
+    "train_teacher.py": true,
+    "run_teachers.py": true,
+    "run_mixed_teachers.py": true,
+    "run_mixed_teachers.sh": true,
+    "run_overnight.sh": true,
+    "train_overnight.py": true,
+    "model_overnight.py": true,
+    "dataset.py": true,
+    "dataset_overnight.py": true,
+    "cv_splits.py": true,
+    "kd_common.py": true,
+    "runtime_compat.py": true,
+    "audit_trail.py": true,
+    "planned_handoff.py": true,
+    "teacher_collection.py": true,
+    "distill_data.py": true,
+    "training_evidence_monitor.py": true,
+    "data/clean_v1_reviewed/train_clean.csv": true,
+    "data/clean_v1_reviewed/valid_manifest.csv": true,
+    "data/clean_v1_reviewed/test_manifest.csv": true,
+    "data/cv5_overnight/folds.json": true,
+    "024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json": true,
+    "024_convnext_v1_base768_mixed20_12_cv5/plan.json": true
+  },
+  "output_directories_not_created": {
+    "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_epoch_logits_v2": true,
+    "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2": true,
+    "/home/featurize/work/runs/025_tiny_multires_kd": true,
+    "/home/featurize/work/runs/026_tiny512_bce_seed43": true
+  },
+  "gpu_processes": "",
+  "cpu_test_result": {
+    "tests": 234,
+    "subtests": 127,
+    "passed": true,
+    "junit": "tests.xml"
+  },
+  "real_checkpoints_loaded": 0,
+  "real_model_forwards": 0,
+  "training_started": false,
+  "teacher_gpu_diagnostic_started": false,
+  "oof_generated": false
+}

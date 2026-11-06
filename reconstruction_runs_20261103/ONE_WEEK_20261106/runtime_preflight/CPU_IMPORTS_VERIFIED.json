@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-11-06T18:58:23.893842+08:00",
+  "passed": true,
+  "training": false,
+  "gpu_exposed": false,
+  "python": "3.12.3 (main, Jan  8 2026, 11:30:50) [GCC 13.3.0]",
+  "image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "timm": "1.0.30",
+    "albumentations": "2.0.8",
+    "sklearn": "1.5.2",
+    "numpy": "1.26.4",
+    "safetensors": "0.6.2"
+  },
+  "paths": {
+    "torch": "/usr/local/lib/python3.12/dist-packages/torch/__init__.py",
+    "timm": "/opt/one_week_addons/timm/__init__.py",
+    "albumentations": "/usr/local/lib/python3.12/dist-packages/albumentations/__init__.py",
+    "sklearn": "/usr/local/lib/python3.12/dist-packages/sklearn/__init__.py",
+    "numpy": "/usr/local/lib/python3.12/dist-packages/numpy/__init__.py",
+    "safetensors": "/opt/one_week_addons/safetensors/__init__.py"
+  },
+  "network": "none",
+  "mounted_paths": [
+    "/dev/vda3 /opt/one_week_addons ext4 ro,relatime 0 0",
+    "10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ /home/featurize/work nfs ro,relatime,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152 0 0",
+    "/dev/vda3 /home/featurize/data ext4 ro,relatime 0 0",
+    "/dev/vda3 /home/featurize/data/one_week_20261106/assets ext4 ro,relatime 0 0",
+    "10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/reconstruction_runs_20261103/ONE_WEEK_20261106/runtime_preflight /home/featurize/work/reconstruction_runs_20261103/ONE_WEEK_20261106/runtime_preflight nfs rw,relatime,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152 0 0",
+    "/dev/vda3 /home/featurize/data/one_week_20261106/state/runtime_preflight ext4 rw,relatime 0 0"
+  ]
+}

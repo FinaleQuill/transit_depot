@@ -1,0 +1,149 @@
+{
+  "archive": "/home/featurize/work/cost_data_test.tar",
+  "sha256": "7c88a0f8df4d4a1e79ddb5e6de0165ed8ffd33597530e516676635cda60e6c18",
+  "files": [
+    {
+      "path": "cost_data_test/pictures_100/subject_12068/study_22215/pic_036630.jpg",
+      "sha256": "1b5c484d94e548add64a1382c72a2df0dc3ae7a0f67582a1d705a09e73a71253",
+      "bytes": 941268
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12068/study_22215/pic_036631.jpg",
+      "sha256": "56315c2cd25dabfccc4aee75af34ea30a79b7f9a15f9cd58e55fbb543d38570d",
+      "bytes": 880410
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12068/study_22215/pic_036632.jpg",
+      "sha256": "e5c49cdbc45fd5ea7fd4f02206585ff06fca82f84733aa783d03bfef1061c70d",
+      "bytes": 1070616
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12076/study_22117/pic_036472.jpg",
+      "sha256": "48416a2a8f4e0f8539fa9bc2a4f0b37f6a8b97a9761284b4dfc023e1a3f35c11",
+      "bytes": 808690
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12076/study_22117/pic_036473.jpg",
+      "sha256": "556e14b008184ce0bb35d22f2f3504453c7c83e0ec6ac42ad25507fbe77da69f",
+      "bytes": 625058
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12081/study_21435/pic_035399.jpg",
+      "sha256": "fc648a6e53bfb3096a6684e75c19df6adf808889e40b67f98290ddbd1865d953",
+      "bytes": 2602361
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12081/study_22228/pic_036651.jpg",
+      "sha256": "ea682063a376e0d84454143fa8bbc4ebd13ac9ccf4d43bdfab5dd6d233de69b9",
+      "bytes": 2051123
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12081/study_22228/pic_036652.jpg",
+      "sha256": "088af0d4063fe5143607ec4edc8c73d31d76679b2e7d60ee62c54ee7905d6632",
+      "bytes": 2156628
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12081/study_22228/pic_036653.jpg",
+      "sha256": "d2a733f2f3dd5d3403b90ac093dd6f2ec9c5221cd263c09ba87613e7f1503fb0",
+      "bytes": 3371014
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12112/study_22362/pic_036870.jpg",
+      "sha256": "22f56483d309f060deb2ba47dddc55a0404275d4b22e95e3eec63aee225ccba0",
+      "bytes": 1760794
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12115/study_21035/pic_034780.jpg",
+      "sha256": "4216b20967f153d461b57609226798a87b91db4cc00eb0e62da74ae230edeb1c",
+      "bytes": 1873741
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12118/study_21322/pic_035224.jpg",
+      "sha256": "d749d03809434b34f1ba678432921026fbe54f844a68a66e084c506bb7b13708",
+      "bytes": 1426613
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12118/study_21322/pic_035225.jpg",
+      "sha256": "a0f09a841a464fe6bc0104e1dd89120bf589bd44b0792b020e73f1abae949ec7",
+      "bytes": 2063848
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12141/study_21818/pic_036005.jpg",
+      "sha256": "d5272c4ca51117fc2d660aa1aeb12b632b0eb4af3ee2527e2798667fc25ba0e3",
+      "bytes": 1608728
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12143/study_21092/pic_034865.jpg",
+      "sha256": "7306c9979346463d352e508d0478b3db9bdd2566e59bef9b481c4fe879f80b97",
+      "bytes": 1045841
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12143/study_21092/pic_034866.jpg",
+      "sha256": "6aaea0464c93030947f8750fd5afc2f646d561abae152d1eae31d0c6cff3ef39",
+      "bytes": 1241114
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12143/study_21092/pic_034867.jpg",
+      "sha256": "968ae6e0b053229c0545f1986889780616d7751ec62e721b655ca3bc56a0c2a0",
+      "bytes": 1156789
+    },
+    {
+      "path": "cost_data_test/pictures_100/subject_12146/study_21478/pic_035470.jpg",
+      "sha256": "79a40c9205aab7ebbb1f5969036937bd299696ae56fa9869781e285a542d3a98",
+      "bytes": 1947716
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12061/study_22271/pic_036716.jpg",
+      "sha256": "6779b8781b103fd5678504f8bada37ed53a39f9a7be657e27ca547b4d98bf2be",
+      "bytes": 1923436
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12061/study_22271/pic_036717.jpg",
+      "sha256": "428c16224e6f66d7f4b1cf8e411fd718b6f501e7cd4899e4ced3414f594cfea3",
+      "bytes": 1379305
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12061/study_22271/pic_036718.jpg",
+      "sha256": "ef794ffb4f3c620a6ff9abeb4fb88ed5698d34fee63aca5bd877816361196cdf",
+      "bytes": 1767912
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12067/study_22030/pic_036327.jpg",
+      "sha256": "ecbf93f78fdf61e50e5405fa165e3e640b41c0a4e75cda1879f9127ba36a4f59",
+      "bytes": 1642339
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12081/study_22194/pic_036596.jpg",
+      "sha256": "849795c970b69bb33f369d0efbf218ccb88ab6a87af09d6dcbe6d534c79b904e",
+      "bytes": 1705686
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12081/study_22194/pic_036597.jpg",
+      "sha256": "f7c6b2b3525cced8b4603f791743009af9248512de5a4db250d99d3c990e52c6",
+      "bytes": 1588065
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12084/study_22062/pic_036377.jpg",
+      "sha256": "0dd952ad7cc5e6dcfcb5481f415a540ad96e70446db90d072edc96f4739eca22",
+      "bytes": 2511265
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12171/study_21593/pic_035650.jpg",
+      "sha256": "f3897149aa3ff4930463a115f20f4ca699e4814d87c169dddd4db46a2db58ae3",
+      "bytes": 2091490
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12171/study_21593/pic_035651.jpg",
+      "sha256": "63d1d026d77f888e932dbfd52955cf80fce8938962d06c6ef4bc846baa65abf5",
+      "bytes": 1462356
+    },
+    {
+      "path": "cost_data_test/pictures_5/subject_12171/study_21593/pic_035652.jpg",
+      "sha256": "720983ca0fd660df3b7b74e59c3a5390caf6df742ba1a65952d87bfb1964b6ef",
+      "bytes": 1523921
+    }
+  ],
+  "count": 28,
+  "local_root": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102",
+  "purpose": "Study cost preview only; no training, accuracy selection or test distribution fitting"
+}

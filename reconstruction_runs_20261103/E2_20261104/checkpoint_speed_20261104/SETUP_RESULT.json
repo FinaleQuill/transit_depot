@@ -1,0 +1,11 @@
+{
+  "AI_polling_required": false,
+  "actual_GPU_speedup_measured": false,
+  "background_verification": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/CHECKPOINT_SPEED_BACKGROUND_VERIFIED.json",
+  "formal_CPU_preflight_passed": true,
+  "launch": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_launch.json",
+  "official_CPU_tests_passed": 40,
+  "research_complete": false,
+  "state": "independent_conditional_speedup_scheduled",
+  "updated_at": "2026-11-04T21:31:47.596336+08:00"
+}

@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "time_hong_kong": "2026-10-31T15:42:21.686015+08:00",
+  "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "submission_sha256": "f61321af3102e0a08cf4a4aa618bf1d4ae3e0108232b281402a668b2441dacff",
+  "image_predictions_sha256": "69031dace4e155d8a7ca61e1ea335922293fb2532bb77419a308bae1e0e417f1",
+  "images": 2218,
+  "studies": 1414,
+  "patients": 136,
+  "submission_data_rows": 14140,
+  "image_prediction_data_rows": 22180,
+  "submission_header": [
+    "Subject_id",
+    "Study_id",
+    "Predict_class",
+    "Probability"
+  ],
+  "image_predictions_header": [
+    "Image_id",
+    "Subject_id",
+    "Study_id",
+    "Predict_class",
+    "Probability"
+  ],
+  "all_classes_present_once": true,
+  "all_probabilities_finite_in_0_1": true,
+  "unknown_test_targets_preserved": true,
+  "study_aggregation": {
+    "dtype": "float64",
+    "order": "original_manifest_image_order",
+    "bitwise_identical": true,
+    "mismatched_studies": 0,
+    "max_absolute_error": 0.0
+  },
+  "original_image_integrity": {
+    "checked": 2218,
+    "sha256_matches": 2218,
+    "mismatches": 0,
+    "resolved_image_root": "/tmp/student_candidate_20261031/data/cxr_first"
+  },
+  "audit_source_sha256": "8a7cbf375aa786aed9e2042c312199b34513919c57124df7e201d5f4345b68d7",
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "1.26.4"
+  },
+  "probability_distributions_analyzed": false,
+  "parameters_fitted": false,
+  "test_metric_computed": false,
+  "formal_T4_certification": false
+}

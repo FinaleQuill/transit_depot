@@ -1,0 +1,59 @@
+{
+  "submission": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/submission.csv",
+  "submission_sha256": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+  "studies": 1414,
+  "images": 2218,
+  "data_rows": 14140,
+  "batch_size": 1,
+  "precision": "float16",
+  "tta": "hflip2",
+  "ensemble": true,
+  "member_count": 2,
+  "image_sizes": [
+    768
+  ],
+  "deployment_config_sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+  "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "deployment_inventory": {
+    "files": [
+      {
+        "path": "A/config.json",
+        "bytes": 5228097,
+        "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+      },
+      {
+        "path": "A/student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+      },
+      {
+        "path": "B/config.json",
+        "bytes": 5228541,
+        "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+      },
+      {
+        "path": "B/student_fp16.pt",
+        "bytes": 175261029,
+        "sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+      },
+      {
+        "path": "config.json",
+        "bytes": 3579,
+        "sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d"
+      }
+    ],
+    "total_bytes": 241433757,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "image_predictions": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/submission.image_predictions.csv",
+  "image_predictions_sha256": "68efcf732176eb9678d1ded1f91787eb4a842bee81c5a29cc1695b9d5d28c7e7",
+  "latency_status": "pending_cost_py_T4_measurement",
+  "reproducibility": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  }
+}

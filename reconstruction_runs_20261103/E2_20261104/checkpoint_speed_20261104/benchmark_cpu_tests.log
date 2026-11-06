@@ -1,0 +1,17 @@
+test_any_gradient_or_update_difference_is_rejected (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_any_gradient_or_update_difference_is_rejected) ... ok
+test_baseline_or_non_oom_candidate_failures_raise (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_baseline_or_non_oom_candidate_failures_raise) ... ok
+test_candidate_cuda_oom_is_complete_rejection (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_candidate_cuda_oom_is_complete_rejection) ... ok
+test_checkpointed_maximum_shape_must_also_match (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_checkpointed_maximum_shape_must_also_match) ... ok
+test_deepcopied_adam_restore_preserves_original_checkpoint_payload (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_deepcopied_adam_restore_preserves_original_checkpoint_payload) ... ok
+test_hash_includes_dtype_and_container_type (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_hash_includes_dtype_and_container_type) ... ok
+test_memory_headroom_is_a_hard_gate (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_memory_headroom_is_a_hard_gate) ... ok
+test_nested_state_hash_is_exact_and_layout_independent (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_nested_state_hash_is_exact_and_layout_independent) ... ok
+test_probe_cost_and_five_minute_margin_must_be_recovered (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_probe_cost_and_five_minute_margin_must_be_recovered) ... ok
+test_profitable_exact_candidate_is_accepted (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_profitable_exact_candidate_is_accepted) ... ok
+test_rng_change_is_rejected (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_rng_change_is_rejected) ... ok
+test_small_speedup_is_rejected (reconstruction.test_benchmark_checkpoint_speed.BenchmarkTests.test_small_speedup_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.324s
+
+OK

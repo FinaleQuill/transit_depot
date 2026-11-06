@@ -1,0 +1,309 @@
+{
+  "created_utc": "2026-10-27T12:40:17.398352+00:00",
+  "model_dirs": {
+    "kd512": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+    "kd768": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+    "equal512_768": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2"
+  },
+  "inputs": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs",
+  "output": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1",
+  "percentages": [
+    100,
+    30,
+    20,
+    10
+  ],
+  "memory_allocator_limit_gib": 16,
+  "actual_T4_test": false,
+  "hardware_clock_or_power_changes": false,
+  "executed": true,
+  "limitation": "MPS quotas do not reproduce T4 architecture, bandwidth, kernels or latency",
+  "source_hashes": {
+    "/home/featurize/work/cloud_project_v2/run_resource_stress.py": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+    "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "/home/featurize/work/cloud_project_v2/prepare_latency_inputs.py": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+    "/home/featurize/work/cloud_project_v2/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "/home/featurize/work/cloud_project_v2/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": "fd70c10e83a7fc0daa01782d62d0c941f0b2f06b87e59c0b2af89d9a22395849",
+    "/home/featurize/work/cloud_project_v2/model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0"
+  },
+  "inference_input_hashes": {
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/config.json": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_00_fp16.pt": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_01_fp16.pt": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/config.json": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"
+  },
+  "selection_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+  "cases": [
+    {
+      "candidate": "kd512",
+      "percentage": 100,
+      "visible_sm_count": 128,
+      "mean_ms": 115.51767790010973,
+      "p95_ms": 135.685878705893,
+      "max_ms": 140.19600766672133,
+      "round_mean_ms": [
+        115.62316575931618,
+        115.41131814214168,
+        115.51854979887139
+      ],
+      "actual_inference_bytes": 66995853,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_kd512/local_resource_report.json",
+      "report_sha256": "81a2065ab58dac8c7a7c6726dda4bb2c46721a70c30639f2dca2eae523bdc127"
+    },
+    {
+      "candidate": "kd768",
+      "percentage": 100,
+      "visible_sm_count": 128,
+      "mean_ms": 134.81957294124493,
+      "p95_ms": 153.37625609827228,
+      "max_ms": 156.3367700049033,
+      "round_mean_ms": [
+        134.61938744294457,
+        134.84091516991612,
+        134.99841621087398
+      ],
+      "actual_inference_bytes": 66995857,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_kd768/local_resource_report.json",
+      "report_sha256": "66eab8a64377cd74bb0760f6866a06905759c77d5aa043a444525eaf92185b49"
+    },
+    {
+      "candidate": "equal512_768",
+      "percentage": 100,
+      "visible_sm_count": 128,
+      "mean_ms": 219.51052481696627,
+      "p95_ms": 236.53024403514183,
+      "max_ms": 1243.9856649919723,
+      "round_mean_ms": [
+        248.2654344808543,
+        204.89456836949103,
+        205.37157160055358
+      ],
+      "actual_inference_bytes": 128766258,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_equal512_768/local_resource_report.json",
+      "report_sha256": "1f8c015ff2afd2aefd1a805e0d6d7a4c797b6f873175d0993f641ccafe4a5e78"
+    },
+    {
+      "candidate": "kd512",
+      "percentage": 30,
+      "visible_sm_count": 38,
+      "mean_ms": 118.73032490247475,
+      "p95_ms": 139.31704897307404,
+      "max_ms": 151.74071800235347,
+      "round_mean_ms": [
+        118.58395513962023,
+        119.19546685821842,
+        118.41155270958552
+      ],
+      "actual_inference_bytes": 66995853,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_kd512/local_resource_report.json",
+      "report_sha256": "b12f07c8437b4e62eb1c838fe65159c6d5947d4bfd5c31bac7badd8e6f6d0f36"
+    },
+    {
+      "candidate": "kd768",
+      "percentage": 30,
+      "visible_sm_count": 38,
+      "mean_ms": 140.35174595017452,
+      "p95_ms": 158.61551319637024,
+      "max_ms": 165.34982767188922,
+      "round_mean_ms": [
+        140.03085659991484,
+        140.33336834952934,
+        140.69101290107938
+      ],
+      "actual_inference_bytes": 66995857,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_kd768/local_resource_report.json",
+      "report_sha256": "f2950738bda067e9e069367324b059d5ded02fedebc16e0be79098039606bf50"
+    },
+    {
+      "candidate": "equal512_768",
+      "percentage": 30,
+      "visible_sm_count": 38,
+      "mean_ms": 211.71430876003194,
+      "p95_ms": 241.2087173681357,
+      "max_ms": 249.3290986555318,
+      "round_mean_ms": [
+        211.0721301913145,
+        212.11178653727984,
+        211.95900955150137
+      ],
+      "actual_inference_bytes": 128766258,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_equal512_768/local_resource_report.json",
+      "report_sha256": "889e52026cd3b4014543e491d2423527cbeb5d362c96902a4832ee04fbf0fff8"
+    },
+    {
+      "candidate": "kd512",
+      "percentage": 20,
+      "visible_sm_count": 24,
+      "mean_ms": 118.36461394656607,
+      "p95_ms": 139.3262819556791,
+      "max_ms": 143.08710467109145,
+      "round_mean_ms": [
+        117.9296110017458,
+        118.7681186106056,
+        118.39611222734675
+      ],
+      "actual_inference_bytes": 66995853,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_kd512/local_resource_report.json",
+      "report_sha256": "7aa8c54d8c782856130ba84ff7df8dfbf9aee546d13995e9294749b7bb44ce6b"
+    },
+    {
+      "candidate": "kd768",
+      "percentage": 20,
+      "visible_sm_count": 24,
+      "mean_ms": 145.61122805772658,
+      "p95_ms": 164.2797786834611,
+      "max_ms": 167.74400533176959,
+      "round_mean_ms": [
+        145.3864045109367,
+        145.56997208070243,
+        145.87730758154066
+      ],
+      "actual_inference_bytes": 66995857,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_kd768/local_resource_report.json",
+      "report_sha256": "f7202fdcaa4f7d32d03117a5f66dc1a636d0a7e27d0022f753e17e62e309c50f"
+    },
+    {
+      "candidate": "equal512_768",
+      "percentage": 20,
+      "visible_sm_count": 24,
+      "mean_ms": 218.56411820685022,
+      "p95_ms": 247.09813341857324,
+      "max_ms": 251.48273899685591,
+      "round_mean_ms": [
+        218.0485897802282,
+        219.1543966595782,
+        218.48936818074435
+      ],
+      "actual_inference_bytes": 128766258,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_equal512_768/local_resource_report.json",
+      "report_sha256": "c6ee20352c2c99020f1de9c52db39cfb97a43060f60f056fa68e9dc8169f9035"
+    },
+    {
+      "candidate": "kd512",
+      "percentage": 10,
+      "visible_sm_count": 12,
+      "mean_ms": 175.91934761692156,
+      "p95_ms": 272.0690739248918,
+      "max_ms": 2117.445533988454,
+      "round_mean_ms": [
+        238.81199552910402,
+        126.3394784607226,
+        162.60656886093784
+      ],
+      "actual_inference_bytes": 66995853,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_kd512/local_resource_report.json",
+      "report_sha256": "8acac98f734a5dcd3b8e94da95965885ea380a01a4b424cc16b8194800e334ad"
+    },
+    {
+      "candidate": "kd768",
+      "percentage": 10,
+      "visible_sm_count": 12,
+      "mean_ms": 162.3938622265511,
+      "p95_ms": 180.86891486746026,
+      "max_ms": 183.0162593299368,
+      "round_mean_ms": [
+        162.3490010286332,
+        162.06095349072712,
+        162.77163216029294
+      ],
+      "actual_inference_bytes": 66995857,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_kd768/local_resource_report.json",
+      "report_sha256": "ae49e65887ceb6c04476049503739373540441dc81ef153f3b1289bf38f36a65"
+    },
+    {
+      "candidate": "equal512_768",
+      "percentage": 10,
+      "visible_sm_count": 12,
+      "mean_ms": 243.30631916217192,
+      "p95_ms": 271.63475790875964,
+      "max_ms": 275.8209436627415,
+      "round_mean_ms": [
+        242.878216378449,
+        243.3424407200073,
+        243.69830038805958
+      ],
+      "actual_inference_bytes": 128766258,
+      "comparison": "matched",
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_equal512_768/local_resource_report.json",
+      "report_sha256": "bc811fe9d9b9dca9295c3743340d8d8ed86cabbb221b8916b2fac02606c204e0"
+    }
+  ],
+  "calibration": [
+    {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "sm_count": 128,
+      "requested_thread_percentage": 100,
+      "fp16_gemm_n": 4096,
+      "fp16_gemm_repeats": 30,
+      "fp16_gemm_ms": 25.630720138549805,
+      "fp16_gemm_tflops": 160.86823085234192,
+      "copy_payload_bytes": 268435456,
+      "copy_repeats": 30,
+      "copy_ms": 17.508447647094727,
+      "copy_read_plus_write_gbps": 919.9060753208797,
+      "T4_equivalence_proved": false
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "sm_count": 38,
+      "requested_thread_percentage": 30,
+      "fp16_gemm_n": 4096,
+      "fp16_gemm_repeats": 30,
+      "fp16_gemm_ms": 84.70425415039062,
+      "fp16_gemm_tflops": 48.67723168708151,
+      "copy_payload_bytes": 268435456,
+      "copy_repeats": 30,
+      "copy_ms": 17.457151412963867,
+      "copy_read_plus_write_gbps": 922.6091347319939,
+      "T4_equivalence_proved": false
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "sm_count": 24,
+      "requested_thread_percentage": 20,
+      "fp16_gemm_n": 4096,
+      "fp16_gemm_repeats": 30,
+      "fp16_gemm_ms": 132.3724822998047,
+      "fp16_gemm_tflops": 31.14823060295579,
+      "copy_payload_bytes": 268435456,
+      "copy_repeats": 30,
+      "copy_ms": 17.42848014831543,
+      "copy_read_plus_write_gbps": 924.1269016539436,
+      "T4_equivalence_proved": false
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "sm_count": 12,
+      "requested_thread_percentage": 10,
+      "fp16_gemm_n": 4096,
+      "fp16_gemm_repeats": 30,
+      "fp16_gemm_ms": 263.7752380371094,
+      "fp16_gemm_tflops": 15.631370991616468,
+      "copy_payload_bytes": 268435456,
+      "copy_repeats": 30,
+      "copy_ms": 23.026784896850586,
+      "copy_read_plus_write_gbps": 699.4518527943892,
+      "T4_equivalence_proved": false
+    }
+  ],
+  "controller_start": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

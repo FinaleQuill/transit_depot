@@ -1,0 +1,91 @@
+{
+  "macro_auc": 0.8166770734158482,
+  "per_class_auc": [
+    0.7414670658682635,
+    0.8590451765634247,
+    0.8089470025135035,
+    0.7611734959470514,
+    0.8830878915381019,
+    0.7942243650280829,
+    0.79978683346559,
+    0.7253205824820691,
+    0.9112944651341981,
+    0.8824238556181967
+  ],
+  "class_1_4_8_mean_auc": 0.7426537147657947,
+  "macro_f1_fixed_0_5": 0.47147638600649505,
+  "num_studies": 859,
+  "num_patients": 228,
+  "slices": {
+    "single_image_study": {
+      "num_studies": 391,
+      "per_class_auc": [
+        0.6671985815602837,
+        0.8675901102174561,
+        0.7761648745519714,
+        0.7059092991296382,
+        0.8085115097894651,
+        0.6935442796205513,
+        0.7571665011585568,
+        0.6625380769009713,
+        0.8405574424497277,
+        0.7821097046413502
+      ],
+      "macro_auc": 0.7561290380019972
+    },
+    "multiple_image_study": {
+      "num_studies": 468,
+      "per_class_auc": [
+        0.8109416606148632,
+        0.8581643418122142,
+        0.8211920529801324,
+        0.82497970030265,
+        0.9370414498024706,
+        0.8603805693069306,
+        0.8377832081334662,
+        0.7192347294649086,
+        0.9516547159404302,
+        0.8989533673077976
+      ],
+      "macro_auc": 0.8520325795665864
+    }
+  },
+  "complete": true,
+  "precision": "float16",
+  "image_size": 768,
+  "tta": "hflip2",
+  "member_count": 2,
+  "batch_size": 1,
+  "num_images": 1422,
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "deployment_config_sha256": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+  "predictions_sha256": "680ac4c48654baa1f0fe9df42a90a81ca8fdf0947a29e5e39f2f865a61fe44a9",
+  "image_predictions_sha256": "9762ab6179e6ed1d3aee4f5c2462e96b64998233a4d79a23a3b231796f355cb2",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "thresholds_fitted": false,
+  "test_images_used": false,
+  "formal_T4_certification": false
+}

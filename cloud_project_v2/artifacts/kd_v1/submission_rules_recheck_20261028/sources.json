@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "file": "official_page.html",
+      "url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+      "bytes": 55389,
+      "sha256": "65a9e07b894abeffd106111645eed90c0eeb10c666d3380a7f8c4f1e89c920c5",
+      "fetched_at_utc": "2026-10-27T18:21:52.328837+00:00"
+    },
+    {
+      "file": "rules_20261023.pdf",
+      "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+      "bytes": 544529,
+      "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+      "fetched_at_utc": "2026-10-27T18:21:53.972043+00:00"
+    },
+    {
+      "file": "supplement_20261027.pdf",
+      "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf",
+      "bytes": 220706,
+      "sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+      "fetched_at_utc": "2026-10-27T18:21:54.885534+00:00"
+    }
+  ],
+  "text_extraction": "Web PDF text renderer stored in supplement_web_extraction.txt; no local PDF reader installed or dependencies changed."
+}

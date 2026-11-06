@@ -1,0 +1,4 @@
+Hypothesis: decoding the official manifest JSON target field at the train/valid input boundary will let the fixed 640 checkpoint complete the previously interrupted valid comparison without changing any probabilities.
+Expected effect: report valid metrics should reproduce directly from the same immutable 031 E3 last checkpoint, with no model or preprocessing change; this is a repaired evaluation, not a new result or improvement claim.
+Cost: repeat the complete 1422-image official-valid FP16 inference, fixed 1000 official-train Study gap diagnostic, and identity/hflip2 three-image timing because no predictions were saved before the prior failure.
+Failure criterion: malformed/nonbinary manifest targets, checkpoint or valid/train manifest SHA mismatch, incomplete prediction/metadata/timing/compliance evidence, any test access, or failure to advance only after verified receipts.

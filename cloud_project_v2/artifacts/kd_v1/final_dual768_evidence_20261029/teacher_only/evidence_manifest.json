@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "artifact_type": "kd_training_evidence",
+  "created_at_utc": "2026-10-25T11:39:50.432149+00:00",
+  "source_archives": [
+    {
+      "id": "source_before_patch",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch",
+      "captured_at": "2026-10-25T16:06:17+08:00",
+      "description": "Current disk source archived after fold0 launch, before this audit patch. No claim of pre-launch bytecode attestation."
+    },
+    {
+      "id": "source_after_patch",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch",
+      "captured_at": "2026-10-25T08:24:58.007892+00:00",
+      "description": "Audit/logging-only patch for subsequent processes. Algorithm, seeds, data and training horizon preserved."
+    },
+    {
+      "id": "source_20261025T114605Z_21094c6a",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261025T114605Z_21094c6a",
+      "captured_at": "2026-10-25T11:46:05.529716+00:00",
+      "description": "Source at approved transition controller start"
+    },
+    {
+      "id": "source_20261025T133827Z_c1c4fc8e",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261025T133827Z_c1c4fc8e",
+      "captured_at": "2026-10-25T13:38:27.833480+00:00",
+      "description": "Source at approved transition controller start"
+    },
+    {
+      "id": "source_20261026T051826Z_5864de2d",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261026T051826Z_5864de2d",
+      "captured_at": "2026-10-26T05:18:26.882722+00:00",
+      "description": "Source at approved transition controller start"
+    }
+  ],
+  "source_version_timeline": [
+    {
+      "run_id": "teacher_fold_0",
+      "source_archive_id": "source_before_patch",
+      "applies_to": "already_running",
+      "note": "The already running fold0 retains its in-memory code; its checkpoints are recorded by a separate status observer without a restart."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "source_archive_id": "source_20261025T114605Z_21094c6a",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "source_archive_id": "source_20261025T114605Z_21094c6a",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "source_archive_id": "source_20261025T114605Z_21094c6a",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "source_archive_id": "source_20261025T114605Z_21094c6a",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "source_archive_id": "source_20261025T133827Z_c1c4fc8e",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "source_archive_id": "source_20261025T133827Z_c1c4fc8e",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "source_archive_id": "source_20261025T133827Z_c1c4fc8e",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "source_archive_id": "source_20261025T133827Z_c1c4fc8e",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "applies_to": "future_processes",
+      "note": "Frozen twelve-epoch training after original fold0; full controller log and command receipt retained."
+    }
+  ],
+  "console_logs": [
+    {
+      "id": "recovered",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_recovered_before_attachment.txt",
+      "capture_method": "tmux_rendered_scrollback",
+      "coverage_from_start": "partial",
+      "run_ids": [
+        "teacher_fold_0"
+      ],
+      "note": "Recovered full available terminal scrollback including launch and all logged batch markers of completed epochs. Not byte-exact original stdout."
+    },
+    {
+      "id": "live",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_live.raw.log",
+      "capture_method": "tmux_pipe_stdout_stderr",
+      "coverage_from_start": "partial",
+      "run_ids": [
+        "teacher_fold_0"
+      ],
+      "attached_at": "2026-10-25T16:06:17+08:00"
+    },
+    {
+      "id": "command_20261025T114605Z_21094c6a",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T114605Z_21094c6a.log",
+      "capture_method": "subprocess_stdout_stderr_tee",
+      "coverage_from_start": "invocation_only",
+      "run_ids": [],
+      "original_manifest_coverage_from_start": "complete",
+      "scope_explanation": "Invocation capture; full per-fold coverage is supported separately by the audited first/100-step/final markers and epoch-completion summaries. Failed and resumed attempts both remain in the original logs.",
+      "source_sha256_at_derivation": "77bb279acdc5cd370cf0941677f5f7180c596c39d4b2120bfaf7f9046b321341",
+      "command_receipt": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T114605Z_21094c6a.json"
+    },
+    {
+      "id": "command_20261025T133827Z_c1c4fc8e",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T133827Z_c1c4fc8e.log",
+      "capture_method": "subprocess_stdout_stderr_tee",
+      "coverage_from_start": "invocation_only",
+      "run_ids": [
+        "teacher_fold_1",
+        "teacher_fold_2",
+        "teacher_fold_3"
+      ],
+      "original_manifest_coverage_from_start": "complete",
+      "scope_explanation": "Invocation capture; full per-fold coverage is supported separately by the audited first/100-step/final markers and epoch-completion summaries. Failed and resumed attempts both remain in the original logs.",
+      "source_sha256_at_derivation": "9164acce21adff2bd28b8fecd9b5e3813734a8d48b45ccda0fd0bb0c45a22d80",
+      "command_receipt": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T133827Z_c1c4fc8e.json"
+    },
+    {
+      "id": "command_20261026T051826Z_5864de2d",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261026T051826Z_5864de2d.log",
+      "capture_method": "subprocess_stdout_stderr_tee",
+      "coverage_from_start": "invocation_only",
+      "run_ids": [
+        "teacher_fold_3",
+        "teacher_fold_4"
+      ],
+      "original_manifest_coverage_from_start": "complete",
+      "scope_explanation": "Invocation capture; full per-fold coverage is supported separately by the audited first/100-step/final markers and epoch-completion summaries. Failed and resumed attempts both remain in the original logs.",
+      "source_sha256_at_derivation": "bbf0b328ab0e98241d034eee4ad6c73c17cdb1dd345263d5918aa58e4e320a51",
+      "command_receipt": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261026T051826Z_5864de2d.json"
+    }
+  ],
+  "console_coverage": [
+    {
+      "run_id": "teacher_fold_0",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "recovered",
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "command_20261025T133827Z_c1c4fc8e"
+      ],
+      "coverage_explanation": "For fold1, all 12 epochs have every expected logged first/100-step/final batch marker and an epoch-completion summary across these original controller logs. The frozen controller_scope_audit.json records each marker count and original log SHA. This declares combined logged coverage, not byte-exact reconstruction of stdout or every batch. The failed partial fold3 epoch5 attempt and restarted attempt remain in separate original logs.",
+      "derived_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/controller_scope_audit.json"
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "command_20261025T133827Z_c1c4fc8e"
+      ],
+      "coverage_explanation": "For fold2, all 12 epochs have every expected logged first/100-step/final batch marker and an epoch-completion summary across these original controller logs. The frozen controller_scope_audit.json records each marker count and original log SHA. This declares combined logged coverage, not byte-exact reconstruction of stdout or every batch. The failed partial fold3 epoch5 attempt and restarted attempt remain in separate original logs.",
+      "derived_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/controller_scope_audit.json"
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "command_20261025T133827Z_c1c4fc8e",
+        "command_20261026T051826Z_5864de2d"
+      ],
+      "coverage_explanation": "For fold3, all 12 epochs have every expected logged first/100-step/final batch marker and an epoch-completion summary across these original controller logs. The frozen controller_scope_audit.json records each marker count and original log SHA. This declares combined logged coverage, not byte-exact reconstruction of stdout or every batch. The failed partial fold3 epoch5 attempt and restarted attempt remain in separate original logs.",
+      "derived_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/controller_scope_audit.json"
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "command_20261026T051826Z_5864de2d"
+      ],
+      "coverage_explanation": "For fold4, all 12 epochs have every expected logged first/100-step/final batch marker and an epoch-completion summary across these original controller logs. The frozen controller_scope_audit.json records each marker count and original log SHA. This declares combined logged coverage, not byte-exact reconstruction of stdout or every batch. The failed partial fold3 epoch5 attempt and restarted attempt remain in separate original logs.",
+      "derived_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/controller_scope_audit.json"
+    }
+  ],
+  "runs": [
+    {
+      "id": "teacher_fold_0",
+      "role": "teacher",
+      "fold": 0,
+      "expected_epochs": 20,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/config.json",
+      "source_archive_id": "source_before_patch",
+      "completed_epochs": 20
+    },
+    {
+      "id": "teacher_fold_1",
+      "role": "teacher",
+      "fold": 1,
+      "expected_epochs": 12,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/config.json",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "completed_epochs": 12
+    },
+    {
+      "id": "teacher_fold_2",
+      "role": "teacher",
+      "fold": 2,
+      "expected_epochs": 12,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/config.json",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "completed_epochs": 12
+    },
+    {
+      "id": "teacher_fold_3",
+      "role": "teacher",
+      "fold": 3,
+      "expected_epochs": 12,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/config.json",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "completed_epochs": 12
+    },
+    {
+      "id": "teacher_fold_4",
+      "role": "teacher",
+      "fold": 4,
+      "expected_epochs": 12,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/config.json",
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "completed_epochs": 12
+    }
+  ],
+  "supporting_files": [
+    {
+      "kind": "dependency_lock",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_lock.txt"
+    },
+    {
+      "kind": "environment_record",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_record.json"
+    },
+    {
+      "kind": "organizer_notice",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/user_forwarded_official_notice.txt"
+    },
+    {
+      "kind": "historical_observation",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_status_observation.json"
+    },
+    {
+      "kind": "historical_observation_original",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_original_tool_record.json"
+    },
+    {
+      "kind": "mixed_schedule_plan",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/plan.json"
+    },
+    {
+      "kind": "teacher_collection",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json"
+    },
+    {
+      "kind": "retained_diagnostic_checkpoint_receipt",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_receipt.json"
+    },
+    {
+      "kind": "planned_handoff_notice",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/planned_handoff.json"
+    },
+    {
+      "kind": "official_pdf",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/official_rules.pdf"
+    },
+    {
+      "kind": "official_website",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/official_task.html"
+    },
+    {
+      "kind": "official_qa",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/qa_readable_text.txt"
+    },
+    {
+      "kind": "official_checklist",
+      "path": "/home/featurize/work/cloud_project_v2/docs/OFFICIAL_RULES_CHECKLIST.md"
+    },
+    {
+      "kind": "mixed_schedule_instructions",
+      "path": "/home/featurize/work/cloud_project_v2/docs/KD_V1_MIXED_USAGE.md"
+    },
+    {
+      "kind": "controller_interruption_recovery",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/mixed_teacher_recovery_20261025/recovery_report.json"
+    },
+    {
+      "kind": "detached_controller_launch",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/background_launch_20261025T133827Z.json"
+    },
+    {
+      "kind": "teacher_epoch_diagnostic_comparison",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20/comparison_report.json"
+    },
+    {
+      "kind": "native_controller_receipt",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T114605Z_21094c6a.json"
+    },
+    {
+      "kind": "native_controller_receipt",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T133827Z_c1c4fc8e.json"
+    },
+    {
+      "kind": "native_controller_receipt",
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261026T051826Z_5864de2d.json"
+    },
+    {
+      "kind": "controller_log_scope_audit",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/controller_scope_audit.json"
+    }
+  ],
+  "historical_missing_evidence": [
+    {
+      "blocking": false,
+      "detail": "Epoch1 hash and trainer status commit timestamp recovered from an earlier original read-only tool observation. Exact checkpoint file mtime was not retained by the former code and cannot be recreated; no substitute is claimed to be that file mtime."
+    },
+    {
+      "blocking": false,
+      "detail": "Pre-attachment console output is recovered rendered tmux history, with all expected logged batch markers verified. Raw byte-exact stdout/stderr capture begins at 16:06:17 HKT."
+    },
+    {
+      "blocking": false,
+      "detail": "The command_20261025T133827Z_c1c4fc8e.json controller receipt was not finalized: ended_at, exit_code and console_bytes remain absent/null in the original. Its original log ends with a child RuntimeError. No replacement receipt timestamp or exit code is fabricated. The later command_20261026T051826Z_5864de2d.json is finalized with exit0; original failed/restarted logs and ledger entries are retained."
+    }
+  ],
+  "console_marker_check": [
+    {
+      "fold": 0,
+      "epoch": 1,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 2,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 3,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 4,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 5,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 6,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 7,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 8,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 9,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 10,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 11,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 12,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 13,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 14,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 15,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 16,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 17,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 18,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 19,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 20,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    }
+  ],
+  "verification_scope": "Retention repair only; future checkpoints and final model/CSV/T4 compliance remain pending until produced and independently checked.",
+  "updated_at_utc": "2026-10-26T11:26:24.654176+00:00",
+  "mixed_schedule": {
+    "declared_epochs": {
+      "0": 20,
+      "1": 12,
+      "2": 12,
+      "3": 12,
+      "4": 12
+    },
+    "collection": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+    "original_run_retained_unchanged": true
+  },
+  "derivation": {
+    "created_at_utc": "2026-10-29T19:03:38.535761+00:00",
+    "source_manifest": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/evidence_manifest.json",
+    "source_manifest_sha256": "fbb14da583e325d6b19767e077907645f56f586a3ba1bf208fb23b912e034699",
+    "excluded_run_ids": [
+      "student"
+    ],
+    "exclusion_reason": "Only the five frozen teacher runs belong in this input; the obsolete incomplete 022 student is not a deployed 033 member. The original manifest and all original references are unchanged.",
+    "original_assets_modified": false,
+    "models_loaded": false,
+    "checkpoint_binaries_read": false,
+    "collector_validation_pending": true,
+    "audit_sha256": "c55f22b03bb8f532e4658328da0c5b30c48be91a62194f3fe55dccc1ea274793"
+  }
+}

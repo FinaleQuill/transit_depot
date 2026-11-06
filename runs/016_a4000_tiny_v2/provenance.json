@@ -1,0 +1,148 @@
+{
+  "created": "2026-10-18T22:46:52+08:00",
+  "config": {
+    "output": "/home/featurize/work/runs/016_a4000_tiny_v2",
+    "train_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+    "valid_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+    "raw_root": "/home/featurize/data/cxr_first",
+    "work_root": "/home/featurize/work",
+    "backbone_name": "convnext_tiny.fb_in1k",
+    "image_size": 384,
+    "batch_size": 16,
+    "accumulation_steps": 2,
+    "valid_batch_size": 32,
+    "epochs": 25,
+    "warmup_epochs": 1,
+    "backbone_lr": 5e-05,
+    "head_lr": 0.0005,
+    "min_lr_ratio": 0.01,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "drop_path": 0.05,
+    "gradient_checkpointing": false,
+    "amp_dtype": "auto",
+    "ema_decay": 0.999,
+    "pos_weight_power": 0.0,
+    "pos_weight_cap": 3.0,
+    "num_workers": 4,
+    "prefetch_factor": 1,
+    "worker_timeout": 120.0,
+    "train_eval_every": 0,
+    "grad_clip": 1.0,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "seed": 43,
+    "device": "cuda",
+    "stop_file": null,
+    "resolved_image_root": "/home/featurize/data/cxr_first/cxr_first",
+    "resolved_work_root": "/home/featurize/work"
+  },
+  "preprocessing": {
+    "image_size": 384,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "cache_mode": "RGB",
+    "data_source": "raw_readonly",
+    "eval_transform": "EXIF+RGB+LetterboxLANCZOS+Normalize",
+    "tta": "identity"
+  },
+  "model_config": {
+    "backbone_name": "convnext_tiny.fb_in1k",
+    "drop_rate": 0.1,
+    "drop_path_rate": 0.05,
+    "gradient_checkpointing": false
+  },
+  "train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "code_sha256": {
+    "dataset.py": "9e422e9a4f5b6d7c347a1fc95c7a1f2d972c9f6da0ba62fa71a0247392e27f39",
+    "dataset_highres.py": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f",
+    "dataset_tiny.py": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5",
+    "model_tiny.py": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0",
+    "train_tiny.py": "7d8df5861dbf3f62e13182323874be7ac2a8a5f31646b165d487196d869766b0",
+    "train.py": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+    "inference.py": "bf6d837e91bf2bf834cfdb791be276340dddf9002107b7c2a636c8f337da467a",
+    "runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7"
+  },
+  "training_statistics": {
+    "source_split": "train",
+    "num_images": 30328,
+    "num_studies": 18513,
+    "class_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "positive_studies": [
+      622,
+      900,
+      942,
+      1436,
+      2404,
+      3885,
+      3968,
+      4508,
+      4654,
+      6683
+    ],
+    "negative_studies": [
+      17891,
+      17613,
+      17571,
+      17077,
+      16109,
+      14628,
+      14545,
+      14005,
+      13859,
+      11830
+    ],
+    "positive_prevalence": [
+      0.033598012207637876,
+      0.04861448711716091,
+      0.05088316318262842,
+      0.07756711500027008,
+      0.1298546966996165,
+      0.2098525360557446,
+      0.21433587208988278,
+      0.24350456436017934,
+      0.25139091449251877,
+      0.36098957489331823
+    ],
+    "study_loss_weight_scale": 1.638200183654729,
+    "loss_weight_definition": "num_images / (num_studies * retained_study_views)"
+  },
+  "loss": {
+    "name": "BCEWithLogitsLoss",
+    "pos_weight": null,
+    "sample_weight": "N_images / (N_studies * views_in_this_study)"
+  },
+  "memory_policy": {
+    "amp": "bfloat16",
+    "channels_last": true,
+    "gradient_checkpointing": false,
+    "batch_unit": "image",
+    "batch_size": 16,
+    "accumulation_steps": 2,
+    "ema_device": "cuda",
+    "adamw_fused": true,
+    "image_size": 384
+  },
+  "reproducibility": "seeded; CUDA benchmark/TF32 allowed; not bitwise deterministic",
+  "resume_supported": false
+}

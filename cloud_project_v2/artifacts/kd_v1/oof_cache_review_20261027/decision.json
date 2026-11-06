@@ -1,0 +1,14 @@
+{
+  "reviewed_at_hong_kong": "2026-10-27T13:16:14.736025+08:00",
+  "decision": "Cache accepted; user starts only matched Tiny512 KD seed43 alpha.2 T2 at run027. No cache repeat, teacher replacement, classwise fit or loss change. Keep BCE FP16 candidate.",
+  "cache_npz_sha256": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+  "cache_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+  "all_other_settings_equal_to_BCE": true,
+  "student_run": "../runs/027_tiny512_kd_seed43",
+  "student_directory_created": false,
+  "gpu_processes": "",
+  "new_gpu_or_training_work_started": false,
+  "runtime_sources_and_original_manifests_unchanged": true,
+  "source_git_commit": "5b36a5f05004ca40d2050491fe5c79b07931de16",
+  "final_T4_timing_certified": false
+}

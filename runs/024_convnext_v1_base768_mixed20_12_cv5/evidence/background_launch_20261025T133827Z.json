@@ -1,0 +1,15 @@
+{
+  "launched_at_utc": "2026-10-25T13:38:27.586639+00:00",
+  "command": [
+    "bash",
+    "/home/featurize/work/cloud_project_v2/run_mixed_teachers.sh",
+    "--execute"
+  ],
+  "pid": 146116,
+  "session_id": 146116,
+  "process_group": 146116,
+  "start_new_session": true,
+  "stdin": "DEVNULL",
+  "stdout_stderr": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/controller_background_20261025T133827Z.log",
+  "purpose": "Resume identical frozen20/12/12/12/12 after earlierSIGINT; tmux displays logs only."
+}

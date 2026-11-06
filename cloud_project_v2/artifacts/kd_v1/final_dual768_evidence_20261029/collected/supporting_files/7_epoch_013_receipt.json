@@ -1,0 +1,32 @@
+{
+  "retained_at_utc": "2026-10-25T11:31:00.775451+00:00",
+  "epoch": 13,
+  "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/last.pt",
+  "retained_checkpoint": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_last.pt",
+  "checkpoint_sha256": "571cd8dd2910fb6fe1483f49f48d2d9c1664d792210a74e35f6daa69cbe9eaf7",
+  "checkpoint_saved_at_utc": "2026-10-25T11:21:52.208702+00:00",
+  "source_stat": {
+    "size_bytes": 1402715292,
+    "inode": 2195,
+    "mtime_ns": 1792927312208701494
+  },
+  "method": "same-filesystem hard link to an immutable already-completed checkpoint; original last.pt uses atomic replacement",
+  "checkpoint_bytes_read": 0,
+  "status": {
+    "state": "paused",
+    "completed_epochs": 13,
+    "validated_epochs": 0,
+    "backward_batches": 157677,
+    "optimizer_updates": 9867,
+    "ema_updates": 9867,
+    "amp_skipped_steps": 0,
+    "fold": 0,
+    "training_complete": false,
+    "inference_ready": false,
+    "selection_protocol": "fixed_epoch_final_ema",
+    "last_checkpoint_sha256": "571cd8dd2910fb6fe1483f49f48d2d9c1664d792210a74e35f6daa69cbe9eaf7",
+    "best_checkpoint_sha256": null,
+    "updated_utc": "2026-10-25T11:21:56.866995+00:00"
+  },
+  "purpose": "Official valid diagnostic comparison only; this epoch13 intermediate remains training_complete=false and is not approved for OOF extraction."
+}

@@ -1,0 +1,145 @@
+{
+  "state": "COMPLETED",
+  "controller_pid": 175071,
+  "started_utc": "2026-11-03T05:15:17.926326+00:00",
+  "plan": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/resolution_analysis_plan.json",
+  "plan_sha256": "184b10b38d8475d61f37f08d423e29fe11fe026e4ebd186b5e9cfdf9cbe749a9",
+  "current_job": null,
+  "completed_jobs": [
+    "compare_resolution"
+  ],
+  "completed_metrics": {
+    "compare_resolution": {
+      "report": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/comparisons/resolution/comparison.json",
+      "candidate_macro_auc": {
+        "res640_identity": 0.8016764312589222,
+        "res640_hflip2": 0.8022793195784516,
+        "res768_identity": 0.806489778133014,
+        "res768_hflip2": 0.8072222955518169,
+        "res896_identity": 0.8064851862134171,
+        "res896_hflip2": 0.8072268501782279,
+        "res768_res896_equal_identity": 0.8070099397098345,
+        "res768_res896_equal_hflip2": 0.8076343222621366
+      },
+      "resolution_sensitivity": [
+        {
+          "class_id": 1,
+          "positive_studies": 24,
+          "high_resolution_required_delta": 0.03,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": false,
+          "status": "inconclusive_or_noise",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 2,
+          "positive_studies": 37,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": true,
+          "status": "lower_training_resolution_noninferior_within_margin",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 3,
+          "positive_studies": 46,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": false,
+          "status": "inconclusive_or_noise",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 4,
+          "positive_studies": 68,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": false,
+          "status": "inconclusive_or_noise",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 5,
+          "positive_studies": 115,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": true,
+          "status": "lower_training_resolution_noninferior_within_margin",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 6,
+          "positive_studies": 177,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": false,
+          "status": "inconclusive_or_noise",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 7,
+          "positive_studies": 193,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": true,
+          "status": "lower_training_resolution_noninferior_within_margin",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 8,
+          "positive_studies": 214,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": false,
+          "status": "inconclusive_or_noise",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 9,
+          "positive_studies": 260,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": true,
+          "status": "lower_training_resolution_noninferior_within_margin",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        },
+        {
+          "class_id": 10,
+          "positive_studies": 306,
+          "high_resolution_required_delta": 0.01,
+          "train896_benefit_at_infer768": false,
+          "train640_noninferior_at_infer768_margin_0_01": true,
+          "status": "lower_training_resolution_noninferior_within_margin",
+          "recommended_inference_resolution": "768 (common evaluated deployment); class-specific inference size untested"
+        }
+      ]
+    }
+  },
+  "compliance_records": {
+    "compare_resolution": {
+      "receipt_path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/receipts/compare_resolution.json",
+      "preregistration_sha256": "e51567c5a1640b3daea8c297d133b5a68edfcf8a944da8f46e1ef15d1a1ac1b9",
+      "run_ledger_sha256": null,
+      "receipt_sha256": "ff2aae6f8b03f084a43d8f0160d7efb1a75ffcdb8719a03f920bbdd7ad6f1020"
+    }
+  },
+  "failure_reason": null,
+  "no_test": true,
+  "no_submission": true,
+  "no_declaration_changes": true,
+  "current_preregistration": {
+    "path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/prereg/compare_resolution.txt",
+    "sha256": "e51567c5a1640b3daea8c297d133b5a68edfcf8a944da8f46e1ef15d1a1ac1b9",
+    "observed_mtime_ns": 1793647283010266070
+  },
+  "phase": "all_registered_work_completed",
+  "updated_utc": "2026-11-03T05:18:48.203105+00:00",
+  "current_progress": null,
+  "estimated_finish_utc": null,
+  "estimated_remaining_hours": null,
+  "eta_basis": "Observed training epoch speed plus validation; later steps use conservative plan estimates; not a deadline",
+  "current_arm": null,
+  "current_log": null,
+  "launch_record": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/launches/compare_resolution_1793682919171790025.json",
+  "child_pid": null
+}

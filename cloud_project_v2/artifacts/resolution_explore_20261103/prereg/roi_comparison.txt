@@ -1,0 +1,4 @@
+Hypothesis: the no-shrink, square-padded ROI-trained Tiny contributes complementary local evidence to the matched full-frame 768 Tiny.
+Expected effect: fixed 50:50 probability fusion improves full-valid Macro-AUC by at least 0.004 over the better single member, with AP-only and patient-paired CI reported.
+Cost: official-valid paired patient bootstrap and fixed hflip2/no-TTA single and fusion comparisons; measure 30 three-image Studies across three rounds.
+Failure criterion: fusion gain below 0.004, incomplete member compliance, or image identity/checkpoint SHA mismatch.

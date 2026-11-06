@@ -1,0 +1,75 @@
+{
+  "execute": false,
+  "stage": "compare",
+  "jobs": [
+    {
+      "image_size": 512,
+      "seed": 43,
+      "output": "/home/featurize/work/runs/025_tiny_multires_kd/tiny512_seed43",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "/home/featurize/work/cloud_project_v2/train_distill.py",
+        "--fold-plan",
+        "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+        "--soft-labels",
+        "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+        "--image-root",
+        "/home/featurize/data/cxr_first",
+        "--output",
+        "/home/featurize/work/runs/025_tiny_multires_kd/tiny512_seed43",
+        "--image-size",
+        "512",
+        "--validation-tta",
+        "hflip2",
+        "--seed",
+        "43",
+        "--batch-size",
+        "8",
+        "--accumulation-steps",
+        "4",
+        "--epochs",
+        "25",
+        "--num-workers",
+        "8",
+        "--execute"
+      ]
+    },
+    {
+      "image_size": 768,
+      "seed": 43,
+      "output": "/home/featurize/work/runs/025_tiny_multires_kd/tiny768_seed43",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "/home/featurize/work/cloud_project_v2/train_distill.py",
+        "--fold-plan",
+        "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+        "--soft-labels",
+        "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+        "--image-root",
+        "/home/featurize/data/cxr_first",
+        "--output",
+        "/home/featurize/work/runs/025_tiny_multires_kd/tiny768_seed43",
+        "--image-size",
+        "768",
+        "--validation-tta",
+        "hflip2",
+        "--seed",
+        "43",
+        "--batch-size",
+        "4",
+        "--accumulation-steps",
+        "8",
+        "--epochs",
+        "25",
+        "--num-workers",
+        "8",
+        "--execute"
+      ]
+    }
+  ],
+  "note": "Full-train seed models; these are not student CV folds."
+}
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_distill.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --soft-labels /home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2 --image-root /home/featurize/data/cxr_first --output /home/featurize/work/runs/025_tiny_multires_kd/tiny512_seed43 --image-size 512 --validation-tta hflip2 --seed 43 --batch-size 8 --accumulation-steps 4 --epochs 25 --num-workers 8 --execute
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_distill.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --soft-labels /home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2 --image-root /home/featurize/data/cxr_first --output /home/featurize/work/runs/025_tiny_multires_kd/tiny768_seed43 --image-size 768 --validation-tta hflip2 --seed 43 --batch-size 4 --accumulation-steps 8 --epochs 25 --num-workers 8 --execute

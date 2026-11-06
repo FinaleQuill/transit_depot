@@ -1,0 +1,23 @@
+{
+  "fetched_utc": "2026-10-29T08:52:05.896632+00:00",
+  "sources": [
+    {
+      "file": "official_page.html",
+      "url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+      "bytes": 55389,
+      "sha256": "1d126c4c1ee747675d5163680352b8c1b8fd6d83d4059610185028ddfaae5529"
+    },
+    {
+      "file": "official_rules.pdf",
+      "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+      "bytes": 544529,
+      "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6"
+    },
+    {
+      "file": "official_supplement.pdf",
+      "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261027/b23d6a1f19602da2a9bd4048108175d0.pdf",
+      "bytes": 220706,
+      "sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44"
+    }
+  ]
+}

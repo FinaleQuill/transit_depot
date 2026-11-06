@@ -1,0 +1,44 @@
+{
+  "submission": "/tmp/cloud_student_runs_20261030/041_A_submission_20261030/test_predictions/submission.csv",
+  "submission_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+  "studies": 1414,
+  "images": 2218,
+  "data_rows": 14140,
+  "batch_size": 1,
+  "precision": "float16",
+  "tta": "hflip2",
+  "ensemble": false,
+  "member_count": 1,
+  "image_sizes": [
+    768
+  ],
+  "deployment_config_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "deployment_inventory": {
+    "files": [
+      {
+        "path": "student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+      },
+      {
+        "path": "config.json",
+        "bytes": 11284048,
+        "sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39"
+      }
+    ],
+    "total_bytes": 66996559,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "image_predictions": "/tmp/cloud_student_runs_20261030/041_A_submission_20261030/test_predictions/submission.image_predictions.csv",
+  "image_predictions_sha256": "3cb7e6bd1d936702b3487ec8d06c0f69e4f615ec25823d12f881c07ddb98f82a",
+  "latency_status": "pending_cost_py_T4_measurement",
+  "reproducibility": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "benchmark_pending_at_local_epoch2_boundary": true,
+  "complete_epochs": {
+    "global_control": [
+      {
+        "compute_seconds": 1686.7075683699559,
+        "data_wait_seconds": 2172.793005731044,
+        "epoch": 1,
+        "eval_seconds": 995.6519546939999,
+        "history_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/history.jsonl",
+        "history_sha256_at_observation": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12",
+        "images": 18194,
+        "regions": 18194,
+        "report_sha256": "dc2216ae4be4994006f0b8d188a7f87e2c67caac822dcda38f4a38fb4421ad76",
+        "studies": 11108,
+        "train_seconds": 3860.2703749109996
+      },
+      {
+        "compute_seconds": 1750.2652798750005,
+        "data_wait_seconds": 34.19987174400012,
+        "epoch": 2,
+        "eval_seconds": 329.22579577800025,
+        "history_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/history.jsonl",
+        "history_sha256_at_observation": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12",
+        "images": 18194,
+        "regions": 18194,
+        "report_sha256": "00eab8cc04c3db1ca881581a00e5fe71a83d1968a6f9382ecf79675db176ff6b",
+        "studies": 11108,
+        "train_seconds": 1785.2897351650008
+      },
+      {
+        "compute_seconds": 1582.6050657219603,
+        "data_wait_seconds": 32.735137715040764,
+        "epoch": 3,
+        "eval_seconds": 314.1695848970012,
+        "history_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/history.jsonl",
+        "history_sha256_at_observation": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12",
+        "images": 18194,
+        "regions": 18194,
+        "report_sha256": "e695c204ede8531f51872388f090329bb95349f18f8a01e7619bfbcdf58c82ad",
+        "studies": 11108,
+        "train_seconds": 1616.0800056570006
+      }
+    ],
+    "global_local": [
+      {
+        "compute_seconds": 8054.352417539003,
+        "data_wait_seconds": 32.27622319499824,
+        "epoch": 1,
+        "eval_seconds": 849.4997262220022,
+        "history_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/history.jsonl",
+        "history_sha256_at_observation": "3e3728eccfd1c95f6d53cdb2334b7a1f1a5ac725e1854845be19c6fcd4406224",
+        "images": 18194,
+        "regions": 90970,
+        "report_sha256": "6db38084f4bcf7ff1109554ecb3d399472be62d0994039ee5bca078c0c1fa280",
+        "studies": 11108,
+        "train_seconds": 8087.6563959039995
+      }
+    ]
+  },
+  "local_data_wait_fraction": 0.003990800500790879,
+  "local_vs_global_region_ratio": 5.0,
+  "local_vs_global_training_ratio": 5.0044901041987995,
+  "new_acceleration_adopted": false,
+  "observational_not_randomized_timing": true,
+  "observed_at": "2026-11-04T21:21:37.411606+08:00",
+  "root_cause": "five regions per source image; compute dominated after prior loader fix"
+}

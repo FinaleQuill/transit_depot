@@ -1,0 +1,13 @@
+{
+  "stage": "completed",
+  "updated_hong_kong": "2026-10-31T14:43:13.824422+08:00",
+  "controller_container_pid": 1,
+  "runs": {
+    "A": "/tmp/cloud_student_runs_20261030/039_tiny768_p2_seed44",
+    "B": "/tmp/cloud_student_runs_20261030/040_base768_p2_p3_seed44"
+  },
+  "A_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/REPORT.md",
+  "B_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/B/REPORT.md",
+  "T4_cost_report": "still_pending",
+  "engineering_optimization_performed": false
+}

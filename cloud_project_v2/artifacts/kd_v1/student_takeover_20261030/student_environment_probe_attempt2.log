@@ -1,0 +1,101 @@
+{
+  "time_hong_kong": "2026-10-30T13:10:03.848081+08:00",
+  "python": "3.12.3 (main, Jan  8 2026, 11:30:50) [GCC 13.3.0]",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "timm": "1.0.30",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0",
+    "opencv-python-headless": "4.11.0.86",
+    "albumentations": "2.0.8",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.15.3",
+    "safetensors": "0.8.0"
+  },
+  "modules": {
+    "torch": {
+      "file": "/usr/local/lib/python3.12/dist-packages/torch/__init__.py",
+      "import": "ok"
+    },
+    "torchvision": {
+      "file": "/usr/local/lib/python3.12/dist-packages/torchvision/__init__.py",
+      "import": "ok"
+    },
+    "timm": {
+      "file": "/opt/dual768_addons/timm/__init__.py",
+      "import": "ok"
+    },
+    "numpy": {
+      "file": "/usr/local/lib/python3.12/dist-packages/numpy/__init__.py",
+      "import": "ok"
+    },
+    "PIL": {
+      "file": "/usr/local/lib/python3.12/dist-packages/PIL/__init__.py",
+      "import": "ok"
+    },
+    "cv2": {
+      "file": "/opt/student_training_addons/cv2/__init__.py",
+      "import": "ok"
+    },
+    "albumentations": {
+      "file": "/opt/student_training_addons/albumentations/__init__.py",
+      "import": "ok"
+    },
+    "scipy": {
+      "file": "/opt/student_training_addons/scipy/__init__.py",
+      "import": "ok"
+    },
+    "sklearn": {
+      "file": "/opt/student_training_addons/sklearn/__init__.py",
+      "import": "ok"
+    },
+    "safetensors": {
+      "file": "/opt/dual768_addons/safetensors/__init__.py",
+      "import": "ok"
+    },
+    "train_distill": {
+      "file": "/home/featurize/work/cloud_project_v2/train_distill.py",
+      "import": "ok"
+    },
+    "distill_tta_data": {
+      "file": "/home/featurize/work/cloud_project_v2/distill_tta_data.py",
+      "import": "ok"
+    },
+    "fast_lanczos": {
+      "file": "/home/featurize/work/cloud_project_v2/fast_lanczos.py",
+      "import": "ok"
+    }
+  },
+  "model_constructed": false,
+  "model_forward_executed": false,
+  "training_executed": false,
+  "test_prediction_executed": false,
+  "shared_memory_bytes": 4294967296,
+  "read_only_mounts": {
+    "/home/featurize/work/runs": true,
+    "/home/featurize/work/deliveries": true,
+    "/home/featurize/work/deliveries/038_dual768_optimized_project_20261030": true,
+    "/home/featurize/work/cloud_project_v2/data": true,
+    "/home/featurize/data": true
+  },
+  "cuda": {
+    "build": "12.8",
+    "cudnn": 91002,
+    "device": "NVIDIA GeForce RTX 2080 Ti",
+    "capability": [
+      7,
+      5
+    ],
+    "memory_bytes": 23078109184,
+    "sm_count": 68,
+    "fp16_arithmetic_check": "passed",
+    "recommended_training_dtype": "float16",
+    "hardware_native_bf16": false
+  },
+  "native": {
+    "available": true,
+    "implementation": "avx2",
+    "max_threads": 8
+  }
+}

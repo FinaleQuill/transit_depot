@@ -1,0 +1,60 @@
+["crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6"]
+running build_ext
+building 'native_lanczos._core' extension
+creating /tmp/native-lanczos-build-oqeok66g/native_lanczos
+x86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/usr/include/python3.12 -c native_lanczos/resample.c -o /tmp/native-lanczos-build-oqeok66g/native_lanczos/resample.o -O3 -pthread -fno-fast-math -ffp-contract=off
+x86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 /tmp/native-lanczos-build-oqeok66g/native_lanczos/resample.o -L/usr/lib/x86_64-linux-gnu -o build/lib.linux-x86_64-cpython-312/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -pthread
+copying build/lib.linux-x86_64-cpython-312/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -> native_lanczos
+{
+  "python": "3.12.3 (main, Jan  8 2026, 11:30:50) [GCC 13.3.0]",
+  "core_versions": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0"
+  },
+  "timm": "1.0.30",
+  "cuda_build": "12.8",
+  "native_available": true,
+  "native_implementation": "avx2",
+  "native_threads_max": 8,
+  "native_prepared": true,
+  "model_inference_executed": false,
+  "training_executed": false,
+  "core_packages_replaced": false,
+  "project_local_addons": null
+}
+----------------------------------------------------------------------
+Ran 27 tests in 0.217s
+
+OK
+STAGE restore_export 2026-10-31T15:36:03.127855+08:00
+STAGE full_valid 2026-10-31T15:36:21.050558+08:00
+[ALLOCATOR] requested=8 GiB (8589934592 bytes); applied_fraction=0.372211368077; device_total_bytes=23078109184
+[VALID] 100/1422 images
+[VALID] 200/1422 images
+[VALID] 300/1422 images
+[VALID] 400/1422 images
+[VALID] 500/1422 images
+[VALID] 600/1422 images
+[VALID] 700/1422 images
+[VALID] 800/1422 images
+[VALID] 900/1422 images
+[VALID] 1000/1422 images
+[VALID] 1100/1422 images
+[VALID] 1200/1422 images
+[VALID] 1300/1422 images
+[VALID] 1400/1422 images
+STAGE timing 2026-10-31T15:38:29.902749+08:00
+TIMING_ROUND 1 74.11212670002897
+TIMING_ROUND 2 72.0386805599992
+TIMING_ROUND 3 77.49816113998804
+STAGE test_submission 2026-10-31T15:38:54.055651+08:00
+STAGE independent_audit 2026-10-31T15:42:10.094127+08:00
+{
+  "submission": "/home/featurize/work/deliveries/043_base768_B_submission_20261031/submission.csv",
+  "macro_auc": 0.8105695698808949,
+  "mean_ms": 74.54965613333874,
+  "test_wall_seconds": 195.82341041100017,
+  "audit_pass": true
+}

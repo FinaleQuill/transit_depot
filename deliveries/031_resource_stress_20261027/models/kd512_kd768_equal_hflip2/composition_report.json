@@ -1,0 +1,50 @@
+{
+  "execute": true,
+  "export_directory": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2",
+  "member_count": 2,
+  "image_sizes": [
+    512,
+    768
+  ],
+  "tta": "hflip2",
+  "sources": [
+    {
+      "model_dir": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+      "source_config_sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+      "source_weights": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt",
+      "target_weights": "student_00_fp16.pt",
+      "weights_sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+      "bytes": 55712511
+    },
+    {
+      "model_dir": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+      "source_config_sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "source_weights": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt",
+      "target_weights": "student_01_fp16.pt",
+      "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    }
+  ],
+  "files": [
+    {
+      "path": "student_00_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+    },
+    {
+      "path": "student_01_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+    },
+    {
+      "path": "config.json",
+      "bytes": 17341236,
+      "sha256": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"
+    }
+  ],
+  "total_bytes": 128766258,
+  "limit_bytes": 500000000,
+  "size_pass": true,
+  "latency_status": "pending_T4_measurement",
+  "fp16_validation_status": "pending_same_deployment_validation"
+}

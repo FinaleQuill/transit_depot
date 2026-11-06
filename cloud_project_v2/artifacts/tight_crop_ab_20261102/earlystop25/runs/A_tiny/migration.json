@@ -1,0 +1,18 @@
+{
+  "source_path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+  "source_sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf",
+  "monitor_receipt_path": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/migration/A_tiny_E1_monitor/monitor.json",
+  "monitor_receipt_sha256": "f9c6b967ca1c3baa4e5ca3eefcb621616ddc91b1a1a24966c8024fb23b05b329",
+  "source_epoch": 1,
+  "source_training_epochs": 2,
+  "preserved": [
+    "raw_model_state_dict",
+    "model_state_dict",
+    "optimizer_state_dict",
+    "scaler_state_dict",
+    "rng_state",
+    "progress"
+  ],
+  "optimizer_rng_reset": false,
+  "policy_change": "warmup1 to cosine25 AP-only patience5"
+}

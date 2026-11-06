@@ -1,0 +1,16 @@
+{
+  "state": "paused",
+  "best_macro_auc": 0.7978381126852129,
+  "best_epoch": 0,
+  "completed_epochs": 1,
+  "fixed_budget": true,
+  "epoch_zero_evaluated": true,
+  "experiment_arm": "global_control",
+  "attempted_updates": 348,
+  "optimizer_updates": 348,
+  "skipped_updates": 0,
+  "updated_at": "2026-11-04T16:29:39.743808+08:00",
+  "confirmation_evaluated": false,
+  "official_valid_evaluated": false,
+  "test_accessed": false
+}

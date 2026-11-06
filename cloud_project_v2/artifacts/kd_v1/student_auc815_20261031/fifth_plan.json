@@ -1,0 +1,39 @@
+{
+  "batch": 5,
+  "registered_at_utc": "2026-10-31T07:27:45.532047+00:00",
+  "candidates": {
+    "AB_B75_class1": {
+      "A_class1_weight": 0.25,
+      "B_class1_weight": 0.75,
+      "other_classes_A_B_weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "AB_B100_class1": {
+      "A_class1_weight": 0.0,
+      "B_class1_weight": 1.0,
+      "other_classes_A_B_weights": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "input": "Original frozen A/B FP16 768/hflip2 per-image valid probabilities; fixed linear fusion per image then original Study mean",
+  "reference": "AB_equal",
+  "rationale": "Previously observed A class1 degradation and stronger B class1 motivate explicitly validation-selected class-dependent fixed ensemble",
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "optimization_method": "Two manually selected fixed candidate weights only; no numerical optimizer or expanded search",
+  "test_used": false,
+  "new_training": false,
+  "new_model_inference": false,
+  "bootstrap": {
+    "samples": 1000,
+    "seed": 20261031,
+    "sampling_unit": "patient_with_all_Studies",
+    "reference": "AB_equal"
+  },
+  "interpretation": "Fifth exploratory batch after repeated use of same official valid for epoch, candidate and manual hyperparameter selection; not independent confirmation. Class weights explicitly selected using valid, not a no-fitting/no-validation-selection result. Real combined predictor and latency require separate validation; 80ms not promised. Frozen B submission CSV remains unchanged.",
+  "stop_rule": "Evaluate exactly these two candidates and report; do not expand search even if >=.815"
+}

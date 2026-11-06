@@ -1,0 +1,238 @@
+{
+  "created_at": "2026-10-26T00:48:05.932855+08:00",
+  "scope": "unused_project_code_only",
+  "deleted_files": [
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/cv_splits.py",
+      "bytes": 14950,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/dataset.py",
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/dataset_highres.py",
+      "bytes": 24804,
+      "sha256": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/dataset_overnight.py",
+      "bytes": 13643,
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/dataset_tiny.py",
+      "bytes": 8827,
+      "sha256": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/inference.py",
+      "bytes": 41491,
+      "sha256": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/inference_overnight.py",
+      "bytes": 30402,
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/model.py",
+      "bytes": 17413,
+      "sha256": "d71b07f1abba5aaec08f1d9e572e49674cb38b19cd355c0995327e448cbceb74"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/model_highres.py",
+      "bytes": 15904,
+      "sha256": "f3433953ce63cfacb3b80b538bfa15d116a102a56ec969f4c5162d696e6531a4"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/model_overnight.py",
+      "bytes": 2652,
+      "sha256": "b235cb262875201a7c11d54af15a3c883ef7dfdf6ef0a10aef0fd6348f51eaf9"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/model_tiny.py",
+      "bytes": 2871,
+      "sha256": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/probe_gpu_memory.py",
+      "bytes": 10865,
+      "sha256": "a2db1824dc46449702bccaa4dd3b22ff3653c2aeabb79059bc92cf7ef544e067"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/run_all_folds.py",
+      "bytes": 19897,
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/run_cloud.sh",
+      "bytes": 7480,
+      "sha256": "4f1067d5bf2fa3d8536d26fcf6739c50ddac8fb2f444cfa5c9786ba31490f5f0"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/run_overnight.sh",
+      "bytes": 1999,
+      "sha256": "207d135997b4d4defdd8180915bbef0d69a883461fc1e0ab9e94e81c80909e09"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/runtime_compat.py",
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/train.py",
+      "bytes": 59362,
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/train_highres.py",
+      "bytes": 42047,
+      "sha256": "64ce9ba70cb978e9dbf1959aeacb8e430dc602ab6f4e7b94d6dbe1335bf40ce0"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/train_overnight.py",
+      "bytes": 51361,
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2"
+    },
+    {
+      "path": "artifacts/code_snapshots/kd_v1_20261025_135231/train_tiny.py",
+      "bytes": 51079,
+      "sha256": "a43f7cb74f371b56a015824da39b67da8f6bfa4cf6e4ec219ea6acbb1fa74921"
+    },
+    {
+      "path": "artifacts/upgrade_768/__pycache__/benchmark_loader_768.cpython-311.pyc",
+      "bytes": 5912,
+      "sha256": "b8d13574753a305e72a196249c7daeb8defcf2d69149a7405155bd9c677343f8"
+    },
+    {
+      "path": "artifacts/upgrade_768/before/inference_overnight.py",
+      "bytes": 30203,
+      "sha256": "41439c4064c51a7a4f91d68aa3caeac500674d2893254fe70f24142a9f2ee7e6"
+    },
+    {
+      "path": "artifacts/upgrade_768/before/probe_gpu_memory.py",
+      "bytes": 6171,
+      "sha256": "5c9e47a8a59b90240c1f01d52b5752e6e14796a6ad370db2914adef7fc63f49c"
+    },
+    {
+      "path": "artifacts/upgrade_768/before/run_all_folds.py",
+      "bytes": 19533,
+      "sha256": "628c600c34d7f9e0efdc6d5f93e3164565ee60701822622d0fedf453a769f7c1"
+    },
+    {
+      "path": "artifacts/upgrade_768/before/run_overnight.sh",
+      "bytes": 1344,
+      "sha256": "60eea78aeb2eef5326004e6003a8cd86b48f33d1a360690e2ba780a76308b9d7"
+    },
+    {
+      "path": "artifacts/upgrade_768/benchmark_loader_768.py",
+      "bytes": 3549,
+      "sha256": "92a617cd6af3854c72a505b5c9dde9e252c4958dfb51f015772952e0a913a5c7"
+    },
+    {
+      "path": "dataset_highres.py",
+      "bytes": 24804,
+      "sha256": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f"
+    },
+    {
+      "path": "dataset_tiny.py",
+      "bytes": 8827,
+      "sha256": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5"
+    },
+    {
+      "path": "inference.py",
+      "bytes": 41491,
+      "sha256": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e"
+    },
+    {
+      "path": "inference_overnight.py",
+      "bytes": 30402,
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44"
+    },
+    {
+      "path": "model.py",
+      "bytes": 17413,
+      "sha256": "d71b07f1abba5aaec08f1d9e572e49674cb38b19cd355c0995327e448cbceb74"
+    },
+    {
+      "path": "model_highres.py",
+      "bytes": 15904,
+      "sha256": "f3433953ce63cfacb3b80b538bfa15d116a102a56ec969f4c5162d696e6531a4"
+    },
+    {
+      "path": "model_tiny.py",
+      "bytes": 2871,
+      "sha256": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0"
+    },
+    {
+      "path": "pack_cloud.ps1",
+      "bytes": 7202,
+      "sha256": "3341b280d92100c34b4a3fa3d23c0562bc955e3d4c9f7284b6a99fa9ea6f4691"
+    },
+    {
+      "path": "probe_gpu_memory.py",
+      "bytes": 10865,
+      "sha256": "a2db1824dc46449702bccaa4dd3b22ff3653c2aeabb79059bc92cf7ef544e067"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 1160,
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021"
+    },
+    {
+      "path": "run_all_folds.py",
+      "bytes": 19897,
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c"
+    },
+    {
+      "path": "run_cloud.sh",
+      "bytes": 7480,
+      "sha256": "4f1067d5bf2fa3d8536d26fcf6739c50ddac8fb2f444cfa5c9786ba31490f5f0"
+    },
+    {
+      "path": "tests/test_overnight_inference.py",
+      "bytes": 9001,
+      "sha256": "55d33451b455fcad44109e0d8e7973b4c2f06deac06e75668f6ef168e22c7fd8"
+    },
+    {
+      "path": "tests/test_overnight_resume.py",
+      "bytes": 10253,
+      "sha256": "84d7c844e6baa702cf4ed21250fac86467f122aa1ffa24ad05d4dc96f193dd32"
+    },
+    {
+      "path": "tests/test_overnight_runner.py",
+      "bytes": 9289,
+      "sha256": "a4780fd1fb1fad018539a95963a11c70ad9500ebfc78adcb6498c0c11c260f43"
+    },
+    {
+      "path": "tests/test_tiny_warm_restart.py",
+      "bytes": 12443,
+      "sha256": "35c355840bbf01959acfb9a200591e189edfcda5680e4d45e9199d4a296ea041"
+    },
+    {
+      "path": "train.py",
+      "bytes": 59362,
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad"
+    },
+    {
+      "path": "train_highres.py",
+      "bytes": 42047,
+      "sha256": "64ce9ba70cb978e9dbf1959aeacb8e430dc602ab6f4e7b94d6dbe1335bf40ce0"
+    },
+    {
+      "path": "train_tiny.py",
+      "bytes": 51079,
+      "sha256": "a43f7cb74f371b56a015824da39b67da8f6bfa4cf6e4ec219ea6acbb1fa74921"
+    }
+  ],
+  "retained": [
+    "current runtime dependency modules",
+    "all original data/manifests/fold plans",
+    "all runs and model checkpoints",
+    "all text history",
+    "current training source/evidence archives"
+  ]
+}

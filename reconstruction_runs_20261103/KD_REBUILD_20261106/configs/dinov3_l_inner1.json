@@ -1,0 +1,86 @@
+{
+  "schema": "kd_raw_teacher_stage1_v1",
+  "run_id": "dinov3_l_inner1",
+  "family": "dinov3_l",
+  "inner_fold": 1,
+  "seed": 20261107,
+  "source_manifest": "/home/featurize/data/kd_rebuild_20261106/source_train.csv",
+  "R_manifest": "/home/featurize/data/kd_rebuild_20261106/R.csv",
+  "H_manifest": "/home/featurize/data/kd_rebuild_20261106/H.csv",
+  "train_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_1/train.csv",
+  "oof_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_1/oof.csv",
+  "fold_plan": "/home/featurize/data/kd_rebuild_20261106/plan.json",
+  "image_root": "/home/featurize/data/cxr_first",
+  "pretrained_path": "/home/featurize/data/kd_rebuild_20261106/assets/dinov3_l/model.safetensors",
+  "provenance_path": "/home/featurize/data/kd_rebuild_20261106/assets/dinov3_l/source.json",
+  "pretrained_revision": "30c1109559f65dea34316b0d4842d35c5771fe11",
+  "epochs": 24,
+  "resolution_schedule": [
+    {
+      "through_epoch": 18,
+      "image_size": 512
+    },
+    {
+      "through_epoch": 24,
+      "image_size": 768
+    }
+  ],
+  "oof_image_sizes": [
+    512,
+    768
+  ],
+  "effective_studies": 32,
+  "pack_images": 4,
+  "view_chunk_size": 2,
+  "workers": 4,
+  "backbone_lr": 1e-05,
+  "head_lr": 0.0002,
+  "layer_decay": 0.9,
+  "weight_decay": 0.05,
+  "drop_rate": 0.2,
+  "drop_path": 0.1,
+  "clip_grad": 1.0,
+  "ema_decay": 0.999,
+  "selection_policy": "fixed_final_ema_no_H_selection",
+  "source_sha256": {
+    "teacher_distill_20261106/__init__.py": "32e6909b205bde39ce4556a23fed1186072eb873d29f06bbfe1c98226f86eb07",
+    "teacher_distill_20261106/train.py": "6aa9aba0ad50959f45d3c5f2467df683c2e8b892a6d982bc5a04f5d830ee58ef",
+    "teacher_distill_20261106/model.py": "ab09a71184769005f5ac69bfc548389a5bf2f8e49c9bf9557cc704d6afc65def",
+    "teacher_distill_20261106/data.py": "1bd5432571983baf2a6bbfe699526836ff3efcd14ba3a17bbfb3327223e1ce86",
+    "teacher_distill_20261106/runtime.py": "4dc58a2ced5f5bc2871a15f839e0646cf7aa54b160b6d6bf16d016fefdbf3e38",
+    "breakthrough/train.py": "39124d0eaad8723426a2668340e07563ea83f52de5e0e5afb34cec5409a3eb8f",
+    "breakthrough/model.py": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338",
+    "reconstruction/data.py": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+    "reconstruction/train.py": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+    "reconstruction/model.py": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+    "training_hooks.py": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "training_compliance.py": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
+  },
+  "environment_manifest": "/home/featurize/data/kd_rebuild_20261106/environment/manifest.json",
+  "environment_manifest_sha256": "f212ba9c9bf2b0d23e6e62efca75df8281983805e254d01e2049e588ee1fc42e",
+  "automatic_submission": false,
+  "original_data_policy": "all raw official train, no exclusions",
+  "H_is_independent": false,
+  "H_used_for_early_stopping": false,
+  "output": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/dinov3_l_inner1",
+  "checkpoint_dir": "/home/featurize/data/kd_rebuild_20261106/state/dinov3_l_inner1",
+  "gradient_checkpointing": false,
+  "block_checkpointing": true,
+  "channels_last": false,
+  "execution_probe": {
+    "path": "/home/featurize/data/kd_rebuild_20261106/probes/dinov3_l_768/summary.json",
+    "sha256": "8edcbef03c16b2f87cec5b4e9d5f2ca2d9193d965dfca95384e6188993c2d302",
+    "selected_case": "blocks_chunk2_pack4",
+    "complete_maximum_view_Study": true
+  },
+  "input_sha256": {
+    "source_manifest": "4df97bb5f30ec733e5c78b66a63418c26c53396e5e49fb1f494f70ba11e89d7a",
+    "R_manifest": "898c4096282ba765ed8f5f234200cff31f93ffc6ac5bdaf6970616d2f41b9f6e",
+    "H_manifest": "6f35f5272011e5e5f811d31097004e8176f29e845ad5223c14c7234bc9f81d62",
+    "train_manifest": "f19057b98a1ed3fb44d0231a2c670724308f6fc251b4b1b7ba994f2cdfe3fa24",
+    "oof_manifest": "ccc06d9c6303a89af2f005527b8d6c1120ec9088d5b31a4c95a62884b64131e4",
+    "fold_plan": "0d4086d6f932621550781d1cfcbc88fed41f232fd93e19d9b4c048ca3051a974",
+    "pretrained_path": "45172f209c9583c40538afc26b60a07033e6fcc2e8c30228338e6b2e932e7941",
+    "provenance_path": "c5207274c1bda0ceaf1aee304af04a3db99aa2068e00acd0abcaf51a3e73027d"
+  }
+}

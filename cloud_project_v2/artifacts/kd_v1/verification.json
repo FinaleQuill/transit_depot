@@ -1,0 +1,46 @@
+{
+  "completed_at": "2026-10-25T14:13:12.579023+08:00",
+  "tests": {
+    "tests": 110,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "code_sha256": {
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "train_teacher.py": "042563ca251c8eba5711e14edbbb41d021f6caeae858da65db3a4ac06166c036",
+    "run_teachers.py": "470b34d53b52a296c6364d9f103ed2180b3fe6e821e7490c0740385d81c39b3f",
+    "distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "extract_soft_labels.py": "7e5743df99f9c90cb1ed2e8384beab2436fc64ddc4183b0418e785a411d104e1",
+    "train_distill.py": "6d4064b88c5dbcb83478f6b3db5cd9cde25ac2e30132fc60600bba101e536a2c",
+    "deploy_kd.py": "84e71bdee954b3d5d2d6542af1d9dd76f57676e001af5c96ac548cd4fd096451",
+    "export_student.py": "610b1fbb10c813b05cfff9a4ce52d72c7e6cbfbd21798322f9de6ebe72fa902b",
+    "predict.py": "d4a65092607915b9587aedf5a3c2a0739d935a024178379e93a9f951bd5fcee3",
+    "cost.py": "c6cc3cda7360a17b0b29c8025dffd729377408bb434e03e162b3890679ab73be",
+    "validate_student.py": "a0fd612039a5f2fccfd55c72e4b7b8b47d7623e8bd9b682031cdf00a67e5a633",
+    "package_kd_submission.py": "e0422847ccd839da011a62b60d8d5248ca38f76a6200370633eb5ca9f45edeeb",
+    "preflight_kd.py": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+    "run_overnight.sh": "d51059216cd9df76643d22e87ca6d15221b5c41b56b1fe8d7c95c049e51e82d5",
+    "requirements_kd.txt": "9575a2ccc0484701f4e740c204340e5fc8a28fd4fbc8f6198cd20f01ba36c604",
+    "requirements_inference.txt": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+    "docs/KD_V1_USAGE.md": "c9003a154c006061c406b93fbbed0d16a10f7ec84343f372b25fd02aeaada92e",
+    "docs/COMPETITION_RULES.md": "a1db54bffab855c8e50ce2e4bf3358a5522c3a80664b6204e5b7f39d534eca14",
+    "README.md": "721efe7453ac5ee38ddd66ed2c05436421f3021db94c1363b456d66d844c876b",
+    "WORKLOG.md": "6f24c5b24ee58609b491e3a345004bd4bf45fcdfada69bec94f7f655e1edbb99"
+  },
+  "training_started": false,
+  "model_forwards": 0,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "pretrained_downloads": 0,
+  "deployment_size_status": "parameter_estimate_only_55655636_bytes",
+  "latency_status": "pending_actual_T4_measurement",
+  "student_fp16_auc_status": "pending_training_and_validation",
+  "instructions": "docs/KD_V1_USAGE.md",
+  "test_summary": {
+    "pytest_tests_passed": 101,
+    "subtests_passed": 9,
+    "junit_cases": 110
+  }
+}

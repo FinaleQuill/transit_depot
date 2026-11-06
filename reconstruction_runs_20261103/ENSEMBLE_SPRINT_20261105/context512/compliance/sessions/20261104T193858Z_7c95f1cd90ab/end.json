@@ -1,0 +1,21 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "completed_epochs": 4,
+    "state": "completed",
+    "updated_at": "2026-11-05T05:24:10.922622+08:00",
+    "validation_evaluated": false,
+    "weights": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/context512/final_fp16.pt",
+    "weights_sha256": "967a1daa5e7e54e5b87a9a80dd667d284f2a6bef31943f71b0c842cf428c2e33"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "b04d1521691b3e4212648c2f25f50a5bccf0bbe19e10c327dfe553d75afd9c20",
+  "record_sha256": "ab4842fbd0c13ad3903d1874a4f0fb57d697a89f02a35f863ba0fb8b1957fe71",
+  "recorded_at_hong_kong": "2026-11-05T05:24:11.048715+08:00",
+  "recorded_at_utc": "2026-11-04T21:24:11.048715+00:00",
+  "run_dir": "/home/featurize/data/cxr_ensemble_sprint_20261105/context512",
+  "session_id": "20261104T193858Z_7c95f1cd90ab",
+  "state": "completed",
+  "trainer": "ensemble_sprint.train"
+}

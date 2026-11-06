@@ -1,0 +1,5 @@
+{
+  "pid": 32284,
+  "command": "watch_tight_crop_ab_progress.py --watch",
+  "interval_seconds": 60
+}

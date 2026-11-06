@@ -1,0 +1,113 @@
+{
+  "created_at": "2026-11-04T17:39:10.368393+08:00",
+  "learning_rate_schedule": "original six-epoch schedule, not compressed",
+  "original_evidence_rewritten": false,
+  "policy_binding": {
+    "path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/patience3.json",
+    "policy": {
+      "applies_to_arms": [
+        "global_control",
+        "global_local"
+      ],
+      "baseline_epoch": 0,
+      "max_epochs": 6,
+      "metric": "macro_auc",
+      "min_delta": 0.0001,
+      "mode": "max",
+      "patience": 3,
+      "policy_id": "e2_patience3_20261104",
+      "schema": "cxr_e2_early_stopping_v1"
+    },
+    "sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b"
+  },
+  "request": {
+    "AI_goal_created": false,
+    "authorized_queue": [
+      "global_control",
+      "global_local",
+      "paired_comparison"
+    ],
+    "boundary_epoch": 3,
+    "created_at": "2026-11-04T17:29:48.800105+08:00",
+    "original_plan_sha256": "8f3d01bf5dc13588b372fb0195f18d31ce385ef5dfd5477a7a6ab3cbaeafd820",
+    "performance_plan_sha256": "5635853b41428d473f34116ca4d766982790c7df018d6c9d6f36a85e0db10a95",
+    "policy_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/patience3.json",
+    "policy_sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+    "previous_controller_pid": 36434,
+    "reason": "Explicit user time budget: patience3, max6, prior epochs count",
+    "requested_stop_sha256": "91e8b4f234fdff0cb32af217768de964530c2f1ac3000f49eed0a41ad2fe2301",
+    "source_sha256": {
+      "/home/featurize/work/cxr_research_20261103/reconstruction/controller_earlystop.py": "7624b39a8dd2a1eca4a52799f9013fad61c04f14ffaca8c10d9c045794d4406c",
+      "/home/featurize/work/cxr_research_20261103/reconstruction/early_stop_policy.py": "01124f33a853300257f85a4fb6135f20f6c33bdc1e87042a9d4df13fd1ef969a",
+      "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_earlystop.py": "6b7686330f972e447527c477ba7c5a203e9f9ce485903961f1397fde3ad234e5"
+    }
+  },
+  "schema": "cxr_e2_early_stopping_amendment_v1",
+  "scientific_budget_changed": true,
+  "selection_caveat": "User time-budget amendment during global epoch 3 after seeing epochs 1/2; exploratory",
+  "snapshot_sha256": {
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/controller_PROGRESS.md": "d7a155833e94e3b9b9365bb0573fdc42778e7bbc84a5cc506cdc7bb8f153200e",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/controller_STATUS.json": "5b030b0a21fe56aee741273ebed18160d36d3686ceec3cd3f3e8c0dc18f3a679",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/controller_STOP": "91e8b4f234fdff0cb32af217768de964530c2f1ac3000f49eed0a41ad2fe2301",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/controller_frozen_plan.json": "8f3d01bf5dc13588b372fb0195f18d31ce385ef5dfd5477a7a6ab3cbaeafd820",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/controller_performance_plan.json": "5635853b41428d473f34116ca4d766982790c7df018d6c9d6f36a85e0db10a95",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/global_control_STOP": "b351efaf64ae1e101d5074284f6048a5dac8ffd1ba6c61cbbd40bcc50188c451",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/global_control_compliance_events.jsonl": "78ba32fbee5c71fa5ba7650110a206c224821132a8afb1ea57b8280ea0649f3b",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/global_control_configuration.json": "a520977ed73d9c34812d54fadffa68db4466c70eb15cd5012be5fa0c7fcfbd7f",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/global_control_history.jsonl": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/global_control_status.json": "d3e17af5d4589eacd5a0fc477c5741940521dc58c3ca997d62faa438a8e99964",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/policy.json": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/source_controller_earlystop.py": "7624b39a8dd2a1eca4a52799f9013fad61c04f14ffaca8c10d9c045794d4406c",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/source_early_stop_policy.py": "01124f33a853300257f85a4fb6135f20f6c33bdc1e87042a9d4df13fd1ef969a",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/early_stopping_transition/source_train_local_earlystop.py": "6b7686330f972e447527c477ba7c5a203e9f9ce485903961f1397fde3ad234e5"
+  },
+  "source_sha256": {
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller_earlystop.py": "7624b39a8dd2a1eca4a52799f9013fad61c04f14ffaca8c10d9c045794d4406c",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/early_stop_policy.py": "01124f33a853300257f85a4fb6135f20f6c33bdc1e87042a9d4df13fd1ef969a",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_earlystop.py": "6b7686330f972e447527c477ba7c5a203e9f9ce485903961f1397fde3ad234e5"
+  },
+  "transition_arms": {
+    "global_control": {
+      "adopt_completed_boundary": true,
+      "epochs": 3,
+      "existing": true,
+      "ledger_sha256": "78ba32fbee5c71fa5ba7650110a206c224821132a8afb1ea57b8280ea0649f3b",
+      "prefix_files": {
+        "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/compliance/events.jsonl": {
+          "bytes": 18051,
+          "sha256": "78ba32fbee5c71fa5ba7650110a206c224821132a8afb1ea57b8280ea0649f3b"
+        },
+        "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/history.jsonl": {
+          "bytes": 1441,
+          "sha256": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12"
+        }
+      },
+      "session_ids": [
+        "20261104T065122Z_7fb22b3e6c12",
+        "20261104T083028Z_b672e9b496e9"
+      ],
+      "stop_sha256": "b351efaf64ae1e101d5074284f6048a5dac8ffd1ba6c61cbbd40bcc50188c451",
+      "verified_before_amendment": {
+        "baseline_macro_auc": 0.7978381126852129,
+        "best_epoch": 0,
+        "best_macro_auc": 0.7978381126852129,
+        "checkpoint_sha256": {
+          "best.pt": "340fee258304346ce3e50679118148e65a06e6c4c131b515497143927ff6eee0",
+          "last.pt": "2dbcee7ee741898496457f4d45f4a27c3496cff01f7a8447d3b9a488a2d538d2"
+        },
+        "epochs": 3,
+        "history_sha256": "66405807d741e1777d694ef443d4679b0bd67d7e1f0eb9466ebf37ef95034a12",
+        "ledger_sha256": "78ba32fbee5c71fa5ba7650110a206c224821132a8afb1ea57b8280ea0649f3b",
+        "name": "global_control",
+        "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/epoch_00/predictions.npz",
+        "state": "paused",
+        "verified_at": "2026-11-04T17:39:10.252360+08:00"
+      }
+    },
+    "global_local": {
+      "existing": false,
+      "prefix_files": {},
+      "session_ids": []
+    }
+  }
+}

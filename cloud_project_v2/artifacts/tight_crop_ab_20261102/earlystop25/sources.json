@@ -1,0 +1,11 @@
+{
+  "registered_utc": "2026-11-01T19:46:14.627744+00:00",
+  "git_head": "cf194c85178b89655bf4984d4066ee0155ca8725",
+  "original_receipt": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/pipeline_sources.json",
+  "sha256": {
+    "docs/TIGHT_CROP_AB_EARLYSTOP_PLAN_20261102.json": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+    "tight_crop_ab_earlystop_training.py": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2",
+    "tight_crop_ab_earlystop_evaluate.py": "2e20c54d3e6af0615e879e56a05c67b946582c949b7d293ce3397722bbfe3ffe",
+    "run_tight_crop_ab_earlystop_pipeline.py": "cc04904ed67d6f61e85fb9d42db825f8e3eefc739a9e6e1afbd46c1ef777a4f7"
+  }
+}

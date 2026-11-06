@@ -1,0 +1,40 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting albucore==0.0.24
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0a/e2/91f145e1f32428e9e1f21f46a7022ffe63d11f549ee55c3b9265ff5207fc/albucore-0.0.24-py3-none-any.whl (15 kB)
+Collecting albumentations==2.0.8
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8e/64/013409c451a44b61310fb757af4527f3de57fc98a00f40448de28b864290/albumentations-2.0.8-py3-none-any.whl (369 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 369.4/369.4 kB 1.8 MB/s eta 0:00:00
+Collecting annotated-types==0.8.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Collecting opencv-python-headless==4.11.0.86
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/dd/5c/c139a7876099916879609372bfa513b7f1257f7f1a908b0bdc1c2328241b/opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 35.9 MB/s eta 0:00:00
+Collecting pydantic==2.14.1
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/35/ea/a56b9fe5066f3537b7882f77e9c5dfb26d8c2eefdaed9b5fc73d57b4dc22/pydantic-2.14.1-py3-none-any.whl (488 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 488.1/488.1 kB 44.5 MB/s eta 0:00:00
+Collecting pydantic_core==2.50.1
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/90/24/48cd98388e4ac2c08d0800af36d15413db15e20387f1038123a2c86cb2f6/pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 68.6 MB/s eta 0:00:00
+Collecting scikit-learn==1.6.1
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/29/7a/8bce8968883e9465de20be15542f4c7e221952441727c4dad24d534c6d99/scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 83.8 MB/s eta 0:00:00
+Collecting scipy==1.15.3
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0b/1f/03f52c282437a168ee2c7c14a1a0d0781a9a4a8962d84ac05c06b4c5b555/scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 53.3 MB/s eta 0:00:00
+Collecting simsimd==6.5.16
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3c/28/7ae846998728326759eab771afd83ad721b6c10e9cef7da2b5ca9bdd4a7b/simsimd-6.5.16-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (583 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 583.5/583.5 kB 40.8 MB/s eta 0:00:00
+Collecting socksio==1.0.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/37/c3/6eeb6034408dac0fa653d126c9204ade96b819c936e136c5e8a6897eee9c/socksio-1.0.0-py3-none-any.whl (12 kB)
+Collecting stringzilla==5.3.1
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c3/8e/38753eb857255afcf0616c0d1ce5d732e47dbd4dec49b81d26b306b17b95/stringzilla-5.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 2.0 MB/s eta 0:00:00
+Collecting typing-inspection==0.4.4
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Collecting joblib==1.6.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/18/53/84099323c2ec4be98d935f63c033ac4151ee83836ca1050ede3b3aadf155/joblib-1.6.0-py3-none-any.whl (306 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 28.4 MB/s eta 0:00:00
+Collecting threadpoolctl==3.7.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/43/3f/f88a53f60a472b46f4023f56d204dd7de33d34c5d2acbfa0d70a674e639e/threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Installing collected packages: simsimd, typing-inspection, threadpoolctl, stringzilla, socksio, scipy, scikit-learn, pydantic_core, pydantic, opencv-python-headless, joblib, annotated-types, albumentations, albucore
+Successfully installed albucore-0.0.24 albumentations-2.0.8 annotated-types-0.8.0 joblib-1.6.0 opencv-python-headless-4.11.0.86 pydantic-2.14.1 pydantic_core-2.50.1 scikit-learn-1.6.1 scipy-1.15.3 simsimd-6.5.16 socksio-1.0.0 stringzilla-5.3.1 threadpoolctl-3.7.0 typing-inspection-0.4.4

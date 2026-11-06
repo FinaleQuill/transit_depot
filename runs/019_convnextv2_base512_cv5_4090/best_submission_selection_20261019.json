@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-19T08:28:59+08:00",
+  "selection_metric": "official validation Study-level macro AUC; 859 held-out studies",
+  "internal_fold_auc_used_for_comparison": false,
+  "test_used_for_selection": false,
+  "selected": {
+    "run": "016_a4000_tiny_v2",
+    "model": "ConvNeXt-Tiny epoch5 EMA",
+    "official_valid_macro_auc": 0.7999705530021188,
+    "source_submission": "/home/featurize/work/deliveries/016_a4000_tiny_v2_final/submission.csv",
+    "source_provenance": "/home/featurize/work/deliveries/016_a4000_tiny_v2_final/provenance.json"
+  },
+  "compared_candidates": [
+    {
+      "run": "016_a4000_tiny_v2",
+      "model": "ConvNeXt-Tiny epoch5 EMA",
+      "official_valid_macro_auc": 0.7999705530021188,
+      "source_submission": "/home/featurize/work/deliveries/016_a4000_tiny_v2_final/submission.csv",
+      "source_provenance": "/home/featurize/work/deliveries/016_a4000_tiny_v2_final/provenance.json"
+    },
+    {
+      "run": "019_convnextv2_base512_cv5_4090",
+      "model": "ConvNeXt V2-Base 5-fold EMA, 384/512 + horizontal flip TTA",
+      "official_valid_macro_auc": 0.7934358232306844,
+      "source_submission": null,
+      "source_validation_metrics": "/home/featurize/work/deliveries/019_convnextv2_base512_cv5_4090/valid_metrics.json",
+      "test_inference_cancelled": true
+    }
+  ],
+  "formal_submission": "/home/featurize/work/deliveries/best_auc_20261019/submission.csv",
+  "submission_sha256": "c985cf8736ebb342af6c8662acbbb277042fa8ef779524b18751220333969650",
+  "source_provenance_sha256": "637863c859c9763adf04276067eaa4308da3cda3d6eb1e7f9de152dd480ea1ba",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "sample_submission_sha256": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe",
+  "submission_gate_included": false,
+  "submission_default_gate": 0.5,
+  "training_stopped": true,
+  "stop_method": "STOP_file at complete epoch boundary",
+  "final_completed_epochs": {
+    "0": 5,
+    "1": 4,
+    "2": 4,
+    "3": 4,
+    "4": 4
+  },
+  "test_inference_cancelled_after_lower_valid_auc": true,
+  "platform_upload_performed": false
+}

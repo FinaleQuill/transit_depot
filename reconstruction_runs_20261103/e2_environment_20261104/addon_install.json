@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-11-04T14:21:10.611234+08:00",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--network=bridge",
+    "--user",
+    "1000:1000",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/assets/e2_runtime_addons_20261104:/addons:rw",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--entrypoint",
+    "python3",
+    "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "-u",
+    "-c",
+    "import importlib.metadata,json,subprocess,sys\npackages=['timm==1.0.30','safetensors==0.8.0','huggingface-hub==0.34.4']\nprint('BASE REQUIREMENT VERSIONS',json.dumps({k:importlib.metadata.version(k) for k in ['packaging','PyYAML','requests','tqdm','filelock','fsspec','typing_extensions']}),flush=True)\nsubprocess.run([sys.executable,'-m','pip','download','--no-deps','--only-binary=:all:','--disable-pip-version-check','--dest','/addons/wheels',*packages],check=True)\nsubprocess.run([sys.executable,'-m','pip','install','--no-index','--no-deps','--no-compile','--disable-pip-version-check','--target','/addons/site','--find-links','/addons/wheels',*packages],check=True)\n"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/importlib/metadata/__init__.py\", line 397, in from_name\n    return next(cls.discover(name=name))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nStopIteration\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n  File \"/usr/lib/python3.12/importlib/metadata/__init__.py\", line 889, in version\n    return distribution(distribution_name).version\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/importlib/metadata/__init__.py\", line 862, in distribution\n    return Distribution.from_name(distribution_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/importlib/metadata/__init__.py\", line 399, in from_name\n    raise PackageNotFoundError(name)\nimportlib.metadata.PackageNotFoundError: No package metadata was found for tqdm\n",
+  "purpose": "download and install only generic Python inference/training support packages",
+  "training_executed": false
+}

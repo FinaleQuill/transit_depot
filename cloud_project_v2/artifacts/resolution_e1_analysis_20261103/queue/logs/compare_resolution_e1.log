@@ -1,0 +1,13 @@
+{
+  "output": "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/comparison",
+  "candidate_auc": {
+    "res640_identity": 0.8020021670028331,
+    "res640_hflip2": 0.8032442902157385,
+    "res768_identity": 0.8067062219224473,
+    "res768_hflip2": 0.8075562450481115,
+    "res896_identity": 0.806931872348357,
+    "res896_hflip2": 0.8078905042160056,
+    "res768_res896_equal_identity": 0.8072398733957978,
+    "res768_res896_equal_hflip2": 0.8081865616291346
+  }
+}

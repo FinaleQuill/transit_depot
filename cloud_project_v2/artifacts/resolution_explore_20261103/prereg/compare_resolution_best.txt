@@ -1,0 +1,4 @@
+Hypothesis: paired patient resampling of valid-selected best EMAs provides secondary resolution, ROI, MIL and fixed-pair evidence alongside the fixed-E3 primary comparisons.
+Expected effect: include unchanged champion041 as a protocol-matched anchor and all candidates versus it; provide class-wise AUC deltas and paired 95% intervals for 640/896/ROI/MIL versus 768 and fixed 50:50 768+896 and 768+ROI fusions; these are conditional on valid-based checkpoint selection.
+Cost: CPU 2000-resample patient bootstrap over saved official-valid predictions and identity/hflip2 timing for both fixed pairs over 30 three-image Studies times three rounds; no training or test inference.
+Failure criterion: different valid identities, missing class-wise paired intervals or timing, fitted fusion coefficients, incomplete evaluation receipts, or any test access.

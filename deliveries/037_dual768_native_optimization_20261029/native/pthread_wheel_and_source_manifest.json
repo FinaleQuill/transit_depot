@@ -1,0 +1,33 @@
+{
+  "wheel": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/native/wheel/cloud_native_lanczos-1.0.0-cp312-cp312-linux_x86_64.whl",
+  "wheel_sha256": "8115489b459b1a0366067ceae885a1d7e1b936c548d6afbcfd653a0a18ac21de",
+  "wheel_bytes": 28117,
+  "wheel_contents": [
+    "fast_lanczos.py",
+    "native_lanczos/README.md",
+    "native_lanczos/__init__.py",
+    "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+    "native_lanczos/setup.py",
+    "native_lanczos/upstream/LICENSE",
+    "native_lanczos/upstream/PROVENANCE.json",
+    "cloud_native_lanczos-1.0.0.dist-info/METADATA",
+    "cloud_native_lanczos-1.0.0.dist-info/WHEEL",
+    "cloud_native_lanczos-1.0.0.dist-info/top_level.txt",
+    "cloud_native_lanczos-1.0.0.dist-info/RECORD"
+  ],
+  "snapshot_sha256": {
+    "fast_lanczos.py": "b822931d891aa72edd3b22d8363918ec18a1f1870804aeb3bc147e002e8c9fb6",
+    "native_lanczos/README.md": "49074aa344d02b0b2fe60f6b1bdca9acd93d1637d8ceb64fffbf5be53d866468",
+    "native_lanczos/setup.py": "a0b5672f2aacebcb09d89ce3ff71cd823997c4ec8efbb170ad17a42b95a79f07",
+    "native_lanczos/resample.c": "182a819afb16f719593a2ca49abc2cc2453e7fe5a3c0e87d68b7c44b87b70dd7",
+    "native_lanczos/.gitignore": "8f3a41303f7da319e1d437b69130aeea5a894013f93d502c8b9b12fabcac13c7",
+    "native_lanczos/_core.cpython-312-x86_64-linux-gnu.so": "47fa0e5db243777d59f3bf9d2d04f48ec546afa96320009f0da914ed1110f4f8",
+    "native_lanczos/__init__.py": "18a083aec5668338b823deeb26758f44cb09b4b0f17de8278eadeaddf1a16729",
+    "native_lanczos/upstream/LICENSE": "cf234c27a3f275f5a050f4df3946f8855704226fe4e7ca8b33928cbcecbced37",
+    "native_lanczos/upstream/PROVENANCE.json": "dbba2e6e6d65ba676c1ac4a727f68008207c9f53a3e9012e0a5bbb14624d787a",
+    "native_lanczos/upstream/Resample.c": "150216c594b1adbaee8fc4757f13ccc8b5829cfa032d00a784221ce9f3cf5aea",
+    "native_lanczos/upstream/Imaging.h": "2623c2fddf516d402e9bbca7a26512238feaaef4ff73328269b25204efb98dbf"
+  },
+  "no_global_install": true,
+  "no_gpu_work": true
+}

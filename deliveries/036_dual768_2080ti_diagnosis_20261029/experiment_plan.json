@@ -1,0 +1,16 @@
+{
+  "source_root": "/home/featurize/work/cloud_project_v2",
+  "model_dir": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+  "nfs_bundle": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle",
+  "local_bundle": "/tmp/dual768_2080ti_diagnosis",
+  "protocol": {
+    "count": 100,
+    "warmup": 5,
+    "rounds": 3,
+    "seed": 43,
+    "allocator_gib": 8,
+    "batch": 1,
+    "serial": true
+  },
+  "gpu_current_before_timing": "NVIDIA GeForce RTX 2080 Ti, 1 MiB, 0 %\n"
+}

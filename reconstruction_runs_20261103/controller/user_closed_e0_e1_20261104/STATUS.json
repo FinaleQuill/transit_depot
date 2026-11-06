@@ -1,0 +1,115 @@
+{
+  "E0": {
+    "best_epoch": 8,
+    "best_macro_auc": 0.7978396535270589,
+    "epochs": 14,
+    "history_sha256": "3c9d610ace809f9dbe290c8c2ff62d9326ad7d04075bd9be3c99146c8e87e1d8",
+    "ledger_sha256": "f3e91de9abdd8d506753edebe8c4897f1de9e32ccaf063474b90742e8e1e633e",
+    "name": "E0",
+    "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/predictions.npz",
+    "prediction_sha256": "8e48a469622833e7514b728e0e2e7f3a8fdf8ae2c675e5a77f7fe37b6150d1c5",
+    "report_sha256": "9e9be227a709f21134416eed6ebe8a83bafc06517fbfc7659485e1828392a2a6",
+    "state": "early_stopped",
+    "verified_at": "2026-11-04T14:09:04.732184+08:00"
+  },
+  "E1": {
+    "best_checkpoint_sha256": "bc1e37e1abcffe9b7bd17331337dfe01fa23f4544c4323fe541dbffbfea9bd2c",
+    "best_epoch": 7,
+    "best_macro_auc": 0.7992390384597867,
+    "completed_epochs": 12,
+    "history_sha256": "bf5166650d1a3ded2dac5977dc5503a00f58f93560797f9fd4a39cf07e686b61",
+    "ledger_sha256": "7e1f6846b4ed88dbff737f6206d46ab8422becbc2d251caa43dc07cb6fd00f3e",
+    "name": "E1",
+    "registered_early_stop_reached": false,
+    "trainer_state": "interrupted",
+    "user_accepted_cutoff": 12
+  },
+  "checkpoint_bytes_verified": true,
+  "created_at": "2026-11-04T14:09:38.591127+08:00",
+  "diagnostic_scope": "cached internal-development Study predictions only",
+  "environment": {
+    "numpy": "1.26.4",
+    "python": "3.11.8"
+  },
+  "evaluation_complete": true,
+  "holdout_H_accessed": false,
+  "independent_direct_pair_auc_verified": true,
+  "matched_first_12_epochs_best": {
+    "E0": 0.7978396535270589,
+    "E1": 0.7992390384597867
+  },
+  "model_weights_loaded": false,
+  "new_training_runs": 0,
+  "official_validation_accessed": false,
+  "original_controller_state": "paused",
+  "original_queue_completed": false,
+  "partial_epoch_13_included": false,
+  "prior_comparison": {
+    "all_recomputed_metrics_match_atol": 1e-12,
+    "path": "/home/featurize/work/reconstruction_runs_20261103/controller/comparison_poststop_20261104/report.json",
+    "sha256": "3209af661ec42fafff7a3f8c2ac84f36771611e33c91ff869796cf8119c9c777"
+  },
+  "protected_evidence_sha256": {
+    "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/compliance/events.jsonl": "f3e91de9abdd8d506753edebe8c4897f1de9e32ccaf063474b90742e8e1e633e",
+    "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/compliance/status.json": "5c1f460ca316be313fd9b30ae5e9bc64a4649c3346fff0d45a8f6a696ac92785",
+    "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/configuration.json": "b82baee8a1e8fe16edc389599d868dbcb53c63c9ae0692b15c9da39bee845ee5",
+    "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/history.jsonl": "3c9d610ace809f9dbe290c8c2ff62d9326ad7d04075bd9be3c99146c8e87e1d8",
+    "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/status.json": "416b3bdb14045444b1573ac351338e6796be0a7b522fd6880445a7ed874dc518",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/STOP": "71b5780f7acefe0307952403adb2ad3855633c4d6fcdf9dbdd7f49f212179596",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/compliance/events.jsonl": "7e1f6846b4ed88dbff737f6206d46ab8422becbc2d251caa43dc07cb6fd00f3e",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/compliance/status.json": "a50b1e6f2c306bb596a82f1bed9736c64759568fb19a9e136c29d3a36ce65c70",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/configuration.json": "f86bcbc2237a74603a3914b19541fb5d9993868e1e2af64bf3223924eb7de485",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/history.jsonl": "bf5166650d1a3ded2dac5977dc5503a00f58f93560797f9fd4a39cf07e686b61",
+    "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/status.json": "e3bb46ed3bf838d3329c898393d0fe31b97e0c3ddb9e19c47f14523758dcc523",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/PROGRESS.md": "7997d33e5a5621cf3d3ed0560cec961c23d2eb8c41153038e68516000949f3d3",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/STATUS.json": "1679ad344b749100d5da28ad06bc7f1fd2d94b308c729568e6a003ca8073fd7d",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/STOP": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/frozen_plan.json": "928e245b4d8103adc925b16ddeb7cd591bd62b3905068431473fd98174244267"
+  },
+  "same_epoch_auc": {
+    "12": {
+      "E0": 0.7913820043788619,
+      "E1": 0.7901893089395156
+    },
+    "7": {
+      "E0": 0.7977129198534167,
+      "E1": 0.7992390384597867
+    },
+    "8": {
+      "E0": 0.7978396535270589,
+      "E1": 0.7991284688902273
+    }
+  },
+  "schema": "e0_e1_user_cutoff_review_v1",
+  "source_bindings": {
+    "E0": {
+      "dev_manifest_path": "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv",
+      "dev_manifest_sha256": "fd889cd16f0c2f3156aa79ec08521741238ea0e362ebd86169c13ad3593e96af",
+      "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/predictions.npz",
+      "predictions_sha256": "8e48a469622833e7514b728e0e2e7f3a8fdf8ae2c675e5a77f7fe37b6150d1c5",
+      "report_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/report.json",
+      "report_sha256": "9e9be227a709f21134416eed6ebe8a83bafc06517fbfc7659485e1828392a2a6",
+      "split_plan_path": "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json",
+      "split_plan_sha256": "b7bf913c38756b9b4db42a87847c7d4879f477b8644cc66a62172c50fa3f4827"
+    },
+    "E1": {
+      "dev_manifest_path": "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv",
+      "dev_manifest_sha256": "fd889cd16f0c2f3156aa79ec08521741238ea0e362ebd86169c13ad3593e96af",
+      "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/epoch_07/predictions.npz",
+      "predictions_sha256": "20f6bdccdb85af23cecf533c8cd4c8df61d9a37a43e4e4bb727e34ad70337e1c",
+      "report_path": "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/epoch_07/report.json",
+      "report_sha256": "39dc79a69c5f8c0623951a4be7f33dd51e609e577dafff3ed2c5cc3d1abd01eb",
+      "split_plan_path": "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json",
+      "split_plan_sha256": "b7bf913c38756b9b4db42a87847c7d4879f477b8644cc66a62172c50fa3f4827"
+    }
+  },
+  "source_sha256": "b6f0de333d6b35f8e5e7401c1ed2d403a5176e1ddd53b43e97f5b1a124a55ee4",
+  "state": "evaluation_complete_user_cutoff",
+  "test_accessed": false,
+  "training_resumed": false,
+  "user_accepted_completed_epochs": {
+    "E0": 14,
+    "E1": 12
+  },
+  "user_instruction": "E1第13轮不用跑了，前面12轮应该够了"
+}

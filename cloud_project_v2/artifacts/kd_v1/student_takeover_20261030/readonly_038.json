@@ -1,0 +1,12 @@
+{
+  "protected_root": "/home/featurize/work/deliveries/038_dual768_optimized_project_20261030",
+  "entries_including_directories_zip_receipt": 523,
+  "all_write_bits_removed": true,
+  "file_bytes_modified": false,
+  "original_mode_counts": {
+    "0o775": 1,
+    "0o755": 45,
+    "0o664": 6,
+    "0o644": 471
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "time": "2026-11-05T20:28:43.429866+08:00",
+  "decision": "continue current pilot; do not claim or deploy a test-score improvement",
+  "progress": {
+    "state": "training",
+    "epoch": 1,
+    "epochs": 18,
+    "studies_done": 8576,
+    "studies_total": 14811,
+    "images_done": 13962,
+    "loss": 0.6951540736186165,
+    "elapsed_seconds": 1452.1462940170022,
+    "estimated_epoch_seconds": 2507.89864280385,
+    "peak_gpu_bytes": 3291699712,
+    "gradient_norm": 10.50423526763916,
+    "head_lr": 0.00011576673866090713,
+    "attempted_updates": 268,
+    "optimizer_updates": 268,
+    "skipped_updates": 0,
+    "updated_at": "2026-11-05T20:28:42.742947+08:00"
+  },
+  "train_valid_structure": {
+    "train": {
+      "studies": 14811,
+      "patients": 8844,
+      "single_patient_studies": 6022,
+      "single_patient_study_fraction": 0.4065896968469381,
+      "studies_from_patients_ge5": 2764,
+      "studies_from_patients_ge5_fraction": 0.18661805414894336,
+      "patients_ge5": 415,
+      "ap_only_studies": 7445,
+      "single_image_studies": 6791,
+      "manifest_sha256": "ca9107643889bfc294cb9198bfe3a93beadc43dd9e125008c8ca4d494b662f84"
+    },
+    "dev": {
+      "studies": 3702,
+      "patients": 2211,
+      "single_patient_studies": 1504,
+      "single_patient_study_fraction": 0.40626688276607237,
+      "studies_from_patients_ge5": 662,
+      "studies_from_patients_ge5_fraction": 0.17882225823878983,
+      "patients_ge5": 97,
+      "ap_only_studies": 1886,
+      "single_image_studies": 1720,
+      "manifest_sha256": "dbd3983c58cafd59cf30d64262d7e027fcf5183e4133d431581c3ac0aaeaccbb"
+    },
+    "official_valid": {
+      "studies": 859,
+      "patients": 228,
+      "single_patient_studies": 119,
+      "single_patient_study_fraction": 0.13853317811408614,
+      "studies_from_patients_ge5": 571,
+      "studies_from_patients_ge5_fraction": 0.6647264260768335,
+      "patients_ge5": 45,
+      "ap_only_studies": 442,
+      "single_image_studies": 391,
+      "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+    }
+  },
+  "official_task_source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/official_task.html",
+  "official_task_sha256": "7aaa706dc268be4401de8e4a6375811ec8919295fc2d59b572de6b0ff01a1ea5",
+  "official_metric_excerpt": "六、评价标准 1.提交次数限制 每日最多 2 次提交 2.评估指标及排名方法 ●主要指标：宏平均AUC (Macro-averaged AUC)，用于模型核心性能的衡量 ●辅助指标：宏平均F1 (Macro-F1)，用于辅助区分性能相近的模型 ●排名方法：优先以主要指标排名，当且仅当主要指标相等时，采用辅助指标进行二次排序 七、作品提交要求 1.提交内容 测试集最终预测结果的csv文件 说明：初赛仅提交预测结果csv文件，复赛需要同时提交预测结果csv文件及模型以供验证 2.提交文件格式 对于测试集中的每次检查即Study_id，模型需输出对应的类别id及其概率值。将最终结果生成⼀个.csv格式的 结果⽂件，命名为\"submission.csv\"，编码为UTF-8，格式示例如下： 说明： ●Study_id：单个检查的唯一id ●Predict_class：模型预测该次检查对应的各个类别id（需保证每个Study_id下都有10个类别） ●Probability：模型预测该次检查为某类别",
+  "no_gpu_execution": true,
+  "test_read": false,
+  "source_modified": false,
+  "validated_previous_checks": "15 CPU tests and genuine GPU checkpoint/resume already recorded; not rerun here"
+}

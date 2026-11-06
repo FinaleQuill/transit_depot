@@ -1,0 +1,27 @@
+{
+  "checked_hong_kong": "2026-10-19T02:59:36.688974+08:00",
+  "python": "/environment/miniconda3/envs/cxr4090/bin/python",
+  "protected_input_count": 16,
+  "protected_inputs_unchanged": true,
+  "training_run_created": false,
+  "real_training_started": false,
+  "real_data_model_inference_started": false,
+  "synthetic_probe_cases": 4,
+  "synthetic_optimizer_steps": 0,
+  "dependency_check": "No broken requirements found.",
+  "pretrained_offline_cpu_load": {
+    "tensors": 380,
+    "checkpoint_sha256": "ec152f1e375edc2b3dfac7a81155a449b4c5cbb7c5cf0b9494838f6c87518d73"
+  },
+  "launcher_syntax": "passed",
+  "launcher_dry_run": "passed: batch8 accumulation4 valid8 workers4; venv path preserved",
+  "launch_command": "pkill -9 -f '[r]un_all_folds.py' 2>/dev/null || true; pkill -9 -f train_overnight.py 2>/dev/null || true; tmux new-session -d -s cxr_cv5_4090 -c /home/featurize/work/cloud_project_v2 'bash run_overnight.sh' \\; set-option -w -t cxr_cv5_4090:0 remain-on-exit on",
+  "gpu_after": "NVIDIA GeForce RTX 4090, 24564 MiB, 1 MiB",
+  "gpu_compute_processes": "",
+  "updated_files_sha256": {
+    "run_overnight.sh": "60eea78aeb2eef5326004e6003a8cd86b48f33d1a360690e2ba780a76308b9d7",
+    "probe_gpu_memory.py": "5c9e47a8a59b90240c1f01d52b5752e6e14796a6ad370db2914adef7fc63f49c",
+    "docs/OVERNIGHT_CV.md": "bd6cc163f7c2c4d351ea33150a71b51da2a1dc14c8087968bf5e2c208b9dd420"
+  },
+  "launch_command_stub_validation": "passed; pkill and tmux intercepted, no session created"
+}

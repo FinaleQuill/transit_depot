@@ -1,0 +1,13 @@
+{
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "test_type": "Small metadata fixtures and fully mocked end-to-end evaluation; no real checkpoint/model/image or GPU touched.",
+  "help_passed": true,
+  "preview_passed": true,
+  "syntax_passed": true,
+  "files": {
+    "validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "tests/test_validate_teacher.py": "684b7aa529ccab903dde41ee683e9170f32a6ca0ed1a45ad44bdc5d0e16a2227"
+  }
+}

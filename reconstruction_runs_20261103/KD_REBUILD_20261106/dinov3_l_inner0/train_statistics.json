@@ -1,0 +1,33 @@
+{
+  "studies": 9879,
+  "images": 16189,
+  "patients": 5896,
+  "positive_studies": [
+    332.0,
+    479.0,
+    502.0,
+    766.0,
+    1282.0,
+    2072.0,
+    2116.0,
+    2404.0,
+    2481.0,
+    3563.0
+  ],
+  "pos_weight": [
+    5.0,
+    4.429922924724302,
+    4.321953593981071,
+    3.449183503487611,
+    2.589580706819057,
+    1.941096891671599,
+    1.915388878469747,
+    1.763349369335557,
+    1.7268069238794244,
+    1.3314140925446714
+  ],
+  "raw_training_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_0/train.csv",
+  "oof_studies": 4932,
+  "H_excluded": true,
+  "training_coverage": "one complete pass over all training Studies per epoch"
+}

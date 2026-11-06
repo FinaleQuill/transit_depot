@@ -1,0 +1,86 @@
+[
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/000_train_distill.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/train_distill.py",
+    "sha256": "744d7a79fa9c7848e741cccd307e94ae5e6a2a27d5e8cf1d309197d5b12c072c",
+    "size_bytes": 58720
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/001_train_overnight.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/train_overnight.py",
+    "sha256": "bf04f53cb720a0cddead40e1ef62c4ee92fac1b440d52c901c89f2074ed19887",
+    "size_bytes": 53147
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/002_distill_data.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/distill_data.py",
+    "sha256": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "size_bytes": 17036
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/003_distill_tta_data.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/distill_tta_data.py",
+    "sha256": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "size_bytes": 7717
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/004_model_overnight.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/model_overnight.py",
+    "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "size_bytes": 3284
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/005_dataset_overnight.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/dataset_overnight.py",
+    "sha256": "2c19932a7d8d5026adf319d1c02f759de48e62548a22b46c8564423a216ea16f",
+    "size_bytes": 13653
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/006_dataset.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/dataset.py",
+    "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "size_bytes": 28911
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/007_cv_splits.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/cv_splits.py",
+    "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "size_bytes": 14950
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/008_kd_common.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/kd_common.py",
+    "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "size_bytes": 6721
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/009_runtime_compat.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/runtime_compat.py",
+    "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "size_bytes": 1739
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/010_audit_trail.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/audit_trail.py",
+    "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "size_bytes": 7976
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/011_student_experiments.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/student_experiments.py",
+    "sha256": "9b3f45856544663b1a182a1d60bdcf7f6adacfbbe9e841d97736a3a5dd085a53",
+    "size_bytes": 1982
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/012_training_hooks.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/training_hooks.py",
+    "sha256": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "size_bytes": 4278
+  },
+  {
+    "archived_path": "sessions/20261103T033434Z_a404d09d2dab/source/013_training_compliance.py",
+    "original_path": "/home/featurize/work/cloud_project_v2/training_compliance.py",
+    "sha256": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885",
+    "size_bytes": 12786
+  }
+]

@@ -1,0 +1,1078 @@
+{
+  "protocol": {
+    "measured_images": 100,
+    "warmup_images": 5,
+    "rounds": 3,
+    "batch_size": 1,
+    "execution": "serial",
+    "timing": "read_file_to_prediction_CSV_write_including_preprocess_postprocess",
+    "aggregation": "per_image_three_round_mean_then_100_image_mean"
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "reproducibility": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  },
+  "inference_files": {
+    "files": [
+      {
+        "path": "student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+      },
+      {
+        "path": "config.json",
+        "bytes": 11284048,
+        "sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39"
+      }
+    ],
+    "total_bytes": 66996559,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "deployment_config_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "deployment": {
+    "member_count": 1,
+    "image_sizes": [
+      768
+    ],
+    "tta": "hflip2",
+    "ensemble": false,
+    "aggregation": "fixed_weighted_mean_probability_then_study_mean"
+  },
+  "per_image_round_ms": [
+    [
+      52.315242995973676,
+      47.192705009365454,
+      55.14579398732167
+    ],
+    [
+      50.87849700066727,
+      49.20609900727868,
+      56.04508200485725
+    ],
+    [
+      61.46388698834926,
+      56.561506004072726,
+      60.599863005336374
+    ],
+    [
+      65.6930819968693,
+      63.176545008900575,
+      64.65762699372135
+    ],
+    [
+      73.80667500547133,
+      65.59509100043215,
+      64.03445899195503
+    ],
+    [
+      68.55552099295892,
+      66.28090600133874,
+      66.00802700268105
+    ],
+    [
+      63.904174996423535,
+      60.15271999058314,
+      59.79755001317244
+    ],
+    [
+      46.79865400248673,
+      43.26529099489562,
+      64.04938899504486
+    ],
+    [
+      49.50524200103246,
+      46.54296798980795,
+      72.54962700244505
+    ],
+    [
+      55.74724599136971,
+      48.22435899404809,
+      57.630029012216255
+    ],
+    [
+      82.04057300463319,
+      70.19541000772733,
+      95.60390999831725
+    ],
+    [
+      70.0528099987423,
+      60.10418898949865,
+      81.44743900629692
+    ],
+    [
+      85.58413200080395,
+      84.08584000426345,
+      77.91434400132857
+    ],
+    [
+      63.93529800698161,
+      61.13057900802232,
+      60.417822998715565
+    ],
+    [
+      73.69965400721412,
+      86.90517400100362,
+      66.79481800529175
+    ],
+    [
+      70.35630798782222,
+      94.1587819979759,
+      69.75826001144014
+    ],
+    [
+      67.71958000899758,
+      76.6843970050104,
+      66.22528401203454
+    ],
+    [
+      74.66912000381853,
+      96.00219500134699,
+      69.7487469878979
+    ],
+    [
+      68.93819800461642,
+      91.79037599824369,
+      67.46182699862402
+    ],
+    [
+      71.15841899940278,
+      73.03321799554396,
+      64.39469700853806
+    ],
+    [
+      64.63899499794934,
+      69.52717000967823,
+      59.85571000201162
+    ],
+    [
+      61.14355000318028,
+      62.44728200545069,
+      75.39551600348204
+    ],
+    [
+      54.85619899991434,
+      59.078819991555065,
+      76.49790600407869
+    ],
+    [
+      52.36324100405909,
+      51.91738600842655,
+      65.95228900550865
+    ],
+    [
+      45.96000799210742,
+      50.169675989309326,
+      66.16876801126637
+    ],
+    [
+      51.217831001849845,
+      51.6688360075932,
+      54.65323598764371
+    ],
+    [
+      67.94423300016206,
+      71.68001600075513,
+      94.0733489987906
+    ],
+    [
+      83.28733299276792,
+      82.10193099512253,
+      78.48783899680711
+    ],
+    [
+      70.90102099755313,
+      72.32978800311685,
+      54.12691298988648
+    ],
+    [
+      61.787949001882225,
+      59.203999990131706,
+      59.435393995954655
+    ],
+    [
+      91.61214700725395,
+      89.0532049961621,
+      104.2280550027499
+    ],
+    [
+      76.02200099790934,
+      77.21370999934152,
+      91.32490999763831
+    ],
+    [
+      66.65304099442437,
+      64.51533699873835,
+      66.69213299755938
+    ],
+    [
+      81.05715199781116,
+      78.94395300536416,
+      74.97149000118952
+    ],
+    [
+      85.9647600009339,
+      86.6022010013694,
+      84.61907900345977
+    ],
+    [
+      80.38802999362815,
+      81.30702099879272,
+      107.70359700836707
+    ],
+    [
+      83.50018599594478,
+      84.12850000604521,
+      78.85967500624247
+    ],
+    [
+      80.19391499692574,
+      76.02755900006741,
+      76.63956099713687
+    ],
+    [
+      68.68206799845211,
+      70.65347100433428,
+      75.21043599990662
+    ],
+    [
+      76.33757499570493,
+      73.73374000599142,
+      78.63154998631217
+    ],
+    [
+      51.10310400777962,
+      50.73718300263863,
+      55.58799400751013
+    ],
+    [
+      53.20803799259011,
+      50.56632199557498,
+      72.25669200124685
+    ],
+    [
+      63.28524899436161,
+      65.21857000188902,
+      88.7832470034482
+    ],
+    [
+      69.20378599897958,
+      63.40305699268356,
+      71.06394199945498
+    ],
+    [
+      66.97820199769922,
+      104.0596259990707,
+      73.81510100094602
+    ],
+    [
+      71.07117700797971,
+      76.33740099845454,
+      75.14344499213621
+    ],
+    [
+      70.0594809895847,
+      94.9243709910661,
+      74.36743800644763
+    ],
+    [
+      52.09711600036826,
+      72.78419999056496,
+      56.134828002541326
+    ],
+    [
+      45.77571299159899,
+      47.86322399741039,
+      47.61125500954222
+    ],
+    [
+      49.0315070055658,
+      45.04941999039147,
+      49.8476170032518
+    ],
+    [
+      69.8829329921864,
+      69.28982699173503,
+      77.1091520000482
+    ],
+    [
+      65.01827700412832,
+      61.92562099022325,
+      64.43961498735007
+    ],
+    [
+      67.7536040020641,
+      67.20733499969356,
+      65.9388710046187
+    ],
+    [
+      58.655075990827754,
+      58.56844199297484,
+      58.96147000021301
+    ],
+    [
+      74.44797300559003,
+      71.07325299875811,
+      70.13073599955533
+    ],
+    [
+      61.898867003037594,
+      61.51304900413379,
+      61.23940700490493
+    ],
+    [
+      87.19659700000193,
+      67.70795499323867,
+      67.02124100411311
+    ],
+    [
+      72.41398500627838,
+      47.25985699042212,
+      47.584821993950754
+    ],
+    [
+      61.22741100261919,
+      43.19710000709165,
+      46.55196500243619
+    ],
+    [
+      81.88635800615884,
+      90.66139899368864,
+      75.88390400633216
+    ],
+    [
+      72.3421500006225,
+      89.69823099323548,
+      64.66126099985559
+    ],
+    [
+      71.2607030000072,
+      67.80066899955273,
+      69.45882500440348
+    ],
+    [
+      75.93571799225174,
+      75.2249000070151,
+      74.09201600239612
+    ],
+    [
+      83.11076799873263,
+      82.18160099931993,
+      82.52421401266474
+    ],
+    [
+      81.31408201006707,
+      76.41964498907328,
+      67.25937899318524
+    ],
+    [
+      67.81302999297623,
+      67.98690499272197,
+      61.41376699088141
+    ],
+    [
+      75.47632299247198,
+      75.26979500835296,
+      65.22228200628888
+    ],
+    [
+      81.8592819996411,
+      80.89071800350212,
+      71.72869000351056
+    ],
+    [
+      65.82603900460526,
+      73.58316901081707,
+      63.29866001033224
+    ],
+    [
+      70.87536698963959,
+      71.85674000356812,
+      68.23145499220118
+    ],
+    [
+      73.11360999301542,
+      71.99095199757721,
+      69.8679799970705
+    ],
+    [
+      64.7641149989795,
+      63.39067700901069,
+      62.98833299661055
+    ],
+    [
+      64.38233799417503,
+      62.76467700081412,
+      62.660376002895646
+    ],
+    [
+      63.618361004046164,
+      62.82439100323245,
+      62.90900299791247
+    ],
+    [
+      60.83475999184884,
+      60.03196300298441,
+      80.97141201142222
+    ],
+    [
+      44.767094994313084,
+      43.873588991118595,
+      45.87440300383605
+    ],
+    [
+      51.4285950048361,
+      49.389572988729924,
+      50.81385700032115
+    ],
+    [
+      49.31019099603873,
+      48.75098099000752,
+      47.97757000778802
+    ],
+    [
+      44.18289598834235,
+      43.37745900556911,
+      43.484488007379696
+    ],
+    [
+      66.23443600255996,
+      65.92900099349208,
+      83.24927400099114
+    ],
+    [
+      65.81880000885576,
+      66.76824799797032,
+      90.38569100084715
+    ],
+    [
+      62.75545900280122,
+      62.13091699464712,
+      76.91165899450425
+    ],
+    [
+      64.43274700723123,
+      63.238875998649746,
+      75.38257699343376
+    ],
+    [
+      47.275979988626204,
+      46.17258399957791,
+      54.56319100630935
+    ],
+    [
+      42.26493599708192,
+      40.32641599769704,
+      48.22669499844778
+    ],
+    [
+      65.50077699648682,
+      66.29697899916209,
+      77.43735700205434
+    ],
+    [
+      43.80895999202039,
+      42.80498600564897,
+      51.884565997170284
+    ],
+    [
+      49.58053000154905,
+      48.60031499993056,
+      57.40007699932903
+    ],
+    [
+      50.26696200366132,
+      49.09811100515071,
+      59.17658800899517
+    ],
+    [
+      45.83406599704176,
+      43.728887001634575,
+      50.94285799714271
+    ],
+    [
+      44.623693989706226,
+      42.84107500279788,
+      51.06490799516905
+    ],
+    [
+      48.05878200568259,
+      47.487685005762614,
+      51.35108099784702
+    ],
+    [
+      46.94717099482659,
+      47.73506899073254,
+      50.14741199556738
+    ],
+    [
+      66.32241599436384,
+      83.50064100523014,
+      73.13851700746454
+    ],
+    [
+      73.20451599662192,
+      92.30388900323305,
+      73.99033301044255
+    ],
+    [
+      69.5981250028126,
+      79.80229699751362,
+      74.61076800245792
+    ],
+    [
+      72.36928799829911,
+      81.99962199432775,
+      76.51656499365345
+    ],
+    [
+      65.26273700001184,
+      71.84109499212354,
+      68.22470099723432
+    ],
+    [
+      65.5785900016781,
+      75.51662300829776,
+      71.16856299398933
+    ],
+    [
+      70.23453000874724,
+      74.39788100600708,
+      70.87322100414895
+    ]
+  ],
+  "per_image_mean_ms": [
+    51.55124733088693,
+    52.04322600426773,
+    59.54175199925279,
+    64.50908466649707,
+    67.81207499928617,
+    66.94815133232623,
+    61.2848150000597,
+    51.37111133080907,
+    56.199278997761816,
+    53.867211332544684,
+    82.61329767022592,
+    70.53481266484596,
+    82.52810533546533,
+    61.827900004573166,
+    75.79988200450316,
+    78.09111666574609,
+    70.2097536753475,
+    80.14002066435448,
+    76.06346700049471,
+    69.5287780011616,
+    64.67395833654639,
+    66.32878267070434,
+    63.477641665182695,
+    56.744305339331426,
+    54.09948399756104,
+    52.51330099902892,
+    77.89919933323593,
+    81.29236766156585,
+    65.78590733018548,
+    60.142447662656195,
+    94.96446900205531,
+    81.52020699829639,
+    65.95350366357404,
+    78.32419833478828,
+    85.72868000192102,
+    89.79954933359598,
+    82.16278700274415,
+    77.62034499804334,
+    71.51532500089768,
+    76.23428832933617,
+    52.4760936726428,
+    58.67701732980398,
+    72.4290219998996,
+    67.89026166370604,
+    81.61764299923864,
+    74.18400766619015,
+    79.78376332903281,
+    60.33871466449151,
+    47.08339733285053,
+    47.97618133306969,
+    72.09397066132321,
+    63.79450432723388,
+    66.96660333545879,
+    58.7283293280052,
+    71.88398733463448,
+    61.55044100402544,
+    73.97526433245123,
+    55.75288799688375,
+    50.32549200404901,
+    82.81055366872654,
+    75.56721399790452,
+    69.50673233465447,
+    75.08421133388765,
+    82.6055276702391,
+    74.99770199744187,
+    65.73790065885987,
+    71.98946666903794,
+    78.15956333555125,
+    67.56928934191819,
+    70.32118732846963,
+    71.65751399588771,
+    63.714375001533575,
+    63.269130332628265,
+    63.117251668397024,
+    67.27937833541849,
+    44.83836232975591,
+    50.54400833129572,
+    48.67958066461142,
+    43.68161433376372,
+    71.80423699901439,
+    74.32424633589108,
+    67.2660116639842,
+    67.68473333310492,
+    49.33725166483782,
+    43.606015664408915,
+    69.74503766590108,
+    46.16617066494655,
+    51.86030733360288,
+    52.847220339269064,
+    46.83527033193968,
+    46.17655899589105,
+    48.96584933643074,
+    48.276550660375506,
+    74.3205246690195,
+    79.83291267009918,
+    74.67039666759472,
+    76.96182499542677,
+    68.4428443297899,
+    70.75459200132173,
+    71.83521067296776
+  ],
+  "image_order": [
+    "subject_12061/study_20938/pic_034617.jpg",
+    "subject_12061/study_20938/pic_034618.jpg",
+    "subject_12061/study_20961/pic_034653.jpg",
+    "subject_12061/study_20961/pic_034654.jpg",
+    "subject_12061/study_20964/pic_034658.jpg",
+    "subject_12061/study_20964/pic_034659.jpg",
+    "subject_12061/study_20964/pic_034660.jpg",
+    "subject_12061/study_20987/pic_034706.jpg",
+    "subject_12061/study_20987/pic_034707.jpg",
+    "subject_12061/study_20987/pic_034708.jpg",
+    "subject_12061/study_21196/pic_035034.jpg",
+    "subject_12061/study_21196/pic_035035.jpg",
+    "subject_12061/study_21271/pic_035147.jpg",
+    "subject_12061/study_21281/pic_035160.jpg",
+    "subject_12061/study_21281/pic_035161.jpg",
+    "subject_12061/study_21281/pic_035162.jpg",
+    "subject_12061/study_21314/pic_035213.jpg",
+    "subject_12061/study_21316/pic_035215.jpg",
+    "subject_12061/study_21316/pic_035216.jpg",
+    "subject_12061/study_21316/pic_035217.jpg",
+    "subject_12061/study_21334/pic_035247.jpg",
+    "subject_12061/study_21334/pic_035248.jpg",
+    "subject_12061/study_21339/pic_035255.jpg",
+    "subject_12061/study_21360/pic_035282.jpg",
+    "subject_12061/study_21360/pic_035283.jpg",
+    "subject_12061/study_21360/pic_035284.jpg",
+    "subject_12061/study_21548/pic_035581.jpg",
+    "subject_12061/study_21548/pic_035582.jpg",
+    "subject_12061/study_21551/pic_035585.jpg",
+    "subject_12061/study_21551/pic_035586.jpg",
+    "subject_12061/study_21566/pic_035608.jpg",
+    "subject_12061/study_21572/pic_035619.jpg",
+    "subject_12061/study_21577/pic_035624.jpg",
+    "subject_12061/study_21577/pic_035625.jpg",
+    "subject_12061/study_21625/pic_035709.jpg",
+    "subject_12061/study_21628/pic_035713.jpg",
+    "subject_12061/study_21628/pic_035714.jpg",
+    "subject_12061/study_21647/pic_035745.jpg",
+    "subject_12061/study_21647/pic_035746.jpg",
+    "subject_12061/study_21665/pic_035771.jpg",
+    "subject_12061/study_21666/pic_035772.jpg",
+    "subject_12061/study_21666/pic_035773.jpg",
+    "subject_12061/study_21687/pic_035804.jpg",
+    "subject_12061/study_21687/pic_035805.jpg",
+    "subject_12061/study_21687/pic_035806.jpg",
+    "subject_12061/study_21691/pic_035810.jpg",
+    "subject_12061/study_21691/pic_035811.jpg",
+    "subject_12061/study_21772/pic_035928.jpg",
+    "subject_12061/study_21772/pic_035929.jpg",
+    "subject_12061/study_21822/pic_036010.jpg",
+    "subject_12061/study_21871/pic_036081.jpg",
+    "subject_12061/study_21871/pic_036082.jpg",
+    "subject_12061/study_22016/pic_036308.jpg",
+    "subject_12061/study_22016/pic_036309.jpg",
+    "subject_12061/study_22033/pic_036331.jpg",
+    "subject_12061/study_22033/pic_036332.jpg",
+    "subject_12061/study_22079/pic_036410.jpg",
+    "subject_12061/study_22118/pic_036474.jpg",
+    "subject_12061/study_22118/pic_036475.jpg",
+    "subject_12061/study_22164/pic_036544.jpg",
+    "subject_12061/study_22217/pic_036635.jpg",
+    "subject_12061/study_22217/pic_036636.jpg",
+    "subject_12061/study_22217/pic_036637.jpg",
+    "subject_12061/study_22267/pic_036711.jpg",
+    "subject_12061/study_22271/pic_036716.jpg",
+    "subject_12061/study_22271/pic_036717.jpg",
+    "subject_12061/study_22271/pic_036718.jpg",
+    "subject_12061/study_22275/pic_036724.jpg",
+    "subject_12061/study_22293/pic_036753.jpg",
+    "subject_12061/study_22293/pic_036754.jpg",
+    "subject_12061/study_22293/pic_036755.jpg",
+    "subject_12061/study_22430/pic_036980.jpg",
+    "subject_12061/study_22430/pic_036981.jpg",
+    "subject_12061/study_22434/pic_036986.jpg",
+    "subject_12061/study_22434/pic_036987.jpg",
+    "subject_12062/study_20939/pic_034619.jpg",
+    "subject_12062/study_20939/pic_034620.jpg",
+    "subject_12062/study_21111/pic_034899.jpg",
+    "subject_12062/study_21111/pic_034900.jpg",
+    "subject_12062/study_21178/pic_035008.jpg",
+    "subject_12062/study_21190/pic_035024.jpg",
+    "subject_12062/study_21190/pic_035025.jpg",
+    "subject_12062/study_21190/pic_035026.jpg",
+    "subject_12062/study_21636/pic_035727.jpg",
+    "subject_12062/study_21636/pic_035728.jpg",
+    "subject_12062/study_21743/pic_035882.jpg",
+    "subject_12062/study_21766/pic_035918.jpg",
+    "subject_12062/study_21766/pic_035919.jpg",
+    "subject_12062/study_21954/pic_036210.jpg",
+    "subject_12062/study_21954/pic_036211.jpg",
+    "subject_12062/study_22428/pic_036975.jpg",
+    "subject_12062/study_22428/pic_036976.jpg",
+    "subject_12062/study_22428/pic_036977.jpg",
+    "subject_12063/study_20940/pic_034621.jpg",
+    "subject_12063/study_21833/pic_036027.jpg",
+    "subject_12063/study_21833/pic_036028.jpg",
+    "subject_12064/study_20941/pic_034622.jpg",
+    "subject_12064/study_21130/pic_034930.jpg",
+    "subject_12064/study_21169/pic_034994.jpg",
+    "subject_12064/study_21410/pic_035363.jpg"
+  ],
+  "mean_ms": 66.29617746982451,
+  "latency_limit_ms": 100.0,
+  "latency_pass_on_current_hardware": true,
+  "comparison": {
+    "status": "matched",
+    "coverage": {
+      "complete_studies_proven": true,
+      "incomplete_studies": [],
+      "reason": null,
+      "manifest_sha256": "13cdb61730471747963d21d5190b49f67483904a5364a2300c39a4711027c623"
+    },
+    "rounds": [
+      {
+        "compared_studies": 54,
+        "valid_compared_studies": 54,
+        "expected_studies": 54,
+        "reference_studies": 1414,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 1360,
+        "reference_superset_allowed": true,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      },
+      {
+        "compared_studies": 54,
+        "valid_compared_studies": 54,
+        "expected_studies": 54,
+        "reference_studies": 1414,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 1360,
+        "reference_superset_allowed": true,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      },
+      {
+        "compared_studies": 54,
+        "valid_compared_studies": 54,
+        "expected_studies": 54,
+        "reference_studies": 1414,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 1360,
+        "reference_superset_allowed": true,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      }
+    ],
+    "image_rounds": [
+      {
+        "compared_studies": 100,
+        "valid_compared_studies": 100,
+        "expected_studies": 100,
+        "reference_studies": 100,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true,
+        "level": "image",
+        "compared_images": 100,
+        "expected_images": 100,
+        "mismatched_image_count": 0,
+        "reference_mapping": "official manifest image_id, with original discovery-id compatibility"
+      },
+      {
+        "compared_studies": 100,
+        "valid_compared_studies": 100,
+        "expected_studies": 100,
+        "reference_studies": 100,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true,
+        "level": "image",
+        "compared_images": 100,
+        "expected_images": 100,
+        "mismatched_image_count": 0,
+        "reference_mapping": "official manifest image_id, with original discovery-id compatibility"
+      },
+      {
+        "compared_studies": 100,
+        "valid_compared_studies": 100,
+        "expected_studies": 100,
+        "reference_studies": 100,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true,
+        "level": "image",
+        "compared_images": 100,
+        "expected_images": 100,
+        "mismatched_image_count": 0,
+        "reference_mapping": "official manifest image_id, with original discovery-id compatibility"
+      }
+    ],
+    "image_submission": "evidence/runtime/041_historical/submission.image_predictions.csv",
+    "image_submission_sha256": "3cb7e6bd1d936702b3487ec8d06c0f69e4f615ec25823d12f881c07ddb98f82a"
+  },
+  "official_compliance_pass": false,
+  "status": "not_certified",
+  "submission_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+  "round_outputs": [
+    {
+      "path": "round_1.csv",
+      "sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_predictions": "round_1.image_predictions.csv",
+      "image_predictions_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    },
+    {
+      "path": "round_2.csv",
+      "sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_predictions": "round_2.image_predictions.csv",
+      "image_predictions_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    },
+    {
+      "path": "round_3.csv",
+      "sha256": "e41aaed99a5f92f00361fda0d08a820da585dba880e6b2180af399b89862b072",
+      "image_predictions": "round_3.image_predictions.csv",
+      "image_predictions_sha256": "883c89496eadeac299e592db060940143ace323ca6ba18df8f37d23833c581b1"
+    }
+  ],
+  "note": "Final compliance is determined by the organizer's reproduction. Non-T4 timing is diagnostic only."
+}

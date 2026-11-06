@@ -1,0 +1,20 @@
+{
+  "checked_at_hong_kong": "2026-10-27T14:58:57.191563+08:00",
+  "old_executed_source_sha256": "6a8bbd7811f9721cb137b267d77dd148a5517f242dd11331d658b33ab82aef65",
+  "new_runtime_source_sha256": "70d8a113ad0c98ad9855c2084d4d4f34e69856d7c6508766942402614574dcc3",
+  "original_training_archive_unchanged": true,
+  "original_best_last_sha256": {
+    "best.pt": "c61ec92f890db59810ffe5cef8701c87d5260235323194582502510d79e83ded",
+    "last.pt": "fafb8398e48e22fe064af7f5a85ff572e6c25fe53bf9bed2adcc8c9cb261f168"
+  },
+  "original_terminal_status_unchanged": true,
+  "protected_teacher_code_and_manifests_unchanged": true,
+  "scope": "Status writes only; no loss/optimizer/configuration/epoch budget/learning-rate changes.",
+  "cpu_tests": {
+    "passed": 240,
+    "subtests_passed": 131,
+    "junit": "status_fix_tests.xml"
+  },
+  "new_gpu_or_training_started": false,
+  "source_git_commit_before_fix": "adb99e9717d7a37c9539270bf484497be8f63f24"
+}

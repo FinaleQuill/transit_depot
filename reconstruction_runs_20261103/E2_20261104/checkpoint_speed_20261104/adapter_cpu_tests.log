@@ -1,0 +1,15 @@
+Command: python -m reconstruction.runtime_local --cpu --name cxr-checkpoint-adapter-cpu -- -m unittest reconstruction.test_train_local_checkpoint_speed -v
+Exit code: 0
+test_boundary_counts_dimensions_and_state_dict_are_unchanged (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_boundary_counts_dimensions_and_state_dict_are_unchanged) ... ok
+test_eval_no_grad_and_forward_exception_restore_original_flag (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_eval_no_grad_and_forward_exception_restore_original_flag) ... ok
+test_profile_rejects_unregistered_fields_and_symlinks (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_profile_rejects_unregistered_fields_and_symlinks) ... ok
+test_profile_sha_and_model_policy_drift_fail_without_state_mutation (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_profile_sha_and_model_policy_drift_fail_without_state_mutation) ... ok
+test_real_dropout_gradients_adam_ema_and_rng_equal_for_small_and_fallback (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_real_dropout_gradients_adam_ema_and_rng_equal_for_small_and_fallback) ... ok
+test_real_lifecycle_archives_profile_and_counts_without_mutating_metrics (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_real_lifecycle_archives_profile_and_counts_without_mutating_metrics) ... ok
+test_three_nested_adapters_keep_original_configuration_and_stopping (reconstruction.test_train_local_checkpoint_speed.CheckpointExecutionTests.test_three_nested_adapters_keep_original_configuration_and_stopping) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.274s
+
+OK
+

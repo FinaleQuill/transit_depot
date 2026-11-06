@@ -1,0 +1,16 @@
+{
+  "execute": false,
+  "fold_plan": "data/cv5_overnight/folds.json",
+  "teachers": [
+    "../runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt",
+    "../runs/021_convnext_v1_base768_teacher_cv5/fold_1/best.pt",
+    "../runs/021_convnext_v1_base768_teacher_cv5/fold_2/best.pt",
+    "../runs/021_convnext_v1_base768_teacher_cv5/fold_3/best.pt",
+    "../runs/021_convnext_v1_base768_teacher_cv5/fold_4/best.pt"
+  ],
+  "source_split": "train",
+  "image_size": 768,
+  "tta": "identity",
+  "output": "../runs/021_convnext_v1_base768_teacher_cv5/oof_logits",
+  "next": "Add --execute only after all teachers finish."
+}

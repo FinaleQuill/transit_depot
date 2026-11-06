@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "plan_id": "auc820_20261031",
+  "registered_at_hong_kong": "2026-10-31T18:41:29+08:00",
+  "registered_before_new_model_evaluation": true,
+  "valid_used_for_rule_registration": false,
+  "test_used": false,
+  "objective": "Official valid Macro-AUC >= 0.82 without per-class weight or threshold search; never below the delivered 0.816830 floor.",
+  "members": ["B", "B2", "A"],
+  "member_descriptions": {
+    "B": "Base768 E10 best EMA from 040; existing 0.810570 valid single model.",
+    "B2": "New Base768 P3 student, seed 45, fixed 12-epoch cosine, final EMA (last.pt); selected without valid.",
+    "A": "Tiny768 E9 best EMA from 039; existing 0.809116 valid single model."
+  },
+  "reference": "B",
+  "rules": [
+    {
+      "name": "R1_B_B2_equal",
+      "members": ["B", "B2"],
+      "weights": [
+        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      ],
+      "purpose": "Primary simple two-Base seed ensemble; class 1-10 equal."
+    },
+    {
+      "name": "R2_B_B2_A_class1_base",
+      "members": ["B", "B2", "A"],
+      "weights": [
+        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      ],
+      "purpose": "Primary full ensemble: class 1 is the two-Base mean; classes 2-10 equal over B, B2, A."
+    }
+  ],
+  "latency_fallback_rule": {
+    "name": "R2b_A_identity",
+    "description": "Same probability rule as R2, but member A runs identity only. Evaluated only if R2 is the top rule and its measured mean exceeds the latency gate.",
+    "requires_new_validation": true
+  },
+  "decision_gates": {
+    "floor_valid_macro_auc": 0.8168300303208815,
+    "target_valid_macro_auc": 0.82,
+    "primary_rule": "R2_B_B2_A_class1_base",
+    "simple_rule": "R1_B_B2_equal",
+    "latency_preferred_ms": 90.0,
+    "latency_hard_ms_on_2080ti": 100.0,
+    "fallback_order": ["R1_B_B2_equal", "043_B_single_model"],
+    "if_best_valid_between_0_818_and_0_82": "User pre-approved one additional pre-registered B2 variant with stronger augmentation; no per-class search.",
+    "if_best_valid_below_0_818": "Do not ship a new rule below the 0.816830 floor; report and decide with the user."
+  },
+  "constraints": {
+    "max_inference_assets_bytes": 500000000,
+    "max_members": "2 Base + 1 Tiny (421.9 MB); 3 Base exceed the 500 MB limit",
+    "test_role": "final prediction only; never used for selection, fitting or statistics",
+    "valid_role": "read-only evaluation of the pre-registered rules after training"
+  }
+}

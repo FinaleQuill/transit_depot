@@ -1,0 +1,440 @@
+{
+  "kind": "精简版，当前768/加权纯BCE/五折主线学习副本",
+  "created_hong_kong": "2026-10-20T02:41:47+08:00",
+  "python_modules": [
+    "cv_splits",
+    "dataset",
+    "dataset_overnight",
+    "inference_overnight",
+    "metrics_overnight",
+    "model_overnight",
+    "run_all_folds",
+    "runtime_compat",
+    "train_overnight"
+  ],
+  "source_project_read_only": "/home/featurize/work/cloud_project_v2",
+  "source_files_hash_and_mtime_unchanged": true,
+  "source_snapshot": {
+    "train_overnight.py": {
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "size": 51361,
+      "mtime_ns": 1792421825919772098
+    },
+    "model_overnight.py": {
+      "sha256": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+      "size": 2400,
+      "mtime_ns": 1792347612786893337
+    },
+    "dataset_overnight.py": {
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "size": 13643,
+      "mtime_ns": 1792421793566597221
+    },
+    "run_all_folds.py": {
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+      "size": 19897,
+      "mtime_ns": 1792422482472408855
+    },
+    "cv_splits.py": {
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "size": 14950,
+      "mtime_ns": 1792347598082273083
+    },
+    "dataset.py": {
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "size": 28911,
+      "mtime_ns": 1792421780770713925
+    },
+    "runtime_compat.py": {
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "size": 1739,
+      "mtime_ns": 1792360820000000000
+    },
+    "inference_overnight.py": {
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+      "size": 30402,
+      "mtime_ns": 1792421811729011539
+    },
+    "train.py": {
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+      "size": 59362,
+      "mtime_ns": 1792360820000000000
+    },
+    "run_overnight.sh": {
+      "sha256": "207d135997b4d4defdd8180915bbef0d69a883461fc1e0ab9e94e81c80909e09",
+      "size": 1999,
+      "mtime_ns": 1792422482033455093
+    },
+    "requirements.txt": {
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021",
+      "size": 1160,
+      "mtime_ns": 1792421795378439071
+    }
+  },
+  "all_mainline_functions_preserved": {
+    "train_overnight": [
+      "OvernightConfig",
+      "preprocessing_config",
+      "compute_loss_config",
+      "build_weighted_bce",
+      "sha256",
+      "_jsonable",
+      "write_json",
+      "save_checkpoint",
+      "cpu_tree",
+      "capture_rng",
+      "restore_rng",
+      "build_optimizer",
+      "set_learning_rates",
+      "calculate_metrics",
+      "train_epoch",
+      "evaluate",
+      "save_oof",
+      "_resume_check",
+      "_best_record",
+      "_checkpoint_validation",
+      "_repair_best_bindings",
+      "reconcile_resume_best",
+      "run_training",
+      "main"
+    ],
+    "model_overnight": [
+      "validate_model_config",
+      "build_overnight_model"
+    ],
+    "dataset_overnight": [
+      "_transforms",
+      "OvernightImageDataset",
+      "collate_overnight",
+      "_seed_worker",
+      "make_overnight_loader",
+      "aggregate_study_predictions"
+    ],
+    "cv_splits": [
+      "sha256_file",
+      "_UnionFind",
+      "_study_records",
+      "_content_groups",
+      "_check_holdout",
+      "_statistics",
+      "build_fold_plan",
+      "read_fold_plan",
+      "load_fold_records",
+      "ensure_fold_plan",
+      "main"
+    ],
+    "run_all_folds": [
+      "sha256",
+      "read_json",
+      "write_json",
+      "utc_now",
+      "hardware",
+      "choose_batch",
+      "smaller_batch",
+      "next_fold",
+      "training_command",
+      "run_child",
+      "is_oom",
+      "frozen_config",
+      "build_ensemble_plan",
+      "inference_command",
+      "orchestrate",
+      "parse_args",
+      "main"
+    ],
+    "inference_overnight": [
+      "sha256",
+      "json_object",
+      "_hash",
+      "_resolve",
+      "normalized_weights",
+      "load_ensemble_plan",
+      "_check_probabilities",
+      "read_submission_template",
+      "_write_json",
+      "_write_csv",
+      "write_matched_submission",
+      "_checkpoint",
+      "_predict_model",
+      "_ensemble_phase",
+      "_write_wide",
+      "run_ensemble_inference",
+      "main"
+    ],
+    "runtime_compat": [
+      "prepare_runtime",
+      "prepare_windows_runtime"
+    ],
+    "dataset": [
+      "CachedSampleError",
+      "_split_name",
+      "letterbox_rgb",
+      "read_manifest",
+      "resolve_native_image_root"
+    ],
+    "metrics_overnight": [
+      "_check_hard_predictions",
+      "_metrics_imports",
+      "calculate_metrics",
+      "search_class_thresholds"
+    ]
+  },
+  "expected_learning_copy_function_adaptations": {
+    "train_overnight": [
+      "preprocessing_config"
+    ],
+    "model_overnight": [],
+    "dataset_overnight": [],
+    "cv_splits": [],
+    "run_all_folds": [
+      "inference_command"
+    ],
+    "inference_overnight": [
+      "load_ensemble_plan",
+      "_checkpoint",
+      "run_ensemble_inference"
+    ],
+    "runtime_compat": []
+  },
+  "adaptation_notes": [
+    "dataset.py只抽取实际引用的公共函数/常量；仅更新过时文案，不改其计算与校验条件",
+    "metrics_overnight.py原样抽取4个指标函数，摆脱旧train.py",
+    "runner直接调用主线推理，并更新SOURCE_FILES清单",
+    "输入和推理协议只保留768，移除512兼容分支"
+  ],
+  "local_imports_and_symbols_closed": true,
+  "local_dependencies": [
+    {
+      "from": "run_all_folds",
+      "to": "cv_splits",
+      "symbols": [
+        "read_fold_plan",
+        "load_fold_records"
+      ]
+    },
+    {
+      "from": "run_all_folds",
+      "to": "dataset",
+      "symbols": [
+        "read_manifest"
+      ]
+    },
+    {
+      "from": "run_all_folds",
+      "to": "inference_overnight",
+      "symbols": [
+        "read_submission_template"
+      ]
+    },
+    {
+      "from": "train_overnight",
+      "to": "runtime_compat",
+      "symbols": [
+        "prepare_runtime"
+      ]
+    },
+    {
+      "from": "train_overnight",
+      "to": "model_overnight",
+      "symbols": [
+        "MODEL_NAME",
+        "build_overnight_model",
+        "validate_model_config"
+      ]
+    },
+    {
+      "from": "train_overnight",
+      "to": "dataset_overnight",
+      "symbols": [
+        "aggregate_study_predictions"
+      ]
+    },
+    {
+      "from": "train_overnight",
+      "to": "cv_splits",
+      "symbols": [
+        "load_fold_records"
+      ]
+    },
+    {
+      "from": "train_overnight",
+      "to": "dataset_overnight",
+      "symbols": [
+        "make_overnight_loader"
+      ]
+    },
+    {
+      "from": "metrics_overnight",
+      "to": "dataset",
+      "symbols": [
+        "NUM_CLASSES"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "dataset",
+      "symbols": [
+        "CLASS_IDS",
+        "DEFAULT_TEST_MANIFEST",
+        "DEFAULT_VALID_MANIFEST",
+        "NUM_CLASSES",
+        "read_manifest"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "model_overnight",
+      "symbols": [
+        "MODEL_NAME",
+        "validate_model_config"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "train_overnight",
+      "symbols": [
+        "preprocessing_config"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "dataset_overnight",
+      "symbols": [
+        "aggregate_study_predictions",
+        "make_overnight_loader"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "model_overnight",
+      "symbols": [
+        "build_overnight_model"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "metrics_overnight",
+      "symbols": [
+        "calculate_metrics",
+        "search_class_thresholds"
+      ]
+    },
+    {
+      "from": "inference_overnight",
+      "to": "cv_splits",
+      "symbols": [
+        "read_fold_plan"
+      ]
+    },
+    {
+      "from": "cv_splits",
+      "to": "dataset",
+      "symbols": [
+        "CLASS_IDS",
+        "DEFAULT_TRAIN_MANIFEST",
+        "DEFAULT_VALID_MANIFEST",
+        "NUM_CLASSES",
+        "PROJECT_ROOT",
+        "read_manifest"
+      ]
+    },
+    {
+      "from": "dataset_overnight",
+      "to": "dataset",
+      "symbols": [
+        "CachedSampleError",
+        "IMAGENET_MEAN",
+        "IMAGENET_STD",
+        "NUM_CLASSES",
+        "letterbox_rgb",
+        "resolve_native_image_root"
+      ]
+    },
+    {
+      "from": "model_overnight",
+      "to": "runtime_compat",
+      "symbols": [
+        "prepare_runtime"
+      ]
+    }
+  ],
+  "helper_global_symbol_check": "passed",
+  "validation": "stdlib AST/symtable/hash/ZIP only; no project import or runtime tests",
+  "training_interaction": {
+    "tmux_commands": 0,
+    "signals": 0,
+    "gpu_commands": 0,
+    "training_or_inference": 0,
+    "environment_changes": 0,
+    "original_project_writes": 0
+  },
+  "excluded": [
+    "unused historical models/datasets/trainers",
+    "legacy dispatcher",
+    "old docs",
+    "tests",
+    "GPU probe",
+    "data/",
+    "runs/",
+    "weights",
+    "images",
+    "CSV",
+    "caches",
+    "logs",
+    "environments"
+  ],
+  "files_excluding_manifest": {
+    "LEARNING_GUIDE.md": {
+      "bytes": 15863,
+      "sha256": "1a2cad0f2e54cced3613738152eba81dccd99ff32c1981d86b5ea218e9a86430"
+    },
+    "README.md": {
+      "bytes": 3054,
+      "sha256": "1c81234ee9f569183e0d9827b637177a6223858a9351875a89a3c68a35a88158"
+    },
+    "cv_splits.py": {
+      "bytes": 18079,
+      "sha256": "d1db3da7ed6c9a80343d3d6861f519ebef7affd2f3431eac96d9573d65407d40"
+    },
+    "dataset.py": {
+      "bytes": 7237,
+      "sha256": "583c808d4e392844ea6d73333650c6786ce2fd0811299c9b0d0dbd10cfd41a7b"
+    },
+    "dataset_overnight.py": {
+      "bytes": 17788,
+      "sha256": "5d8556d79d68e1a17ca2a9be08ac2f86546abb0202d822360eda9258fb474193"
+    },
+    "inference_overnight.py": {
+      "bytes": 33216,
+      "sha256": "eceda2b34ec29444d8e5b8e35e3437087ad4b519e085795af38d0e925c0a5281"
+    },
+    "metrics_overnight.py": {
+      "bytes": 5027,
+      "sha256": "a8a74c4f52e7ff5ad3da2bc5b91ff523f86583531ab214e8f4b7fa61fc97d3f3"
+    },
+    "model_overnight.py": {
+      "bytes": 4414,
+      "sha256": "a9e9ddcb368c3703405f74acf3c1653243e5b2bdab90c389e3ce70f0195990d3"
+    },
+    "requirements.txt": {
+      "bytes": 1160,
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021"
+    },
+    "run_all_folds.py": {
+      "bytes": 22265,
+      "sha256": "6a967f43c04613d6b58991858d686223a856a472d1d7f3f2809fd6f35cbaa6f2"
+    },
+    "run_overnight.sh": {
+      "bytes": 1999,
+      "sha256": "207d135997b4d4defdd8180915bbef0d69a883461fc1e0ab9e94e81c80909e09"
+    },
+    "runtime_compat.py": {
+      "bytes": 2002,
+      "sha256": "0be18122e69ed22a2155bf57ccacdc625aee95c6a95d8b178c1cdea1f42bf3b4"
+    },
+    "train_overnight.py": {
+      "bytes": 56839,
+      "sha256": "017a836f4d18d46485afc8286aba2243edb9585618962c2f7ce64f9603e9dfa5"
+    }
+  }
+}

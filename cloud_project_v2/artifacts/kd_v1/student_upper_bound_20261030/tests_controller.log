@@ -1,0 +1,13 @@
+test_a_report_precedes_b_training_and_b_evaluation (test_student_upper_bound_controller.ControllerTests.test_a_report_precedes_b_training_and_b_evaluation) ... A vs 033 complete report
+[2026-10-30T13:36:22.852052+08:00] stage=A_report_saved_B_starting {"report": "/tmp/tmpgv539pwf/reports/A/REPORT.md"}
+[2026-10-30T13:36:22.852604+08:00] stage=completed {"A_report": "/tmp/tmpgv539pwf/reports/A/REPORT.md", "B_report": "/tmp/tmpgv539pwf/reports/B/REPORT.md", "T4_cost_report": "still_pending", "engineering_optimization_performed": false}
+ok
+test_committed_backup_is_only_rehashed_after_status_changes (test_student_upper_bound_controller.ControllerTests.test_committed_backup_is_only_rehashed_after_status_changes) ... ok
+test_failed_a_evaluation_never_launches_b (test_student_upper_bound_controller.ControllerTests.test_failed_a_evaluation_never_launches_b) ... [2026-10-30T13:36:22.868343+08:00] stage=failed {"error": "RuntimeError: evaluation did not complete", "traceback": "Traceback (most recent call last):\n  File \"/home/featurize/work/cloud_project_v2/run_student_upper_bound.py\", line 232, in execute\n    run_child(evaluations['A'], label='A', name='evaluation', interval=interval)\n  File \"/usr/lib/python3.12/unittest/mock.py\", line 1134, in __call__\n    return self._mock_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/unittest/mock.py\", line 1138, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/unittest/mock.py\", line 1199, in _execute_mock_call\n    result = effect(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/cloud_project_v2/tests/test_student_upper_bound_controller.py\", line 18, in child\n    raise RuntimeError('evaluation did not complete')\nRuntimeError: evaluation did not complete\n"}
+ok
+test_source_change_is_rejected_before_next_phase (test_student_upper_bound_controller.ControllerTests.test_source_change_is_rejected_before_next_phase) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.047s
+
+OK

@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-25T15:16:22.613929+08:00",
+  "python_executable": "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+  "root_cause": "SOCKS proxy transport optional dependency socksio was missing from the training environment",
+  "installed": {
+    "socksio": "1.0.0"
+  },
+  "requirements_updated": "requirements_kd.txt",
+  "package_versions": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "timm": "1.0.30",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0",
+    "opencv-python-headless": "4.11.0.86",
+    "albumentations": "2.0.8",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.15.3",
+    "huggingface-hub": "2.3.0",
+    "httpx2": "2.16.0",
+    "socksio": "1.0.0",
+    "safetensors": "0.8.0"
+  },
+  "checks_passed": [
+    "pip check",
+    "training and deployment module imports",
+    "training runtime version guard",
+    "SOCKS client initialization",
+    "HF Base and Tiny metadata requests",
+    "Base and Tiny full pretrained downloads, SHA256 and license validation",
+    "training data existence and patient-isolated folds",
+    "teacher launcher dry-run",
+    "CUDA device and BF16 capability queries",
+    "six packaging unit tests"
+  ],
+  "data_counts": {
+    "train_images": 30328,
+    "valid_images": 1422,
+    "missing_or_empty_images": 0
+  },
+  "protected_inputs": {
+    "data/clean_v1_reviewed/train_clean.csv": {
+      "sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "matches_before_repair": true
+    },
+    "data/clean_v1_reviewed/valid_manifest.csv": {
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "matches_before_repair": true
+    },
+    "data/cv5_overnight/folds.json": {
+      "sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+      "matches_before_repair": true
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cuda": "12.8",
+  "bf16_supported": true,
+  "training_started_this_task": false,
+  "model_constructions_this_task": 0,
+  "model_forwards_this_task": 0,
+  "backward_calls_this_task": 0,
+  "optimizer_updates_this_task": 0,
+  "pretrained_downloads_verified_this_task": 2,
+  "existing_teacher_run": "fold_0 empty; no checkpoint available; rerun launcher without deleting the directory",
+  "limitations": "Full training, real forward/backward, deployed FP16 AUC and official T4 latency remain untested by this environment repair.",
+  "package_reproducibility_fix": "Bundle requirements_kd.txt and point generated material instructions to the current training requirements"
+}

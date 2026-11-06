@@ -1,0 +1,36 @@
+{
+  "studies": 14811,
+  "images": 24277,
+  "patients": 8844,
+  "positive_studies": [
+    498.0,
+    720.0,
+    753.0,
+    1149.0,
+    1923.0,
+    3108.0,
+    3175.0,
+    3607.0,
+    3723.0,
+    5345.0
+  ],
+  "pos_weight": [
+    4.0,
+    4.0,
+    4.0,
+    3.4482371475273372,
+    2.5888275495141126,
+    1.9404752035117623,
+    1.9143881241179332,
+    1.7624365018536867,
+    1.7257587757665829,
+    1.3307895909773622
+  ],
+  "patient_weighting": "equal original Studies",
+  "dev_studies": 3702,
+  "dev_images": 6067,
+  "dev_patients": 2211,
+  "original_images": 30344,
+  "excluded_images": 0,
+  "all_studies_all_views_each_epoch": true
+}

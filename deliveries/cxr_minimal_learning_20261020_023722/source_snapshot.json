@@ -1,0 +1,62 @@
+{
+  "source": "/home/featurize/work/cloud_project_v2",
+  "stage": "/home/featurize/work/deliveries/cxr_minimal_learning_20261020_023722/cloud_project_v2",
+  "created_hong_kong": "2026-10-20T02:37:22.405083+08:00",
+  "files": {
+    "train_overnight.py": {
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "size": 51361,
+      "mtime_ns": 1792421825919772098
+    },
+    "model_overnight.py": {
+      "sha256": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+      "size": 2400,
+      "mtime_ns": 1792347612786893337
+    },
+    "dataset_overnight.py": {
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "size": 13643,
+      "mtime_ns": 1792421793566597221
+    },
+    "run_all_folds.py": {
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+      "size": 19897,
+      "mtime_ns": 1792422482472408855
+    },
+    "cv_splits.py": {
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "size": 14950,
+      "mtime_ns": 1792347598082273083
+    },
+    "dataset.py": {
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "size": 28911,
+      "mtime_ns": 1792421780770713925
+    },
+    "runtime_compat.py": {
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "size": 1739,
+      "mtime_ns": 1792360820000000000
+    },
+    "inference_overnight.py": {
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+      "size": 30402,
+      "mtime_ns": 1792421811729011539
+    },
+    "train.py": {
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+      "size": 59362,
+      "mtime_ns": 1792360820000000000
+    },
+    "run_overnight.sh": {
+      "sha256": "207d135997b4d4defdd8180915bbef0d69a883461fc1e0ab9e94e81c80909e09",
+      "size": 1999,
+      "mtime_ns": 1792422482033455093
+    },
+    "requirements.txt": {
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021",
+      "size": 1160,
+      "mtime_ns": 1792421795378439071
+    }
+  }
+}

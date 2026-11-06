@@ -1,0 +1,5 @@
+{
+  "reason": "Candidate v2 rejected: primary 3-round latency 144.974ms is slower than v1 133.443ms; stop unnecessary full validation",
+  "signal": "SIGINT",
+  "preserve_partial_outputs": true
+}

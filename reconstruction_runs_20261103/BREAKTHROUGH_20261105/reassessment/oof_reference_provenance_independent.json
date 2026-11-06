@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": {
+    "teacher_train_image_ids_exact_current_train": true,
+    "teacher_oof_image_ids_exact_current_dev": true,
+    "teacher_train_patients_exact_current_train": true,
+    "teacher_oof_patients_exact_current_dev": true,
+    "teacher_train_no_official_valid_patient": true,
+    "teacher_train_no_dev_patients": true,
+    "teacher_fixed_final_epoch12": true,
+    "no_outer_selection": true,
+    "no_valid_training": true,
+    "no_test_training": true,
+    "cache_original_train_only": true,
+    "cache_raw_identity_view0": true,
+    "same_source_sha": true,
+    "same_fold_plan_sha": true
+  },
+  "metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+  "teacher_checkpoint_recorded_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+  "checkpoint_not_reloaded_or_rehashed": true,
+  "teacher_extraction_precision": "bfloat16",
+  "current_dino_precision": "float16",
+  "reference_recipe": "identity raw logits -> sigmoid -> within Study arithmetic probability mean, no temperature or pos_weight alignment",
+  "limitation": "Valid same training/held-out identities, but model, supervision, resolution, precision, epochs and checkpoint selection differ; this is a practical reference, not controlled architecture ablation; whole-Study pos-weight correction can alter order after view aggregation and must not be silently introduced."
+}

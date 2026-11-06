@@ -1,0 +1,7 @@
+{
+  "full_checkpoint": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123/last.pt",
+  "sha256": "ae16479adb4b5c2c363fd032edf641d5bd437b57644d85c8f0d30b4b97ef8dda",
+  "epoch": 21,
+  "full_checkpoint_is_local_disk": true,
+  "full_checkpoint_persisted_to_workspace": false
+}

@@ -1,0 +1,9 @@
+{
+  "reason": "User explicitly stopped further optimization before this experiment finished",
+  "container_exit_code": 137,
+  "complete_validation": false,
+  "reported_auc": null,
+  "candidate_selected": false,
+  "resume_optimization_requires_new_user_instruction": true,
+  "future_80ms_goal_retained": true
+}

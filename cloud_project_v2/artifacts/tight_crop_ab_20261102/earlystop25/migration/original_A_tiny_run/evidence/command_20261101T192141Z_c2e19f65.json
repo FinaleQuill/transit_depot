@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-11-01T19:21:42.079855+00:00",
+  "command": [
+    "/usr/bin/python",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/tight_crop_ab_training.py",
+    "--arm",
+    "A",
+    "--member",
+    "tiny",
+    "--output",
+    "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/A_tiny",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "source_archive": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/A_tiny/evidence/source_20261101T192141Z_c2e19f65",
+  "console_log": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/A_tiny/evidence/console_20261101T192141Z_c2e19f65.log",
+  "preexisting_run_artifacts": [],
+  "coverage_from_start": "complete",
+  "exit_code": 0,
+  "child_pid": 7,
+  "ended_at": "2026-11-01T19:49:16.272674+00:00",
+  "console_bytes": 17416
+}

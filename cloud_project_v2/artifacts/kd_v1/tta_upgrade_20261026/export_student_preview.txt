@@ -1,0 +1,11 @@
+{
+  "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+  "num_classes": 10,
+  "estimated_parameters": 27827818,
+  "fp16_parameter_bytes": 55655636,
+  "fp32_parameter_bytes": 111311272,
+  "limit_bytes": 500000000,
+  "size_status": "estimate_only",
+  "latency_status": "pending_T4_measurement",
+  "note": "Each additional Tiny member adds this parameter count; actual serialization/configuration must be measured."
+}

@@ -1,0 +1,4 @@
+Hypothesis: training Tiny at 896 can improve disease-specific features while preserving 768 inference cost.
+Expected effect: at least one class gains >=0.01 AUC over the 768-trained reference; overall gain is expected >=0.005 if this is deployment-useful.
+Cost: one full official-train student run, 3 epochs from the same verified 041/E9 EMA, plus fixed official-valid evaluation.
+Failure criterion: incomplete compliance, any train/valid/test boundary violation, or no class with >=0.01 gain whose patient bootstrap CI excludes 0.

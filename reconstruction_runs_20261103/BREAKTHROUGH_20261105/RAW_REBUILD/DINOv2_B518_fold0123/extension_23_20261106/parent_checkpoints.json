@@ -1,0 +1,17 @@
+{
+  "last.pt": {
+    "path": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123/extension_23_parent/last.pt",
+    "sha256": "e4e39de28c5e7368ae32cd86e871b16e841181c932b72d2f283aa9da69c674c3",
+    "bytes": 1385931773
+  },
+  "best.pt": {
+    "path": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123/extension_23_parent/best.pt",
+    "sha256": "5e74e1ea82d268f44675684db5bc897715e93052f27d7635d4a2a7d10cb1f1a0",
+    "bytes": 346479705
+  },
+  "best_fp16.pt": {
+    "path": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123/extension_23_parent/best_fp16.pt",
+    "sha256": "8dbb51e4dab51ccae58b2ff387a433eda26eda7b43cfe54fc1440255043d4739",
+    "bytes": 173258393
+  }
+}

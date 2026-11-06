@@ -1,0 +1,15 @@
+{
+  "registered_at_hong_kong": "2026-10-31T15:49:19.737867+08:00",
+  "candidate": "AB_B100_class1_draft768_Aidentity_Bhflip2",
+  "base_candidate": "AB_B100_class1_JPEG_draft_target768",
+  "fixed_change": "Only A uses identity instead of identity+hflip2. B retains hflip2; class1 still B100%; other9 classes stillA/B50/50. Draft target768 fixed.",
+  "model_forwards_per_image": 3,
+  "rationale": "Prior actual decoder candidate achieves.816677 but84.820ms, so save one Tiny forward to target<=80ms while re-evaluating accuracy.",
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "test_used_for_selection": false,
+  "new_training": false,
+  "model_weights_unchanged": true,
+  "stop_rule": "Evaluate one reduced-view variant. Accept only full original valid>=.815 and original100+5 batch1 serial3 E2E mean<=80ms; no dense view/weight search.",
+  "formal_T4_certification": false
+}

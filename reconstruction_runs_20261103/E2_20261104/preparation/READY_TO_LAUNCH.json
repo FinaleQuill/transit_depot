@@ -1,0 +1,30 @@
+{
+  "automatic_AI_goal_created": false,
+  "created_at": "2026-11-04T14:51:08.370008+08:00",
+  "formal_configs": [
+    {
+      "path": "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_control.json",
+      "sha256": "2a5e7fc24461d30e76ae3cfe1fbf4f4a9a32de2a3bcf920d051c011e5f0da515"
+    },
+    {
+      "path": "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_local.json",
+      "sha256": "64e206fad5a2dc9cf1acabc7d92369c5875f805c63e417cc7bbf4dfe61fb7abd"
+    }
+  ],
+  "free_bytes_before_launch": 7628390400,
+  "frozen_E0_E1_unchanged": true,
+  "mechanics_not_efficacy": true,
+  "no_active_relevant_processes_or_containers": true,
+  "passed": true,
+  "reason": "8.8 percent lower mean compute time at 13.54 GiB allocated on 22 GiB; matched arms; train-only mechanics",
+  "selected_chunk_size": 8,
+  "source_commit": "18f90a8c98e21ffd79f357110c069fd892caaf49",
+  "supporting_sha256": {
+    "chunk_benchmark.json": "f825e0b83c088bb2c96442bab533fbc59d851744c9e46be14bf6b25ca2d9d129",
+    "cpu_tests.log": "9165960000ba550847871d5bd4889cd1911466dfbef5aa24d9e6b472add3b8a2",
+    "final_chunk8_preflight_corrected.log": "cb8fcba39b2562755ace3edf587905cb4816fbb0078f46b4d814374fc3bd7180",
+    "smoke_checkpoint_verification.json": "e08a512dc010f7200fe5fced028ea3b3a91aac2e23d3c7a9bdc4d6de6f6ea4af",
+    "smoke_invocations.json": "13b3254e0599586933a051ac0085a4bdb5625e06169b0e18a9251e1539c6de31",
+    "smoke_real_baseline_equivalence.json": "9e9e6dc71ec311e6d6d8e7b62f600845ddd866d2598b46d839e179d7fad70630"
+  }
+}

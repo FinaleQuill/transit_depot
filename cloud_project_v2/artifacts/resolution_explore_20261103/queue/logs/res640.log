@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/train_distill.py", line 963, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/featurize/work/cloud_project_v2/train_distill.py", line 954, in main
+    return run_logged(argparse.Namespace(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/training_evidence_monitor.py", line 273, in run_logged
+    archive = snapshot_source(PROJECT, evidence / ("source_" + stamp))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/training_evidence_monitor.py", line 48, in snapshot_source
+    output.mkdir(parents=True, exist_ok=False)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/home/featurize/work/runs/031_resolution_train640_eval768_20261103/evidence/source_20261102T185152Z_a338bd55'

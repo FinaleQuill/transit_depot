@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2026-10-19T15:04:25.242837+00:00",
+  "command": "NO_ALBUMENTATIONS_UPDATE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /environment/miniconda3/envs/cxr4090/bin/python -m unittest discover -s tests -p test_dataset_768.py -v",
+  "tests": 5,
+  "passed": 5,
+  "model_forwards": 0,
+  "gpu_tasks": 0,
+  "training_runs_started": 0,
+  "coverage": [
+    "native 768 read with missing 300 cache",
+    "landscape and portrait centered letterbox preserves all pixels",
+    "generic and overnight 768 native preprocessing consistency",
+    "changed native-image SHA rejects data without fallback",
+    "non-square input transforms preserve aspect ratio"
+  ],
+  "duration_seconds": 0.632,
+  "initial_fixture_correction": "Initial test fixtures used the train split, which correctly applies random augmentation; deterministic geometry comparisons were corrected to use the valid split. No production code change resulted from that fixture issue."
+}

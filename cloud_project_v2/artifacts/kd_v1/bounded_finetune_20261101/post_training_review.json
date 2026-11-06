@@ -1,0 +1,59 @@
+{
+  "reviewed_hong_kong": "2026-11-01T20:14:06.851718+08:00",
+  "state": "review_complete",
+  "target_auc": 0.82,
+  "target_met": false,
+  "best_valid_auc": 0.8171491901128627,
+  "completed_training_runs": 2,
+  "completed_training_epochs": 8,
+  "aborted_attempts_before_any_valid": 1,
+  "training_loop_minutes": 269.98592995925003,
+  "actual_candidates": {
+    "full_decode": {
+      "macro_auc": 0.8171491901128627,
+      "mean_ms": 93.49061585993091,
+      "round_mean_ms": [
+        97.26839926992398,
+        91.01629321987275,
+        92.18715508999594
+      ],
+      "size_bytes": 241448464,
+      "all_timed_images_and_Studies_bitwise_equal": true
+    },
+    "draft768": {
+      "macro_auc": 0.8169045290460086,
+      "mean_ms": 87.1001873432639,
+      "round_mean_ms": [
+        86.58956017985474,
+        88.43417904005037,
+        86.27682280988665
+      ],
+      "size_bytes": 241448514,
+      "all_timed_images_and_Studies_bitwise_equal": true
+    }
+  },
+  "full_vs_old_AB": {
+    "old_auc": 0.8168300303208815,
+    "delta": 0.0003191597919811606,
+    "patient_ci95": [
+      -0.0016263430595138907,
+      0.0018943567743342803
+    ]
+  },
+  "draft_vs_old_044": {
+    "old_auc": 0.8166770734158482,
+    "delta": 0.00022745563016046688,
+    "patient_ci95": [
+      -0.001736072742323479,
+      0.0018042336826434955
+    ]
+  },
+  "deployment_decision": "retain existing 043/044; preserve new models as experimental; no justified stable gain",
+  "new_test_prediction_executed": false,
+  "new_submission_created": false,
+  "platform_uploaded": false,
+  "T4_certified": false,
+  "no_more_same_recipe_training_scheduled": true,
+  "reviewed_models_receipt_sha256": "b54b9b17efb59673535587041f9ab2a3fe9734404ec431b8e8b0eaca1133e2e7",
+  "independent_training_review_sha256": "ea4345bc5757abc230d8da36862e34c95aac30fd2ef17603ad73710165517f8f"
+}

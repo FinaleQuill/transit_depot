@@ -1,0 +1,18 @@
+{
+  "schema": "cxr_e2_checkpoint_speed_transition_request_v1",
+  "created_at": "2026-11-04T21:30:46.213079+08:00",
+  "previous_controller_pid": 51006,
+  "requested_stop_sha256": "912b9138ead028abb3cc6969ffbd7f73314d0c4f783d11dccca6f6729126180d",
+  "boundary_epoch": 2,
+  "profile_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/retain_small_packs.json",
+  "profile_sha256": "ef6448a68ff768e4bb71f66b5352ecd5be1dbfea59601c19de2814a7420caf18",
+  "benchmark_output": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/benchmark",
+  "source_sha256": {
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller_checkpoint_speed.py": "a241a9b41d1ebda562eec96936adf9439506f16a289728d30919fdc7534c383a",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_checkpoint_speed.py": "3e3c104d9537497c346c085faa862e9aa8d8d87dee09e7353ff9614cbb25f009",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/benchmark_checkpoint_speed.py": "9c1d7cf64cce440a4cf0fe3baf38deb56146fd082bc9d4b671535e3d5e42302c"
+  },
+  "user_scope": "Use verified acceleration then end AI conversation; background original E2 queue only",
+  "live_request_record": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/request_at_live_epoch2.json",
+  "AI_goal_created": false
+}

@@ -1,0 +1,10 @@
+{
+  "requested_at": "2026-10-19T08:20:24+08:00",
+  "request": "用户要求手动结束训练、报告最好成绩并按样例和文档生成submission.csv",
+  "stop_method": "run STOP file; finish active epoch validation and checkpoint, then frozen best-checkpoint ensemble inference",
+  "stop_file": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP",
+  "training_restart_authorized": false,
+  "required_submission_filename": "submission.csv",
+  "sample_submission": "/home/featurize/work/submission.csv",
+  "sample_must_be_preserved": true
+}

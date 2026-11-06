@@ -1,0 +1,11 @@
+{
+  "state": "early_stopped",
+  "best_macro_auc": 0.7978396535270589,
+  "best_epoch": 8,
+  "attempted_updates": 4872,
+  "optimizer_updates": 4869,
+  "skipped_updates": 3,
+  "updated_at": "2026-11-04T06:17:14.562084+08:00",
+  "confirmation_evaluated": false,
+  "official_valid_evaluated": false
+}

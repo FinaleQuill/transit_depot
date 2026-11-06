@@ -1,0 +1,40 @@
+[ROBUST VALID] 100/1422
+[ROBUST VALID] 200/1422
+[ROBUST VALID] 300/1422
+[ROBUST VALID] 400/1422
+[ROBUST VALID] 500/1422
+[ROBUST VALID] 600/1422
+[ROBUST VALID] 700/1422
+[ROBUST VALID] 800/1422
+[ROBUST VALID] 900/1422
+[ROBUST VALID] 1000/1422
+[ROBUST VALID] 1100/1422
+[ROBUST VALID] 1200/1422
+[ROBUST VALID] 1300/1422
+[ROBUST VALID] 1400/1422
+[ROBUST VALID] 1422/1422
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/featurize/work/cxr_research_20261103/robust_ensemble/evaluate.py", line 266, in <module>
+    main()
+  File "/home/featurize/work/cxr_research_20261103/robust_ensemble/evaluate.py", line 262, in main
+    evaluate(json.loads(args.config.read_text()))
+  File "/home/featurize/work/cxr_research_20261103/robust_ensemble/evaluate.py", line 243, in evaluate
+    _write_json(output / 'report.json', report)
+  File "/home/featurize/work/cxr_research_20261103/sprint/evaluate.py", line 45, in _write_json
+    json.dump(value, stream, indent=2, ensure_ascii=False, allow_nan=False)
+  File "/usr/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable

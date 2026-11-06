@@ -1,0 +1,6 @@
+{
+  "max_image_probability_error": 0.0,
+  "all_class_auc_match_registered_result": true,
+  "new_model_weights": false,
+  "test_used": false
+}

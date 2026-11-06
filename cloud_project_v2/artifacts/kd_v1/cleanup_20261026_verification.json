@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-26T00:51:49.411148+08:00",
+  "all_data_manifest_hashes_unchanged": true,
+  "manifest_checks": {
+    "data/clean_v1_reviewed/valid_manifest.csv": true,
+    "data/clean_v1_reviewed/train_clean.csv": true,
+    "data/clean_v1_reviewed/test_manifest.csv": true,
+    "data/cv5_overnight/folds.json": true
+  },
+  "training_source_archives_retained": {
+    "source_before_patch": {
+      "exists": true,
+      "files": 53
+    },
+    "source_after_patch": {
+      "exists": true,
+      "files": 41
+    }
+  },
+  "active_teacher_processes": [
+    {
+      "pid": 147185,
+      "command": "/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 1 --output /home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 12 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/STOP --max-epochs-this-call 0"
+    }
+  ],
+  "removed_generated_cache_directories": [
+    "__pycache__",
+    "tests/__pycache__",
+    ".pytest_cache"
+  ],
+  "new_training_started": false,
+  "new_gpu_work": false
+}

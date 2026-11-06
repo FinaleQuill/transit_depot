@@ -1,0 +1,74 @@
+{
+  "selected": "sprint_candidate",
+  "selected_current": "sprint_candidate",
+  "candidate_won": false,
+  "selection_checks": {
+    "macro_strictly_better": false,
+    "class8_not_worse": true
+  },
+  "candidate_macro_auc": 0.8170438651519509,
+  "baseline_macro_auc": 0.8179628779375786,
+  "class8_auc_delta": 0.0015286531913351054,
+  "report": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/report.json",
+  "fusion_weights": [
+    [
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.4,
+      0.5,
+      0.5
+    ],
+    [
+      0.0,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.2,
+      0.25,
+      0.25
+    ],
+    [
+      0.0,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.4,
+      0.25,
+      0.25
+    ]
+  ],
+  "candidate_inference_assets": [
+    {
+      "id": "base768",
+      "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+      "bytes": 177397507,
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+    },
+    {
+      "id": "context512",
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/context512/final_fp16.pt",
+      "bytes": 55722707,
+      "sha256": "967a1daa5e7e54e5b87a9a80dd667d284f2a6bef31943f71b0c842cf428c2e33"
+    },
+    {
+      "id": "opacity512",
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/opacity512/final_fp16.pt",
+      "bytes": 55738703,
+      "sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c"
+    }
+  ],
+  "tta": "hflip2",
+  "research_selection_only": true,
+  "deployment_accepted": false
+}

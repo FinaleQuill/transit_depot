@@ -1,0 +1,32 @@
+
+[2026-10-19T00:20:48+00:00] /environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/inference.py --ensemble-plan /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/ensemble_plan.json --output /home/featurize/work/deliveries/019_convnextv2_base512_cv5_4090 --image-root /home/featurize/data/cxr_first --work-root /home/featurize/work --valid-manifest /home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv --test-manifest /home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv --sample-submission /home/featurize/work/submission.csv --batch-size 8 --num-workers 4 --prefetch-factor 1 --device cuda
+Ensemble official_valid: fold=0, epoch=5, weight=0.200000
+TTA completed: resolution=384, hflip=False, studies=859
+TTA completed: resolution=384, hflip=True, studies=859
+TTA completed: resolution=512, hflip=False, studies=859
+TTA completed: resolution=512, hflip=True, studies=859
+Ensemble official_valid: fold=1, epoch=4, weight=0.200000
+TTA completed: resolution=384, hflip=False, studies=859
+TTA completed: resolution=384, hflip=True, studies=859
+TTA completed: resolution=512, hflip=False, studies=859
+TTA completed: resolution=512, hflip=True, studies=859
+Ensemble official_valid: fold=2, epoch=4, weight=0.200000
+TTA completed: resolution=384, hflip=False, studies=859
+TTA completed: resolution=384, hflip=True, studies=859
+TTA completed: resolution=512, hflip=False, studies=859
+TTA completed: resolution=512, hflip=True, studies=859
+Ensemble official_valid: fold=3, epoch=4, weight=0.200000
+TTA completed: resolution=384, hflip=False, studies=859
+TTA completed: resolution=384, hflip=True, studies=859
+TTA completed: resolution=512, hflip=False, studies=859
+TTA completed: resolution=512, hflip=True, studies=859
+Ensemble official_valid: fold=4, epoch=4, weight=0.200000
+TTA completed: resolution=384, hflip=False, studies=859
+TTA completed: resolution=384, hflip=True, studies=859
+TTA completed: resolution=512, hflip=False, studies=859
+TTA completed: resolution=512, hflip=True, studies=859
+Official valid ensemble AUC=0.793436; starting test with frozen protocol
+Ensemble test: fold=0, epoch=5, weight=0.200000
+/environment/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[2026-10-19T00:28:24+00:00] exit_code=-15

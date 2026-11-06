@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/tmp/dual768_timing_bootstrap/bin/uv",
+    "pip",
+    "install",
+    "--python",
+    "/tmp/dual768_timing_env/bin/python",
+    "--index-url",
+    "https://download.pytorch.org/whl/cu128",
+    "torch==2.10.0+cu128",
+    "torchvision==0.25.0+cu128"
+  ],
+  "exit_code": 0,
+  "ended_utc": "2026-10-28T18:04:14.640213+00:00"
+}

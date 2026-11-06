@@ -1,0 +1,10 @@
+{
+  "observed_hong_kong": "2026-10-31T15:50:59.031941+08:00",
+  "user_instruction": "Stop further optimization now; deliver CSV for fullvalid .8166770734158482 / current2080Ti84.82014125668533ms. 80ms remains a future goal, not abandoned.",
+  "selected_candidate": "AB_B100_class1_JPEG_draft_target768",
+  "selected_view_config": "A hflip2, B hflip2; total4forwards",
+  "interrupted_experiment": "eighth mixed-view candidate Aidentity_Bhflip2; partial outputs retained, no final score/claim",
+  "test_used_for_selection": false,
+  "new_training": false,
+  "platform_upload": false
+}

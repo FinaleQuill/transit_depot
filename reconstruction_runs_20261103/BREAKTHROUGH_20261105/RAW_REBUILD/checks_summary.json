@@ -1,0 +1,12 @@
+{
+  "cpu_tests": 30,
+  "passed": true,
+  "logs": {
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/cpu_checks/checks.log": "3a76a2af8223d27cc7dccc6bfe4e2662bee0563858c0d2fe203bfda90ec55424",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/smoke_B518/lifecycle_checks.log": "8efd0cbe1588027015a8109421117f719db1a0cd99bd56c31b3f602bbfaea94d"
+  },
+  "full_raw_manifest_verified": true,
+  "training_images": 24277,
+  "development_images": 6067,
+  "excluded_images": 0
+}

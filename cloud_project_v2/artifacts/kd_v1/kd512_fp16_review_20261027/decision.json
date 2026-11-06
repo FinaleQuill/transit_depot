@@ -1,0 +1,21 @@
+{
+  "reviewed_at_hong_kong": "2026-10-27T15:19:40.736552+08:00",
+  "decision": "Actual027FP16accepted; keep singleKD. FixedequalBCE/KDblendadds~.000011so do notassemble now. Usernextstarts only028sameKD512short12freshschedule, allotherconfigsame.",
+  "KD_fp16_auc": 0.8054022578869962,
+  "actual_inference_bytes": 66995853,
+  "delta_vs_BCE": 0.0017675807114372333,
+  "delta_ci95": [
+    -0.0017517492619880393,
+    0.005884143401745703
+  ],
+  "equal_blend_diagnostic_auc": 0.8054131099900609,
+  "new_run": "../runs/028_tiny512_kd_short12_seed43",
+  "new_training_started": false,
+  "new_model_or_gpu_inference": false,
+  "composition_created": false,
+  "runtime_source_modified": false,
+  "gpu_processes": "",
+  "free_disk_gib": 6.9453125,
+  "T4_timing_certified": false,
+  "source_git_commit": "7109f08e258601fa1cc38ec4cc4238e42e1d3cfc"
+}

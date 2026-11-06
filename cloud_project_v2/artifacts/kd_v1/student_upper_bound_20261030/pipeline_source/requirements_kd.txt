@@ -1,0 +1,16 @@
+# 新蒸馏训练环境，Python 3.12；与官方 PyTorch 2.10 / CUDA 12.8 对齐。
+# 原 requirements.txt 属于历史运行记录，不用于新流程。
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0+cu128
+torchvision==0.25.0+cu128
+timm==1.0.30
+numpy==1.26.4
+Pillow==10.4.0
+opencv-python-headless==4.11.0.86
+albumentations==2.0.8
+scikit-learn==1.6.1
+scipy==1.15.3
+safetensors==0.8.0
+huggingface-hub>=0.34,<3
+# Hugging Face downloads use the host's SOCKS proxy.
+socksio>=1.0.0,<2

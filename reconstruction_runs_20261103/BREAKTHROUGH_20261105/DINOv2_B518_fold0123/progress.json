@@ -1,0 +1,18 @@
+{
+  "state": "training",
+  "epoch": 2,
+  "epochs": 18,
+  "studies_done": 11296,
+  "studies_total": 14811,
+  "images_done": 18527,
+  "loss": 0.6127059298111377,
+  "elapsed_seconds": 1957.7901594199939,
+  "estimated_epoch_seconds": 2566.999827476056,
+  "peak_gpu_bytes": 3284610560,
+  "gradient_norm": 9.008959770202637,
+  "head_lr": 0.00019911320493953938,
+  "attempted_updates": 816,
+  "optimizer_updates": 816,
+  "skipped_updates": 0,
+  "updated_at": "2026-11-05T21:24:46.582364+08:00"
+}

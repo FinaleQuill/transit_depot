@@ -1,0 +1,28 @@
+{
+  "pid": 225021,
+  "launched_at": "2026-11-05T20:34:02.818333+08:00",
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "breakthrough.generalization_monitor",
+    "--run",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/DINOv2_B518_fold0123",
+    "--reference",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/reassessment/cnn_fold4_reference.npz",
+    "--reference-sha256",
+    "7e862cefd95ad883294c6da418f6c6b66917cf0180d3a3a4a527038c5c7b30e0",
+    "--output",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/reassessment/development_comparisons",
+    "--watch",
+    "--max-hours",
+    "36",
+    "--repeats",
+    "300"
+  ],
+  "source_sha256": "a3bc58c55c37e4515c32391560584de232ae8c7747d730d530f1e5e333b49618",
+  "cpu_only": true,
+  "modifies_training": false,
+  "test_accessed": false,
+  "first_full_epoch_not_available_at_registration": true
+}

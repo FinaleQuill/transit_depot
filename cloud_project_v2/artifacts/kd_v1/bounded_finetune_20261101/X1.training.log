@@ -1,0 +1,7 @@
+study_student epoch=1 studies=1/18513 images=2 loss=0.022516 alpha=0.2000
+study_student epoch=1 studies=100/18513 images=163 loss=0.316222 alpha=0.2000
+study_student epoch=1 studies=200/18513 images=341 loss=0.339412 alpha=0.2000
+study_student epoch=1 studies=300/18513 images=510 loss=0.358565 alpha=0.2000
+study_student epoch=1 studies=400/18513 images=665 loss=0.357600 alpha=0.2000
+study_student epoch=1 studies=500/18513 images=832 loss=0.360512 alpha=0.2000
+study_student epoch=1 studies=600/18513 images=1006 loss=0.365253 alpha=0.2000

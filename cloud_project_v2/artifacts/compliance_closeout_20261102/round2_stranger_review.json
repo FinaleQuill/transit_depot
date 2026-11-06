@@ -1,0 +1,3032 @@
+{
+  "review_scope": "ZIP only, including its rules and supplement; no local source/evidence, external fetch, model import, training, inference, or test image access",
+  "zip_path": "/home/featurize/work/cloud_project_v2/artifacts/compliance_closeout_20261102/compliance_round1_review.zip",
+  "zip_sha256": "28d4d2fd93997a2929ecf132d82587a51443ee2c13a3a34fee8e8c7d51d904e5",
+  "zip_sha256_matches_expected": true,
+  "zip_member_count": 289,
+  "appendix_root_members": {
+    "cost.py": true,
+    "code/train.py": true,
+    "code/predict.py": true,
+    "code/model.py": true,
+    "code/utils.py": true,
+    "code/requirements.txt": true,
+    "submission.csv": true,
+    "模型核验材料与数据声明清单.xlsx": true
+  },
+  "matrix_rows": [
+    {
+      "line": 9,
+      "clause": "规则第 1 条",
+      "status": "已满足"
+    },
+    {
+      "line": 10,
+      "clause": "规则第 2 条",
+      "status": "已满足"
+    },
+    {
+      "line": 11,
+      "clause": "规则第 3 条",
+      "status": "已满足"
+    },
+    {
+      "line": 12,
+      "clause": "规则第 4 条",
+      "status": "已满足"
+    },
+    {
+      "line": 13,
+      "clause": "规则第 5 条",
+      "status": "已满足"
+    },
+    {
+      "line": 14,
+      "clause": "规则第 6 条",
+      "status": "已满足"
+    },
+    {
+      "line": 15,
+      "clause": "规则第 7 条",
+      "status": "待补"
+    },
+    {
+      "line": 16,
+      "clause": "规则第 8 条",
+      "status": "待补"
+    },
+    {
+      "line": 17,
+      "clause": "规则第 9 条",
+      "status": "不适用"
+    },
+    {
+      "line": 18,
+      "clause": "规则第 10 条",
+      "status": "待补"
+    },
+    {
+      "line": 19,
+      "clause": "规则第 11 条",
+      "status": "待补"
+    },
+    {
+      "line": 20,
+      "clause": "附录 A1",
+      "status": "已满足"
+    },
+    {
+      "line": 21,
+      "clause": "附录 A2",
+      "status": "已满足"
+    },
+    {
+      "line": 22,
+      "clause": "附录 A3",
+      "status": "已满足"
+    },
+    {
+      "line": 23,
+      "clause": "附录 A4",
+      "status": "已满足"
+    },
+    {
+      "line": 24,
+      "clause": "附录 A5",
+      "status": "已满足"
+    },
+    {
+      "line": 25,
+      "clause": "附录 A6",
+      "status": "已满足"
+    },
+    {
+      "line": 26,
+      "clause": "附录 A 总则/示例",
+      "status": "待补"
+    },
+    {
+      "line": 27,
+      "clause": "补充说明第一节",
+      "status": "已满足"
+    },
+    {
+      "line": 28,
+      "clause": "补充说明第二节",
+      "status": "已满足"
+    },
+    {
+      "line": 29,
+      "clause": "补充说明第三节",
+      "status": "待补"
+    },
+    {
+      "line": 30,
+      "clause": "补充说明第四节",
+      "status": "不适用"
+    },
+    {
+      "line": 31,
+      "clause": "补充说明第五节",
+      "status": "已满足"
+    },
+    {
+      "line": 32,
+      "clause": "补充说明第六节",
+      "status": "已满足"
+    },
+    {
+      "line": 33,
+      "clause": "补充说明第七节",
+      "status": "已满足"
+    },
+    {
+      "line": 34,
+      "clause": "补充说明第八节",
+      "status": "已满足"
+    },
+    {
+      "line": 35,
+      "clause": "补充说明第九节",
+      "status": "待补"
+    },
+    {
+      "line": 36,
+      "clause": "补充说明第十节",
+      "status": "不适用"
+    },
+    {
+      "line": 37,
+      "clause": "补充说明第十一节",
+      "status": "已满足"
+    }
+  ],
+  "matrix_status_counts": {
+    "已满足": 19,
+    "待补": 7,
+    "不适用": 3
+  },
+  "matrix_references": [
+    {
+      "matrix_line": 9,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E4",
+      "value": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 9,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E11",
+      "value": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 9,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F9",
+      "value": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 9,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F16",
+      "value": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 9,
+      "reference": "A1_A5_FREEZE_RECORD.md:3",
+      "value": "2026-11-02，提交人明确告知：模型名称、固定 revision、Apache-2.0 全文、HF model card 快照和预训练权重 SHA-256 已独立核对到 HF LFS oid，全部一致，要求冻结不改。此为提交人的核验记录，不是主办方验收凭证。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 9,
+      "reference": "declarations/negative_declaration.md:3",
+      "value": "- 本次申报的 V1 血缘和 041 历史推理成员未使用 ConvNeXt V2，也没有继承 V2 的权重或蒸馏知识。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 10,
+      "reference": "declarations/data_declaration.md:7",
+      "value": "监督训练只读取赛方官方 train 派生清单 `evidence/data/train_clean.csv`。该清单包含 11,055 名患者、18,513 个 Study、30,328 张图；官方 train 原始清单为 30,344 张，历史清洗日志登记 14 个同 Study 同标签同像素重复和 2 个技术废片被隔离（本轮从元数据复核 16 个排除身份与标签/Study 守恒，不重新鉴定图片；原逐图人工审阅文件当前缺失，见 evidence/data/README.md）。原始图像和原始标签没有被覆盖。五折计划 `evidence/data/folds.json` 按 `Subject_id` 隔离；各折的交集检查与计数见 `evidence/data/preflight_data.json`。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 10,
+      "reference": "evidence/data/recomputed_stats.json:23",
+      "value": "  \"derived_training_manifest\": {",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 10,
+      "reference": "evidence/data/recomputed_stats.json:249",
+      "value": "    \"patient_train_valid_overlap\": 0,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 11,
+      "reference": "declarations/data_declaration.md:11",
+      "value": "只读官方 valid：228 名患者、859 个 Study、1,422 张图，哈希登记在 `evidence/data/MANIFEST_HASHES.md`。valid 未并入训练，用于早停、checkpoint/候选比较和诊断。若未来决定将 valid 并入训练，必须在并入前完成全部早停、checkpoint 选择、阈值和超参数决定；本审查包没有进行该并入。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 11,
+      "reference": "evidence/training/student_A/config.json:12",
+      "value": "  \"patience\": 5,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 11,
+      "reference": "evidence/training/student_B/config.json:12",
+      "value": "  \"patience\": 5,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 12,
+      "reference": "declarations/data_declaration.md:23",
+      "value": "几何、像素、遮挡和其他随机增强仅在训练期启用；推理和提交生成关闭全部随机增强算子。推理只使用固定的 EXIF/RGB/letterbox、固定归一化、冻结模型和声明的确定性 horizontal-flip TTA（如该成员配置启用）。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 12,
+      "reference": "code/inference_reproducibility.py:36",
+      "value": "            \"model_eval_required\": True, \"random_inference_augmentation\": False}",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 12,
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md:17",
+      "value": "| 裁剪B_tiny（弃用） | 是（train折外logits） | 从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000 | 0 | 1 | 48 | Tiny A E9 FP32 EMA | evidence/training/crop_B_tiny/config.json | evidence/training/crop_B_tiny/console_20261102T024037Z_61c80be4.log:1 | 弃用实验；不推理 |",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 13,
+      "reference": "declarations/data_declaration.md:15",
+      "value": "test 只用于最终固定模型预测和提交格式/身份完整性检查。没有用于训练、二次预训练、自监督、伪标签、统计量估计、归一化统计量估计、质量或置信度阈值拟合、checkpoint 选择或候选选模。测试集没有反向改变模型或后处理。`submission.csv` 是历史最高分 041 CSV，文件哈希见 `submission_record.md`。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 13,
+      "reference": "evidence/runtime/041_historical/README.md:3",
+      "value": "2026-10-30，Asia/Hong_Kong。用户本轮明确授权：先测A、生成A的submission.csv，结束后继续B。这取代此前“本阶段不生成新test预测”的范围限制；033原CSV及038安全基准仍保留。没有上传平台，没有依据test预测或榜单反馈调参。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 13,
+      "reference": "evidence/teachers/oof_metadata.json:15",
+      "value": "  \"source_split\": \"train\",",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 14,
+      "reference": "declarations/inference_postprocessing_declaration.md:5",
+      "value": "每张图独立进行固定前向；模型以 `eval()` 模式运行，参数、Dropout 和后处理参数冻结，随机种子为 43。TTA 仅为预先固定的 horizontal flip 两视图平均（hflip2）；不存在随机裁剪、随机擦除或其他随机推理算子。LayerNorm 使用模型中冻结的学习到的仿射参数，按该层定义对当前输入计算确定性归一化；本模型没有可更新的测试集 BN 统计量。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 14,
+      "reference": "declarations/inference_postprocessing_declaration.md:9",
+      "value": "单图概率先保留十类完整向量；同一 `Subject_id + Study_id` 的多图概率做固定 FP64 算术均值后输出。该聚合不拟合权重、不使用标签、不使用测试集统计量，也不跨 Study 混合患者的不同检查。当前包没有患者级跨 Study 聚合；若未来采用患者级聚合，必须在申报中明确其为不拟合任何参数的确定性聚合。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 14,
+      "reference": "code/deploy_kd.py:448",
+      "value": "            model.eval().requires_grad_(False).to(self.device, dtype=torch.float16,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 15,
+      "reference": "cost_consistency_report.md:3",
+      "value": "状态：**待补，未声称通过**。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 15,
+      "reference": "code/submission_runtime.py:8",
+      "value": "def load_submission_predictor(model_dir):",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 15,
+      "reference": "scope_and_blockers.md:3",
+      "value": "## B1：041 原始推理配置缺失",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 15,
+      "reference": "scope_and_blockers.md:7",
+      "value": "## B2：100样本实际 cost 一致性缺失",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 15,
+      "reference": "scope_and_blockers.md:15",
+      "value": "## B4：计时口径与样本覆盖",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 16,
+      "reference": "model/file_inventory.md:3",
+      "value": "最终成员未冻结，最终体积合格状态：待补。下面是041历史恢复所需文件，不能把缺失文件当0字节。文件大小以十进制bytes记录（500MB按500,000,000bytes保守执行）。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 16,
+      "reference": "evidence/weights/inventory.md:9",
+      "value": "| teacher_fold_0 | best.pt | 351372815 | a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d | 离线教师，仅生成官方 train 折外软标签 | 否 | 否：离线教师不参与推理 | evidence/teachers/fold_0/checkpoint_audit.jsonl |",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 16,
+      "reference": "model/runtime_files.json:23",
+      "value": "  \"final_total_bytes\": null,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 17,
+      "reference": "procedure_and_scope.md:5",
+      "value": "规则第9条的撤销是参赛账号平台操作，本轮没有平台提交或撤销，亦没有账号历史证据；不对撤销次数或截止前操作作无依据声明。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 18,
+      "reference": "README.md:24",
+      "value": "## 代码与复现入口",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 18,
+      "reference": "scope_and_blockers.md:3",
+      "value": "## B1：041 原始推理配置缺失",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 18,
+      "reference": "scope_and_blockers.md:11",
+      "value": "## B3：最终成员、体积和官方运行认证未冻结",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 18,
+      "reference": "evidence/runtime/ENVIRONMENT_VERIFICATION.md:19",
+      "value": "- Python: 3.12.3",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 19,
+      "reference": "declarations.md:16",
+      "value": "## 数据声明",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 19,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E51",
+      "value": "FP16（已声明）；成员身份与最终加载文件仍待冻结。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 19,
+      "reference": "scope_and_blockers.md:23",
+      "value": "本包不能标为零缺口最终提交。所有可由本地已有文件补齐的声明、哈希、来源与代码已整理；剩余事项停在这里，等待提交人决策，不触发训练或优化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 20,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E4",
+      "value": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 20,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E11",
+      "value": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 21,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E5",
+      "value": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 21,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E12",
+      "value": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/resolve/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 21,
+      "reference": "licenses/README.md:11",
+      "value": "- Weight URL: <https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors>",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 22,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E7",
+      "value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_base/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 22,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E14",
+      "value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_tiny/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 22,
+      "reference": "licenses/convnext_base/LICENSE-Apache-2.0.txt:2",
+      "value": "                                 Apache License",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 22,
+      "reference": "licenses/convnext_tiny/LICENSE-Apache-2.0.txt:2",
+      "value": "                                 Apache License",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 22,
+      "reference": "A1_A5_FREEZE_RECORD.md:7",
+      "value": "许可证索引及冻结单元格保留的 HTTP 429 / NOTICE 字句属于上一轮核验时的历史状态，本轮不删除原文、不将其冒充新的远端检查结果；按提交人本轮裁定，A1–A5 不再重开。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 23,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E8",
+      "value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 23,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E15",
+      "value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 23,
+      "reference": "licenses/convnext_base/HF_MODEL_CARD.md:14",
+      "value": "A ConvNeXt image classification model. Pretrained on ImageNet-22k and fine-tuned on ImageNet-1k by paper authors.",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 23,
+      "reference": "licenses/convnext_tiny/HF_MODEL_CARD.md:14",
+      "value": "A ConvNeXt image classification model. Pretrained on ImageNet-22k and fine-tuned on ImageNet-1k by paper authors.",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 24,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F9",
+      "value": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 24,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F16",
+      "value": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 24,
+      "reference": "evidence/XLSX_frozen_cell_comparison.json:8",
+      "value": "  \"all_equal\": true,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 25,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E51",
+      "value": "FP16（已声明）；成员身份与最终加载文件仍待冻结。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 25,
+      "reference": "model/runtime_files.json:3",
+      "value": "  \"precision_declaration\": \"FP16\",",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 26,
+      "reference": "submission_record.md:5",
+      "value": "- SHA-256：44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 26,
+      "reference": "evidence/rules/interpretation.md:7",
+      "value": "正式规则附录 A 第 5 页的目录树写作“提交示例”，因此该树中的 `pretrain_model/` 是示例目录，不能单独推导出必须将所有原始预训练二进制放入材料包。正式必须项是第 1 条模型来源、公开链接、完整许可证、上游训练数据说明和 SHA-256，以及第 10 条的可复现材料。补充说明第三节（五）明确：不参与最终推理的教师权重文件不必放入包，但教师哈希和许可证仍须申报。最终实际加载的推理权重和必要配置须按第 8 条计入并提供清单。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 26,
+      "reference": "README.md:24",
+      "value": "## 代码与复现入口",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 26,
+      "reference": "scope_and_blockers.md:19",
+      "value": "## 命名与模板",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 27,
+      "reference": "evidence/rules/interpretation.md:3",
+      "value": "本目录中的 `official_rules.pdf` 与 `official_supplement.pdf` 是正式来源原件；同名 `.txt` 保留完整提取文本并包含 `===== PDF PAGE n =====` 页标。正式规则和正式补充优先于页面、FAQ、群消息或口头答疑。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 27,
+      "reference": "scope_and_blockers.md:17",
+      "value": "正式书面第7条仍是单图平均；提交人转发公告说明以Study为batch单位，并要求内部按逐Study硬上限≤100ms执行。规则原文原样归档；本包保留更严格内部约束，不称该约束已通过。现有cost是逐图版本，不能冒充逐Study验收。正式更新书面解释、对应样本集和实际运行记录不齐，见evidence/rules/interpretation.md。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 28,
+      "reference": "declarations/data_declaration.md:19",
+      "value": "没有使用外部医学数据、医学文献衍生数据、医院数据或外部医学无标签数据。模型初始化使用已申报的通用自然图像 ImageNet 预训练 ConvNeXt V1 Base/Tiny 权重；没有使用医学预训练权重，也没有用任何外部医学数据继续预训练或自监督。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 28,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E4",
+      "value": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 28,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E11",
+      "value": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 28,
+      "reference": "declarations/negative_declaration.md:9",
+      "value": "历史归档中存在已弃用的 ConvNeXt V2 实验。该历史分支已被隔离，未进入本申报的 V1 教师、OOF 软标签、学生或 041 推理链路。由于本地材料不能证明所有历史平台账号操作，本文不作“历史上从未提交过 V2”的扩大声明。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F21",
+      "value": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F22",
+      "value": "6751d94704abfefba1c11ed51e3b5d26e5e68c6a84e203ead4088b92294187b2",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F23",
+      "value": "a6c122c4f60abd924cecce3c83db21a65e8ba824028b6cae362eba9df2ac683b",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F24",
+      "value": "f0184c787573f745a76082d6bb450efe134931d09d43d3d988bd260fa26761be",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!F25",
+      "value": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md:3",
+      "value": "本文件由包内可打开的源码与每折审计组成。教师 `best.pt` 是固定训练轮数完成时写入的最终 EMA 快照；“best”不是按外折标签或 valid AUC 选择。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md:20",
+      "value": "初始A的hard loss为逐图BCE再按Study图数加权，Base B及后续X1/裁剪A/B的hard loss为完整Study概率均值BCE。所有有KD者均为Bernoulli KL(T=2)。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 29,
+      "reference": "模型核验材料与数据声明清单.xlsx::申报清单草案!E52",
+      "value": "待冻结。未声明候选为最终成员；本轮历史041模型在model/的用途须以包根说明为准。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 30,
+      "reference": "procedure_and_scope.md:9",
+      "value": "没有开展本申报 V1 链路的自监督预训练；五折教师为官方 train 上的有监督微调，学生为有监督硬标签加 train 折外软标签蒸馏，证据见 evidence/teachers/SELECTION_EVIDENCE.md 和 evidence/training/。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 31,
+      "reference": "declarations/data_declaration.md:19",
+      "value": "没有使用外部医学数据、医学文献衍生数据、医院数据或外部医学无标签数据。模型初始化使用已申报的通用自然图像 ImageNet 预训练 ConvNeXt V1 Base/Tiny 权重；没有使用医学预训练权重，也没有用任何外部医学数据继续预训练或自监督。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 31,
+      "reference": "declarations/negative_declaration.md:5",
+      "value": "- 未使用任何外部医学数据、医学文献衍生数据、医院私有数据或外部医学无标签数据。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 32,
+      "reference": "declarations/data_declaration.md:23",
+      "value": "几何、像素、遮挡和其他随机增强仅在训练期启用；推理和提交生成关闭全部随机增强算子。推理只使用固定的 EXIF/RGB/letterbox、固定归一化、冻结模型和声明的确定性 horizontal-flip TTA（如该成员配置启用）。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 32,
+      "reference": "declarations/inference_postprocessing_declaration.md:13",
+      "value": "推理阶段没有梯度更新、测试时训练、跨样本自适应、测试集统计量拟合、阈值拟合、NMS 参数调整或概率校准。`predict.py` 和 `cost.py` 通过同一 `submission_runtime.load_submission_predictor` 加载逻辑和相同的固定推理入口；一致性核验状态以 `cost_consistency_report.md` 为准。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 33,
+      "reference": "declarations/inference_postprocessing_declaration.md:9",
+      "value": "单图概率先保留十类完整向量；同一 `Subject_id + Study_id` 的多图概率做固定 FP64 算术均值后输出。该聚合不拟合权重、不使用标签、不使用测试集统计量，也不跨 Study 混合患者的不同检查。当前包没有患者级跨 Study 聚合；若未来采用患者级聚合，必须在申报中明确其为不拟合任何参数的确定性聚合。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 33,
+      "reference": "code/deploy_kd.py:583",
+      "value": "class StudyAccumulator:",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 34,
+      "reference": "declarations/inference_postprocessing_declaration.md:5",
+      "value": "每张图独立进行固定前向；模型以 `eval()` 模式运行，参数、Dropout 和后处理参数冻结，随机种子为 43。TTA 仅为预先固定的 horizontal flip 两视图平均（hflip2）；不存在随机裁剪、随机擦除或其他随机推理算子。LayerNorm 使用模型中冻结的学习到的仿射参数，按该层定义对当前输入计算确定性归一化；本模型没有可更新的测试集 BN 统计量。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 34,
+      "reference": "code/deploy_kd.py:448",
+      "value": "            model.eval().requires_grad_(False).to(self.device, dtype=torch.float16,",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 34,
+      "reference": "code/deploy_kd.py:25",
+      "value": "MEAN = (0.485, 0.456, 0.406)",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 35,
+      "reference": "cost_consistency_report.md:3",
+      "value": "状态：**待补，未声称通过**。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 35,
+      "reference": "model/file_inventory.md:3",
+      "value": "最终成员未冻结，最终体积合格状态：待补。下面是041历史恢复所需文件，不能把缺失文件当0字节。文件大小以十进制bytes记录（500MB按500,000,000bytes保守执行）。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 35,
+      "reference": "scope_and_blockers.md:15",
+      "value": "## B4：计时口径与样本覆盖",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 36,
+      "reference": "procedure_and_scope.md:7",
+      "value": "补充说明第十节的成绩舍入及同分排序由平台执行，本包不计算或改变平台评分；历史76.92为提交人确认，来源见 submission_record.md。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 37,
+      "reference": "evidence/rules/interpretation.md:3",
+      "value": "本目录中的 `official_rules.pdf` 与 `official_supplement.pdf` 是正式来源原件；同名 `.txt` 保留完整提取文本并包含 `===== PDF PAGE n =====` 页标。正式规则和正式补充优先于页面、FAQ、群消息或口头答疑。",
+      "exists_nonempty": true
+    },
+    {
+      "matrix_line": 37,
+      "reference": "scope_and_blockers.md:17",
+      "value": "正式书面第7条仍是单图平均；提交人转发公告说明以Study为batch单位，并要求内部按逐Study硬上限≤100ms执行。规则原文原样归档；本包保留更严格内部约束，不称该约束已通过。现有cost是逐图版本，不能冒充逐Study验收。正式更新书面解释、对应样本集和实际运行记录不齐，见evidence/rules/interpretation.md。",
+      "exists_nonempty": true
+    }
+  ],
+  "matrix_missing_or_empty_references": [],
+  "xlsx_cells": {
+    "申报清单草案": {
+      "A1": "醒目状态提示",
+      "B1": "依据038旧表改制的申报清单；模板版本尚无官方确认。A1–A5按用户核验结论冻结，本轮不重验上游。教师及候选现存权重已逐字节计算SHA-256；最终推理成员尚未冻结。见 evidence/XLSX_CELLS.md。",
+      "A2": "序号",
+      "B2": "分区",
+      "C2": "名称/用途",
+      "D2": "规则依据",
+      "E2": "内容、来源 URL 或包内路径",
+      "F2": "现存文件 SHA-256（本轮逐字节计算；候选不代表最终成员）",
+      "G2": "code_sha256",
+      "H2": "包内可打开证据",
+      "I2": "用途/配置补充",
+      "A3": "A",
+      "B3": "A",
+      "C3": "A. 预训练权重与永久来源申报",
+      "D3": "规则第10/11条、附录A及蒸馏补充说明",
+      "A4": "A-BASE-01",
+      "B4": "A",
+      "C4": "ConvNeXt Base 预训练模型名称及固定 revision",
+      "D4": "附录A A1",
+      "E4": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "A5": "A-BASE-02",
+      "B5": "A",
+      "C5": "Base 公开权重 URL",
+      "D5": "附录A A2",
+      "E5": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+      "A6": "A-BASE-03",
+      "B6": "A",
+      "C6": "Base model card URL",
+      "D6": "来源说明",
+      "E6": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/raw/2b2698d86523262ca8065d0957c7f80d963bb43f/README.md",
+      "A7": "A-BASE-04",
+      "B7": "A",
+      "C7": "Base 许可证",
+      "D7": "附录A A3",
+      "E7": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_base/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "A8": "A-BASE-05",
+      "B8": "A",
+      "C8": "Base 上游训练数据说明",
+      "D8": "附录A A4",
+      "E8": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "A9": "A-BASE-06",
+      "B9": "A",
+      "C9": "Base 原预训练权重 SHA-256",
+      "D9": "附录A A5",
+      "E9": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_base.fb_in22k_ft_in1k_384_bc0cfafc7d77/model.safetensors；SHA-256=bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "F9": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "A10": "A-BASE-07",
+      "B10": "A",
+      "C10": "Base 推理精度字段",
+      "D10": "附录A A6",
+      "E10": "A6 推理精度：FP16。此条仅声明推理精度，不指定最终Base成员；最终成员身份待冻结，见C区。",
+      "A11": "A-TINY-01",
+      "B11": "A",
+      "C11": "ConvNeXt Tiny 预训练模型名称及固定 revision",
+      "D11": "附录A A1",
+      "E11": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "A12": "A-TINY-02",
+      "B12": "A",
+      "C12": "Tiny 公开权重 URL",
+      "D12": "附录A A2",
+      "E12": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/resolve/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+      "A13": "A-TINY-03",
+      "B13": "A",
+      "C13": "Tiny model card URL",
+      "D13": "来源说明",
+      "E13": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/raw/32c741ba106f9e062174ef829354a16719c3dcac/README.md",
+      "A14": "A-TINY-04",
+      "B14": "A",
+      "C14": "Tiny 许可证",
+      "D14": "附录A A3",
+      "E14": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_tiny/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "A15": "A-TINY-05",
+      "B15": "A",
+      "C15": "Tiny 上游训练数据说明",
+      "D15": "附录A A4",
+      "E15": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "A16": "A-TINY-06",
+      "B16": "A",
+      "C16": "Tiny 原预训练权重 SHA-256",
+      "D16": "附录A A5",
+      "E16": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_tiny.fb_in22k_ft_in1k_384_a5cbe10cfa2e/model.safetensors；SHA-256=a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "F16": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "A17": "A-TINY-07",
+      "B17": "A",
+      "C17": "Tiny 推理精度字段",
+      "D17": "附录A A6",
+      "E17": "A6 推理精度：FP16。此条仅声明推理精度，不指定最终Tiny成员；最终成员身份待冻结，见C区。",
+      "A18": "A-CODE-01",
+      "B18": "A",
+      "C18": "ConvNeXt 上游代码许可证",
+      "D18": "来源/代码许可",
+      "E18": "MIT；许可证 URL：https://raw.githubusercontent.com/facebookresearch/ConvNeXt/main/LICENSE；本地全文：licenses/convnext_upstream/LICENSE-MIT.txt；不替代两份权重各自的 Apache-2.0 声明。",
+      "F18": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "A19": "A-NOTICE-01",
+      "B19": "A",
+      "C19": "NOTICE 远端核验状态",
+      "D19": "待 REVIEW-1 核验",
+      "E19": "本地许可归档未见单独 NOTICE；HF API 返回 HTTP 429，远端文件清单和是否包含 NOTICE 尚未核实，不能据本地归档推断上游不存在 NOTICE。",
+      "A20": "B",
+      "B20": "B",
+      "C20": "B. 训练产物、脚本及软标签血缘（用途逐项标明）",
+      "D20": "规则第10/11条、附录A及蒸馏补充说明",
+      "A21": "B-TEACHER-F0",
+      "B21": "B",
+      "C21": "五折 Base 教师 fold 0 checkpoint",
+      "D21": "正式补充第三节（五）/训练血缘",
+      "E21": "离线Base教师fold0；固定20轮最终EMA（best.pt不是按valid/held-out指标选出的最优）。不参与推理；实际大小351372815字节。",
+      "F21": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+      "H21": "evidence/teachers/fold_0/config.json; evidence/teachers/fold_0/history.jsonl; evidence/teachers/fold_0/checkpoint_audit.jsonl; evidence/weights/inventory.json",
+      "I21": "无软标签训练；KD alpha不适用；LR warmup=1轮；seed=43；选择依据见evidence/teachers/SELECTION_EVIDENCE.md。",
+      "A22": "B-TEACHER-F1",
+      "B22": "B",
+      "C22": "五折 Base 教师 fold 1 checkpoint",
+      "D22": "正式补充第三节（五）/训练血缘",
+      "E22": "离线Base教师fold1；固定12轮最终EMA（best.pt不是按valid/held-out指标选出的最优）。不参与推理；实际大小351372815字节。",
+      "F22": "6751d94704abfefba1c11ed51e3b5d26e5e68c6a84e203ead4088b92294187b2",
+      "H22": "evidence/teachers/fold_1/config.json; evidence/teachers/fold_1/history.jsonl; evidence/teachers/fold_1/checkpoint_audit.jsonl; evidence/weights/inventory.json",
+      "I22": "无软标签训练；KD alpha不适用；LR warmup=1轮；seed=43；选择依据见evidence/teachers/SELECTION_EVIDENCE.md。",
+      "A23": "B-TEACHER-F2",
+      "B23": "B",
+      "C23": "五折 Base 教师 fold 2 checkpoint",
+      "D23": "正式补充第三节（五）/训练血缘",
+      "E23": "离线Base教师fold2；固定12轮最终EMA（best.pt不是按valid/held-out指标选出的最优）。不参与推理；实际大小351372815字节。",
+      "F23": "a6c122c4f60abd924cecce3c83db21a65e8ba824028b6cae362eba9df2ac683b",
+      "H23": "evidence/teachers/fold_2/config.json; evidence/teachers/fold_2/history.jsonl; evidence/teachers/fold_2/checkpoint_audit.jsonl; evidence/weights/inventory.json",
+      "I23": "无软标签训练；KD alpha不适用；LR warmup=1轮；seed=43；选择依据见evidence/teachers/SELECTION_EVIDENCE.md。",
+      "A24": "B-TEACHER-F3",
+      "B24": "B",
+      "C24": "五折 Base 教师 fold 3 checkpoint",
+      "D24": "正式补充第三节（五）/训练血缘",
+      "E24": "离线Base教师fold3；固定12轮最终EMA（best.pt不是按valid/held-out指标选出的最优）。不参与推理；实际大小351372943字节。",
+      "F24": "f0184c787573f745a76082d6bb450efe134931d09d43d3d988bd260fa26761be",
+      "H24": "evidence/teachers/fold_3/config.json; evidence/teachers/fold_3/history.jsonl; evidence/teachers/fold_3/checkpoint_audit.jsonl; evidence/weights/inventory.json",
+      "I24": "无软标签训练；KD alpha不适用；LR warmup=1轮；seed=43；选择依据见evidence/teachers/SELECTION_EVIDENCE.md。",
+      "A25": "B-TEACHER-F4",
+      "B25": "B",
+      "C25": "五折 Base 教师 fold 4 checkpoint",
+      "D25": "正式补充第三节（五）/训练血缘",
+      "E25": "离线Base教师fold4；固定12轮最终EMA（best.pt不是按valid/held-out指标选出的最优）。不参与推理；实际大小351372815字节。",
+      "F25": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "H25": "evidence/teachers/fold_4/config.json; evidence/teachers/fold_4/history.jsonl; evidence/teachers/fold_4/checkpoint_audit.jsonl; evidence/weights/inventory.json",
+      "I25": "无软标签训练；KD alpha不适用；LR warmup=1轮；seed=43；选择依据见evidence/teachers/SELECTION_EVIDENCE.md。",
+      "A26": "B-COLLECTION",
+      "B26": "B",
+      "C26": "五折教师集合声明",
+      "D26": "血缘/复现",
+      "E26": "五折教师固定轮数与文件映射；fold0=20 epochs，fold1–4=12 epochs；不使用held-out选epoch。",
+      "H26": "evidence/teachers/teacher_collection.json; evidence/teachers/SELECTION_EVIDENCE.md",
+      "A27": "B-SCRIPT-01",
+      "B27": "B",
+      "C27": "教师训练入口脚本",
+      "D27": "附录A/复现",
+      "E27": "包内当前源代码：evidence/training/source_current/run_mixed_teachers.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G27": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+      "H27": "evidence/training/source_current/run_mixed_teachers.py",
+      "A28": "B-SCRIPT-02",
+      "B28": "B",
+      "C28": "教师训练实现",
+      "D28": "附录A/复现",
+      "E28": "包内当前源代码：evidence/training/source_current/train_teacher.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G28": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+      "H28": "evidence/training/source_current/train_teacher.py",
+      "A29": "B-SCRIPT-03",
+      "B29": "B",
+      "C29": "OOF 软标签提取脚本",
+      "D29": "附录A/软标签",
+      "E29": "包内当前源代码：evidence/training/source_current/extract_soft_labels_tta.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G29": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+      "H29": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "A30": "B-SCRIPT-04",
+      "B30": "B",
+      "C30": "软标签读取与目标构造",
+      "D30": "附录A/软标签",
+      "E30": "包内当前源代码：evidence/training/source_current/distill_tta_data.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G30": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+      "H30": "evidence/training/source_current/distill_tta_data.py",
+      "A31": "B-SCRIPT-05",
+      "B31": "B",
+      "C31": "学生通用蒸馏训练及公共配置/损失实现",
+      "D31": "附录A/训练",
+      "E31": "包内当前源代码：evidence/training/source_current/train_distill.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G31": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60",
+      "H31": "evidence/training/source_current/train_distill.py",
+      "I31": "初始Tiny A使用逐图BCE+Study等权；Base B/后续packed训练使用Study均值概率BCE。详见evidence/training/WARMUP_BY_WEIGHT.md，不能统一称同一loss。",
+      "A32": "B-SCRIPT-06",
+      "B32": "B",
+      "C32": "教师集合校验",
+      "D32": "附录A/复现",
+      "E32": "包内当前源代码：evidence/training/source_current/teacher_collection.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G32": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+      "H32": "evidence/training/source_current/teacher_collection.py",
+      "A33": "B-SCRIPT-07",
+      "B33": "B",
+      "C33": "患者分折实现",
+      "D33": "附录A/复现",
+      "E33": "包内当前源代码：evidence/training/source_current/cv_splits.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G33": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "H33": "evidence/training/source_current/cv_splits.py",
+      "A34": "B-SCRIPT-08",
+      "B34": "B",
+      "C34": "KD 公共损失实现",
+      "D34": "附录A/训练",
+      "E34": "包内当前源代码：evidence/training/source_current/kd_common.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G34": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "H34": "evidence/training/source_current/kd_common.py",
+      "A35": "B-SOFT-METHOD",
+      "B35": "B",
+      "C35": "软标签生成方式",
+      "D35": "正式补充第三节（五）/复现",
+      "E35": "官方train患者隔离五折；每图由未见该患者的教师折外预测，缓存identity/hflip原始logits。教师固定终点EMA，不按held-out选epoch。学生端对齐train估计的pos_weight、T=2并对视图概率均值；初始Tiny A为逐图hard BCE加Study等权，Base B为Study均值概率hard BCE。soft loss为Bernoulli KL(T=2)。alpha与warmup逐权重见专表，不能统一成两轮。",
+      "H35": "evidence/teachers/oof_metadata.json; evidence/teachers/SELECTION_EVIDENCE.md; evidence/training/WARMUP_BY_WEIGHT.md",
+      "A36": "B-SOFT-META",
+      "B36": "B",
+      "C36": "OOF 软标签 metadata",
+      "D36": "软标签证据",
+      "E36": "软标签元数据（完整原件，训练split=train）。实际训练集30328图，患者隔离五折。",
+      "F36": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+      "H36": "evidence/teachers/oof_metadata.json",
+      "A37": "B-SOFT-NPZ",
+      "B37": "B",
+      "C37": "OOF 软标签缓存",
+      "D37": "软标签证据",
+      "E37": "软标签原始缓存仅用于官方train的学生训练；本包保存元数据与提取/读取代码，不复制训练缓存。元数据记录的缓存哈希如下；本轮没有重新生成缓存。",
+      "F37": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+      "H37": "evidence/teachers/oof_metadata.json; evidence/training/source_current/extract_soft_labels_tta.py; evidence/training/source_current/distill_tta_data.py",
+      "A38": "B-STUDENT-TINY-A",
+      "B38": "B",
+      "C38": "初始 Tiny 蒸馏学生 A",
+      "D38": "训练产物：候选祖先/非最终",
+      "E38": "Tiny 学生 A 初始化祖先/候选；文件名=best_ema_fp32.pt，大小=116173055字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F38": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f",
+      "H38": "evidence/training/student_A/config.json; evidence/weights/inventory.json; evidence/training/student_A/config.json",
+      "I38": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A39": "B-STUDENT-BASE-B",
+      "B39": "B",
+      "C39": "初始 Base 蒸馏学生 B",
+      "D39": "训练产物：候选祖先/非教师/非最终",
+      "E39": "Base 学生 B 初始化祖先/候选，非教师；文件名=best_ema_fp32.pt，大小=355222245字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F39": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+      "H39": "evidence/training/student_B/config.json; evidence/weights/inventory.json; evidence/training/student_B/config.json",
+      "I39": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A40": "B-SCRIPT-09",
+      "B40": "B",
+      "C40": "X1 微调流水线",
+      "D40": "附录A/训练血缘",
+      "E40": "包内当前源代码：evidence/training/source_current/run_bounded_pipeline.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G40": "e0aa888924c07a7bae02cf1aba9b5404fa48ee9a41f138d969d7560bdef65d06",
+      "H40": "evidence/training/source_current/run_bounded_pipeline.py",
+      "A41": "B-045-TINY-X1",
+      "B41": "B",
+      "C41": "045 历史 Tiny X1",
+      "D41": "历史候选推理成员（非最终）",
+      "E41": "历史 X1 Tiny 候选，045 成员；非最终；文件名=student_fp16.pt，大小=55712511字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F41": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+      "H41": "evidence/weights/X1_config.json; evidence/weights/inventory.json; evidence/training/X1/config.json",
+      "I41": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A42": "B-045-BASE-B",
+      "B42": "B",
+      "C42": "045 历史 Base 学生 B E10",
+      "D42": "历史候选推理成员（非最终；不是五折教师）",
+      "E42": "045 历史 B 成员，非最终；文件名=student_fp16.pt，大小=175261029字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F42": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411",
+      "H42": "evidence/weights/045_config.json; evidence/weights/inventory.json; evidence/training/student_B/config.json",
+      "I42": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A43": "B-SCRIPT-10",
+      "B43": "B",
+      "C43": "Tight-Crop A/B 训练脚本",
+      "D43": "已弃用实验复现",
+      "E43": "包内当前源代码：evidence/training/source_current/tight_crop_ab_earlystop_training.py；历史训练当时源码另保存在 evidence/training/各run/source/ 或 evidence/teachers/。不将当前源码冒称所有历史训练的字节级源码。",
+      "G43": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2",
+      "H43": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+      "A44": "B-CROP-A_TINY",
+      "B44": "B",
+      "C44": "Tight-Crop A_tiny 实验产物",
+      "D44": "已弃用实验；非推理成员",
+      "E44": "已弃用裁剪/擦除 A/B 实验训练断点；文件名=best.pt，大小=450345821字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F44": "c784f49bd48da9de5d482ded4ffc91c0a05d7b5eeae1c212003ef75a09350be1",
+      "H44": "evidence/training/crop_A_tiny/checkpoint_audit.jsonl; evidence/weights/inventory.json; evidence/training/crop_A_tiny/config.json",
+      "I44": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A45": "B-CROP-A_BASE",
+      "B45": "B",
+      "C45": "Tight-Crop A_base 实验产物",
+      "D45": "已弃用实验；非推理成员",
+      "E45": "已弃用裁剪/擦除 A/B 实验训练断点；文件名=best.pt，大小=1406572572字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F45": "6d91aee729a0c639d1889909f48756bf24c05829708e645af7a41becbff972cc",
+      "H45": "evidence/training/crop_A_base/checkpoint_audit.jsonl; evidence/weights/inventory.json; evidence/training/crop_A_base/config.json",
+      "I45": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A46": "B-CROP-B_TINY",
+      "B46": "B",
+      "C46": "Tight-Crop B_tiny 实验产物",
+      "D46": "已弃用实验；非推理成员",
+      "E46": "已弃用裁剪/擦除 A/B 实验训练断点；文件名=best.pt，大小=450344861字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F46": "e4319c7e1aef8fdcc8e0fc9d84d90fda12370d290aad187e71e04f9aa1597775",
+      "H46": "evidence/training/crop_B_tiny/checkpoint_audit.jsonl; evidence/weights/inventory.json; evidence/training/crop_B_tiny/config.json",
+      "I46": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A47": "B-CROP-B_BASE",
+      "B47": "B",
+      "C47": "Tight-Crop B_base 实验产物",
+      "D47": "已弃用实验；非推理成员",
+      "E47": "已弃用裁剪/擦除 A/B 实验训练断点；文件名=best.pt，大小=1406572572字节；来源绝对路径仅记录于inventory，包内证据可直接查阅。",
+      "F47": "c01a4c3f96a94a65025a9a90190ab915951e00d38beea5d22183b2cd0b6c00d9",
+      "H47": "evidence/training/crop_B_base/checkpoint_audit.jsonl; evidence/weights/inventory.json; evidence/training/crop_B_base/config.json",
+      "I47": "逐权重alpha/LR与KD warmup/seed/起点/日志：evidence/training/WARMUP_BY_WEIGHT.md",
+      "A48": "B-LINEAGE",
+      "B48": "B",
+      "C48": "模型血缘摘要",
+      "D48": "正式补充第三节（五）/血缘",
+      "E48": "ImageNet-22k→1k Base 初始化→五折患者隔离Base教师（固定最终EMA）→官方train折外双视图logits→Tiny学生A / Base学生B→Tiny X1微调。045仅历史候选X1+B，最终成员未冻结；裁剪A/B支线弃用。",
+      "H48": "declarations.md; evidence/teachers/SELECTION_EVIDENCE.md; evidence/training/WARMUP_BY_WEIGHT.md; evidence/weights/inventory.json",
+      "A49": "C",
+      "B49": "C",
+      "C49": "C. 最终推理成员与精度声明",
+      "D49": "规则第10/11条、附录A及蒸馏补充说明",
+      "A50": "C-STATUS",
+      "B50": "C",
+      "C50": "待最终权重冻结",
+      "E50": "最终成员尚未冻结，当前不能填写最终权重哈希/名单；固定推理精度为FP16。",
+      "H50": "evidence/weights/inventory.json",
+      "A51": "C-PRECISION",
+      "B51": "C",
+      "C51": "最终推理精度",
+      "D51": "附录A A6、第11条",
+      "E51": "FP16（已声明）；成员身份与最终加载文件仍待冻结。",
+      "F51": "",
+      "G51": "",
+      "H51": "evidence/weights/A_config.json; evidence/weights/B_config.json; evidence/weights/X1_config.json",
+      "I51": "不得把候选升级为最终成员",
+      "A52": "C-MEMBERS",
+      "B52": "C",
+      "C52": "最终推理成员/最终哈希/体积",
+      "D52": "规则第8/11条",
+      "E52": "待冻结。未声明候选为最终成员；本轮历史041模型在model/的用途须以包根说明为准。",
+      "F52": "",
+      "G52": "",
+      "H52": "evidence/weights/inventory.json",
+      "I52": "最终冻结前仍属交付缺口",
+      "A53": "DATA-DECLARATION",
+      "B53": "声明",
+      "C53": "训练/验证/测试数据使用",
+      "D53": "规则第2–6、11条",
+      "E53": "完整三节声明见declarations.md；声明中需披露valid早停/候选选择与未并训。",
+      "F53": "",
+      "G53": "",
+      "H53": "declarations.md",
+      "I53": "增强仅训练期；推理随机算子关闭",
+      "A54": "WARMUP-INDEX",
+      "B54": "B",
+      "C54": "逐权重训练配置表",
+      "D54": "第10条可复现",
+      "E54": "见工作表逐权重配置和evidence/training/WARMUP_BY_WEIGHT.md；LR warmup与KD warmup分别列出。",
+      "F54": "",
+      "G54": "",
+      "H54": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "I54": "初始学生KD=2；X1与裁剪A/B KD=0；LR warmup=1"
+    },
+    "自查": {
+      "A1": "检查项",
+      "B1": "结果/事实",
+      "C1": "包内位置",
+      "A2": "A1–A5冻结字段",
+      "B2": "源工作簿12个完整行的所有已有单元格内容/属性完全相同；不重验上游",
+      "C2": "evidence/XLSX_frozen_cell_comparison.json",
+      "A3": "教师5份SHA",
+      "B3": "现存best.pt逐字节SHA；固定epoch final EMA；不按外折指标选epoch",
+      "C3": "evidence/weights/inventory.json; evidence/teachers/SELECTION_EVIDENCE.md",
+      "A4": "候选SHA",
+      "B4": "候选训练FP32 EMA/推理FP16/弃用A/B分别列出，不能互换",
+      "C4": "evidence/weights/inventory.json",
+      "A5": "逐权重warmup",
+      "B5": "教师LR=1；初始学生KD=2；X1与裁剪A/B KD=0、LR=1",
+      "C5": "逐权重配置!A1:J13",
+      "A6": "A6",
+      "B6": "C区声明FP16；最终成员仍待冻结",
+      "C6": "申报清单草案!E51",
+      "A7": "数据/否定/推理声明",
+      "B7": "包内三节声明",
+      "C7": "declarations.md",
+      "A8": "表格模板",
+      "B8": "仍无现行官方空表版本确认；按现有底稿收口，不能冒称官方模板认证",
+      "C8": "evidence/weights/input_frozen_workbook.xlsx",
+      "A9": "修正过的错误",
+      "B9": "草稿F38/F39误填last EMA哈希，已改为inventory对应best_ema_fp32哈希",
+      "C9": "申报清单草案!F38:F39; evidence/weights/inventory.json",
+      "A10": "最终交付缺口",
+      "B10": "最终成员未冻结；本工作簿不把该缺口改成已完成",
+      "C10": "申报清单草案!E52"
+    },
+    "逐权重配置": {
+      "A1": "权重/产物",
+      "B1": "是否用软标签",
+      "C1": "alpha曲线",
+      "D1": "KD warmup轮数",
+      "E1": "LR warmup轮数",
+      "F1": "seed",
+      "G1": "起点",
+      "H1": "配置证据",
+      "I1": "日志证据",
+      "J1": "用途",
+      "A2": "teacher_fold_0",
+      "B2": "否",
+      "C2": "不适用（监督BCE）",
+      "D2": "不适用",
+      "E2": "1",
+      "F2": "43",
+      "G2": "ImageNet Base预训练",
+      "H2": "evidence/teachers/fold_0/config.json",
+      "I2": "evidence/teachers/fold_0/history.jsonl",
+      "J2": "仅离线产train软标签；不推理",
+      "A3": "teacher_fold_1",
+      "B3": "否",
+      "C3": "不适用（监督BCE）",
+      "D3": "不适用",
+      "E3": "1",
+      "F3": "43",
+      "G3": "ImageNet Base预训练",
+      "H3": "evidence/teachers/fold_1/config.json",
+      "I3": "evidence/teachers/fold_1/history.jsonl",
+      "J3": "仅离线产train软标签；不推理",
+      "A4": "teacher_fold_2",
+      "B4": "否",
+      "C4": "不适用（监督BCE）",
+      "D4": "不适用",
+      "E4": "1",
+      "F4": "43",
+      "G4": "ImageNet Base预训练",
+      "H4": "evidence/teachers/fold_2/config.json",
+      "I4": "evidence/teachers/fold_2/history.jsonl",
+      "J4": "仅离线产train软标签；不推理",
+      "A5": "teacher_fold_3",
+      "B5": "否",
+      "C5": "不适用（监督BCE）",
+      "D5": "不适用",
+      "E5": "1",
+      "F5": "43",
+      "G5": "ImageNet Base预训练",
+      "H5": "evidence/teachers/fold_3/config.json",
+      "I5": "evidence/teachers/fold_3/history.jsonl",
+      "J5": "仅离线产train软标签；不推理",
+      "A6": "teacher_fold_4",
+      "B6": "否",
+      "C6": "不适用（监督BCE）",
+      "D6": "不适用",
+      "E6": "1",
+      "F6": "43",
+      "G6": "ImageNet Base预训练",
+      "H6": "evidence/teachers/fold_4/config.json",
+      "I6": "evidence/teachers/fold_4/history.jsonl",
+      "J6": "仅离线产train软标签；不推理",
+      "A7": "A（041 Tiny）",
+      "B7": "是（train折外logits）",
+      "C7": "alpha=0.2*min(1,((epoch-1)+(batch_index+1)/batches)/2)，E1末0.10，E2末0.20；首条日志四舍五入为0.0000",
+      "D7": "2",
+      "E7": "1",
+      "F7": "44",
+      "G7": "ImageNet Tiny预训练",
+      "H7": "evidence/training/student_A/config.json",
+      "I7": "evidence/training/student_A/console_20261030T052954Z_dc99f91e.log:1",
+      "J7": "历史候选/祖先；非最终",
+      "A8": "B（043/045 Base学生）",
+      "B8": "是（train折外logits）",
+      "C8": "alpha=0.2*min(1,((epoch-1)+(batch_index+1)/batches)/2)，E1末0.10，E2末0.20；首条日志四舍五入为0.0000",
+      "D8": "2",
+      "E8": "1",
+      "F8": "44",
+      "G8": "ImageNet Base预训练",
+      "H8": "evidence/training/student_B/config.json",
+      "I8": "evidence/training/student_B/console_20261030T103505Z_a5480d3c.log:1",
+      "J8": "历史候选/祖先；非最终",
+      "A9": "X1（045 Tiny）",
+      "B9": "是（train折外logits）",
+      "C9": "从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000",
+      "D9": "0",
+      "E9": "1",
+      "F9": "46",
+      "G9": "Tiny A E9 FP32 EMA",
+      "H9": "evidence/training/X1/config.json",
+      "I9": "evidence/training/X1/console_20261101T065749Z_f2a2138c.log:1",
+      "J9": "历史候选/祖先；非最终",
+      "A10": "裁剪对照A_tiny（弃用）",
+      "B10": "是（train折外logits）",
+      "C10": "从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000",
+      "D10": "0",
+      "E10": "1",
+      "F10": "48",
+      "G10": "Tiny A E9 FP32 EMA；E1后保留状态迁移",
+      "H10": "evidence/training/crop_A_tiny/config.json",
+      "I10": "evidence/training/crop_A_tiny/original_E1_console.log:1",
+      "J10": "弃用实验；不推理",
+      "A11": "裁剪对照A_base（弃用）",
+      "B11": "是（train折外logits）",
+      "C11": "从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000",
+      "D11": "0",
+      "E11": "1",
+      "F11": "48",
+      "G11": "Base B E10 FP32 EMA",
+      "H11": "evidence/training/crop_A_base/config.json",
+      "I11": "evidence/training/crop_A_base/console_20261101T221700Z_64e06eeb.log:1",
+      "J11": "弃用实验；不推理",
+      "A12": "裁剪B_tiny（弃用）",
+      "B12": "是（train折外logits）",
+      "C12": "从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000",
+      "D12": "0",
+      "E12": "1",
+      "F12": "48",
+      "G12": "Tiny A E9 FP32 EMA",
+      "H12": "evidence/training/crop_B_tiny/config.json",
+      "I12": "evidence/training/crop_B_tiny/console_20261102T024037Z_61c80be4.log:1",
+      "J12": "弃用实验；不推理",
+      "A13": "裁剪B_base（弃用）",
+      "B13": "是（train折外logits）",
+      "C13": "从首个训练pack开始固定alpha=0.20；首轮日志alpha=0.2000",
+      "D13": "0",
+      "E13": "1",
+      "F13": "48",
+      "G13": "Base B E10 FP32 EMA",
+      "H13": "evidence/training/crop_B_base/config.json",
+      "I13": "evidence/training/crop_B_base/console_20261102T055123Z_db7ec019.log:1",
+      "J13": "弃用实验；不推理"
+    }
+  },
+  "xlsx_package_references": [
+    {
+      "cell": "申报清单草案!B1",
+      "reference": "evidence/XLSX_CELLS.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E7",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E7",
+      "reference": "licenses/convnext_base/LICENSE-Apache-2.0.txt",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "reference": "licenses/convnext_tiny/LICENSE-Apache-2.0.txt",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E18",
+      "reference": "licenses/convnext_upstream/LICENSE-MIT.txt",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H21",
+      "reference": "evidence/teachers/fold_0/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H21",
+      "reference": "evidence/teachers/fold_0/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H21",
+      "reference": "evidence/teachers/fold_0/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H21",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I21",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H22",
+      "reference": "evidence/teachers/fold_1/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H22",
+      "reference": "evidence/teachers/fold_1/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H22",
+      "reference": "evidence/teachers/fold_1/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H22",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I22",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H23",
+      "reference": "evidence/teachers/fold_2/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H23",
+      "reference": "evidence/teachers/fold_2/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H23",
+      "reference": "evidence/teachers/fold_2/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H23",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I23",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H24",
+      "reference": "evidence/teachers/fold_3/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H24",
+      "reference": "evidence/teachers/fold_3/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H24",
+      "reference": "evidence/teachers/fold_3/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H24",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I24",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H25",
+      "reference": "evidence/teachers/fold_4/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H25",
+      "reference": "evidence/teachers/fold_4/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H25",
+      "reference": "evidence/teachers/fold_4/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H25",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I25",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H26",
+      "reference": "evidence/teachers/teacher_collection.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H26",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E27",
+      "reference": "evidence/training/source_current/run_mixed_teachers.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E27",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E27",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H27",
+      "reference": "evidence/training/source_current/run_mixed_teachers.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E28",
+      "reference": "evidence/training/source_current/train_teacher.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E28",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E28",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H28",
+      "reference": "evidence/training/source_current/train_teacher.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E29",
+      "reference": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E29",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E29",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H29",
+      "reference": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E30",
+      "reference": "evidence/training/source_current/distill_tta_data.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E30",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E30",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H30",
+      "reference": "evidence/training/source_current/distill_tta_data.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E31",
+      "reference": "evidence/training/source_current/train_distill.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E31",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E31",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H31",
+      "reference": "evidence/training/source_current/train_distill.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I31",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E32",
+      "reference": "evidence/training/source_current/teacher_collection.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E32",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E32",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H32",
+      "reference": "evidence/training/source_current/teacher_collection.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E33",
+      "reference": "evidence/training/source_current/cv_splits.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E33",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E33",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H33",
+      "reference": "evidence/training/source_current/cv_splits.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E34",
+      "reference": "evidence/training/source_current/kd_common.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E34",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E34",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H34",
+      "reference": "evidence/training/source_current/kd_common.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H35",
+      "reference": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H35",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H35",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H36",
+      "reference": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H37",
+      "reference": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H37",
+      "reference": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H37",
+      "reference": "evidence/training/source_current/distill_tta_data.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H38",
+      "reference": "evidence/training/student_A/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H38",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H38",
+      "reference": "evidence/training/student_A/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I38",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H39",
+      "reference": "evidence/training/student_B/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H39",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H39",
+      "reference": "evidence/training/student_B/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I39",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E40",
+      "reference": "evidence/training/source_current/run_bounded_pipeline.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E40",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E40",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H40",
+      "reference": "evidence/training/source_current/run_bounded_pipeline.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H41",
+      "reference": "evidence/weights/X1_config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H41",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H41",
+      "reference": "evidence/training/X1/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I41",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H42",
+      "reference": "evidence/weights/045_config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H42",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H42",
+      "reference": "evidence/training/student_B/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I42",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E43",
+      "reference": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E43",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E43",
+      "reference": "evidence/teachers/",
+      "exists": false,
+      "directory_prefix_exists": true
+    },
+    {
+      "cell": "申报清单草案!H43",
+      "reference": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H44",
+      "reference": "evidence/training/crop_A_tiny/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H44",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H44",
+      "reference": "evidence/training/crop_A_tiny/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I44",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H45",
+      "reference": "evidence/training/crop_A_base/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H45",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H45",
+      "reference": "evidence/training/crop_A_base/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I45",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H46",
+      "reference": "evidence/training/crop_B_tiny/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H46",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H46",
+      "reference": "evidence/training/crop_B_tiny/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I46",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H47",
+      "reference": "evidence/training/crop_B_base/checkpoint_audit.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H47",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H47",
+      "reference": "evidence/training/crop_B_base/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!I47",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H48",
+      "reference": "declarations.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H48",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H48",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H48",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H50",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H51",
+      "reference": "evidence/weights/A_config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H51",
+      "reference": "evidence/weights/B_config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H51",
+      "reference": "evidence/weights/X1_config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H52",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E53",
+      "reference": "declarations.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H53",
+      "reference": "declarations.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E54",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!H54",
+      "reference": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C2",
+      "reference": "evidence/XLSX_frozen_cell_comparison.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C3",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C3",
+      "reference": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C4",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C7",
+      "reference": "declarations.md",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C8",
+      "reference": "evidence/weights/input_frozen_workbook.xlsx",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "自查!C9",
+      "reference": "evidence/weights/inventory.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H2",
+      "reference": "evidence/teachers/fold_0/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I2",
+      "reference": "evidence/teachers/fold_0/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H3",
+      "reference": "evidence/teachers/fold_1/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I3",
+      "reference": "evidence/teachers/fold_1/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H4",
+      "reference": "evidence/teachers/fold_2/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I4",
+      "reference": "evidence/teachers/fold_2/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H5",
+      "reference": "evidence/teachers/fold_3/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I5",
+      "reference": "evidence/teachers/fold_3/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H6",
+      "reference": "evidence/teachers/fold_4/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I6",
+      "reference": "evidence/teachers/fold_4/history.jsonl",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H7",
+      "reference": "evidence/training/student_A/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I7",
+      "reference": "evidence/training/student_A/console_20261030T052954Z_dc99f91e.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H8",
+      "reference": "evidence/training/student_B/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I8",
+      "reference": "evidence/training/student_B/console_20261030T103505Z_a5480d3c.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H9",
+      "reference": "evidence/training/X1/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I9",
+      "reference": "evidence/training/X1/console_20261101T065749Z_f2a2138c.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H10",
+      "reference": "evidence/training/crop_A_tiny/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I10",
+      "reference": "evidence/training/crop_A_tiny/original_E1_console.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H11",
+      "reference": "evidence/training/crop_A_base/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I11",
+      "reference": "evidence/training/crop_A_base/console_20261101T221700Z_64e06eeb.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H12",
+      "reference": "evidence/training/crop_B_tiny/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I12",
+      "reference": "evidence/training/crop_B_tiny/console_20261102T024037Z_61c80be4.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!H13",
+      "reference": "evidence/training/crop_B_base/config.json",
+      "exists": true,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "逐权重配置!I13",
+      "reference": "evidence/training/crop_B_base/console_20261102T055123Z_db7ec019.log:1",
+      "exists": true,
+      "directory_prefix_exists": false
+    }
+  ],
+  "xlsx_missing_package_references": [
+    {
+      "cell": "申报清单草案!E7",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E27",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E28",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E29",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E30",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E31",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E32",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E33",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E34",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E40",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    },
+    {
+      "cell": "申报清单草案!E43",
+      "reference": "evidence/training/各run/source/",
+      "exists": false,
+      "directory_prefix_exists": false
+    }
+  ],
+  "frozen_cell_checks": [
+    {
+      "cell": "申报清单草案!A4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A5",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B5",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C5",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D5",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E5",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A6",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B6",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C6",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D6",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E6",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!F9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A11",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B11",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C11",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D11",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E11",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A12",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B12",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C12",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D12",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E12",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A13",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B13",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C13",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D13",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E13",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A14",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B14",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C14",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D14",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A16",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B16",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C16",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D16",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E16",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!F16",
+      "equal": true
+    }
+  ],
+  "teacher_sha_checks": [
+    {
+      "fold": 0,
+      "cell": "申报清单草案!F21",
+      "declared_sha256": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+      "inventory_match": true,
+      "matching_best_ledger_records": 1,
+      "epochs": [
+        20
+      ]
+    },
+    {
+      "fold": 1,
+      "cell": "申报清单草案!F22",
+      "declared_sha256": "6751d94704abfefba1c11ed51e3b5d26e5e68c6a84e203ead4088b92294187b2",
+      "inventory_match": true,
+      "matching_best_ledger_records": 1,
+      "epochs": [
+        12
+      ]
+    },
+    {
+      "fold": 2,
+      "cell": "申报清单草案!F23",
+      "declared_sha256": "a6c122c4f60abd924cecce3c83db21a65e8ba824028b6cae362eba9df2ac683b",
+      "inventory_match": true,
+      "matching_best_ledger_records": 1,
+      "epochs": [
+        12
+      ]
+    },
+    {
+      "fold": 3,
+      "cell": "申报清单草案!F24",
+      "declared_sha256": "f0184c787573f745a76082d6bb450efe134931d09d43d3d988bd260fa26761be",
+      "inventory_match": true,
+      "matching_best_ledger_records": 1,
+      "epochs": [
+        12
+      ]
+    },
+    {
+      "fold": 4,
+      "cell": "申报清单草案!F25",
+      "declared_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "inventory_match": true,
+      "matching_best_ledger_records": 1,
+      "epochs": [
+        12
+      ]
+    }
+  ],
+  "script_hash_checks": [
+    {
+      "cell": "申报清单草案!G27",
+      "path": "evidence/training/source_current/run_mixed_teachers.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G28",
+      "path": "evidence/training/source_current/train_teacher.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G29",
+      "path": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G30",
+      "path": "evidence/training/source_current/distill_tta_data.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G31",
+      "path": "evidence/training/source_current/train_distill.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G32",
+      "path": "evidence/training/source_current/teacher_collection.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G33",
+      "path": "evidence/training/source_current/cv_splits.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G34",
+      "path": "evidence/training/source_current/kd_common.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G40",
+      "path": "evidence/training/source_current/run_bounded_pipeline.py",
+      "match": true
+    },
+    {
+      "cell": "申报清单草案!G43",
+      "path": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+      "match": true
+    }
+  ],
+  "runtime_copied_source_checks": [
+    {
+      "path": "code/audit_trail.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/benchmark_local_resources.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/compare_student_candidates.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/cost.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/cv_splits.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/dataset.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/dataset_overnight.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/deploy_kd.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/distill_data.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/distill_tta_data.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/export_student.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/extract_soft_labels_tta.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/fast_lanczos.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/inference_inputs.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/inference_reproducibility.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/inference_runtime.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/kd_common.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/model_overnight.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/planned_handoff.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/predict.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/prepare_inference.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/runtime_compat.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/student_draft_pair.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/student_ensemble.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/student_experiment_evaluation.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/student_experiments.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/student_fixed_pair.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/study_packing.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/study_student.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/submission_runtime.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/submit_student_candidate.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/teacher_collection.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/train_distill.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/train_overnight.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/train_teacher.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/training_evidence_monitor.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/requirements_inference.txt",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/requirements_kd.txt",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/__init__.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/setup.py",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/resample.c",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/README.md",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/upstream/LICENSE",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/upstream/PROVENANCE.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/upstream/Resample.c",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/upstream/Imaging.h",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/vendor/competition_addons_cp312_linux_x86_64.tar.gz",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "code/vendor/competition_addons_archive_manifest.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/historical_041_related_inference_environment.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/historical_pipeline_environment_lock.txt",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/official_3_image_on_2080ti_near_official_record.md",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/README.md",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/execution_receipt.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/submission.csv.report.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/submission.audit.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/submission.image_predictions.csv",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/local_resource_report.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/041_historical/timing_vs_A_valid.json",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "model/historical_041/student_fp16.pt",
+      "exists": true,
+      "sha_match": true
+    },
+    {
+      "path": "evidence/runtime/official_sample_INSPECTION_20261102.md",
+      "exists": true,
+      "sha_match": true
+    }
+  ],
+  "syntax_checked_files": [
+    "code/audit_trail.py",
+    "code/benchmark_local_resources.py",
+    "code/compare_student_candidates.py",
+    "code/cost.py",
+    "code/cv_splits.py",
+    "code/dataset.py",
+    "code/dataset_overnight.py",
+    "code/deploy_kd.py",
+    "code/distill_data.py",
+    "code/distill_tta_data.py",
+    "code/export_student.py",
+    "code/extract_soft_labels_tta.py",
+    "code/fast_lanczos.py",
+    "code/inference_inputs.py",
+    "code/inference_reproducibility.py",
+    "code/inference_runtime.py",
+    "code/kd_common.py",
+    "code/model.py",
+    "code/model_overnight.py",
+    "code/native_lanczos/__init__.py",
+    "code/native_lanczos/setup.py",
+    "code/planned_handoff.py",
+    "code/predict.py",
+    "code/prepare_inference.py",
+    "code/runtime_compat.py",
+    "code/student_draft_pair.py",
+    "code/student_ensemble.py",
+    "code/student_experiment_evaluation.py",
+    "code/student_experiments.py",
+    "code/student_fixed_pair.py",
+    "code/study_packing.py",
+    "code/study_student.py",
+    "code/submission_runtime.py",
+    "code/submit_student_candidate.py",
+    "code/teacher_collection.py",
+    "code/train.py",
+    "code/train_distill.py",
+    "code/train_overnight.py",
+    "code/train_teacher.py",
+    "code/training_evidence_monitor.py",
+    "code/utils.py",
+    "cost.py"
+  ],
+  "a6_cell": {
+    "coordinate": "申报清单草案!E51",
+    "value": "FP16（已声明）；成员身份与最终加载文件仍待冻结。"
+  },
+  "submission": {
+    "bytes": 691900,
+    "sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+    "matches_historical_receipt": true,
+    "data_rows": 14140,
+    "studies": 1414
+  },
+  "required_041_config_absent": true,
+  "cost_report_files_found": [],
+  "test_manifest_files_found": [],
+  "package_modified": false,
+  "manual_classification": {
+    "D1": {
+      "kind": "documentation",
+      "location": "lineage_and_distillation.md:23",
+      "issue": "Hard-loss coefficient is 1-alpha during KD warmup, becomes 0.8 only at alpha=0.2."
+    },
+    "D2": {
+      "kind": "documentation",
+      "location": "模型核验材料与数据声明清单.xlsx::申报清单草案!E27:E34,E40,E43",
+      "issue": "Literal historical source path includes placeholder 各run; add concrete snapshot index."
+    },
+    "D3": {
+      "kind": "documentation_and_external_input",
+      "location": "code/deploy_kd.py:655;code/cost.py:196",
+      "issue": "Full original manifest required for complete Study coverage, absent from ZIP; sidecar is archived under explicit non-default path."
+    },
+    "D4": {
+      "kind": "documentation_or_missing_receipt",
+      "location": "evidence/runtime/official_sample_INSPECTION_20261102.md:34",
+      "issue": "SOURCE_RECEIPT.txt cited but absent from ZIP."
+    },
+    "D5": {
+      "kind": "documentation",
+      "location": "evidence/XLSX_CELLS.md:17;模型核验材料与数据声明清单.xlsx::申报清单草案!C34",
+      "issue": "Selfcheck range ends at10 not11; kd_common title should match actual provenance/shared-protocol role."
+    },
+    "G1": {
+      "kind": "missing_original_artifact",
+      "location": "model/historical_041/STATUS.json:7",
+      "issue": "Exact historical041 config absent."
+    },
+    "G2": {
+      "kind": "missing_run_evidence",
+      "location": "cost_consistency_report.md:3",
+      "issue": "No100-sample actual cost consistency output/report; sample record18/10images only."
+    },
+    "G3": {
+      "kind": "unfrozen_final_identity_and_certification",
+      "location": "模型核验材料与数据声明清单.xlsx::申报清单草案!E50:E52",
+      "issue": "Final members/load-set/size and actual official runtime evidence not frozen."
+    },
+    "G4": {
+      "kind": "official_protocol_and_execution_missing",
+      "location": "scope_and_blockers.md:17",
+      "issue": "Written per-image protocol versus forwarded Study announcement unresolved; preserved code not Study certification."
+    }
+  },
+  "xlsx_reference_manual_exclusions": [
+    {
+      "cell": "申报清单草案!E7",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "reason": "Substring of public URL; not a package-relative link."
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "reference": "licenses/LICENSE-2.0.txt",
+      "reason": "Substring of public URL; not a package-relative link."
+    }
+  ],
+  "conclusion": "Retain7 pending rows; documentation fixes do not substitute for G1-G4 actual missing evidence."
+}

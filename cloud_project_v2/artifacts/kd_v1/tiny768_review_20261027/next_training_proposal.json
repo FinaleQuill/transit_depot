@@ -1,0 +1,52 @@
+{
+  "proposed_config": {
+    "fold_plan": "data/cv5_overnight/folds.json",
+    "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "output": "../runs/030_tiny512_kd_seed44",
+    "image_root": "/home/featurize/data/cxr_first",
+    "batch_size": 8,
+    "accumulation_steps": 4,
+    "valid_batch_size": 4,
+    "num_workers": 8,
+    "prefetch_factor": 2,
+    "epochs": 25,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "seed": 44,
+    "backbone_lr": 5e-05,
+    "head_lr": 0.0005,
+    "warmup_epochs": 1,
+    "min_lr_ratio": 0.05,
+    "weight_decay": 0.05,
+    "dropout": 0.2,
+    "drop_path": 0.1,
+    "ema_decay": 0.999,
+    "grad_clip": 1.0,
+    "amp_dtype": "auto",
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "kd_warmup_epochs": 2,
+    "align_teacher_pos_weight": true,
+    "image_size": 512,
+    "validation_tta": "hflip2",
+    "training_mode": "distillation",
+    "resume": null
+  },
+  "differences_from027": {
+    "output": {
+      "original": "../runs/027_tiny512_kd_seed43",
+      "proposed": "../runs/030_tiny512_kd_seed44"
+    },
+    "seed": {
+      "original": 43,
+      "proposed": 44
+    }
+  },
+  "cli_preview_passed": true,
+  "training_started": false,
+  "new_output_absent": true,
+  "prerequisite": "review actualFP16 single768 and onefixed50/50 512+768 probability diagnostic first",
+  "purpose": "onepredeclaredseed replicate andpotentialensemblediversity, notguaranteedscoreimprovement",
+  "no_new_clahe_or_dali": true,
+  "teachers_and_oof_cache_reused": true
+}

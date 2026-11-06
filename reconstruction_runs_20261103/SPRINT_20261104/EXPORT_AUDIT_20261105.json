@@ -1,0 +1,65 @@
+{
+  "state": "complete",
+  "audited_at_hong_kong": "2026-11-05T03:33:42.104510+08:00",
+  "submission": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/submission.csv",
+  "download_copy": "/home/featurize/work/submission_sprint_0817963.csv",
+  "submission_sha256": "099e82fa107278d6ff35a358bb2cbee2a38fb5b94b1a60758e3fd4fd9cd059a3",
+  "study_count": 1414,
+  "data_rows": 14140,
+  "image_count": 2218,
+  "image_data_rows": 22180,
+  "complete_original_test_identity_coverage": true,
+  "study_mean_max_absolute_error": 0.0,
+  "finite_probabilities_in_unit_interval": true,
+  "test_labels_read": false,
+  "test_used_for_selection": false,
+  "source_ema_sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+  "packaged_model_identity_preserved": true,
+  "model_inventory": {
+    "total_bytes": 238358891,
+    "limit_bytes": 500000000,
+    "size_pass": true,
+    "files": [
+      {
+        "path": "sprint_fp16.pt",
+        "bytes": 177397507,
+        "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+      },
+      {
+        "path": "tiny/config.json",
+        "bytes": 5228097,
+        "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+      },
+      {
+        "path": "tiny/student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+      },
+      {
+        "path": "tiny_patch/config.json",
+        "bytes": 1743,
+        "sha256": "61b743411f100836c1944bf1cff741787e78755780ca6d788fcba3df2452bb14"
+      },
+      {
+        "path": "tiny_patch/patch_fp16.pt",
+        "bytes": 17277,
+        "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3"
+      }
+    ],
+    "config_sha256": "e0db21d5a7c28cad0e35b89f131d9bf3552ddefa7acdb853fde53282177d530d"
+  },
+  "package_actual_bytes": 240790414,
+  "all_registered_package_hashes_verified": true,
+  "implementation_consistency": {
+    "match": true,
+    "studies": 3,
+    "images": 5,
+    "max_absolute_error": 0.0,
+    "selection": "first three lexicographic original valid Studies; all images",
+    "auc_evaluated": false,
+    "model_or_recipe_changed": false
+  },
+  "submission_best_unchanged": true,
+  "formal_T4_certification": false,
+  "deployment_accepted": false
+}

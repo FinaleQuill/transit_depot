@@ -1,0 +1,13 @@
+{
+  "tests": 24,
+  "failures": 0,
+  "errors": 0,
+  "patterns": {
+    "test_planned_handoff.py": 9,
+    "test_training_log_cli.py": 4,
+    "test_kd_teacher.py": 11
+  },
+  "actual_training": false,
+  "gpu_work": false,
+  "actual_checkpoint_read": false
+}

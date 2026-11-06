@@ -1,0 +1,9 @@
+{
+  "selected": "robust_ensemble",
+  "submission": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/submission.csv",
+  "submission_sha256": "fedbbbef4fd45763a8f88bc2a7bfab36e6bc3ecd33bce0487ad54eaa7da29d5f",
+  "model_directory": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/model",
+  "candidate_ready": true,
+  "formal_T4_certification": false,
+  "deployment_accepted": false
+}

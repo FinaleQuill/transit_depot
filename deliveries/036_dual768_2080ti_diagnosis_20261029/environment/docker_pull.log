@@ -1,0 +1,49 @@
+crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6: Pulling from coder02026/compete
+e93fce65fb9f: Pulling fs layer
+6831761682dc: Pulling fs layer
+58aaab9bde9b: Pulling fs layer
+850f0690c0a3: Pulling fs layer
+eefdd43f1b04: Pulling fs layer
+526a66eb7587: Pulling fs layer
+85518716a22b: Pulling fs layer
+0c1e37a6367d: Pulling fs layer
+32ff6aec82ab: Pulling fs layer
+b2a9b6c3184f: Pulling fs layer
+850f0690c0a3: Waiting
+0c1e37a6367d: Waiting
+eefdd43f1b04: Waiting
+526a66eb7587: Waiting
+32ff6aec82ab: Waiting
+85518716a22b: Waiting
+b2a9b6c3184f: Waiting
+e93fce65fb9f: Verifying Checksum
+e93fce65fb9f: Download complete
+6831761682dc: Verifying Checksum
+6831761682dc: Download complete
+e93fce65fb9f: Pull complete
+850f0690c0a3: Verifying Checksum
+850f0690c0a3: Download complete
+6831761682dc: Pull complete
+526a66eb7587: Verifying Checksum
+85518716a22b: Verifying Checksum
+85518716a22b: Download complete
+0c1e37a6367d: Verifying Checksum
+0c1e37a6367d: Download complete
+eefdd43f1b04: Verifying Checksum
+eefdd43f1b04: Download complete
+b2a9b6c3184f: Verifying Checksum
+b2a9b6c3184f: Download complete
+32ff6aec82ab: Verifying Checksum
+32ff6aec82ab: Download complete
+58aaab9bde9b: Download complete
+58aaab9bde9b: Pull complete
+850f0690c0a3: Pull complete
+eefdd43f1b04: Pull complete
+526a66eb7587: Pull complete
+85518716a22b: Pull complete
+0c1e37a6367d: Pull complete
+32ff6aec82ab: Pull complete
+b2a9b6c3184f: Pull complete
+Digest: sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6
+Status: Downloaded newer image for crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6
+crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6

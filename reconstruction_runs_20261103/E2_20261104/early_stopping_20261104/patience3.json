@@ -1,0 +1,14 @@
+{
+  "schema": "cxr_e2_early_stopping_v1",
+  "policy_id": "e2_patience3_20261104",
+  "patience": 3,
+  "min_delta": 0.0001,
+  "max_epochs": 6,
+  "metric": "macro_auc",
+  "mode": "max",
+  "baseline_epoch": 0,
+  "applies_to_arms": [
+    "global_control",
+    "global_local"
+  ]
+}

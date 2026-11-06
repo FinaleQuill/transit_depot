@@ -1,0 +1,14 @@
+{
+  "/home/featurize/work/cloud_project_v2/dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+  "/home/featurize/work/cloud_project_v2/dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+  "/home/featurize/work/cloud_project_v2/model_overnight.py": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+  "/home/featurize/work/cloud_project_v2/train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+  "/home/featurize/work/cloud_project_v2/inference_overnight.py": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+  "/home/featurize/work/cloud_project_v2/inference.py": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e",
+  "/home/featurize/work/cloud_project_v2/run_all_folds.py": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+  "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "/home/featurize/work/submission.csv": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe"
+}

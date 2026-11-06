@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/tmp/dual768_timing_env/bin/python",
+    "-B",
+    "benchmark_local_resources.py",
+    "--model-dir",
+    "model/033",
+    "--pictures-100",
+    "inputs/pictures_100",
+    "--pictures-5",
+    "inputs/pictures_5",
+    "--selection-json",
+    "inputs/selection.portable.json",
+    "--output-dir",
+    "/home/featurize/work/dual768_proxy_timing_results/not_created_by_preview",
+    "--profile",
+    "dual768_033_proxy_preview",
+    "--memory-limit-gib",
+    "8"
+  ],
+  "cuda_visible_devices": ""
+}

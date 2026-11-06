@@ -1,0 +1,20 @@
+{
+  "hardware": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_mib": 24564
+  },
+  "microbatch": 8,
+  "accumulation_steps": 4,
+  "workers": 4,
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "run_dir": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090",
+  "hours_limit": 0,
+  "strategy": "one epoch per fold per round; complete resume; independent early stopping"
+}
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 0 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_0 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 1 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_1 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 2 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_2 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 4 --output /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_4 --image-root /home/featurize/data/cxr_first --batch-size 8 --accumulation-steps 4 --valid-batch-size 8 --num-workers 4 --prefetch-factor 1 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP
+/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/inference.py --ensemble-plan /home/featurize/work/runs/019_convnextv2_base512_cv5_4090/ensemble_plan.json --output /home/featurize/work/deliveries/019_convnextv2_base512_cv5_4090 --image-root /home/featurize/data/cxr_first --work-root /home/featurize/work --valid-manifest /home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv --test-manifest /home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv --sample-submission /home/featurize/work/submission.csv --batch-size 8 --num-workers 4 --prefetch-factor 1 --device cuda
+DRY RUN ONLY: no model constructed, no training/inference subprocess started, no run files written.

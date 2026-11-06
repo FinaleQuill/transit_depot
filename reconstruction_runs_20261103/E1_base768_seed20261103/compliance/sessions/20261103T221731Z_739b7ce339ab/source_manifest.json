@@ -1,0 +1,80 @@
+[
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/000___init__.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/__init__.py",
+    "sha256": "4b6551200ed222f9c975241ff2b5ff5660c5288c5d699a6500f25347028d8551",
+    "size_bytes": 78
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/001_train.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/train.py",
+    "sha256": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+    "size_bytes": 24235
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/002_data.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/data.py",
+    "sha256": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+    "size_bytes": 11986
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/003_model.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/model.py",
+    "sha256": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+    "size_bytes": 20571
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/004_evaluate.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py",
+    "sha256": "1048f1baeae15e31747f0c4ca8f47d2a5eacfeb55777ddeb399d34852c6a0232",
+    "size_bytes": 15526
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/005_provenance.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/provenance.py",
+    "sha256": "2e6f4823b01700bdb4075488fd27227d66f11fc4740e65baa41f0aa16f5fe4f5",
+    "size_bytes": 4400
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/006_runtime.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/runtime.py",
+    "sha256": "127898df741c59865a17995394cb7755a962436434085259d51cde3124095f85",
+    "size_bytes": 2444
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/007_splits.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/splits.py",
+    "sha256": "1182db0d056f78d5d17a6bae94e0df622dcbbab95749fb185f4cf94dc81761b2",
+    "size_bytes": 10353
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/008_model_overnight.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/model_overnight.py",
+    "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "size_bytes": 3284
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/009_runtime_compat.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/runtime_compat.py",
+    "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "size_bytes": 1739
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/010_training_hooks.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/training_hooks.py",
+    "sha256": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "size_bytes": 4278
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/011_training_compliance.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/training_compliance.py",
+    "sha256": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885",
+    "size_bytes": 12786
+  },
+  {
+    "archived_path": "sessions/20261103T221731Z_739b7ce339ab/source/012_audit_trail.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/audit_trail.py",
+    "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "size_bytes": 7976
+  }
+]

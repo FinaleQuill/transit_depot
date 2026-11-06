@@ -1,0 +1,10 @@
+{
+  "selected": "sprint_candidate",
+  "submission": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/submission.csv",
+  "submission_sha256": "099e82fa107278d6ff35a358bb2cbee2a38fb5b94b1a60758e3fd4fd9cd059a3",
+  "model_directory": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/model",
+  "candidate_ready": true,
+  "deployment_accepted": false,
+  "formal_T4_certification": false,
+  "original_submission_best_preserved": true
+}

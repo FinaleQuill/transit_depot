@@ -1,0 +1,475 @@
+{
+  "created_at_utc": "2026-10-31T07:28:16.787261+00:00",
+  "plan_sha256": "c4831ceca4fad7c0741e15af7317dbdc8146bb344791d64dc3b2434370b7d6d9",
+  "script_sha256": "e36941c95da6df86af27e9683ea663f9e788783e3a0fc9f67d0f5226796021af",
+  "auc_helper_sha256": "3c020a7ed092ab6bba9d32a12ba961f9aba3d0f2eaf285e1615869ca65e180aa",
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "source_validations": [
+    {
+      "name": "A",
+      "report_sha256": "a0e1e840815c6c40ff7a7bc8a1dc1e3c43eb9262ca1416702a2665f75dd75e02",
+      "image_predictions_sha256": "e994a8d2f7f6742dad83bdd7623bbba499636d881244076320e47658f519406b",
+      "predictions_sha256": "672cd43cb85c2bc7544fcc0dac0550c3f6b8f878fabc4b80cf20684710bee900"
+    },
+    {
+      "name": "B",
+      "report_sha256": "d8c8da462af3d0b3b413b80cab04dda1d7a3250524c5b99aa79175989b08aabb",
+      "image_predictions_sha256": "9726800e59f8311535c53ce1228bb7c9d43c45b187145ca50339c5032a1f6231",
+      "predictions_sha256": "4fefff394a6263a264cecfea195df3854921828183b78607284eb472500979e5"
+    }
+  ],
+  "num_images": 1422,
+  "num_studies": 859,
+  "num_patients": 228,
+  "fixed_class_weights": {
+    "AB_equal": {
+      "A": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "B": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "AB_B75_class1": {
+      "A": [
+        0.25,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "B": [
+        0.75,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "AB_B100_class1": {
+      "A": [
+        0.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "B": [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "linear_aggregation_replay": {
+    "AB_equal": {
+      "max_absolute_roundoff": 1.1102230246251565e-16,
+      "unchanged_other_nine_classes": true
+    },
+    "AB_B75_class1": {
+      "max_absolute_roundoff": 1.1102230246251565e-16,
+      "unchanged_other_nine_classes": true
+    },
+    "AB_B100_class1": {
+      "max_absolute_roundoff": 1.1102230246251565e-16,
+      "unchanged_other_nine_classes": true
+    }
+  },
+  "scores": {
+    "AB_equal": {
+      "per_class_auc": [
+        0.723253493013972,
+        0.8588807785888077,
+        0.8088400449221883,
+        0.7602439205770803,
+        0.8836605890603085,
+        0.7940255479894627,
+        0.79978683346559,
+        0.7253712960950518,
+        0.9111788878900732,
+        0.8826247798697539
+      ],
+      "macro_auc": 0.8147866171472288,
+      "class_1_4_8_mean_auc": 0.7362895698953681,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6434397163120568,
+            0.8672922252010724,
+            0.7744623655913978,
+            0.7052985188578409,
+            0.8101499139837798,
+            0.6934806137390972,
+            0.7561734524991724,
+            0.6620208057934364,
+            0.8407730874979783,
+            0.7825316455696203
+          ],
+          "macro_auc": 0.7535622345045452,
+          "class_1_4_8_mean_auc": 0.6702530136544448
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8058581457274268,
+            0.8585160004688782,
+            0.8225165562913908,
+            0.8244629807337418,
+            0.9372922806797517,
+            0.8605352722772277,
+            0.8382357377741575,
+            0.7193011591988574,
+            0.9518201875344733,
+            0.8989168356256964
+          ],
+          "macro_auc": 0.85174551563116,
+          "class_1_4_8_mean_auc": 0.783207428553342
+        }
+      },
+      "macro_auc_delta_from_AB_equal": 0.0
+    },
+    "AB_B75_class1": {
+      "per_class_auc": [
+        0.733682634730539,
+        0.8588807785888077,
+        0.8088400449221883,
+        0.7602439205770803,
+        0.8836605890603085,
+        0.7940255479894627,
+        0.79978683346559,
+        0.7253712960950518,
+        0.9111788878900732,
+        0.8826247798697539
+      ],
+      "macro_auc": 0.8158295313188855,
+      "class_1_4_8_mean_auc": 0.739765950467557,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6565602836879433,
+            0.8672922252010724,
+            0.7744623655913978,
+            0.7052985188578409,
+            0.8101499139837798,
+            0.6934806137390972,
+            0.7561734524991724,
+            0.6620208057934364,
+            0.8407730874979783,
+            0.7825316455696203
+          ],
+          "macro_auc": 0.7548742912421338,
+          "class_1_4_8_mean_auc": 0.6746265361130735
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8109416606148633,
+            0.8585160004688782,
+            0.8225165562913908,
+            0.8244629807337418,
+            0.9372922806797517,
+            0.8605352722772277,
+            0.8382357377741575,
+            0.7193011591988574,
+            0.9518201875344733,
+            0.8989168356256964
+          ],
+          "macro_auc": 0.8522538671199037,
+          "class_1_4_8_mean_auc": 0.7849019335158208
+        }
+      },
+      "macro_auc_delta_from_AB_equal": 0.0010429141716566948
+    },
+    "AB_B100_class1": {
+      "per_class_auc": [
+        0.743687624750499,
+        0.8588807785888077,
+        0.8088400449221883,
+        0.7602439205770803,
+        0.8836605890603085,
+        0.7940255479894627,
+        0.79978683346559,
+        0.7253712960950518,
+        0.9111788878900732,
+        0.8826247798697539
+      ],
+      "macro_auc": 0.8168300303208815,
+      "class_1_4_8_mean_auc": 0.7431009471408769,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6688829787234043,
+            0.8672922252010724,
+            0.7744623655913978,
+            0.7052985188578409,
+            0.8101499139837798,
+            0.6934806137390972,
+            0.7561734524991724,
+            0.6620208057934364,
+            0.8407730874979783,
+            0.7825316455696203
+          ],
+          "macro_auc": 0.75610656074568,
+          "class_1_4_8_mean_auc": 0.6787341011248939
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8172355361897845,
+            0.8585160004688782,
+            0.8225165562913908,
+            0.8244629807337418,
+            0.9372922806797517,
+            0.8605352722772277,
+            0.8382357377741575,
+            0.7193011591988574,
+            0.9518201875344733,
+            0.8989168356256964
+          ],
+          "macro_auc": 0.8528832546773959,
+          "class_1_4_8_mean_auc": 0.7869998920407945
+        }
+      },
+      "macro_auc_delta_from_AB_equal": 0.0020434131736527528
+    }
+  },
+  "patient_paired_bootstrap": {
+    "samples": 1000,
+    "seed": 20261031,
+    "sampling_unit": "patient_with_all_Studies",
+    "reference": "AB_equal",
+    "results": {
+      "AB_B75_class1": {
+        "per_class_delta": [
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              -0.002347718933450521,
+              0.028124673437574216
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "macro_auc_delta": {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.00023477189334505206,
+            0.0028124673437574213
+          ]
+        },
+        "class_1_4_8_mean_delta": {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.0007825729778168402,
+            0.009374891145858072
+          ]
+        }
+      },
+      "AB_B100_class1": {
+        "per_class_delta": [
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              -0.0017826451403857044,
+              0.05253093242454945
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "macro_auc_delta": {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.00017826451403857044,
+            0.0052530932424549445
+          ]
+        },
+        "class_1_4_8_mean_delta": {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.0005942150467952348,
+            0.01751031080818315
+          ]
+        }
+      }
+    }
+  },
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "numerical_optimizer_used": false,
+  "thresholds_fitted": false,
+  "test_used": false,
+  "new_training": false,
+  "new_model_inference": false,
+  "deployment_selected": false,
+  "latency_80ms_promised": false,
+  "formal_T4_certification": false,
+  "interpretation": "Fifth exploratory batch after repeated use of same official valid for epoch, candidate and manual hyperparameter selection; not independent confirmation. Class weights explicitly selected using valid, not a no-fitting/no-validation-selection result. Real combined predictor and latency require separate validation; 80ms not promised. Frozen B submission CSV remains unchanged.",
+  "stop_rule": "Evaluate exactly these two candidates and report; do not expand search even if >=.815"
+}

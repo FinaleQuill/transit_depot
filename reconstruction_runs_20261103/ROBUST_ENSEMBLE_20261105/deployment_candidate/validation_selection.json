@@ -1,0 +1,53 @@
+{
+  "selected": "robust_ensemble",
+  "candidate_won": true,
+  "selection_checks": {
+    "macro_strictly_better": true,
+    "class8_strictly_better": true,
+    "single_image_macro_not_worse": true,
+    "patient_equal_macro_not_worse": true,
+    "class1_exactly_preserved": true
+  },
+  "fusion_weights": [
+    [
+      1.0,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ],
+    [
+      0.0,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ]
+  ],
+  "opacity_weight_per_class": [
+    0.0,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "report": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/report.json",
+  "tta": "hflip2",
+  "research_selection_only": true,
+  "report_recovered_from_complete_predictions": true
+}

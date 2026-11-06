@@ -1,0 +1,61 @@
+{
+  "state": "failed",
+  "stage": "train_B_base",
+  "pid": 32068,
+  "child_pid": null,
+  "child_start_ticks": null,
+  "started_utc": "2026-11-01T19:46:14.631100+00:00",
+  "jobs": {
+    "A_tiny": {
+      "state": "completed",
+      "failure_retries": 0,
+      "migration_sha256": "55f953627a573bc44e36a499febf4a47d94f98498ab79954101f7fbfbc0d826e",
+      "mirrored_epoch": 7,
+      "completed_epochs": 7,
+      "last_sha256": "3e75f77700b0197aa504a1548565ddc97a7cd8d6be1ce35f0076c995f263ca3b",
+      "best_sha256": "c784f49bd48da9de5d482ded4ffc91c0a05d7b5eeae1c212003ef75a09350be1",
+      "best_epoch": 2,
+      "best_auc": 0.7393485860304196,
+      "best_score_dir": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/A_tiny"
+    },
+    "A_base": {
+      "state": "completed",
+      "failure_retries": 0,
+      "mirrored_epoch": 6,
+      "completed_epochs": 6,
+      "last_sha256": "cec9fdbab0c8d7aa994cb9274c04a2c1a4d7bc8915c75e550ee1847241c36ce9",
+      "best_sha256": "6d91aee729a0c639d1889909f48756bf24c05829708e645af7a41becbff972cc",
+      "best_epoch": 1,
+      "best_auc": 0.7376266331013407,
+      "best_score_dir": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/A_base"
+    },
+    "B_tiny": {
+      "state": "completed",
+      "failure_retries": 0,
+      "mirrored_epoch": 7,
+      "completed_epochs": 7,
+      "last_sha256": "6049eb1119d7f845ac30b791045ba4ebe1f61a717c104e66119a37e5675136d0",
+      "best_sha256": "e4319c7e1aef8fdcc8e0fc9d84d90fda12370d290aad187e71e04f9aa1597775",
+      "best_epoch": 2,
+      "best_auc": 0.7397691138114503,
+      "best_score_dir": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/B_tiny"
+    },
+    "B_base": {
+      "state": "running",
+      "failure_retries": 0,
+      "mirrored_epoch": 3
+    }
+  },
+  "adoption": {
+    "docker_pid": 28156,
+    "docker_start_ticks": 1758452,
+    "container_id": null,
+    "stop_path": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/A_tiny/STOP"
+  },
+  "source_manifest": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/sources.json",
+  "error": "RuntimeError: B_base has STOP marker; refusing automatic retry",
+  "test_predicted": false,
+  "owns_original_lock": true,
+  "updated_utc": "2026-11-02T08:07:40.504736+00:00",
+  "elapsed_seconds": 44485.9
+}

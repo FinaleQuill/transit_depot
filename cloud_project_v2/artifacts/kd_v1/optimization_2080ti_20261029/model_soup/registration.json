@@ -1,0 +1,43 @@
+{
+  "schema": "diagnostic_weight_average_registration_v1",
+  "registered_utc": "2026-10-29T09:00:37.025550+00:00",
+  "candidate_count": 1,
+  "status": "registered_not_executed",
+  "purpose": "One no-training accuracy/resource diagnostic after equivalent033 acceleration is accepted",
+  "source_deployment": "033 seed43/44 E8 EMA, original FP16 export",
+  "source_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "source_weight_sha256": [
+    "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+  ],
+  "formula": "For each floating tensor in CPU: FP16(FP32(seed43)*0.25 + FP32(seed44)*0.75), in that operation order",
+  "source_keys_shapes_dtypes": "Must match exactly; source floating tensors must be finite FP16",
+  "integer_tensor_policy": "Must be exactly equal, copied without averaging",
+  "fixed_inference": {
+    "input_size": 768,
+    "tta": "identity+hflip",
+    "precision": "FP16",
+    "members": 1,
+    "forwards_per_image": 2,
+    "threshold": 0.5
+  },
+  "preconditions": [
+    "Explicit root decision to evaluate after equal-semantics optimization review",
+    "No concurrent GPU job",
+    "Complete unchanged official valid1422 images859Studies",
+    "Successful full033 valid baseline in same Python/packages/GPU/CUDA/cuDNN environment",
+    "Frozen033 source config/weights SHA and manifest SHA must match"
+  ],
+  "evaluation": "Fullvalid Study probabilities; overall and ten-class AUC; fixed.5 F1; actual forward count; derived/source SHA; no test use",
+  "decision_rule": "If candidate macroAUC is not strictly higher than same-environment033, stop and do not search any further ratio. A positive point change is only a diagnostic and requires uncertainty/resource/provenance review.",
+  "not_equivalent_to_033": true,
+  "not_schema8_training_checkpoint": true,
+  "not_production_deployment": true,
+  "training_performed": false,
+  "optimization_or_gradient_steps": 0,
+  "threshold_or_test_fitting": false,
+  "source_or_test_csv_overwrite_allowed": false,
+  "T4_latency_certified": false,
+  "official_compliance_pass": false,
+  "script_sha256": "3ab25d2e013f2de499847814fb83e97f93f4bbf333bf49b8771f837f0d43f4a6"
+}

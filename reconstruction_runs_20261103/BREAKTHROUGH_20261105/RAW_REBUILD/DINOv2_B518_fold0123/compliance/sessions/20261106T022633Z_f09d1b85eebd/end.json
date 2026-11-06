@@ -1,0 +1,16 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "error": "KeyboardInterrupt: Training interrupted by signal 15"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "205f7b5f4bef60ed339d752fc9bee2addae3f1898d66fbca6e23f06f855820f1",
+  "record_sha256": "1c99bd747a3d8140984746dd5c6dbd5e60f15f05ecbf76a7dbb1fb47317055e6",
+  "recorded_at_hong_kong": "2026-11-06T12:55:06.942240+08:00",
+  "recorded_at_utc": "2026-11-06T04:55:06.942240+00:00",
+  "run_dir": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123",
+  "session_id": "20261106T022633Z_f09d1b85eebd",
+  "state": "interrupted",
+  "trainer": "raw_rebuild.train"
+}

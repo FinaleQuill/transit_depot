@@ -1,0 +1,17 @@
+{
+  "launched_at_utc": "2026-10-26T05:18:26.606276+00:00",
+  "authorization": "User explicitly requested 恢复训练",
+  "wrapper_pid": 431457,
+  "session_id": 431457,
+  "command": [
+    "bash",
+    "/home/featurize/work/cloud_project_v2/run_mixed_teachers.sh",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "background_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/controller_background_20261026T051826Z.log",
+  "start_new_session": true,
+  "plan_sha256": "8dde54b9c21da4eeabf7f8731da02d9912cf238b484483901ea62bb52c657d23",
+  "preflight": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/teacher_resume_20261026T051809Z/preflight.json",
+  "scope": "Resume existing teachers only; finish fold3 then fold4, stop before OOF/student"
+}

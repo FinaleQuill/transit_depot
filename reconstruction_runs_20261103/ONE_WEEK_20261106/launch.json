@@ -1,0 +1,15 @@
+{
+  "launched_at": "2026-11-06T19:05:53.995550+08:00",
+  "controller_pid": 20353,
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "one_week.pipeline",
+    "--plan",
+    "/home/featurize/work/cxr_research_20261103/one_week/plan.json",
+    "--controller"
+  ],
+  "plan_sha256": "fe984c50cb475a5bcd3ffb4543ffbd9b69e5781555b056b9fca5975365961e3d",
+  "detached": true
+}

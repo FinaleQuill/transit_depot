@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-25T16:30:46.036192+08:00",
+  "scope": "Official website/PDF plus user-forwarded organizer notice; retention repair without training interruption",
+  "official_sources": {
+    "website": "https://www.ncccu.org.cn/index/Paper/case1.html",
+    "pdf": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+    "qa": "https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2",
+    "notice": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/user_forwarded_official_notice.txt"
+  },
+  "training_health": {
+    "scheduler_pid": 12048,
+    "trainer_pid": 12060,
+    "completed_epochs": 3,
+    "currently_advancing_epoch": 4,
+    "train_bce_by_epoch": {
+      "1": 1.0908809476106271,
+      "2": 0.9802089719003041,
+      "3": 0.9331588277977025
+    },
+    "optimizer_updates": 2277,
+    "ema_updates": 2277,
+    "amp_skipped_steps": 0
+  },
+  "retention": {
+    "completed_epoch_ledger_coverage": [
+      1,
+      2,
+      3
+    ],
+    "console_marker_checks": [
+      {
+        "epoch": 1,
+        "expected_printed_batch_markers": 123,
+        "present": 123
+      },
+      {
+        "epoch": 2,
+        "expected_printed_batch_markers": 123,
+        "present": 123
+      },
+      {
+        "epoch": 3,
+        "expected_printed_batch_markers": 123,
+        "present": 123
+      }
+    ],
+    "live_tmux_pipe": true,
+    "observer_pid": 42304,
+    "observer_heartbeat": "2026-10-25T08:30:19.177278+00:00",
+    "source_archives": [
+      "source_before_patch",
+      "source_after_patch"
+    ],
+    "actual_dependency_count": 66,
+    "python": "3.12.15",
+    "epoch1_recovery": "Original read-only tool observation retained; hash and original post-save status commit timestamp available; exact original checkpoint mtime unavailable and not fabricated."
+  },
+  "protected_inputs_unchanged": {
+    "data/clean_v1_reviewed/train_clean.csv": true,
+    "data/clean_v1_reviewed/valid_manifest.csv": true,
+    "data/cv5_overnight/folds.json": true
+  },
+  "tests_passed": {
+    "audit_ledger": 14,
+    "cli_dispatch": 4,
+    "teacher_metadata": 11,
+    "student_logic": 13,
+    "packaging": 13,
+    "monitor_and_wrapper": 8,
+    "total": 63
+  },
+  "extra_model_forwards": 0,
+  "extra_checkpoint_binary_reads": 0,
+  "training_restarted_or_signalled": false,
+  "retention_probe": "retention_probe_summary.json",
+  "final_acceptance_pending": [
+    "Remaining teacher and student training evidence",
+    "Actual deployed FP16 model size",
+    "Complete CSV and fixed-inference reproducibility",
+    "Official-matching T4 end-to-end timing and CSV consistency",
+    "Organizer review of retained historical evidence and final materials"
+  ]
+}

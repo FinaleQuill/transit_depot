@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-19T23:02:54.593030+08:00",
+  "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+  "executable": "/environment/miniconda3/envs/cxr4090/bin/python",
+  "prefix": "/environment/miniconda3/envs/cxr4090",
+  "versions": {
+    "torch": "2.11.0+cu126",
+    "torchvision": "0.26.0+cu126",
+    "timm": "1.0.30",
+    "albumentations": "2.0.8",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "opencv-python-headless": "4.14.0.94"
+  },
+  "cuda_runtime": "12.6",
+  "cuda_available": true,
+  "bf16_supported": true,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "modules_imported_without_model_construction": [
+    "runtime_compat",
+    "dataset",
+    "dataset_highres",
+    "dataset_tiny",
+    "dataset_overnight",
+    "model",
+    "model_highres",
+    "model_tiny",
+    "model_overnight",
+    "train",
+    "train_highres",
+    "train_tiny",
+    "train_overnight",
+    "cv_splits",
+    "run_all_folds",
+    "inference",
+    "inference_overnight",
+    "probe_gpu_memory"
+  ],
+  "pip_check": "No broken requirements found.",
+  "pretrained_cache": {
+    "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnextv2_base.fcmae_ft_in1k/snapshots/7b29800e499fdc06de5b612970f3384dc8d29ca5/model.safetensors",
+    "sha256": "ec152f1e375edc2b3dfac7a81155a449b4c5cbb7c5cf0b9494838f6c87518d73",
+    "tensor_count": 380,
+    "offline_cpu_model_constructed": true,
+    "model_state_tensors": 380,
+    "model_forward_calls": 0
+  },
+  "training_runs": 0,
+  "model_forward_calls": 0,
+  "model_backward_calls": 0
+}

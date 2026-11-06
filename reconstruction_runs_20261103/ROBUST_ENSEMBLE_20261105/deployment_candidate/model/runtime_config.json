@@ -1,0 +1,94 @@
+{
+  "schema": "cxr_robust_ensemble_deployment_v1",
+  "fusion_weights": [
+    [
+      1.0,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ],
+    [
+      0.0,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ]
+  ],
+  "opacity_weight_per_class": [
+    0.0,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "tta": "hflip2",
+  "patient_smoothing": false,
+  "inference_files": [
+    {
+      "path": "base768.pt",
+      "bytes": 177397507,
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+    },
+    {
+      "path": "opacity512.pt",
+      "bytes": 55738703,
+      "sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c"
+    },
+    {
+      "path": "tiny/config.json",
+      "bytes": 5228097,
+      "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+    },
+    {
+      "path": "tiny/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+    },
+    {
+      "path": "tiny_patch/config.json",
+      "bytes": 1743,
+      "sha256": "61b743411f100836c1944bf1cff741787e78755780ca6d788fcba3df2452bb14"
+    },
+    {
+      "path": "tiny_patch/patch_fp16.pt",
+      "bytes": 17277,
+      "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3"
+    }
+  ],
+  "sprint_config": {
+    "candidate_weights": "base768.pt",
+    "candidate_weights_sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+    "tiny_patch_config": "tiny_patch/config.json",
+    "tiny_patch_config_sha256": "61b743411f100836c1944bf1cff741787e78755780ca6d788fcba3df2452bb14"
+  },
+  "opacity_member": {
+    "id": "opacity512",
+    "branch": "opacity",
+    "image_size": 512,
+    "epochs": 6,
+    "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+    "weights": "opacity512.pt",
+    "weights_sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c"
+  },
+  "seed": 20261105,
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "selection_sha256": "78ab3fd43438120a2b4a5f380383d0b746fbbaf209e159c7ce768e797b2784a3",
+  "comparison_sha256": "3d2b099d1b299659c7ae187e9f759577be4c4fbec880e838fb09fa23c22be250"
+}

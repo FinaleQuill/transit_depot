@@ -1,0 +1,7 @@
+{
+  "full_checkpoint": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/smoke_B518/last.pt",
+  "sha256": "b6fd6a7768ae2a28f106c9ffe12471eff304e8c3baf6d932cfd9e38a73ad9407",
+  "epoch": 1,
+  "full_checkpoint_is_local_disk": true,
+  "full_checkpoint_persisted_to_workspace": false
+}

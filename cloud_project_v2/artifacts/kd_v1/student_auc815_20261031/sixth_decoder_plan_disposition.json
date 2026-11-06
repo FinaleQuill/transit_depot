@@ -1,0 +1,10 @@
+{
+  "observed_at_hong_kong": "2026-10-31T15:37:22.434881+08:00",
+  "status": "superseded_before_any_candidate_inference",
+  "reason": "Header-only inspection of original100valid shows 0/100 JPEGs would actually use reduced IDCT at target1536, because short edge is below3072. No candidate AUC/timing or test output used.",
+  "eligible_at_target1536": 0,
+  "eligible_at_target768": 100,
+  "new_plan": "seventh_decoder_plan.json",
+  "new_training": false,
+  "test_used": false
+}

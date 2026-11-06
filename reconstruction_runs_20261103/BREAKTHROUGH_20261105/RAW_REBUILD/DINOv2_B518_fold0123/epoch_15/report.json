@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "scope": "inner_validation",
+  "unit": "Study",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "num_studies": 3702,
+  "num_patients": 2211,
+  "num_images": 6067,
+  "macro_auc": 0.8038316069724288,
+  "per_class_auc": [
+    0.6543516381470996,
+    0.8537084358634615,
+    0.7893816918866734,
+    0.7193673126858857,
+    0.8803237718170969,
+    0.7945602745602746,
+    0.8028263375349017,
+    0.7561456369038964,
+    0.9024052630416067,
+    0.8852457072833914
+  ],
+  "macro_average_precision": 0.42306132683385284,
+  "per_class_average_precision": [
+    0.07625611808825566,
+    0.2833158596929809,
+    0.14663720123943913,
+    0.17223617832982738,
+    0.51929152158499,
+    0.48735727184391764,
+    0.4840392932878933,
+    0.4869362912201833,
+    0.7434986529324208,
+    0.8310448801186199
+  ],
+  "overall": {
+    "macro_auc": 0.8038316069724288,
+    "per_class_auc": [
+      0.6543516381470996,
+      0.8537084358634615,
+      0.7893816918866734,
+      0.7193673126858857,
+      0.8803237718170969,
+      0.7945602745602746,
+      0.8028263375349017,
+      0.7561456369038964,
+      0.9024052630416067,
+      0.8852457072833914
+    ],
+    "macro_average_precision": 0.42306132683385284,
+    "per_class_average_precision": [
+      0.07625611808825566,
+      0.2833158596929809,
+      0.14663720123943913,
+      0.17223617832982738,
+      0.51929152158499,
+      0.48735727184391764,
+      0.4840392932878933,
+      0.4869362912201833,
+      0.7434986529324208,
+      0.8310448801186199
+    ],
+    "available_class_macro_auc": 0.8038316069724288,
+    "available_class_macro_average_precision": 0.42306132683385284,
+    "num_auc_evaluable_classes": 10,
+    "num_studies": 3702,
+    "num_patients": 2211,
+    "positive_studies": [
+      124,
+      180,
+      189,
+      287,
+      481,
+      777,
+      793,
+      901,
+      931,
+      1338
+    ],
+    "positive_patients": [
+      116,
+      127,
+      163,
+      259,
+      354,
+      562,
+      588,
+      655,
+      566,
+      1146
+    ],
+    "patient_bootstrap": {
+      "macro_auc": {
+        "ci95": [
+          0.795267850457123,
+          0.8123556118670501
+        ],
+        "valid_replicates": 200,
+        "attempted_replicates": 200
+      },
+      "per_class_auc": [
+        {
+          "ci95": [
+            0.6123100456453492,
+            0.703058133363811
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.8200721687433083,
+            0.8847076430570647
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.7643733896869601,
+            0.8170193943857874
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.6896314521084689,
+            0.7468815246261032
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.8646116983710631,
+            0.8938744032978991
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.7795545954612694,
+            0.8105706734883046
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.7872334030508044,
+            0.8190246387022164
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.7379242510785823,
+            0.7764131860820664
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.8913980532584753,
+            0.9135722859696027
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        {
+          "ci95": [
+            0.8725295814420151,
+            0.8976953652102375
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        }
+      ]
+    }
+  },
+  "slices": {
+    "all": {
+      "macro_auc": 0.8038316069724288,
+      "per_class_auc": [
+        0.6543516381470996,
+        0.8537084358634615,
+        0.7893816918866734,
+        0.7193673126858857,
+        0.8803237718170969,
+        0.7945602745602746,
+        0.8028263375349017,
+        0.7561456369038964,
+        0.9024052630416067,
+        0.8852457072833914
+      ],
+      "macro_average_precision": 0.42306132683385284,
+      "per_class_average_precision": [
+        0.07625611808825566,
+        0.2833158596929809,
+        0.14663720123943913,
+        0.17223617832982738,
+        0.51929152158499,
+        0.48735727184391764,
+        0.4840392932878933,
+        0.4869362912201833,
+        0.7434986529324208,
+        0.8310448801186199
+      ],
+      "available_class_macro_auc": 0.8038316069724288,
+      "available_class_macro_average_precision": 0.42306132683385284,
+      "num_auc_evaluable_classes": 10,
+      "num_studies": 3702,
+      "num_patients": 2211,
+      "positive_studies": [
+        124,
+        180,
+        189,
+        287,
+        481,
+        777,
+        793,
+        901,
+        931,
+        1338
+      ],
+      "positive_patients": [
+        116,
+        127,
+        163,
+        259,
+        354,
+        562,
+        588,
+        655,
+        566,
+        1146
+      ],
+      "patient_bootstrap": {
+        "macro_auc": {
+          "ci95": [
+            0.795267850457123,
+            0.8123556118670501
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        "per_class_auc": [
+          {
+            "ci95": [
+              0.6123100456453492,
+              0.703058133363811
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8200721687433083,
+              0.8847076430570647
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7643733896869601,
+              0.8170193943857874
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6896314521084689,
+              0.7468815246261032
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8646116983710631,
+              0.8938744032978991
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7795545954612694,
+              0.8105706734883046
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7872334030508044,
+              0.8190246387022164
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7379242510785823,
+              0.7764131860820664
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8913980532584753,
+              0.9135722859696027
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8725295814420151,
+              0.8976953652102375
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          }
+        ]
+      }
+    },
+    "ap_projection_only": {
+      "macro_auc": 0.7407304253023986,
+      "per_class_auc": [
+        0.5629172263095644,
+        0.8027687882056814,
+        0.7177505976224319,
+        0.6686188759962494,
+        0.8290219657750935,
+        0.723322968490879,
+        0.7347791066799332,
+        0.7025152055608909,
+        0.8497146907187602,
+        0.815894827664502
+      ],
+      "macro_average_precision": 0.40959392004774714,
+      "per_class_average_precision": [
+        0.08904375438948345,
+        0.2908203345901828,
+        0.1569320108106338,
+        0.14918392735245886,
+        0.5520049877428145,
+        0.5115370656961916,
+        0.5044879349421525,
+        0.5135441764402697,
+        0.739284806676938,
+        0.5891002018363459
+      ],
+      "available_class_macro_auc": 0.7407304253023986,
+      "available_class_macro_average_precision": 0.40959392004774714,
+      "num_auc_evaluable_classes": 10,
+      "num_studies": 1886,
+      "num_patients": 1062,
+      "positive_studies": [
+        83,
+        135,
+        142,
+        158,
+        366,
+        536,
+        555,
+        591,
+        649,
+        361
+      ],
+      "positive_patients": [
+        77,
+        101,
+        120,
+        142,
+        275,
+        394,
+        405,
+        419,
+        402,
+        322
+      ],
+      "patient_bootstrap": {
+        "macro_auc": {
+          "ci95": [
+            0.7296876872125818,
+            0.7516184800275012
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        "per_class_auc": [
+          {
+            "ci95": [
+              0.503683363541105,
+              0.6366526254940023
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7546772309666543,
+              0.8425522679591985
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6772625827273766,
+              0.7557815967050312
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6292784302471479,
+              0.717603605860617
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8059967390316347,
+              0.8522814003136449
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6975090087216055,
+              0.746251968022065
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7082954808758273,
+              0.7569572867987585
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6721943623607574,
+              0.7287918580916412
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8291986604108871,
+              0.8671569925414135
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7847344135905503,
+              0.8409104460722081
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          }
+        ]
+      }
+    },
+    "single_image_study": {
+      "macro_auc": 0.7424373951867835,
+      "per_class_auc": [
+        0.5588954514914296,
+        0.8044320888012036,
+        0.7174668351231839,
+        0.6642450596484838,
+        0.8322758985200845,
+        0.7319065830955039,
+        0.7353653430221824,
+        0.7070954131967092,
+        0.8503425214151131,
+        0.8223487575539411
+      ],
+      "macro_average_precision": 0.41255727294952615,
+      "per_class_average_precision": [
+        0.0848148119221851,
+        0.30492155274691285,
+        0.16505095573051823,
+        0.14424711870474569,
+        0.5642867333068093,
+        0.5059455141343799,
+        0.49925510011354185,
+        0.5231875865544879,
+        0.7371262051649782,
+        0.5967371511167027
+      ],
+      "available_class_macro_auc": 0.7424373951867835,
+      "available_class_macro_average_precision": 0.41255727294952615,
+      "num_auc_evaluable_classes": 10,
+      "num_studies": 1719,
+      "num_patients": 1009,
+      "positive_studies": [
+        78,
+        126,
+        136,
+        139,
+        344,
+        473,
+        496,
+        537,
+        587,
+        330
+      ],
+      "positive_patients": [
+        72,
+        95,
+        116,
+        125,
+        263,
+        359,
+        365,
+        388,
+        377,
+        301
+      ],
+      "patient_bootstrap": {
+        "macro_auc": {
+          "ci95": [
+            0.7308853146935578,
+            0.7547712935697759
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        "per_class_auc": [
+          {
+            "ci95": [
+              0.5046261436275279,
+              0.6367274821278075
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7555435102879223,
+              0.8483588986071514
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6783283236074407,
+              0.7564937226255406
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.625230418114644,
+              0.713567968320815
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8104416666914922,
+              0.8566115726635107
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7060637224576047,
+              0.7556651516816704
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7107966192037736,
+              0.7611212175658494
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.6786583468939287,
+              0.7301269745096963
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8304467687459955,
+              0.86909180516887
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7940466365471367,
+              0.8488727217167727
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          }
+        ]
+      }
+    },
+    "multiple_image_study": {
+      "macro_auc": 0.8363815628206016,
+      "per_class_auc": [
+        0.7151354627281094,
+        0.8864216730987078,
+        0.8112034411965979,
+        0.7644635098313572,
+        0.9090556816474366,
+        0.8362296636469077,
+        0.8415371588562574,
+        0.7801298454479431,
+        0.9365271648906736,
+        0.8831120268620268
+      ],
+      "macro_average_precision": 0.40133795039440245,
+      "per_class_average_precision": [
+        0.07313087349462839,
+        0.23865485752608487,
+        0.10540100337651505,
+        0.21490275843150733,
+        0.3954113974438848,
+        0.46241419180448257,
+        0.4539102212356122,
+        0.4290439140354412,
+        0.7572615699477713,
+        0.8832487166480965
+      ],
+      "available_class_macro_auc": 0.8363815628206016,
+      "available_class_macro_average_precision": 0.40133795039440245,
+      "num_auc_evaluable_classes": 10,
+      "num_studies": 1983,
+      "num_patients": 1561,
+      "positive_studies": [
+        46,
+        54,
+        53,
+        148,
+        137,
+        304,
+        297,
+        364,
+        344,
+        1008
+      ],
+      "positive_patients": [
+        46,
+        47,
+        51,
+        141,
+        121,
+        267,
+        267,
+        327,
+        274,
+        902
+      ],
+      "patient_bootstrap": {
+        "macro_auc": {
+          "ci95": [
+            0.8218699904031169,
+            0.8490864600629447
+          ],
+          "valid_replicates": 200,
+          "attempted_replicates": 200
+        },
+        "per_class_auc": [
+          {
+            "ci95": [
+              0.6484940798855976,
+              0.7823467236171385
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8441601761173947,
+              0.9291777742627872
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7530870961611877,
+              0.8621498872170592
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.7309992906354345,
+              0.8029543412731776
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.886091915901703,
+              0.9266958284642803
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8153797739012892,
+              0.8554482344055354
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8193155141581193,
+              0.8602723963809111
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.754717957348895,
+              0.8072461441639095
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.9230495370507344,
+              0.9502689456976908
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          },
+          {
+            "ci95": [
+              0.8681838483290251,
+              0.9005420780432928
+            ],
+            "valid_replicates": 200,
+            "attempted_replicates": 200
+          }
+        ]
+      }
+    }
+  },
+  "bootstrap": {
+    "sampling_unit": "patient_with_all_studies_and_multiplicity",
+    "repeats": 200,
+    "seed": 20261103,
+    "paired": false,
+    "interval": "percentile_95",
+    "selection_bias_corrected": false
+  },
+  "ap_projection_only_definition": "All retained image projections of the Study equal AP; unknown views excluded",
+  "macro_auc_definition": "Unweighted mean of all 10 class AUCs; null if any class lacks positive or negative support",
+  "test_accessed": false,
+  "official_validation_accessed": false,
+  "holdout_H_accessed": true,
+  "thresholds_fitted": false,
+  "patient_equal_macro_auc": 0.8230953789836093,
+  "patient_equal_per_class_auc": [
+    0.6714767233961064,
+    0.868398194239638,
+    0.8142210370580298,
+    0.7441689100076565,
+    0.9093023343313307,
+    0.8253206469946188,
+    0.8253334294868168,
+    0.7696274752993615,
+    0.9167227216377591,
+    0.8863823173847742
+  ],
+  "old_H_role": "Explicitly reassigned fold4 to DEVELOPMENT for this fresh model",
+  "selection_metric": "Study macro AUC only; patient equal AUC is diagnostic",
+  "epoch": 15
+}

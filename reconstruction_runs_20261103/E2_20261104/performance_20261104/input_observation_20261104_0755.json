@@ -1,0 +1,309 @@
+{
+  "observed_at_utc": "2026-11-04T07:54:40Z",
+  "interval_seconds": 5.000188100999367,
+  "cgroup_before": {
+    "cpu.max": "max 100000",
+    "cpu.stat": "usage_usec 6982389437\nuser_usec 5787685571\nsystem_usec 1194703865\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0",
+    "cpu.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=6356250\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3579313",
+    "cpuset.cpus": "",
+    "cpuset.cpus.effective": "0-7",
+    "memory.max": "max",
+    "memory.current": "16455024640",
+    "memory.peak": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.peak'",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0",
+    "io.stat": "252:0 rbytes=30783971328 wbytes=0 rios=42999 wios=0 dbytes=0 dios=0",
+    "io.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=26552796\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=26471049"
+  },
+  "cgroup_after": {
+    "cpu.max": "max 100000",
+    "cpu.stat": "usage_usec 6993161660\nuser_usec 5796602421\nsystem_usec 1196559239\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0",
+    "cpu.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=6366876\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=3582331",
+    "cpuset.cpus": "",
+    "cpuset.cpus.effective": "0-7",
+    "memory.max": "max",
+    "memory.current": "16425742336",
+    "memory.peak": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.peak'",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0",
+    "io.stat": "252:0 rbytes=30831403008 wbytes=0 rios=43061 wios=0 dbytes=0 dios=0",
+    "io.pressure": "some avg10=0.14 avg60=0.03 avg300=0.00 total=26580787\nfull avg10=0.14 avg60=0.03 avg300=0.00 total=26499040"
+  },
+  "process_before": {
+    "1": {
+      "pid": 1,
+      "comm": "python3",
+      "ppid": 0,
+      "state": "S",
+      "cpu_ticks": 152400,
+      "rss_bytes": 3369066496,
+      "io": {
+        "rchar": 13928404137,
+        "wchar": 1092415402,
+        "syscr": 359404,
+        "syscw": 199760,
+        "read_bytes": 10931470336,
+        "write_bytes": 1053421568,
+        "cancelled_write_bytes": 12288
+      },
+      "wchan": "futex_wait_queue_me",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 9
+    },
+    "15": {
+      "pid": 15,
+      "comm": "python3",
+      "ppid": 1,
+      "state": "S",
+      "cpu_ticks": 8,
+      "rss_bytes": 11460608,
+      "io": {
+        "rchar": 938682,
+        "wchar": 0,
+        "syscr": 142,
+        "syscw": 0,
+        "read_bytes": 0,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      },
+      "wchan": "pipe_read",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 1
+    },
+    "26": {
+      "pid": 26,
+      "comm": "pt_data_worker",
+      "ppid": 1,
+      "state": "R",
+      "cpu_ticks": 191480,
+      "rss_bytes": 685441024,
+      "io": {
+        "rchar": 10499393005,
+        "wchar": 4189931,
+        "syscr": 118297,
+        "syscw": 51273,
+        "read_bytes": 10458324992,
+        "write_bytes": 4096,
+        "cancelled_write_bytes": 4096
+      },
+      "wchan": "0",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 3
+    },
+    "27": {
+      "pid": 27,
+      "comm": "pt_data_worker",
+      "ppid": 1,
+      "state": "R",
+      "cpu_ticks": 187036,
+      "rss_bytes": 710311936,
+      "io": {
+        "rchar": 10487596914,
+        "wchar": 4187056,
+        "syscr": 118094,
+        "syscw": 51260,
+        "read_bytes": 10441994240,
+        "write_bytes": 4096,
+        "cancelled_write_bytes": 4096
+      },
+      "wchan": "0",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 3
+    }
+  },
+  "process_after": {
+    "1": {
+      "pid": 1,
+      "comm": "python3",
+      "ppid": 0,
+      "state": "R",
+      "cpu_ticks": 152648,
+      "rss_bytes": 3369066496,
+      "io": {
+        "rchar": 13928423238,
+        "wchar": 1092423532,
+        "syscr": 359764,
+        "syscw": 199993,
+        "read_bytes": 10931470336,
+        "write_bytes": 1053421568,
+        "cancelled_write_bytes": 12288
+      },
+      "wchan": "0",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 9,
+      "interval_cpu_percent": 49.5981341082815,
+      "interval_io": {
+        "rchar": 19101,
+        "wchar": 8130,
+        "syscr": 360,
+        "syscw": 233,
+        "read_bytes": 0,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      }
+    },
+    "15": {
+      "pid": 15,
+      "comm": "python3",
+      "ppid": 1,
+      "state": "S",
+      "cpu_ticks": 8,
+      "rss_bytes": 11460608,
+      "io": {
+        "rchar": 938682,
+        "wchar": 0,
+        "syscr": 142,
+        "syscw": 0,
+        "read_bytes": 0,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      },
+      "wchan": "pipe_read",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 1,
+      "interval_cpu_percent": 0.0,
+      "interval_io": {
+        "rchar": 0,
+        "wchar": 0,
+        "syscr": 0,
+        "syscw": 0,
+        "read_bytes": 0,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      }
+    },
+    "26": {
+      "pid": 26,
+      "comm": "pt_data_worker",
+      "ppid": 1,
+      "state": "S",
+      "cpu_ticks": 191891,
+      "rss_bytes": 669229056,
+      "io": {
+        "rchar": 10518878851,
+        "wchar": 4199528,
+        "syscr": 118557,
+        "syscw": 51390,
+        "read_bytes": 10477838336,
+        "write_bytes": 4096,
+        "cancelled_write_bytes": 4096
+      },
+      "wchan": "do_poll.constprop.0",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 3,
+      "interval_cpu_percent": 82.196907735902,
+      "interval_io": {
+        "rchar": 19485846,
+        "wchar": 9597,
+        "syscr": 260,
+        "syscw": 117,
+        "read_bytes": 19513344,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      }
+    },
+    "27": {
+      "pid": 27,
+      "comm": "pt_data_worker",
+      "ppid": 1,
+      "state": "R",
+      "cpu_ticks": 187454,
+      "rss_bytes": 741277696,
+      "io": {
+        "rchar": 10515485595,
+        "wchar": 4196614,
+        "syscr": 118358,
+        "syscw": 51377,
+        "read_bytes": 10469912576,
+        "write_bytes": 4096,
+        "cancelled_write_bytes": 4096
+      },
+      "wchan": "0",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "threads": 3,
+      "interval_cpu_percent": 83.59685506960349,
+      "interval_io": {
+        "rchar": 27888681,
+        "wchar": 9558,
+        "syscr": 264,
+        "syscw": 117,
+        "read_bytes": 27918336,
+        "write_bytes": 0,
+        "cancelled_write_bytes": 0
+      }
+    }
+  },
+  "proc_meminfo": "MemTotal:       26664756 kB\nMemFree:          289596 kB\nMemAvailable:   20825508 kB\nBuffers:          128980 kB\nCached:         20975076 kB\nSwapCached:            0 kB\nActive:          7453604 kB\nInactive:       18100172 kB\nActive(anon):        856 kB\nInactive(anon):  4958880 kB\nActive(file):    7452748 kB\nInactive(file): 13141292 kB\nUnevictable:       27620 kB\nMlocked:           27620 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:                 0 kB\nWriteback:             0 kB\nAnonPages:       4477416 kB\nMapped:          1577332 kB\nShmem:            501000 kB\nKReclaimable:     362576 kB\nSlab:             470376 kB\nSReclaimable:     362576 kB\nSUnreclaim:       107800 kB\nKernelStack:        8048 kB\nPageTables:        39684 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    13332376 kB\nCommitted_AS:    9062368 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       75976 kB\nVmallocChunk:          0 kB\nPercpu:             5120 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:     40960 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      378280 kB\nDirectMap2M:    10102784 kB\nDirectMap1G:    18874368 kB",
+  "proc_self_cgroup": "0::/",
+  "path_mounts": "502 472 0:49 / / rw,relatime master:243 - overlay overlay rw,lowerdir=/var/lib/docker/overlay2/l/O4AWNCZXSP6BQDF3MXARFENH4V:/var/lib/docker/overlay2/l/6JDB72MHJBPDXOCDR224ETUA76:/var/lib/docker/overlay2/l/2ZFWFPQW2V7J5O2V2GNNZOH6AL:/var/lib/docker/overlay2/l/3H32DVKIBW5HWNLMABFRZ5EHES:/var/lib/docker/overlay2/l/SFWCENJMSYBC3ZKNXHVQZN4PGA:/var/lib/docker/overlay2/l/ITHE73AFNAW4SAIWX3TLL2S5BU:/var/lib/docker/overlay2/l/ZRIA66RFKECMLS7B3NV5RI7KBE:/var/lib/docker/overlay2/l/YED3SGBRYGVPIRSGGI6E5WVQJM:/var/lib/docker/overlay2/l/62OD6TBKJR5DXRT2J5QDCFGKHY:/var/lib/docker/overlay2/l/EO54IPGAV2BBNSVZLHZDBEQAX2:/var/lib/docker/overlay2/l/GWETCGSQ6OQKEJWP7U53X6NAWQ:/var/lib/docker/overlay2/l/WR3Y5IL3LDNVSV2BLV7QKQLNOS:/var/lib/docker/overlay2/l/Y6CGBBHZWDC3APMGVWFIN2OFA2:/var/lib/docker/overlay2/l/UHMY77TOWGYRF3W7AV75FUSMKH,upperdir=/var/lib/docker/overlay2/47f1319f632def2b0f051edf276e9cc8437982ba71222cca5d83b4b65f70a89a/diff,workdir=/var/lib/docker/overlay2/47f1319f632def2b0f051edf276e9cc8437982ba71222cca5d83b4b65f70a89a/work\n503 502 0:52 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw\n504 502 0:53 / /dev rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755,inode64\n505 504 0:54 / /dev/pts rw,nosuid,noexec,relatime - devpts devpts rw,gid=5,mode=620,ptmxmode=666\n506 502 0:55 / /sys ro,nosuid,nodev,noexec,relatime - sysfs sysfs ro\n507 506 0:29 / /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime - cgroup2 cgroup rw,nsdelegate,memory_recursiveprot\n508 504 0:51 / /dev/mqueue rw,nosuid,nodev,noexec,relatime - mqueue mqueue rw\n509 504 0:56 / /dev/shm rw,nosuid,nodev,noexec,relatime - tmpfs shm rw,size=4194304k,inode64\n510 502 0:47 / /opt/cxr_e2_addons ro,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/reconstruction_runs_20261103/assets/e2_runtime_addons_20261104/site rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n511 502 252:3 /var/lib/docker/containers/3ad7d5a0381030a285f1a6cdacd4b1021aef958f66c0bedaeadb85d035d13311/resolv.conf /etc/resolv.conf rw,relatime - ext4 /dev/vda3 rw\n512 502 252:3 /var/lib/docker/containers/3ad7d5a0381030a285f1a6cdacd4b1021aef958f66c0bedaeadb85d035d13311/hostname /etc/hostname rw,relatime - ext4 /dev/vda3 rw\n513 502 252:3 /var/lib/docker/containers/3ad7d5a0381030a285f1a6cdacd4b1021aef958f66c0bedaeadb85d035d13311/hosts /etc/hosts rw,relatime - ext4 /dev/vda3 rw\n514 502 252:3 /home/featurize/data /home/featurize/data ro,relatime - ext4 /dev/vda3 rw\n515 502 0:47 / /home/featurize/work/cxr_research_20261103 ro,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/cxr_research_20261103 rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n516 502 0:47 / /home/featurize/work/cloud_project_v2 ro,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/cloud_project_v2 rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n517 502 0:47 / /home/featurize/work/reconstruction_runs_20261103 rw,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/reconstruction_runs_20261103 rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n518 514 252:3 /home/featurize/data/cxr_reconstruction_smokes_20261104 /home/featurize/data/cxr_reconstruction_smokes_20261104 rw,relatime - ext4 /dev/vda3 rw\n519 517 0:47 / /home/featurize/work/reconstruction_runs_20261103/assets ro,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/reconstruction_runs_20261103/assets rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n520 517 0:47 / /home/featurize/work/reconstruction_runs_20261103/splits ro,relatime - nfs 10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ/reconstruction_runs_20261103/splits rw,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152\n521 503 0:57 / /proc/driver/nvidia rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,mode=555,inode64\n522 502 252:3 /usr/bin/nvidia-smi /usr/bin/nvidia-smi ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n523 502 252:3 /usr/bin/nvidia-debugdump /usr/bin/nvidia-debugdump ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n524 502 252:3 /usr/bin/nvidia-persistenced /usr/bin/nvidia-persistenced ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n525 502 252:3 /usr/bin/nvidia-cuda-mps-control /usr/bin/nvidia-cuda-mps-control ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n526 502 252:3 /usr/bin/nvidia-cuda-mps-server /usr/bin/nvidia-cuda-mps-server ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n527 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n528 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n529 502 252:3 /usr/lib/x86_64-linux-gnu/libcuda.so.610.57.04 /usr/lib/x86_64-linux-gnu/libcuda.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n530 502 252:3 /usr/lib/x86_64-linux-gnu/libcudadebugger.so.610.57.04 /usr/lib/x86_64-linux-gnu/libcudadebugger.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n531 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n532 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n533 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n534 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n535 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n536 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n537 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n538 502 252:3 /usr/lib/x86_64-linux-gnu/libnvidia-tileiras.so.610.57.04 /usr/lib/x86_64-linux-gnu/libnvidia-tileiras.so.610.57.04 ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n539 502 252:3 /usr/lib/firmware/nvidia/610.57.04/gsp_ga10x.bin /usr/lib/firmware/nvidia/610.57.04/gsp_ga10x.bin ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n540 502 252:3 /usr/lib/firmware/nvidia/610.57.04/gsp_tu10x.bin /usr/lib/firmware/nvidia/610.57.04/gsp_tu10x.bin ro,nosuid,nodev,relatime master:1 - ext4 /dev/vda3 rw\n541 504 0:5 /nvidiactl /dev/nvidiactl ro,nosuid,noexec,relatime master:2 - devtmpfs udev rw,size=13312332k,nr_inodes=3328083,mode=755,inode64\n542 504 0:5 /nvidia-uvm /dev/nvidia-uvm ro,nosuid,noexec,relatime master:2 - devtmpfs udev rw,size=13312332k,nr_inodes=3328083,mode=755,inode64\n543 504 0:5 /nvidia-uvm-tools /dev/nvidia-uvm-tools ro,nosuid,noexec,relatime master:2 - devtmpfs udev rw,size=13312332k,nr_inodes=3328083,mode=755,inode64\n544 504 0:5 /nvidia0 /dev/nvidia0 ro,nosuid,noexec,relatime master:2 - devtmpfs udev rw,size=13312332k,nr_inodes=3328083,mode=755,inode64\n545 521 0:24 /driver/nvidia/gpus/0000:09:00.0 /proc/driver/nvidia/gpus/0000:09:00.0 ro,nosuid,nodev,noexec,relatime master:13 - proc proc rw\n473 503 0:52 /bus /proc/bus ro,nosuid,nodev,noexec,relatime - proc proc rw\n474 503 0:52 /fs /proc/fs ro,nosuid,nodev,noexec,relatime - proc proc rw\n475 503 0:52 /irq /proc/irq ro,nosuid,nodev,noexec,relatime - proc proc rw\n476 503 0:52 /sys /proc/sys ro,nosuid,nodev,noexec,relatime - proc proc rw\n477 503 0:52 /sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime - proc proc rw\n478 503 0:58 / /proc/acpi ro,relatime - tmpfs tmpfs ro,inode64\n479 503 0:53 /null /proc/kcore rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755,inode64\n480 503 0:53 /null /proc/keys rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755,inode64\n481 503 0:53 /null /proc/timer_list rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755,inode64\n482 503 0:59 / /proc/scsi ro,relatime - tmpfs tmpfs ro,inode64\n483 506 0:60 / /sys/firmware ro,relatime - tmpfs tmpfs ro,inode64\n484 506 0:61 / /sys/devices/virtual/powercap ro,relatime - tmpfs tmpfs ro,inode64"
+}

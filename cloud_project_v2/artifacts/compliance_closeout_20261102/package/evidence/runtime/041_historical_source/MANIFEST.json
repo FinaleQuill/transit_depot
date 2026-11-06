@@ -1,0 +1,143 @@
+{
+  "source_root": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/pipeline_source",
+  "files": [
+    {
+      "path": "cost.py",
+      "bytes": 15837,
+      "sha256": "9b0dffd4db6b90921dc5be08b9a9f8208f1e5a8dab3b3461780ee58f799ef140",
+      "source_sha256": "9b0dffd4db6b90921dc5be08b9a9f8208f1e5a8dab3b3461780ee58f799ef140",
+      "same_as_current": false
+    },
+    {
+      "path": "predict.py",
+      "bytes": 4546,
+      "sha256": "a9b3608a9d0cdda3339756d82ca9313530f7b964d13df4782d31a93f4d1e872a",
+      "source_sha256": "a9b3608a9d0cdda3339756d82ca9313530f7b964d13df4782d31a93f4d1e872a",
+      "same_as_current": false
+    },
+    {
+      "path": "deploy_kd.py",
+      "bytes": 38675,
+      "sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+      "source_sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+      "same_as_current": true
+    },
+    {
+      "path": "inference_inputs.py",
+      "bytes": 6146,
+      "sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+      "source_sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+      "same_as_current": true
+    },
+    {
+      "path": "inference_reproducibility.py",
+      "bytes": 7907,
+      "sha256": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed",
+      "source_sha256": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed",
+      "same_as_current": true
+    },
+    {
+      "path": "inference_runtime.py",
+      "bytes": 1049,
+      "sha256": "3f49ced38900374924786d2a3c8300522e84b642ffda6779da69e58467cc93e6",
+      "source_sha256": "3f49ced38900374924786d2a3c8300522e84b642ffda6779da69e58467cc93e6",
+      "same_as_current": true
+    },
+    {
+      "path": "fast_lanczos.py",
+      "bytes": 1720,
+      "sha256": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7",
+      "source_sha256": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7",
+      "same_as_current": true
+    },
+    {
+      "path": "model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "source_sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "same_as_current": true
+    },
+    {
+      "path": "requirements_inference.txt",
+      "bytes": 396,
+      "sha256": "220ac6dadb4c17ebc6ee7a2e481b8a3fc85414d2abd9d35be349e1369748ef55",
+      "source_sha256": "220ac6dadb4c17ebc6ee7a2e481b8a3fc85414d2abd9d35be349e1369748ef55",
+      "same_as_current": true
+    },
+    {
+      "path": "environment_lock.txt",
+      "bytes": 2283,
+      "sha256": "299c3697c95faf41fe48550186efbcf5827a24412b432f8f30982d4e942fbcd5",
+      "source_sha256": "299c3697c95faf41fe48550186efbcf5827a24412b432f8f30982d4e942fbcd5",
+      "same_as_current": false
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 10927,
+      "sha256": "574750c4ccf1379665a537bd254982d2c69651403d749a718a645478bee5e89d",
+      "source_sha256": "574750c4ccf1379665a537bd254982d2c69651403d749a718a645478bee5e89d",
+      "same_as_current": false
+    }
+  ],
+  "omitted_source_files": [
+    "submission_runtime.py (not present in historical source snapshot)"
+  ],
+  "role": "historical_041_related_source_snapshot; not the missing exact 041 config",
+  "packaged_files": [
+    {
+      "path": "cost.py",
+      "bytes": 15837,
+      "sha256": "9b0dffd4db6b90921dc5be08b9a9f8208f1e5a8dab3b3461780ee58f799ef140"
+    },
+    {
+      "path": "deploy_kd.py",
+      "bytes": 38675,
+      "sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1"
+    },
+    {
+      "path": "environment_lock.txt",
+      "bytes": 2283,
+      "sha256": "299c3697c95faf41fe48550186efbcf5827a24412b432f8f30982d4e942fbcd5"
+    },
+    {
+      "path": "fast_lanczos.py",
+      "bytes": 1720,
+      "sha256": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7"
+    },
+    {
+      "path": "inference_inputs.py",
+      "bytes": 6146,
+      "sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3"
+    },
+    {
+      "path": "inference_reproducibility.py",
+      "bytes": 7907,
+      "sha256": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed"
+    },
+    {
+      "path": "inference_runtime.py",
+      "bytes": 1049,
+      "sha256": "3f49ced38900374924786d2a3c8300522e84b642ffda6779da69e58467cc93e6"
+    },
+    {
+      "path": "model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0"
+    },
+    {
+      "path": "predict.py",
+      "bytes": 4546,
+      "sha256": "a9b3608a9d0cdda3339756d82ca9313530f7b964d13df4782d31a93f4d1e872a"
+    },
+    {
+      "path": "requirements_inference.txt",
+      "bytes": 396,
+      "sha256": "220ac6dadb4c17ebc6ee7a2e481b8a3fc85414d2abd9d35be349e1369748ef55"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 10927,
+      "sha256": "574750c4ccf1379665a537bd254982d2c69651403d749a718a645478bee5e89d"
+    }
+  ]
+}

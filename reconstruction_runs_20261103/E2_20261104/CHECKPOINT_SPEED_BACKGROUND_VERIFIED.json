@@ -1,0 +1,25 @@
+{
+  "AI_goal": null,
+  "GPU_probe_started": false,
+  "acceleration_adopted": false,
+  "heartbeat_advanced": true,
+  "next_step": "wait for complete local epoch2 train/evaluation/checkpoints, then one bounded probe and conditional continuation",
+  "only_training_container": [
+    "cxr-e2-global-local-p3-1793785156_51006"
+  ],
+  "pgid": 90510,
+  "pid": 90510,
+  "ppid": 1,
+  "previous_heartbeat": "2026-11-04T21:30:56.411404+08:00",
+  "scientific_training_restarted": false,
+  "sid": 90510,
+  "stdin": "/dev/null",
+  "transition": {
+    "boundary_epoch": 2,
+    "pid": 90510,
+    "previous_controller_pid": 51006,
+    "state": "waiting_for_complete_epoch",
+    "updated_at": "2026-11-04T21:31:46.463421+08:00"
+  },
+  "verified_at": "2026-11-04T21:31:47.592378+08:00"
+}

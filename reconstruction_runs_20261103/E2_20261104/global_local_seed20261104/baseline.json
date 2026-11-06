@@ -1,0 +1,7 @@
+{
+  "epoch": 0,
+  "macro_auc": 0.7978381126852129,
+  "predictions_sha256": "6057c83802dfab7ae0901cd82a78d35bdb75bcc6e38439cc89b0e2122b71b4e8",
+  "parent_epoch": 8,
+  "mechanics_only": false
+}

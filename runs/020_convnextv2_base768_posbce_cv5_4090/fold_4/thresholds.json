@@ -1,0 +1,29 @@
+{
+  "schema_version": 5,
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "thresholds": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "checkpoint_sha256": "48971b22a91fb855ed302e4b18277d6e1564fdf4313a765e0f183df937c53c0e",
+  "selection": "fixed_0.5; continuous probabilities are submitted"
+}

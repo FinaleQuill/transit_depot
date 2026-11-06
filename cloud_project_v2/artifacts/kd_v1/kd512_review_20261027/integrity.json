@@ -1,0 +1,204 @@
+{
+  "checked_at_hong_kong": "2026-10-27T14:52:22.281857+08:00",
+  "complete": true,
+  "mismatches": [],
+  "receipt_exit_code": 0,
+  "duration_seconds": 5145.887221,
+  "native_training_evidence_complete_for_this_student": true,
+  "checkpoint_audit_records": 19,
+  "all12_epoch_console_coverage": {
+    "1": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "2": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "3": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "4": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "5": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "6": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "7": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "8": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "9": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "10": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "11": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    },
+    "12": {
+      "expected_progress_marks": 38,
+      "found_progress_marks": 38,
+      "complete": true
+    }
+  },
+  "source_archive_files_verified": 38,
+  "runtime_source_authority": "Original execution archive and ledger; current trainer may be changed by the post-run status display fix.",
+  "runtime_source_pre_fix_check": "source_before_status_fix.json",
+  "checkpoints": {
+    "best": {
+      "epoch": 7,
+      "bytes": 450333725,
+      "sha256": "c61ec92f890db59810ffe5cef8701c87d5260235323194582502510d79e83ded",
+      "macro_auc": 0.8055938343065167,
+      "progress": {
+        "completed_epochs": 7,
+        "validated_epochs": 7,
+        "backward_batches": 26537,
+        "optimizer_updates": 6636,
+        "ema_updates": 6636,
+        "amp_skipped_steps": 0
+      },
+      "early_stopping": {
+        "reference_auc": 0.8055938343065167,
+        "bad_epochs": 0
+      },
+      "native_protocol_validation_passed": true,
+      "model_tensor_count": 182,
+      "model_numel": 27827818,
+      "floating_FP16_parameter_bytes_estimate": 55655636
+    },
+    "last": {
+      "epoch": 12,
+      "bytes": 450333725,
+      "sha256": "fafb8398e48e22fe064af7f5a85ff572e6c25fe53bf9bed2adcc8c9cb261f168",
+      "macro_auc": 0.8009096538104762,
+      "progress": {
+        "completed_epochs": 12,
+        "validated_epochs": 12,
+        "backward_batches": 45492,
+        "optimizer_updates": 11376,
+        "ema_updates": 11376,
+        "amp_skipped_steps": 0
+      },
+      "early_stopping": {
+        "reference_auc": 0.8055938343065167,
+        "bad_epochs": 5
+      },
+      "native_protocol_validation_passed": true,
+      "model_tensor_count": 182,
+      "model_numel": 27827818,
+      "floating_FP16_parameter_bytes_estimate": 55655636
+    }
+  },
+  "teacher_ancestry": [
+    {
+      "fold": 0,
+      "epoch": 20,
+      "checkpoint_sha256": "a30eca88d0a8918c94d31f9284d6eede39e0087503b57da06f082edc4f24ed8d",
+      "patient_exclusion_verified": true
+    },
+    {
+      "fold": 1,
+      "epoch": 12,
+      "checkpoint_sha256": "6751d94704abfefba1c11ed51e3b5d26e5e68c6a84e203ead4088b92294187b2",
+      "patient_exclusion_verified": true
+    },
+    {
+      "fold": 2,
+      "epoch": 12,
+      "checkpoint_sha256": "a6c122c4f60abd924cecce3c83db21a65e8ba824028b6cae362eba9df2ac683b",
+      "patient_exclusion_verified": true
+    },
+    {
+      "fold": 3,
+      "epoch": 12,
+      "checkpoint_sha256": "f0184c787573f745a76082d6bb450efe134931d09d43d3d988bd260fa26761be",
+      "patient_exclusion_verified": true
+    },
+    {
+      "fold": 4,
+      "epoch": 12,
+      "checkpoint_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "patient_exclusion_verified": true
+    }
+  ],
+  "pretrains": {
+    "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c": {
+      "repo_id": "timm/convnext_tiny.fb_in22k_ft_in1k_384",
+      "revision": "32c741ba106f9e062174ef829354a16719c3dcac",
+      "license": "apache-2.0",
+      "pretrain_dataset": "ImageNet-22k",
+      "finetune_dataset": "ImageNet-1k",
+      "weight_sha_verified": true,
+      "material_hash_checks": {
+        "model_card": true,
+        "apache_license": true,
+        "upstream_license": true
+      }
+    },
+    "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe": {
+      "repo_id": "timm/convnext_base.fb_in22k_ft_in1k_384",
+      "revision": "2b2698d86523262ca8065d0957c7f80d963bb43f",
+      "license": "apache-2.0",
+      "pretrain_dataset": "ImageNet-22k",
+      "finetune_dataset": "ImageNet-1k",
+      "weight_sha_verified": true,
+      "material_hash_checks": {
+        "model_card": true,
+        "apache_license": true,
+        "upstream_license": true
+      }
+    }
+  },
+  "cache_hashes": {
+    "npz": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+    "metadata": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+  },
+  "manifest_hashes": {
+    "fold_plan": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+    "train": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "valid": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+  },
+  "checkpoint_selection": "official valid earlystop by macroAUC, no officialvalid training/test use",
+  "fp16_export_exists": false,
+  "student_probability_comparison_available": false,
+  "model_constructions": 0,
+  "model_forwards": 0,
+  "GPU_work": false,
+  "runtime_sources_modified_by_audit": false,
+  "historical_checkpoint_binary_retention": "Only current E7 best and E12 last verified; per-save ledger is metadata and hashes, not proof all old binary files survive.",
+  "final_submission_certified": false,
+  "checkpoint_train_valid_fold_bindings_independently_checked": {
+    "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+    "source_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+  },
+  "archived_expected_python_and_critical_dependency_versions_verified": true
+}

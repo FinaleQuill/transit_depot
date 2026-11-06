@@ -1,0 +1,15 @@
+{
+  "AI_polling_required": false,
+  "activation_not_yet_observed": true,
+  "launch": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_launch.json",
+  "official_CPU_preflight_arms": [
+    "global_control",
+    "global_local"
+  ],
+  "policy_sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+  "research_complete": false,
+  "state": "independent_transition_scheduled_and_verified",
+  "tests": 31,
+  "updated_at": "2026-11-04T17:30:52.365998+08:00",
+  "verified": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/EARLY_STOP_BACKGROUND_VERIFIED.json"
+}

@@ -1,0 +1,26 @@
+{
+  "reviewed_utc": "2026-11-03T05:13:38.052553+00:00",
+  "prior_source_sha256": "7f44a32955a1f8bd87d9505ed2c3a9a938d7f036e5ec59930630ff6fda20a32a",
+  "current_source_sha256": "744d7a79fa9c7848e741cccd307e94ae5e6a2a27d5e8cf1d309197d5b12c072c",
+  "exact_inserted_text": "    # Older checkpoints predate fixed-resolution validation; None means the\n    # historical behavior of validating at the training image size.\n    prior.setdefault('validation_size', None)\n",
+  "allowed_fragment_occurrences": 1,
+  "historical_sessions": [
+    {
+      "session_id": "20261102T182645Z_0ccfb53ee4fc",
+      "configuration_sha256": "c34eb75e0d9316f2643892797885c73e82031683aab9e429684d592715561da1",
+      "source_manifest_sha256": "f9b0ce525d8b18a16cf4846c9617dff8f91ec5360c6819828c3295a51ae9138d",
+      "validation_size": 768
+    },
+    {
+      "session_id": "20261102T185433Z_6288ef9f643f",
+      "configuration_sha256": "59d2ad64444ef84899eaf0edd655beae06e9e770f6e7c7ad0dedf34a721a8efe",
+      "source_manifest_sha256": "f924342f1ff15e84b22d597b7a93735d21956bc16d3cb355ba5a91216fa862c4",
+      "validation_size": 768
+    }
+  ],
+  "source_after_removing_exact_patch_sha256": "7f44a32955a1f8bd87d9505ed2c3a9a938d7f036e5ec59930630ff6fda20a32a",
+  "applies_to": "train_distill.resume_training_configuration only",
+  "reason": "031 sessions already declare validation_size=768 so setdefault is a no-op; new arms use verified EMA warm-start, not resume",
+  "training_forward_loss_optimizer_augmentation_changes": false,
+  "historical_run_evidence_modified": false
+}

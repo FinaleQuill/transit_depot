@@ -1,0 +1,107 @@
+{
+  "state": "FAILED",
+  "controller_pid": 132989,
+  "started_utc": "2026-11-02T20:51:50.228884+00:00",
+  "plan": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue_plan.json",
+  "plan_sha256": "610135e771957895d99b6e6662363c120cdfd47c7a9a3a44accee51da35342b3",
+  "current_job": "eval_res640",
+  "completed_jobs": [
+    "res640"
+  ],
+  "completed_metrics": {
+    "res640": {
+      "state": "completed",
+      "completed_epochs": 3,
+      "target_epochs": 3,
+      "best_auc": 0.8032223602009431,
+      "best_epoch": 1,
+      "current_batch": {
+        "epoch": 3,
+        "completed_batches": 7500,
+        "total_batches": 7582
+      },
+      "current_log": "/home/featurize/work/runs/031_resolution_train640_eval768_20261103/evidence/console_20261102T185411Z_0234df69.log",
+      "history": [
+        {
+          "epoch": 1,
+          "macro_auc": 0.8032223602009431,
+          "per_class_auc": [
+            0.6607285429141716,
+            0.8602617215755902,
+            0.7950692550403765,
+            0.7380270692347736,
+            0.8784361851332398,
+            0.7921782063389499,
+            0.8005414741166037,
+            0.709396508005506,
+            0.9127969693078207,
+            0.8847876703423986
+          ],
+          "training_seconds": 1275.2309167839994
+        },
+        {
+          "epoch": 2,
+          "macro_auc": 0.8024687661556429,
+          "per_class_auc": [
+            0.6639221556886228,
+            0.8593739725126587,
+            0.7920744424835552,
+            0.7360935524652339,
+            0.8770687237026649,
+            0.7920000994085192,
+            0.7993978434392942,
+            0.7079403028327175,
+            0.9123539232053421,
+            0.8844626458178209
+          ],
+          "training_seconds": 1239.9979982379882
+        },
+        {
+          "epoch": 3,
+          "macro_auc": 0.8022640404122928,
+          "per_class_auc": [
+            0.6624251497005988,
+            0.8602617215755903,
+            0.7907374725921174,
+            0.7364096080910241,
+            0.8765895278167368,
+            0.79227761485826,
+            0.7994289626413978,
+            0.7079910164457002,
+            0.9122576088352382,
+            0.8842617215662637
+          ],
+          "training_seconds": 1219.2964771029947
+        }
+      ]
+    }
+  },
+  "compliance_records": {
+    "res640": {
+      "receipt_path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/receipts/res640.json",
+      "preregistration_sha256": "a7b7f9f7a99b99f9f061867049c72a244d674b426669fd646efa0066d4646420",
+      "run_ledger_sha256": "c97dbd213ea49c22dd9e2cadb6fe6aed7c7ff0cecb12d388365f8925968120fe",
+      "receipt_sha256": "e1928c351235ed5420b72926d71cf11ee571d7d996041195f53d778cdfd61936"
+    }
+  },
+  "failure_reason": "RuntimeError: Command exit 1: eval_res640; see /home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/logs/eval_res640.log",
+  "no_test": true,
+  "no_submission": true,
+  "no_declaration_changes": true,
+  "current_preregistration": {
+    "path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/prereg/eval_res640.txt",
+    "sha256": "e044003116d25b25fb76a9f4081f53506acf54ebdd109697187c1910c7a3311d",
+    "observed_mtime_ns": 1793647283001267188
+  },
+  "phase": "stopped_without_advancing",
+  "updated_utc": "2026-11-02T20:57:07.256952+00:00",
+  "current_progress": null,
+  "estimated_finish_utc": null,
+  "estimated_remaining_hours": null,
+  "eta_basis": "Observed training epoch speed plus validation; later steps use conservative plan estimates; not a deadline",
+  "current_arm": "eval_res640",
+  "current_log": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/logs/eval_res640.log",
+  "launch_record": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/launches/eval_res640_1793652718297834546.json",
+  "child_pid": null,
+  "traceback": "Traceback (most recent call last):\n  File \"/home/featurize/work/cloud_project_v2/run_exploration_queue.py\", line 494, in run\n    elif job['kind']=='evaluate': receipt=self.evaluation(job,pre)\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/cloud_project_v2/run_exploration_queue.py\", line 404, in evaluation\n    self.command(job,docker_command('exploration_evaluate.py',args),pre)\n  File \"/home/featurize/work/cloud_project_v2/run_exploration_queue.py\", line 331, in command\n    raise RuntimeError(f'Command exit {child.returncode}: {job[\"name\"]}; see {self.root/\"logs\"/(job[\"name\"]+\".log\")}')\nRuntimeError: Command exit 1: eval_res640; see /home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/logs/eval_res640.log\n"
+}

@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-29T08:57:15.443810+00:00",
+  "scope": "valid only; original image bytes read without changes",
+  "images": 1422,
+  "studies": 859,
+  "patients": 228,
+  "sha_matches": 1422,
+  "all_match": true,
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+}

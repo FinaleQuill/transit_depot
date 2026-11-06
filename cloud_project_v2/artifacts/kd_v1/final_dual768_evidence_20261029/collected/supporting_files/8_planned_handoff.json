@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "artifact_type": "kd_planned_handoff",
+  "created_at_utc": "2026-10-25T11:39:48.765515+00:00",
+  "original_run": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5",
+  "original_epochs": 20,
+  "blocked_folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "plan": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/plan.json",
+  "teacher_collection": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+  "remaining_run": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5",
+  "reason": "User approved completing only the current fold0 at20 and training remaining folds1..4 at12 in a separately declared run. Do not start another old twenty-epoch teacher."
+}

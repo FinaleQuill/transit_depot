@@ -1,0 +1,17 @@
+{
+  "artifact_type": "kd_planned_handoff_receipt",
+  "state": "planned_handoff",
+  "original_run": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5",
+  "output": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_1",
+  "blocked_fold": 1,
+  "requested_epochs": 20,
+  "recorded_at_utc": "2026-10-25T13:26:30.521151+00:00",
+  "expected_exit_code": 75,
+  "marker": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/planned_handoff.json",
+  "marker_sha256": "82bdc1e998f4bfc5d8a4664d0e03440bb8163e8e2c9aae847e578e660ebbca57",
+  "training_started": false,
+  "explanation": "Old 20-epoch scheduler launch intentionally retired; handoff controller owns the declared replacement plan.",
+  "documentary_references": {
+    "plan": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/plan.json"
+  }
+}

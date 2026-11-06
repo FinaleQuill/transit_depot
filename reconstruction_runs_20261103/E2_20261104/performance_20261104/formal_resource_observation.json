@@ -1,0 +1,41 @@
+{
+  "actual_progress": {
+    "attempted_updates": 392,
+    "compute_seconds": 330.18761421697127,
+    "data_wait_seconds": 22.255480467028974,
+    "elapsed_seconds": 352.44307897,
+    "epoch": 2,
+    "estimated_epoch_seconds": 2780.4955406241193,
+    "gradient_norm": 4.084324836730957,
+    "images_done": 2284,
+    "learning_rates": [
+      4.993222453147459e-06,
+      4.993222453147459e-06,
+      4.993222453147459e-05,
+      4.993222453147459e-05
+    ],
+    "mean_loss": 0.4408713375173234,
+    "optimizer_updates": 392,
+    "peak_gpu_bytes": 14324743680,
+    "regions_done": 2284,
+    "skipped_updates": 0,
+    "state": "training",
+    "studies_done": 1408,
+    "studies_total": 11108,
+    "updated_at": "2026-11-04T16:36:31.194598+08:00"
+  },
+  "host_mem_available": "19161648 kB",
+  "observed_at": "2026-11-04T16:36:33.347736+08:00",
+  "point_observation_not_peak": true,
+  "sum_pss_kib": 5656044,
+  "trainer_and_workers_pss_kib": {
+    "36532": 3031890,
+    "36707": 6689,
+    "36708": 406004,
+    "36724": 476437,
+    "36729": 476340,
+    "36745": 377143,
+    "36756": 441648,
+    "36762": 439893
+  }
+}

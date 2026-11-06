@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-11-03T05:54:18.469969+00:00",
+  "checkpoint_sha256": "c0ab39552c5af89b8cda931aea67234340656cd0733a7be4c95fe69c5671a316",
+  "report_sha256": "f6107557c8af4ab91df00c6516d72ef78ab952e5324561b15ba4f44a50888ae1",
+  "metadata_sha256": "03f6956bcdd073cfe1ac002f3e0a0bef8ab9250cec825cfa14b0230e2709582a",
+  "training_compliance": {
+    "verified_at": "2026-11-03T05:41:45.521250+00:00",
+    "state": "completed",
+    "completed_epochs": 3,
+    "history_sha256": "a3e09cb1d03980d5f0f48abbf87948571065cd5acfab7419c28547d95f515ea9",
+    "ledger_sha256": "c97dbd213ea49c22dd9e2cadb6fe6aed7c7ff0cecb12d388365f8925968120fe",
+    "ledger_end_record_sha256": "6fd7815fc9103a3f2064436245638fdd62291f1925dfd75485b34d9ac2028a5a",
+    "checkpoints": {
+      "best": {
+        "path": "/home/featurize/work/runs/031_resolution_train640_eval768_20261103/best.pt",
+        "sha256": "c0ab39552c5af89b8cda931aea67234340656cd0733a7be4c95fe69c5671a316"
+      },
+      "last": {
+        "path": "/home/featurize/work/runs/031_resolution_train640_eval768_20261103/last.pt",
+        "sha256": "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8"
+      }
+    }
+  },
+  "historical_checkpoint_evidence": null,
+  "preregistration": {
+    "path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/prereg/eval_res640_best.txt",
+    "sha256": "a96beb1fd38ffd3843e1379cb3e3ed2805808258f810a271eac21b244dda30e5",
+    "observed_mtime_ns": 1793649317597946066
+  }
+}

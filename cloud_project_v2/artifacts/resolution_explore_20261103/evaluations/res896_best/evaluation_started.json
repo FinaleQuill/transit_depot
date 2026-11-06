@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-11-03T06:07:28.506200+00:00",
+  "command": [
+    "/home/featurize/work/cloud_project_v2/exploration_evaluate.py",
+    "evaluate",
+    "--checkpoint",
+    "/home/featurize/work/runs/033_resolution_train896_eval768_20261103/best.pt",
+    "--checkpoint-sha256",
+    "021a82e516a90b72d651af6f0c9af06fed94617db200589b6553228e6f1a2e8a",
+    "--output",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res896_best",
+    "--train-gap-studies",
+    "1000",
+    "--timing"
+  ],
+  "source_checkpoint_sha256": "021a82e516a90b72d651af6f0c9af06fed94617db200589b6553228e6f1a2e8a",
+  "test_accessed": false
+}

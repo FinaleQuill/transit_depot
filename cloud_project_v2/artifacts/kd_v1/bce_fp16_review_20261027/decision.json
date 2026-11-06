@@ -1,0 +1,13 @@
+{
+  "reviewed_at_hong_kong": "2026-10-27T12:48:03.805447+08:00",
+  "decision": "Keep verified55.78MB pureBCE FP16 baseline. User extracts strictOOF rawviews from originalfrozen20/12/12/12/12 collection first; review cache before anyKDtraining. E13 retained as possiblelaterdistinctteacherprotocolcontrast.",
+  "student_fp16_auc": 0.8036346771755589,
+  "actual_inference_bytes": 55778119,
+  "T4_latency_certified": false,
+  "deployed_config_sha256_unchanged": "5913d54f67df0b84d491d088e797667a2f04a8bbf20d0763ac1528a6d0bfc5bd",
+  "new_gpu_inference_or_training": false,
+  "models_loaded": false,
+  "oof_cache_created": false,
+  "runtime_source_modified": false,
+  "source_git_commit": "aedf39fcb6033dff9beb66ebccd772dc1b39965a"
+}

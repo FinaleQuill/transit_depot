@@ -1,0 +1,6 @@
+{"workers": 2, "prefetch": 1, "tensor_order_exact": true, "studies_per_second": 4.0661238978676275, "images_per_second": 6.752670044673024, "peak_sampled_pss_bytes": 1257688064}
+{"workers": 4, "prefetch": 2, "tensor_order_exact": true, "studies_per_second": 8.908099556248096, "images_per_second": 14.793808191626304, "peak_sampled_pss_bytes": 2058558464}
+{"workers": 6, "prefetch": 1, "tensor_order_exact": true, "studies_per_second": 7.967730918567104, "images_per_second": 13.232124561191798, "peak_sampled_pss_bytes": 2767063040}
+{"workers": 4, "prefetch": 1, "tensor_order_exact": true, "studies_per_second": 7.157713153624657, "images_per_second": 11.88691648726952, "peak_sampled_pss_bytes": 1993930752}
+{"workers": 2, "prefetch": 2, "tensor_order_exact": true, "studies_per_second": 4.566199556508449, "images_per_second": 7.5831528349158175, "peak_sampled_pss_bytes": 1272589312}
+{"workers": 6, "prefetch": 2, "tensor_order_exact": true, "studies_per_second": 11.116188891355653, "images_per_second": 18.46081369457278, "peak_sampled_pss_bytes": 2737136640}

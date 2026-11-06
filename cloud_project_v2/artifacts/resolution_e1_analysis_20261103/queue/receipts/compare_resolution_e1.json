@@ -1,0 +1,10 @@
+{
+  "verified_at": "2026-11-03T06:21:43.461470+00:00",
+  "comparison_sha256": "68e00ad55a881e2aa5d33af0d1a2337b8116ba8426b6fc8fccf30866090ec1f2",
+  "test_accessed": false,
+  "preregistration": {
+    "path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/prereg/compare_resolution_e1.txt",
+    "sha256": "e1a60e980def4f424d244e79da82cead6adb8d6edc8239c4375568b3f9f5f023",
+    "observed_mtime_ns": 1793684387356315594
+  }
+}

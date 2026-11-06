@@ -1,0 +1,96 @@
+{
+  "checked_at_hong_kong": "2026-10-27T15:14:25.100008+08:00",
+  "complete": true,
+  "mismatches": [],
+  "paths": {
+    "model": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+    "validation": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2"
+  },
+  "source_checkpoint_sha256": "c61ec92f890db59810ffe5cef8701c87d5260235323194582502510d79e83ded",
+  "config_sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+  "fp16_weights_sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+  "prediction_csv_sha256": "e71579564b236daf95721d3e3d89612b590b7ff13f588d080a2671d72d69f3c4",
+  "export_report_sha256": "3426f15387696bb0ba3ef9ea2054697c6f65a574059eb09c22258a8594f9985d",
+  "validation_report_sha256": "f0d2a1556d4be3d73a3e36628d8e15f0d92c826a77c3b1377556c8cea4ce39ed",
+  "inference_inventory": {
+    "files": [
+      {
+        "path": "student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+      },
+      {
+        "path": "config.json",
+        "bytes": 11283342,
+        "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"
+      }
+    ],
+    "total_bytes": 66995853,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "source_schema_version": 8,
+  "training_mode": "distillation",
+  "teacher_epochs": [
+    20,
+    12,
+    12,
+    12,
+    12
+  ],
+  "teacher_count": 5,
+  "model_member_count": 1,
+  "precision": "float16",
+  "tta": "hflip2",
+  "batch_size": 1,
+  "tensor_state_CPU_checked": true,
+  "tensor_state_items": 182,
+  "floating_numel": 27827818,
+  "pure_fp16_floating_bytes": 55655636,
+  "all_actual_floating_tensors_fp16_finite": true,
+  "num_images_manifest_and_completed_report": 1422,
+  "independently_verified_studies": 859,
+  "independently_verified_patients": 228,
+  "independently_verified_CSV_rows": 8590,
+  "all_10_classes_present_each_Study": true,
+  "recomputed_macro_auc": 0.8054022578869962,
+  "recomputed_per_class_auc": [
+    0.6883233532934132,
+    0.8644374301308608,
+    0.8079576447938392,
+    0.7458540938499293,
+    0.8872837774661056,
+    0.7751959176234737,
+    0.7835426099674804,
+    0.7183873071071506,
+    0.9028444843970721,
+    0.8801959602406364
+  ],
+  "recomputed_macro_f1_fixed_0_5": 0.44717119251987486,
+  "native_BF16_auc": 0.8055938343065167,
+  "FP16_minus_BF16_auc": -0.00019157641952050053,
+  "per_class_FP16_minus_BF16": [
+    -0.0003493013972055703,
+    -0.00026303675938721405,
+    -8.021819348624781e-05,
+    -0.00019521082769413667,
+    -0.0003389434315100859,
+    -0.0003065096012061508,
+    -0.0004551183307660578,
+    0.00019198724914870624,
+    -0.00016373442917683168,
+    4.4321526078916484e-05
+  ],
+  "max_absolute_per_class_change": 0.0004551183307660578,
+  "max_absolute_per_class_change_class": 7,
+  "baseline_BCE_files_unchanged": true,
+  "pending_flags_note": "Frozen config/export pending flags describe export-time status. Separate validation_report is bound to this exact config and weights; no config mutation required. T4 timing remains pending.",
+  "coverage_limit": "Study/class coverage independently reconstructed from saved CSV and original labels. 1422-image coverage is supported by completed report and manifest/execution completeness guards; per-image predictions were not saved and no forward replay was performed.",
+  "final_T4_timing_certified": false,
+  "test_data_used": false,
+  "source_modified": false,
+  "model_constructions": 0,
+  "model_forwards": 0,
+  "GPU_work": 0,
+  "training_started": false
+}

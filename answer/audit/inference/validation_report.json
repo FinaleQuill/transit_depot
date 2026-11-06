@@ -1,0 +1,18 @@
+{
+  "header": [
+    "Subject_id",
+    "Study_id",
+    "Predict_class",
+    "Probability"
+  ],
+  "rows": 14140,
+  "studies": 1414,
+  "rows_per_study": 10,
+  "missing_studies": 0,
+  "duplicate_identities": 0,
+  "template_identity_order_equal": true,
+  "all_probabilities_finite_in_0_1": true,
+  "probability_min": 0.005373648123349994,
+  "probability_max": 0.9848667025566101,
+  "sha256": "b092d26196c5586af55a9173cc5c8582c003bd2e9135aa94ce17f2f760a0620b"
+}

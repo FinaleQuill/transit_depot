@@ -1,0 +1,9 @@
+{
+  "base_image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+  "packages": [
+    "timm==1.0.30",
+    "safetensors==0.8.0",
+    "huggingface-hub==0.34.4",
+    "tqdm==4.67.1"
+  ]
+}

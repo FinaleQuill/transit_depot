@@ -1,0 +1,194 @@
+{
+  "captured_at_hong_kong": "2026-11-04T00:44:32.452038+08:00",
+  "controller_status": {
+    "active_container": "cxr-reconstruct-e0-1793717705_331369",
+    "actual_epoch_auc": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7287554363943574
+      },
+      {
+        "epoch": 2,
+        "macro_auc": 0.7640501061493883
+      },
+      {
+        "epoch": 3,
+        "macro_auc": 0.7774432875814724
+      }
+    ],
+    "child_pid": 331372,
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull=never",
+      "--network=none",
+      "--shm-size=4g",
+      "--gpus",
+      "all",
+      "--name",
+      "cxr-reconstruct-e0-1793717705_331369",
+      "--user",
+      "1000:1000",
+      "--volume",
+      "/home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro",
+      "--volume",
+      "/home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro",
+      "--volume",
+      "/home/featurize/data:/home/featurize/data:ro",
+      "--volume",
+      "/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:ro",
+      "--volume",
+      "/tmp/cxr_train_addons_20261103:/opt/cxr_train_addons:ro",
+      "--env",
+      "PYTHONPATH=/opt/cxr_train_addons:/home/featurize/work/cxr_research_20261103",
+      "--env",
+      "PYTHONNOUSERSITE=1",
+      "--env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "--env",
+      "HF_HUB_OFFLINE=1",
+      "--env",
+      "NO_ALBUMENTATIONS_UPDATE=1",
+      "--env",
+      "OMP_NUM_THREADS=1",
+      "--env",
+      "MKL_NUM_THREADS=1",
+      "--env",
+      "OPENBLAS_NUM_THREADS=1",
+      "--env",
+      "TZ=Asia/Hong_Kong",
+      "--env",
+      "PYTHONHASHSEED=20261103",
+      "--env",
+      "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "--workdir",
+      "/home/featurize/work/cxr_research_20261103",
+      "--entrypoint",
+      "python3",
+      "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+      "-u",
+      "-m",
+      "reconstruction.train",
+      "--config",
+      "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json",
+      "--execute"
+    ],
+    "completed_jobs": [],
+    "confirmation_evaluated": false,
+    "controller_pid": 331369,
+    "current_epoch_eta": "2026-11-04T01:02:32.157335+08:00",
+    "current_job": "E0",
+    "job_histories": {
+      "E0": [
+        {
+          "epoch": 1,
+          "macro_auc": 0.7287554363943574
+        },
+        {
+          "epoch": 2,
+          "macro_auc": 0.7640501061493883
+        },
+        {
+          "epoch": 3,
+          "macro_auc": 0.7774432875814724
+        }
+      ]
+    },
+    "log_path": "/home/featurize/work/reconstruction_runs_20261103/controller/logs/E0_1793717705_331369.log",
+    "monitor_error": null,
+    "official_valid_evaluated": false,
+    "started_at": "2026-11-03T22:55:05.503065+08:00",
+    "state": "training",
+    "test_accessed": false,
+    "trainer_progress": {
+      "attempted_updates": 1157,
+      "compute_seconds": 501.0942990796466,
+      "data_wait_seconds": 22.336226029350655,
+      "elapsed_seconds": 523.4313530610234,
+      "epoch": 4,
+      "estimated_epoch_seconds": 1607.9301631089181,
+      "gradient_norm": 1.8986932039260864,
+      "images_done": 5959,
+      "learning_rates": [
+        1.958751480134378e-05,
+        1.958751480134378e-05,
+        0.00019587514801343777,
+        0.00019587514801343777
+      ],
+      "mean_loss": 0.5269800330639973,
+      "optimizer_updates": 1156,
+      "peak_gpu_bytes": 14401035264,
+      "skipped_updates": 1,
+      "state": "training",
+      "studies_done": 3616,
+      "studies_total": 11108,
+      "updated_at": "2026-11-04T00:44:25.415771+08:00"
+    },
+    "updated_at": "2026-11-04T00:44:27.655682+08:00"
+  },
+  "actual_processes": "    PID    PPID    PGID     SID TT       STAT ELAPSED COMMAND\n 331369       1  331369  331369 ?        Ss      6567 /environment/miniconda3/bin/python -u -m reconstruction.controller --controller-dir /home/featurize/work/reconstruction_runs_20261103/controller --configs reconstruction/configs/E0.json reconstruction/configs/E1.json --execute\n 331372  331369  331372  331372 ?        Ssl     6567 docker run --rm --pull=never --network=none --shm-size=4g --gpus all --name cxr-reconstruct-e0-1793717705_331369 --user 1000:1000 --volume /home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro --volume /home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro --volume /home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw --volume /home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro --volume /home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro --volume /home/featurize/data:/home/featurize/data:ro --volume /tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:ro --volume /tmp/cxr_train_addons_20261103:/opt/cxr_train_addons:ro --env PYTHONPATH=/opt/cxr_train_addons:/home/featurize/work/cxr_research_20261103 --env PYTHONNOUSERSITE=1 --env PYTHONDONTWRITEBYTECODE=1 --env HF_HUB_OFFLINE=1 --env NO_ALBUMENTATIONS_UPDATE=1 --env OMP_NUM_THREADS=1 --env MKL_NUM_THREADS=1 --env OPENBLAS_NUM_THREADS=1 --env TZ=Asia/Hong_Kong --env PYTHONHASHSEED=20261103 --env CUBLAS_WORKSPACE_CONFIG=:4096:8 --workdir /home/featurize/work/cxr_research_20261103 --entrypoint python3 crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b -u -m reconstruction.train --config /home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json --execute\n 331411  331390  331411  331411 ?        Rsl     6567 python3 -u -m reconstruction.train --config /home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json --execute\n",
+  "controller_fd": {
+    "0": "/dev/null",
+    "1": "/home/featurize/work/reconstruction_runs_20261103/controller.launch.log",
+    "2": "/home/featurize/work/reconstruction_runs_20261103/controller.launch.log"
+  },
+  "container": {
+    "Running": true,
+    "Pid": 331411,
+    "OOMKilled": false,
+    "StartedAt": "2026-11-03T14:55:06.163126214Z"
+  },
+  "tty": false,
+  "open_stdin": false,
+  "restart_policy": {
+    "Name": "no",
+    "MaximumRetryCount": 0
+  },
+  "registered_jobs": [
+    "E0",
+    "E1"
+  ],
+  "frozen_inputs_match": {
+    "/home/featurize/work/cxr_research_20261103/audit_trail.py": true,
+    "/home/featurize/work/cxr_research_20261103/model_overnight.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/__init__.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/data.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/model.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/provenance.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/runtime.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/splits.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train.py": true,
+    "/home/featurize/work/cxr_research_20261103/runtime_compat.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_compliance.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_hooks.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json": true,
+    "/home/featurize/work/reconstruction_runs_20261103/splits/train.csv": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E1.json": true
+  },
+  "source_commit": "2cc037b4ae440e56298dd4f2bd322f78d75fd55a",
+  "recovery_worktree_commit": "5ee18a2d5c917b19f3205a39c93a3b3459e55d79",
+  "prior_live_observation": {
+    "observed_at_hong_kong": "2026-11-04T00:36:44+08:00",
+    "trainer_updated_at": "2026-11-04T00:36:20.623337+08:00",
+    "epoch": 4,
+    "studies_done": 160,
+    "images_done": 257,
+    "optimizer_updates": 1048
+  },
+  "future_research_policy": "E2/E3/E4 require user-return scientific review; no automatic stage extension",
+  "ai_supervision_required": false,
+  "new_training_process_started": false,
+  "stop_requested": false,
+  "progress_advanced_since_previous_observation": true
+}

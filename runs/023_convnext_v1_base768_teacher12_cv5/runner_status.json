@@ -1,0 +1,67 @@
+{
+  "schema_version": 6,
+  "folds": {
+    "1": {
+      "state": "completed",
+      "completed_epochs": 12,
+      "validated_epochs": 0,
+      "backward_batches": 145596,
+      "optimizer_updates": 9108,
+      "ema_updates": 9108,
+      "amp_skipped_steps": 0,
+      "fold": 1,
+      "training_complete": true,
+      "inference_ready": true,
+      "selection_protocol": "fixed_epoch_final_ema",
+      "best_checkpoint_sha256": "6751d94704abfefba1c11ed51e3b5d26e5e68c6a84e203ead4088b92294187b2"
+    },
+    "2": {
+      "state": "completed",
+      "completed_epochs": 12,
+      "validated_epochs": 0,
+      "backward_batches": 145656,
+      "optimizer_updates": 9108,
+      "ema_updates": 9108,
+      "amp_skipped_steps": 0,
+      "fold": 2,
+      "training_complete": true,
+      "inference_ready": true,
+      "selection_protocol": "fixed_epoch_final_ema",
+      "best_checkpoint_sha256": "a6c122c4f60abd924cecce3c83db21a65e8ba824028b6cae362eba9df2ac683b"
+    },
+    "3": {
+      "state": "completed",
+      "completed_epochs": 12,
+      "validated_epochs": 0,
+      "backward_batches": 145500,
+      "optimizer_updates": 9096,
+      "ema_updates": 9096,
+      "amp_skipped_steps": 0,
+      "fold": 3,
+      "training_complete": true,
+      "inference_ready": true,
+      "selection_protocol": "fixed_epoch_final_ema",
+      "last_checkpoint_sha256": "603d725b97d090e5648437bfcf19200d69e60d3e82763e548d4df5b1d03a9b55",
+      "best_checkpoint_sha256": "f0184c787573f745a76082d6bb450efe134931d09d43d3d988bd260fa26761be",
+      "updated_utc": "2026-10-26T07:45:04.234303+00:00"
+    },
+    "4": {
+      "state": "completed",
+      "completed_epochs": 12,
+      "validated_epochs": 0,
+      "backward_batches": 145584,
+      "optimizer_updates": 9108,
+      "ema_updates": 9108,
+      "amp_skipped_steps": 0,
+      "fold": 4,
+      "training_complete": true,
+      "inference_ready": true,
+      "selection_protocol": "fixed_epoch_final_ema",
+      "last_checkpoint_sha256": "140609230371d16ac2636d741f244f3c7ee736489362c5d8dedd1eb81eabe23d",
+      "best_checkpoint_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "updated_utc": "2026-10-26T11:26:23.163207+00:00"
+    }
+  },
+  "updated_utc": "2026-10-26T11:26:24.514278+00:00",
+  "all_requested_complete": true
+}

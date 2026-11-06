@@ -1,0 +1,54 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "attempted_updates": 8334,
+    "best_epoch": 18,
+    "best_macro_auc": 0.8046352631165428,
+    "next_action": "Review paired evidence; confirm on another patient fold before full-data refit",
+    "official_valid_evaluated": false,
+    "optimizer_updates": 8334,
+    "skipped_updates": 0,
+    "stage_decision": {
+      "automatic_submission": false,
+      "automatic_training_stop": false,
+      "difficult_slices": [
+        "ap_projection_only",
+        "single_image_study",
+        "at_least_5_studies_patient"
+      ],
+      "eligible_variants": [
+        "single_candidate",
+        "fixed_50_50_blend"
+      ],
+      "hidden_test_improvement_established": false,
+      "meaning": "Eligibility for a separately held-out patient-fold confirmation only; absence of significant slice harm is not proof of non-inferiority.",
+      "minimum_valid_bootstrap_fraction": 0.9,
+      "minimum_valid_bootstrap_replicates": 100,
+      "state": "eligible_for_second_fold",
+      "training_complete": true,
+      "variants": {
+        "fixed_50_50_blend": {
+          "eligible": true,
+          "reasons": []
+        },
+        "single_candidate": {
+          "eligible": true,
+          "reasons": []
+        }
+      }
+    },
+    "state": "completed",
+    "test_used": false,
+    "updated_at": "2026-11-06T10:24:00.369190+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "2b3c5b3d00940c0e3ebe9dd6fa22072d439e9a422915c89ae5553995a9202d14",
+  "record_sha256": "d44bb14d515807c1a0a8dd7dcd962ba0883f302ab62d3b778f0cd653540d5d78",
+  "recorded_at_hong_kong": "2026-11-06T10:24:00.476917+08:00",
+  "recorded_at_utc": "2026-11-06T02:24:00.476917+00:00",
+  "run_dir": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123",
+  "session_id": "20261105T135910Z_67539d6ee758",
+  "state": "completed",
+  "trainer": "raw_rebuild.train"
+}

@@ -1,0 +1,27 @@
+{
+  "project_root": "/tmp/dual768_2080ti_diagnosis/submission_runtime_smoke",
+  "external_addons_environment_removed": true,
+  "preparation_runs": [
+    {
+      "flag": "--force-build",
+      "exit_code": 0
+    },
+    {
+      "flag": "--check-only",
+      "exit_code": 0
+    }
+  ],
+  "probe": {
+    "native": "avx2",
+    "native_available": true,
+    "timm_module": "/tmp/dual768_2080ti_diagnosis/submission_runtime_smoke/code/_runtime_addons/timm/__init__.py",
+    "numpy_module": "/usr/local/lib/python3.12/dist-packages/numpy/__init__.py",
+    "torch_module": "/usr/local/lib/python3.12/dist-packages/torch/__init__.py",
+    "cuda_initialized": false,
+    "pixel_bytes_equal": true
+  },
+  "model_inference_executed": false,
+  "native_so_sha256": {
+    "_core.cpython-312-x86_64-linux-gnu.so": "0e95fa383763ca4a18f1f210c227d2e64a8c740272230e9bbcebf0fe5b2e5826"
+  }
+}

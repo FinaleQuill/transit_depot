@@ -1,0 +1,3 @@
+Filesystem                                                                                Size  Used Avail Use% Mounted on
+10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ   50G   48G  2.4G  96% /home/featurize/work
+/dev/vda3                                                                                 679G   16G  663G   3% /

@@ -1,0 +1,134 @@
+{
+  "stopped_hong_kong": "2026-10-20T12:59:53.844751+08:00",
+  "training_and_runner_pids_gone": [
+    195922,
+    9010
+  ],
+  "wait_seconds": 576.9334888800004,
+  "gpu_compute_processes_after_stop": "pid, process_name, used_gpu_memory [MiB]\n",
+  "stop_flag_exists": true,
+  "runner_status": {
+    "state": "checkpoints_ready",
+    "updated_utc": "2026-10-20T04:59:40+00:00",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_mib": 24564
+    },
+    "folds": {
+      "0": {
+        "state": "paused",
+        "completed_epochs": 6,
+        "validated_epochs": 6,
+        "backward_batches": 72774,
+        "optimizer_updates": 4554,
+        "ema_updates": 4554,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.806735188701427,
+        "best_epoch": 6,
+        "fold": 0,
+        "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_0",
+        "early_stopping": {
+          "reference_auc": 0.806735188701427,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "1": {
+        "state": "paused",
+        "completed_epochs": 5,
+        "validated_epochs": 5,
+        "backward_batches": 60665,
+        "optimizer_updates": 3795,
+        "ema_updates": 3795,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.8013960260129787,
+        "best_epoch": 5,
+        "fold": 1,
+        "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_1",
+        "early_stopping": {
+          "reference_auc": 0.8013960260129787,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "2": {
+        "state": "paused",
+        "completed_epochs": 5,
+        "validated_epochs": 5,
+        "backward_batches": 60690,
+        "optimizer_updates": 3795,
+        "ema_updates": 3795,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.7947949064601583,
+        "best_epoch": 5,
+        "fold": 2,
+        "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_2",
+        "early_stopping": {
+          "reference_auc": 0.7947949064601583,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "3": {
+        "state": "paused",
+        "completed_epochs": 5,
+        "validated_epochs": 5,
+        "backward_batches": 60625,
+        "optimizer_updates": 3790,
+        "ema_updates": 3790,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.8032683722108362,
+        "best_epoch": 5,
+        "fold": 3,
+        "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_3",
+        "early_stopping": {
+          "reference_auc": 0.8032683722108362,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "4": {
+        "state": "paused",
+        "completed_epochs": 5,
+        "validated_epochs": 5,
+        "backward_batches": 60660,
+        "optimizer_updates": 3795,
+        "ema_updates": 3795,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.7996021371442283,
+        "best_epoch": 5,
+        "fold": 4,
+        "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_4",
+        "early_stopping": {
+          "reference_auc": 0.7996021371442283,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      }
+    },
+    "failures": {},
+    "microbatches": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2
+    },
+    "valid_microbatches": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4
+    },
+    "elapsed_seconds": 49520.030063879,
+    "hours_limit": 0,
+    "stop_reason": "STOP_file",
+    "ensemble_plan": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/ensemble_plan.json"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "scores": {
+    "old044": 0.8166770734158482,
+    "new_draft": 0.8169045290460086
+  },
+  "delta_new_minus_044": 0.00022745563016046688,
+  "patient_paired_bootstrap": {
+    "reference": "old044",
+    "samples": 1000,
+    "seed": 46,
+    "sampling_unit": "patient_with_all_Studies",
+    "paired": true,
+    "results": {
+      "new_draft": {
+        "per_class_delta": [
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.012850004012380433,
+              0.003489294857990847
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.0013198818339149043,
+              0.010822660478897817
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.01312555557090812,
+              0.0028069109894667526
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.0033525148822386277,
+              0.0005651083544846971
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.001982775083208238,
+              0.005277252467665227
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.0015110961771329506,
+              0.004661566655083748
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.005832215533076904,
+              0.003206851433987889
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              0.00025001678412224504,
+              0.0025227686405517756
+            ]
+          },
+          {
+            "valid_resamples": 1000,
+            "ci_95": [
+              -0.0002146730526928403,
+              0.007224099003596044
+            ]
+          }
+        ],
+        "macro_auc_delta": {
+          "valid_resamples": 1000,
+          "ci_95": [
+            -0.001736072742323479,
+            0.0018042336826434955
+          ]
+        }
+      }
+    }
+  },
+  "input_bindings": {
+    "old044": {
+      "report_sha256": "8299677878443dbe38f62ffa204b4f9fd8e597db8e8c007bd65bb917710ad904",
+      "predictions_sha256": "680ac4c48654baa1f0fe9df42a90a81ca8fdf0947a29e5e39f2f865a61fe44a9"
+    },
+    "new_draft": {
+      "report_sha256": "c64e928a2150ba03f9c84d1f0703f72730f0cc83add7d00280202e268f43d760",
+      "predictions_sha256": "07a6eb07fbfc7d94524b6695396545c0be8ec586809cadbec778dc66c2d700db"
+    }
+  },
+  "test_used": false,
+  "selection_adjusted": false
+}

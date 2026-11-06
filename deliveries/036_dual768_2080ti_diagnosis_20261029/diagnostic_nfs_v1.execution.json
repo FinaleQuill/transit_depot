@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-29T14:17:31.744461+00:00",
+  "ended_utc": "2026-10-29T14:18:33.475108+00:00",
+  "wall_seconds": 61.73068235699998,
+  "python_arguments": [
+    "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnose_current_v1.py",
+    "--source-root",
+    "/home/featurize/work/cloud_project_v2",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--inputs-root",
+    "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs",
+    "--selection-json",
+    "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs/selection.portable.json",
+    "--output-dir",
+    "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnostic_nfs_v1"
+  ],
+  "exit_code": 0
+}

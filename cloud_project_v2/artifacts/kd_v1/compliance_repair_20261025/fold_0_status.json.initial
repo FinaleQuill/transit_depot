@@ -1,0 +1,16 @@
+{
+  "state": "paused",
+  "completed_epochs": 2,
+  "validated_epochs": 0,
+  "backward_batches": 24258,
+  "optimizer_updates": 1518,
+  "ema_updates": 1518,
+  "amp_skipped_steps": 0,
+  "fold": 0,
+  "training_complete": false,
+  "inference_ready": false,
+  "selection_protocol": "fixed_epoch_final_ema",
+  "last_checkpoint_sha256": "8a85e579f0fbda079dceeb0eed47c74bb4b7f83b68b6bbaaae841c414b967843",
+  "best_checkpoint_sha256": null,
+  "updated_utc": "2026-10-25T08:03:26.072672+00:00"
+}

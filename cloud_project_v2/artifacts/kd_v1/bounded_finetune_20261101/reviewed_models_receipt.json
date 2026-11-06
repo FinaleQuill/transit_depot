@@ -1,0 +1,26 @@
+{
+  "replaces_existing_submission": false,
+  "test_predicted": false,
+  "models": {
+    "full_decode": {
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode",
+      "config_sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d",
+      "actual_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/actual_combination_review/full_decode/actual_audit.json",
+      "weights_hardlinked_from": {
+        "X1": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1",
+        "B": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B"
+      }
+    },
+    "draft768": {
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/draft768",
+      "config_sha256": "f097dcd84abe2aba59d424df2e4bf480076513303bddfb5ceb2e3195686cf5c4",
+      "actual_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/actual_combination_review/draft/actual_audit.json",
+      "weights_hardlinked_from": {
+        "X1": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1",
+        "B": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B"
+      }
+    }
+  },
+  "note": "Experimental configurations preserved for replay; linked weight files are immutable. No independent T4 certification.",
+  "original_043_044_submission_hashes_unchanged": true
+}

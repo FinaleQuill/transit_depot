@@ -1,0 +1,195 @@
+{
+  "schema": "e2_smoke_checkpoint_verification_v1",
+  "created_at": "2026-11-04T14:48:35.230250+08:00",
+  "runtime_image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+  "python": "3.12.3",
+  "torch": "2.10.0+cu128",
+  "numpy": "1.26.4",
+  "gpu_used": false,
+  "models_instantiated": false,
+  "training_started": false,
+  "scope": "Two mechanics-only train-subset runs; checkpoints loaded CPU; no images/H/official valid/test",
+  "arms": {
+    "global_local": {
+      "passed": true,
+      "path": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4",
+      "full_checkpoint_epoch": 2,
+      "complete_training_epochs": [
+        1,
+        2
+      ],
+      "updates": {
+        "attempted_updates": 2,
+        "optimizer_updates": 2,
+        "skipped_updates": 0
+      },
+      "last_checkpoint_sha256": "95552081419c5442580fb79061d11ed8360ad4756c4acd010f108f0e368e07df",
+      "baseline_checkpoint_sha256": "a41132f57b9805b03672ce52db98dbc02ddc475db554b762ccd2561a9334431d",
+      "configuration_matches_checkpoint": true,
+      "lifecycle_hash_chain_verified": true,
+      "sessions": [
+        {
+          "session_id": "20261104T063431Z_928d21be100f",
+          "resume_from": null,
+          "completed_epochs": [
+            1
+          ],
+          "terminal_state": "smoke_completed",
+          "configuration_sha256": "75de4ed80334c4edf3a5b553d3f4795d1ee5ee55b0d916f9cdbde3a0060b7b3b",
+          "source_manifest_sha256": "06cef1136f6c6be1716956a750737d590bbd67ca486403584d6d2fdc9e808078",
+          "source_files_verified": 20
+        },
+        {
+          "session_id": "20261104T063705Z_a505d0685a63",
+          "resume_from": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/last.pt",
+          "completed_epochs": [
+            2
+          ],
+          "terminal_state": "smoke_completed",
+          "configuration_sha256": "75de4ed80334c4edf3a5b553d3f4795d1ee5ee55b0d916f9cdbde3a0060b7b3b",
+          "source_manifest_sha256": "580e8ec0a25aa697fa93e35f89ea0b000fdeceb629a3b32008911cf57437cd55",
+          "source_files_verified": 20
+        }
+      ],
+      "source_contents_identical_across_resume": true,
+      "source_manifest_hash_difference_explanation": "Manifest archived_path includes different session IDs; original_path-to-source-SHA maps are identical.",
+      "model_tensor_count": 352,
+      "model_numel": 87847828,
+      "ema_numel": 87847828,
+      "raw_vs_ema_different_tensors": 352,
+      "raw_changed_from_epoch0_tensors": 352,
+      "ema_changed_from_epoch0_tensors": 352,
+      "optimizer_parameter_states": 352,
+      "adam_step_unique": [
+        2.0
+      ],
+      "nonzero_adam_first_moment_states": 352,
+      "scaler": {
+        "scale": 65536.0,
+        "growth_factor": 2.0,
+        "backoff_factor": 0.5,
+        "growth_interval": 2000,
+        "_growth_tracker": 2
+      },
+      "rng": {
+        "python_state_valid": true,
+        "numpy_state_valid": true,
+        "torch_state_valid": true,
+        "torch_state_bytes": 5056,
+        "saved_cuda_generators": 1,
+        "saved_cuda_state_bytes": [
+          16
+        ]
+      },
+      "baseline_selection_retained": true,
+      "images_per_complete_epoch": 22,
+      "highest_views_per_study": 7,
+      "regions_per_complete_epoch": 110,
+      "inputs_sha256": {
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/last.pt": "95552081419c5442580fb79061d11ed8360ad4756c4acd010f108f0e368e07df",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/best.pt": "a41132f57b9805b03672ce52db98dbc02ddc475db554b762ccd2561a9334431d",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/configuration.json": "c5e3ef170416d55d0930dc8355f8de1698a44b2e2260ff70f7ede12e06c64729",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/baseline.json": "3e2ef4c2a38a0d9134d0dead3c741cb8e2ead974bef017cfa47029e49c0dc1bf",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/status.json": "c1f4ebe770e5f9d6b92bc35571f437cd2e08f37eb2c39b0d61cf48d365ef770f",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/history.jsonl": "46483449fc45d8452fad3697860232344e4918428115d3e3431648e19be95b8f",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/compliance/events.jsonl": "5a9dd59a995e9a4abf7262f906083ab1ab8f1660bc71e51fbe8fa2e9f70e3f8e",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/compliance/status.json": "9f5dbaec017b6f462af19f44aa3ed63b737148d304ee358742af9678e73bae1c"
+      },
+      "assertion_basis": "Two closed sessions with identical config/source; second explicitly resumes last.pt; unique epoch events1,2; attempted/actual updates1,2; all Adam state.step=2; scaler growth_tracker=2; raw and EMA changed from retained epoch0; full RNG present."
+    },
+    "global_control": {
+      "passed": true,
+      "path": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4",
+      "full_checkpoint_epoch": 2,
+      "complete_training_epochs": [
+        1,
+        2
+      ],
+      "updates": {
+        "attempted_updates": 2,
+        "optimizer_updates": 2,
+        "skipped_updates": 0
+      },
+      "last_checkpoint_sha256": "e08c05fcb59b8561fc313a2dea14b017a7951a0a6dce3461d3f00020edeb2369",
+      "baseline_checkpoint_sha256": "2691f526f1a7f531449acf00c377ade9afa9d5f521ad6bab831e9c50a9b5c54c",
+      "configuration_matches_checkpoint": true,
+      "lifecycle_hash_chain_verified": true,
+      "sessions": [
+        {
+          "session_id": "20261104T063904Z_276b5f96c79f",
+          "resume_from": null,
+          "completed_epochs": [
+            1
+          ],
+          "terminal_state": "smoke_completed",
+          "configuration_sha256": "b515f07a1ac5669ef743e2443c18330b91b13881f727bb62d8884fe93a033b3d",
+          "source_manifest_sha256": "7e36ef1ea0395c35c737490520d164a4404bd8505b0848381b8dccc4945fc986",
+          "source_files_verified": 20
+        },
+        {
+          "session_id": "20261104T064122Z_dc55f2a08b43",
+          "resume_from": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/last.pt",
+          "completed_epochs": [
+            2
+          ],
+          "terminal_state": "smoke_completed",
+          "configuration_sha256": "b515f07a1ac5669ef743e2443c18330b91b13881f727bb62d8884fe93a033b3d",
+          "source_manifest_sha256": "304717e59bd7ab8ea01f9d3f3b14cb333500df36c62a6d3872ddc139f40d9ccd",
+          "source_files_verified": 20
+        }
+      ],
+      "source_contents_identical_across_resume": true,
+      "source_manifest_hash_difference_explanation": "Manifest archived_path includes different session IDs; original_path-to-source-SHA maps are identical.",
+      "model_tensor_count": 344,
+      "model_numel": 87576714,
+      "ema_numel": 87576714,
+      "raw_vs_ema_different_tensors": 344,
+      "raw_changed_from_epoch0_tensors": 344,
+      "ema_changed_from_epoch0_tensors": 344,
+      "optimizer_parameter_states": 344,
+      "adam_step_unique": [
+        2.0
+      ],
+      "nonzero_adam_first_moment_states": 344,
+      "scaler": {
+        "scale": 65536.0,
+        "growth_factor": 2.0,
+        "backoff_factor": 0.5,
+        "growth_interval": 2000,
+        "_growth_tracker": 2
+      },
+      "rng": {
+        "python_state_valid": true,
+        "numpy_state_valid": true,
+        "torch_state_valid": true,
+        "torch_state_bytes": 5056,
+        "saved_cuda_generators": 1,
+        "saved_cuda_state_bytes": [
+          16
+        ]
+      },
+      "baseline_selection_retained": true,
+      "images_per_complete_epoch": 22,
+      "highest_views_per_study": 7,
+      "regions_per_complete_epoch": 22,
+      "inputs_sha256": {
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/last.pt": "e08c05fcb59b8561fc313a2dea14b017a7951a0a6dce3461d3f00020edeb2369",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/best.pt": "2691f526f1a7f531449acf00c377ade9afa9d5f521ad6bab831e9c50a9b5c54c",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/configuration.json": "741febf55bd3ebec400b43c7567cb0185f796978c239fedeff31bbe3c044bf26",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/baseline.json": "3e2ef4c2a38a0d9134d0dead3c741cb8e2ead974bef017cfa47029e49c0dc1bf",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/status.json": "2e0b4039c4e3966f4c70afdb83ccfa9e6c64eca79f4b398320376a49cbea8445",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/history.jsonl": "d36049ffcfc9d29be55978bd05a2b034c9e903fc19293de3bf35113d917db9e3",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/compliance/events.jsonl": "25f834a50727f15f95c21b33e92c4786d2df92c5536be1d9569d50e88738ca8f",
+        "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/compliance/status.json": "6cae2e12906061dbe6f6c8f394d4ef3ff99b30d6b0cad33f688711a86b3c36d7"
+      },
+      "assertion_basis": "Two closed sessions with identical config/source; second explicitly resumes last.pt; unique epoch events1,2; attempted/actual updates1,2; all Adam state.step=2; scaler growth_tracker=2; raw and EMA changed from retained epoch0; full RNG present."
+    }
+  },
+  "limitations": [
+    "Epoch1 rolling last.pt was replaced by epoch2; its exact save SHA remains in lifecycle but its binary is not retained.",
+    "No separate uninterrupted-training replay was executed; continuity is supported by closed bound sessions, exact source/config, resume path, optimizer/scaler progression and saved complete states.",
+    "Mechanics success is not evidence of disease AUC or generalization."
+  ],
+  "all_passed": true,
+  "audit_script_sha256": "f58ced667487fef9112f61acb8473d06b0d74a21867e6f0470e08bef467a54d9"
+}

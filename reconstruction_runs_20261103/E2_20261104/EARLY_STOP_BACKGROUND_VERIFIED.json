@@ -1,0 +1,23 @@
+{
+  "AI_goal": null,
+  "handoff_pending_until_epoch3_evaluation_and_checkpoint_close": true,
+  "heartbeat_advanced": true,
+  "new_GPU_training_launched": false,
+  "old_epoch3_preserved": true,
+  "only_current_training_container": [
+    "cxr-e2-global-control-perf-1793781004_36434"
+  ],
+  "pgid": 51006,
+  "pid": 51006,
+  "ppid": 1,
+  "previous_heartbeat": "2026-11-04T17:29:58.934398+08:00",
+  "sid": 51006,
+  "state": {
+    "boundary_epoch": 3,
+    "pid": 51006,
+    "state": "waiting_for_complete_epoch",
+    "updated_at": "2026-11-04T17:30:48.967185+08:00"
+  },
+  "stdin": "/dev/null",
+  "verified_at": "2026-11-04T17:30:52.362649+08:00"
+}

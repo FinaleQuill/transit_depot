@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "error": "TypeError: Object of type bool_ is not JSON serializable",
+  "elapsed_seconds": 398.0528115729976,
+  "selection_changed": false
+}

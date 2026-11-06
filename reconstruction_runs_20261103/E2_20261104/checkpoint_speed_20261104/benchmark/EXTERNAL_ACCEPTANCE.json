@@ -1,0 +1,7 @@
+{
+  "adopt": true,
+  "benchmark_sha256": "e05a14b4ccdbd332ea359fba55688a66fc58c1d745bcf3149fb3ad58977332cd",
+  "controller_observed_seconds": 330.1658468089954,
+  "minimum_net_saving_seconds": 300,
+  "reason": "all_probe_and_external_time_gates_passed"
+}

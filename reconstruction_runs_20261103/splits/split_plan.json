@@ -1,0 +1,100 @@
+{
+  "dev_fold": 0,
+  "fallback_reason": null,
+  "holdout_fold": 4,
+  "holdout_usage": "split-preparation metadata only; excluded from all new training and upstream weights",
+  "isolation": {
+    "dev__holdout": {
+      "file_sha256": 0,
+      "pixel_sha256": 0,
+      "study_key": 0,
+      "subject_id": 0
+    },
+    "train__dev": {
+      "file_sha256": 0,
+      "pixel_sha256": 0,
+      "study_key": 0,
+      "subject_id": 0
+    },
+    "train__holdout": {
+      "file_sha256": 0,
+      "pixel_sha256": 0,
+      "study_key": 0,
+      "subject_id": 0
+    }
+  },
+  "labels_rewritten": false,
+  "legacy_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "method": "revalidated_existing_fivefold_mapping",
+  "official_valid_read": false,
+  "roles": {
+    "dev": {
+      "images": 6070,
+      "path": "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv",
+      "patients": 2211,
+      "positive_studies": [
+        125,
+        180,
+        188,
+        288,
+        481,
+        777,
+        793,
+        900,
+        930,
+        1336
+      ],
+      "sha256": "fd889cd16f0c2f3156aa79ec08521741238ea0e362ebd86169c13ad3593e96af",
+      "studies": 3703
+    },
+    "holdout": {
+      "images": 6064,
+      "path": "/home/featurize/work/reconstruction_runs_20261103/splits/holdout.csv",
+      "patients": 2211,
+      "positive_studies": [
+        124,
+        180,
+        189,
+        287,
+        481,
+        777,
+        793,
+        901,
+        931,
+        1338
+      ],
+      "sha256": "73eb028eef3c07c805550419a61fe82f84aa7be07946c868f2a9ac1a4fa8415d",
+      "studies": 3702
+    },
+    "train": {
+      "images": 18194,
+      "path": "/home/featurize/work/reconstruction_runs_20261103/splits/train.csv",
+      "patients": 6633,
+      "positive_studies": [
+        373,
+        540,
+        565,
+        861,
+        1442,
+        2331,
+        2382,
+        2707,
+        2793,
+        4009
+      ],
+      "sha256": "5d1ff23588fa26fa9ead1761e0498b5e958736bf651e8d5b94d645bfdf51df3c",
+      "studies": 11108
+    }
+  },
+  "schema": "reconstruction_patient_content_holdout_v1",
+  "seed": 20261103,
+  "source_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+  "source_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "source_rows_preserved": true,
+  "test_read": false,
+  "train_folds": [
+    1,
+    2,
+    3
+  ]
+}

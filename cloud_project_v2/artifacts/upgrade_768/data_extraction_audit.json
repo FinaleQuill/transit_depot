@@ -1,0 +1,45 @@
+{
+  "kind": "read_only_zip_manifest_size_audit",
+  "timestamp_utc": "2026-10-19T15:00:07.426918+00:00",
+  "archive": "/home/featurize/data/cxr_first.zip",
+  "archive_size": 55469558118,
+  "raw_root": "/home/featurize/data/cxr_first/cxr_first",
+  "decoding_performed": false,
+  "source_image_writes": 0,
+  "training_runs_started": 0,
+  "archive_image_entries": 33984,
+  "archive_image_uncompressed_bytes": 55451772443,
+  "splits": {
+    "train": {
+      "manifest": "data/clean_v1_reviewed/train_clean.csv",
+      "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "images": 30328,
+      "studies": 18513,
+      "available_size_matches": 30328,
+      "missing_images": [],
+      "missing_archive_entries": [],
+      "size_mismatch": []
+    },
+    "valid": {
+      "manifest": "data/clean_v1_reviewed/valid_manifest.csv",
+      "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "images": 1422,
+      "studies": 859,
+      "available_size_matches": 1422,
+      "missing_images": [],
+      "missing_archive_entries": [],
+      "size_mismatch": []
+    },
+    "test": {
+      "manifest": "data/clean_v1_reviewed/test_manifest.csv",
+      "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+      "images": 2218,
+      "studies": 1414,
+      "available_size_matches": 2218,
+      "missing_images": [],
+      "missing_archive_entries": [],
+      "size_mismatch": []
+    }
+  },
+  "complete": true
+}

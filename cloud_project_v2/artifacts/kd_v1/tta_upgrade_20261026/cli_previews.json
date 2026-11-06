@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "args": [
+        "validate_teacher_tta.py",
+        "--output-dir",
+        "../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_tta_valid"
+      ],
+      "exit_code": 0,
+      "output_chars": 1321,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "extract_soft_labels_tta.py",
+        "--fold-plan",
+        "data/cv5_overnight/folds.json",
+        "--teacher-collection",
+        "../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+        "--output",
+        "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2"
+      ],
+      "exit_code": 0,
+      "output_chars": 1347,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "train_distill.py",
+        "--fold-plan",
+        "data/cv5_overnight/folds.json",
+        "--soft-labels",
+        "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+        "--image-size",
+        "768",
+        "--validation-tta",
+        "hflip2",
+        "--output",
+        "../runs/025_tiny_multires_kd/tiny768_seed43"
+      ],
+      "exit_code": 0,
+      "output_chars": 1608,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "run_student_experiments.py",
+        "--stage",
+        "compare"
+      ],
+      "exit_code": 0,
+      "output_chars": 3132,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "export_student.py",
+        "--estimate-only"
+      ],
+      "exit_code": 0,
+      "output_chars": 419,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "compose_students.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 997,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "compare_student_candidates.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 1046,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "build_training_evidence.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 753,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "package_kd_submission.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 1323,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "predict.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 359,
+      "stderr": ""
+    },
+    {
+      "args": [
+        "cost.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "output_chars": 867,
+      "stderr": ""
+    }
+  ],
+  "syntax_pass": true,
+  "new_run_directories_created": false,
+  "models_executed": false
+}

@@ -1,0 +1,172 @@
+{
+  "scope": "CPU-only diagnostic; concurrent dataset extraction/host load may affect timings; not a formal benchmark",
+  "python": "3.11.8",
+  "numpy": "1.26.4",
+  "pillow": "10.3.0",
+  "sample_selection": "first 8 sorted timing-image paths, chosen independently of timings or predictions",
+  "sizes": [
+    512,
+    768
+  ],
+  "samples": [
+    {
+      "sample_index": 0,
+      "source_mode": "L",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "read_header_ms": 20.077102000186642,
+      "decode_ms": 49.66003599997748,
+      "exif_and_color_ms": 0.06415999996534083,
+      "original_lanczos_and_rgb_canvas_ms": 69.80725900007201,
+      "original_rgb_float32_ms": 5.043250000198896,
+      "original_normalize_ms": 18.930607000129385,
+      "original_chw_copy_ms": 2.885203999994701,
+      "candidate_resized_and_normalized_ms": 70.93542400002661,
+      "original_two_sizes_total_ms": 219.8246109999218,
+      "candidate_two_sizes_total_ms": 161.3274139999703
+    },
+    {
+      "sample_index": 1,
+      "source_mode": "L",
+      "source_size": [
+        2597,
+        2539
+      ],
+      "read_header_ms": 9.767571999873326,
+      "decode_ms": 44.43146500011608,
+      "exif_and_color_ms": 0.057461000096736825,
+      "original_lanczos_and_rgb_canvas_ms": 55.84360500006369,
+      "original_rgb_float32_ms": 3.6504820000118343,
+      "original_normalize_ms": 16.598161000047185,
+      "original_chw_copy_ms": 1.7213209998772072,
+      "candidate_resized_and_normalized_ms": 54.91430699999,
+      "original_two_sizes_total_ms": 171.32148099994993,
+      "candidate_two_sizes_total_ms": 139.49335200004498
+    },
+    {
+      "sample_index": 2,
+      "source_mode": "L",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "read_header_ms": 8.106519999955708,
+      "decode_ms": 47.061174000191386,
+      "exif_and_color_ms": 0.0555970000277739,
+      "original_lanczos_and_rgb_canvas_ms": 58.4789859999546,
+      "original_rgb_float32_ms": 4.752085000063744,
+      "original_normalize_ms": 15.167772000040713,
+      "original_chw_copy_ms": 1.7701139997825521,
+      "candidate_resized_and_normalized_ms": 57.5937440000871,
+      "original_two_sizes_total_ms": 182.16591300006257,
+      "candidate_two_sizes_total_ms": 157.79925400011052
+    },
+    {
+      "sample_index": 3,
+      "source_mode": "L",
+      "source_size": [
+        2431,
+        2539
+      ],
+      "read_header_ms": 7.7918409999711,
+      "decode_ms": 32.7567449999151,
+      "exif_and_color_ms": 0.04138400004194409,
+      "original_lanczos_and_rgb_canvas_ms": 49.59859400014466,
+      "original_rgb_float32_ms": 1.828406999948129,
+      "original_normalize_ms": 12.428441000110979,
+      "original_chw_copy_ms": 1.7241909999938798,
+      "candidate_resized_and_normalized_ms": 51.480351999998675,
+      "original_two_sizes_total_ms": 156.37146500012022,
+      "candidate_two_sizes_total_ms": 130.37049799982015
+    },
+    {
+      "sample_index": 4,
+      "source_mode": "L",
+      "source_size": [
+        2920,
+        2395
+      ],
+      "read_header_ms": 8.031190000110655,
+      "decode_ms": 40.42568499994559,
+      "exif_and_color_ms": 0.04346100013208343,
+      "original_lanczos_and_rgb_canvas_ms": 57.035478999978295,
+      "original_rgb_float32_ms": 1.9468009998035996,
+      "original_normalize_ms": 12.867486999994071,
+      "original_chw_copy_ms": 1.9148789999690052,
+      "candidate_resized_and_normalized_ms": 61.98175200006517,
+      "original_two_sizes_total_ms": 193.80698200006918,
+      "candidate_two_sizes_total_ms": 154.92724600017027
+    },
+    {
+      "sample_index": 5,
+      "source_mode": "L",
+      "source_size": [
+        1620,
+        2022
+      ],
+      "read_header_ms": 8.267251000006581,
+      "decode_ms": 18.826766999836764,
+      "exif_and_color_ms": 0.03401299977667804,
+      "original_lanczos_and_rgb_canvas_ms": 29.880519000016648,
+      "original_rgb_float32_ms": 1.9874800000252435,
+      "original_normalize_ms": 17.614058999924964,
+      "original_chw_copy_ms": 1.7691969999305002,
+      "candidate_resized_and_normalized_ms": 31.61375800004862,
+      "original_two_sizes_total_ms": 101.63003599996046,
+      "candidate_two_sizes_total_ms": 77.79826000000867
+    },
+    {
+      "sample_index": 6,
+      "source_mode": "L",
+      "source_size": [
+        1560,
+        2022
+      ],
+      "read_header_ms": 5.874297999980627,
+      "decode_ms": 15.46602600001279,
+      "exif_and_color_ms": 0.04257099999449565,
+      "original_lanczos_and_rgb_canvas_ms": 30.249849000028917,
+      "original_rgb_float32_ms": 2.005229999895164,
+      "original_normalize_ms": 12.113087999978234,
+      "original_chw_copy_ms": 1.5063519999785058,
+      "candidate_resized_and_normalized_ms": 32.410097000138194,
+      "original_two_sizes_total_ms": 111.15784499997972,
+      "candidate_two_sizes_total_ms": 74.84320699995806
+    },
+    {
+      "sample_index": 7,
+      "source_mode": "L",
+      "source_size": [
+        2022,
+        1736
+      ],
+      "read_header_ms": 7.927701999960846,
+      "decode_ms": 23.048314000106984,
+      "exif_and_color_ms": 0.04909799986307917,
+      "original_lanczos_and_rgb_canvas_ms": 38.05334899993795,
+      "original_rgb_float32_ms": 2.1197119999669667,
+      "original_normalize_ms": 14.058957000088412,
+      "original_chw_copy_ms": 2.093330999969112,
+      "candidate_resized_and_normalized_ms": 34.97507199995198,
+      "original_two_sizes_total_ms": 118.28170199987653,
+      "candidate_two_sizes_total_ms": 91.36953600000197
+    }
+  ],
+  "mean_stage_ms": {
+    "read_header_ms": 9.480434500005686,
+    "decode_ms": 33.95952650001277,
+    "exif_and_color_ms": 0.04846812498726649,
+    "original_lanczos_and_rgb_canvas_ms": 48.618455000024596,
+    "original_rgb_float32_ms": 2.916680874989197,
+    "original_normalize_ms": 14.972321500039243,
+    "original_chw_copy_ms": 1.923073624936933,
+    "candidate_resized_and_normalized_ms": 49.488063250038294,
+    "original_two_sizes_total_ms": 156.82000437499255,
+    "candidate_two_sizes_total_ms": 123.49109587501061
+  },
+  "all_105_images_two_size_float32_byte_parity": true,
+  "image_count": 105,
+  "inference_or_training_executed": false
+}

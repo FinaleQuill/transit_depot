@@ -1,0 +1,654 @@
+{
+  "complete": true,
+  "candidate_name": "Preserved_Sprint80_Opacity512_20",
+  "candidate": {
+    "macro_auc": 0.8189923725979623,
+    "per_class_auc": [
+      0.7475548902195609,
+      0.857631353981719,
+      0.8196695010428365,
+      0.7614523685580427,
+      0.8832632071061244,
+      0.7942989214175655,
+      0.802330828237564,
+      0.726769542853003,
+      0.9120649800950301,
+      0.8848881324681772
+    ],
+    "class_1_4_8_mean_auc": 0.7452589338768689,
+    "macro_f1_fixed_0_5": 0.4749544250106488,
+    "num_studies": 859,
+    "num_patients": 228,
+    "slices": {
+      "single_image_study": {
+        "num_studies": 391,
+        "per_class_auc": [
+          0.6920212765957446,
+          0.8638665475126601,
+          0.785394265232975,
+          0.7056039089937395,
+          0.8092078315720488,
+          0.6942764372572738,
+          0.7571333995365772,
+          0.66029656876832,
+          0.8426060704081083,
+          0.7798312236286921
+        ],
+        "macro_auc": 0.759023752950614
+      },
+      "multiple_image_study": {
+        "num_studies": 468,
+        "per_class_auc": [
+          0.8092471556523844,
+          0.861094830617747,
+          0.8328182487122884,
+          0.82497970030265,
+          0.9361635417319872,
+          0.8604965965346535,
+          0.841131927474583,
+          0.726243066396519,
+          0.9515995587424159,
+          0.9033006374778527
+        ],
+        "macro_auc": 0.8547075263643082
+      }
+    }
+  },
+  "baseline": {
+    "macro_auc": 0.8179628779375786,
+    "per_class_auc": [
+      0.7475548902195609,
+      0.8561517722101664,
+      0.8167816460773303,
+      0.7597047668624971,
+      0.8825619448340346,
+      0.7944894544129097,
+      0.8025486626522895,
+      0.7249800767948997,
+      0.9111788878900733,
+      0.8836766774220238
+    ],
+    "class_1_4_8_mean_auc": 0.7440799112923192,
+    "macro_f1_fixed_0_5": 0.47728436125909923,
+    "num_studies": 859,
+    "num_patients": 228,
+    "slices": {
+      "single_image_study": {
+        "num_studies": 391,
+        "per_class_auc": [
+          0.6920212765957446,
+          0.8655049151027703,
+          0.7830645161290323,
+          0.7049167811879677,
+          0.8087982305234702,
+          0.6967594066339847,
+          0.7575306190003309,
+          0.6570205184205989,
+          0.8408269987600411,
+          0.780168776371308
+        ],
+        "macro_auc": 0.7586612038725249
+      },
+      "multiple_image_study": {
+        "num_studies": 468,
+        "per_class_auc": [
+          0.8092471556523844,
+          0.853475559723362,
+          0.8300220750551877,
+          0.8241677124086514,
+          0.9364770803285885,
+          0.8603418935643565,
+          0.8404380486921893,
+          0.7273059421397017,
+          0.9518201875344732,
+          0.9009808756644201
+        ],
+        "macro_auc": 0.8534276530763314
+      }
+    }
+  },
+  "macro_auc_delta": 0.0010294946603837118,
+  "per_class_auc_delta": [
+    0.0,
+    0.0014795817715526072,
+    0.0028878549655062535,
+    0.0017476016955455531,
+    0.0007012622720897754,
+    -0.00019053299534421697,
+    -0.00021783441472555953,
+    0.0017894660581032618,
+    0.0008860922049568343,
+    0.0012114550461533868
+  ],
+  "class8_auc_delta": 0.0017894660581032618,
+  "class1_max_abs_probability_difference": 0.0,
+  "candidate_sensitivity": {
+    "patient_equal": {
+      "per_class_auc": [
+        0.8518039202465226,
+        0.8133779211411366,
+        0.9295027074737076,
+        0.8362145414754822,
+        0.9344061080306753,
+        0.8941016557527189,
+        0.8466312461742185,
+        0.7677908661895289,
+        0.9605824396308498,
+        0.8980670922558224
+      ],
+      "macro_auc": 0.8732478498370663,
+      "num_studies": 859
+    },
+    "patient_equal_single_image": {
+      "per_class_auc": [
+        0.7903771734329411,
+        0.7030071404395848,
+        0.8748883395357335,
+        0.7627008724902504,
+        0.8647626499671841,
+        0.7741769765046644,
+        0.803545709509948,
+        0.7124416320569475,
+        0.9246883957961997,
+        0.829411250086592
+      ],
+      "macro_auc": 0.8040000139820046,
+      "num_studies": 391
+    },
+    "patient_equal_multiple_image": {
+      "per_class_auc": [
+        0.8953039061276244,
+        0.8552431735158863,
+        0.9073841811937372,
+        0.8466742080140511,
+        0.9615083409758629,
+        0.9057545862021086,
+        0.8450301336446518,
+        0.7258392535257147,
+        0.958478786670229,
+        0.9051438247026379
+      ],
+      "macro_auc": 0.8806360394572504,
+      "num_studies": 468
+    },
+    "patient_equal_ap_only": {
+      "per_class_auc": [
+        0.7791967981180039,
+        0.6790400166991778,
+        0.8734807491573933,
+        0.7989768102302862,
+        0.8715639088858372,
+        0.7836425505554331,
+        0.810914262704991,
+        0.7106577830660066,
+        0.9323115941561584,
+        0.8514723918167774
+      ],
+      "macro_auc": 0.8091256865390065,
+      "num_studies": 442
+    },
+    "weight_definition": "Within each reported slice, each Study is weighted by inverse Study count of its patient in that slice; every represented patient has equal total weight.",
+    "independent_validation": false
+  },
+  "baseline_sensitivity": {
+    "patient_equal": {
+      "per_class_auc": [
+        0.8518039202465226,
+        0.8136916134326727,
+        0.9293354602259816,
+        0.8283556017664192,
+        0.9323964048929538,
+        0.8917699436387553,
+        0.8483069333295323,
+        0.7650567297556748,
+        0.9599791177388619,
+        0.8960203971109768
+      ],
+      "macro_auc": 0.871671612213835,
+      "num_studies": 859
+    },
+    "patient_equal_single_image": {
+      "per_class_auc": [
+        0.7903771734329411,
+        0.7096488647761792,
+        0.8743621243946678,
+        0.7442887228414348,
+        0.8629061929650285,
+        0.7739622521481737,
+        0.8038368552429149,
+        0.7053411605189804,
+        0.9224013466952001,
+        0.8286142458960926
+      ],
+      "macro_auc": 0.8015738938911612,
+      "num_studies": 391
+    },
+    "patient_equal_multiple_image": {
+      "per_class_auc": [
+        0.8953039061276244,
+        0.8456680217136638,
+        0.9073070912336363,
+        0.846878244205709,
+        0.9611784688311975,
+        0.9034810224013781,
+        0.8458461053307853,
+        0.723542139119321,
+        0.959164665013871,
+        0.9033445749224118
+      ],
+      "macro_auc": 0.87917142388996,
+      "num_studies": 468
+    },
+    "patient_equal_ap_only": {
+      "per_class_auc": [
+        0.7791967981180039,
+        0.6892653415234745,
+        0.8756563267128344,
+        0.7858606017353532,
+        0.8691960387183811,
+        0.7847683608975067,
+        0.8124803894713301,
+        0.7042143064968428,
+        0.9285314270892802,
+        0.8508221980152388
+      ],
+      "macro_auc": 0.8079991788778245,
+      "num_studies": 442
+    },
+    "weight_definition": "Within each reported slice, each Study is weighted by inverse Study count of its patient in that slice; every represented patient has equal total weight.",
+    "independent_validation": false
+  },
+  "bootstrap": {
+    "samples_requested": 10000,
+    "seed": 20261105,
+    "patients": 228,
+    "samples_valid_all_classes": 10000,
+    "macro": {
+      "valid_samples": 10000,
+      "delta_95_percentile_interval": [
+        -0.0005996462700494602,
+        0.0027922671745262166
+      ]
+    },
+    "class8": {
+      "valid_samples": 10000,
+      "delta_95_percentile_interval": [
+        -0.0022611437425300858,
+        0.00543019584731611
+      ]
+    },
+    "single_image_macro": {
+      "valid_samples": 10000,
+      "delta_95_percentile_interval": [
+        -0.0018429397793557065,
+        0.0030615839573076968
+      ]
+    },
+    "patient_equal_macro": {
+      "valid_samples": 10000,
+      "delta_95_percentile_interval": [
+        -0.0005893133590795785,
+        0.0039977543309419284
+      ]
+    },
+    "per_class": [
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.005478694745872268,
+          0.007615340819440687
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.00617385883490818,
+          0.011607309434968084
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.006110126367051788,
+          0.012739800821560615
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.0013668163520771937,
+          0.0028526465407970295
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.0029875070917757427,
+          0.003230317229487656
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.00298300283625417,
+          0.002323567743543988
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.0022611437425300858,
+          0.00543019584731611
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.00041933274999660927,
+          0.0024231705201890595
+        ]
+      },
+      {
+        "valid_samples": 10000,
+        "delta_95_percentile_interval": [
+          -0.00033150367108922274,
+          0.0028402010166979743
+        ]
+      }
+    ],
+    "interpretation": "Paired whole-patient bootstrap. Exploratory: reused validation and historical model-selection bias are not corrected."
+  },
+  "selection_checks": {
+    "macro_strictly_better": true,
+    "class8_strictly_better": true,
+    "single_image_macro_not_worse": true,
+    "patient_equal_macro_not_worse": true,
+    "class1_exactly_preserved": true
+  },
+  "candidate_won": true,
+  "fusion_weights": [
+    [
+      1.0,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ],
+    [
+      0.0,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ]
+  ],
+  "opacity_weight_per_class": [
+    0.0,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "candidate_inference_assets": [
+    {
+      "id": "base768",
+      "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+      "bytes": 177397507
+    },
+    {
+      "id": "tiny768",
+      "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/student_fp16.pt",
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "bytes": 55712511
+    },
+    {
+      "id": "tiny_config",
+      "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/config.json",
+      "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+      "bytes": 5228097
+    },
+    {
+      "id": "tiny_patch",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/patch_fp16.pt",
+      "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3",
+      "bytes": 17277
+    },
+    {
+      "id": "tiny_patch_config",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/config.json",
+      "sha256": "c633b1b0ff288f584a4682e7965e90b89dd09b0a8e926daf2b7d4973a216e306",
+      "bytes": 1815
+    },
+    {
+      "id": "opacity512",
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/opacity512/final_fp16.pt",
+      "sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c",
+      "bytes": 55738703
+    }
+  ],
+  "candidate_inference_bytes": 294114024,
+  "asset_inventory": {
+    "files": [
+      {
+        "id": "base768",
+        "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+        "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+        "bytes": 177397507
+      },
+      {
+        "id": "tiny768",
+        "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/student_fp16.pt",
+        "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+        "bytes": 55712511
+      },
+      {
+        "id": "tiny_config",
+        "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/config.json",
+        "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+        "bytes": 5228097
+      },
+      {
+        "id": "tiny_patch",
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/patch_fp16.pt",
+        "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3",
+        "bytes": 17277
+      },
+      {
+        "id": "tiny_patch_config",
+        "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/config.json",
+        "sha256": "c633b1b0ff288f584a4682e7965e90b89dd09b0a8e926daf2b7d4973a216e306",
+        "bytes": 1815
+      },
+      {
+        "id": "opacity512",
+        "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/opacity512/final_fp16.pt",
+        "sha256": "4b0cf0bd9643800516a6436e27cc059ab39ee1cc607e6e000a29c8edc50cf10c",
+        "bytes": 55738703
+      }
+    ],
+    "configuration_bytes": 18114,
+    "total_bytes": 294114024,
+    "limit_bytes": 500000000,
+    "size_pass": true,
+    "scope": "unique loaded weights, Tiny patch/configurations and serialized recipe"
+  },
+  "size_pass": true,
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "candidate_predictions_sha256": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a",
+  "candidate_image_predictions_sha256": "afabfd852d7c2716f7f93e99785099f7aa57c0facc0b08cec396de380b86ec70",
+  "parent_image_max_abs_cache_difference": [
+    0.0,
+    0.0
+  ],
+  "parent_scores_diagnostic_only": {
+    "sprint": {
+      "macro_auc": 0.8179628779375786,
+      "per_class_auc": [
+        0.7475548902195609,
+        0.8561517722101664,
+        0.8167816460773303,
+        0.7597047668624971,
+        0.8825619448340346,
+        0.7944894544129097,
+        0.8025486626522895,
+        0.7249800767948997,
+        0.9111788878900733,
+        0.8836766774220238
+      ],
+      "class_1_4_8_mean_auc": 0.7440799112923192,
+      "macro_f1_fixed_0_5": 0.47728436125909923,
+      "num_studies": 859,
+      "num_patients": 228,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6920212765957446,
+            0.8655049151027703,
+            0.7830645161290323,
+            0.7049167811879677,
+            0.8087982305234702,
+            0.6967594066339847,
+            0.7575306190003309,
+            0.6570205184205989,
+            0.8408269987600411,
+            0.780168776371308
+          ],
+          "macro_auc": 0.7586612038725249
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8092471556523844,
+            0.853475559723362,
+            0.8300220750551877,
+            0.8241677124086514,
+            0.9364770803285885,
+            0.8603418935643565,
+            0.8404380486921893,
+            0.7273059421397017,
+            0.9518201875344732,
+            0.9009808756644201
+          ],
+          "macro_auc": 0.8534276530763314
+        }
+      }
+    },
+    "opacity": {
+      "macro_auc": 0.8032351107760286,
+      "per_class_auc": [
+        0.6746007984031936,
+        0.8528638127178273,
+        0.8147761912401732,
+        0.7391053766639399,
+        0.8784829359513793,
+        0.7752621899696804,
+        0.7870357404036159,
+        0.7180540462218358,
+        0.9092911262360344,
+        0.8828788899526056
+      ],
+      "class_1_4_8_mean_auc": 0.7105867404296564,
+      "macro_f1_fixed_0_5": 0.4471834473912081,
+      "num_studies": 859,
+      "num_patients": 228,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.5787234042553191,
+            0.839142091152815,
+            0.7761648745519713,
+            0.6897236219270118,
+            0.8014254116490539,
+            0.6619023365378494,
+            0.728997020854022,
+            0.6528248749928157,
+            0.8414739339047927,
+            0.7742194092827004
+          ],
+          "macro_auc": 0.7344596979108351
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.7954490438150569,
+            0.8762161528542961,
+            0.8348785871964681,
+            0.7929430870303389,
+            0.9307706778704459,
+            0.8500154702970297,
+            0.8345551633632003,
+            0.7110638721891919,
+            0.948869277440706,
+            0.902241218696915
+          ],
+          "macro_auc": 0.847700255075365
+        }
+      }
+    }
+  },
+  "validation_elapsed_seconds": 385.5377510889957,
+  "validation_time_scope": "original progress timestamp at image 1422; excludes final flush/statistics",
+  "original_failed_execution_elapsed_seconds": 398.0528115729976,
+  "report_recovery": {
+    "method": "CPU scoring of the original complete saved validation predictions",
+    "recovered_at": "2026-11-05T13:22:06.059192+08:00",
+    "original_failure": {
+      "complete": false,
+      "error": "TypeError: Object of type bool_ is not JSON serializable",
+      "elapsed_seconds": 398.0528115729976,
+      "selection_changed": false
+    },
+    "original_controller_status_preserved": true,
+    "original_records_archive": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/evidence/report_recovery",
+    "new_model_inferences": 0,
+    "new_candidates": 0,
+    "prediction_hashes_unchanged": {
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate_predictions.csv": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a",
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate.image_predictions.csv": "afabfd852d7c2716f7f93e99785099f7aa57c0facc0b08cec396de380b86ec70",
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint_predictions.csv": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint.image_predictions.csv": "39ca5f7ae82a66e8bbda5a7de5041a926b84b546c5242d0c01b426b4d8aba939",
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity_predictions.csv": "8763669b71462a22866f99440711c565b7fbbd42628ae8a88f7434129d02197a",
+      "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity.image_predictions.csv": "1a87312ccfaf5b7f7c7a25fb85a84fc4361253a93b6812dbe110f50ebab43196"
+    },
+    "source_changes": [
+      "robust_ensemble/evaluate.py"
+    ],
+    "recovery_script_sha256": "b248d6d965a154f578ecaed2781ab2ae2ab977b02e2d059ef1b7dd965240c3ab",
+    "scoring_source_sha256": "ade79880120e2eec01d331031ebabd06c446528120f71aa543ba61553e8dfc82",
+    "elapsed_seconds": 21.01251510401198
+  },
+  "validation_images": 1422,
+  "new_training_runs": 0,
+  "new_optimizer_updates": 0,
+  "candidate_count": 1,
+  "alternative_fusions_evaluated": 0,
+  "test_images_used": false,
+  "formal_T4_certification": false,
+  "deployment_accepted": false,
+  "selection_note": "Local robustness gates only; neither independent generalization nor platform improvement has been established."
+}

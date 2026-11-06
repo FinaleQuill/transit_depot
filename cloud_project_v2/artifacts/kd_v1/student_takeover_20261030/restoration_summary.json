@@ -1,0 +1,50 @@
+{
+  "time_hong_kong": "2026-10-30T13:11:03.880461+08:00",
+  "environment_restoration_complete": true,
+  "gpu": "RTX2080Ti 22GiB; not T4",
+  "native_rebuilt": true,
+  "native_implementation": "avx2",
+  "native_tests": {
+    "tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "log": "native_tests.log"
+  },
+  "inference_probe": "inference_environment_probe.json",
+  "student_probe": "student_environment_probe.json",
+  "student_probe_first_attempt": {
+    "exit_code": 1,
+    "reason": "Probe script subdirectory omitted repository from sys.path; corrected probe only",
+    "log_retained": "student_environment_probe.log"
+  },
+  "student_probe_final_exit_code": 0,
+  "readonly_038_entries": 523,
+  "production_inference_source_files": 10,
+  "production_inference_source_before_after_identical": true,
+  "production_inference_sha256": {
+    "predict.py": "a9b3608a9d0cdda3339756d82ca9313530f7b964d13df4782d31a93f4d1e872a",
+    "cost.py": "9b0dffd4db6b90921dc5be08b9a9f8208f1e5a8dab3b3461780ee58f799ef140",
+    "deploy_kd.py": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+    "inference_inputs.py": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+    "inference_runtime.py": "3f49ced38900374924786d2a3c8300522e84b642ffda6779da69e58467cc93e6",
+    "inference_reproducibility.py": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed",
+    "fast_lanczos.py": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7",
+    "prepare_inference.py": "6fe2bb7b87f9d36df4d79d358da5663f3b927b1025a353068a09fca9b1ea9297",
+    "native_lanczos/resample.c": "813f452e4f9e98899479939df74d6325ea6739256e0b5fbe74320c301ceaf7af",
+    "native_lanczos/setup.py": "8b7d3509aa17d48b282af37cf92db0034b0da22ee606f851658ca614296814b9"
+  },
+  "manifests_unchanged": true,
+  "train_originals_verified": 30328,
+  "valid_originals_verified": 1422,
+  "test_images_read_for_new_audit": 0,
+  "new_model_builds": 0,
+  "new_model_forwards": 0,
+  "new_training_runs": 0,
+  "test_regenerated": false,
+  "assets_deleted": false,
+  "uploaded": false,
+  "experiment_confirmation_pending": true,
+  "formal_T4_cost_report_pending": true,
+  "checkpoint_storage": "New complete checkpoints require >=6-8GiB local space; local root is ephemeral, persistence/transfer must be resolved before training",
+  "work_free_bytes": 1258291200
+}

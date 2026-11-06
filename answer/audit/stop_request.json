@@ -1,0 +1,9 @@
+{
+  "created_hong_kong": "2026-10-20T12:49:02.078622+08:00",
+  "actual_run_dir": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090",
+  "training_pid": 195922,
+  "training_cmdline": "/environment/miniconda3/envs/cxr4090/bin/python -u /home/featurize/work/cloud_project_v2/train_overnight.py --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 0 --output /home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_0 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --valid-batch-size 4 --num-workers 8 --prefetch-factor 2 --epochs 20 --max-epochs-this-call 1 --patience 4 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/STOP --resume /home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_0/last.pt ",
+  "method": "run STOP file plus one SIGTERM to trainer-supported finish-epoch handler",
+  "signal_count": 1,
+  "original_request_dir_exists": false
+}

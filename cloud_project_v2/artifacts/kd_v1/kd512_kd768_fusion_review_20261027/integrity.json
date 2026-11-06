@@ -1,0 +1,500 @@
+{
+  "audited_at_utc": "2026-10-27T15:11:43.185203+00:00",
+  "status": "passed",
+  "manifest": {
+    "images": 1422,
+    "studies": 859,
+    "patients": 228,
+    "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "positive_studies_per_class": [
+      24,
+      37,
+      46,
+      68,
+      115,
+      177,
+      193,
+      214,
+      260,
+      306
+    ],
+    "single_image_studies": 391,
+    "multiple_image_studies": 468,
+    "labels_binary_consistent_within_study_and_label_ids": true,
+    "image_ids_dicom_ids_and_paths_unique": true
+  },
+  "validation_results": {
+    "kd512_fp16_hflip2": {
+      "rows": 8590,
+      "studies": 859,
+      "patients": 228,
+      "duplicate_study_class_pairs": 0,
+      "missing_or_extra_study_class_pairs": 0,
+      "all_probabilities_finite_in_unit_interval": true,
+      "probability_min": 3.2724223274271935e-05,
+      "probability_max": 0.9994281530380249,
+      "macro_auc": 0.8054022578869962,
+      "per_class_auc": [
+        0.6883233532934132,
+        0.8644374301308608,
+        0.8079576447938392,
+        0.7458540938499293,
+        0.8872837774661056,
+        0.7751959176234737,
+        0.7835426099674804,
+        0.7183873071071506,
+        0.9028444843970721,
+        0.8801959602406364
+      ],
+      "macro_f1_fixed_0_5": 0.44717119251987486,
+      "source_training_macro_auc": 0.8055938343065167,
+      "auc_difference_from_source": -0.00019157641952050053,
+      "actual_inference_bytes": 66995853,
+      "inventory": [
+        {
+          "path": "student_fp16.pt",
+          "bytes": 55712511,
+          "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+        },
+        {
+          "path": "config.json",
+          "bytes": 11283342,
+          "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"
+        }
+      ],
+      "source_checkpoint_sha256": "c61ec92f890db59810ffe5cef8701c87d5260235323194582502510d79e83ded",
+      "validation_report_sha256": "f0d2a1556d4be3d73a3e36628d8e15f0d92c826a77c3b1377556c8cea4ce39ed",
+      "predictions_sha256": "e71579564b236daf95721d3e3d89612b590b7ff13f588d080a2671d72d69f3c4"
+    },
+    "kd768_fp16_hflip2": {
+      "rows": 8590,
+      "studies": 859,
+      "patients": 228,
+      "duplicate_study_class_pairs": 0,
+      "missing_or_extra_study_class_pairs": 0,
+      "all_probabilities_finite_in_unit_interval": true,
+      "probability_min": 7.3828932727337815e-06,
+      "probability_max": 0.9995256662368774,
+      "macro_auc": 0.8039835962505879,
+      "per_class_auc": [
+        0.6928642714570858,
+        0.8538830801604526,
+        0.8002566982191561,
+        0.7453149401353463,
+        0.8807386629266011,
+        0.7769687028845039,
+        0.789867587795049,
+        0.7206404404839527,
+        0.9013098754334147,
+        0.877991703010318
+      ],
+      "macro_f1_fixed_0_5": 0.4421960497584346,
+      "source_training_macro_auc": 0.8041769633268219,
+      "auc_difference_from_source": -0.00019336707623396343,
+      "actual_inference_bytes": 66995857,
+      "inventory": [
+        {
+          "path": "student_fp16.pt",
+          "bytes": 55712511,
+          "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+        },
+        {
+          "path": "config.json",
+          "bytes": 11283346,
+          "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164"
+        }
+      ],
+      "source_checkpoint_sha256": "46e06022d963b58d262eaa99ba376de40c3ef182f50a9619f0d09dcf2a0870b7",
+      "validation_report_sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "predictions_sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0"
+    }
+  },
+  "fp16_states": {
+    "kd512_fp16_hflip2": {
+      "tensors": 182,
+      "numel": 27827818,
+      "all_dtype_float16": true,
+      "all_finite": true,
+      "load_device": "cpu",
+      "model_constructed": false,
+      "forward_calls": 0
+    },
+    "kd768_fp16_hflip2": {
+      "tensors": 182,
+      "numel": 27827818,
+      "all_dtype_float16": true,
+      "all_finite": true,
+      "load_device": "cpu",
+      "model_constructed": false,
+      "forward_calls": 0
+    }
+  },
+  "comparison_recomputed": {
+    "kd512_fp16_hflip2": {
+      "macro_auc": 0.8054022578869962,
+      "per_class_auc": [
+        0.6883233532934132,
+        0.8644374301308608,
+        0.8079576447938392,
+        0.7458540938499293,
+        0.8872837774661056,
+        0.7751959176234737,
+        0.7835426099674804,
+        0.7183873071071506,
+        0.9028444843970721,
+        0.8801959602406364
+      ],
+      "per_class_delta_from_reference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "macro_auc_delta_from_reference": 0.0,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.5925531914893617,
+            0.8655049151027703,
+            0.7647849462365591,
+            0.700870361887311,
+            0.8115425575489473,
+            0.6738396893104985,
+            0.7340946706388612,
+            0.6531409851140871,
+            0.8310690603267022,
+            0.7823628691983122
+          ],
+          "macro_auc": 0.7409763246853411
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.7971435487775357,
+            0.879967178525378,
+            0.8395879323031641,
+            0.8043847346275929,
+            0.9399260048912021,
+            0.8412747524752475,
+            0.8281594111080943,
+            0.703889460922709,
+            0.9433259790402648,
+            0.893857197654666
+          ],
+          "macro_auc": 0.8471516200325855
+        }
+      }
+    },
+    "kd768_fp16_hflip2": {
+      "macro_auc": 0.8039835962505879,
+      "per_class_auc": [
+        0.6928642714570858,
+        0.8538830801604526,
+        0.8002566982191561,
+        0.7453149401353463,
+        0.8807386629266011,
+        0.7769687028845039,
+        0.789867587795049,
+        0.7206404404839527,
+        0.9013098754334147,
+        0.877991703010318
+      ],
+      "per_class_delta_from_reference": [
+        0.004540918163672636,
+        -0.010554349970408272,
+        -0.007700946574683121,
+        -0.0005391537145830183,
+        -0.006545114539504571,
+        0.0017727852610301964,
+        0.006324977827568579,
+        0.002253133376802108,
+        -0.0015346089636574245,
+        -0.0022042572303183627
+      ],
+      "macro_auc_delta_from_reference": -0.0014186616364082472,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.5950354609929078,
+            0.8459934465296395,
+            0.7547491039426524,
+            0.6965948999847306,
+            0.8010977308101908,
+            0.66916024702362,
+            0.7453823237338629,
+            0.656474510029312,
+            0.8336568009057093,
+            0.7808438818565401
+          ],
+          "macro_auc": 0.7378988405809166
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.803679496489954,
+            0.8765678115109601,
+            0.833112582781457,
+            0.8034989296523216,
+            0.9361635417319872,
+            0.8469987623762376,
+            0.8310556008085197,
+            0.7082738233633374,
+            0.9402095973524546,
+            0.893491880833653
+          ],
+          "macro_auc": 0.8473052026900882
+        }
+      }
+    },
+    "equal_mean": {
+      "macro_auc": 0.8071574350639867,
+      "per_class_auc": [
+        0.6946107784431137,
+        0.8636483198526994,
+        0.8068345900850312,
+        0.7499070424630029,
+        0.8854137447405329,
+        0.7787497721888099,
+        0.7886228197109026,
+        0.7210823733970877,
+        0.9034544754077308,
+        0.8792504343509556
+      ],
+      "per_class_delta_from_reference": [
+        0.006287425149700487,
+        -0.0007891102781614201,
+        -0.0011230547088080245,
+        0.0040529486130735926,
+        -0.0018700327255727345,
+        0.0035538545653361897,
+        0.00508020974342227,
+        0.002695066289937098,
+        0.0006099910106587281,
+        -0.0009455258896807761
+      ],
+      "macro_auc_delta_from_reference": 0.0017551771769905855,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.5895390070921986,
+            0.8614834673815907,
+            0.764964157706093,
+            0.7036952206443733,
+            0.8084705496846072,
+            0.6744445151843127,
+            0.7426348891095664,
+            0.6570779929881028,
+            0.8357054288640896,
+            0.7814345991561181
+          ],
+          "macro_auc": 0.7419449827811053
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8058581457274268,
+            0.882194350017583,
+            0.8367917586460634,
+            0.8096257473979479,
+            0.9392989276979997,
+            0.8462639232673267,
+            0.8307840830241048,
+            0.7074766665559504,
+            0.9423607280750138,
+            0.8941677169525272
+          ],
+          "macro_auc": 0.8494822047361943
+        }
+      }
+    }
+  },
+  "comparison_report_sha256": "98a000782a6f6b404e3aa5f767f2d4c6a0edc54b49f1ef03e68f2ce9999c3ea2",
+  "equal_plan_sha256": "cc00d7aade09c0c8a348e9bd23e789c4506a39bc325c77d6a78df60259e6e718",
+  "fixed_plan": {
+    "equal_mean": [
+      0.5,
+      0.5
+    ]
+  },
+  "weights_fitted": false,
+  "thresholds_fitted": false,
+  "bootstrap_metadata_verified": {
+    "reference": "kd512_fp16_hflip2",
+    "samples": 1000,
+    "seed": 20261027,
+    "sampling_unit": "patient_with_all_Studies",
+    "paired": true
+  },
+  "bootstrap_not_recomputed_here": true,
+  "input_file_count": 18,
+  "input_hashes_before": {
+    "/home/featurize/work/cloud_project_v2/compare_student_candidates.py": {
+      "sha256": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+      "bytes": 9106
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": {
+      "sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "bytes": 13902819
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": {
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": {
+      "sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+      "bytes": 2284649
+    },
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": {
+      "sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+      "bytes": 36709
+    },
+    "/home/featurize/work/cloud_project_v2/docs/KD512_KD768_EQUAL_PLAN_20261027.json": {
+      "sha256": "cc00d7aade09c0c8a348e9bd23e789c4506a39bc325c77d6a78df60259e6e718",
+      "bytes": 31
+    },
+    "/home/featurize/work/cloud_project_v2/validate_student.py": {
+      "sha256": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+      "bytes": 5358
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+      "bytes": 11283342
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "3426f15387696bb0ba3ef9ea2054697c6f65a574059eb09c22258a8594f9985d",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "e71579564b236daf95721d3e3d89612b590b7ff13f588d080a2671d72d69f3c4",
+      "bytes": 419059
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "f0d2a1556d4be3d73a3e36628d8e15f0d92c826a77c3b1377556c8cea4ce39ed",
+      "bytes": 2733
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0",
+      "bytes": 419236
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "bytes": 2732
+    },
+    "/home/featurize/work/deliveries/030_kd512_kd768_equal_diagnostic/comparison_report.json": {
+      "sha256": "98a000782a6f6b404e3aa5f767f2d4c6a0edc54b49f1ef03e68f2ce9999c3ea2",
+      "bytes": 11061
+    }
+  },
+  "input_hashes_after": {
+    "/home/featurize/work/cloud_project_v2/compare_student_candidates.py": {
+      "sha256": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+      "bytes": 9106
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": {
+      "sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "bytes": 13902819
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": {
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": {
+      "sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+      "bytes": 2284649
+    },
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": {
+      "sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+      "bytes": 36709
+    },
+    "/home/featurize/work/cloud_project_v2/docs/KD512_KD768_EQUAL_PLAN_20261027.json": {
+      "sha256": "cc00d7aade09c0c8a348e9bd23e789c4506a39bc325c77d6a78df60259e6e718",
+      "bytes": 31
+    },
+    "/home/featurize/work/cloud_project_v2/validate_student.py": {
+      "sha256": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+      "bytes": 5358
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+      "bytes": 11283342
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "3426f15387696bb0ba3ef9ea2054697c6f65a574059eb09c22258a8594f9985d",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "e71579564b236daf95721d3e3d89612b590b7ff13f588d080a2671d72d69f3c4",
+      "bytes": 419059
+    },
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "f0d2a1556d4be3d73a3e36628d8e15f0d92c826a77c3b1377556c8cea4ce39ed",
+      "bytes": 2733
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0",
+      "bytes": 419236
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "bytes": 2732
+    },
+    "/home/featurize/work/deliveries/030_kd512_kd768_equal_diagnostic/comparison_report.json": {
+      "sha256": "98a000782a6f6b404e3aa5f767f2d4c6a0edc54b49f1ef03e68f2ce9999c3ea2",
+      "bytes": 11061
+    }
+  },
+  "original_input_files_unchanged": true,
+  "no_training": true,
+  "no_model_construction_or_forward": true,
+  "no_gpu_work": true,
+  "test_data_usage": false,
+  "limitations": [
+    "Saved CSV independently proves 859 Study x 10 class coverage and exact frozen manifest identity/labels; it does not retain per-image outputs or replay image aggregation.",
+    "1422 image completion is reported by the validator and protected by its StudyAccumulator.complete guard; no new image inference was run in this audit.",
+    "029 source E8 checkpoint SHA was checked against prior completed audit and export/config/report provenance; the 450 MB training checkpoint was not rehashed or loaded again.",
+    "CPU fixed probability blend is exploratory; it is not actual composed deployment FP16 validation or official T4 timing certification.",
+    "Export/config pending validation hints are immutable export-time metadata; the separately hash-bound completed validation report supplies later validation status.",
+    "Training source archives are immutable execution evidence; later equivalent deployment preprocessing is not required to equal the archived training-era deployment code."
+  ]
+}

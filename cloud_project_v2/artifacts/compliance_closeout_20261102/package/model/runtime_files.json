@@ -1,0 +1,26 @@
+{
+  "status": "historical_041_restored_not_final",
+  "precision_declaration": "FP16",
+  "files": [
+    {
+      "file": "model/historical_041/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "present": true,
+      "loaded": "历史041加载；本轮cost三轮已实际加载核验；最终成员未冻结",
+      "counts_500MB": "采用041时计入"
+    },
+    {
+      "file": "model/historical_041/config.json",
+      "bytes": 11284048,
+      "sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+      "present": true,
+      "loaded": "历史041加载；本轮cost三轮已实际加载核验；最终成员未冻结",
+      "counts_500MB": "采用041时计入"
+    }
+  ],
+  "historical_041_recorded_total_bytes": 66996559,
+  "final_total_bytes": null,
+  "engine_files": [],
+  "teacher_files_counted": false
+}

@@ -1,0 +1,26 @@
+checked 25
+checked 50
+checked 75
+checked 100
+{
+  "count": 105,
+  "pillow_version": "10.4.0",
+  "python": "3.12.3",
+  "native_available": true,
+  "no_gpu_work": true,
+  "all_uint8_byte_equal": true,
+  "all_float32_byte_equal": true,
+  "pillow_mean_ms": 54.935531590473104,
+  "native_mean_ms": {
+    "1": 55.33082776189639,
+    "2": 57.127365876186516,
+    "4": 32.30209173335381,
+    "8": 22.912936200018088
+  },
+  "native_p95_ms": {
+    "1": 69.28653019995181,
+    "2": 65.68600919972596,
+    "4": 37.818753399915295,
+    "8": 36.45088700004635
+  }
+}

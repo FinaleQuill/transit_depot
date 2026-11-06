@@ -1,0 +1,84 @@
+{
+  "probe_only": true,
+  "complete": false,
+  "pending_items": [
+    "checkpoint times/hashes for teacher_fold_0 epochs [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]",
+    "checkpoint ledger binding to deployed ancestry for teacher_fold_0",
+    "completed training evidence for teacher_fold_0",
+    "missing training evidence: /home/featurize/work/runs/022_convnext_v1_tiny512_kd/config.json",
+    "complete console-log coverage for student",
+    "missing training evidence: /home/featurize/work/runs/022_convnext_v1_tiny512_kd/checkpoint_audit.jsonl",
+    "complete checkpoint ledger for student",
+    "checkpoint times/hashes for student epochs [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]",
+    "checkpoint ledger binding to deployed ancestry for student",
+    "completed training evidence for student"
+  ],
+  "observed_runs": [
+    {
+      "id": "teacher_fold_0",
+      "observed_epochs": [
+        1,
+        2,
+        3
+      ],
+      "expected_epochs": 20,
+      "missing_epochs": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "ledger_records": 3,
+      "historically_recovered_records": 1
+    },
+    {
+      "id": "student",
+      "observed_epochs": [],
+      "expected_epochs": 25,
+      "missing_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "ledger_records": 0,
+      "historically_recovered_records": 0
+    }
+  ],
+  "copied_small_files": 104,
+  "note": "No deployed checkpoint hash was supplied because the run is still training. This is a real evidence snapshot check, not a final compliance certification."
+}

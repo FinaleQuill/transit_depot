@@ -1,0 +1,31 @@
+{
+  "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/profiler_traces.tar.gz",
+  "bytes": 2138304,
+  "sha256": "95eeed019ef939767b9349ae0e962a19c0591a1e71ef4ca3747fdfaf077c9611",
+  "files": [
+    {
+      "original_local_path": "/tmp/dual768_2080ti_diagnosis/profile_tmp/dual768_forward_profile_ehe102j8/forward_trace.json",
+      "archive_path": "diagnostic_nfs_v1/profiler/forward_trace.json",
+      "bytes": 7469127,
+      "sha256": "4439a29af5d8a998ae63be17ca674d9b59c3adc3ff63881cfa99e807c8f8b73d"
+    },
+    {
+      "original_local_path": "/tmp/dual768_2080ti_diagnosis/profile_tmp/dual768_predictor_profile_t5iwbmwu/predictor_trace.json",
+      "archive_path": "diagnostic_nfs_v1/predictor_path_profiler/predictor_trace.json",
+      "bytes": 7880932,
+      "sha256": "57a765a678503f7d7970130ca52dead456b0f3b0d98e7422f23e868fb1aa9638"
+    },
+    {
+      "original_local_path": "/tmp/dual768_2080ti_diagnosis/profile_tmp/dual768_forward_profile_lx6s8m59/forward_trace.json",
+      "archive_path": "diagnostic_local_v1/profiler/forward_trace.json",
+      "bytes": 7469239,
+      "sha256": "1ed59dfe942079ace1c7e7956c6d5ffa8326c2f170ebf70b7528598679842412"
+    },
+    {
+      "original_local_path": "/tmp/dual768_2080ti_diagnosis/profile_tmp/dual768_predictor_profile_voltl2pf/predictor_trace.json",
+      "archive_path": "diagnostic_local_v1/predictor_path_profiler/predictor_trace.json",
+      "bytes": 7881016,
+      "sha256": "bd01d0b4e384eb9ec73c517f3b2e720146e33f2f6cafa2a9080d8cbc99c1c71d"
+    }
+  ]
+}

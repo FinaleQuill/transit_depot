@@ -1,0 +1,19 @@
+{
+  "state": "paused",
+  "completed_epochs": 5,
+  "validated_epochs": 5,
+  "backward_batches": 60665,
+  "optimizer_updates": 3795,
+  "ema_updates": 3795,
+  "amp_skipped_steps": 0,
+  "best_auc": 0.8013960260129787,
+  "best_epoch": 5,
+  "fold": 1,
+  "output": "/home/featurize/work/runs/020_convnextv2_base768_posbce_cv5_4090/fold_1",
+  "early_stopping": {
+    "reference_auc": 0.8013960260129787,
+    "bad_epochs": 0,
+    "patience": 4,
+    "min_delta": 0.0001
+  }
+}

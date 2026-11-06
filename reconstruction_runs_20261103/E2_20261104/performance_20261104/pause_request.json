@@ -1,0 +1,32 @@
+{
+  "controller_pid": 11416,
+  "progress_at_request": {
+    "attempted_updates": 258,
+    "compute_seconds": 1291.9474979379702,
+    "data_wait_seconds": 1612.004202823031,
+    "elapsed_seconds": 2903.9516899359996,
+    "epoch": 1,
+    "estimated_epoch_seconds": 3907.1094200350153,
+    "gradient_norm": 3.1126296520233154,
+    "images_done": 13463,
+    "learning_rates": [
+      3.7068965517241385e-06,
+      3.7068965517241385e-06,
+      3.7068965517241385e-05,
+      3.7068965517241385e-05
+    ],
+    "mean_loss": 0.44952450438277153,
+    "optimizer_updates": 258,
+    "peak_gpu_bytes": 14325807616,
+    "regions_done": 13463,
+    "skipped_updates": 0,
+    "state": "training",
+    "studies_done": 8256,
+    "studies_total": 11108,
+    "updated_at": "2026-11-04T15:56:31.639076+08:00"
+  },
+  "reason": "Epoch-boundary migration to measured loader execution profile; no science config change",
+  "requested_at": "2026-11-04T15:56:44.018042+08:00",
+  "restart_epoch1": false,
+  "stop_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/STOP"
+}

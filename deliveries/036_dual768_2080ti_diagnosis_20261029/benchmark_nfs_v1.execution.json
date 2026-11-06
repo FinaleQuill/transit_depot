@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-10-29T14:15:38.276911+00:00",
+  "ended_utc": "2026-10-29T14:16:41.048336+00:00",
+  "wall_seconds": 62.7715014920002,
+  "python_arguments": [
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/run_stage.py",
+    "benchmark",
+    "--source-root",
+    "/home/featurize/work/cloud_project_v2",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--bundle-root",
+    "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle",
+    "--output-dir",
+    "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1"
+  ],
+  "exit_code": 0
+}

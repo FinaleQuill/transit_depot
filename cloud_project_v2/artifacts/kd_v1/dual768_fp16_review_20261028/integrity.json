@@ -1,0 +1,679 @@
+{
+  "audited_at_utc": "2026-10-27T17:57:38.434228+00:00",
+  "status": "passed",
+  "manifest": {
+    "images": 1422,
+    "studies": 859,
+    "patients": 228,
+    "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "positive_studies_per_class": [
+      24,
+      37,
+      46,
+      68,
+      115,
+      177,
+      193,
+      214,
+      260,
+      306
+    ],
+    "single_image_studies": 391,
+    "multiple_image_studies": 468,
+    "labels_binary_consistent_within_study_and_label_ids": true,
+    "image_ids_dicom_ids_and_paths_unique": true
+  },
+  "validation_results": {
+    "kd768_seed43_fp16_hflip2": {
+      "rows": 8590,
+      "studies": 859,
+      "patients": 228,
+      "duplicate_study_class_pairs": 0,
+      "missing_or_extra_study_class_pairs": 0,
+      "all_probabilities_finite_in_unit_interval": true,
+      "probability_min": 7.3828932727337815e-06,
+      "probability_max": 0.9995256662368774,
+      "macro_auc": 0.8039835962505879,
+      "per_class_auc": [
+        0.6928642714570858,
+        0.8538830801604526,
+        0.8002566982191561,
+        0.7453149401353463,
+        0.8807386629266011,
+        0.7769687028845039,
+        0.789867587795049,
+        0.7206404404839527,
+        0.9013098754334147,
+        0.877991703010318
+      ],
+      "macro_f1_fixed_0_5": 0.4421960497584346,
+      "source_training_macro_auc": 0.8041769633268219,
+      "auc_difference_from_source": -0.00019336707623396343,
+      "actual_inference_bytes": 66995857,
+      "inventory": [
+        {
+          "path": "student_fp16.pt",
+          "bytes": 55712511,
+          "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+        },
+        {
+          "path": "config.json",
+          "bytes": 11283346,
+          "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164"
+        }
+      ],
+      "source_checkpoint_sha256": "46e06022d963b58d262eaa99ba376de40c3ef182f50a9619f0d09dcf2a0870b7",
+      "validation_report_sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "predictions_sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0"
+    },
+    "kd768_seed44_fp16_hflip2": {
+      "rows": 8590,
+      "studies": 859,
+      "patients": 228,
+      "duplicate_study_class_pairs": 0,
+      "missing_or_extra_study_class_pairs": 0,
+      "all_probabilities_finite_in_unit_interval": true,
+      "probability_min": 3.022546115971636e-05,
+      "probability_max": 0.9992283582687378,
+      "macro_auc": 0.8075124231641647,
+      "per_class_auc": [
+        0.711626746506986,
+        0.8449727099362137,
+        0.804080432108669,
+        0.7590726556109169,
+        0.880201028517999,
+        0.784888248256209,
+        0.7881093528761923,
+        0.7170977323770195,
+        0.9066906382432258,
+        0.8783846872082166
+      ],
+      "macro_f1_fixed_0_5": 0.45111145053663987,
+      "source_training_macro_auc": 0.8075698171794465,
+      "auc_difference_from_source": -5.7394015281819755e-05,
+      "actual_inference_bytes": 66995857,
+      "inventory": [
+        {
+          "path": "student_fp16.pt",
+          "bytes": 55712511,
+          "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+        },
+        {
+          "path": "config.json",
+          "bytes": 11283346,
+          "sha256": "99f417ad850f31ebdd7110659b8845e52c9d37abd93e3b55b9c7043a80abc4ca"
+        }
+      ],
+      "source_checkpoint_sha256": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+      "validation_report_sha256": "d3d7972749eafd08a78530b124f3581b4b0237c14b49c1a9f44e9184fc433466",
+      "predictions_sha256": "45569560225bcae78384d296fe3565303d7f7098e6b100e45d358ecda41ac35a"
+    }
+  },
+  "fp16_states": {
+    "kd768_seed43_fp16_hflip2": {
+      "tensors": 182,
+      "numel": 27827818,
+      "all_dtype_float16": true,
+      "all_finite": true,
+      "load_device": "cpu",
+      "model_constructed": false,
+      "forward_calls": 0
+    },
+    "kd768_seed44_fp16_hflip2": {
+      "tensors": 182,
+      "numel": 27827818,
+      "all_dtype_float16": true,
+      "all_finite": true,
+      "load_device": "cpu",
+      "model_constructed": false,
+      "forward_calls": 0
+    }
+  },
+  "comparison_recomputed": {
+    "kd768_seed43_fp16_hflip2": {
+      "macro_auc": 0.8039835962505879,
+      "per_class_auc": [
+        0.6928642714570858,
+        0.8538830801604526,
+        0.8002566982191561,
+        0.7453149401353463,
+        0.8807386629266011,
+        0.7769687028845039,
+        0.789867587795049,
+        0.7206404404839527,
+        0.9013098754334147,
+        0.877991703010318
+      ],
+      "per_class_delta_from_reference": [
+        -0.01876247504990014,
+        0.008910370224238906,
+        -0.003823733889512848,
+        -0.013757715475570587,
+        0.0005376344086021057,
+        -0.007919545371705028,
+        0.001758234918856627,
+        0.0035427081069332456,
+        -0.005380762809811146,
+        -0.00039298419789857153
+      ],
+      "macro_auc_delta_from_reference": -0.0035288269135768102,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.5950354609929078,
+            0.8459934465296395,
+            0.7547491039426524,
+            0.6965948999847306,
+            0.8010977308101908,
+            0.66916024702362,
+            0.7453823237338629,
+            0.656474510029312,
+            0.8336568009057093,
+            0.7808438818565401
+          ],
+          "macro_auc": 0.7378988405809166
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.803679496489954,
+            0.8765678115109601,
+            0.833112582781457,
+            0.8034989296523216,
+            0.9361635417319872,
+            0.8469987623762376,
+            0.8310556008085197,
+            0.7082738233633374,
+            0.9402095973524546,
+            0.893491880833653
+          ],
+          "macro_auc": 0.8473052026900882
+        }
+      }
+    },
+    "kd768_seed44_fp16_hflip2": {
+      "macro_auc": 0.8075124231641647,
+      "per_class_auc": [
+        0.711626746506986,
+        0.8449727099362137,
+        0.804080432108669,
+        0.7590726556109169,
+        0.880201028517999,
+        0.784888248256209,
+        0.7881093528761923,
+        0.7170977323770195,
+        0.9066906382432258,
+        0.8783846872082166
+      ],
+      "per_class_delta_from_reference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "macro_auc_delta_from_reference": 0.0,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6168439716312057,
+            0.8245457253500148,
+            0.7676523297491039,
+            0.7237746220797068,
+            0.7973703612681249,
+            0.6835487362322532,
+            0.7488248924197286,
+            0.6582274843381803,
+            0.8355436950779018,
+            0.7768565400843882
+          ],
+          "macro_auc": 0.7433188358230609
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8065843621399177,
+            0.8714101512132224,
+            0.8191317144959529,
+            0.8022440392706872,
+            0.9390480968207187,
+            0.8539990717821782,
+            0.8273146891121368,
+            0.6988075862756169,
+            0.9466629895201324,
+            0.8939485268599192
+          ],
+          "macro_auc": 0.8459151227490483
+        }
+      }
+    },
+    "equal_mean": {
+      "macro_auc": 0.8083700732651053,
+      "per_class_auc": [
+        0.7085828343313374,
+        0.8516143881107384,
+        0.8061661051393123,
+        0.7554101286532311,
+        0.8817671809256662,
+        0.7850704972082774,
+        0.7907700446560549,
+        0.7201985075708179,
+        0.9057274945421857,
+        0.8783935515134325
+      ],
+      "per_class_delta_from_reference": [
+        -0.0030439121756485887,
+        0.006641678174524768,
+        0.0020856730306433313,
+        -0.0036625269576857633,
+        0.0015661524076672206,
+        0.00018224895206842007,
+        0.0026606917798626117,
+        0.0031007751937984773,
+        -0.0009631437010401145,
+        8.86430521584991e-06
+      ],
+      "macro_auc_delta_from_reference": 0.0008576501009406323,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6069148936170212,
+            0.8401846887101578,
+            0.7651433691756273,
+            0.7120171018476104,
+            0.8008110100761858,
+            0.6841853950467943,
+            0.7502151605428665,
+            0.6598655095120409,
+            0.8379697018707207,
+            0.77957805907173
+          ],
+          "macro_auc": 0.7436884889470755
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8111837327523601,
+            0.8742234204665338,
+            0.8292862398822662,
+            0.8091090278290396,
+            0.9380447733115946,
+            0.8521813118811882,
+            0.8305125652396899,
+            0.7046534028631214,
+            0.9438775510204082,
+            0.8936745392441594
+          ],
+          "macro_auc": 0.8486746564490362
+        }
+      }
+    },
+    "seed43_25_seed44_75": {
+      "macro_auc": 0.8083844422198005,
+      "per_class_auc": [
+        0.7108283433133733,
+        0.8490169001117905,
+        0.8048826140435318,
+        0.7581988547631442,
+        0.881241234221599,
+        0.7856503802375864,
+        0.7899920646034635,
+        0.7192277041222923,
+        0.9063182226788238,
+        0.8784881041024005
+      ],
+      "per_class_delta_from_reference": [
+        -0.0007984031936126845,
+        0.004044190175576889,
+        0.0008021819348628112,
+        -0.0008738008477726655,
+        0.0010402057035999723,
+        0.000762131981377423,
+        0.001882711727271169,
+        0.0021299717452728517,
+        -0.00037241556440203993,
+        0.00010341689418391642
+      ],
+      "macro_auc_delta_from_reference": 0.0008720190556358309,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.6115248226950354,
+            0.832737563300566,
+            0.7657706093189964,
+            0.7192701175752024,
+            0.7999918079790285,
+            0.6852995479722418,
+            0.7507447864945382,
+            0.6604977297545835,
+            0.8371610329397811,
+            0.77873417721519
+          ],
+          "macro_auc": 0.7441732195245163
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8082788671023966,
+            0.8734028836009846,
+            0.8242825607064017,
+            0.8060825274968627,
+            0.9390480968207187,
+            0.853225556930693,
+            0.8294868313874559,
+            0.7016640648354202,
+            0.9454495311638169,
+            0.8936197417210077
+          ],
+          "macro_auc": 0.8474540661765758
+        }
+      }
+    },
+    "seed43_75_seed44_25": {
+      "macro_auc": 0.8069516389483891,
+      "per_class_auc": [
+        0.7025948103792415,
+        0.8539159597553759,
+        0.8040002139151826,
+        0.7513199970253588,
+        0.8818606825619448,
+        0.7820882416289743,
+        0.7909334204670992,
+        0.7208940085488662,
+        0.9037755233080776,
+        0.8781335318937702
+      ],
+      "per_class_delta_from_reference": [
+        -0.009031936127744444,
+        0.00894324981916228,
+        -8.021819348635884e-05,
+        -0.00775265858555807,
+        0.0016596540439458574,
+        -0.0028000066272346746,
+        0.00282406759090692,
+        0.0037962761718467464,
+        -0.0029151149351481775,
+        -0.00025115531444641626
+      ],
+      "macro_auc_delta_from_reference": -0.000560784215775656,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "per_class_auc": [
+            0.599468085106383,
+            0.8449508489722967,
+            0.760931899641577,
+            0.704382348450145,
+            0.8021217334316376,
+            0.6794104539377348,
+            0.7484938761999338,
+            0.6589459164319789,
+            0.8362984527467788,
+            0.7797468354430379
+          ],
+          "macro_auc": 0.7414750450361504
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "per_class_auc": [
+            0.8104575163398693,
+            0.8763333724065174,
+            0.8298749080206034,
+            0.8078541374474054,
+            0.9374804038377124,
+            0.8497834158415841,
+            0.8314477931637856,
+            0.7066130800146145,
+            0.9421676778819636,
+            0.8938754634957169
+          ],
+          "macro_auc": 0.8485887768449771
+        }
+      }
+    }
+  },
+  "comparison_report_sha256": "710b90b5686bd21155d7ccd78709886bc92a27c5f9b92aae203ea67c35ccda90",
+  "fixed_plan_sha256": "026b5c14cd9409867e78435e7878363b03d0e5d56c09bf86ee825a3a6f20d3ec",
+  "fixed_plan": {
+    "equal_mean": [
+      0.5,
+      0.5
+    ],
+    "seed43_25_seed44_75": [
+      0.25,
+      0.75
+    ],
+    "seed43_75_seed44_25": [
+      0.75,
+      0.25
+    ]
+  },
+  "member_order": [
+    "kd768_seed43_fp16_hflip2",
+    "kd768_seed44_fp16_hflip2"
+  ],
+  "reference": "kd768_seed44_fp16_hflip2",
+  "weights_fitted": false,
+  "thresholds_fitted": false,
+  "bootstrap_metadata_verified": {
+    "reference": "kd768_seed44_fp16_hflip2",
+    "samples": 1000,
+    "seed": 20261027,
+    "sampling_unit": "patient_with_all_Studies",
+    "paired": true
+  },
+  "bootstrap_not_recomputed_here": true,
+  "bootstrap_algorithm_source_sha256": "94e5902bf2d576bd1afc6dbe4cf11a5af5309088bdf1ae009643c50d3b2765ec",
+  "bootstrap_algorithm_review": "Patient IDs are sampled with replacement; all Studies from each sampled patient are concatenated, one shared draw is used for reference and every candidate, class AUC differences are computed first and averaged for macro, and percentile [0.025, 0.975] intervals are emitted; only metadata/schema and algorithm were audited here, saved CI numerical values were not independently recomputed.",
+  "input_file_count": 23,
+  "input_hashes_before": {
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/tiny768_seed44_review_20261028/integrity.json": {
+      "sha256": "e76945c7ebbc3cf2c83babf7dff7a10d99fb8092618a00c55a6b678930beac5e",
+      "bytes": 37078
+    },
+    "/home/featurize/work/cloud_project_v2/compare_student_candidates.py": {
+      "sha256": "94e5902bf2d576bd1afc6dbe4cf11a5af5309088bdf1ae009643c50d3b2765ec",
+      "bytes": 9836
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": {
+      "sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "bytes": 13902819
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": {
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": {
+      "sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+      "bytes": 2284649
+    },
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": {
+      "sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+      "bytes": 36709
+    },
+    "/home/featurize/work/cloud_project_v2/docs/DUAL_TINY768_WEIGHTS_20261027.json": {
+      "sha256": "026b5c14cd9409867e78435e7878363b03d0e5d56c09bf86ee825a3a6f20d3ec",
+      "bytes": 109
+    },
+    "/home/featurize/work/cloud_project_v2/validate_student.py": {
+      "sha256": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+      "bytes": 5358
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0",
+      "bytes": 419236
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "bytes": 2732
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/config.json": {
+      "sha256": "99f417ad850f31ebdd7110659b8845e52c9d37abd93e3b55b9c7043a80abc4ca",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/export_report.json": {
+      "sha256": "99507bd8398cfd3136a1f140ad7f91ca0f272363ab5f18a7fcf51588dacb9e36",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/student_fp16.pt": {
+      "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "45569560225bcae78384d296fe3565303d7f7098e6b100e45d358ecda41ac35a",
+      "bytes": 418994
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "d3d7972749eafd08a78530b124f3581b4b0237c14b49c1a9f44e9184fc433466",
+      "bytes": 2731
+    },
+    "/home/featurize/work/deliveries/032_dual_tiny768_fixed_weights_diagnostic/comparison_report.json": {
+      "sha256": "710b90b5686bd21155d7ccd78709886bc92a27c5f9b92aae203ea67c35ccda90",
+      "bytes": 19311
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best_metrics.json": {
+      "sha256": "5f3df7b1ebe6ce9c1b1f0d0e951615eecf8c6c312a41a8ee51731382947ebeb1",
+      "bytes": 764
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/checkpoint_audit.jsonl": {
+      "sha256": "c4f84a9e9376ca1769d5c6a989c210ad5fc7492609b0964a414ecd63bf65cbb2",
+      "bytes": 46856
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/history.jsonl": {
+      "sha256": "f47900ce656256a3596c091d0006115bc807ce53b62b78a006c6c202e8e9e7ed",
+      "bytes": 19144
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/status.json": {
+      "sha256": "77dc8ba241a869065c58def0a9d304430064777f1bec82c874825cf12d4e6d94",
+      "bytes": 490
+    }
+  },
+  "input_hashes_after": {
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/tiny768_seed44_review_20261028/integrity.json": {
+      "sha256": "e76945c7ebbc3cf2c83babf7dff7a10d99fb8092618a00c55a6b678930beac5e",
+      "bytes": 37078
+    },
+    "/home/featurize/work/cloud_project_v2/compare_student_candidates.py": {
+      "sha256": "94e5902bf2d576bd1afc6dbe4cf11a5af5309088bdf1ae009643c50d3b2765ec",
+      "bytes": 9836
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": {
+      "sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "bytes": 13902819
+    },
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": {
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json": {
+      "sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+      "bytes": 2284649
+    },
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": {
+      "sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+      "bytes": 36709
+    },
+    "/home/featurize/work/cloud_project_v2/docs/DUAL_TINY768_WEIGHTS_20261027.json": {
+      "sha256": "026b5c14cd9409867e78435e7878363b03d0e5d56c09bf86ee825a3a6f20d3ec",
+      "bytes": 109
+    },
+    "/home/featurize/work/cloud_project_v2/validate_student.py": {
+      "sha256": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+      "bytes": 5358
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": {
+      "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/export_report.json": {
+      "sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": {
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "5bf8be8a3cb4c2fb36af41cca6c0553689ba1372ddff4ef0c2577313c64a3ad0",
+      "bytes": 419236
+    },
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "b00d55f35a7d13c3659b9dcf3131282747fcb892fe3f08a463d959a54efea03b",
+      "bytes": 2732
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/config.json": {
+      "sha256": "99f417ad850f31ebdd7110659b8845e52c9d37abd93e3b55b9c7043a80abc4ca",
+      "bytes": 11283346
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/export_report.json": {
+      "sha256": "99507bd8398cfd3136a1f140ad7f91ca0f272363ab5f18a7fcf51588dacb9e36",
+      "bytes": 1099
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/fp16_hflip2/student_fp16.pt": {
+      "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+      "bytes": 55712511
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/valid_fp16_hflip2/valid_predictions.csv": {
+      "sha256": "45569560225bcae78384d296fe3565303d7f7098e6b100e45d358ecda41ac35a",
+      "bytes": 418994
+    },
+    "/home/featurize/work/deliveries/030_tiny768_kd_seed44/valid_fp16_hflip2/validation_report.json": {
+      "sha256": "d3d7972749eafd08a78530b124f3581b4b0237c14b49c1a9f44e9184fc433466",
+      "bytes": 2731
+    },
+    "/home/featurize/work/deliveries/032_dual_tiny768_fixed_weights_diagnostic/comparison_report.json": {
+      "sha256": "710b90b5686bd21155d7ccd78709886bc92a27c5f9b92aae203ea67c35ccda90",
+      "bytes": 19311
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best_metrics.json": {
+      "sha256": "5f3df7b1ebe6ce9c1b1f0d0e951615eecf8c6c312a41a8ee51731382947ebeb1",
+      "bytes": 764
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/checkpoint_audit.jsonl": {
+      "sha256": "c4f84a9e9376ca1769d5c6a989c210ad5fc7492609b0964a414ecd63bf65cbb2",
+      "bytes": 46856
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/history.jsonl": {
+      "sha256": "f47900ce656256a3596c091d0006115bc807ce53b62b78a006c6c202e8e9e7ed",
+      "bytes": 19144
+    },
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/status.json": {
+      "sha256": "77dc8ba241a869065c58def0a9d304430064777f1bec82c874825cf12d4e6d94",
+      "bytes": 490
+    }
+  },
+  "original_input_files_unchanged": true,
+  "no_training": true,
+  "no_model_construction_or_forward": true,
+  "no_gpu_work": true,
+  "test_data_usage": false,
+  "limitations": [
+    "Saved CSV independently proves 859 Study x 10 class coverage and exact frozen manifest identity/labels; it does not retain per-image outputs or replay image aggregation.",
+    "1422 image completion is reported by the validator and protected by its StudyAccumulator.complete guard; no new image inference was run in this audit.",
+    "030 source E8 checkpoint SHA was checked against prior completed audit, native history/best_metrics and export/config/report provenance; the 450 MB training checkpoint was not rehashed or loaded again.",
+    "CPU fixed probability blend is exploratory; it is not actual composed deployment FP16 validation or official T4 timing certification.",
+    "Export/config pending validation hints are immutable export-time metadata; the separately hash-bound completed validation report supplies later validation status.",
+    "Training source archives are immutable execution evidence; later equivalent deployment preprocessing is not required to equal the archived training-era deployment code."
+  ]
+}

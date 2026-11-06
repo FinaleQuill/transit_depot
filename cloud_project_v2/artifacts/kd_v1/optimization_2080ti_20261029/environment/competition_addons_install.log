@@ -1,0 +1,16 @@
+Using CPython 3.12.15 interpreter at: /tmp/dual768_timing_env/bin/python
+Resolved 13 packages in 160ms
+Installed 13 packages in 20ms
+ + anyio==4.15.1
+ + click==8.5.0
+ + h11==0.16.0
+ + hf-xet==1.7.1
+ + httpcore2==2.16.0
+ + httpx2==2.16.0
+ + huggingface-hub==2.3.0
+ + idna==3.20
+ + safetensors==0.8.0
+ + timm==1.0.30
+ + tqdm==4.70.1
+ + truststore==0.10.5
+ + typing-extensions==4.16.0

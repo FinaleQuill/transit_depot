@@ -1,0 +1,42 @@
+[
+  {
+    "file": "interpretation.md",
+    "sha256": "6de0f3d244fc8613251bc599f85a957740f5e72debf08f33250b8b762db1c894",
+    "bytes": 1351
+  },
+  {
+    "file": "license_index_source.md",
+    "sha256": "cb55d01ca87b6b239a55b594fb05bba577967dc6276df256c0c65d9df5f9df34",
+    "bytes": 2640
+  },
+  {
+    "file": "official_rules.pdf",
+    "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "bytes": 544529
+  },
+  {
+    "file": "official_rules.pdf.txt",
+    "sha256": "85cb028cfa5c527fb7ccc8f559b2cd2b3a06f4f1ecdbb678cf846c15e040a51d",
+    "bytes": 8980
+  },
+  {
+    "file": "official_rules.txt",
+    "sha256": "de3590ad9113428b300b919633f6c5e9a3fcbad38bdd7354d5134c3d8bb4f451",
+    "bytes": 8884
+  },
+  {
+    "file": "official_supplement.pdf",
+    "sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "bytes": 220706
+  },
+  {
+    "file": "official_supplement.pdf.txt",
+    "sha256": "50ed638ac586fd4bebc3962f2c83ad710dfb6e70af16baf69aa669ca19a27bc9",
+    "bytes": 11683
+  },
+  {
+    "file": "official_supplement.txt",
+    "sha256": "2626826f9d2fb2d3067a6d1036c9c2e4df89f04e282018d9a88268b0b14552fd",
+    "bytes": 11724
+  }
+]

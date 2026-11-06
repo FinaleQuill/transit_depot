@@ -1,0 +1,29 @@
+test_absent_marker_is_inert (test_planned_handoff.PlannedHandoffTests.test_absent_marker_is_inert) ... ok
+test_exact_retired_launch_has_distinct_receipt_without_creating_fold (test_planned_handoff.PlannedHandoffTests.test_exact_retired_launch_has_distinct_receipt_without_creating_fold) ... ok
+test_fold_zero_and_other_schedule_do_not_even_read_marker (test_planned_handoff.PlannedHandoffTests.test_fold_zero_and_other_schedule_do_not_even_read_marker) ... ok
+test_foreign_artifact_type_is_inert (test_planned_handoff.PlannedHandoffTests.test_foreign_artifact_type_is_inert) ... ok
+test_main_exits_before_logger_or_training_with_both_environment_states (test_planned_handoff.PlannedHandoffTests.test_main_exits_before_logger_or_training_with_both_environment_states) ... ok
+test_main_preview_does_not_run_handoff (test_planned_handoff.PlannedHandoffTests.test_main_preview_does_not_run_handoff) ... ok
+test_marker_must_name_this_absolute_root (test_planned_handoff.PlannedHandoffTests.test_marker_must_name_this_absolute_root) ... ok
+test_matching_malformed_control_fields_fail_visibly (test_planned_handoff.PlannedHandoffTests.test_matching_malformed_control_fields_fail_visibly) ... ok
+test_new_run_is_not_affected_by_an_old_marker (test_planned_handoff.PlannedHandoffTests.test_new_run_is_not_affected_by_an_old_marker) ... ok
+test_child_marker_bypasses_wrapper_and_prevents_recursion (test_training_log_cli.TrainingLogDispatchTests.test_child_marker_bypasses_wrapper_and_prevents_recursion) ... ok
+test_default_sys_argv_is_preserved (test_training_log_cli.TrainingLogDispatchTests.test_default_sys_argv_is_preserved) ... ok
+test_dry_run_never_starts_recorder_or_training (test_training_log_cli.TrainingLogDispatchTests.test_dry_run_never_starts_recorder_or_training) ... ok
+test_explicit_execute_preserves_every_argument_and_returns_wrapper_exit (test_training_log_cli.TrainingLogDispatchTests.test_explicit_execute_preserves_every_argument_and_returns_wrapper_exit) ... ok
+test_direct_teacher_defaults_to_metadata_preview (test_kd_teacher.TeacherProtocolTests.test_direct_teacher_defaults_to_metadata_preview) ... ok
+test_exact_approved_backbones_and_no_v2 (test_kd_teacher.TeacherProtocolTests.test_exact_approved_backbones_and_no_v2) ... ok
+test_final_teacher_contains_only_ema_weights_and_no_optimizer (test_kd_teacher.TeacherProtocolTests.test_final_teacher_contains_only_ema_weights_and_no_optimizer) ... ok
+test_pinned_local_pretrained_file_reaches_timm_overlay (test_kd_teacher.TeacherProtocolTests.test_pinned_local_pretrained_file_reaches_timm_overlay) ... ok
+test_resume_rejects_changed_horizon_and_allows_equivalent_microbatch (test_kd_teacher.TeacherProtocolTests.test_resume_rejects_changed_horizon_and_allows_equivalent_microbatch) ... ok
+test_resume_requires_same_source_and_selection_protocol (test_kd_teacher.TeacherProtocolTests.test_resume_requires_same_source_and_selection_protocol) ... ok
+test_resume_uses_real_material_hash_validation (test_kd_teacher.TeacherProtocolTests.test_resume_uses_real_material_hash_validation) ... ok
+test_runner_default_never_spawns_or_creates_run (test_kd_teacher.TeacherProtocolTests.test_runner_default_never_spawns_or_creates_run) ... ok
+test_runner_resumes_only_same_fold_last (test_kd_teacher.TeacherProtocolTests.test_runner_resumes_only_same_fold_last) ... ok
+test_teacher_cannot_enable_outer_early_stopping (test_kd_teacher.TeacherProtocolTests.test_teacher_cannot_enable_outer_early_stopping) ... ok
+test_unfinished_or_inconsistent_teacher_cannot_export (test_kd_teacher.TeacherProtocolTests.test_unfinished_or_inconsistent_teacher_cannot_export) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.042s
+
+OK

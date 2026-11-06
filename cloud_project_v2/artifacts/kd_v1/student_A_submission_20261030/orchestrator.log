@@ -1,0 +1,6 @@
+{
+  "delivery": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030",
+  "B_progress_after": "study_student epoch=1 studies=6200/18513 images=10127 loss=0.688000 alpha=0.0335",
+  "B_host_pid": 171397,
+  "B_resume_verified": true
+}

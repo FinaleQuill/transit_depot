@@ -1,0 +1,198 @@
+{
+  "assembly": {
+    "execute": true,
+    "output": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/combined",
+    "member_count": 2,
+    "note": "Packaging performs the final source/log/ledger completeness audit."
+  }
+}
+{
+  "cpu_only": true,
+  "models_loaded": false,
+  "training_executed": false,
+  "source_runs_modified": false,
+  "checkpoint_binaries_copied": false,
+  "checkpoint_binaries_hashed_by_builder": true,
+  "assembly": {
+    "execute": true,
+    "output": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/combined",
+    "member_count": 2,
+    "note": "Packaging performs the final source/log/ledger completeness audit."
+  },
+  "collection_complete": true,
+  "pending_items": [],
+  "runs": [
+    {
+      "id": "teacher_fold_0",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "expected_epochs": 20,
+      "missing_epochs": [],
+      "ledger_records": 21,
+      "historically_recovered_records": 1
+    },
+    {
+      "id": "teacher_fold_1",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "expected_epochs": 12,
+      "missing_epochs": [],
+      "ledger_records": 13,
+      "historically_recovered_records": 0
+    },
+    {
+      "id": "teacher_fold_2",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "expected_epochs": 12,
+      "missing_epochs": [],
+      "ledger_records": 13,
+      "historically_recovered_records": 0
+    },
+    {
+      "id": "teacher_fold_3",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "expected_epochs": 12,
+      "missing_epochs": [],
+      "ledger_records": 13,
+      "historically_recovered_records": 0
+    },
+    {
+      "id": "teacher_fold_4",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "expected_epochs": 12,
+      "missing_epochs": [],
+      "ledger_records": 13,
+      "historically_recovered_records": 0
+    },
+    {
+      "id": "student_0",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "expected_epochs": 13,
+      "missing_epochs": [],
+      "ledger_records": 21,
+      "historically_recovered_records": 0
+    },
+    {
+      "id": "student_1",
+      "observed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "expected_epochs": 13,
+      "missing_epochs": [],
+      "ledger_records": 21,
+      "historically_recovered_records": 0
+    }
+  ],
+  "copied_small_file_count": 350,
+  "historical_missing_evidence": [
+    {
+      "blocking": false,
+      "detail": "Epoch1 hash and trainer status commit timestamp recovered from an earlier original read-only tool observation. Exact checkpoint file mtime was not retained by the former code and cannot be recreated; no substitute is claimed to be that file mtime."
+    },
+    {
+      "blocking": false,
+      "detail": "Pre-attachment console output is recovered rendered tmux history, with all expected logged batch markers verified. Raw byte-exact stdout/stderr capture begins at 16:06:17 HKT."
+    },
+    {
+      "blocking": false,
+      "detail": "The command_20261025T133827Z_c1c4fc8e.json controller receipt was not finalized: ended_at, exit_code and console_bytes remain absent/null in the original. Its original log ends with a child RuntimeError. No replacement receipt timestamp or exit code is fabricated. The later command_20261026T051826Z_5864de2d.json is finalized with exit0; original failed/restarted logs and ledger entries are retained."
+    }
+  ]
+}

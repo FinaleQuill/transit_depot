@@ -1,0 +1,24 @@
+{
+  "full_decode": {
+    "macro_auc": 0.8168300303208815,
+    "mean_ms": 92.86636877332967,
+    "round_mean_ms": [
+      89.88896531995579,
+      94.15303780000158,
+      94.55710320003163
+    ],
+    "meets_requested_auc_and_latency": false,
+    "asset_bytes": 241433577
+  },
+  "draft_target768": {
+    "macro_auc": 0.8166770734158482,
+    "mean_ms": 84.82014125668533,
+    "round_mean_ms": [
+      86.07328883005266,
+      85.42330082998433,
+      82.96383411001898
+    ],
+    "meets_requested_auc_and_latency": false,
+    "asset_bytes": 241433757
+  }
+}

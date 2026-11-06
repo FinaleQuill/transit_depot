@@ -1,0 +1,66 @@
+{
+  "verified_at": "2026-11-05T20:07:45.890030+08:00",
+  "source_commit": "d2217a6",
+  "cpu_tests_passed": 15,
+  "gpu_smoke_runs": 2,
+  "gpu_resume_sessions": 1,
+  "formal_training_runs_started": 1,
+  "formal_completed_epochs": 0,
+  "original_sources_unchanged": {
+    "source_manifest": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "fold_plan": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+    "train_manifest": "ca9107643889bfc294cb9198bfe3a93beadc43dd9e125008c8ca4d494b662f84",
+    "dev_manifest": "dbd3983c58cafd59cf30d64262d7e027fcf5183e4133d431581c3ac0aaeaccbb",
+    "pretrained_path": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+    "provenance_path": "664e61f9707d77d191dd9b4b60b2a9f329bc34724cabc430429bdaf89d58f839",
+    "rules.pdf": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "rules_1.pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "RULES_QA_CLARIFICATION_20261104.md": "f4c4e2d2e6d55167ac13ae4ce42549140d9818789886a9f1b289e88961bb21f5"
+  },
+  "preserved_csv": {
+    "submission_best.csv": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+    "submission_sprint_0817963.csv": "099e82fa107278d6ff35a358bb2cbee2a38fb5b94b1a60758e3fd4fd9cd059a3",
+    "submission_robust_0818992.csv": "fedbbbef4fd45763a8f88bc2a7bfab36e6bc3ecd33bce0487ad54eaa7da29d5f"
+  },
+  "controller": {
+    "controller_pid": 218075,
+    "ppid": 1,
+    "session_id": 218075,
+    "stdin": "/dev/null",
+    "state": "running",
+    "container": "cxr-breakthrough-dinov2-20261105"
+  },
+  "observed_progress": {
+    "state": "training",
+    "epoch": 1,
+    "epochs": 18,
+    "studies_done": 992,
+    "studies_total": 14811,
+    "images_done": 1640,
+    "loss": 0.7495466005958377,
+    "elapsed_seconds": 191.38848304400744,
+    "estimated_epoch_seconds": 2857.514941899994,
+    "peak_gpu_bytes": 3281845760,
+    "gradient_norm": 8.045212745666504,
+    "head_lr": 1.3390928725701946e-05,
+    "attempted_updates": 31,
+    "optimizer_updates": 31,
+    "skipped_updates": 0,
+    "updated_at": "2026-11-05T20:07:41.985153+08:00"
+  },
+  "independent_review": {
+    "controller_pid": 218075,
+    "trainer_pid": 218114,
+    "optimizer_updates_observed": [
+      15,
+      19
+    ],
+    "studies_observed": [
+      480,
+      608
+    ],
+    "source_hashes_verified": 13,
+    "input_hashes_verified": 6,
+    "single_gpu_training_process": true
+  }
+}

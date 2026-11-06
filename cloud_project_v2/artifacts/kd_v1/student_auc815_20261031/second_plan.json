@@ -1,0 +1,29 @@
+{
+  "after_initial_equal_mean": 0.8147866171472288,
+  "coarse_probability_blends": {
+    "A25_B75": [
+      0.25,
+      0.75,
+      0
+    ],
+    "A75_B25": [
+      0.75,
+      0.25,
+      0
+    ]
+  },
+  "multiscale": {
+    "resolutions": [
+      640,
+      768,
+      896
+    ],
+    "flip": "identity+hflip",
+    "each_model_scales": "equal probability mean, before Study mean",
+    "A_B": "equal probability mean",
+    "test_used": false
+  },
+  "no_per_class_fit": true,
+  "no_rank_aggregation_over_valid_or_test": true,
+  "notes": "This is a second exploratory batch selected after initial validation; not independent confirmation. If >=.815, validate real per-image predictor then stop this batch before proposing further training."
+}

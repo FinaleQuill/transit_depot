@@ -1,0 +1,8 @@
+{
+  "captured_utc": "2026-11-01T19:49:57.485995+00:00",
+  "source": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/A_tiny/last.pt",
+  "immutable_copy": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+  "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf",
+  "completed_epochs": 1,
+  "original_source_receipt": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/pipeline_sources.json"
+}

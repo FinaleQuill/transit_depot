@@ -1,0 +1,275 @@
+{
+  "created_at_utc": "2026-10-31T07:52:11.895961+00:00",
+  "scope": "Final selected draft_target768 only vs original B; no search",
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "num_images": 1422,
+  "num_studies": 859,
+  "num_patients": 228,
+  "source_validations": [
+    {
+      "name": "selected",
+      "report_sha256": "8299677878443dbe38f62ffa204b4f9fd8e597db8e8c007bd65bb917710ad904",
+      "predictions_sha256": "680ac4c48654baa1f0fe9df42a90a81ca8fdf0947a29e5e39f2f865a61fe44a9",
+      "image_predictions_sha256": "9762ab6179e6ed1d3aee4f5c2462e96b64998233a4d79a23a3b231796f355cb2",
+      "image_to_Study_reaggregation_bit_exact": true
+    },
+    {
+      "name": "B",
+      "report_sha256": "d8c8da462af3d0b3b413b80cab04dda1d7a3250524c5b99aa79175989b08aabb",
+      "predictions_sha256": "4fefff394a6263a264cecfea195df3854921828183b78607284eb472500979e5",
+      "image_predictions_sha256": "9726800e59f8311535c53ce1228bb7c9d43c45b187145ca50339c5032a1f6231",
+      "image_to_Study_reaggregation_bit_exact": true
+    }
+  ],
+  "scores": {
+    "selected": {
+      "macro_auc": 0.8166770734158482,
+      "per_class_auc": [
+        0.7414670658682635,
+        0.8590451765634247,
+        0.8089470025135034,
+        0.7611734959470514,
+        0.883087891538102,
+        0.7942243650280829,
+        0.79978683346559,
+        0.7253205824820691,
+        0.911294465134198,
+        0.8824238556181967
+      ],
+      "class_1_4_8_mean_auc": 0.7426537147657947,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "macro_auc": 0.7561290380019972,
+          "per_class_auc": [
+            0.6671985815602837,
+            0.867590110217456,
+            0.7761648745519714,
+            0.7059092991296381,
+            0.8085115097894651,
+            0.6935442796205513,
+            0.7571665011585568,
+            0.6625380769009713,
+            0.8405574424497277,
+            0.7821097046413502
+          ],
+          "class_1_4_8_mean_auc": 0.6785486525302976
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "macro_auc": 0.8520325795665864,
+          "per_class_auc": [
+            0.8109416606148633,
+            0.8581643418122142,
+            0.8211920529801324,
+            0.82497970030265,
+            0.9370414498024707,
+            0.8603805693069307,
+            0.8377832081334661,
+            0.7192347294649085,
+            0.9516547159404303,
+            0.8989533673077977
+          ],
+          "class_1_4_8_mean_auc": 0.785052030127474
+        }
+      }
+    },
+    "B": {
+      "macro_auc": 0.8105695698808949,
+      "per_class_auc": [
+        0.743687624750499,
+        0.83524034983889,
+        0.8029841167976897,
+        0.7503904216553878,
+        0.8824567554932211,
+        0.7856338121510347,
+        0.7946521651184864,
+        0.7246902847207128,
+        0.9078207268524464,
+        0.8781394414305806
+      ],
+      "class_1_4_8_mean_auc": 0.7395894437088666,
+      "slices": {
+        "single_image_study": {
+          "num_studies": 391,
+          "macro_auc": 0.7471116837394904,
+          "per_class_auc": [
+            0.6688829787234043,
+            0.8215668751861781,
+            0.7769713261648745,
+            0.696060467246908,
+            0.8067092651757188,
+            0.6836442350544343,
+            0.7562396557431315,
+            0.6556411288005057,
+            0.8323629306162057,
+            0.7730379746835443
+          ],
+          "class_1_4_8_mean_auc": 0.6735281915902727
+        },
+        "multiple_image_study": {
+          "num_studies": 468,
+          "macro_auc": 0.8479508665930361,
+          "per_class_auc": [
+            0.8172355361897845,
+            0.8547649747977962,
+            0.8063281824871229,
+            0.8083708570163136,
+            0.9372922806797517,
+            0.8510210396039604,
+            0.8301807101698495,
+            0.7267412894011359,
+            0.9513237727523441,
+            0.8962500228323013
+          ],
+          "class_1_4_8_mean_auc": 0.7841158942024115
+        }
+      }
+    }
+  },
+  "selected_minus_B": {
+    "macro_auc_delta": 0.0061075035349532625,
+    "class_1_4_8_mean_delta": 0.0030642710569280807,
+    "patient_paired_bootstrap": {
+      "samples": 1000,
+      "seed": 20261031,
+      "sampling_unit": "patient_with_all_Studies",
+      "per_class_delta": [
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.007855735742940777,
+            0.002370797380693125
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            0.0003689216036569743,
+            0.06285997519552566
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.008776130588217598,
+            0.022986724142672485
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.004876857823509067,
+            0.03126424147971053
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.003628143771740258,
+            0.0058452661407416276
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            0.0008958968236917859,
+            0.01579617063128162
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.0026553272185934674,
+            0.011933154433589057
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.008099363636762984,
+            0.010234594667442077
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            -0.00011511783394311525,
+            0.008369665737802224
+          ]
+        },
+        {
+          "valid_resamples": 1000,
+          "ci95": [
+            0.00027657657657658737,
+            0.008626976597090445
+          ]
+        }
+      ],
+      "macro_auc_delta": {
+        "valid_resamples": 1000,
+        "ci95": [
+          0.0025178708648684474,
+          0.010501455283398188
+        ]
+      },
+      "class_1_4_8_mean_delta": {
+        "valid_resamples": 1000,
+        "ci95": [
+          -0.003209897083178482,
+          0.010414431469104228
+        ]
+      }
+    }
+  },
+  "timing_audit": {
+    "actual_report_sha256": "fce5fc7a138d5d1e1aa99106bd5cf613105b35b85368447e2d524236e78f2a03",
+    "independently_recomputed_mean_ms": 84.82014125668532,
+    "independently_recomputed_round_mean_ms": [
+      86.07328883005266,
+      85.42330082998433,
+      82.96383411001898
+    ],
+    "three_round_100_image_records_valid": true,
+    "round_checks": [
+      {
+        "round": 1,
+        "images": 100,
+        "studies": 53,
+        "exact_image_probability_match": true,
+        "exact_Study_probability_match": true,
+        "complete_Studies": true,
+        "study_csv_sha256": "3db70fc57c4261bfad065c03f6ae6c7ea5d67d0689da2deb1dd4dc76c6343112",
+        "image_csv_sha256": "ac0ae9abc3c01eb468194b21e124d8eb7f380a20b042298ae160e6b8fa9469c2"
+      },
+      {
+        "round": 2,
+        "images": 100,
+        "studies": 53,
+        "exact_image_probability_match": true,
+        "exact_Study_probability_match": true,
+        "complete_Studies": true,
+        "study_csv_sha256": "3db70fc57c4261bfad065c03f6ae6c7ea5d67d0689da2deb1dd4dc76c6343112",
+        "image_csv_sha256": "ac0ae9abc3c01eb468194b21e124d8eb7f380a20b042298ae160e6b8fa9469c2"
+      },
+      {
+        "round": 3,
+        "images": 100,
+        "studies": 53,
+        "exact_image_probability_match": true,
+        "exact_Study_probability_match": true,
+        "complete_Studies": true,
+        "study_csv_sha256": "3db70fc57c4261bfad065c03f6ae6c7ea5d67d0689da2deb1dd4dc76c6343112",
+        "image_csv_sha256": "ac0ae9abc3c01eb468194b21e124d8eb7f380a20b042298ae160e6b8fa9469c2"
+      }
+    ],
+    "device": "2080Ti",
+    "T4_certified": false,
+    "80ms_achieved": false
+  },
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "interpretation": "Repeated official-valid manual candidate/epoch/hyperparameter selection; exploratory patient CI does not account for selection. Final selected candidate is actual .8166770734158482, not cached-fusion .8168300303208815. 84.82014125668533ms exceeds later 80ms goal. No further optimization performed.",
+  "new_model_inference": false,
+  "test_predictions_read": false
+}

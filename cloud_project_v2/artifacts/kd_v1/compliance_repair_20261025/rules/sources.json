@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+    "retrieved_at": "2026-10-25T16:06:04.145273+08:00",
+    "final_url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 54627,
+    "sha256": "7aaa706dc268be4401de8e4a6375811ec8919295fc2d59b572de6b0ff01a1ea5",
+    "file": "official_task.html"
+  },
+  {
+    "url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+    "retrieved_at": "2026-10-25T16:06:04.448565+08:00",
+    "final_url": "https://ncccu2026.oss-cn-zhangjiakou.aliyuncs.com/ueditor/20261023/aa80bececc2ee40e69cde5f8f2a0eaec.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 544529,
+    "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "file": "official_rules.pdf"
+  },
+  {
+    "url": "https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2",
+    "retrieved_at": "2026-10-25T16:06:04.812220+08:00",
+    "final_url": "https://docs.qq.com/sheet/DQ3ZrUFpMRURDSUJ6?tab=BB08J2",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 448659,
+    "sha256": "40d916c18626ea27ec536bb78f1f21262acac9f0b54e4118b3846967a59a96e0",
+    "file": "qa_public_page.html"
+  },
+  {
+    "url": "https://docs.qq.com/dop-api/opendoc?tab=BB08J2&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&&block_end_col=31&block_end_row=255&block_start_col=0&block_start_row=0&id=DQ3ZrUFpMRURDSUJ6&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=&t=0c6a0125f1194bd08e8002c6feb2c639",
+    "retrieved_at": "2026-10-25T16:07:03.654032+08:00",
+    "http_status": 200,
+    "content_type": "application/javascript; charset=utf-8",
+    "bytes": 18669,
+    "sha256": "f2af57d1d5cf702dece8eabbcd8352b4b389da075408acca6b5afdccebb8c01f",
+    "file": "qa_public_opendoc.jsonp",
+    "request_type": "exact unauthenticated preload URL from the public page"
+  }
+]

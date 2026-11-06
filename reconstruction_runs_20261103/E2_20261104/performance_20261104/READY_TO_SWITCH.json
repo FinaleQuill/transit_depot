@@ -1,0 +1,23 @@
+{
+  "automatic_retry": false,
+  "bound_sha256": {
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller_performance.py": "06bcc7d604c7a43e67f35e63d1886b523103d844bc9ddf70cff9e67ddc645f7b",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_performance.py": "fa46d7b46fd9832cf239a64aacb667219ed087583f2de4903456e8203448a93c",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/controller_official_cpu_tests.log": "473262ac8f93ffc5078b47551fc9cd80e238f2d750bae8f6b29d7a052cced503",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/input_global_concurrent_64.json": "48a5f3e9097bc8907451078994cb967542bef0f3544c02a634ad3f2d1226b3da",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/input_local_concurrent_64.json": "5bcc0900befac0df3746a8af0ab58c1788bbca5d5165fe2161fcd621534d44df",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/input_local_highworkload32_delayed.json": "776be07cea33e5970c20e20a13a2958ffe437e42dcdf7f443850f73ebb0a911f",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/loader_workers6_prefetch2.json": "5f705ecc0bcd56535871bbe9e898d819ac0ad6b5d3b29f3c1c84efd093fa76ec",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/profile_preflight.log": "1a1021a7da69e79cbc0adc9fe9715e8f85847bc4c870917b9eeb5bf1c3d6daac",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/resume_when_paused.py": "ef655eb5a1c2981830c8d48a36734ea8efc33be268b2cbad4e6a1ab5c972d966",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/trainer_adapter_official_cpu_tests_20261104.log": "b49d5b0a61c55e012fd350aed6a3bdacb02ceca147d7c908dc674237bbfae430"
+  },
+  "controller_stop_sha256": "13b60372c4516100e0612cff2366a00a8f2f3ea25e16dfba69c53ffe37bee7a9",
+  "decision": "six workers with prefetch2; exact train input/order matches; bounded local memory; preserve all scientific settings",
+  "original_controller_pid": 11416,
+  "passed": true,
+  "pending_gate": "original complete epoch1/evaluation/checkpoint and closed paused lifecycle",
+  "recorded_at": "2026-11-04T16:22:00.437124+08:00",
+  "scientific_configuration_changed": false,
+  "source_commit": "85236b22d6c8dfdefa3bc16550a3efccd79fc726"
+}

@@ -1,0 +1,37 @@
+{
+  "reviewed_hong_kong": "2026-10-30T03:01:33.922189+08:00",
+  "scope": "Read-only static audit of current production integration; no new tests or GPU work in this review",
+  "files_sha256": {
+    "deploy_kd.py": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+    "inference_inputs.py": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+    "tests/test_inference_inputs_lut.py": "5b77af41d5427516f8861106b26320ba2af71d6b8769d56a0ef93a2ec20a6180",
+    "tests/test_fast_inference_inputs.py": "42c3e98bfb1f42b8daf4bcba81302c8e9658fd5ff226c97fe688dd96d4fc241d"
+  },
+  "conclusion": "No computation-semantic or pinned-staging-reuse issue found in reviewed integration",
+  "checked": [
+    "Normalization table preserves NumPy FP32 copy/subtract/divide order, then original FP32-to-CUDA-FP16 conversion.",
+    "One input per unique size, identity and hflip reuse, four serial member/view forwards, original FP32 sigmoid and TTA means retained.",
+    "Packed transfer preserves 20 original FP32 means plus one raw-logit finite flag; FP64 member and Study arithmetic unchanged.",
+    "Normal gray path has asynchronous pinned H2D and one final payload D2H; no additional explicit normal-path fence.",
+    "Shape/model/other errors trigger a staging fence before rethrow; caller retry cannot overwrite unfinished pinned H2D source.",
+    "Nonfinite logits still rejected even when sigmoid produces finite 0/1.",
+    "RGB and non-8bit behavior retained.",
+    "Public load_image_arrays remains available; its letterbox now delegates native resize, so source_baseline_v1 must stay the independent original-Pillow oracle.",
+    "Updated old CPU fake constructors now initialize ExactU8Input and check zero tensor bool / one 21-float result transfer."
+  ],
+  "new_module_cpu_checks": {
+    "tests": 6,
+    "result": "OK",
+    "seconds": 2.184,
+    "environment": "Pinned competition image, torch2.10.0+cu128 / NumPy1.26.4",
+    "gpu_runs_by_this_agent": 0
+  },
+  "must_still_accept": [
+    "Final integrated GPU FP16 input and output parity after all native/module edits.",
+    "Final integrated 100+5 image three-round E2E with all slow rounds retained.",
+    "Final package includes inference_inputs.py and native/dependency build materials (assigned to compliance agent).",
+    "Real T4 official assessment remains separate; architecture compatibility is not latency certification."
+  ],
+  "source_edits_in_this_review": 0,
+  "recommended_code_fixes": []
+}

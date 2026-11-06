@@ -1,0 +1,301 @@
+{
+  "created_utc": "2026-10-29T09:08:13.206490+00:00",
+  "scope": "CPU-only diagnostic after both artifact validation jobs stopped; fixed8 images,3 alternating-order observations per implementation; no formal GPU/end-to-end benchmark",
+  "comparison": "current_v1 includes CHW normalization and deferred finite checks; CPU load path only,not old033",
+  "python": "3.12.15",
+  "numpy": "1.26.4",
+  "Pillow": "10.4.0",
+  "max_workers_per_source_image": 4,
+  "cross_image_prefetch": false,
+  "current_v1_source_sha256": "ef914deeba87c86817e6600388079b49c94dc7a8224d28714b2d8d0e20c27bd8",
+  "parallel_source_sha256": "087a37b4031632adb88f718ed8d9c8e9f233d6b8e6a4c63cfc2e3e57a44a935d",
+  "all_float32_byte_parity_checks_pass": true,
+  "mean_sample_median_ms": {
+    "current_v1_load768_ms": 97.7569868749697,
+    "parallel_both_axes4_load768_ms": 88.06954250013632
+  },
+  "net_cpu_ms_saved": 9.687444374833376,
+  "cgroup_before": {
+    "proc_self_cgroup": "0::/user.slice/user-1000.slice/session-1.scope\n",
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "entries": [
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/session-1.scope",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2129400124\nuser_usec 1713922496\nsystem_usec 415477627\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2129641477\nuser_usec 1714092006\nsystem_usec 415549471\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice",
+        "cpu.max": "max 100000\n",
+        "cpu.stat": "usage_usec 2129649490\nuser_usec 1714100041\nsystem_usec 415549449\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2679095285\nuser_usec 1974793338\nsystem_usec 703663411\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      }
+    ]
+  },
+  "cgroup_after": {
+    "proc_self_cgroup": "0::/user.slice/user-1000.slice/session-1.scope\n",
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "entries": [
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/session-1.scope",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2141451271\nuser_usec 1725383805\nsystem_usec 416067465\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2141692624\nuser_usec 1725553311\nsystem_usec 416139312\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup/user.slice",
+        "cpu.max": "max 100000\n",
+        "cpu.stat": "usage_usec 2141692624\nuser_usec 1725553311\nsystem_usec 416139312\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      },
+      {
+        "path": "/sys/fs/cgroup",
+        "cpu.max": null,
+        "cpu.stat": "usage_usec 2691135373\nuser_usec 1986176957\nsystem_usec 704319411\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\n",
+        "cpu.cfs_quota_us": null,
+        "cpu.cfs_period_us": null
+      }
+    ]
+  },
+  "loadavg": "1.92 2.01 1.68 2/450 17475\n",
+  "samples": [
+    {
+      "sample_index": 0,
+      "source_mode": "L",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          126.94175199976598,
+          130.75728500007244,
+          123.19266300028175
+        ],
+        "parallel_both_axes4_load768_ms": [
+          112.65313700005208,
+          107.55385099992054,
+          114.50014999991254
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 126.94175199976598,
+        "parallel_both_axes4_load768_ms": 112.65313700005208
+      }
+    },
+    {
+      "sample_index": 1,
+      "source_mode": "L",
+      "source_size": [
+        2597,
+        2539
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          129.97748099996898,
+          117.74943599994003,
+          115.96452999992835
+        ],
+        "parallel_both_axes4_load768_ms": [
+          117.57777499997246,
+          97.81585599967002,
+          104.28597600002831
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 117.74943599994003,
+        "parallel_both_axes4_load768_ms": 104.28597600002831
+      }
+    },
+    {
+      "sample_index": 2,
+      "source_mode": "L",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          129.13589200024944,
+          134.56002099974285,
+          123.81526399985887
+        ],
+        "parallel_both_axes4_load768_ms": [
+          112.39916000022276,
+          116.29569500018988,
+          111.67003399987152
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 129.13589200024944,
+        "parallel_both_axes4_load768_ms": 112.39916000022276
+      }
+    },
+    {
+      "sample_index": 3,
+      "source_mode": "L",
+      "source_size": [
+        2431,
+        2539
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          112.89589299985892,
+          102.42613700029324,
+          110.25474699999904
+        ],
+        "parallel_both_axes4_load768_ms": [
+          99.99392600002466,
+          90.83214400016004,
+          98.02841600003376
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 110.25474699999904,
+        "parallel_both_axes4_load768_ms": 98.02841600003376
+      }
+    },
+    {
+      "sample_index": 4,
+      "source_mode": "L",
+      "source_size": [
+        2920,
+        2395
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          116.32696200013015,
+          129.1714270000739,
+          113.45989700021164
+        ],
+        "parallel_both_axes4_load768_ms": [
+          100.35744599963436,
+          126.62986699979228,
+          100.92987600000924
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 116.32696200013015,
+        "parallel_both_axes4_load768_ms": 100.92987600000924
+      }
+    },
+    {
+      "sample_index": 5,
+      "source_mode": "L",
+      "source_size": [
+        1620,
+        2022
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          63.7534779998532,
+          63.89089000003878,
+          65.46925700013162
+        ],
+        "parallel_both_axes4_load768_ms": [
+          64.37448299993775,
+          58.569059999626916,
+          60.26800200015714
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 63.89089000003878,
+        "parallel_both_axes4_load768_ms": 60.26800200015714
+      }
+    },
+    {
+      "sample_index": 6,
+      "source_mode": "L",
+      "source_size": [
+        1560,
+        2022
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          58.0049769996549,
+          57.76591499989081,
+          56.64040000010573
+        ],
+        "parallel_both_axes4_load768_ms": [
+          54.018618000100105,
+          55.14689800020278,
+          57.54071700039276
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 57.76591499989081,
+        "parallel_both_axes4_load768_ms": 55.14689800020278
+      }
+    },
+    {
+      "sample_index": 7,
+      "source_mode": "L",
+      "source_size": [
+        2022,
+        1736
+      ],
+      "all_ms": {
+        "current_v1_load768_ms": [
+          59.99030099974334,
+          61.70391199975711,
+          59.93823500011786
+        ],
+        "parallel_both_axes4_load768_ms": [
+          64.3039259998659,
+          60.08808400019916,
+          60.84487500038449
+        ]
+      },
+      "median_ms": {
+        "current_v1_load768_ms": 59.99030099974334,
+        "parallel_both_axes4_load768_ms": 60.84487500038449
+      }
+    }
+  ],
+  "training_or_gpu_executed": false,
+  "production_source_changed": false
+}

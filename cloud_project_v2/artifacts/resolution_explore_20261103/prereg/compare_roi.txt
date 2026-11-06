@@ -1,0 +1,4 @@
+Hypothesis: ROI-only training either adds complementary evidence to the matched full-frame Tiny or is not worth a second member.
+Expected effect: 2000 paired patient resamples, AP-only and per-class deltas, residual-error correlation, and fixed 50:50 fusion.
+Cost: CPU metric aggregation plus 30 three-image Studies x3 rounds for the ROI/full-frame pair in identity and hflip2 modes.
+Failure criterion: different valid identities, incomplete compliance, fitted fusion coefficients, or any test access.

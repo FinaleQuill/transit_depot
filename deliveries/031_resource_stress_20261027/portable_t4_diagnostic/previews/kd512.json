@@ -1,0 +1,84 @@
+{
+  "T4_elapsed_ms": null,
+  "T4_latency_certified": false,
+  "coverage": {
+    "hashes_verified": true,
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "measured": {
+      "complete_studies_proven": true,
+      "images": 100,
+      "patients": 40,
+      "studies": 53
+    },
+    "origin_split": "valid",
+    "patient_disjoint": true,
+    "selection_sha256": "3604d31261dd3fdf4736fc50cc19573acabdafd4c79853d8feb7682f6fcd43c5",
+    "warmup": {
+      "complete_studies_proven": true,
+      "images": 5,
+      "patients": 4,
+      "studies": 4
+    }
+  },
+  "deployment": {
+    "ensemble": false,
+    "image_sizes": [
+      512
+    ],
+    "member_count": 1,
+    "members": [
+      {
+        "image_size": 512,
+        "seed": 43,
+        "source_checkpoint_schema_version": 8,
+        "source_checkpoint_sha256": "c61ec92f890db59810ffe5cef8701c87d5260235323194582502510d79e83ded",
+        "training_mode": "distillation",
+        "tta": "hflip2",
+        "weights_file": "student_fp16.pt",
+        "weights_sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+        "weights_source": "ema"
+      }
+    ],
+    "tta": "hflip2"
+  },
+  "deployment_config_sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+  "executed": false,
+  "inference_files": {
+    "files": [
+      {
+        "bytes": 55712511,
+        "path": "student_fp16.pt",
+        "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+      },
+      {
+        "bytes": 11283342,
+        "path": "config.json",
+        "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"
+      }
+    ],
+    "limit_bytes": 500000000,
+    "size_pass": true,
+    "total_bytes": 66995853
+  },
+  "local_stress_test": true,
+  "note": "Dedicated local stress test. MPS and an allocator cap do not emulate T4 architecture, bandwidth, memory or latency. Actual T4 retest required.",
+  "official_compliance_pass": false,
+  "profile": "actual_t4_diagnostic",
+  "protocol": {
+    "aggregation": "per_image_three_round_mean_then_100_image_mean",
+    "batch_size": 1,
+    "execution": "serial",
+    "measured_images": 100,
+    "model_initialization_timed": false,
+    "precision": "float16",
+    "rounds": 3,
+    "timing": "read_file_to_prediction_CSV_write_including_preprocess_postprocess",
+    "warmup_images": 5
+  },
+  "requested_resources": {
+    "baseline_sm_count": 128,
+    "memory_limit_gib": 14.0,
+    "thread_percentage": null
+  },
+  "status": "metadata_preview"
+}

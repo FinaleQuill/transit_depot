@@ -1,0 +1,32 @@
+{
+  "stage": "validate",
+  "command": [
+    "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+    "-u",
+    "validate_student.py",
+    "--model-dir",
+    "../deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--image-root",
+    "/home/featurize/data/cxr_first",
+    "--manifest",
+    "data/clean_v1_reviewed/valid_manifest.csv",
+    "--output-dir",
+    "../deliveries/033_dual_tiny768_seed43_25_seed44_75/valid_fp16_hflip2"
+  ],
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "source_archive": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/dual768_deployment_review_20261028/source",
+  "started_utc": "2026-10-27T18:05:38.756626+00:00",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "CUDA_MPS_PIPE_DIRECTORY": null,
+    "CUDA_MPS_ACTIVE_THREAD_PERCENTAGE": null,
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "training_started": false,
+  "test_data_used": false,
+  "exit_code": 0,
+  "ended_utc": "2026-10-27T18:07:38.441692+00:00",
+  "seconds": 119.68396487602149
+}

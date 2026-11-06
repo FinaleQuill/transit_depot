@@ -1,0 +1,64 @@
+{
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "fold": 4,
+  "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_4",
+  "image_root": "/home/featurize/data/cxr_first",
+  "batch_size": 8,
+  "accumulation_steps": 4,
+  "valid_batch_size": 8,
+  "num_workers": 4,
+  "prefetch_factor": 1,
+  "epochs": 20,
+  "max_epochs_this_call": 1,
+  "patience": 4,
+  "min_delta": 0.0001,
+  "seed": 43,
+  "backbone_lr": 2e-05,
+  "head_lr": 0.0002,
+  "warmup_epochs": 1,
+  "min_lr_ratio": 0.05,
+  "weight_decay": 0.05,
+  "dropout": 0.2,
+  "drop_path": 0.15,
+  "ema_decay": 0.999,
+  "grad_clip": 1.0,
+  "amp_dtype": "auto",
+  "resume": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_4/last.pt",
+  "restart_empty": false,
+  "stop_file": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/STOP",
+  "model_config": {
+    "backbone_name": "convnextv2_base.fcmae_ft_in1k",
+    "drop_rate": 0.2,
+    "drop_path_rate": 0.15,
+    "gradient_checkpointing": true
+  },
+  "preprocessing": {
+    "image_size": 512,
+    "validation_size": 512,
+    "training_scales": [
+      512,
+      448,
+      512,
+      384,
+      512
+    ],
+    "cache_mode": "RGB",
+    "color_mode": "RGB",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resize": "letterboxLANCZOS",
+    "exif_transpose": true,
+    "data_source": "raw_readonly",
+    "eval_transform": "EXIF+RGB+LetterboxLANCZOS+Normalize",
+    "validation_tta": "identity"
+  },
+  "inference_precision": "bfloat16"
+}

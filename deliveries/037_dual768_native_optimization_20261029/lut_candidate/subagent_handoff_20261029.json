@@ -1,0 +1,38 @@
+{
+  "saved_hong_kong": "2026-10-29T22:59:38.034879+08:00",
+  "status": "stopped_new_experiments_per_user_request",
+  "owned_files": {
+    "/home/featurize/work/cloud_project_v2/inference_inputs.py": {
+      "bytes": 6146,
+      "sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3"
+    },
+    "/home/featurize/work/cloud_project_v2/tests/test_inference_inputs_lut.py": {
+      "bytes": 5247,
+      "sha256": "5b77af41d5427516f8861106b26320ba2af71d6b8769d56a0ef93a2ec20a6180"
+    }
+  },
+  "cpu_tests": {
+    "command": "python deliveries/036.../run_container.py -m unittest discover -s tests -p test_inference_inputs_lut.py -v",
+    "count": 6,
+    "seconds": 2.184,
+    "result": "OK",
+    "torch": "2.10.0+cu128",
+    "numpy": "1.26.4",
+    "gpu_runs": 0
+  },
+  "read_only_deploy_review": {
+    "reviewed_before_parent_default_restore": true,
+    "findings": "No computation-semantic issue found in the inspected LUT/merged-D2H integration; shared inputs, four forwards, original FP32 per-view/TTA operations and FP64 fusion preserved. Error-only staging fence protects retry; success path has one required payload D2H. Parent stated fake constructors were adapted.",
+    "public_oracle": "load_image_arrays remains present",
+    "review_scope": "Static integration review plus small CPU input tests only; not a formal integration acceptance."
+  },
+  "prototype_gpu_evidence": "Parent ran prototype 105-input/100-prediction checks and synthetic error-path GPU checks; files in gpu_verification/ and gpu_error_checks.json. This subagent ran no GPU.",
+  "unaccepted": [
+    "Integrated current project Predictor has not run final GPU input/probability gate after all edits.",
+    "Integrated native+LUT+merged-D2H project has not run formal 100+5-image three-round E2E.",
+    "Final project packaging must include inference_inputs.py and native/build dependencies; clean-container final acceptance remains pending.",
+    "No real T4 performance certification."
+  ],
+  "parent_handoff_intent": "Root will freeze complete candidate and restore validated old-v1 deploy as default; this agent does not perform that restoration or claim it has completed.",
+  "git_committed_by_this_agent": false
+}

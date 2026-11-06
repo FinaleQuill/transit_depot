@@ -1,0 +1,24 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "attempted_updates": 4872,
+    "best_epoch": 8,
+    "best_macro_auc": 0.7978396535270589,
+    "confirmation_evaluated": false,
+    "official_valid_evaluated": false,
+    "optimizer_updates": 4869,
+    "skipped_updates": 3,
+    "state": "early_stopped",
+    "updated_at": "2026-11-04T06:17:14.562084+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "5f51fd21c8d6dae6b23b59593d21eb82ce43178c1cfbf67e9e6f357f7f2ed1b7",
+  "record_sha256": "09d7cdac8f62f7958c3ca448f16683a8dc984843adf44a7a61e9b013e9057dc6",
+  "recorded_at_hong_kong": "2026-11-04T06:17:14.669588+08:00",
+  "recorded_at_utc": "2026-11-03T22:17:14.669588+00:00",
+  "run_dir": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103",
+  "session_id": "20261103T145511Z_f6723dffed69",
+  "state": "early_stopped",
+  "trainer": "reconstruction.train"
+}

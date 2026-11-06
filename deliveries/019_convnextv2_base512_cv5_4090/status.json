@@ -1,0 +1,9 @@
+{
+  "status": "cancelled_after_validation",
+  "ensemble_plan_sha256": "6d7804f39e86aca39953048d16bb6c08b0ca9a243ae9545d8e6a5008127945e0",
+  "cancelled_at": "2026-10-19T08:28:59+08:00",
+  "reason": "User requested the highest-scoring submission; 019 official validation AUC is lower than the existing 016 best. Stop unnecessary test inference and deliver 016.",
+  "validation_complete": true,
+  "test_inference_complete": false,
+  "test_submission_generated": false
+}

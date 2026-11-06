@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-11-06T15:32:45.801065+08:00",
+  "user_authorization": "按照你的计划，启动训练",
+  "protected_sha256": {
+    "/home/featurize/work/rules.pdf": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "/home/featurize/work/rules_1.pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "/home/featurize/work/submission_best.csv": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+    "/home/featurize/work/submission_dino20_cnn50_20261106.csv": "a5055b9c329a698c2e85fa2b1a6a41280b1961a958d96d455fb688960ad6f02f",
+    "/home/featurize/data/cxr_first/train.csv": "3a07b4bb5c81758718d4ccb69885c9160103aeb55ab8206c71fef152de334f17",
+    "/home/featurize/data/cxr_first/valid.csv": "7e1930138718eee4595f48820c26b69d95fb021bc9d48b46006c0aacd2415df6",
+    "/home/featurize/data/cxr_first/test.csv": "63e107d840cbf27aee7c1c0ced1157aef454baa1141fdc3851e6c3011471529e"
+  },
+  "new_submission_generated": false,
+  "old_STOP_removed": false
+}

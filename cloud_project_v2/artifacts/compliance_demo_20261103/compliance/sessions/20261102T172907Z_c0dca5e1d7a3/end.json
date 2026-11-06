@@ -1,0 +1,17 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": true,
+  "details": {
+    "actual_training_executions": 0,
+    "demonstration_only": true
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "64ff30125727a48ff01290cdebd40f42982fb9b360b3f1b363a25d6cc77caaef",
+  "record_sha256": "6effc96c1a95f6de3eb601c9ac5e99f77fbbcbb5a7149ace239efa3b5f7eebe4",
+  "recorded_at_hong_kong": "2026-11-03T01:29:07.903396+08:00",
+  "recorded_at_utc": "2026-11-02T17:29:07.903396+00:00",
+  "run_dir": "/home/featurize/work/cloud_project_v2/artifacts/compliance_demo_20261103",
+  "session_id": "20261102T172907Z_c0dca5e1d7a3",
+  "state": "completed",
+  "trainer": "metadata_example_only"
+}

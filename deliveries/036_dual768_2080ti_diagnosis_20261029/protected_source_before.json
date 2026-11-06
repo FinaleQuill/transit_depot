@@ -1,0 +1,8 @@
+{
+  "/home/featurize/work/cloud_project_v2/deploy_kd.py": "ef914deeba87c86817e6600388079b49c94dc7a8224d28714b2d8d0e20c27bd8",
+  "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+  "/home/featurize/work/cloud_project_v2/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+  "/home/featurize/work/cloud_project_v2/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+  "/home/featurize/work/cloud_project_v2/run_in_competition.sh": "656978abef7ef361d02d70f6464d2aac5420c9e5a4f683b48c88f86cc5b07e87",
+  "/home/featurize/work/cloud_project_v2/requirements_inference.txt": "220ac6dadb4c17ebc6ee7a2e481b8a3fc85414d2abd9d35be349e1369748ef55"
+}

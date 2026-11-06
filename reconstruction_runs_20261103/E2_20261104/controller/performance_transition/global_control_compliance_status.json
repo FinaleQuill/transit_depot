@@ -1,0 +1,17 @@
+{
+  "checkpoint_saves_this_session": 3,
+  "completed_epochs_this_session": [
+    1
+  ],
+  "demonstration_only": false,
+  "event_count": 6,
+  "final_members_frozen": false,
+  "hard_kill_policy": "Missing end means unclosed, never completed; next start reports it.",
+  "last_event": "training_ended",
+  "last_event_sha256": "3cb1b697a83c02b493f713c0a345f1fce7eed303b7d039e67b0c7666f87cbcde",
+  "schema_version": 1,
+  "session_event_count": 6,
+  "session_id": "20261104T065122Z_7fb22b3e6c12",
+  "state": "paused",
+  "updated_at_hong_kong": "2026-11-04T16:29:39.825208+08:00"
+}

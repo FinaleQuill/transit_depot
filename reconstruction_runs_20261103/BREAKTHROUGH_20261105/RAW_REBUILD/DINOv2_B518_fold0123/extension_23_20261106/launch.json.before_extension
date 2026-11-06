@@ -1,0 +1,14 @@
+{
+  "controller_pid": 244322,
+  "launched_at": "2026-11-05T21:58:57.184700+08:00",
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "raw_rebuild.launch",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/raw_rebuild/plan.json",
+    "--controller"
+  ],
+  "detached": true
+}

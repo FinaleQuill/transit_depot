@@ -1,0 +1,124 @@
+{
+  "started_hong_kong": "2026-10-30T19:06:22.675475+08:00",
+  "B_container": "a8daf4091276",
+  "B_host_pid": 171397,
+  "B_progress_before": "study_student epoch=1 studies=6100/18513 images=9965 loss=0.689006 alpha=0.0329",
+  "A_model_sha256": {
+    "config.json": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+    "student_fp16.pt": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+  },
+  "frozen_execution_source_sha256": {
+    "run_student_upper_bound.py": "8058c2273da072736ead50890198724647d14676d75a78d5058c3c8ac73b74ff",
+    "student_checkpoint_backup.py": "c1106eb14516135f00deaa74381bee915c9d0ef275197d797728166b9e34db35",
+    "study_student.py": "9ffc40fb4bedf25fb740abbb5890d00f7531aac5e58da5e83242ddeb47dda17f",
+    "student_experiment_evaluation.py": "a955f1843561a8da0a7556caa143366827807d36b0125a4df604ae92b8050a98",
+    "student_experiments.py": "9b3f45856544663b1a182a1d60bdcf7f6adacfbbe9e841d97736a3a5dd085a53",
+    "train_distill.py": "b77a2d435643e334f64a9cb9c5fc62b59cb7e3c622af54b339d3567cad65a5ba",
+    "train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "distill_tta_data.py": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "deploy_kd.py": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+    "cost.py": "9b0dffd4db6b90921dc5be08b9a9f8208f1e5a8dab3b3461780ee58f799ef140",
+    "inference_inputs.py": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+    "fast_lanczos.py": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7"
+  },
+  "pause_attempts": [
+    {
+      "at": "2026-10-30T19:06:22.806174+08:00",
+      "accepted_compute_boundary": true,
+      "main_thread_frames": [
+        {
+          "name": "_engine_run_backward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py",
+          "line": 865
+        },
+        {
+          "name": "backward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/autograd/__init__.py",
+          "line": 364
+        },
+        {
+          "name": "backward",
+          "filename": "/usr/local/lib/python3.12/dist-packages/torch/_tensor.py",
+          "line": 630
+        },
+        {
+          "name": "train_study_epoch",
+          "filename": "/home/featurize/work/cloud_project_v2/study_student.py",
+          "line": 208
+        },
+        {
+          "name": "run_training",
+          "filename": "/home/featurize/work/cloud_project_v2/study_student.py",
+          "line": 427
+        },
+        {
+          "name": "main",
+          "filename": "/home/featurize/work/cloud_project_v2/study_student.py",
+          "line": 517
+        },
+        {
+          "name": "<module>",
+          "filename": "/home/featurize/work/cloud_project_v2/study_student.py",
+          "line": 522
+        }
+      ]
+    }
+  ],
+  "T4_certified": false,
+  "B_context_remains_resident": true,
+  "B_model_or_optimizer_checkpoint_created_by_pause": false,
+  "paused_hong_kong": "2026-10-30T19:06:22.806203+08:00",
+  "idle_samples_before_timing": [
+    {
+      "at": "2026-10-30T19:06:22.856655+08:00",
+      "gpu_utilization_and_memory_mib": "65, 4522"
+    },
+    {
+      "at": "2026-10-30T19:06:23.905656+08:00",
+      "gpu_utilization_and_memory_mib": "40, 4522"
+    },
+    {
+      "at": "2026-10-30T19:06:24.953353+08:00",
+      "gpu_utilization_and_memory_mib": "0, 4522"
+    },
+    {
+      "at": "2026-10-30T19:06:25.999406+08:00",
+      "gpu_utilization_and_memory_mib": "0, 4522"
+    }
+  ],
+  "B_log_bytes_while_frozen": 4939,
+  "latency_completed_hong_kong": "2026-10-30T19:07:02.896603+08:00",
+  "delivery": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030",
+  "delivery_inventory": {
+    "submission.csv.report.json": {
+      "bytes": 1509,
+      "sha256": "e5957092fa64aabec3253593df9c3f9e9a6dca0d9070718395f05afd7f82058f"
+    },
+    "submission.csv": {
+      "bytes": 691900,
+      "sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e"
+    },
+    "submission.image_predictions.csv": {
+      "bytes": 1352956,
+      "sha256": "3cb7e6bd1d936702b3487ec8d06c0f69e4f615ec25823d12f881c07ddb98f82a"
+    },
+    "submission.audit.json": {
+      "bytes": 1459,
+      "sha256": "55441098683c86fa1e0eab062d3d0ffc5d2cf48ab50157c2f8a08b61b58d1c2e"
+    },
+    "local_resource_report.json": {
+      "bytes": 25719,
+      "sha256": "7cee3cc413de8889cbcc27b393ddbe94cb0ab2f0053f0f5c3ed06d9ec4c30b9e"
+    }
+  },
+  "A_task_complete": true,
+  "resumed_hong_kong": "2026-10-30T19:09:53.536856+08:00",
+  "B_progress_after": "study_student epoch=1 studies=6200/18513 images=10127 loss=0.688000 alpha=0.0335",
+  "B_process_still_exists": true,
+  "B_resume_verified": true
+}

@@ -1,0 +1,40 @@
+{
+  "scope": "有限ZIP回归；仅读取指定ZIP；未运行模型、训练、测试图像或重复数值比较；未重查上游A1-A5",
+  "zip_path": "artifacts/compliance_closeout_20261102/compliance_corrected_review.zip",
+  "zip_sha256": "b9b96f7ea432caf822437ada44460b599b389dc9f739609479c1770f6055837d",
+  "expected_zip_sha256": "b9b96f7ea432caf822437ada44460b599b389dc9f739609479c1770f6055837d",
+  "payload_files_verified": 319,
+  "payload_hash_or_size_errors": [],
+  "membership": {
+    "undeclared": [],
+    "missing": [],
+    "duplicate_zip_paths": 0,
+    "duplicate_manifest_paths": 0
+  },
+  "frozen_A1_A5_cells_compared": 62,
+  "frozen_A1_A5_cell_differences": [],
+  "source_index_concrete_files": 38,
+  "source_index_missing": [],
+  "matrix_status_counts": {
+    "已满足": 19,
+    "待补": 7,
+    "不适用": 3
+  },
+  "G1_config": {
+    "bytes": 11284048,
+    "sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+    "expected_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39"
+  },
+  "mandatory_evidence_missing": [],
+  "corrections_D1_D5": "指定ZIP中已修；定位见MD",
+  "G2": "已有100图3轮与独立输出审计证据；本轮仅查存在及封包哈希，不重算数值",
+  "pending_G3_G4": "最终成员/加载集合/体积未冻结；T4与官方逐Study时限验收未完成；7行待补保留",
+  "D6_current_stale_metadata": [
+    "model/runtime_files.json:10 本轮未执行",
+    "model/runtime_files.json:18 本轮核验待执行",
+    "model/file_inventory.md:7 本轮未执行",
+    "model/historical_041/STATUS.json:2 weight_only"
+  ],
+  "D6_followup": "root告知已经修改工作目录状态文案；本检查仅针对指定b9b96f7e ZIP，不对修改后重封包字节作结论",
+  "historical_review": "evidence/selfcheck/round2_stranger_review.*保留为首次ZIP检查历史记录"
+}

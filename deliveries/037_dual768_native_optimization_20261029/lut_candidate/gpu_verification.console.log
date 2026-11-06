@@ -1,0 +1,36 @@
+{
+  "executed": true,
+  "diagnostic_only": true,
+  "T4_certified": false,
+  "training": false,
+  "production_source_changed": false,
+  "started_utc": "2026-10-29T14:47:30.284023+00:00",
+  "argv": [
+    "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/lut_candidate/verify_gpu.py",
+    "--source-root",
+    "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/source_baseline_v1",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--inputs-root",
+    "/tmp/dual768_2080ti_diagnosis/inputs",
+    "--output-dir",
+    "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/lut_candidate/gpu_verification",
+    "--execute"
+  ],
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 Ti",
+    "sm": 68,
+    "capability": [
+      7,
+      5
+    ],
+    "allocator_gib": 8
+  },
+  "baseline_source_sha256": "ef914deeba87c86817e6600388079b49c94dc7a8224d28714b2d8d0e20c27bd8",
+  "all_input_checks_passed": true,
+  "all_prediction_checks_passed": true,
+  "status": "passed",
+  "ended_utc": "2026-10-29T14:48:54.357718+00:00",
+  "wall_seconds": 84.07369775100005,
+  "exit_code": 0
+}

@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-06T15:47:16.192930+08:00",
+  "progress": {
+    "state": "training",
+    "epoch": 1,
+    "epochs": 24,
+    "studies_done": 224,
+    "studies_total": 9879,
+    "images_done": 367,
+    "loss": 0.7344995859478202,
+    "elapsed_seconds": 82.64126902200042,
+    "estimated_epoch_seconds": 3644.701324412242,
+    "peak_gpu_bytes": 7477726208,
+    "gradient_norm": 3.3737878799438477,
+    "head_lr": 4.53074433656958e-06,
+    "attempted_updates": 7,
+    "optimizer_updates": 7,
+    "skipped_updates": 0,
+    "updated_at": "2026-11-06T15:47:00.268161+08:00"
+  },
+  "gpu": "12194, python3, 7780 MiB"
+}

@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "images": 2218,
+  "studies": 1414,
+  "submission_data_rows": 14140,
+  "study_mean_max_absolute_error": 0.0,
+  "audit_report": "/tmp/cloud_student_runs_20261030/041_A_submission_20261030/test_predictions/submission.audit.json"
+}

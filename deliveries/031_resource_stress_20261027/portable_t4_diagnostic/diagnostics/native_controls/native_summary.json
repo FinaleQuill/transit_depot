@@ -1,0 +1,109 @@
+{
+  "complete": true,
+  "cases": [
+    {
+      "candidate": "kd512",
+      "mean_ms": 119.01372481564371,
+      "p95_ms": 139.54311826188737,
+      "max_ms": 146.1159209914816,
+      "round_mean_ms": [
+        118.48640450916719,
+        119.30756983871106,
+        119.24720009905286
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd512/local_resource_report.json",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd512",
+        "--profile",
+        "native_kd512",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "started_utc": "2026-10-27T12:52:23.771349+00:00",
+      "ended_utc": "2026-10-27T12:53:06.252616+00:00"
+    },
+    {
+      "candidate": "kd768",
+      "mean_ms": 136.16009723695848,
+      "p95_ms": 154.46041860607997,
+      "max_ms": 157.52835532960793,
+      "round_mean_ms": [
+        136.44263908965513,
+        135.71276173810475,
+        136.3248908831156
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd768/local_resource_report.json",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd768",
+        "--profile",
+        "native_kd768",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "started_utc": "2026-10-27T12:53:06.254217+00:00",
+      "ended_utc": "2026-10-27T12:53:53.952413+00:00"
+    },
+    {
+      "candidate": "equal512_768",
+      "mean_ms": 207.62872343019507,
+      "p95_ms": 236.50625989297018,
+      "max_ms": 241.07913165547265,
+      "round_mean_ms": [
+        207.4870748797548,
+        207.97160588001134,
+        207.427489530819
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/equal512_768/local_resource_report.json",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/equal512_768",
+        "--profile",
+        "native_equal512_768",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "started_utc": "2026-10-27T12:53:53.953906+00:00",
+      "ended_utc": "2026-10-27T12:55:05.373921+00:00"
+    }
+  ],
+  "true_T4": false,
+  "CUDA_MPS_environment_removed": true
+}

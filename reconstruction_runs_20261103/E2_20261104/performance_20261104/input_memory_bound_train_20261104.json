@@ -1,0 +1,67 @@
+{
+  "bounds": [
+    {
+      "distinct_studies": 12,
+      "global_input_tensor_bytes": 389283840,
+      "local_input_tensor_bytes": 1946419200,
+      "source_images": 55
+    },
+    {
+      "distinct_studies": 13,
+      "global_input_tensor_bytes": 417595392,
+      "local_input_tensor_bytes": 2087976960,
+      "source_images": 59
+    },
+    {
+      "distinct_studies": 14,
+      "global_input_tensor_bytes": 445906944,
+      "local_input_tensor_bytes": 2229534720,
+      "source_images": 63
+    },
+    {
+      "distinct_studies": 18,
+      "global_input_tensor_bytes": 559153152,
+      "local_input_tensor_bytes": 2795765760,
+      "source_images": 79
+    }
+  ],
+  "created_at": "2026-11-04T08:12:59.009062+00:00",
+  "float32_single_region_bytes": 7077888,
+  "interpretation": [
+    "At most 12 prefetched tasks including worker tasks, plus current consumed Study/pack and one study_packs lookahead",
+    "For local inputs every image produces five regions, so pack_images=8 holds one complete Study; large Studies remain complete",
+    "Top14 distinct optimization Studies bound the held local input tensor payload at 2.0764 GiB",
+    "This is a payload bound, not a bound on total RAM or all temporary shared-memory allocations",
+    "Pillow source/resize intermediates, per-worker imports, IPC copies, pinned copies, main model/optimizer CPU state and filesystem caches require additional RAM",
+    "Actual delay-consumer measurement is required; no claim that this numeric bound alone proves absence of memory pressure"
+  ],
+  "prefetch_factor": 2,
+  "regions_per_image_local": 5,
+  "source": "optimization train manifest metadata only; no images opened",
+  "top14_distinct_study_view_counts": [
+    7,
+    5,
+    5,
+    5,
+    5,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "train_manifest_sha256": "5d1ff23588fa26fa9ead1761e0498b5e958736bf651e8d5b94d645bfdf51df3c",
+  "train_study_view_histogram": {
+    "1": 5094,
+    "2": 5047,
+    "3": 869,
+    "4": 93,
+    "5": 4,
+    "7": 1
+  },
+  "workers": 6
+}

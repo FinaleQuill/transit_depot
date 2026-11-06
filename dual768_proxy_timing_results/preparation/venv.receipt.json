@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/tmp/dual768_timing_bootstrap/bin/uv",
+    "venv",
+    "--python",
+    "3.12.15",
+    "/tmp/dual768_timing_env"
+  ],
+  "exit_code": 0,
+  "ended_utc": "2026-10-28T18:02:21.907221+00:00"
+}

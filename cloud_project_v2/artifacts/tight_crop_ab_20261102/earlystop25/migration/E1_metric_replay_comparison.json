@@ -1,0 +1,7 @@
+{
+  "original_E1_log_overall_auc": 0.8087165746757087,
+  "native_E1_monitor_overall_auc": 0.808700868165945,
+  "native_E1_monitor_ap_only_auc": 0.7389646145830319,
+  "overall_replay_difference": -1.5706509763679932e-05,
+  "interpretation": "Same declared FP32 EMA / FP16 autocast batch4 hflip2 protocol; repeated GPU execution has small numeric difference. Both records preserved; migration uses native monitor metrics consistently. No independent online generalization claim."
+}

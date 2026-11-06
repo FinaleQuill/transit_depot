@@ -1,0 +1,7 @@
+{
+  "fixture_only": true,
+  "new_training": false,
+  "gpu_used": false,
+  "description": "Old A and B saved official-valid outputs deliberately reused as mock X1 and X2 to verify CPU arithmetic. These are not new-model results.",
+  "expected_old_AB_macro_auc": 0.8168300303208815
+}

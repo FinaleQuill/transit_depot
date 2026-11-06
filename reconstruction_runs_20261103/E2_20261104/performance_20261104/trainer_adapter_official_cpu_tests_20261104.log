@@ -1,0 +1,15 @@
+test_actual_lifecycle_records_overrides_but_frozen_evidence_is_unchanged (reconstruction.test_train_local_performance.PerformanceTests.test_actual_lifecycle_records_overrides_but_frozen_evidence_is_unchanged) ... ok
+test_binding_restored_on_error_and_uncovered_loader_refused (reconstruction.test_train_local_performance.PerformanceTests.test_binding_restored_on_error_and_uncovered_loader_refused) ... ok
+test_preflight_does_not_run_model_or_create_output (reconstruction.test_train_local_performance.PerformanceTests.test_preflight_does_not_run_model_or_create_output) ... {"state": "preflight_passed", "execution_profile": {"path": "/tmp/tmpir1lwno1/profile.json", "sha256": "358f0d8b7c6276048e1a309028152a29db805bdf572ebaa8c48707516b46f95f", "profile": {"schema": "cxr_e2_loader_execution_profile_v1", "profile_id": "cpu_test_profile", "loader": {"multiprocessing_context": "spawn", "in_order": true, "pin_memory": true, "persistent_workers": false, "timeout": 180, "num_workers": 3, "prefetch_factor": 2}, "applies_to_arms": ["global_control", "global_local"], "scope": "loader_execution_only"}, "adapter_source": "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_performance.py", "adapter_source_sha256": "fa46d7b46fd9832cf239a64aacb667219ed087583f2de4903456e8203448a93c", "registered_workers": 2, "registered_prefetch_factor": 1, "overridden_fields": ["loader.num_workers", "loader.prefetch_factor"], "in_order_argument_supported": true}, "model_execution": false, "resume_requested": true}
+ok
+test_profile_rejects_scientific_or_order_changes_and_checks_exact_bytes (reconstruction.test_train_local_performance.PerformanceTests.test_profile_rejects_scientific_or_order_changes_and_checks_exact_bytes) ... ok
+test_real_workers_preserve_order_pixels_targets_and_main_rng (reconstruction.test_train_local_performance.PerformanceTests.test_real_workers_preserve_order_pixels_targets_and_main_rng) ... /usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py:1118: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py:1118: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 13.877s
+
+OK

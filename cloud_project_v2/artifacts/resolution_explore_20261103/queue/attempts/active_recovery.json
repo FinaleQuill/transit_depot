@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-11-03T01:50:00+00:00",
+  "retry_job": "eval_res640_retry1",
+  "retry_kind": "evaluate",
+  "resume_after_job": "res640",
+  "reuse_completed_training": true,
+  "failed_attempt_archive": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/eval_res640_failure_20261102T205707Z",
+  "failed_plan_sha256": "610135e771957895d99b6e6662363c120cdfd47c7a9a3a44accee51da35342b3",
+  "failed_checkpoint_sha256": "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8",
+  "failed_evaluation_error": "Original ten-class binary targets are required",
+  "repair_commit": "f95035c",
+  "repair": "Decode and validate JSON-encoded official manifest targets at the train/valid boundary before aggregation.",
+  "retry_preregistration": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/prereg/eval_res640_retry1.txt",
+  "retry_preregistration_sha256": "43af0619f754d96a8f5f89a22b1a595c6f1a426625c687b368bb1f60a0fafbe7",
+  "retry_evaluator_sha256": "15221470ed95aa626d5d3cf136923c64d7580198f38a9f8d68df0a101aca02f5",
+  "test_accessed": false
+}

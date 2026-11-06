@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_earlystop_pipeline.py", line 534, in pipeline
+    run_job(arm, member, state, original_hashes, hashes, resume=resume)
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_earlystop_pipeline.py", line 408, in run_job
+    raise RuntimeError(f"{name} has STOP marker; refusing automatic retry")
+RuntimeError: B_base has STOP marker; refusing automatic retry

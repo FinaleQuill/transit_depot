@@ -1,0 +1,71 @@
+{
+  "LLM_polling_after_handoff": false,
+  "after_studies_per_second": 4.349677740279075,
+  "after_wait_fraction": 0.006090367486612941,
+  "baseline_studies_per_second": 2.945488368737139,
+  "before_wait_fraction": 0.5745226616008906,
+  "completed_at": "2026-11-04T16:36:33.351296+08:00",
+  "controller_pid": 36434,
+  "current_progress": {
+    "attempted_updates": 392,
+    "compute_seconds": 330.18761421697127,
+    "data_wait_seconds": 22.255480467028974,
+    "elapsed_seconds": 352.44307897,
+    "epoch": 2,
+    "estimated_epoch_seconds": 2780.4955406241193,
+    "gradient_norm": 4.084324836730957,
+    "images_done": 2284,
+    "learning_rates": [
+      4.993222453147459e-06,
+      4.993222453147459e-06,
+      4.993222453147459e-05,
+      4.993222453147459e-05
+    ],
+    "mean_loss": 0.4408713375173234,
+    "optimizer_updates": 392,
+    "peak_gpu_bytes": 14324743680,
+    "regions_done": 2284,
+    "skipped_updates": 0,
+    "state": "training",
+    "studies_done": 1408,
+    "studies_total": 11108,
+    "updated_at": "2026-11-04T16:36:31.194598+08:00"
+  },
+  "estimated_training_only_epoch_minutes": 42.56254012083552,
+  "evidence_sha256": {
+    "LIVE_SPEEDUP.json": "b4363df19d1e62e36c408ad9b1464c4b425edcd35616c068b2bd3e7daca96a15",
+    "READY_TO_SWITCH.json": "49873ca40551e0fcd82b65355257c24c9f538134480e3687cb1f8c6a5784c408",
+    "closed_epoch_verified.json": "5b5b68980cbb0b2c6322e1c281aae16a3ee3936d2010899c5a168d2a6b92979b",
+    "formal_resource_observation.json": "cb0fe8531190a3bd3e45a796d85175edaee0b178e490593dbca35b338c30a7fd",
+    "input_benchmark_summary.json": "e27c1c807406273ba58ca0f5b34560e43f08b3ff330b248aeeb3e02e4b6d4a8a"
+  },
+  "frozen_original_sources_configs_inputs_unchanged": true,
+  "gpu_mean_percent_after": 50.5,
+  "gpu_peak_used_mib_after": 16508.0,
+  "measured_after_seconds": 147.13733711199893,
+  "measured_after_studies": 640,
+  "new_AI_goal_created": false,
+  "observed_speedup": 1.476725485133718,
+  "old_epoch1_history_preserved": true,
+  "prior_actual_training_only_epoch_minutes": 64.33783958184999,
+  "profile": {
+    "applies_to_arms": [
+      "global_control",
+      "global_local"
+    ],
+    "loader": {
+      "in_order": true,
+      "multiprocessing_context": "spawn",
+      "num_workers": 6,
+      "persistent_workers": false,
+      "pin_memory": true,
+      "prefetch_factor": 2,
+      "timeout": 180
+    },
+    "profile_id": "e2_workers6_prefetch2_20261104",
+    "schema": "cxr_e2_loader_execution_profile_v1",
+    "scope": "loader_execution_only"
+  },
+  "remaining_limitation": "Different epoch intervals and sampling windows; full epoch including validation/checkpoint pending; local formal branch not yet run",
+  "state": "performance_upgrade_complete_training_continues"
+}

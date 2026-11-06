@@ -1,0 +1,6 @@
+NAME   TYPE   SIZE ROTA FSTYPE  MOUNTPOINTS
+sr0    rom    380K    1 iso9660 
+vda    disk   700G    1         
+├─vda1 part     4M    1         
+├─vda2 part   106M    1 vfat    /boot/efi
+└─vda3 part 699.9G    1 ext4    /

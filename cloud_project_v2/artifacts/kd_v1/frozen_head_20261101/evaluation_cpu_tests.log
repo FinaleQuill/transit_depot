@@ -1,0 +1,11 @@
+test_cpu_fp32_linear_two_view_probability_mean_then_study_mean (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_cpu_fp32_linear_two_view_probability_mean_then_study_mean) ... ok
+test_final_E12_patch_receipt_and_train_cache_bindings (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_final_E12_patch_receipt_and_train_cache_bindings) ... ok
+test_plan_refuses_new_weight_search_and_changed_horizon (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_plan_refuses_new_weight_search_and_changed_horizon) ... ok
+test_record_order_labels_and_test_split_are_rejected (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_record_order_labels_and_test_split_are_rejected) ... ok
+test_shortlist_uses_only_registered_pairs_even_if_single_or_extra_scores_higher (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_shortlist_uses_only_registered_pairs_even_if_single_or_extra_scores_higher) ... ok
+test_train_receipt_cannot_include_valid_feature_source (tests.test_frozen_head_evaluate.FrozenHeadEvaluationTests.test_train_receipt_cannot_include_valid_feature_source) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.042s
+
+OK

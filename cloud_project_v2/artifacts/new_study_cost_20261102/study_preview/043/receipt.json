@@ -1,0 +1,72 @@
+{
+  "model": "043",
+  "files": [
+    {
+      "file": "preview.json",
+      "bytes": 29600,
+      "sha256": "618b2a38680b1ce99ac6660899814abb26309bf25d50803bfbbfc2a785a1909d"
+    },
+    {
+      "file": "round_1_serial.csv",
+      "bytes": 4953,
+      "sha256": "458c9b3e63129f4a29852f142839186667f57c7780505002bfc4583fea2176ed"
+    },
+    {
+      "file": "round_1_serial.image_predictions.csv",
+      "bytes": 16266,
+      "sha256": "57f7fb6c538f8c957ac165737846dcf2d466b132c98724492a1571bde0a113fb"
+    },
+    {
+      "file": "round_1_study_batch.csv",
+      "bytes": 4958,
+      "sha256": "f0df405ed5e0cce475ec711f8a441d2dc8c9058b1c82ee86f9ca1a108daa7b7b"
+    },
+    {
+      "file": "round_1_study_batch.image_predictions.csv",
+      "bytes": 16268,
+      "sha256": "ac0756da9ac6a07d8044f38a18ecea01d3159da192499439384b6bf3918ada30"
+    },
+    {
+      "file": "round_2_serial.csv",
+      "bytes": 4953,
+      "sha256": "458c9b3e63129f4a29852f142839186667f57c7780505002bfc4583fea2176ed"
+    },
+    {
+      "file": "round_2_serial.image_predictions.csv",
+      "bytes": 16266,
+      "sha256": "57f7fb6c538f8c957ac165737846dcf2d466b132c98724492a1571bde0a113fb"
+    },
+    {
+      "file": "round_2_study_batch.csv",
+      "bytes": 4958,
+      "sha256": "f0df405ed5e0cce475ec711f8a441d2dc8c9058b1c82ee86f9ca1a108daa7b7b"
+    },
+    {
+      "file": "round_2_study_batch.image_predictions.csv",
+      "bytes": 16268,
+      "sha256": "ac0756da9ac6a07d8044f38a18ecea01d3159da192499439384b6bf3918ada30"
+    },
+    {
+      "file": "round_3_serial.csv",
+      "bytes": 4953,
+      "sha256": "458c9b3e63129f4a29852f142839186667f57c7780505002bfc4583fea2176ed"
+    },
+    {
+      "file": "round_3_serial.image_predictions.csv",
+      "bytes": 16266,
+      "sha256": "57f7fb6c538f8c957ac165737846dcf2d466b132c98724492a1571bde0a113fb"
+    },
+    {
+      "file": "round_3_study_batch.csv",
+      "bytes": 4958,
+      "sha256": "f0df405ed5e0cce475ec711f8a441d2dc8c9058b1c82ee86f9ca1a108daa7b7b"
+    },
+    {
+      "file": "round_3_study_batch.image_predictions.csv",
+      "bytes": 16268,
+      "sha256": "ac0756da9ac6a07d8044f38a18ecea01d3159da192499439384b6bf3918ada30"
+    }
+  ],
+  "source": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/043",
+  "mirrored_utc": "2026-11-02T08:41:04.498212+00:00"
+}

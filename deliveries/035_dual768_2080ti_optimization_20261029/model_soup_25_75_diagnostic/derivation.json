@@ -1,0 +1,39 @@
+{
+  "schema": "diagnostic_weight_average_v1",
+  "diagnostic_only": true,
+  "not_a_training_checkpoint": true,
+  "not_a_production_deployment": true,
+  "source_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "source_weight_sha256": [
+    "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+  ],
+  "formula": "FP16(FP32(seed43_FP16)*0.25 + FP32(seed44_FP16)*0.75), ordered CPU multiply then add",
+  "integer_tensor_policy": "Require exact dtype/shape/value equality, then copy unchanged",
+  "derived_weight_sha256": "b7adf7e0787c41237db9a81459473c3a606dcb558b5002a49ba98e17939aa401",
+  "derived_weight_bytes": 55715395,
+  "source_config_copied_or_rewritten": false,
+  "training_performed": false,
+  "source_inference_inventory": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  }
+}

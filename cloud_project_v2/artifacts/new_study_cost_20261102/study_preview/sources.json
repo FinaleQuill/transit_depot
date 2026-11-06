@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-02T08:28:54.133916+00:00",
+  "sha256": {
+    "/home/featurize/work/cloud_project_v2/run_study_preview_queue.py": "035a96a92ab5f7fb02f3e9e4d32ec869ec3bdd67de6716c5dd03721a90936032",
+    "/home/featurize/work/cloud_project_v2/benchmark_study_batch_preview.py": "d2beb140e5588c20c92d540d6ce6ad9d51c857cfd3e3841ce19f26e910ec6a93",
+    "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/summarize_study_batch_previews.py": "62badf0d1a7c7eec37a27b21e5460717b9e5c7de48cf2c2545ecd9e374ea6b0d",
+    "/home/featurize/work/cloud_project_v2/run_tight_crop_environment.sh": "13767fc77759f15dbfcad0a9d726aa3b6fbfa5bf7e982e34a42da20e0607a129",
+    "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/SAMPLE_LOCAL_COPY.json": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2",
+    "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/finalization/sources.json": "337dc9ae896c8522491c35d5662fc95ec21ebd9b07e345f4bbd5045ebdd4145a",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode/B/config.json": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+    "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/config.json": "f722b9c3e0e62ac0a675c49163dfac58bc1b52481ded8f2e9e05c1602c2fe92d",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode/config.json": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+  }
+}

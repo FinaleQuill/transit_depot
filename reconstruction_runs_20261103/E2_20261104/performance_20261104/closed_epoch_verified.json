@@ -1,0 +1,16 @@
+{
+  "baseline_macro_auc": 0.7978381126852129,
+  "best_epoch": 0,
+  "best_macro_auc": 0.7978381126852129,
+  "checkpoint_sha256": {
+    "best.pt": "340fee258304346ce3e50679118148e65a06e6c4c131b515497143927ff6eee0",
+    "last.pt": "3e66711ec5e1bc0a4a8c050b94d1fbd01d6e42bee225fa16f3bad00947f0f73a"
+  },
+  "epochs": 1,
+  "history_sha256": "81c5a6d9405f074a59f57fa8b6f9bb0050124a72547a964bbe3695798ae274be",
+  "ledger_sha256": "46a9c61f583068f21f6e0091787f68298345c548c42a6ef22d231bf9dbdaaf8a",
+  "name": "global_control",
+  "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104/epoch_00/predictions.npz",
+  "state": "paused",
+  "verified_at": "2026-11-04T16:29:52.879162+08:00"
+}

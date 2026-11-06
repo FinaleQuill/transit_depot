@@ -1,0 +1,7 @@
+{
+  "recorded_utc": "2026-11-02T20:51:50.089204+00:00",
+  "state": "FAILED",
+  "failure_reason": "Shell-background launch disappeared before controller startup; no status or child run created",
+  "pid": 132942,
+  "recovery": "Use nohup with subprocess start_new_session and wait for durable heartbeat before returning"
+}

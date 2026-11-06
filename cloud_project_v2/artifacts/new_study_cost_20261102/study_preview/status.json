@@ -1,0 +1,61 @@
+{
+  "state": "completed",
+  "stage": "done",
+  "pid": 85932,
+  "started_utc": "2026-11-02T08:28:54.102078+00:00",
+  "child_pid": null,
+  "gpu_pids": [],
+  "outputs": {
+    "043": {
+      "local": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/043",
+      "mirrored": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/043",
+      "preview_sha256": "618b2a38680b1ce99ac6660899814abb26309bf25d50803bfbbfc2a785a1909d",
+      "sample_before_after": {
+        "files": 28,
+        "bytes": 46228127,
+        "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+      }
+    },
+    "044": {
+      "local": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/044",
+      "mirrored": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/044",
+      "preview_sha256": "4d99578d951ca698be22059f4a0ebe9428c2fe18d2e0510728ea9013da901ed9",
+      "sample_before_after": {
+        "files": 28,
+        "bytes": 46228127,
+        "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+      }
+    },
+    "045": {
+      "local": "/tmp/cloud_student_runs_20261030/study_batch_preview_20261102/045",
+      "mirrored": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/study_preview/045",
+      "preview_sha256": "a5ef63cf04ce6d8f07af8b4726a2ec0d07b1f2c2f791b2f57c7306bb5a9a0c4d",
+      "sample_before_after": {
+        "files": 28,
+        "bytes": 46228127,
+        "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+      }
+    }
+  },
+  "error": null,
+  "test_predicted": false,
+  "updated_utc": "2026-11-02T08:43:00.630730+00:00",
+  "source_receipt_sha256": "069b5b1c65763a4abd7eaa7fa04c89e5a06ca7ac20a17d40bd4241eb476eecd2",
+  "sample_before_queue": {
+    "files": 28,
+    "bytes": 46228127,
+    "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+  },
+  "sample_before": {
+    "files": 28,
+    "bytes": 46228127,
+    "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+  },
+  "summary_sha256": "b594ba4d1bc7eb5dfc99946cb2ecbfa6e513ee680b9c08e7a2bcfbff0e456f14",
+  "sample_after_queue": {
+    "files": 28,
+    "bytes": 46228127,
+    "receipt_sha256": "5b1cbe580868a586778bf80e6856da86fd5944a255838d060c043318d6c255f2"
+  },
+  "completed_utc": "2026-11-02T08:43:00.630705+00:00"
+}

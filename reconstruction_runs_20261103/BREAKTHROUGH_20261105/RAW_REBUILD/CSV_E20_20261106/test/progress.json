@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-06T13:51:50.015715+08:00",
+  "phase": "test",
+  "studies_completed": 1414,
+  "total_studies": 1414,
+  "images_completed": 2218,
+  "total_images": 2218,
+  "elapsed_seconds": 223.06828375600162,
+  "training": false
+}

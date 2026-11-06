@@ -1,0 +1,66 @@
+{
+  "started_at_hong_kong": "2026-11-05T13:24:32.001375+08:00",
+  "scope": "CPU class-minus-Macro gaps from the sole fixed saved candidate; no new fusion, model inference, training or test access",
+  "source_adaptation": {
+    "old": "manifest = Path(report['model_configuration']['valid_manifest'])",
+    "new": "manifest = Path(json.loads((ROOT.parent / 'registered_plan.json').read_text())['valid_manifest'])",
+    "only_change": true
+  },
+  "bootstrap": {
+    "samples": 10000,
+    "seed": 20261105,
+    "clusters": "228 whole patients",
+    "adjustment": "Bonferroni 10 two-sided comparisons"
+  },
+  "sources_before": {
+    "upstream_source": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/final_comparison/analyze_class_gaps.py",
+      "sha256": "bd7f4927c0ce247952d23e5e66dcbe906e2a9c5e4939337c069f49312e591036",
+      "bytes": 6187
+    },
+    "copied_source": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/analyze_class_gaps.py",
+      "sha256": "0fd3a8ed080dcec3fb89070de74b9c47877facbba92e63b6fc22acd2c0512807",
+      "bytes": 6220
+    },
+    "registered_plan": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/registered_plan.json",
+      "sha256": "d0b7689b91ee1bb21c0858216d8fda677ad8e6c29348bdf940e7cb33c7a33e7d",
+      "bytes": 19945
+    },
+    "valid_manifest": {
+      "path": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "report": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/report.json",
+      "sha256": "3d2b099d1b299659c7ae187e9f759577be4c4fbec880e838fb09fa23c22be250",
+      "bytes": 20024
+    },
+    "candidate_predictions": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate_predictions.csv",
+      "sha256": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a",
+      "bytes": 422971
+    }
+  },
+  "completed_at_hong_kong": "2026-11-05T13:24:53.826913+08:00",
+  "passed": true,
+  "source_hashes_after": {
+    "upstream_source": "bd7f4927c0ce247952d23e5e66dcbe906e2a9c5e4939337c069f49312e591036",
+    "copied_source": "0fd3a8ed080dcec3fb89070de74b9c47877facbba92e63b6fc22acd2c0512807",
+    "registered_plan": "d0b7689b91ee1bb21c0858216d8fda677ad8e6c29348bdf940e7cb33c7a33e7d",
+    "valid_manifest": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "report": "3d2b099d1b299659c7ae187e9f759577be4c4fbec880e838fb09fa23c22be250",
+    "candidate_predictions": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a"
+  },
+  "inputs_unchanged": true,
+  "samples_requested": 10000,
+  "samples_valid": 10000,
+  "significantly_below_macro_after_10_class_correction": [
+    8
+  ],
+  "execution": "Official sprint.runtime CPU-only container, process exit 0",
+  "result_path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/class_gap_analysis_20261105.json",
+  "result_sha256": "444128205149a2be4b8357f18beb10514359c3fef7c93fc44d0490ec50dede5e"
+}

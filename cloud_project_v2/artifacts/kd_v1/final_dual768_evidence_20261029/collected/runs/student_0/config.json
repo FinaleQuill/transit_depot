@@ -1,0 +1,84 @@
+{
+  "fold_plan": "data/cv5_overnight/folds.json",
+  "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+  "output": "../runs/029_tiny768_kd_seed43",
+  "image_root": "/home/featurize/data/cxr_first",
+  "batch_size": 8,
+  "accumulation_steps": 4,
+  "valid_batch_size": 4,
+  "num_workers": 8,
+  "prefetch_factor": 2,
+  "epochs": 25,
+  "patience": 5,
+  "min_delta": 0.0001,
+  "seed": 43,
+  "backbone_lr": 5e-05,
+  "head_lr": 0.0005,
+  "warmup_epochs": 1,
+  "min_lr_ratio": 0.05,
+  "weight_decay": 0.05,
+  "dropout": 0.2,
+  "drop_path": 0.1,
+  "ema_decay": 0.999,
+  "grad_clip": 1.0,
+  "amp_dtype": "auto",
+  "alpha": 0.2,
+  "temperature": 2.0,
+  "kd_warmup_epochs": 2,
+  "align_teacher_pos_weight": true,
+  "image_size": 768,
+  "validation_tta": "hflip2",
+  "training_mode": "distillation",
+  "resume": null,
+  "model_config": {
+    "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+    "drop_rate": 0.2,
+    "drop_path_rate": 0.1,
+    "gradient_checkpointing": true
+  },
+  "preprocessing": {
+    "image_size": 768,
+    "validation_size": 768,
+    "training_scales": [
+      768
+    ],
+    "cache_mode": "RGB",
+    "color_mode": "RGB",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resize": "letterboxLANCZOS",
+    "exif_transpose": true,
+    "data_source": "raw_readonly",
+    "eval_transform": "EXIF+RGB+LetterboxLANCZOS+Normalize",
+    "validation_tta": "hflip2"
+  },
+  "distillation": {
+    "alpha": 0.2,
+    "temperature": 2.0,
+    "warmup_epochs": 2,
+    "loss": "bernoulli_kl_T2_plus_weighted_bce",
+    "class_reduction": "mean",
+    "study_equal_weighting": true,
+    "align_teacher_pos_weight": true,
+    "soft_labels_sha256": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+    "soft_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+    "teacher_tta": "identity_hflip",
+    "student_training_size": 768,
+    "deployment_tta": "hflip2",
+    "deployment_ensemble": false,
+    "teacher_views": [
+      "identity",
+      "hflip"
+    ],
+    "soft_target_aggregation": "mean_sigmoid_after_pos_weight_alignment_and_temperature",
+    "validation_tta": "hflip2"
+  }
+}

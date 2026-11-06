@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-02T15:15:49.497293+00:00",
+  "expected_config_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "reconstructed_config_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "bytes": 11284048,
+  "exact_match": true,
+  "snapshot_sha256": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f",
+  "original_checkpoint_sha256": "65cdb72f63a5ec0d36486d4d8dcb34dd2fde5ed85aa52d3a10be2b0dbf633f42",
+  "original_full_checkpoint_exists": false,
+  "source_export_script_sha256": "c09b101333e8871a69aeb9fb98af71d6816a0f60937e0831e1f38307d251a06d",
+  "source_deploy_script_sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+  "existing_weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "method": "CPU-only torch.load(weights_only=True) of retained EMA snapshot; archived export config-builder and normalized_model_weights functions extracted via AST; model validation call suppressed because no model/forward is needed for byte reconstruction; existing weights SHA used without exporting weights; original deterministic JSON serialization; write only if original receipt SHA fully matches.",
+  "model_forward_executed": false,
+  "weights_exported": false,
+  "recovered_package_path": "evidence/weights/041_original_config.json",
+  "replay_script": "evidence/weights/recover_041_config.py",
+  "replay_script_sha256": "8d00f28cd5160e5363f1080cdd6d9f3015a5703717e08a23ae45a229b7d98a96",
+  "expected_hash_source": "evidence/weights/041_original_export_report.json"
+}

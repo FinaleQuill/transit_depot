@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "artifact_type": "fixed_student_ensemble",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "precision": "float16",
+  "batch_size": 1,
+  "image_size": 768,
+  "tta": "hflip2",
+  "ensemble": true,
+  "gates": null,
+  "decoder_candidate": "JPEG_draft_target768",
+  "members": [
+    {
+      "directory": "X1",
+      "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "config_sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386",
+      "weights_file": "student_fp16.pt",
+      "weights_sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+      "tta": "hflip2",
+      "source_checkpoint_sha256": "b147b4c92afe8f1f02bf056b1d2c7fd87c2d94d6933610c90790d5877442c939",
+      "source_epoch": 4,
+      "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+    },
+    {
+      "directory": "B",
+      "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+      "config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+      "weights_file": "student_fp16.pt",
+      "weights_sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411",
+      "tta": "hflip2",
+      "source_checkpoint_sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb",
+      "source_epoch": 10,
+      "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+    }
+  ],
+  "member_count": 2,
+  "model_weights": [
+    [
+      0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "selection_plan": {
+    "plan_id": "bounded_study_finetune_20261101",
+    "registered_at_hong_kong": "2026-11-01T14:41:41.262541+08:00",
+    "registered_before_new_model_evaluation": true,
+    "test_used": false,
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "historical_valid_selection": "Old A/B epochs and the class-1-Base fusion rule were selected on official valid. This round fixes new horizons and rules before evaluating new models; no independent generalization claim.",
+    "budget": {
+      "wall_hours_max": 12,
+      "training_hours_max": 10,
+      "reserve_evaluation_hours": 1,
+      "gpu_jobs_concurrent": 1,
+      "deadline_hong_kong": "2026-11-02T02:37:00+08:00"
+    },
+    "training": {
+      "X1": {
+        "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+        "initialization": "A E9 best FP32 EMA",
+        "init_sha256": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f",
+        "seed": 46,
+        "epochs": 4,
+        "backbone_lr": 1e-05,
+        "head_lr": 0.0001,
+        "drop_path": 0.1,
+        "alpha": 0.2,
+        "rationale": "Train BCE on complete-Study mean probability instead of forcing Study labels on every view."
+      },
+      "X2": {
+        "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+        "initialization": "B E10 best FP32 EMA",
+        "init_sha256": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+        "seed": 47,
+        "epochs": 4,
+        "backbone_lr": 5e-06,
+        "head_lr": 5e-05,
+        "drop_path": 0.15,
+        "alpha": 0.05,
+        "rationale": "Reduce existing OOF regularization after learning a stable representation; retain the hard Study target."
+      }
+    },
+    "common": {
+      "train_split": "original official train only",
+      "teacher": "frozen strict patient-OOF five-fold cache",
+      "image_size": 768,
+      "precision": "float16",
+      "complete_study": true,
+      "effective_batch_studies": 32,
+      "pos_weight_power": 0.5,
+      "temperature": 2,
+      "kd_warmup_epochs": 0,
+      "warmup_epochs": 1,
+      "min_lr_ratio": 0.05,
+      "ema_decay": 0.999,
+      "weight_decay": 0.05,
+      "dropout": 0.2,
+      "patience": 0,
+      "checkpoint_decision": "final EMA only; epoch validation is diagnostic, never used to extend horizons or select an epoch",
+      "optimizer_state": "reset; EMA warm-start is not exact resume",
+      "training_augmentation": "existing horizontal flip, brightness/contrast +/-0.10, rotation +/-5deg"
+    },
+    "members": [
+      "A",
+      "B",
+      "X1",
+      "X2"
+    ],
+    "rules": [
+      {
+        "name": "X1_single",
+        "members": [
+          "X1"
+        ],
+        "weights": [
+          [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "X2_single",
+        "members": [
+          "X2"
+        ],
+        "weights": [
+          [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "X1_B_class1_B",
+        "members": [
+          "X1",
+          "B"
+        ],
+        "weights": [
+          [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            1.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        ]
+      },
+      {
+        "name": "A_X2_class1_X2",
+        "members": [
+          "A",
+          "X2"
+        ],
+        "weights": [
+          [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            1.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        ]
+      },
+      {
+        "name": "X1_X2_class1_X2",
+        "members": [
+          "X1",
+          "X2"
+        ],
+        "weights": [
+          [
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            1.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        ]
+      },
+      {
+        "name": "B_X2_equal",
+        "members": [
+          "B",
+          "X2"
+        ],
+        "weights": [
+          [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        ]
+      }
+    ],
+    "evaluation": {
+      "tta": "hflip2",
+      "decoder_primary": "original full decode",
+      "decoder_bounded_fallback": "JPEG draft768 if selected full decode model exceeds preferred80ms; revalidate fully",
+      "bootstrap_samples": 1000,
+      "bootstrap_seed": 46,
+      "reference": "B",
+      "old_AB_reference": 0.8168300303208815,
+      "delivered044": 0.8166770734158482,
+      "target": 0.82,
+      "new_per_class_weight_or_threshold_search": false,
+      "decision": "Complete all timed-budget feasible registered runs, compare fixed rules, do not ship a regression. Require full actual FP16 validation, size <=500000000 and end-to-end development time <=100ms. 80ms preferred; real T4 certification remains required. Freeze selection before one final test prediction."
+    },
+    "persistence": {
+      "large_run_state": "/tmp/cloud_student_runs_20261030/046* and 047*; same-host storage, not cross-instance backup",
+      "retained_in_work": "selected FP16 weights plus compact training/evaluation/source/lineage evidence, no deleting historical assets"
+    }
+  },
+  "selection_plan_sha256": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+  "registered_rule": {
+    "rule_name": "X1_B_class1_B",
+    "probability_rule_name": "X1_B_class1_B",
+    "member_order": [
+      "X1",
+      "B"
+    ],
+    "normalized_weights": [
+      [
+        0.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "ttas": [
+      "hflip2",
+      "hflip2"
+    ],
+    "decoder_candidate": "JPEG_draft_target768",
+    "latency_fallback": true,
+    "requires_new_validation": true,
+    "expected_member_identities": {
+      "X1": {
+        "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+        "epoch": 4
+      },
+      "B": {
+        "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+        "epoch": 10
+      }
+    }
+  },
+  "rule_name": "X1_B_class1_B",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "test_used_for_selection": false,
+  "formal_T4_certification": false,
+  "aggregation": "fixed class-wise image probability blend, then original Study probability mean"
+}

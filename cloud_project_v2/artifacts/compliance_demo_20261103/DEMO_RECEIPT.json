@@ -1,0 +1,15 @@
+{
+  "demonstration_only": true,
+  "actual_training_executions": 0,
+  "actual_inference_executions": 0,
+  "event_types": [
+    "training_started",
+    "checkpoint_saved",
+    "epoch_completed",
+    "checkpoint_saved",
+    "epoch_completed",
+    "training_ended"
+  ],
+  "events": 6,
+  "last_record_sha256": "6effc96c1a95f6de3eb601c9ac5e99f77fbbcbb5a7149ace239efa3b5f7eebe4"
+}

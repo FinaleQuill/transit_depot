@@ -1,0 +1,1003 @@
+{
+  "source_workbook": "evidence/weights/input_frozen_workbook.xlsx",
+  "source_sha256": "cd476b64416536367e6a0d9e7695ec73231b3e3e5b37c3ec83af5ad6dd64e2ab",
+  "updated_workbook": "模型核验材料与数据声明清单.xlsx",
+  "updated_sha256": "27bcf6d742c51beed7b8bf72804ba28803dcea8b99f8f58fd3b3eee8597a0759",
+  "scope": "Appendix A1-A5 frozen cells and styles only; no upstream re-verification",
+  "cell_count": 62,
+  "all_equal": true,
+  "cells": [
+    {
+      "cell": "申报清单草案!A4",
+      "before_value": "A-BASE-01",
+      "after_value": "A-BASE-01",
+      "before_attributes": {
+        "r": "A4",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A4",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "82afaa4128a8c1a6953a9bff1b789d5a79a333314ad6d89aa1d8f5d79be27de3",
+      "after_xml_sha256": "82afaa4128a8c1a6953a9bff1b789d5a79a333314ad6d89aa1d8f5d79be27de3",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B4",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B4",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B4",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "e4831a7a576cfa7d314f4fd17d11453ffeb8a11423b07af84abb9f171c6a00b8",
+      "after_xml_sha256": "e4831a7a576cfa7d314f4fd17d11453ffeb8a11423b07af84abb9f171c6a00b8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C4",
+      "before_value": "ConvNeXt Base 预训练模型名称及固定 revision",
+      "after_value": "ConvNeXt Base 预训练模型名称及固定 revision",
+      "before_attributes": {
+        "r": "C4",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C4",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "a639e70a884c5a112280d093fbdecaf96e9f6598f6a3095cf51b09a08cbac794",
+      "after_xml_sha256": "a639e70a884c5a112280d093fbdecaf96e9f6598f6a3095cf51b09a08cbac794",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D4",
+      "before_value": "附录A A1",
+      "after_value": "附录A A1",
+      "before_attributes": {
+        "r": "D4",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D4",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "5f3ec65c97976ff0702dd28d1172df19f751463e53daa601d236f89fd61b6d53",
+      "after_xml_sha256": "5f3ec65c97976ff0702dd28d1172df19f751463e53daa601d236f89fd61b6d53",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E4",
+      "before_value": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "after_value": "timm/convnext_base.fb_in22k_ft_in1k_384@2b2698d86523262ca8065d0957c7f80d963bb43f；用途：五折离线教师及 Base 学生初始化。",
+      "before_attributes": {
+        "r": "E4",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E4",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "60160643cb0a8fcf589c28d2edf19f9631f5c103df6beb375e00642ecf4bd23a",
+      "after_xml_sha256": "60160643cb0a8fcf589c28d2edf19f9631f5c103df6beb375e00642ecf4bd23a",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A5",
+      "before_value": "A-BASE-02",
+      "after_value": "A-BASE-02",
+      "before_attributes": {
+        "r": "A5",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A5",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "51828e5626c1de124cb256c0090b098e1106036923dfaeb97a7c4090f4077d2a",
+      "after_xml_sha256": "51828e5626c1de124cb256c0090b098e1106036923dfaeb97a7c4090f4077d2a",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B5",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B5",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B5",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "eb8957a11747729d0958ae319d989e321a069373b89bd7c48f801da9ef3be62f",
+      "after_xml_sha256": "eb8957a11747729d0958ae319d989e321a069373b89bd7c48f801da9ef3be62f",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C5",
+      "before_value": "Base 公开权重 URL",
+      "after_value": "Base 公开权重 URL",
+      "before_attributes": {
+        "r": "C5",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C5",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "eb4e6f0940a1c495368a475727e0fddb137bd2b203df7ea2f63adee52adfc0aa",
+      "after_xml_sha256": "eb4e6f0940a1c495368a475727e0fddb137bd2b203df7ea2f63adee52adfc0aa",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D5",
+      "before_value": "附录A A2",
+      "after_value": "附录A A2",
+      "before_attributes": {
+        "r": "D5",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D5",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "386506b7c8469667c8e743490f0123f5502416ac9387373a7641005ab1a577ef",
+      "after_xml_sha256": "386506b7c8469667c8e743490f0123f5502416ac9387373a7641005ab1a577ef",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E5",
+      "before_value": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+      "after_value": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+      "before_attributes": {
+        "r": "E5",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E5",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "6112f4dbda44da6cad3e1ac115a6289936b4e6312c53d7e2831ce68c0909617f",
+      "after_xml_sha256": "6112f4dbda44da6cad3e1ac115a6289936b4e6312c53d7e2831ce68c0909617f",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A6",
+      "before_value": "A-BASE-03",
+      "after_value": "A-BASE-03",
+      "before_attributes": {
+        "r": "A6",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A6",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "b253ce24a8a62fce2c0a43bd3fdc5f35ea574fc6fffe8bd752fa770d9682a7ca",
+      "after_xml_sha256": "b253ce24a8a62fce2c0a43bd3fdc5f35ea574fc6fffe8bd752fa770d9682a7ca",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B6",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B6",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B6",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "900385f822f30e41741f67dc897d17df976126aa02f3b3e6f15e44f8267b04bb",
+      "after_xml_sha256": "900385f822f30e41741f67dc897d17df976126aa02f3b3e6f15e44f8267b04bb",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C6",
+      "before_value": "Base model card URL",
+      "after_value": "Base model card URL",
+      "before_attributes": {
+        "r": "C6",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C6",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "5e89db5db6d4392920ec73413e354b3c5db880632ec7e88bba4bc049e612a94b",
+      "after_xml_sha256": "5e89db5db6d4392920ec73413e354b3c5db880632ec7e88bba4bc049e612a94b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D6",
+      "before_value": "来源说明",
+      "after_value": "来源说明",
+      "before_attributes": {
+        "r": "D6",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D6",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "9718f35e851d76cf890abc6fdae811909741a4c4613d2b49b932006e663bcc8b",
+      "after_xml_sha256": "9718f35e851d76cf890abc6fdae811909741a4c4613d2b49b932006e663bcc8b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E6",
+      "before_value": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/raw/2b2698d86523262ca8065d0957c7f80d963bb43f/README.md",
+      "after_value": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/raw/2b2698d86523262ca8065d0957c7f80d963bb43f/README.md",
+      "before_attributes": {
+        "r": "E6",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E6",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "d51593df6c9bc091fba624d1ca09e5999db9ca89db8159c65eb38f37a15e375a",
+      "after_xml_sha256": "d51593df6c9bc091fba624d1ca09e5999db9ca89db8159c65eb38f37a15e375a",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A7",
+      "before_value": "A-BASE-04",
+      "after_value": "A-BASE-04",
+      "before_attributes": {
+        "r": "A7",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A7",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "c81c335968a1c721f6da229255f789e1f04a44323f0e666cdf27e38ba879c36b",
+      "after_xml_sha256": "c81c335968a1c721f6da229255f789e1f04a44323f0e666cdf27e38ba879c36b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B7",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B7",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B7",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "d7c1ba17e9fa7e4b709c3aa5fcb4b9501099d5a7f77ccf0fdec9ec2143ca4cf8",
+      "after_xml_sha256": "d7c1ba17e9fa7e4b709c3aa5fcb4b9501099d5a7f77ccf0fdec9ec2143ca4cf8",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C7",
+      "before_value": "Base 许可证",
+      "after_value": "Base 许可证",
+      "before_attributes": {
+        "r": "C7",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C7",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "8b1a725eabfd303132ca8a15ad8b64ae1b692c856f2907b7a6074a80fb743f98",
+      "after_xml_sha256": "8b1a725eabfd303132ca8a15ad8b64ae1b692c856f2907b7a6074a80fb743f98",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D7",
+      "before_value": "附录A A3",
+      "after_value": "附录A A3",
+      "before_attributes": {
+        "r": "D7",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D7",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "aa46368a39b4561e0180931c8aa28fd624b763524627e980a1142e2579bb8db9",
+      "after_xml_sha256": "aa46368a39b4561e0180931c8aa28fd624b763524627e980a1142e2579bb8db9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E7",
+      "before_value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_base/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "after_value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_base/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "before_attributes": {
+        "r": "E7",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E7",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "290d131035c847be3c148920b89ef5f43801768c072f3f1ed226b431e36cd6bc",
+      "after_xml_sha256": "290d131035c847be3c148920b89ef5f43801768c072f3f1ed226b431e36cd6bc",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A8",
+      "before_value": "A-BASE-05",
+      "after_value": "A-BASE-05",
+      "before_attributes": {
+        "r": "A8",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A8",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "8b0b94aaed4afdd08e2841fc92709c525179d27821943dc9eb7e117d04bb279e",
+      "after_xml_sha256": "8b0b94aaed4afdd08e2841fc92709c525179d27821943dc9eb7e117d04bb279e",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B8",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B8",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B8",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "9760504f1ea7c70d5c5374c3357cb7066d6a108ebc0431cb3a5165f2dabb1f15",
+      "after_xml_sha256": "9760504f1ea7c70d5c5374c3357cb7066d6a108ebc0431cb3a5165f2dabb1f15",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C8",
+      "before_value": "Base 上游训练数据说明",
+      "after_value": "Base 上游训练数据说明",
+      "before_attributes": {
+        "r": "C8",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C8",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "021b971f4c9a0a998a61198f85104e9ffbe5fa2a6366b4b90c9004ea786c4a2d",
+      "after_xml_sha256": "021b971f4c9a0a998a61198f85104e9ffbe5fa2a6366b4b90c9004ea786c4a2d",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D8",
+      "before_value": "附录A A4",
+      "after_value": "附录A A4",
+      "before_attributes": {
+        "r": "D8",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D8",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "ad1c372aa5bdb1910481a3029beaa9dc8edea04fe2c423c6670518a0d28f73bf",
+      "after_xml_sha256": "ad1c372aa5bdb1910481a3029beaa9dc8edea04fe2c423c6670518a0d28f73bf",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E8",
+      "before_value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "after_value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "before_attributes": {
+        "r": "E8",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E8",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "c59391915b3c705bca4a86fa984ff59c0d22b9bf49c8d9fd5f7480b46203741e",
+      "after_xml_sha256": "c59391915b3c705bca4a86fa984ff59c0d22b9bf49c8d9fd5f7480b46203741e",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A9",
+      "before_value": "A-BASE-06",
+      "after_value": "A-BASE-06",
+      "before_attributes": {
+        "r": "A9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "2a722a67e13afdeddc4948d42b2a7673d919f2cb9522fce9b65ff4b3f38ae3c2",
+      "after_xml_sha256": "2a722a67e13afdeddc4948d42b2a7673d919f2cb9522fce9b65ff4b3f38ae3c2",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B9",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "fdeb3a99e36947c4d057354ac46a9dbb7220fbd5fa657c2d0a24706570a104c2",
+      "after_xml_sha256": "fdeb3a99e36947c4d057354ac46a9dbb7220fbd5fa657c2d0a24706570a104c2",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C9",
+      "before_value": "Base 原预训练权重 SHA-256",
+      "after_value": "Base 原预训练权重 SHA-256",
+      "before_attributes": {
+        "r": "C9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "b6e4aabb808f5a6de1c7a9ae28f732a0b7d4fa0dbd374723c0427fc097385399",
+      "after_xml_sha256": "b6e4aabb808f5a6de1c7a9ae28f732a0b7d4fa0dbd374723c0427fc097385399",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D9",
+      "before_value": "附录A A5",
+      "after_value": "附录A A5",
+      "before_attributes": {
+        "r": "D9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "d8a73dd5a9ba6d1ddb04c237cabad354fa29fb28586f78d11eae51c825a07f86",
+      "after_xml_sha256": "d8a73dd5a9ba6d1ddb04c237cabad354fa29fb28586f78d11eae51c825a07f86",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E9",
+      "before_value": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_base.fb_in22k_ft_in1k_384_bc0cfafc7d77/model.safetensors；SHA-256=bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "after_value": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_base.fb_in22k_ft_in1k_384_bc0cfafc7d77/model.safetensors；SHA-256=bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "before_attributes": {
+        "r": "E9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "96059b1b7bb2a3c93baf37e0a9fc7970fcbe09b64a08d46dc8262afe6d8cee88",
+      "after_xml_sha256": "96059b1b7bb2a3c93baf37e0a9fc7970fcbe09b64a08d46dc8262afe6d8cee88",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!F9",
+      "before_value": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "after_value": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "before_attributes": {
+        "r": "F9",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "F9",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "c31f0c292c49e5a71767c05851a1bd95a33b69d7566be6057bfed0312cb79c64",
+      "after_xml_sha256": "c31f0c292c49e5a71767c05851a1bd95a33b69d7566be6057bfed0312cb79c64",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A11",
+      "before_value": "A-TINY-01",
+      "after_value": "A-TINY-01",
+      "before_attributes": {
+        "r": "A11",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A11",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "6a4a03d25c52ffab2a1e8c384a8e523426d869350109615567c5ba14a085c77e",
+      "after_xml_sha256": "6a4a03d25c52ffab2a1e8c384a8e523426d869350109615567c5ba14a085c77e",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B11",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B11",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B11",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "54aed21d19eb4a8fba94506bc531ca976e877f08f357a18710ef45ea7e175029",
+      "after_xml_sha256": "54aed21d19eb4a8fba94506bc531ca976e877f08f357a18710ef45ea7e175029",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C11",
+      "before_value": "ConvNeXt Tiny 预训练模型名称及固定 revision",
+      "after_value": "ConvNeXt Tiny 预训练模型名称及固定 revision",
+      "before_attributes": {
+        "r": "C11",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C11",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "9683df0bf85446c774a55268b05210a9470b56afedff8685eb1fa7f565c5d429",
+      "after_xml_sha256": "9683df0bf85446c774a55268b05210a9470b56afedff8685eb1fa7f565c5d429",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D11",
+      "before_value": "附录A A1",
+      "after_value": "附录A A1",
+      "before_attributes": {
+        "r": "D11",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D11",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "a30b2f96ef748d09a280f40a708e8414b78e0e8ddd293ab9ed63d653b12d2c27",
+      "after_xml_sha256": "a30b2f96ef748d09a280f40a708e8414b78e0e8ddd293ab9ed63d653b12d2c27",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E11",
+      "before_value": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "after_value": "timm/convnext_tiny.fb_in22k_ft_in1k_384@32c741ba106f9e062174ef829354a16719c3dcac；用途：Tiny 学生初始化。",
+      "before_attributes": {
+        "r": "E11",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E11",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "271f9f17bb87a4b920f9dc0639e43f8860564b588576b18993827dc23c735855",
+      "after_xml_sha256": "271f9f17bb87a4b920f9dc0639e43f8860564b588576b18993827dc23c735855",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A12",
+      "before_value": "A-TINY-02",
+      "after_value": "A-TINY-02",
+      "before_attributes": {
+        "r": "A12",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A12",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "4b87a6655c51bf96e62c6d877d6444003b156f99d779f543bca999018dc0e5c4",
+      "after_xml_sha256": "4b87a6655c51bf96e62c6d877d6444003b156f99d779f543bca999018dc0e5c4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B12",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B12",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B12",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "85a9b7a63d590b3060e0be81b4663e23f7eddf5df2e7f704044e76968472644c",
+      "after_xml_sha256": "85a9b7a63d590b3060e0be81b4663e23f7eddf5df2e7f704044e76968472644c",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C12",
+      "before_value": "Tiny 公开权重 URL",
+      "after_value": "Tiny 公开权重 URL",
+      "before_attributes": {
+        "r": "C12",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C12",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "6a883c25be6a4de3418e2201db1af728c0543ebb66954ebfa7adc10723230f7e",
+      "after_xml_sha256": "6a883c25be6a4de3418e2201db1af728c0543ebb66954ebfa7adc10723230f7e",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D12",
+      "before_value": "附录A A2",
+      "after_value": "附录A A2",
+      "before_attributes": {
+        "r": "D12",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D12",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "7d77b007ebfca412ef8ee018082f3bfdbb9f3602860a4bd5398ee7924fb9d1ac",
+      "after_xml_sha256": "7d77b007ebfca412ef8ee018082f3bfdbb9f3602860a4bd5398ee7924fb9d1ac",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E12",
+      "before_value": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/resolve/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+      "after_value": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/resolve/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+      "before_attributes": {
+        "r": "E12",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E12",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "9cd231aca03bd081b8d34db1b0edddcac0579b9ae31293a5e75b7827e7000c79",
+      "after_xml_sha256": "9cd231aca03bd081b8d34db1b0edddcac0579b9ae31293a5e75b7827e7000c79",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A13",
+      "before_value": "A-TINY-03",
+      "after_value": "A-TINY-03",
+      "before_attributes": {
+        "r": "A13",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A13",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "9b320e093cf9796cb0a35b56445f80a3447f67884e8560b107fe01ab5e74b3a0",
+      "after_xml_sha256": "9b320e093cf9796cb0a35b56445f80a3447f67884e8560b107fe01ab5e74b3a0",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B13",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B13",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B13",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "ed5aa41e9dcb9f184c3cded52c7fb7b30a1d763fb834ba7a2dcb7b5f06f7f056",
+      "after_xml_sha256": "ed5aa41e9dcb9f184c3cded52c7fb7b30a1d763fb834ba7a2dcb7b5f06f7f056",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C13",
+      "before_value": "Tiny model card URL",
+      "after_value": "Tiny model card URL",
+      "before_attributes": {
+        "r": "C13",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C13",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "af77b793febe903c319d85d2b08cc5b9ffc5c925df469397608b564de683535b",
+      "after_xml_sha256": "af77b793febe903c319d85d2b08cc5b9ffc5c925df469397608b564de683535b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D13",
+      "before_value": "来源说明",
+      "after_value": "来源说明",
+      "before_attributes": {
+        "r": "D13",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D13",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "a5d6c4271a63b2fdcced3e4f693dfd104d9e98077ade32bdbc990ec6b837a505",
+      "after_xml_sha256": "a5d6c4271a63b2fdcced3e4f693dfd104d9e98077ade32bdbc990ec6b837a505",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E13",
+      "before_value": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/raw/32c741ba106f9e062174ef829354a16719c3dcac/README.md",
+      "after_value": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/raw/32c741ba106f9e062174ef829354a16719c3dcac/README.md",
+      "before_attributes": {
+        "r": "E13",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E13",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "91fc30c26d568f58401eb0804b0d3b075d0f57e00c6660c59edb5bf745478751",
+      "after_xml_sha256": "91fc30c26d568f58401eb0804b0d3b075d0f57e00c6660c59edb5bf745478751",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A14",
+      "before_value": "A-TINY-04",
+      "after_value": "A-TINY-04",
+      "before_attributes": {
+        "r": "A14",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A14",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "230d11d3d1f8af056ec82588f472b62ce7f322a799c3aa61fe612987b378244d",
+      "after_xml_sha256": "230d11d3d1f8af056ec82588f472b62ce7f322a799c3aa61fe612987b378244d",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B14",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B14",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B14",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "c4c13514f37a9902de4b7e171decdf60458ca047fea623dd7617993bf791d90b",
+      "after_xml_sha256": "c4c13514f37a9902de4b7e171decdf60458ca047fea623dd7617993bf791d90b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C14",
+      "before_value": "Tiny 许可证",
+      "after_value": "Tiny 许可证",
+      "before_attributes": {
+        "r": "C14",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C14",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "d78fcd82970219e072f768897ccfbb777b45d0c2053e2d93b9b2d5ba05715fb2",
+      "after_xml_sha256": "d78fcd82970219e072f768897ccfbb777b45d0c2053e2d93b9b2d5ba05715fb2",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D14",
+      "before_value": "附录A A3",
+      "after_value": "附录A A3",
+      "before_attributes": {
+        "r": "D14",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D14",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "73a31724b39bd13f9a4e69a80e5d4c5fe1e6b1a68a9976cfe6e0e318b16462ab",
+      "after_xml_sha256": "73a31724b39bd13f9a4e69a80e5d4c5fe1e6b1a68a9976cfe6e0e318b16462ab",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E14",
+      "before_value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_tiny/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "after_value": "Apache-2.0；许可证全文 URL：https://www.apache.org/licenses/LICENSE-2.0.txt；本地全文：licenses/convnext_tiny/LICENSE-Apache-2.0.txt；本地 NOTICE 未见，HF API 429，远端文件列表/NOTICE 尚未核实。",
+      "before_attributes": {
+        "r": "E14",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E14",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "e9ac654dd6aee337227ecb9c2ceb8152fca69957c7307214c736ca21808e2bf9",
+      "after_xml_sha256": "e9ac654dd6aee337227ecb9c2ceb8152fca69957c7307214c736ca21808e2bf9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A15",
+      "before_value": "A-TINY-05",
+      "after_value": "A-TINY-05",
+      "before_attributes": {
+        "r": "A15",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A15",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "3c51eda45a976b33e67883ed579ba794a80d7132fd7c584f9ac8537cadad49b9",
+      "after_xml_sha256": "3c51eda45a976b33e67883ed579ba794a80d7132fd7c584f9ac8537cadad49b9",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B15",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B15",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B15",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "ec1e87477b80e18ed128f4a08721b8d812a6b0f1aaf49b55d121c0fd174908d4",
+      "after_xml_sha256": "ec1e87477b80e18ed128f4a08721b8d812a6b0f1aaf49b55d121c0fd174908d4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C15",
+      "before_value": "Tiny 上游训练数据说明",
+      "after_value": "Tiny 上游训练数据说明",
+      "before_attributes": {
+        "r": "C15",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C15",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "5628550930a34e429dc7496f9ccdcdca2ac8da2c398b6f5a251a1ed4853e5937",
+      "after_xml_sha256": "5628550930a34e429dc7496f9ccdcdca2ac8da2c398b6f5a251a1ed4853e5937",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D15",
+      "before_value": "附录A A4",
+      "after_value": "附录A A4",
+      "before_attributes": {
+        "r": "D15",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D15",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "10e0c42e73735a5f3cd6ae79fa494fe5adec16e120cc97206e5272797fe08d8b",
+      "after_xml_sha256": "10e0c42e73735a5f3cd6ae79fa494fe5adec16e120cc97206e5272797fe08d8b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E15",
+      "before_value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "after_value": "ImageNet-22k 预训练后在 ImageNet-1k 微调；以固定 revision model card 为来源。",
+      "before_attributes": {
+        "r": "E15",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E15",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "1eb8e6053005e0d56642cff32e429ee47e48d79e4b536cd8e0ae3fef8756aaf7",
+      "after_xml_sha256": "1eb8e6053005e0d56642cff32e429ee47e48d79e4b536cd8e0ae3fef8756aaf7",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!A16",
+      "before_value": "A-TINY-06",
+      "after_value": "A-TINY-06",
+      "before_attributes": {
+        "r": "A16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "A16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "d286cb980cf75652091f10f6e2a1a32eb0b1fe2b96228559de4ba4e8ae90f76c",
+      "after_xml_sha256": "d286cb980cf75652091f10f6e2a1a32eb0b1fe2b96228559de4ba4e8ae90f76c",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!B16",
+      "before_value": "A",
+      "after_value": "A",
+      "before_attributes": {
+        "r": "B16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "B16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "1da826bbcd443ce340b046ba714d8afa8b231159e46b1591d9fae46cd8c6d24b",
+      "after_xml_sha256": "1da826bbcd443ce340b046ba714d8afa8b231159e46b1591d9fae46cd8c6d24b",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!C16",
+      "before_value": "Tiny 原预训练权重 SHA-256",
+      "after_value": "Tiny 原预训练权重 SHA-256",
+      "before_attributes": {
+        "r": "C16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "C16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "5802c1ba9a35963d8e30e171ad346c253891350f92e79525080b034423466839",
+      "after_xml_sha256": "5802c1ba9a35963d8e30e171ad346c253891350f92e79525080b034423466839",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!D16",
+      "before_value": "附录A A5",
+      "after_value": "附录A A5",
+      "before_attributes": {
+        "r": "D16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "D16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "32770bd972d203d7b23804aa89eeba9231edd434911957aca772d7ae5154fda4",
+      "after_xml_sha256": "32770bd972d203d7b23804aa89eeba9231edd434911957aca772d7ae5154fda4",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!E16",
+      "before_value": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_tiny.fb_in22k_ft_in1k_384_a5cbe10cfa2e/model.safetensors；SHA-256=a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "after_value": "从 038 ZIP 内预训练权重副本现场解压到内存并计算；对应归档路径 pretrain_model/timm__convnext_tiny.fb_in22k_ft_in1k_384_a5cbe10cfa2e/model.safetensors；SHA-256=a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "before_attributes": {
+        "r": "E16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "E16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "6c315298367e2fc8f2234bf1a2febcd191b03ae75690f23d0e5f90c754dc7095",
+      "after_xml_sha256": "6c315298367e2fc8f2234bf1a2febcd191b03ae75690f23d0e5f90c754dc7095",
+      "equal": true
+    },
+    {
+      "cell": "申报清单草案!F16",
+      "before_value": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "after_value": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "before_attributes": {
+        "r": "F16",
+        "t": "inlineStr"
+      },
+      "after_attributes": {
+        "r": "F16",
+        "t": "inlineStr"
+      },
+      "before_xml_sha256": "62e0a7dd21810208ff36f9eee30fedac9dd353c00a4cf5e85b3f6ff0e4e743bc",
+      "after_xml_sha256": "62e0a7dd21810208ff36f9eee30fedac9dd353c00a4cf5e85b3f6ff0e4e743bc",
+      "equal": true
+    }
+  ]
+}

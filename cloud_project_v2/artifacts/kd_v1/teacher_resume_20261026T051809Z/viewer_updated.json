@@ -1,0 +1,6 @@
+{
+  "pane": "cxr-kd-mixed:0.0",
+  "previous_viewer_pid": 146119,
+  "new_background_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/controller_background_20261026T051826Z.log",
+  "training_processes_affected": false
+}

@@ -1,0 +1,108 @@
+{
+  "started_hk": "2026-10-27T20:33:34.874756+08:00",
+  "gpu_clock_or_power_changes": false,
+  "training_started": false,
+  "model_loaded": false,
+  "T4_emulation_validated": false,
+  "start_control": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "quota_restriction_proven": true,
+  "stop_control": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "rows": [
+    {
+      "pid": 996360,
+      "name": "NVIDIA GeForce RTX 4090",
+      "sm_count": 128,
+      "total_memory": 25280839680,
+      "compute_capability": [
+        8,
+        9
+      ],
+      "torch": "2.10.0+cu128",
+      "cuda": "12.8",
+      "requested": "100",
+      "server_list": "996362\n",
+      "memberships": [
+        {
+          "server_pid": "996362",
+          "clients": "996360\n"
+        }
+      ],
+      "membership_proven": true
+    },
+    {
+      "pid": 996378,
+      "name": "NVIDIA GeForce RTX 4090",
+      "sm_count": 38,
+      "total_memory": 25280839680,
+      "compute_capability": [
+        8,
+        9
+      ],
+      "torch": "2.10.0+cu128",
+      "cuda": "12.8",
+      "requested": "30",
+      "server_list": "996362\n",
+      "memberships": [
+        {
+          "server_pid": "996362",
+          "clients": "996378\n"
+        }
+      ],
+      "membership_proven": true
+    },
+    {
+      "pid": 996408,
+      "name": "NVIDIA GeForce RTX 4090",
+      "sm_count": 24,
+      "total_memory": 25280839680,
+      "compute_capability": [
+        8,
+        9
+      ],
+      "torch": "2.10.0+cu128",
+      "cuda": "12.8",
+      "requested": "20",
+      "server_list": "996362\n",
+      "memberships": [
+        {
+          "server_pid": "996362",
+          "clients": "996408\n"
+        }
+      ],
+      "membership_proven": true
+    },
+    {
+      "pid": 996419,
+      "name": "NVIDIA GeForce RTX 4090",
+      "sm_count": 12,
+      "total_memory": 25280839680,
+      "compute_capability": [
+        8,
+        9
+      ],
+      "torch": "2.10.0+cu128",
+      "cuda": "12.8",
+      "requested": "10",
+      "server_list": "996362\n",
+      "memberships": [
+        {
+          "server_pid": "996362",
+          "clients": "996419\n"
+        }
+      ],
+      "membership_proven": true
+    }
+  ],
+  "logs": {
+    "server.log": "[2026-10-27 12:33:36.054 Server 996362] Startup\n[2026-10-27 12:33:36.054 Server 996362] Connecting to control daemon on socket: /tmp/cxr-resource-mps-kdqf3lix/pipe/control\n[2026-10-27 12:33:36.054 Server 996362] Initializing server process\n[2026-10-27 12:33:36.131 Server 996362] Creating server context on device 0 (NVIDIA GeForce RTX 4090)\n[2026-10-27 12:33:36.218 Server 996362] Created anonymous shared memory region mps.shm.1000.996362\n[2026-10-27 12:33:36.218 Server 996362] CUDA MPS Server for Linux/Unix. Binary version: 13030\n[2026-10-27 12:33:36.218 Server 996362] Display Driver version: 610\n[2026-10-27 12:33:36.218 Server 996362] Active Threads Percentage set to 100.0\n[2026-10-27 12:33:36.218 Server 996362] Server Priority set to 0\n[2026-10-27 12:33:36.218 Server 996362] Static Partitioning mode disabled\n[2026-10-27 12:33:36.218 Server 996362] Server has started\n[2026-10-27 12:33:36.218 Server 996362] Received new client request from PID 996360\n[2026-10-27 12:33:36.218 Server 996362] Priority level of client {996360} is: 0 (NORMAL)\n[2026-10-27 12:33:36.218 Server 996362] Client {PID: 996360, Context ID: 0} connected\n[2026-10-27 12:33:36.218 Server 996362] Creating worker thread for client {PID: 996360, Context ID: 0}\n[2026-10-27 12:33:36.282 Server 996362] Received new client request from PID 996360\n[2026-10-27 12:33:36.282 Server 996362] Priority level of client {996360} is: 0 (NORMAL)\n[2026-10-27 12:33:36.282 Server 996362] Client {PID: 996360, Context ID: 1} connected\n[2026-10-27 12:33:36.282 Server 996362] Creating worker thread for client {PID: 996360, Context ID: 1}\n[2026-10-27 12:33:36.282 Server 996362] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated\n[2026-10-27 12:33:36.282 Server 996362] Status of client {PID: 996360, Context ID: 1} is ACTIVE\n[2026-10-27 12:33:36.283 Client 996360] Static partitioning mode disabled\n[2026-10-27 12:33:36.653 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996360, Context ID: 1} exit\n[2026-10-27 12:33:36.653 Server 996362] Client {PID: 996360, Context ID: 1} exiting. Number of active client contexts is 0.\n[2026-10-27 12:33:36.739 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996360, Context ID: 0} exit\n[2026-10-27 12:33:36.739 Server 996362] Client process 996360 disconnected\n[2026-10-27 12:33:37.828 Server 996362] Received new client request from PID 996378\n[2026-10-27 12:33:37.828 Server 996362] Priority level of client {996378} is: 0 (NORMAL)\n[2026-10-27 12:33:37.828 Server 996362] Client {PID: 996378, Context ID: 0} connected\n[2026-10-27 12:33:37.828 Server 996362] Creating worker thread for client {PID: 996378, Context ID: 0}\n[2026-10-27 12:33:37.860 Server 996362] Received new client request from PID 996378\n[2026-10-27 12:33:37.860 Server 996362] Priority level of client {996378} is: 0 (NORMAL)\n[2026-10-27 12:33:37.860 Server 996362] Client {PID: 996378, Context ID: 1} connected\n[2026-10-27 12:33:37.860 Server 996362] Creating worker thread for client {PID: 996378, Context ID: 1}\n[2026-10-27 12:33:37.860 Server 996362] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated\n[2026-10-27 12:33:37.860 Server 996362] Status of client {PID: 996378, Context ID: 1} is ACTIVE\n[2026-10-27 12:33:37.861 Client 996378] Static partitioning mode disabled\n[2026-10-27 12:33:38.174 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996378, Context ID: 1} exit\n[2026-10-27 12:33:38.174 Server 996362] Client {PID: 996378, Context ID: 1} exiting. Number of active client contexts is 0.\n[2026-10-27 12:33:38.260 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996378, Context ID: 0} exit\n[2026-10-27 12:33:38.260 Server 996362] Client process 996378 disconnected\n[2026-10-27 12:33:39.355 Server 996362] Received new client request from PID 996408\n[2026-10-27 12:33:39.355 Server 996362] Priority level of client {996408} is: 0 (NORMAL)\n[2026-10-27 12:33:39.355 Server 996362] Client {PID: 996408, Context ID: 0} connected\n[2026-10-27 12:33:39.355 Server 996362] Creating worker thread for client {PID: 996408, Context ID: 0}\n[2026-10-27 12:33:39.386 Server 996362] Received new client request from PID 996408\n[2026-10-27 12:33:39.387 Server 996362] Priority level of client {996408} is: 0 (NORMAL)\n[2026-10-27 12:33:39.387 Server 996362] Client {PID: 996408, Context ID: 1} connected\n[2026-10-27 12:33:39.387 Server 996362] Creating worker thread for client {PID: 996408, Context ID: 1}\n[2026-10-27 12:33:39.387 Server 996362] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated\n[2026-10-27 12:33:39.387 Server 996362] Status of client {PID: 996408, Context ID: 1} is ACTIVE\n[2026-10-27 12:33:39.387 Client 996408] Static partitioning mode disabled\n[2026-10-27 12:33:39.716 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996408, Context ID: 1} exit\n[2026-10-27 12:33:39.716 Server 996362] Client {PID: 996408, Context ID: 1} exiting. Number of active client contexts is 0.\n[2026-10-27 12:33:39.801 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996408, Context ID: 0} exit\n[2026-10-27 12:33:39.801 Server 996362] Client process 996408 disconnected\n[2026-10-27 12:33:40.895 Server 996362] Received new client request from PID 996419\n[2026-10-27 12:33:40.896 Server 996362] Priority level of client {996419} is: 0 (NORMAL)\n[2026-10-27 12:33:40.896 Server 996362] Client {PID: 996419, Context ID: 0} connected\n[2026-10-27 12:33:40.896 Server 996362] Creating worker thread for client {PID: 996419, Context ID: 0}\n[2026-10-27 12:33:40.927 Server 996362] Received new client request from PID 996419\n[2026-10-27 12:33:40.927 Server 996362] Priority level of client {996419} is: 0 (NORMAL)\n[2026-10-27 12:33:40.927 Server 996362] Client {PID: 996419, Context ID: 1} connected\n[2026-10-27 12:33:40.928 Server 996362] Creating worker thread for client {PID: 996419, Context ID: 1}\n[2026-10-27 12:33:40.928 Server 996362] Device NVIDIA GeForce RTX 4090 (uuid GPU-a1e39876-8046-cf88-1d51-cfd921c224e0) is associated\n[2026-10-27 12:33:40.928 Server 996362] Status of client {PID: 996419, Context ID: 1} is ACTIVE\n[2026-10-27 12:33:40.928 Client 996419] Static partitioning mode disabled\n[2026-10-27 12:33:41.253 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996419, Context ID: 1} exit\n[2026-10-27 12:33:41.253 Server 996362] Client {PID: 996419, Context ID: 1} exiting. Number of active client contexts is 0.\n[2026-10-27 12:33:41.340 Server 996362] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 996419, Context ID: 0} exit\n[2026-10-27 12:33:41.340 Server 996362] Client process 996419 disconnected\n[2026-10-27 12:33:41.373 Server 996362] Server has been notified to shutdown\n[2026-10-27 12:33:41.373 Server 996362] Waiting for current clients to finish\n[2026-10-27 12:33:41.373 Server 996362] Exiting\n",
+    "control.log": "[2026-10-27 12:33:34.907 Control 996358] Starting control daemon using socket /tmp/cxr-resource-mps-kdqf3lix/pipe/control\n[2026-10-27 12:33:34.907 Control 996358] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/cxr-resource-mps-kdqf3lix/pipe\n[2026-10-27 12:33:34.907 Control 996358] CUDA MPS Control binary version: 13030\n[2026-10-27 12:33:36.047 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.047 Control 996358] User did not send valid credentials\n[2026-10-27 12:33:36.047 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.047 Control 996358] NEW CLIENT 996360 from user 1000: Server is not ready, push client to pending list\n[2026-10-27 12:33:36.048 Control 996362] Starting new server 996362 for user 1000\n[2026-10-27 12:33:36.054 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.218 Control 996358] NEW SERVER 996362: Ready\n[2026-10-27 12:33:36.281 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.281 Control 996358] NEW CLIENT 996360 from user 1000: Server already exists\n[2026-10-27 12:33:36.407 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.408 Control 996358] NEW UI\n[2026-10-27 12:33:36.408 Control 996358] Activating queued UI\n[2026-10-27 12:33:36.408 Control 996358] Cmd:get_server_list\n[2026-10-27 12:33:36.408 Control 996358] 996362\n[2026-10-27 12:33:36.408 Control 996358] UI closed\n[2026-10-27 12:33:36.411 Control 996358] Accepting connection...\n[2026-10-27 12:33:36.411 Control 996358] NEW UI\n[2026-10-27 12:33:36.411 Control 996358] Activating queued UI\n[2026-10-27 12:33:36.411 Control 996358] Cmd:get_client_list 996362\n[2026-10-27 12:33:36.411 Control 996358] 996360\n[2026-10-27 12:33:36.411 Control 996358] UI closed\n[2026-10-27 12:33:37.827 Control 996358] Accepting connection...\n[2026-10-27 12:33:37.827 Control 996358] User did not send valid credentials\n[2026-10-27 12:33:37.827 Control 996358] Accepting connection...\n[2026-10-27 12:33:37.828 Control 996358] NEW CLIENT 996378 from user 1000: Server already exists\n[2026-10-27 12:33:37.859 Control 996358] Accepting connection...\n[2026-10-27 12:33:37.859 Control 996358] NEW CLIENT 996378 from user 1000: Server already exists\n[2026-10-27 12:33:37.931 Control 996358] Accepting connection...\n[2026-10-27 12:33:37.931 Control 996358] NEW UI\n[2026-10-27 12:33:37.931 Control 996358] Activating queued UI\n[2026-10-27 12:33:37.931 Control 996358] Cmd:get_server_list\n[2026-10-27 12:33:37.931 Control 996358] 996362\n[2026-10-27 12:33:37.932 Control 996358] UI closed\n[2026-10-27 12:33:37.934 Control 996358] Accepting connection...\n[2026-10-27 12:33:37.934 Control 996358] NEW UI\n[2026-10-27 12:33:37.934 Control 996358] Activating queued UI\n[2026-10-27 12:33:37.934 Control 996358] Cmd:get_client_list 996362\n[2026-10-27 12:33:37.935 Control 996358] 996378\n[2026-10-27 12:33:37.935 Control 996358] UI closed\n[2026-10-27 12:33:39.354 Control 996358] Accepting connection...\n[2026-10-27 12:33:39.354 Control 996358] User did not send valid credentials\n[2026-10-27 12:33:39.354 Control 996358] Accepting connection...\n[2026-10-27 12:33:39.354 Control 996358] NEW CLIENT 996408 from user 1000: Server already exists\n[2026-10-27 12:33:39.386 Control 996358] Accepting connection...\n[2026-10-27 12:33:39.386 Control 996358] NEW CLIENT 996408 from user 1000: Server already exists\n[2026-10-27 12:33:39.457 Control 996358] Accepting connection...\n[2026-10-27 12:33:39.457 Control 996358] NEW UI\n[2026-10-27 12:33:39.457 Control 996358] Activating queued UI\n[2026-10-27 12:33:39.457 Control 996358] Cmd:get_server_list\n[2026-10-27 12:33:39.457 Control 996358] 996362\n[2026-10-27 12:33:39.457 Control 996358] UI closed\n[2026-10-27 12:33:39.460 Control 996358] Accepting connection...\n[2026-10-27 12:33:39.460 Control 996358] NEW UI\n[2026-10-27 12:33:39.460 Control 996358] Activating queued UI\n[2026-10-27 12:33:39.460 Control 996358] Cmd:get_client_list 996362\n[2026-10-27 12:33:39.460 Control 996358] 996408\n[2026-10-27 12:33:39.460 Control 996358] UI closed\n[2026-10-27 12:33:40.895 Control 996358] Accepting connection...\n[2026-10-27 12:33:40.895 Control 996358] User did not send valid credentials\n[2026-10-27 12:33:40.895 Control 996358] Accepting connection...\n[2026-10-27 12:33:40.895 Control 996358] NEW CLIENT 996419 from user 1000: Server already exists\n[2026-10-27 12:33:40.927 Control 996358] Accepting connection...\n[2026-10-27 12:33:40.927 Control 996358] NEW CLIENT 996419 from user 1000: Server already exists\n[2026-10-27 12:33:40.997 Control 996358] Accepting connection...\n[2026-10-27 12:33:40.997 Control 996358] NEW UI\n[2026-10-27 12:33:40.998 Control 996358] Activating queued UI\n[2026-10-27 12:33:40.998 Control 996358] Cmd:get_server_list\n[2026-10-27 12:33:40.998 Control 996358] 996362\n[2026-10-27 12:33:40.998 Control 996358] UI closed\n[2026-10-27 12:33:41.000 Control 996358] Accepting connection...\n[2026-10-27 12:33:41.000 Control 996358] NEW UI\n[2026-10-27 12:33:41.000 Control 996358] Activating queued UI\n[2026-10-27 12:33:41.000 Control 996358] Cmd:get_client_list 996362\n[2026-10-27 12:33:41.000 Control 996358] 996419\n[2026-10-27 12:33:41.000 Control 996358] UI closed\n[2026-10-27 12:33:41.373 Control 996358] Accepting connection...\n[2026-10-27 12:33:41.373 Control 996358] NEW UI\n[2026-10-27 12:33:41.373 Control 996358] Activating queued UI\n[2026-10-27 12:33:41.373 Control 996358] Cmd:quit\n[2026-10-27 12:33:41.373 Control 996358] Try shutting down server 996362, backoff is disabled\n[2026-10-27 12:33:41.412 Control 996358] Server 996362 exited with status 0\n[2026-10-27 12:33:41.413 Control 996358] Exit with status 0\n"
+  }
+}

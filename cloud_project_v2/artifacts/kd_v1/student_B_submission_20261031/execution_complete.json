@@ -1,0 +1,59 @@
+{
+  "started_hong_kong": "2026-10-31T15:36:03.127833+08:00",
+  "fixed_model": "B E10 EMA, Base768 FP16 hflip2, original Study mean",
+  "test_used_for_selection": false,
+  "new_training": false,
+  "platform_upload": false,
+  "valid_wall_seconds": 124.54876754599991,
+  "test_wall_seconds": 195.82341041100017,
+  "completed_hong_kong": "2026-10-31T15:42:21.739584+08:00",
+  "submission": {
+    "submission": "/home/featurize/work/deliveries/043_base768_B_submission_20261031/submission.csv",
+    "submission_sha256": "f61321af3102e0a08cf4a4aa618bf1d4ae3e0108232b281402a668b2441dacff",
+    "studies": 1414,
+    "images": 2218,
+    "data_rows": 14140,
+    "batch_size": 1,
+    "precision": "float16",
+    "tta": "hflip2",
+    "ensemble": false,
+    "member_count": 1,
+    "image_sizes": [
+      768
+    ],
+    "deployment_config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+    "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+    "deployment_inventory": {
+      "files": [
+        {
+          "path": "student_fp16.pt",
+          "bytes": 175261029,
+          "sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+        },
+        {
+          "path": "config.json",
+          "bytes": 5228541,
+          "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+        }
+      ],
+      "total_bytes": 180489570,
+      "limit_bytes": 500000000,
+      "size_pass": true
+    },
+    "image_predictions": "/home/featurize/work/deliveries/043_base768_B_submission_20261031/submission.image_predictions.csv",
+    "image_predictions_sha256": "69031dace4e155d8a7ca61e1ea335922293fb2532bb77419a308bae1e0e417f1",
+    "latency_status": "pending_cost_py_T4_measurement",
+    "reproducibility": {
+      "seed": 43,
+      "cudnn_benchmark": false,
+      "allow_tf32": false,
+      "model_eval_required": true,
+      "random_inference_augmentation": false
+    }
+  },
+  "latency_mean_ms": 74.54965613333874,
+  "macro_auc": 0.8105695698808949,
+  "audit_pass": true,
+  "model_local_path": "/tmp/student_candidate_20261031/B_export",
+  "persistent_best_snapshot": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/best_ema_fp32.pt"
+}

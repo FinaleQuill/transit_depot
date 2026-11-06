@@ -1,0 +1,52 @@
+=> Warm restart: /home/featurize/work/runs/016_a4000_tiny_v2/best.pt | epoch 5 -> 6 | baseline AUC=0.79997055 | LR=5e-06/5e-05 | warmup=0 | cosine=5 epochs | patience=3 | 重建AdamW/GradScaler；保留累计EMA步数，不是精确状态续训。
+=> 构建原图清单白名单loader；训练shuffle，无类别重采样，不丢尾批。
+=> 初始化convnext_tiny.fb_in1k；从检查点恢复，不下载ImageNet预训练权重。
+=> Epoch 6/10 | raw384 | batch=16 images × accum2 | AMP=bfloat16 | EMA=GPU | full fine-tune/shuffle coverage
+Epoch 6 | images batch 1/1896 | Study-weighted BCE=0.326123 images=16/30328 updates=4740 EMA=4740 GPU_peak=3.08GiB
+Epoch 6 | images batch 100/1896 | Study-weighted BCE=0.232043 images=1600/30328 updates=4790 EMA=4790 GPU_peak=3.40GiB
+Epoch 6 | images batch 200/1896 | Study-weighted BCE=0.229406 images=3200/30328 updates=4840 EMA=4840 GPU_peak=3.40GiB
+Epoch 6 | images batch 300/1896 | Study-weighted BCE=0.229892 images=4800/30328 updates=4890 EMA=4890 GPU_peak=3.40GiB
+Epoch 6 | images batch 400/1896 | Study-weighted BCE=0.229276 images=6400/30328 updates=4940 EMA=4940 GPU_peak=3.40GiB
+Epoch 6 | images batch 500/1896 | Study-weighted BCE=0.229200 images=8000/30328 updates=4990 EMA=4990 GPU_peak=3.40GiB
+Epoch 6 | images batch 600/1896 | Study-weighted BCE=0.226832 images=9600/30328 updates=5040 EMA=5040 GPU_peak=3.40GiB
+Epoch 6 | images batch 700/1896 | Study-weighted BCE=0.225514 images=11200/30328 updates=5090 EMA=5090 GPU_peak=3.40GiB
+Epoch 6 | images batch 800/1896 | Study-weighted BCE=0.223988 images=12800/30328 updates=5140 EMA=5140 GPU_peak=3.40GiB
+Epoch 6 | images batch 900/1896 | Study-weighted BCE=0.223407 images=14400/30328 updates=5190 EMA=5190 GPU_peak=3.40GiB
+Epoch 6 | images batch 1000/1896 | Study-weighted BCE=0.222640 images=16000/30328 updates=5240 EMA=5240 GPU_peak=3.40GiB
+Epoch 6 | images batch 1100/1896 | Study-weighted BCE=0.222132 images=17600/30328 updates=5290 EMA=5290 GPU_peak=3.40GiB
+Epoch 6 | images batch 1200/1896 | Study-weighted BCE=0.221634 images=19200/30328 updates=5340 EMA=5340 GPU_peak=3.40GiB
+Epoch 6 | images batch 1300/1896 | Study-weighted BCE=0.221146 images=20800/30328 updates=5390 EMA=5390 GPU_peak=3.40GiB
+Epoch 6 | images batch 1400/1896 | Study-weighted BCE=0.220236 images=22400/30328 updates=5440 EMA=5440 GPU_peak=3.40GiB
+Epoch 6 | images batch 1500/1896 | Study-weighted BCE=0.220411 images=24000/30328 updates=5490 EMA=5490 GPU_peak=3.40GiB
+Epoch 6 | images batch 1600/1896 | Study-weighted BCE=0.219429 images=25600/30328 updates=5540 EMA=5540 GPU_peak=3.40GiB
+Epoch 6 | images batch 1700/1896 | Study-weighted BCE=0.218459 images=27200/30328 updates=5590 EMA=5590 GPU_peak=3.40GiB
+Epoch 6 | images batch 1800/1896 | Study-weighted BCE=0.218162 images=28800/30328 updates=5640 EMA=5640 GPU_peak=3.40GiB
+Epoch 6 | images batch 1896/1896 | Study-weighted BCE=0.218071 images=30328/30328 updates=5688 EMA=5688 GPU_peak=3.40GiB
+epoch=6 weighted_train_BCE=0.218071 val_AUC=0.799877 val_F1_tuned=0.470362 val_F1_05=0.329236 val_AP=0.416979 weights=ema best=False complete=True early_bad=1/3
+per_class_AUC=[0.7164920159680639, 0.8234036956664694, 0.7823279319749719, 0.7325239830445452, 0.8822931276297336, 0.7829166459565584, 0.7809636060931398, 0.733253640512932, 0.8949723898805702, 0.8696267536550485] per_class_AP=[0.09894045197246526, 0.24357983768185978, 0.1806031603784705, 0.19177981635884092, 0.4740181190966166, 0.41608026403293485, 0.4916931107132068, 0.47660441296278666, 0.7756887049070416, 0.8207999881291781] per_class_F1=[0.24615384615384617, 0.30344827586206896, 0.27586206896551724, 0.2901960784313726, 0.5536332179930796, 0.5260869565217391, 0.5275862068965518, 0.5108055009823183, 0.7198515769944341, 0.75]
+=> Epoch 7/10 | raw384 | batch=16 images × accum2 | AMP=bfloat16 | EMA=GPU | full fine-tune/shuffle coverage
+Epoch 7 | images batch 1/1896 | Study-weighted BCE=0.213434 images=16/30328 updates=5688 EMA=5688 GPU_peak=3.30GiB
+Epoch 7 | images batch 100/1896 | Study-weighted BCE=0.210004 images=1600/30328 updates=5738 EMA=5738 GPU_peak=3.40GiB
+Epoch 7 | images batch 200/1896 | Study-weighted BCE=0.212966 images=3200/30328 updates=5788 EMA=5788 GPU_peak=3.40GiB
+Epoch 7 | images batch 300/1896 | Study-weighted BCE=0.212319 images=4800/30328 updates=5838 EMA=5838 GPU_peak=3.40GiB
+Epoch 7 | images batch 400/1896 | Study-weighted BCE=0.211388 images=6400/30328 updates=5888 EMA=5888 GPU_peak=3.40GiB
+Epoch 7 | images batch 500/1896 | Study-weighted BCE=0.210519 images=8000/30328 updates=5938 EMA=5938 GPU_peak=3.40GiB
+Epoch 7 | images batch 600/1896 | Study-weighted BCE=0.209400 images=9600/30328 updates=5988 EMA=5988 GPU_peak=3.40GiB
+Epoch 7 | images batch 700/1896 | Study-weighted BCE=0.210529 images=11200/30328 updates=6038 EMA=6038 GPU_peak=3.40GiB
+Epoch 7 | images batch 800/1896 | Study-weighted BCE=0.209740 images=12800/30328 updates=6088 EMA=6088 GPU_peak=3.40GiB
+Epoch 7 | images batch 900/1896 | Study-weighted BCE=0.209669 images=14400/30328 updates=6138 EMA=6138 GPU_peak=3.40GiB
+Epoch 7 | images batch 1000/1896 | Study-weighted BCE=0.208692 images=16000/30328 updates=6188 EMA=6188 GPU_peak=3.40GiB
+Epoch 7 | images batch 1100/1896 | Study-weighted BCE=0.208370 images=17600/30328 updates=6238 EMA=6238 GPU_peak=3.40GiB
+Epoch 7 | images batch 1200/1896 | Study-weighted BCE=0.207648 images=19200/30328 updates=6288 EMA=6288 GPU_peak=3.40GiB
+Epoch 7 | images batch 1300/1896 | Study-weighted BCE=0.207225 images=20800/30328 updates=6338 EMA=6338 GPU_peak=3.40GiB
+Epoch 7 | images batch 1400/1896 | Study-weighted BCE=0.206266 images=22400/30328 updates=6388 EMA=6388 GPU_peak=3.40GiB
+Epoch 7 | images batch 1500/1896 | Study-weighted BCE=0.205965 images=24000/30328 updates=6438 EMA=6438 GPU_peak=3.40GiB
+Epoch 7 | images batch 1600/1896 | Study-weighted BCE=0.205285 images=25600/30328 updates=6488 EMA=6488 GPU_peak=3.40GiB
+Epoch 7 | images batch 1700/1896 | Study-weighted BCE=0.205303 images=27200/30328 updates=6538 EMA=6538 GPU_peak=3.40GiB
+Epoch 7 | images batch 1800/1896 | Study-weighted BCE=0.204692 images=28800/30328 updates=6588 EMA=6588 GPU_peak=3.40GiB
+Epoch 7 | images batch 1896/1896 | Study-weighted BCE=0.204394 images=30328/30328 updates=6636 EMA=6636 GPU_peak=3.40GiB
+epoch=7 weighted_train_BCE=0.204394 val_AUC=0.798576 val_F1_tuned=0.467331 val_F1_05=0.332947 val_AP=0.415395 weights=ema best=False complete=True early_bad=2/3
+per_class_AUC=[0.7122754491017964, 0.82282830275531, 0.782327931974972, 0.7271882204209117, 0.8800490883590463, 0.7853811488311214, 0.7804968180615849, 0.7336412374121568, 0.8936047258250932, 0.8679661738112967] per_class_AP=[0.09483927544554721, 0.23862919173485284, 0.18086124201102416, 0.18702106124213438, 0.4717321915300392, 0.4229085511323787, 0.4885774218757033, 0.47766837171958976, 0.7735485012992767, 0.818162611826089] per_class_F1=[0.2413793103448276, 0.2839506172839506, 0.29213483146067415, 0.27906976744186046, 0.5521885521885522, 0.5210084033613446, 0.5263157894736842, 0.5132075471698113, 0.716636197440585, 0.7474150664697193]
+=> Epoch 8/10 | raw384 | batch=16 images × accum2 | AMP=bfloat16 | EMA=GPU | full fine-tune/shuffle coverage
+Epoch 8 | images batch 1/1896 | Study-weighted BCE=0.218944 images=16/30328 updates=6636 EMA=6636 GPU_peak=3.30GiB
+Epoch 8 | images batch 100/1896 | Study-weighted BCE=0.193935 images=1600/30328 updates=6686 EMA=6686 GPU_peak=3.40GiB

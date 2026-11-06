@@ -1,0 +1,20 @@
+{
+  "purpose": "TIMING_ONLY_PREPARATION_NO_TRAINING_NO_OPTIMIZATION",
+  "created_utc": "2026-10-28T17:46:05.860552+00:00",
+  "archive": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/dual768_timing_only.tar.gz",
+  "archive_bytes": 266803659,
+  "archive_sha256": "ae2703c82d5d704b4fe7ed5a6d2702c14b2cca2e14673c4365ee2f0097b5b7a4",
+  "bundle_files_verified": 132,
+  "bundle_total_bytes": 291972166,
+  "archive_content_matches_bundle": true,
+  "metadata_preview_exit_code": 0,
+  "metadata_preview_executed": false,
+  "model_bytes": 128766272,
+  "fixed_measured_images": 100,
+  "fixed_warmup_images": 5,
+  "production_sources_changed": false,
+  "gpu_work": false,
+  "proxy_timing_executed": false,
+  "test_predictions_regenerated": false,
+  "runtime_execution_on_target_pending": true
+}

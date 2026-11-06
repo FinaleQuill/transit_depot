@@ -1,0 +1,66 @@
+{
+  "experiment_id": "tight_crop_ab_20261102",
+  "amendment_id": "ap_earlystop_A_then_B_v1",
+  "registered_hong_kong": "2026-11-02T03:32:53.436298+08:00",
+  "reason": "User explicitly requested all A before B, no second manual operation, and early stopping, while A_tiny E1 is in progress; no completed epoch AUC yet.",
+  "original_plan_path": "/home/featurize/work/cloud_project_v2/docs/TIGHT_CROP_AB_PLAN_20261102.json",
+  "original_plan_sha256": "6f16ebd0023ea626b1be10f137011d0d8d1ed87ee3d6a663f26c50423b35bd32",
+  "original_training_sources_unchanged": true,
+  "job_order": [
+    "A_tiny",
+    "A_base",
+    "B_tiny",
+    "B_base"
+  ],
+  "training": {
+    "seed": 48,
+    "max_epochs": 2,
+    "original_lr_schedule_preserved": true,
+    "early_stopping_location": "external controller at completed epoch boundary; native patience remains zero",
+    "monitor": "each member FP16 hflip2 AP-only Study Macro-AUC",
+    "baseline_epoch": 0,
+    "min_delta": 0.0001,
+    "patience": 1,
+    "rule": "Score each initialization as E0 under its own arm preprocessing. Complete E1; skip E2 unless AP-only E1 minus E0 is strictly greater than 0.0001. If E2 runs, end at hard maximum two epochs.",
+    "checkpoint_selection": "highest observed AP-only AUC among E0,E1,and E2 if run; ties prefer earlier epoch",
+    "checkpoint_selection_min_delta_applies": false,
+    "same_policy_for_A_B": true,
+    "equal_realized_epochs_guaranteed": false,
+    "note": "No more hyperparameter adjustments after scores. Independently early-stopped members can have different realized epochs. Seed, initialization, max budget and policy remain paired."
+  },
+  "validation": {
+    "split": "valid",
+    "ap_only": "all view_position values in a Study are AP",
+    "primary": "fixed Tiny/Base fusion AP-only Macro-AUC B minus A",
+    "per_class": true,
+    "ap_single_multi": true,
+    "bootstrap_samples": 1000,
+    "bootstrap_seed": 20261102,
+    "sampling_unit": "patient with all Studies, while aggregation remains strictly within Study",
+    "selection_bias": "AP-only now used for stopping/selection; resulting valid comparisons and bootstrap are exploratory and do not correct selection bias or establish online generalization",
+    "no_test": true
+  },
+  "orchestration": {
+    "adopt_live_A_tiny": true,
+    "preserve_epoch1_work": true,
+    "native_stop_marker": "Write STOP only after epoch starts; wait full validation/checkpoint and process exit. Remove STOP before exact continuation.",
+    "exact_resume": "original last.pt plus optimizer/scaler/RNG; do not rewrite original checkpoint metadata",
+    "control_run_root": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102",
+    "persistent_root": "artifacts/tight_crop_ab_20261102",
+    "historical_reference": "separate unchanged044, not pairedA",
+    "failure_retry_max": 1,
+    "original_controller_pid": 28152,
+    "adopt_docker_pid": 28156,
+    "adopt_docker_start_ticks": 1758452,
+    "adopt_trainer_pid": 28236
+  },
+  "augmentation": {
+    "B_erasing_p": 0.5,
+    "erase_original_implementation_unchanged": true,
+    "valid_erasing": false
+  },
+  "latency_gate": {
+    "old_5_18ms_gate_waived_for_experiment": true,
+    "production_certification": false
+  }
+}

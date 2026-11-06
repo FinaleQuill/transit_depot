@@ -1,0 +1,65 @@
+{
+  "pid": 42304,
+  "heartbeat_utc": "2026-10-25T13:26:32.974113+00:00",
+  "runner_alive": false,
+  "observations": [
+    {
+      "fold": 0,
+      "epoch": 20,
+      "sha256": "af2c4589a410434d61213945b8036ba9da23af4b5600b0b9a6acb97a905b437d",
+      "record_sha256": "b261be267f83d971642a83d82f71651ce9cdcfff53a93e0bb75721b2b746f004"
+    }
+  ],
+  "checkpoint_coverage": {
+    "0": {
+      "completed_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "recorded_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_epochs": []
+    }
+  },
+  "consecutive_errors": 0,
+  "checkpoint_bytes_read": 0,
+  "gpu_used": false
+}

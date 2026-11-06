@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-11-03T13:54:22.899728+00:00",
+  "completed_utc": "2026-11-03T13:54:23.759492+00:00",
+  "complete": true,
+  "preregistration": "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/prereg/resolution_decision_report.txt",
+  "preregistration_sha256": "c26bf0cf77ac01111d36e3f1b249be94267c8e19f7e88eacdacecfc2407ca074",
+  "script_sha256": "7401fff03721bbeb62a4f69970815ce39d2503c41b2d6fa915a1a0ed16f8d84c",
+  "inputs_sha256": {
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/comparison/comparison.json": "68e00ad55a881e2aa5d33af0d1a2337b8116ba8426b6fc8fccf30866090ec1f2",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/comparisons/resolution/comparison.json": "e0e37415371e8ea430ffb3e5e972839262a58aac542ff066bdfef95dff494fec",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/STATUS.json": "06be907bee7b8e9bcd358efb396947823cb1e407bce60cbac5e7fb71b96603f0",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/queue/receipts/eval_res640_best.json": "9baaf9b9dfb9a63c12cc2f6549616d3e03da7d63389fc9663d8d93136a2cd388",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/queue/receipts/eval_res768_best.json": "5a9ffc4cd439971495e3d85b5f185de0ec919b79da3a19377f6b217e8afe56ba",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/queue/receipts/eval_res896_best.json": "c0826da4c03b683336a0593b71089918c53278be9f0c254e6a68d347ff916d90",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/queue/receipts/compare_resolution_e1.json": "af93fb0a65ad6680c50feeded6d23e5b6462082f55ce8806076acec3e96488e1",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res640_best/report.json": "f6107557c8af4ab91df00c6516d72ef78ab952e5324561b15ba4f44a50888ae1",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res768_best/report.json": "955da15ff220e6969d53414c819b6c1ca3263441c185de3222aa260318737fab",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res896_best/report.json": "bf738943ee52bee189078f923d57457dab76f40e47bf340812c401d08fd5cf15",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/analysis/class14_diagnostic.json": "5d51f3600132042aa4a24b1f790b171bd144db9e31b3da24ad107383a0d8f42e",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/analysis/patient_mean_e1.json": "58372dcad575be2b08434b91b55050ac5486abc1ea20c01c27fa813302fb242b"
+  },
+  "output_sha256": {
+    "RESOLUTION_DECISION.md": "f77a26c8d955a55cf4633b85deaa68011947ffc9b3078d3e4b9efa6a52b9e98c",
+    "SENSITIVITY_MAP.png": "97b6a50642503cebfe7988a1db02294252bf66ea6234f3732681f78f1b3af15a",
+    "SENSITIVITY_MAP.pdf": "d834f69a2f954e280a9e5ab690be677ef7052ba85a06e900571d1f14e77e8f38"
+  },
+  "test_data_read_by_this_script": false,
+  "training_started_by_this_script": false
+}

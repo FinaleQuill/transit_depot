@@ -1,0 +1,8 @@
+{
+  "state": "completed_after_report_recovery",
+  "images_done": 1422,
+  "images_total": 1422,
+  "candidate_won": true,
+  "report_recovered_without_new_inference": true,
+  "original_progress_preserved_at": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/evidence/report_recovery/progress.json"
+}

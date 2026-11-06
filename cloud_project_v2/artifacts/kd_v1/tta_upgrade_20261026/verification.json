@@ -1,0 +1,41 @@
+{
+  "checked_at_hong_kong": "2026-10-26T21:08:46.716584+08:00",
+  "teacher_core_and_protected_manifests_unchanged": true,
+  "frozen_teacher_plan_unchanged": true,
+  "all_five_teachers_completed": true,
+  "teacher_weight_acceptance": "teacher_acceptance.json",
+  "pytest_xml": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "287",
+    "time": "11.270",
+    "timestamp": "2026-10-26T13:06:42.591988+00:00",
+    "hostname": "featurize"
+  },
+  "cli_checks": "cli_previews.json",
+  "new_training_started": false,
+  "new_teacher_or_student_inference_started": false,
+  "new_gpu_work_started": false,
+  "new_run_directories_created": false,
+  "final_model_size_status": "awaiting_real_student_exports",
+  "T4_latency_status": "not_measured",
+  "gpu_compute_processes": "",
+  "code_sha256": {
+    "distill_tta_data.py": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "extract_soft_labels_tta.py": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+    "validate_teacher_tta.py": "b1c450b601d8712faf41b8ddabb63cc806e0184a8321e2a95fde4d4920b2cecd",
+    "train_distill.py": "a9c2dfd3755115764bb5a8adf48b43dfc5405ebc967f5e2686c035c8817c10a2",
+    "deploy_kd.py": "37dbe31ee3a09cee308bdd089d9449ec5ee59e0c4ac15e0f7fb061df9c67f332",
+    "export_student.py": "b54e2c05826f4eedfa556bf8b4a009c1070cdc5f14fbb6b374265512c29eeb55",
+    "compose_students.py": "e7ea6a202c2f042d07bba0876eb640f7f5a393c847f8800790326c895d392125",
+    "predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "validate_student.py": "1017e894e37b5a1546e5a3b07cfc4c2d659f492a693db01cde43a621c7f89e92",
+    "run_student_experiments.py": "205745a4dd8d93ed4268a2d3d68dc46b27c8d4639a5cf62238cd9c622ae4b299",
+    "compare_student_candidates.py": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+    "build_training_evidence.py": "79e0135f389f7ba51e14cb428cae3552a0fa076e72e0b5f732db4f1abe52047a",
+    "package_kd_submission.py": "770e1520febeaabdb9d82a19f58b18d751f4a73bf52d6d7a1984af37da908514"
+  }
+}

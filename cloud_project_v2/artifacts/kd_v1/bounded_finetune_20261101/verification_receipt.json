@@ -1,0 +1,19 @@
+{
+  "cpu_checks": 99,
+  "checks": [
+    {
+      "file": "training_regression_tests.final.log",
+      "sha256": "4d97f9c34c6bfb98f5caa8cf8582a3c5f508061f314fc77d51df1eddc44cd8af"
+    },
+    {
+      "file": "submission_runtime_tests.log",
+      "sha256": "51986dd9a630d9f22bba2446f8e2a39ef935baaca53fdba8108abe162dec1a29"
+    }
+  ],
+  "ema_real_sources_cpu_load_passed": true,
+  "training_previews": [
+    "X1.preview.json",
+    "X2.preview.json"
+  ],
+  "test_used": false
+}

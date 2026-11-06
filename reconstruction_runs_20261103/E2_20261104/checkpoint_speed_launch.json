@@ -1,0 +1,29 @@
+{
+  "AI_goal_created": false,
+  "argv": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "reconstruction.controller_checkpoint_speed",
+    "--controller-dir",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller",
+    "--transition-request",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/transition_request.json",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cxr_research_20261103",
+  "git_commit": "f469984824bfdfa909b75c693af82cb630ac0fd2",
+  "log": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller.checkpoint_speed.launch.log",
+  "pid": 90510,
+  "probe_timeout_seconds": 600,
+  "profile_sha256": "ef6448a68ff768e4bb71f66b5352ecd5be1dbfea59601c19de2814a7420caf18",
+  "queue": "one bounded train-only probe then same E2 local continuation and fixed CPU comparison",
+  "request": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/transition_request.json",
+  "request_sha256": "995b68ab9b1570a8b363c0ef432151f6dff30618fb6d863847e29a04cb572b5d",
+  "safe_cancel": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/CANCEL_CHECKPOINT_SPEED_TRANSITION",
+  "start_new_session": true,
+  "started_at": "2026-11-04T21:30:46.226439+08:00",
+  "state_at_launch": "waiting_for_complete_local_epoch2",
+  "stdin": "/dev/null",
+  "training_safe_stop": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/STOP"
+}

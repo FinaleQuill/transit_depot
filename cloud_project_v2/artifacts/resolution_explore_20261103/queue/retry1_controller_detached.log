@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/run_exploration_queue.py", line 538, in <module>
+    Queue(parser.parse_args().plan).run()
+  File "/home/featurize/work/cloud_project_v2/run_exploration_queue.py", line 495, in run
+    elif job['kind']=='compare': receipt=self.comparison(job,pre)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/run_exploration_queue.py", line 453, in comparison
+    self.command(job,docker_command('exploration_evaluate.py',args,gpu=job.get('timing_fusions',False)),pre)
+  File "/home/featurize/work/cloud_project_v2/run_exploration_queue.py", line 331, in command
+    raise RuntimeError(f'Command exit {child.returncode}: {job["name"]}; see {self.root/"logs"/(job["name"]+".log")}')
+RuntimeError: Command exit 1: compare_resolution; see /home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/logs/compare_resolution.log

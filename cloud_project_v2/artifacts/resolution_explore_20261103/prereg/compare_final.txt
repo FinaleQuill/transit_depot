@@ -1,0 +1,4 @@
+Hypothesis: fixed candidate and fusion comparisons will identify which branches merit human final-member review.
+Expected effect: include unchanged champion041 as a protocol-matched anchor and all candidates versus it; all single candidates, dual Tiny, ROI pair, MIL contrasts, per-class paired intervals, and recorded three-image timing are available together.
+Cost: CPU-only 2000-resample patient bootstrap over saved official-valid predictions; no training or test inference.
+Failure criterion: missing candidate evidence, altered valid identities, tuned fusion coefficients, or any test access.

@@ -1,0 +1,48 @@
+{
+  "time_hong_kong": "2026-11-01T14:42:23.974313+08:00",
+  "test_accessed": false,
+  "splits": {
+    "train": {
+      "images": 30328,
+      "studies": 18513,
+      "patients": 11055,
+      "missing_images": 0,
+      "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "sample_hash_matches": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "valid": {
+      "images": 1422,
+      "studies": 859,
+      "patients": 228,
+      "missing_images": 0,
+      "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "sample_hash_matches": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "train_valid_overlap": {
+    "subject_id": 0,
+    "study_key": 0,
+    "dicom_id": 0,
+    "file_sha256": 0,
+    "pixel_sha256": 0
+  }
+}

@@ -1,0 +1,4 @@
+Hypothesis: matched E1 and fixed E3 results can distinguish class-level training-resolution evidence from noise without new fitting.
+Expected effect: disclose all ten class deltas and patient CIs, use 0.003 as a screen rather than proof, and decide whether a resolution branch or second Tiny is supported.
+Cost: CPU rendering of completed official-valid reports and an exported sensitivity plot; no image scans, new predictions, training or test access.
+Failure criterion: missing completed evaluation receipts, mismatched source hashes, incomplete class-wise paired CIs, or presenting E1/E3 as independent replication.

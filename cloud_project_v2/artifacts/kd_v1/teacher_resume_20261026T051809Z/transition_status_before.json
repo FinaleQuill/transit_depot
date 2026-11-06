@@ -1,0 +1,57 @@
+{
+  "phase": "failed",
+  "updated_at_utc": "2026-10-25T23:57:30.829271+00:00",
+  "controller_pid": 146121,
+  "original_completed_epochs": 20,
+  "controller_process": {
+    "pid": 146121,
+    "state": "R",
+    "ppid": 146116,
+    "start_ticks": 2944264,
+    "cmdline_sha256": "e0ce4284b90bec18a29602e32dcf33bdade64f743cd275919720d4d05038411a"
+  },
+  "original_scheduler_released": true,
+  "validation_output": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20",
+  "command": {
+    "stage": "training_folds_1_to_4_twelve_epochs",
+    "args": [
+      "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+      "-u",
+      "/home/featurize/work/cloud_project_v2/run_teachers.py",
+      "--run-dir",
+      "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5",
+      "--fold-plan",
+      "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+      "--image-root",
+      "/home/featurize/data/cxr_first",
+      "--batch-size",
+      "2",
+      "--effective-batch-size",
+      "32",
+      "--epochs",
+      "12",
+      "--num-workers",
+      "8",
+      "--prefetch-factor",
+      "2",
+      "--seed",
+      "43",
+      "--folds",
+      "1",
+      "2",
+      "3",
+      "4",
+      "--execute"
+    ],
+    "process": {
+      "pid": 147184,
+      "state": "R",
+      "ppid": 146121,
+      "start_ticks": 2953635,
+      "cmdline_sha256": "b63ba2fd5726705ff454847b2cccbaa23fcd5d679cd1e05b391bc29863d66aa1"
+    },
+    "exit_code": 1
+  },
+  "comparison_report": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20/comparison_report.json",
+  "error": "RuntimeError: training_folds_1_to_4_twelve_epochs exited with code 1; later stages were not started"
+}

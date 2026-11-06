@@ -1,0 +1,4 @@
+Hypothesis: the 768-trained EMA is the matched full-frame reference for resolution, ROI, and fusion contrasts.
+Expected effect: retain all ten class scores and a sampled-train versus full-valid diagnostic under fixed 768+hflip2 inference.
+Cost: one FP16 pass over official valid and a deterministic 1000-Study official-train diagnostic, plus 30 three-image Studies over three rounds.
+Failure criterion: missing checkpoint SHA/compliance binding, incomplete official-valid coverage, or any test access.

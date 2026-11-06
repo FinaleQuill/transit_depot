@@ -1,0 +1,17 @@
+{
+  "state": "epoch_completed",
+  "epoch": 21,
+  "loss": 0.4859051488803456,
+  "studies": 14811,
+  "images": 24277,
+  "seconds": 2032.9296136200137,
+  "attempted_updates": 9723,
+  "optimizer_updates": 9723,
+  "skipped_updates": 0,
+  "macro_auc": 0.8048998595020104,
+  "patient_equal_macro_auc": 0.8238057127265644,
+  "best_macro_auc": 0.8049053321892679,
+  "best_epoch": 20,
+  "stale_epochs": 1,
+  "recorded_at": "2026-11-06T12:39:18.019640+08:00"
+}

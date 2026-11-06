@@ -1,0 +1,109 @@
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold0_e20 shape=(1422, 2, 10) original_complete=True
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold1_e12 shape=(1422, 2, 10) original_complete=True
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold2_e12 shape=(1422, 2, 10) original_complete=True
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold3_e12 shape=(1422, 2, 10) original_complete=True
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold4_e12 shape=(1422, 2, 10) original_complete=True
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error _ssl.c:993: The handshake operation timed out>
+  data = fetch_version_info()
+Saved raw logits source=fold0_e13 shape=(1422, 2, 10) original_complete=False
+Teacher epoch/raw-logit diagnostic complete: ../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_epoch_logits_v2
+{"policy": "raw_probability", "tta": "identity", "A_macro_auc": 0.8016390623403039, "B_macro_auc": 0.801877928387977, "B_minus_A_macro_auc": 0.00023886604767309194, "B_minus_A_per_class_auc": [0.0003493013972055703, 0.0005918327086210651, 0.0002673939782875667, 0.0006507027589794934, 0.0006077606358111387, -0.0003065096012061508, 0.0009180164620580245, -0.0017170180395565948, 0.00013484011814557384, 0.0008923400583862318]}
+{"policy": "raw_probability", "tta": "hflip2", "A_macro_auc": 0.8024670163998529, "B_macro_auc": 0.8025674515283624, "B_minus_A_macro_auc": 0.00010043512850954617, "B_minus_A_per_class_auc": [-0.0004990019960080527, 0.00013151837969360702, 0.001764800256698118, 0.0006507027589797154, 0.0004791958859278189, -0.0004556223801712722, -1.555960105181775e-05, -0.001876403680359351, 0.0001155772441248093, 0.0007091444172607764]}
+{"policy": "train_pos_weight_corrected_probability", "tta": "identity", "A_macro_auc": 0.8035299716279706, "B_macro_auc": 0.8035271180472167, "B_minus_A_macro_auc": -2.8535807539142866e-06, "B_minus_A_per_class_auc": [-0.0010978043912176494, 0.0004931939238510541, -2.6739397828823286e-05, 0.0005391537145832404, 0.00036231884057980057, -0.0003147936444820587, 0.0006612830447026985, -0.001608346011736539, 0.00014768203415937986, 0.000815516079849754]}
+{"policy": "train_pos_weight_corrected_probability", "tta": "hflip2", "A_macro_auc": 0.8043257753467092, "B_macro_auc": 0.8042834567742883, "B_minus_A_macro_auc": -4.2318572420985134e-05, "B_minus_A_per_class_auc": [-0.0007485029940119681, 0.00032879594923396205, -5.347879565753555e-05, 0.0011154904439650837, 0.00010518934081349407, -0.0005218947263780915, 0.00027229301840692166, -0.00160834601173665, 9.631437010404476e-05, 0.0005909536810504434]}

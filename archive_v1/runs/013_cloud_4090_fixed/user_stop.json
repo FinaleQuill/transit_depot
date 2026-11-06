@@ -1,0 +1,13 @@
+{
+  "stopped_at": "2026-10-18T16:13:42+08:00",
+  "reason": "User requested stopping 013 for performance stress testing",
+  "signal": "SIGTERM",
+  "launcher_exitcode": 143,
+  "completed_epochs": 2,
+  "interrupted_epoch": 3,
+  "last_logged_study_batch": 200,
+  "last_logged_optimizer_updates": 2512,
+  "last_logged_counters_are_lower_bounds": true,
+  "checkpoint_resume_supported": false,
+  "earlier_complete_epoch_checkpoints_preserved": true
+}

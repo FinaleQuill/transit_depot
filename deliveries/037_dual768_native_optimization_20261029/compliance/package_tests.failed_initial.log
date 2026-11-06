@@ -1,0 +1,41 @@
+test_direct_evidence_collection_checks_member_seed_and_resolution (test_kd_ensemble_package.EnsemblePackageTests.test_direct_evidence_collection_checks_member_seed_and_resolution) ... ok
+test_evidence_builder_rejects_mismatched_student_member (test_kd_ensemble_package.EnsemblePackageTests.test_evidence_builder_rejects_mismatched_student_member) ... ok
+test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest (test_kd_ensemble_package.EnsemblePackageTests.test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest) ... ERROR
+test_missing_one_student_evidence_prevents_ready_even_with_other_reports (test_kd_ensemble_package.EnsemblePackageTests.test_missing_one_student_evidence_prevents_ready_even_with_other_reports) ... ok
+test_runtime_allowlist_rejects_unprepared_or_tampered_dependencies (test_kd_ensemble_package.EnsemblePackageTests.test_runtime_allowlist_rejects_unprepared_or_tampered_dependencies) ... ok
+test_two_member_mixed_resolution_package_keeps_all_runtime_and_sources (test_kd_ensemble_package.EnsemblePackageTests.test_two_member_mixed_resolution_package_keeps_all_runtime_and_sources) ... ok
+test_actual_teacher_only_evidence_cannot_certify_unrun_student (test_kd_package.PackageTests.test_actual_teacher_only_evidence_cannot_certify_unrun_student) ... ok
+test_complete_training_evidence_preserves_history_and_no_checkpoint_binary_is_read (test_kd_package.PackageTests.test_complete_training_evidence_preserves_history_and_no_checkpoint_binary_is_read) ... ok
+test_cost_semantics_seed_coverage_and_sidecar_sha_are_required (test_kd_package.PackageTests.test_cost_semantics_seed_coverage_and_sidecar_sha_are_required) ... ok
+test_explicit_sha_cache_mapping_and_verified_copy (test_kd_package.PackageTests.test_explicit_sha_cache_mapping_and_verified_copy) ... ok
+test_final_checkpoint_ancestry_must_match_recorded_hash (test_kd_package.PackageTests.test_final_checkpoint_ancestry_must_match_recorded_hash) ... ok
+test_five_teachers_share_one_exact_original_pretrain (test_kd_package.PackageTests.test_five_teachers_share_one_exact_original_pretrain) ... ok
+test_missing_checkpoint_epoch_remains_pending (test_kd_package.PackageTests.test_missing_checkpoint_epoch_remains_pending) ... ok
+test_missing_evidence_remains_pending_and_wrong_model_report_is_rejected (test_kd_package.PackageTests.test_missing_evidence_remains_pending_and_wrong_model_report_is_rejected) ... ok
+test_missing_log_segment_and_environment_lock_stay_pending (test_kd_package.PackageTests.test_missing_log_segment_and_environment_lock_stay_pending) ... ok
+test_old_boolean_only_cost_cannot_be_upgraded_to_ready (test_kd_package.PackageTests.test_old_boolean_only_cost_cannot_be_upgraded_to_ready) ... ok
+test_passing_deployment_reports_still_require_training_evidence (test_kd_package.PackageTests.test_passing_deployment_reports_still_require_training_evidence) ... ok
+test_prepared_package_contains_reproducibility_materials_and_stays_pending (test_kd_package.PackageTests.test_prepared_package_contains_reproducibility_materials_and_stays_pending) ... ok
+test_source_weight_hash_mismatch_is_rejected_without_download (test_kd_package.PackageTests.test_source_weight_hash_mismatch_is_rejected_without_download) ... ok
+test_tampered_checkpoint_chain_is_rejected (test_kd_package.PackageTests.test_tampered_checkpoint_chain_is_rejected) ... ok
+test_xlsx_is_valid_ooxml_and_sha_remains_text (test_kd_package.PackageTests.test_xlsx_is_valid_ooxml_and_sha_remains_text) ... ok
+test_mixed_bce_and_kd_preserve_all_required_teacher_and_student_runs (test_supervised_package.SupervisedPackageTests.test_mixed_bce_and_kd_preserve_all_required_teacher_and_student_runs) ... ok
+test_packaging_itself_rejects_mislabeled_training_mode (test_supervised_package.SupervisedPackageTests.test_packaging_itself_rejects_mislabeled_training_mode) ... ok
+test_supervised_package_requires_no_teacher_files_or_pretraining_source (test_supervised_package.SupervisedPackageTests.test_supervised_package_requires_no_teacher_files_or_pretraining_source) ... ok
+
+======================================================================
+ERROR: test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest (test_kd_ensemble_package.EnsemblePackageTests.test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/tests/test_kd_ensemble_package.py", line 261, in test_final_image_sidecar_is_copied_unchanged_and_bound_to_manifest
+    result = package_submission(model_dir=self.model, output=self.root / "sidecar_package",
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/package_kd_submission.py", line 683, in package_submission
+    provenance = item["provenance"]
+                 ~~~~^^^^^^^^^^^^^^
+KeyError: 'provenance'
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.724s
+
+FAILED (errors=1)

@@ -1,0 +1,8 @@
+{
+  "attached_at": "2026-10-25T16:06:17.357482+08:00",
+  "pane": "cxr-kd-v1:0.0",
+  "live_log": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_live.raw.log",
+  "recovered_history": "console_recovered_before_attachment.txt",
+  "history_capture_lines": 415,
+  "note": "Live pipe attached before scrollback capture; overlap between files is expected. Terminal-rendered prior history is recovered, not an original byte-exact stdout/stderr recording. Evidence coverage will be verified from batch/epoch markers."
+}

@@ -1,0 +1,25 @@
+{
+  "parent_binding": {
+    "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/predictions.npz",
+    "predictions_sha256": "8e48a469622833e7514b728e0e2e7f3a8fdf8ae2c675e5a77f7fe37b6150d1c5",
+    "report_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/report.json",
+    "report_sha256": "9e9be227a709f21134416eed6ebe8a83bafc06517fbfc7659485e1828392a2a6",
+    "split_plan_path": "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json",
+    "split_plan_sha256": "b7bf913c38756b9b4db42a87847c7d4879f477b8644cc66a62172c50fa3f4827",
+    "dev_manifest_path": "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv",
+    "dev_manifest_sha256": "fd889cd16f0c2f3156aa79ec08521741238ea0e362ebd86169c13ad3593e96af"
+  },
+  "candidate_binding": {
+    "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/epoch_00/predictions.npz",
+    "predictions_sha256": "6057c83802dfab7ae0901cd82a78d35bdb75bcc6e38439cc89b0e2122b71b4e8",
+    "report_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/epoch_00/report.json",
+    "report_sha256": "3ea3295ba077a19ee8b8d2e823a08a51822ab8441f77fbd134532b44b1d67e73",
+    "split_plan_path": "/home/featurize/work/reconstruction_runs_20261103/splits/split_plan.json",
+    "split_plan_sha256": "b7bf913c38756b9b4db42a87847c7d4879f477b8644cc66a62172c50fa3f4827",
+    "dev_manifest_path": "/home/featurize/work/reconstruction_runs_20261103/splits/dev.csv",
+    "dev_manifest_sha256": "fd889cd16f0c2f3156aa79ec08521741238ea0e362ebd86169c13ad3593e96af"
+  },
+  "max_abs_probability_difference": 0.0004944205284118652,
+  "macro_auc_difference": -1.540841846003893e-06,
+  "interpretation": "Different historical evaluation packing/chunks; diagnostic only, no tuning"
+}

@@ -1,0 +1,44 @@
+{
+  "checked_utc": "2026-11-02T08:49:18Z",
+  "scope": "read-only frozen-source, final-status, process, GPU, and report-language check; no inference",
+  "frozen_sources": {
+    "method": "import run_final_stage_review; verify_sources()",
+    "result": "pass",
+    "counts": [31, 4, 15],
+    "total_entries": 50,
+    "receipt_sha256": {
+      "original": "2c7ebb485c12e8f43afc2d34849b5e4aa25f9751a46ad57ba6d296a5705ca3a3",
+      "earlystop": "30a84f059afc64bc8eae56ef41ed168d8c1c79e74a93f454aaa55b7590b8f109",
+      "postreview": "73749a1515f5fd251395f37f310f9d5d0590d25efd55094189bf2c2783a53046"
+    }
+  },
+  "finalization": {
+    "state": "completed",
+    "stage": "done",
+    "child_pid": null,
+    "error": null,
+    "status_sha256": "0c73968fb67b3126aa6f165c2688f705d56d4d1d596bceedf65acc02ec7abefb"
+  },
+  "study_preview_queue": {
+    "state": "completed",
+    "stage": "done",
+    "child_pid": null,
+    "error": null,
+    "outputs": ["043", "044", "045"],
+    "status_sha256": "1cc885a449a1630bf5941ef045d33a0d4c7f82946eef393a761f47f1aa0db95e"
+  },
+  "live_process_check": {
+    "matching_finalization_training_postreview_study_preview_commands": [],
+    "nvidia_smi_compute_processes": []
+  },
+  "final_report": {
+    "sha256": "82a320b181c1630ebff4bdf125daa3f543c5ca81eb5457eac4a2c977e727df6a",
+    "earlier_four_claim_clarifications": "all addressed",
+    "details": [
+      "AP-only Study AUC and training KL are distinguished; no validation teacher-distance claim",
+      "per-image decode reuse is specified",
+      "100ms and 500MB are identified as carried-forward constraints; 043 backup requires its own T4/3.0 acceptance",
+      "ROI head MAC estimate is per image per forward; Study image count and hflip2 scaling are stated"
+    ]
+  }
+}

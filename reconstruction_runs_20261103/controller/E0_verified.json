@@ -1,0 +1,13 @@
+{
+  "best_epoch": 8,
+  "best_macro_auc": 0.7978396535270589,
+  "epochs": 14,
+  "history_sha256": "3c9d610ace809f9dbe290c8c2ff62d9326ad7d04075bd9be3c99146c8e87e1d8",
+  "ledger_sha256": "f3e91de9abdd8d506753edebe8c4897f1de9e32ccaf063474b90742e8e1e633e",
+  "name": "E0",
+  "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/predictions.npz",
+  "prediction_sha256": "8e48a469622833e7514b728e0e2e7f3a8fdf8ae2c675e5a77f7fe37b6150d1c5",
+  "report_sha256": "9e9be227a709f21134416eed6ebe8a83bafc06517fbfc7659485e1828392a2a6",
+  "state": "early_stopped",
+  "verified_at": "2026-11-04T06:17:24.613998+08:00"
+}

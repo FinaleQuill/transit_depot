@@ -1,0 +1,7 @@
+{
+  "inputs_source": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs",
+  "input_copy": "/tmp/cloud_student_runs_20261030/bounded_finetune_20261101/post_training_review/local_inputs",
+  "images": 105,
+  "local_outputs_root": "/tmp/cloud_student_runs_20261030/bounded_finetune_20261101/post_training_review",
+  "immutable_copy_checked_by_validate_inputs": true
+}

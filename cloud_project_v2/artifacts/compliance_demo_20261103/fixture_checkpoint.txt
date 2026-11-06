@@ -1,0 +1,1 @@
+NOT MODEL WEIGHTS. Synthetic checkpoint version 2.

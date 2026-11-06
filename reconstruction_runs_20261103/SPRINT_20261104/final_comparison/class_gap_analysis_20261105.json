@@ -1,0 +1,234 @@
+{
+  "created_at_hong_kong": "2026-11-05T03:09:55.769846+08:00",
+  "method": "Patient-cluster nonparametric bootstrap; resample 228 whole patients with replacement, retain every Study; compare each class AUC against the same resample ten-class Macro-AUC.",
+  "samples_requested": 10000,
+  "samples_valid": 10000,
+  "seed": 20261105,
+  "reference": "Competition ten-class Macro-AUC, including class 10 No Finding",
+  "macro_auc": 0.8179628779375786,
+  "disease_only_classes_1_to_9_mean": 0.8106613446615291,
+  "macro_auc_95_interval": [
+    0.7852000881285658,
+    0.8485896336323898
+  ],
+  "multiple_comparison_adjustment": "Ten two-sided comparisons; Bonferroni per-class alpha=.005, percentile interval [.0025,.9975]. Approximate familywise 95% intervals.",
+  "limitations": "Post-training exploratory analysis on a repeatedly used local validation set. Patient resampling addresses within-patient dependence, not validation-selection bias, external distribution shift or label uncertainty. No causal explanation or online improvement is established.",
+  "new_model_inference_runs": 0,
+  "model_or_fusion_changed": false,
+  "test_images_read": false,
+  "submission_generated": false,
+  "source_prediction_sha256": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+  "source_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "classes": [
+    {
+      "class_id": 1,
+      "auc": 0.7475548902195609,
+      "auc_95_interval": [
+        0.6080905708387345,
+        0.8522117692050291
+      ],
+      "difference_from_macro": -0.0704079877180177,
+      "gap_95_interval": [
+        -0.18845844654717966,
+        0.013426091347740476
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.2447837935046875,
+        0.042154877545066693
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 24,
+      "positive_patients": 16
+    },
+    {
+      "class_id": 2,
+      "auc": 0.8561517722101664,
+      "auc_95_interval": [
+        0.7612191704882839,
+        0.9270857027243548
+      ],
+      "difference_from_macro": 0.03818889427258776,
+      "gap_95_interval": [
+        -0.045700434356599214,
+        0.10673553141430295
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.10500185847654614,
+        0.132615969024431
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 37,
+      "positive_patients": 13
+    },
+    {
+      "class_id": 3,
+      "auc": 0.8167816460773304,
+      "auc_95_interval": [
+        0.7657975748663357,
+        0.865360485455244
+      ],
+      "difference_from_macro": -0.0011812318602482108,
+      "gap_95_interval": [
+        -0.04817471880901174,
+        0.042223399365057875
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.07309400606380097,
+        0.05999034393675733
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 46,
+      "positive_patients": 24
+    },
+    {
+      "class_id": 4,
+      "auc": 0.7597047668624972,
+      "auc_95_interval": [
+        0.6821808289917435,
+        0.8227559885936958
+      ],
+      "difference_from_macro": -0.05825811107508139,
+      "gap_95_interval": [
+        -0.13437774455115237,
+        0.00636323366601925
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.17006897010686253,
+        0.029348413824582524
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 68,
+      "positive_patients": 37
+    },
+    {
+      "class_id": 5,
+      "auc": 0.8825619448340346,
+      "auc_95_interval": [
+        0.8397280190405371,
+        0.927405786510168
+      ],
+      "difference_from_macro": 0.064599066896456,
+      "gap_95_interval": [
+        0.03330678433858146,
+        0.09946268479798537
+      ],
+      "gap_bonferroni_99_5_interval": [
+        0.017714942327450942,
+        0.11446835563557983
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 115,
+      "positive_patients": 34
+    },
+    {
+      "class_id": 6,
+      "auc": 0.7944894544129099,
+      "auc_95_interval": [
+        0.7452394478988399,
+        0.8438323715673981
+      ],
+      "difference_from_macro": -0.023473423524668746,
+      "gap_95_interval": [
+        -0.06119151805730356,
+        0.016952769000859434
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.07870706733040261,
+        0.03331943127901545
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 177,
+      "positive_patients": 66
+    },
+    {
+      "class_id": 7,
+      "auc": 0.8025486626522896,
+      "auc_95_interval": [
+        0.7637494149674626,
+        0.8439815082664561
+      ],
+      "difference_from_macro": -0.015414215285288968,
+      "gap_95_interval": [
+        -0.05374519244719116,
+        0.02381234838068269
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.07072517943086318,
+        0.03836831277689829
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 193,
+      "positive_patients": 64
+    },
+    {
+      "class_id": 8,
+      "auc": 0.7249800767948996,
+      "auc_95_interval": [
+        0.675603413331937,
+        0.7773983218782923
+      ],
+      "difference_from_macro": -0.09298280114267898,
+      "gap_95_interval": [
+        -0.13362719013768634,
+        -0.049456114225696395
+      ],
+      "gap_bonferroni_99_5_interval": [
+        -0.15364867152541475,
+        -0.028419111533080584
+      ],
+      "below_macro_at_uncorrected_95": true,
+      "below_macro_after_10_class_correction": true,
+      "positive_studies": 214,
+      "positive_patients": 72
+    },
+    {
+      "class_id": 9,
+      "auc": 0.9111788878900732,
+      "auc_95_interval": [
+        0.8592001477426843,
+        0.9489123955555684
+      ],
+      "difference_from_macro": 0.09321600995249457,
+      "gap_95_interval": [
+        0.05699881658995288,
+        0.12720850326077585
+      ],
+      "gap_bonferroni_99_5_interval": [
+        0.04010990179982996,
+        0.14076310575560028
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 260,
+      "positive_patients": 52
+    },
+    {
+      "class_id": 10,
+      "auc": 0.8836766774220237,
+      "auc_95_interval": [
+        0.8483563359864384,
+        0.9163939991197576
+      ],
+      "difference_from_macro": 0.06571379948444511,
+      "gap_95_interval": [
+        0.040734632002310006,
+        0.09420435524296478
+      ],
+      "gap_bonferroni_99_5_interval": [
+        0.029662181569543696,
+        0.10604330699005023
+      ],
+      "below_macro_at_uncorrected_95": false,
+      "below_macro_after_10_class_correction": false,
+      "positive_studies": 306,
+      "positive_patients": 166
+    }
+  ]
+}

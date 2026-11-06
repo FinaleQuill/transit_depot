@@ -1,0 +1,364 @@
+{
+  "schema": "fixed_stopped_run_development_comparisons_v1",
+  "created_at": "2026-11-06T13:00:06.614331+08:00",
+  "comparisons": {
+    "e20_minus_e18": {
+      "all": {
+        "candidate_macro_auc": 0.8049053321892679,
+        "reference_macro_auc": 0.8046352631165428,
+        "delta": 0.0002700690727250876,
+        "ci95": [
+          -4.431071784116447e-05,
+          0.0005790996715422824
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 3702,
+        "patients": 2211
+      },
+      "ap_projection_only": {
+        "candidate_macro_auc": 0.742715531203416,
+        "reference_macro_auc": 0.7422289570360244,
+        "delta": 0.00048657416739161796,
+        "ci95": [
+          1.0517136553586666e-05,
+          0.000961233816088541
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1886,
+        "patients": 1062
+      },
+      "single_image_study": {
+        "candidate_macro_auc": 0.74442984958702,
+        "reference_macro_auc": 0.7439271449109416,
+        "delta": 0.0005027046760783804,
+        "ci95": [
+          -2.1484134422852796e-05,
+          0.0009924042128084676
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1719,
+        "patients": 1009
+      },
+      "multiple_image_study": {
+        "candidate_macro_auc": 0.8367925371376277,
+        "reference_macro_auc": 0.8366987686416645,
+        "delta": 9.376849596320902e-05,
+        "ci95": [
+          -0.0003798737546951925,
+          0.0005646342731778379
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1983,
+        "patients": 1561
+      },
+      "at_least_5_studies_patient": {
+        "candidate_macro_auc": 0.7501887742805682,
+        "reference_macro_auc": 0.7490303631956328,
+        "delta": 0.0011584110849354179,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          0.00023471191340280751,
+          0.0022250188677801976
+        ],
+        "studies": 662,
+        "patients": 97
+      },
+      "at_least_10_studies_patient": {
+        "candidate_macro_auc": 0.7035106809885662,
+        "reference_macro_auc": 0.7021013818751662,
+        "delta": 0.001409299113399931,
+        "valid_replicates": 1950,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0031737678328156494,
+          0.0052126173531593985
+        ],
+        "studies": 128,
+        "patients": 11
+      },
+      "one_study_patient": {
+        "candidate_macro_auc": 0.8384949699638364,
+        "reference_macro_auc": 0.8386702490066857,
+        "delta": -0.00017527904284930784,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0007127649538051812,
+          0.00038642789682195004
+        ],
+        "studies": 1504,
+        "patients": 1504
+      },
+      "multiple_study_patient": {
+        "candidate_macro_auc": 0.7708535795084298,
+        "reference_macro_auc": 0.7703063937384333,
+        "delta": 0.0005471857699964611,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          0.00011071273408650718,
+          0.0009867701514086583
+        ],
+        "studies": 2198,
+        "patients": 707
+      }
+    },
+    "e21_minus_e20": {
+      "all": {
+        "candidate_macro_auc": 0.8048998595020104,
+        "reference_macro_auc": 0.8049053321892679,
+        "delta": -5.472687257479514e-06,
+        "ci95": [
+          -0.00016337988239448765,
+          0.00015492317281187707
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 3702,
+        "patients": 2211
+      },
+      "ap_projection_only": {
+        "candidate_macro_auc": 0.742900969673086,
+        "reference_macro_auc": 0.742715531203416,
+        "delta": 0.00018543846967000732,
+        "ci95": [
+          -6.742977842204567e-05,
+          0.00044264674387329243
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1886,
+        "patients": 1062
+      },
+      "single_image_study": {
+        "candidate_macro_auc": 0.7446052895817001,
+        "reference_macro_auc": 0.74442984958702,
+        "delta": 0.00017543999468017102,
+        "ci95": [
+          -9.793017216613021e-05,
+          0.0004423735640306706
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1719,
+        "patients": 1009
+      },
+      "multiple_image_study": {
+        "candidate_macro_auc": 0.836639331603849,
+        "reference_macro_auc": 0.8367925371376277,
+        "delta": -0.00015320553377873303,
+        "ci95": [
+          -0.00041940181356820707,
+          9.561527547529699e-05
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1983,
+        "patients": 1561
+      },
+      "at_least_5_studies_patient": {
+        "candidate_macro_auc": 0.75016894047151,
+        "reference_macro_auc": 0.7501887742805682,
+        "delta": -1.9833809058233953e-05,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0005057208803212948,
+          0.00045425732895953123
+        ],
+        "studies": 662,
+        "patients": 97
+      },
+      "at_least_10_studies_patient": {
+        "candidate_macro_auc": 0.7041794360647151,
+        "reference_macro_auc": 0.7035106809885662,
+        "delta": 0.0006687550761489414,
+        "valid_replicates": 1950,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0007883184109133995,
+          0.0033104898919122682
+        ],
+        "studies": 128,
+        "patients": 11
+      },
+      "one_study_patient": {
+        "candidate_macro_auc": 0.838470052052051,
+        "reference_macro_auc": 0.8384949699638364,
+        "delta": -2.4917911785382607e-05,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0003412202735475933,
+          0.00027613510699585597
+        ],
+        "studies": 1504,
+        "patients": 1504
+      },
+      "multiple_study_patient": {
+        "candidate_macro_auc": 0.7708811113692351,
+        "reference_macro_auc": 0.7708535795084298,
+        "delta": 2.753186080528547e-05,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.00019698226083202374,
+          0.000255777420535086
+        ],
+        "studies": 2198,
+        "patients": 707
+      }
+    },
+    "e20_fixed_blend_minus_e20_single": {
+      "all": {
+        "candidate_macro_auc": 0.8086718766026681,
+        "reference_macro_auc": 0.8049053321892679,
+        "delta": 0.0037665444134002968,
+        "ci95": [
+          0.00017300769341171697,
+          0.007630186111398466
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 3702,
+        "patients": 2211
+      },
+      "ap_projection_only": {
+        "candidate_macro_auc": 0.7488336264350518,
+        "reference_macro_auc": 0.742715531203416,
+        "delta": 0.006118095231635756,
+        "ci95": [
+          0.0006054715668038779,
+          0.01193646917234025
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1886,
+        "patients": 1062
+      },
+      "single_image_study": {
+        "candidate_macro_auc": 0.7510719016808138,
+        "reference_macro_auc": 0.74442984958702,
+        "delta": 0.006642052093793871,
+        "ci95": [
+          0.000841914274353367,
+          0.012781832804547961
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1719,
+        "patients": 1009
+      },
+      "multiple_image_study": {
+        "candidate_macro_auc": 0.8410507232714972,
+        "reference_macro_auc": 0.8367925371376277,
+        "delta": 0.004258186133869524,
+        "ci95": [
+          -0.0009588303674092107,
+          0.009353216380645074
+        ],
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "studies": 1983,
+        "patients": 1561
+      },
+      "at_least_5_studies_patient": {
+        "candidate_macro_auc": 0.7530136032673029,
+        "reference_macro_auc": 0.7501887742805682,
+        "delta": 0.002824828986734751,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.005945543096474789,
+          0.01110942023576607
+        ],
+        "studies": 662,
+        "patients": 97
+      },
+      "at_least_10_studies_patient": {
+        "candidate_macro_auc": 0.701705723391471,
+        "reference_macro_auc": 0.7035106809885662,
+        "delta": -0.0018049575970952025,
+        "valid_replicates": 1950,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.035589636142039714,
+          0.030075085781666604
+        ],
+        "studies": 128,
+        "patients": 11
+      },
+      "one_study_patient": {
+        "candidate_macro_auc": 0.8411770945591208,
+        "reference_macro_auc": 0.8384949699638364,
+        "delta": 0.0026821245952843853,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          -0.0038999104281813497,
+          0.009660391623556223
+        ],
+        "studies": 1504,
+        "patients": 1504
+      },
+      "multiple_study_patient": {
+        "candidate_macro_auc": 0.7762791800952825,
+        "reference_macro_auc": 0.7708535795084298,
+        "delta": 0.005425600586852708,
+        "valid_replicates": 2000,
+        "attempted_replicates": 2000,
+        "ci95": [
+          0.0006570473003660427,
+          0.010520318034669508
+        ],
+        "studies": 2198,
+        "patients": 707
+      }
+    }
+  },
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261105,
+  "resampling": "Patient clusters, all Studies and sampled patient multiplicity; paired draws.",
+  "interval": "Percentile 95%, exploratory; not selection-bias or multiplicity corrected.",
+  "complete_epochs": 21,
+  "best_complete_epoch": 20,
+  "partial_epoch_excluded": {
+    "state": "training",
+    "epoch": 22,
+    "epochs": 23,
+    "studies_done": 5920,
+    "studies_total": 14811,
+    "images_done": 9736,
+    "loss": 0.4844682289078215,
+    "elapsed_seconds": 917.7377400470141,
+    "estimated_epoch_seconds": 2296.0496060534333,
+    "peak_gpu_bytes": 3283220992,
+    "gradient_norm": 15.128753662109375,
+    "head_lr": 2e-05,
+    "attempted_updates": 9908,
+    "optimizer_updates": 9908,
+    "skipped_updates": 0,
+    "updated_at": "2026-11-06T12:55:03.136789+08:00"
+  },
+  "figure": "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/training_loss_dev_auc_epochs_01_21.png",
+  "input_and_source_sha256": {
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/history.jsonl": "2392c8cdc9fbdff7e5d97800e526b706c8c11a33d63390efac0ee79cdf75b17e",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/progress.json.before_stop_summary": "56351a3abd287c4f436e9aa9045b496958ca272de4893395ac84f4a2e5ff92e3",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/configuration.json": "e8658eae6f12cc83e79bd6678cd8c0d97cf0b8fa677229099e04ac63b9c20df0",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py": "1048f1baeae15e31747f0c4ca8f47d2a5eacfeb55777ddeb399d34852c6a0232",
+    "/home/featurize/work/cxr_research_20261103/raw_rebuild/comparison.py": "2ff7f20d8d9644f52b930988a6dcf6ef626f02b1fa9205d9fc056ee7d8d84ba7",
+    "/home/featurize/work/cxr_research_20261103/breakthrough/generalization_monitor.py": "a3bc58c55c37e4515c32391560584de232ae8c7747d730d530f1e5e333b49618",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/paired_epoch_analysis.py": "67263e5954b17711d9a8e3134eac2531993549d5ebca699d84bdbe52f0ee3164"
+  },
+  "cpu_only": true,
+  "training_started": false,
+  "model_inference_started": false,
+  "test_accessed": false,
+  "official_validation_accessed": false,
+  "hidden_test_improvement_established": false
+}

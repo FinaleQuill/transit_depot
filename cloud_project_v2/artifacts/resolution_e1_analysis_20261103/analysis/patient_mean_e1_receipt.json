@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "started_utc": "2026-11-03T13:48:28.468430+00:00",
+  "finished_utc": "2026-11-03T13:48:35.196515+00:00",
+  "seconds": 6.728096622013254,
+  "run_dir": "/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/analysis",
+  "argv": "python artifacts/resolution_e1_analysis_20261103/analysis/replay_patient_mean_e1.py",
+  "preregistration_preceded_run": true,
+  "preregistration_mtime_ns": 1793713468461407150,
+  "preregistration_sha256": "67a9d076b2d6a7ad5fa8a56eaf50a7ba218c339617242bd2e302a35e69e71388",
+  "input_sha256": {
+    "predictions.npz": "bed0ed1153edf8920d92a979c3dcf52f680ec02e1f63d9ae05810dc01a2e23bb",
+    "metadata.json": "471f69d5afcda794bb17a9b5df7a9533a942126fc3634fbbc33c489bca1672db",
+    "report.json": "955da15ff220e6969d53414c819b6c1ca3263441c185de3222aa260318737fab"
+  },
+  "script_sha256": "fb6fd8702a95f7f9b1cb5e6c4fc5f22f988130858477a8b001e00107a69f1ffd",
+  "output_sha256": {
+    "patient_mean_e1.json": "58372dcad575be2b08434b91b55050ac5486abc1ea20c01c27fa813302fb242b",
+    "patient_mean_e1_inputs_sha256.json": "dc23eb6ad0b47116176af2ea1cfab039150c4e3e972edb1c74df3eacd5cc15e6"
+  },
+  "python": "3.11.8",
+  "numpy": "1.26.4",
+  "compute_device": "CPU",
+  "training_started": false,
+  "test_or_submission_files_read_by_this_script": false,
+  "prior_access_incident_record": "ACCESS_INCIDENT.md"
+}

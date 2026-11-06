@@ -1,0 +1,19 @@
+{
+  "measured": {
+    "images": 100,
+    "studies": 53,
+    "patients": 40,
+    "complete_studies_proven": true
+  },
+  "warmup": {
+    "images": 5,
+    "studies": 4,
+    "patients": 4,
+    "complete_studies_proven": true
+  },
+  "selection_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "origin_split": "valid",
+  "hashes_verified": true,
+  "patient_disjoint": true
+}

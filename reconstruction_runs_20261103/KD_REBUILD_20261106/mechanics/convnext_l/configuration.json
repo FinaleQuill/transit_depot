@@ -1,0 +1,179 @@
+{
+  "configuration": {
+    "schema": "kd_raw_teacher_stage1_v1",
+    "run_id": "smoke_convnext_l",
+    "family": "convnext_l",
+    "inner_fold": 0,
+    "seed": 20261106,
+    "source_manifest": "/home/featurize/data/kd_rebuild_20261106/source_train.csv",
+    "R_manifest": "/home/featurize/data/kd_rebuild_20261106/R.csv",
+    "H_manifest": "/home/featurize/data/kd_rebuild_20261106/H.csv",
+    "train_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_0/train.csv",
+    "oof_manifest": "/home/featurize/data/kd_rebuild_20261106/inner_0/oof.csv",
+    "fold_plan": "/home/featurize/data/kd_rebuild_20261106/plan.json",
+    "image_root": "/home/featurize/data/cxr_first",
+    "pretrained_path": "/home/featurize/data/kd_rebuild_20261106/assets/convnext_large/model.safetensors",
+    "provenance_path": "/home/featurize/data/kd_rebuild_20261106/assets/convnext_large/source.json",
+    "pretrained_revision": "1c3c222eca50028b09e888e12746ac10f2403a36",
+    "epochs": 2,
+    "resolution_schedule": [
+      {
+        "through_epoch": 1,
+        "image_size": 512
+      },
+      {
+        "through_epoch": 2,
+        "image_size": 768
+      }
+    ],
+    "oof_image_sizes": [
+      512,
+      768
+    ],
+    "effective_studies": 4,
+    "pack_images": 1,
+    "view_chunk_size": 1,
+    "workers": 0,
+    "backbone_lr": 2e-05,
+    "head_lr": 0.0002,
+    "layer_decay": 0.95,
+    "weight_decay": 0.05,
+    "drop_rate": 0.2,
+    "drop_path": 0.1,
+    "clip_grad": 1.0,
+    "ema_decay": 0.999,
+    "selection_policy": "fixed_final_ema_no_H_selection",
+    "source_sha256": {
+      "teacher_distill_20261106/__init__.py": "32e6909b205bde39ce4556a23fed1186072eb873d29f06bbfe1c98226f86eb07",
+      "teacher_distill_20261106/train.py": "0d7468f6edae9bcb5a2b33a00b4659c1f6de48fb408b37ca5de0f41977cd5871",
+      "teacher_distill_20261106/model.py": "ab09a71184769005f5ac69bfc548389a5bf2f8e49c9bf9557cc704d6afc65def",
+      "teacher_distill_20261106/data.py": "1bd5432571983baf2a6bbfe699526836ff3efcd14ba3a17bbfb3327223e1ce86",
+      "teacher_distill_20261106/runtime.py": "4dc58a2ced5f5bc2871a15f839e0646cf7aa54b160b6d6bf16d016fefdbf3e38",
+      "breakthrough/train.py": "39124d0eaad8723426a2668340e07563ea83f52de5e0e5afb34cec5409a3eb8f",
+      "breakthrough/model.py": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338",
+      "reconstruction/data.py": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+      "reconstruction/train.py": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+      "reconstruction/model.py": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+      "training_hooks.py": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+      "training_compliance.py": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
+    },
+    "environment_manifest": "/home/featurize/data/kd_rebuild_20261106/environment/manifest.json",
+    "environment_manifest_sha256": "f212ba9c9bf2b0d23e6e62efca75df8281983805e254d01e2049e588ee1fc42e",
+    "automatic_submission": false,
+    "original_data_policy": "all raw official train, no exclusions",
+    "H_is_independent": false,
+    "H_used_for_early_stopping": false,
+    "output": "/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/mechanics/convnext_l",
+    "checkpoint_dir": "/home/featurize/data/kd_rebuild_20261106/state/mechanics/convnext_l",
+    "input_sha256": {
+      "source_manifest": "4df97bb5f30ec733e5c78b66a63418c26c53396e5e49fb1f494f70ba11e89d7a",
+      "R_manifest": "898c4096282ba765ed8f5f234200cff31f93ffc6ac5bdaf6970616d2f41b9f6e",
+      "H_manifest": "6f35f5272011e5e5f811d31097004e8176f29e845ad5223c14c7234bc9f81d62",
+      "train_manifest": "554622f2088e9540915d9175f84fe0104e1e39c52654c88d49aee51a9213819e",
+      "oof_manifest": "06e18e910d90f52783fc72bc1185012ea33f519e66d4b2b1f76690e78489c175",
+      "fold_plan": "0d4086d6f932621550781d1cfcbc88fed41f232fd93e19d9b4c048ca3051a974",
+      "pretrained_path": "d2d9196af67de8731710f67cfe0f6edcb4ce47986c29af3544d24f327e167b43",
+      "provenance_path": "99b8d13f2cd9fcd2253f962da0908af772af14c22cab612036efaa1c5d5b6bf1"
+    }
+  },
+  "public_initialization": {
+    "key": "convnext_large",
+    "model_id": "timm/convnext_large.fb_in22k_ft_in1k_384",
+    "revision": "1c3c222eca50028b09e888e12746ac10f2403a36",
+    "parameters": 197767336,
+    "expected_bytes": 791103952,
+    "license": "apache-2.0",
+    "license_notes": "Apache-2.0 per timm weight model card; upstream ConvNeXt code MIT",
+    "license_files": {},
+    "repo": "timm/convnext_large.fb_in22k_ft_in1k_384",
+    "state": "complete",
+    "started_at": "2026-11-06T15:16:55.016289+08:00",
+    "anonymous": true,
+    "authentication_used": false,
+    "resources": {
+      "api_snapshot.json": {
+        "url": "https://huggingface.co/api/models/timm/convnext_large.fb_in22k_ft_in1k_384/revision/1c3c222eca50028b09e888e12746ac10f2403a36",
+        "bytes": 1091,
+        "sha256": "02a522d62fe8a0547be8ed55fb59ca1268b058ed8bbf079cde43db41b2633c1f",
+        "response_status": 200
+      },
+      "tree_snapshot.json": {
+        "url": "https://huggingface.co/api/models/timm/convnext_large.fb_in22k_ft_in1k_384/tree/1c3c222eca50028b09e888e12746ac10f2403a36?recursive=true&expand=false",
+        "bytes": 900,
+        "sha256": "3ff1a5b2c80ca9559d3fc17d2656d1a5a1884d0f3453daae9d9bbc612deca53f",
+        "response_status": 200
+      },
+      "README.md": {
+        "url": "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k_384/raw/1c3c222eca50028b09e888e12746ac10f2403a36/README.md",
+        "bytes": 15755,
+        "sha256": "d2a5c8cc7e44bc2602039c68b03c66049c32fdc92e9737b65bade5d9331352b9",
+        "response_status": 200
+      },
+      "config.json": {
+        "url": "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k_384/raw/1c3c222eca50028b09e888e12746ac10f2403a36/config.json",
+        "bytes": 584,
+        "sha256": "3cd8dc32c97b22155cdc4d2ba29741657bc2364faf97a10e57a0eda81ce43bd4",
+        "response_status": 200
+      },
+      "LICENSE-Apache-2.0.txt": {
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+        "source": "Existing preserved public license text",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "UPSTREAM-LICENSE-MIT.txt": {
+        "url": "https://github.com/facebookresearch/ConvNeXt/blob/main/LICENSE",
+        "source": "Existing preserved public license text",
+        "bytes": 1088,
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      },
+      "model.safetensors": {
+        "url": "https://huggingface.co/timm/convnext_large.fb_in22k_ft_in1k_384/resolve/1c3c222eca50028b09e888e12746ac10f2403a36/model.safetensors",
+        "bytes": 791103952,
+        "sha256": "d2d9196af67de8731710f67cfe0f6edcb4ce47986c29af3544d24f327e167b43",
+        "completed_at": "2026-11-06T15:16:59.633148+08:00",
+        "resumed_existing_complete": true
+      }
+    },
+    "private": false,
+    "gated": false,
+    "upstream_training_data": [
+      "imagenet-1k",
+      "imagenet-22k"
+    ],
+    "pretraining_dataset": [
+      "imagenet-1k",
+      "imagenet-22k"
+    ],
+    "parameter_metadata": {
+      "parameters": {
+        "F32": 197767336
+      },
+      "total": 197767336
+    },
+    "public_lfs_sha256": "d2d9196af67de8731710f67cfe0f6edcb4ce47986c29af3544d24f327e167b43",
+    "sha256": "d2d9196af67de8731710f67cfe0f6edcb4ce47986c29af3544d24f327e167b43",
+    "completed_at": "2026-11-06T15:16:59.633186+08:00"
+  },
+  "source_sha256": {
+    "teacher_distill_20261106/__init__.py": "32e6909b205bde39ce4556a23fed1186072eb873d29f06bbfe1c98226f86eb07",
+    "teacher_distill_20261106/train.py": "0d7468f6edae9bcb5a2b33a00b4659c1f6de48fb408b37ca5de0f41977cd5871",
+    "teacher_distill_20261106/model.py": "ab09a71184769005f5ac69bfc548389a5bf2f8e49c9bf9557cc704d6afc65def",
+    "teacher_distill_20261106/data.py": "1bd5432571983baf2a6bbfe699526836ff3efcd14ba3a17bbfb3327223e1ce86",
+    "teacher_distill_20261106/runtime.py": "4dc58a2ced5f5bc2871a15f839e0646cf7aa54b160b6d6bf16d016fefdbf3e38",
+    "breakthrough/train.py": "39124d0eaad8723426a2668340e07563ea83f52de5e0e5afb34cec5409a3eb8f",
+    "breakthrough/model.py": "0864b9b26d138e66a57063a81f45e486dba1907142e7c303f54a61cd4ac6b338",
+    "reconstruction/data.py": "4ea98e1b51952b601c9b0db41fe3ac0adb139f57ba08055b20dba5820346bf6f",
+    "reconstruction/train.py": "835866a98cbcc98c2183db7548f97ce24a54a5a496db21b96aec9f7d0b753e8a",
+    "reconstruction/model.py": "f5de9730d0c8aac1e15ed26b7d497372836914d86657a41d2d127ad2ffa2c009",
+    "training_hooks.py": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "training_compliance.py": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885"
+  },
+  "original_raw_train_images": 30344,
+  "outer_H_excluded_from_entire_training_chain": true,
+  "official_valid_used": false,
+  "test_used": false,
+  "mechanics_smoke": true,
+  "prior_task_checkpoint_used": false,
+  "selection_policy": "fixed_final_ema_no_H_selection"
+}

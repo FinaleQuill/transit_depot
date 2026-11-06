@@ -1,0 +1,22 @@
+{
+  "time_hong_kong": "2026-10-30T19:01:42.184416+08:00",
+  "complete": true,
+  "old_model_dir": "/tmp/cloud_student_runs_20261030/A_evaluation/fp16",
+  "new_model_dir": "/tmp/cloud_student_runs_20261030/041_A_submission_20261030/model",
+  "tensor_count": 182,
+  "parameter_elements": 27827818,
+  "tensor_bytes": 55655636,
+  "key_order_equal": true,
+  "shapes_equal": true,
+  "dtypes_equal": true,
+  "all_tensor_bytes_equal": true,
+  "model_config_equal": true,
+  "preprocessing_equal": true,
+  "fixed_tta": "hflip2",
+  "image_size": 768,
+  "source_checkpoint_sha256": "65cdb72f63a5ec0d36486d4d8dcb34dd2fde5ed85aa52d3a10be2b0dbf633f42",
+  "old_weight_file_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "new_weight_file_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "model_forwards": 0,
+  "gpu_work": false
+}

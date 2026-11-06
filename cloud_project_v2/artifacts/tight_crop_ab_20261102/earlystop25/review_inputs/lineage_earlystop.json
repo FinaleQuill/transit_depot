@@ -1,0 +1,73 @@
+{
+  "schema": "lineage_earlystop_interim_v1",
+  "state": "interim_B_base_pending",
+  "source_snapshot_utc": "2026-11-02T04:34:42Z",
+  "warning": "B_tiny was still running and B_base had not started at this snapshot. Do not interpret this file as the final four-model comparison.",
+  "plan": {
+    "earlystop_path": "/home/featurize/work/cloud_project_v2/docs/TIGHT_CROP_AB_EARLYSTOP_PLAN_20261102.json",
+    "earlystop_sha256": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+    "monitor": "AP-only Study macro-AUC",
+    "max_epochs": 25,
+    "patience": 5,
+    "min_delta": 0.0001,
+    "checkpoint_selection": "highest observed AP-only EMA; ties earlier"
+  },
+  "A_base": {
+    "state": "early_stopped",
+    "completed_epochs": 6,
+    "best_epoch": 1,
+    "best_ap_only_macro_auc": 0.7376266331013407,
+    "last_ap_only_macro_auc": 0.7348667392341359,
+    "best_all_study_macro_auc": 0.8090108085030954,
+    "last_all_study_macro_auc": 0.8064585945188737,
+    "ap_only_by_epoch": [0.7376266331013407, 0.7365430668776041, 0.7352204670627615, 0.7348611005908112, 0.7350729808305396, 0.7348667392341359],
+    "all_study_by_epoch": [0.8090108085030954, 0.8082714693870381, 0.8076641080958691, 0.8069081997609782, 0.8066384905833784, 0.8064585945188737],
+    "train_hard_bce_E1_E6": [0.40784006084827146, 0.37949325977938575],
+    "train_oof_kl_E1_E6": [0.11769486414327471, 0.13305855124385133],
+    "mechanism": "E2-E6 all failed to exceed E1 AP-only AUC by 0.0001; five consecutive bad epochs triggered patience5 at E6. Training hard BCE fell while training OOF KL rose and valid ranking declined. These are associations, not a causal diagnosis.",
+    "history_path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/history.jsonl",
+    "history_sha256": "956e284ac47e9f675a2b11e0660f22a16691ac72d6b270ed85355c904e0351be",
+    "config_path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/config.json",
+    "config_sha256": "6288587d8404d6b11992f1681b8cb110f9e97da5b36a81f45cdcbf6f3eca3487",
+    "best_checkpoint_sha256": "6d91aee729a0c639d1889909f48756bf24c05829708e645af7a41becbff972cc",
+    "init_kind": "Base student E10 FP32 best EMA warm-start",
+    "init_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/best_ema_fp32.pt",
+    "init_sha256": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+    "init_full_checkpoint_sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb"
+  },
+  "A_tiny": {
+    "state": "early_stopped",
+    "completed_epochs": 7,
+    "best_epoch": 2,
+    "best_ap_only_macro_auc": 0.7393485860304196,
+    "best_all_study_macro_auc": 0.8084823216330287,
+    "init_kind": "Tiny student E9 FP32 best EMA warm-start",
+    "init_sha256": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f"
+  },
+  "B_tiny_snapshot": {
+    "state": "running_at_snapshot",
+    "completed_epochs": 4,
+    "best_epoch": 2,
+    "best_ap_only_macro_auc": 0.7397691138114503
+  },
+  "B_base_snapshot": {"state": "pending_at_snapshot"},
+  "teacher_cache": {
+    "kind": "strict patient-out-of-fold Base teacher per image and identity/hflip view",
+    "collection_path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+    "collection_sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e",
+    "metadata_path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2/metadata.json",
+    "metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+    "fold_final_ema_epochs": [20, 12, 12, 12, 12],
+    "cache_images": 30328,
+    "cache_views": ["identity", "hflip"],
+    "official_valid_used": false,
+    "test_used": false,
+    "pooled_oof_train_study_macro_auc_documented": 0.789509541,
+    "pooled_auc_scope": "Different train outer folds with different teacher distributions; not directly comparable to one student on official valid.",
+    "five_teacher_ensemble_official_valid_hflip2_macro_auc_documented": 0.802467016,
+    "five_teacher_valid_source": "/home/featurize/work/cloud_project_v2/docs/TEACHER_IMPROVEMENT_REVIEW_20261026.md",
+    "five_teacher_valid_comparison_limit": "Same official-valid split but five-teacher ensemble versus full-train warm-started Base student, with different evaluation and selection history; the score gap does not identify the KD effect.",
+    "teacher_is_current_Base_student": false
+  },
+  "interpretation_limit": "A_base decline alone cannot identify whether teacher quality, optimization, EMA warm-start, crop, or valid selection caused the result. AP-only has only 442 Studies and 15 class-1 positive Studies; repeated validation use further limits causal claims."
+}

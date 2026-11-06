@@ -1,0 +1,31 @@
+{
+  "started_hong_kong": "2026-10-20T13:00:04.733256+08:00",
+  "arguments": [
+    "--ensemble-plan",
+    "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/ensemble_plan_768_equal.json",
+    "--output",
+    "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference",
+    "--image-root",
+    "/home/featurize/data/cxr_first",
+    "--work-root",
+    "/home/featurize/work",
+    "--valid-manifest",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+    "--test-manifest",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv",
+    "--sample-submission",
+    "/home/featurize/work/submission.csv",
+    "--batch-size",
+    "8",
+    "--num-workers",
+    "8",
+    "--prefetch-factor",
+    "2",
+    "--device",
+    "cuda"
+  ],
+  "cuda_cudnn_benchmark": true,
+  "TF32": true,
+  "torch_num_threads": 4,
+  "training_steps": 0
+}

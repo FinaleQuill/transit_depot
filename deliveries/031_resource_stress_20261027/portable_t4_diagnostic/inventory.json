@@ -1,0 +1,1541 @@
+{
+  "GPU_used_in_build": false,
+  "candidate_size_limit_bytes": 500000000,
+  "candidates": {
+    "equal512_768": {
+      "distinct_weights_used": 2,
+      "independent_seed_or_fold_claim": false,
+      "inference_files": {
+        "files": [
+          {
+            "bytes": 55712511,
+            "path": "student_00_fp16.pt",
+            "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+          },
+          {
+            "bytes": 55712511,
+            "path": "student_01_fp16.pt",
+            "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+          },
+          {
+            "bytes": 17341236,
+            "path": "config.json",
+            "sha256": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"
+          }
+        ],
+        "limit_bytes": 500000000,
+        "size_pass": true,
+        "total_bytes": 128766258
+      },
+      "member_count": 2,
+      "model_dir": "models/equal512_768",
+      "timing_only": false
+    },
+    "kd512": {
+      "distinct_weights_used": 1,
+      "independent_seed_or_fold_claim": false,
+      "inference_files": {
+        "files": [
+          {
+            "bytes": 55712511,
+            "path": "student_fp16.pt",
+            "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+          },
+          {
+            "bytes": 11283342,
+            "path": "config.json",
+            "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"
+          }
+        ],
+        "limit_bytes": 500000000,
+        "size_pass": true,
+        "total_bytes": 66995853
+      },
+      "member_count": 1,
+      "model_dir": "models/kd512",
+      "timing_only": false
+    },
+    "kd768": {
+      "distinct_weights_used": 1,
+      "independent_seed_or_fold_claim": false,
+      "inference_files": {
+        "files": [
+          {
+            "bytes": 55712511,
+            "path": "student_fp16.pt",
+            "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+          },
+          {
+            "bytes": 11283346,
+            "path": "config.json",
+            "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164"
+          }
+        ],
+        "limit_bytes": 500000000,
+        "size_pass": true,
+        "total_bytes": 66995857
+      },
+      "member_count": 1,
+      "model_dir": "models/kd768",
+      "timing_only": false
+    },
+    "two768_timing_only": {
+      "distinct_weights_used": 2,
+      "independent_seed_or_fold_claim": false,
+      "inference_files": {
+        "files": [
+          {
+            "bytes": 55712511,
+            "path": "student_00_fp16.pt",
+            "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+          },
+          {
+            "bytes": 55712511,
+            "path": "student_01_fp16.pt",
+            "sha256": "ce622ceba540dac3762517e1bc777e1499240d8fa8de5279b542cdfe6ac2caa4"
+          },
+          {
+            "bytes": 17341231,
+            "path": "config.json",
+            "sha256": "829ab373b9d7c84c8e360b9cc41b686897b1a35e519904b908a5b85644fb141c"
+          }
+        ],
+        "limit_bytes": 500000000,
+        "size_pass": true,
+        "total_bytes": 128766253
+      },
+      "member_count": 2,
+      "model_dir": "models/two768_timing_only",
+      "timing_only": true
+    }
+  },
+  "files": [
+    {
+      "bytes": 15748,
+      "derived": true,
+      "origin": "models/kd512/config.json embedded pretrained_provenance materials.model_card; sha256=402776a2dfa17b9dd416ab9a9fe4aa14496a551a0f0f93d1dfb70eca9f41e13a",
+      "path": "LICENSES/base_model_card_402776a2dfa1.txt",
+      "sha256": "402776a2dfa17b9dd416ab9a9fe4aa14496a551a0f0f93d1dfb70eca9f41e13a"
+    },
+    {
+      "bytes": 11358,
+      "derived": true,
+      "origin": "models/kd512/config.json embedded pretrained_provenance materials.apache_license; sha256=cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "path": "LICENSES/tiny_apache_license_cfc7749b96f6.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "bytes": 15745,
+      "derived": true,
+      "origin": "models/kd512/config.json embedded pretrained_provenance materials.model_card; sha256=4c72c672d524f7c38c5803d009fa6aabab9a83ce85844f5b1f150dd183ba3e6f",
+      "path": "LICENSES/tiny_model_card_4c72c672d524.txt",
+      "sha256": "4c72c672d524f7c38c5803d009fa6aabab9a83ce85844f5b1f150dd183ba3e6f"
+    },
+    {
+      "bytes": 1088,
+      "derived": true,
+      "origin": "models/kd512/config.json embedded pretrained_provenance materials.upstream_license; sha256=da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "path": "LICENSES/tiny_upstream_license_da6d3703ed11.txt",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "bytes": 4894,
+      "derived": true,
+      "origin": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/resource_stress_20261027/build_portable_bundle.py#README",
+      "path": "README_ZH.md",
+      "sha256": "89e2dfabaee17e4cab13406e8764cba1c417602a4105cd3b9cdcab82de5da7c1"
+    },
+    {
+      "bytes": 17063,
+      "origin": "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py",
+      "path": "benchmark_local_resources.py",
+      "sha256": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+      "source_bytes_unchanged": true,
+      "source_sha256": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6"
+    },
+    {
+      "bytes": 9905,
+      "origin": "/home/featurize/work/cloud_project_v2/cost.py",
+      "path": "cost.py",
+      "sha256": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca"
+    },
+    {
+      "bytes": 36709,
+      "origin": "/home/featurize/work/cloud_project_v2/deploy_kd.py",
+      "path": "deploy_kd.py",
+      "sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+      "source_bytes_unchanged": true,
+      "source_sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece"
+    },
+    {
+      "bytes": 22554,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/equal512_768/local_resource_report.json",
+      "path": "diagnostics/native_controls/equal512_768/local_resource_report.json",
+      "sha256": "58f92b6568741697dd08b65deeb57a0cc47b5517b48f2f71ee8ca86c35492d4b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "58f92b6568741697dd08b65deeb57a0cc47b5517b48f2f71ee8ca86c35492d4b"
+    },
+    {
+      "bytes": 21870,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd512/local_resource_report.json",
+      "path": "diagnostics/native_controls/kd512/local_resource_report.json",
+      "sha256": "1014f1460199d8bd0ed88de785795ab50f9ab429ca0bdf6f0b548d9767a87d8f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "1014f1460199d8bd0ed88de785795ab50f9ab429ca0bdf6f0b548d9767a87d8f"
+    },
+    {
+      "bytes": 21848,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/kd768/local_resource_report.json",
+      "path": "diagnostics/native_controls/kd768/local_resource_report.json",
+      "sha256": "bab28f87b19477837e3921c35c772ecdb4f8bb83bae889155d7cde8a220505b4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "bab28f87b19477837e3921c35c772ecdb4f8bb83bae889155d7cde8a220505b4"
+    },
+    {
+      "bytes": 4140,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/native_controls/native_summary.json",
+      "path": "diagnostics/native_controls/native_summary.json",
+      "sha256": "3a2eed43466d8d07a9cc90ffbdde3b11bc1fa0094efe8697db6e4275ec5ce8b3",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3a2eed43466d8d07a9cc90ffbdde3b11bc1fa0094efe8697db6e4275ec5ce8b3"
+    },
+    {
+      "bytes": 22541,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/equal512_768/local_resource_report.json",
+      "path": "diagnostics/optimized_native_controls/equal512_768/local_resource_report.json",
+      "sha256": "70b733b3e02814d9a5391078ae60b3710557dccfd6db36e4cd543f3006a02cfd",
+      "source_bytes_unchanged": true,
+      "source_sha256": "70b733b3e02814d9a5391078ae60b3710557dccfd6db36e4cd543f3006a02cfd"
+    },
+    {
+      "bytes": 21664,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd512/local_resource_report.json",
+      "path": "diagnostics/optimized_native_controls/kd512/local_resource_report.json",
+      "sha256": "863b73d6c6288d4e93b77cb02c390768acc02293b8dfd9d6274c74224b01c98c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "863b73d6c6288d4e93b77cb02c390768acc02293b8dfd9d6274c74224b01c98c"
+    },
+    {
+      "bytes": 21612,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd768/local_resource_report.json",
+      "path": "diagnostics/optimized_native_controls/kd768/local_resource_report.json",
+      "sha256": "2c81d613226c52cb33275b39001290521da5366a286608ac9b51e6a6aad23bef",
+      "source_bytes_unchanged": true,
+      "source_sha256": "2c81d613226c52cb33275b39001290521da5366a286608ac9b51e6a6aad23bef"
+    },
+    {
+      "bytes": 6047,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/optimized_native_summary.json",
+      "path": "diagnostics/optimized_native_controls/optimized_native_summary.json",
+      "sha256": "7a20c75c2df7329f6d58ff3d52b430b65c5e31300cfbf3e4c6d81e89ac0a5f29",
+      "source_bytes_unchanged": true,
+      "source_sha256": "7a20c75c2df7329f6d58ff3d52b430b65c5e31300cfbf3e4c6d81e89ac0a5f29"
+    },
+    {
+      "bytes": 22258,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/two768_timing_only/local_resource_report.json",
+      "path": "diagnostics/optimized_native_controls/two768_timing_only/local_resource_report.json",
+      "sha256": "78ef4aa19db25646a61c292c6ff7604844f974adf7967279be4104bee8a23b12",
+      "source_bytes_unchanged": true,
+      "source_sha256": "78ef4aa19db25646a61c292c6ff7604844f974adf7967279be4104bee8a23b12"
+    },
+    {
+      "bytes": 21631,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/kd768/local_resource_report.json",
+      "path": "diagnostics/optimized_native_repeat/kd768/local_resource_report.json",
+      "sha256": "b6f83acde678bd5954f6abd3aeb99473fe821d5e7657a6900d27b02c2578b506",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b6f83acde678bd5954f6abd3aeb99473fe821d5e7657a6900d27b02c2578b506"
+    },
+    {
+      "bytes": 3212,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/optimized_native_summary.json",
+      "path": "diagnostics/optimized_native_repeat/optimized_native_summary.json",
+      "sha256": "b78afacebe2379a643145374f95d2704fd0973c6107ad8714fe247fde3d1717a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b78afacebe2379a643145374f95d2704fd0973c6107ad8714fe247fde3d1717a"
+    },
+    {
+      "bytes": 22270,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/two768_timing_only/local_resource_report.json",
+      "path": "diagnostics/optimized_native_repeat/two768_timing_only/local_resource_report.json",
+      "sha256": "93afc76cdf4c42a0533fc2d04f772c577e56182fc7fe659f287bb837c7bda0f2",
+      "source_bytes_unchanged": true,
+      "source_sha256": "93afc76cdf4c42a0533fc2d04f772c577e56182fc7fe659f287bb837c7bda0f2"
+    },
+    {
+      "bytes": 22641,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_equal512_768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps100_equal512_768/local_resource_report.json",
+      "sha256": "1f8c015ff2afd2aefd1a805e0d6d7a4c797b6f873175d0993f641ccafe4a5e78",
+      "source_bytes_unchanged": true,
+      "source_sha256": "1f8c015ff2afd2aefd1a805e0d6d7a4c797b6f873175d0993f641ccafe4a5e78"
+    },
+    {
+      "bytes": 21914,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_kd512/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps100_kd512/local_resource_report.json",
+      "sha256": "81a2065ab58dac8c7a7c6726dda4bb2c46721a70c30639f2dca2eae523bdc127",
+      "source_bytes_unchanged": true,
+      "source_sha256": "81a2065ab58dac8c7a7c6726dda4bb2c46721a70c30639f2dca2eae523bdc127"
+    },
+    {
+      "bytes": 21901,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps100_kd768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps100_kd768/local_resource_report.json",
+      "sha256": "66eab8a64377cd74bb0760f6866a06905759c77d5aa043a444525eaf92185b49",
+      "source_bytes_unchanged": true,
+      "source_sha256": "66eab8a64377cd74bb0760f6866a06905759c77d5aa043a444525eaf92185b49"
+    },
+    {
+      "bytes": 22551,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_equal512_768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps10_equal512_768/local_resource_report.json",
+      "sha256": "bc811fe9d9b9dca9295c3743340d8d8ed86cabbb221b8916b2fac02606c204e0",
+      "source_bytes_unchanged": true,
+      "source_sha256": "bc811fe9d9b9dca9295c3743340d8d8ed86cabbb221b8916b2fac02606c204e0"
+    },
+    {
+      "bytes": 21906,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_kd512/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps10_kd512/local_resource_report.json",
+      "sha256": "8acac98f734a5dcd3b8e94da95965885ea380a01a4b424cc16b8194800e334ad",
+      "source_bytes_unchanged": true,
+      "source_sha256": "8acac98f734a5dcd3b8e94da95965885ea380a01a4b424cc16b8194800e334ad"
+    },
+    {
+      "bytes": 21995,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps10_kd768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps10_kd768/local_resource_report.json",
+      "sha256": "ae49e65887ceb6c04476049503739373540441dc81ef153f3b1289bf38f36a65",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ae49e65887ceb6c04476049503739373540441dc81ef153f3b1289bf38f36a65"
+    },
+    {
+      "bytes": 22626,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_equal512_768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps20_equal512_768/local_resource_report.json",
+      "sha256": "c6ee20352c2c99020f1de9c52db39cfb97a43060f60f056fa68e9dc8169f9035",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c6ee20352c2c99020f1de9c52db39cfb97a43060f60f056fa68e9dc8169f9035"
+    },
+    {
+      "bytes": 21924,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_kd512/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps20_kd512/local_resource_report.json",
+      "sha256": "7aa8c54d8c782856130ba84ff7df8dfbf9aee546d13995e9294749b7bb44ce6b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "7aa8c54d8c782856130ba84ff7df8dfbf9aee546d13995e9294749b7bb44ce6b"
+    },
+    {
+      "bytes": 21950,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps20_kd768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps20_kd768/local_resource_report.json",
+      "sha256": "f7202fdcaa4f7d32d03117a5f66dc1a636d0a7e27d0022f753e17e62e309c50f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "f7202fdcaa4f7d32d03117a5f66dc1a636d0a7e27d0022f753e17e62e309c50f"
+    },
+    {
+      "bytes": 22623,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_equal512_768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps30_equal512_768/local_resource_report.json",
+      "sha256": "889e52026cd3b4014543e491d2423527cbeb5d362c96902a4832ee04fbf0fff8",
+      "source_bytes_unchanged": true,
+      "source_sha256": "889e52026cd3b4014543e491d2423527cbeb5d362c96902a4832ee04fbf0fff8"
+    },
+    {
+      "bytes": 21922,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_kd512/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps30_kd512/local_resource_report.json",
+      "sha256": "b12f07c8437b4e62eb1c838fe65159c6d5947d4bfd5c31bac7badd8e6f6d0f36",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b12f07c8437b4e62eb1c838fe65159c6d5947d4bfd5c31bac7badd8e6f6d0f36"
+    },
+    {
+      "bytes": 21948,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/mps30_kd768/local_resource_report.json",
+      "path": "diagnostics/results_v1/mps30_kd768/local_resource_report.json",
+      "sha256": "f2950738bda067e9e069367324b059d5ded02fedebc16e0be79098039606bf50",
+      "source_bytes_unchanged": true,
+      "source_sha256": "f2950738bda067e9e069367324b059d5ded02fedebc16e0be79098039606bf50"
+    },
+    {
+      "bytes": 12615,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1/resource_stress_summary.json",
+      "path": "diagnostics/results_v1/resource_stress_summary.json",
+      "sha256": "956c0fcf695864b10488c591cdfbb315b78803b2d9e16da0b2578ff3b7209a96",
+      "source_bytes_unchanged": true,
+      "source_sha256": "956c0fcf695864b10488c591cdfbb315b78803b2d9e16da0b2578ff3b7209a96"
+    },
+    {
+      "bytes": 1836095,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11814/study_20175/pic_033347.jpg",
+      "path": "inputs/pictures_100/subject_11814/study_20175/pic_033347.jpg",
+      "sha256": "cd13d70456610b92f8f644d4c542fe1c10336f18efe0576d5539d3806c749283",
+      "source_bytes_unchanged": true,
+      "source_sha256": "cd13d70456610b92f8f644d4c542fe1c10336f18efe0576d5539d3806c749283"
+    },
+    {
+      "bytes": 1833148,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11814/study_20363/pic_033656.jpg",
+      "path": "inputs/pictures_100/subject_11814/study_20363/pic_033656.jpg",
+      "sha256": "eeaac9b788e28b7126ac7c05ec6a549e3d448a8b1ad1eb9ead4b49dc636ac312",
+      "source_bytes_unchanged": true,
+      "source_sha256": "eeaac9b788e28b7126ac7c05ec6a549e3d448a8b1ad1eb9ead4b49dc636ac312"
+    },
+    {
+      "bytes": 2245729,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11814/study_20363/pic_033657.jpg",
+      "path": "inputs/pictures_100/subject_11814/study_20363/pic_033657.jpg",
+      "sha256": "81a837b8e0b4206ca3e1306a0baa45eaf79cbf24f1964626ca89ca909e4b7809",
+      "source_bytes_unchanged": true,
+      "source_sha256": "81a837b8e0b4206ca3e1306a0baa45eaf79cbf24f1964626ca89ca909e4b7809"
+    },
+    {
+      "bytes": 1551038,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11817/study_20005/pic_033066.jpg",
+      "path": "inputs/pictures_100/subject_11817/study_20005/pic_033066.jpg",
+      "sha256": "3c5ca1e71e97922127ef5f4cf6133f9272b976a99a4452a09baa1f09a0250c28",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3c5ca1e71e97922127ef5f4cf6133f9272b976a99a4452a09baa1f09a0250c28"
+    },
+    {
+      "bytes": 1909932,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11817/study_20259/pic_033488.jpg",
+      "path": "inputs/pictures_100/subject_11817/study_20259/pic_033488.jpg",
+      "sha256": "303e450132970d7204840b3dd0da1d096f08c1776a7f557119a71546d541ffc4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "303e450132970d7204840b3dd0da1d096f08c1776a7f557119a71546d541ffc4"
+    },
+    {
+      "bytes": 1018221,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11818/study_20367/pic_033663.jpg",
+      "path": "inputs/pictures_100/subject_11818/study_20367/pic_033663.jpg",
+      "sha256": "fb08d2bbd4e77f5be796bde8eb6429f7e99db12832bf94e3e8b8c498c0f943f5",
+      "source_bytes_unchanged": true,
+      "source_sha256": "fb08d2bbd4e77f5be796bde8eb6429f7e99db12832bf94e3e8b8c498c0f943f5"
+    },
+    {
+      "bytes": 747485,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11818/study_20367/pic_033664.jpg",
+      "path": "inputs/pictures_100/subject_11818/study_20367/pic_033664.jpg",
+      "sha256": "6007d20bff9284fe11618bb36d03acaeafa595babb6a4f394317bd0a9d6f3f3d",
+      "source_bytes_unchanged": true,
+      "source_sha256": "6007d20bff9284fe11618bb36d03acaeafa595babb6a4f394317bd0a9d6f3f3d"
+    },
+    {
+      "bytes": 1178254,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11818/study_20367/pic_033665.jpg",
+      "path": "inputs/pictures_100/subject_11818/study_20367/pic_033665.jpg",
+      "sha256": "3f13720b504eafe140b19b4630c17f8a8230f23cb778f76bd96095c240f40c50",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3f13720b504eafe140b19b4630c17f8a8230f23cb778f76bd96095c240f40c50"
+    },
+    {
+      "bytes": 912756,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11818/study_20689/pic_034197.jpg",
+      "path": "inputs/pictures_100/subject_11818/study_20689/pic_034197.jpg",
+      "sha256": "a636ec087c8640a604b85c73c875326876d74e02039d7ddfae9bbf72e524e94c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "a636ec087c8640a604b85c73c875326876d74e02039d7ddfae9bbf72e524e94c"
+    },
+    {
+      "bytes": 1209136,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11818/study_20689/pic_034198.jpg",
+      "path": "inputs/pictures_100/subject_11818/study_20689/pic_034198.jpg",
+      "sha256": "19d454ea0a7b24bf83e896091418ba3f1e73a3f704b409d0f0466210dd3a063b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "19d454ea0a7b24bf83e896091418ba3f1e73a3f704b409d0f0466210dd3a063b"
+    },
+    {
+      "bytes": 1710334,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11828/study_20649/pic_034123.jpg",
+      "path": "inputs/pictures_100/subject_11828/study_20649/pic_034123.jpg",
+      "sha256": "c249a6c90e5d5413f12dd1003185604567bad91e11e8ead2fc9c3dc5dfc97aee",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c249a6c90e5d5413f12dd1003185604567bad91e11e8ead2fc9c3dc5dfc97aee"
+    },
+    {
+      "bytes": 1581923,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20389/pic_033703.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20389/pic_033703.jpg",
+      "sha256": "508fb274c260a212efbd5bafbd1a6663600597d4a02575979f73566635a09361",
+      "source_bytes_unchanged": true,
+      "source_sha256": "508fb274c260a212efbd5bafbd1a6663600597d4a02575979f73566635a09361"
+    },
+    {
+      "bytes": 1568614,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20757/pic_034302.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20757/pic_034302.jpg",
+      "sha256": "e6eafece0a42215bbf7c05c3c9199837d4cab19861b3aa063706f2e2f33bf63f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e6eafece0a42215bbf7c05c3c9199837d4cab19861b3aa063706f2e2f33bf63f"
+    },
+    {
+      "bytes": 1855308,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20757/pic_034303.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20757/pic_034303.jpg",
+      "sha256": "5111cca0fc6a469f98642c87435009fcee49a9773bb612e47bdd49d6c6f2f399",
+      "source_bytes_unchanged": true,
+      "source_sha256": "5111cca0fc6a469f98642c87435009fcee49a9773bb612e47bdd49d6c6f2f399"
+    },
+    {
+      "bytes": 1533144,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20757/pic_034304.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20757/pic_034304.jpg",
+      "sha256": "0025ab8bdb88bc5e8758242f615d0cd8ea9aa379d0adf5cd4b9926d0aaf91255",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0025ab8bdb88bc5e8758242f615d0cd8ea9aa379d0adf5cd4b9926d0aaf91255"
+    },
+    {
+      "bytes": 1431737,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20757/pic_034305.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20757/pic_034305.jpg",
+      "sha256": "21e2f01cba958082bf6b91bb4b5c08d5edc8ab94eee7d404c60e9cfa842b2dca",
+      "source_bytes_unchanged": true,
+      "source_sha256": "21e2f01cba958082bf6b91bb4b5c08d5edc8ab94eee7d404c60e9cfa842b2dca"
+    },
+    {
+      "bytes": 1969628,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20856/pic_034479.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20856/pic_034479.jpg",
+      "sha256": "44b8f8372a7a854b8e08bbb7c9e9a110510bee5adf8172c9bcaf5cc2ce48b998",
+      "source_bytes_unchanged": true,
+      "source_sha256": "44b8f8372a7a854b8e08bbb7c9e9a110510bee5adf8172c9bcaf5cc2ce48b998"
+    },
+    {
+      "bytes": 1489469,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20856/pic_034480.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20856/pic_034480.jpg",
+      "sha256": "ed324abdb512616dd2bd5b80055079fcbfebf2e63224c00c78d560cc24d843d0",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ed324abdb512616dd2bd5b80055079fcbfebf2e63224c00c78d560cc24d843d0"
+    },
+    {
+      "bytes": 1540975,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11829/study_20856/pic_034481.jpg",
+      "path": "inputs/pictures_100/subject_11829/study_20856/pic_034481.jpg",
+      "sha256": "4f773b6944d08cf1866e71ed87637aa9f50decdbece42ceddc2aaec66734c7c7",
+      "source_bytes_unchanged": true,
+      "source_sha256": "4f773b6944d08cf1866e71ed87637aa9f50decdbece42ceddc2aaec66734c7c7"
+    },
+    {
+      "bytes": 1227551,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11832/study_20936/pic_034614.jpg",
+      "path": "inputs/pictures_100/subject_11832/study_20936/pic_034614.jpg",
+      "sha256": "cc18c2fb97b82a2a2600336625281a5ea528feb4e27eb08a7d6266ea319b035a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "cc18c2fb97b82a2a2600336625281a5ea528feb4e27eb08a7d6266ea319b035a"
+    },
+    {
+      "bytes": 1049623,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11832/study_20936/pic_034615.jpg",
+      "path": "inputs/pictures_100/subject_11832/study_20936/pic_034615.jpg",
+      "sha256": "e8d72702839f2c993e82d1e394b99fc60fac4642fbc870f8cec1815132749187",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e8d72702839f2c993e82d1e394b99fc60fac4642fbc870f8cec1815132749187"
+    },
+    {
+      "bytes": 1905192,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11833/study_20287/pic_033530.jpg",
+      "path": "inputs/pictures_100/subject_11833/study_20287/pic_033530.jpg",
+      "sha256": "c044a14c1391d784a26c664da8717e1641691029e8f0e3e95cea7ede1809b47b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c044a14c1391d784a26c664da8717e1641691029e8f0e3e95cea7ede1809b47b"
+    },
+    {
+      "bytes": 1730405,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11833/study_20292/pic_033539.jpg",
+      "path": "inputs/pictures_100/subject_11833/study_20292/pic_033539.jpg",
+      "sha256": "ff641d6d78932666d4bf42adc944b881e83e2c0df49682c77d9e254f5c67149b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ff641d6d78932666d4bf42adc944b881e83e2c0df49682c77d9e254f5c67149b"
+    },
+    {
+      "bytes": 1516610,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11833/study_20292/pic_033540.jpg",
+      "path": "inputs/pictures_100/subject_11833/study_20292/pic_033540.jpg",
+      "sha256": "eb1132fe8d39c7e479dc6396eff8398a217cbe8a2a70c4ee4385bafcbc893315",
+      "source_bytes_unchanged": true,
+      "source_sha256": "eb1132fe8d39c7e479dc6396eff8398a217cbe8a2a70c4ee4385bafcbc893315"
+    },
+    {
+      "bytes": 2009493,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11833/study_20430/pic_033765.jpg",
+      "path": "inputs/pictures_100/subject_11833/study_20430/pic_033765.jpg",
+      "sha256": "ff738fa8772482bca27386bbb2e7a6900ebf5c58833781d992d68b74e9ce97a3",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ff738fa8772482bca27386bbb2e7a6900ebf5c58833781d992d68b74e9ce97a3"
+    },
+    {
+      "bytes": 1663037,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20225/pic_033432.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20225/pic_033432.jpg",
+      "sha256": "0cc7fb06ea7ca83808bc99e100791b84ee225d860e3112a72b9bba52d79f4bf8",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0cc7fb06ea7ca83808bc99e100791b84ee225d860e3112a72b9bba52d79f4bf8"
+    },
+    {
+      "bytes": 1677947,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20225/pic_033433.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20225/pic_033433.jpg",
+      "sha256": "4f023d3ed6fb568bb40fb2f3e7c16b498b214ef936d2fbbaf614b03a7c912f0e",
+      "source_bytes_unchanged": true,
+      "source_sha256": "4f023d3ed6fb568bb40fb2f3e7c16b498b214ef936d2fbbaf614b03a7c912f0e"
+    },
+    {
+      "bytes": 2968968,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20371/pic_033670.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20371/pic_033670.jpg",
+      "sha256": "2fcb775e9e35c50c2202f3e31b302ba5d4076ea635ccd40e0f142e7806481a82",
+      "source_bytes_unchanged": true,
+      "source_sha256": "2fcb775e9e35c50c2202f3e31b302ba5d4076ea635ccd40e0f142e7806481a82"
+    },
+    {
+      "bytes": 1506187,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20371/pic_033671.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20371/pic_033671.jpg",
+      "sha256": "35c16048f53edec7366b93762569965ba9f3aa059da32f104424bc2773d2f540",
+      "source_bytes_unchanged": true,
+      "source_sha256": "35c16048f53edec7366b93762569965ba9f3aa059da32f104424bc2773d2f540"
+    },
+    {
+      "bytes": 1572467,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20641/pic_034110.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20641/pic_034110.jpg",
+      "sha256": "b111176f3d34e7fbc96adfc7cfff4c9d35e20d479f403cf51217fb282c9fdefd",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b111176f3d34e7fbc96adfc7cfff4c9d35e20d479f403cf51217fb282c9fdefd"
+    },
+    {
+      "bytes": 1588708,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20659/pic_034142.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20659/pic_034142.jpg",
+      "sha256": "61bc62472e45b2de8602e232b9d17d9ac2b07e3f244a4f196baac9fc1acb9f88",
+      "source_bytes_unchanged": true,
+      "source_sha256": "61bc62472e45b2de8602e232b9d17d9ac2b07e3f244a4f196baac9fc1acb9f88"
+    },
+    {
+      "bytes": 1805050,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20659/pic_034143.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20659/pic_034143.jpg",
+      "sha256": "5d67a3a47fa729752523b98c95cfd94c9e3345bbe0a0fe5bcd48516f1f55d6b1",
+      "source_bytes_unchanged": true,
+      "source_sha256": "5d67a3a47fa729752523b98c95cfd94c9e3345bbe0a0fe5bcd48516f1f55d6b1"
+    },
+    {
+      "bytes": 1716362,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20662/pic_034147.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20662/pic_034147.jpg",
+      "sha256": "e2a39275bd87c30a3779b3f6c5c165e2fb9b2c3520e21e1c96916849298073be",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e2a39275bd87c30a3779b3f6c5c165e2fb9b2c3520e21e1c96916849298073be"
+    },
+    {
+      "bytes": 1744196,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20662/pic_034148.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20662/pic_034148.jpg",
+      "sha256": "b102b510af996f88778618aed22536f8dcf4fe02983094e50d85824b10b45204",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b102b510af996f88778618aed22536f8dcf4fe02983094e50d85824b10b45204"
+    },
+    {
+      "bytes": 1465535,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20733/pic_034264.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20733/pic_034264.jpg",
+      "sha256": "ed80d7b2cb06fa0df389c7db246e820a68720e18ea5b2bfbff07892699141e63",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ed80d7b2cb06fa0df389c7db246e820a68720e18ea5b2bfbff07892699141e63"
+    },
+    {
+      "bytes": 1568823,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11836/study_20733/pic_034265.jpg",
+      "path": "inputs/pictures_100/subject_11836/study_20733/pic_034265.jpg",
+      "sha256": "7d7664f676ff14917b57e2c1c97e26e3b07d6db527849bfe1d5f197009a066a7",
+      "source_bytes_unchanged": true,
+      "source_sha256": "7d7664f676ff14917b57e2c1c97e26e3b07d6db527849bfe1d5f197009a066a7"
+    },
+    {
+      "bytes": 986387,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11842/study_20173/pic_033342.jpg",
+      "path": "inputs/pictures_100/subject_11842/study_20173/pic_033342.jpg",
+      "sha256": "b285304d9f77e56390483f3b7eb07c0d079cafde770c2b57ce3b9cb800d6f2c8",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b285304d9f77e56390483f3b7eb07c0d079cafde770c2b57ce3b9cb800d6f2c8"
+    },
+    {
+      "bytes": 880065,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11842/study_20173/pic_033343.jpg",
+      "path": "inputs/pictures_100/subject_11842/study_20173/pic_033343.jpg",
+      "sha256": "d07c44219a7d637a2fd8b9a05d1645aea711f47e88e260bd440707c5ffe14850",
+      "source_bytes_unchanged": true,
+      "source_sha256": "d07c44219a7d637a2fd8b9a05d1645aea711f47e88e260bd440707c5ffe14850"
+    },
+    {
+      "bytes": 1431700,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11844/study_20041/pic_033120.jpg",
+      "path": "inputs/pictures_100/subject_11844/study_20041/pic_033120.jpg",
+      "sha256": "cb5a5fc79084e5527025d2907cfd6b4a8ba3386ab03d2e1c1d3cc8f45968d6e4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "cb5a5fc79084e5527025d2907cfd6b4a8ba3386ab03d2e1c1d3cc8f45968d6e4"
+    },
+    {
+      "bytes": 1294970,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11844/study_20041/pic_033121.jpg",
+      "path": "inputs/pictures_100/subject_11844/study_20041/pic_033121.jpg",
+      "sha256": "0a563784c1bcb221a156227b6c8817f951c7b840111f67a1f5136b2dd6d63548",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0a563784c1bcb221a156227b6c8817f951c7b840111f67a1f5136b2dd6d63548"
+    },
+    {
+      "bytes": 1803224,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11848/study_20057/pic_033146.jpg",
+      "path": "inputs/pictures_100/subject_11848/study_20057/pic_033146.jpg",
+      "sha256": "16b2444b18e236a9a1b8c721015957bad3f2b67c5ef77f53efbe593da1b5fcce",
+      "source_bytes_unchanged": true,
+      "source_sha256": "16b2444b18e236a9a1b8c721015957bad3f2b67c5ef77f53efbe593da1b5fcce"
+    },
+    {
+      "bytes": 1488013,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11850/study_20460/pic_033814.jpg",
+      "path": "inputs/pictures_100/subject_11850/study_20460/pic_033814.jpg",
+      "sha256": "f0035c505347f3681b6d3643a948734d361726acc9b09eb27dfb9dc8f6b7e517",
+      "source_bytes_unchanged": true,
+      "source_sha256": "f0035c505347f3681b6d3643a948734d361726acc9b09eb27dfb9dc8f6b7e517"
+    },
+    {
+      "bytes": 1513605,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11850/study_20460/pic_033815.jpg",
+      "path": "inputs/pictures_100/subject_11850/study_20460/pic_033815.jpg",
+      "sha256": "5aee424cc0af8face5c5f1a36bf822adea7d29d9fb8fff5d0b663d038b710993",
+      "source_bytes_unchanged": true,
+      "source_sha256": "5aee424cc0af8face5c5f1a36bf822adea7d29d9fb8fff5d0b663d038b710993"
+    },
+    {
+      "bytes": 1502130,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11851/study_20777/pic_034337.jpg",
+      "path": "inputs/pictures_100/subject_11851/study_20777/pic_034337.jpg",
+      "sha256": "7af9aa435f03dda620f472a2f2c4dce02157bf189c5d52befab881a8368c9c6a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "7af9aa435f03dda620f472a2f2c4dce02157bf189c5d52befab881a8368c9c6a"
+    },
+    {
+      "bytes": 1846616,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11854/study_20056/pic_033145.jpg",
+      "path": "inputs/pictures_100/subject_11854/study_20056/pic_033145.jpg",
+      "sha256": "e13b392cfa03ae2470ee9d38b182c0df39818895dfcf5ecfff43c8730995fdbe",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e13b392cfa03ae2470ee9d38b182c0df39818895dfcf5ecfff43c8730995fdbe"
+    },
+    {
+      "bytes": 1413695,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11857/study_20456/pic_033808.jpg",
+      "path": "inputs/pictures_100/subject_11857/study_20456/pic_033808.jpg",
+      "sha256": "0149df430e88d83e4e160bcc8c153607c88253e6a408ff9b78cf61ce72593386",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0149df430e88d83e4e160bcc8c153607c88253e6a408ff9b78cf61ce72593386"
+    },
+    {
+      "bytes": 1828378,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11857/study_20456/pic_033809.jpg",
+      "path": "inputs/pictures_100/subject_11857/study_20456/pic_033809.jpg",
+      "sha256": "340ec7c6a1030d16984455737ce32b6ce7b68e42cd7b2fc86533a06ac23509b8",
+      "source_bytes_unchanged": true,
+      "source_sha256": "340ec7c6a1030d16984455737ce32b6ce7b68e42cd7b2fc86533a06ac23509b8"
+    },
+    {
+      "bytes": 1689400,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11862/study_20502/pic_033888.jpg",
+      "path": "inputs/pictures_100/subject_11862/study_20502/pic_033888.jpg",
+      "sha256": "2fd6aac7197892b623fcd4e1f01be2cfc4492dda8b563549fe6f2f212837a37d",
+      "source_bytes_unchanged": true,
+      "source_sha256": "2fd6aac7197892b623fcd4e1f01be2cfc4492dda8b563549fe6f2f212837a37d"
+    },
+    {
+      "bytes": 1389945,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11862/study_20502/pic_033889.jpg",
+      "path": "inputs/pictures_100/subject_11862/study_20502/pic_033889.jpg",
+      "sha256": "fc444835dcd457b82eb6820ec7ab74506ffb7a9397d686b2123a6b0ba3c0237c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "fc444835dcd457b82eb6820ec7ab74506ffb7a9397d686b2123a6b0ba3c0237c"
+    },
+    {
+      "bytes": 1429369,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11868/study_20284/pic_033526.jpg",
+      "path": "inputs/pictures_100/subject_11868/study_20284/pic_033526.jpg",
+      "sha256": "070814ab5f94787674eb77eeccd079636abff730bbb4db2f43ee023a07c05b75",
+      "source_bytes_unchanged": true,
+      "source_sha256": "070814ab5f94787674eb77eeccd079636abff730bbb4db2f43ee023a07c05b75"
+    },
+    {
+      "bytes": 1679042,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11868/study_20284/pic_033527.jpg",
+      "path": "inputs/pictures_100/subject_11868/study_20284/pic_033527.jpg",
+      "sha256": "1ad8d2b468e0382471e4b5f4cc44dbe922c63c3d1b47cfa0430b609c0a5243c4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "1ad8d2b468e0382471e4b5f4cc44dbe922c63c3d1b47cfa0430b609c0a5243c4"
+    },
+    {
+      "bytes": 1072582,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11874/study_20638/pic_034104.jpg",
+      "path": "inputs/pictures_100/subject_11874/study_20638/pic_034104.jpg",
+      "sha256": "64604b5de938301a3e14d07af6597173ab181b253c8effa86ea83041861323e3",
+      "source_bytes_unchanged": true,
+      "source_sha256": "64604b5de938301a3e14d07af6597173ab181b253c8effa86ea83041861323e3"
+    },
+    {
+      "bytes": 1599940,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11888/study_20119/pic_033254.jpg",
+      "path": "inputs/pictures_100/subject_11888/study_20119/pic_033254.jpg",
+      "sha256": "c6649c4793cefb7be588df8937841ca679bbc9be59c282a22981f986f31b44b2",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c6649c4793cefb7be588df8937841ca679bbc9be59c282a22981f986f31b44b2"
+    },
+    {
+      "bytes": 1790695,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11889/study_20122/pic_033258.jpg",
+      "path": "inputs/pictures_100/subject_11889/study_20122/pic_033258.jpg",
+      "sha256": "3c9e05feb27ac182075623e1fdbf32defad41384a034edb2ae264d92ee37ef4b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3c9e05feb27ac182075623e1fdbf32defad41384a034edb2ae264d92ee37ef4b"
+    },
+    {
+      "bytes": 2251873,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11890/study_20226/pic_033434.jpg",
+      "path": "inputs/pictures_100/subject_11890/study_20226/pic_033434.jpg",
+      "sha256": "f94371aa7ac1edb5720cf05b3bc128a2ee232a0da80a7faebefe23387e417254",
+      "source_bytes_unchanged": true,
+      "source_sha256": "f94371aa7ac1edb5720cf05b3bc128a2ee232a0da80a7faebefe23387e417254"
+    },
+    {
+      "bytes": 1924865,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11890/study_20226/pic_033435.jpg",
+      "path": "inputs/pictures_100/subject_11890/study_20226/pic_033435.jpg",
+      "sha256": "9e4bf5d5ee92917660e81d303d92bb6ba167c7fd45e254ffc402658868dee119",
+      "source_bytes_unchanged": true,
+      "source_sha256": "9e4bf5d5ee92917660e81d303d92bb6ba167c7fd45e254ffc402658868dee119"
+    },
+    {
+      "bytes": 1771697,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11895/study_20186/pic_033365.jpg",
+      "path": "inputs/pictures_100/subject_11895/study_20186/pic_033365.jpg",
+      "sha256": "b414c10cb98b6a3aaa98e92315fcdd565f5630cca0ba01fba7b022573ded6b6c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b414c10cb98b6a3aaa98e92315fcdd565f5630cca0ba01fba7b022573ded6b6c"
+    },
+    {
+      "bytes": 1619369,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11895/study_20186/pic_033366.jpg",
+      "path": "inputs/pictures_100/subject_11895/study_20186/pic_033366.jpg",
+      "sha256": "98519305e1a55214fcedd421f5894da14ba9e331a6133093417251e249105256",
+      "source_bytes_unchanged": true,
+      "source_sha256": "98519305e1a55214fcedd421f5894da14ba9e331a6133093417251e249105256"
+    },
+    {
+      "bytes": 1530113,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11895/study_20186/pic_033367.jpg",
+      "path": "inputs/pictures_100/subject_11895/study_20186/pic_033367.jpg",
+      "sha256": "ae441cec8cda31acd77a90601dbab5cd5937c1ada37a63972f043eb49ad4cba4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ae441cec8cda31acd77a90601dbab5cd5937c1ada37a63972f043eb49ad4cba4"
+    },
+    {
+      "bytes": 967013,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11902/study_20933/pic_034607.jpg",
+      "path": "inputs/pictures_100/subject_11902/study_20933/pic_034607.jpg",
+      "sha256": "553daba34bf6f23881acb3027187ce1991198b4aae5790fa4d8e46769ce61050",
+      "source_bytes_unchanged": true,
+      "source_sha256": "553daba34bf6f23881acb3027187ce1991198b4aae5790fa4d8e46769ce61050"
+    },
+    {
+      "bytes": 1127408,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11902/study_20933/pic_034608.jpg",
+      "path": "inputs/pictures_100/subject_11902/study_20933/pic_034608.jpg",
+      "sha256": "c25bcec3f7afc155df12cc54758230cb90cd79bec702daed1267351166c81ba7",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c25bcec3f7afc155df12cc54758230cb90cd79bec702daed1267351166c81ba7"
+    },
+    {
+      "bytes": 1635314,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11903/study_20432/pic_033768.jpg",
+      "path": "inputs/pictures_100/subject_11903/study_20432/pic_033768.jpg",
+      "sha256": "9ce9c3fe692503f4ad05f8bdef3a754a49c3c552f568aecad27905b7471016df",
+      "source_bytes_unchanged": true,
+      "source_sha256": "9ce9c3fe692503f4ad05f8bdef3a754a49c3c552f568aecad27905b7471016df"
+    },
+    {
+      "bytes": 1547481,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11903/study_20432/pic_033769.jpg",
+      "path": "inputs/pictures_100/subject_11903/study_20432/pic_033769.jpg",
+      "sha256": "1d1ac454f594354cd69f9c78d586f9b98c24fa0ba43cf76cdfa8c99e13744821",
+      "source_bytes_unchanged": true,
+      "source_sha256": "1d1ac454f594354cd69f9c78d586f9b98c24fa0ba43cf76cdfa8c99e13744821"
+    },
+    {
+      "bytes": 1629945,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11903/study_20918/pic_034579.jpg",
+      "path": "inputs/pictures_100/subject_11903/study_20918/pic_034579.jpg",
+      "sha256": "c8d07f2b96ba0d9366355fb75178942e75da89f3494646686da466ae34a32990",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c8d07f2b96ba0d9366355fb75178942e75da89f3494646686da466ae34a32990"
+    },
+    {
+      "bytes": 973541,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11907/study_20158/pic_033315.jpg",
+      "path": "inputs/pictures_100/subject_11907/study_20158/pic_033315.jpg",
+      "sha256": "f9bd012abd214faeabbdeda683bab456ec9c33db9f52cf07ad114dee77afca4b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "f9bd012abd214faeabbdeda683bab456ec9c33db9f52cf07ad114dee77afca4b"
+    },
+    {
+      "bytes": 743866,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11907/study_20158/pic_033316.jpg",
+      "path": "inputs/pictures_100/subject_11907/study_20158/pic_033316.jpg",
+      "sha256": "0c4c80afe632064e45124372d2d75bfc0feeee4921dacb5d81b9efdb5bbf5ec0",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0c4c80afe632064e45124372d2d75bfc0feeee4921dacb5d81b9efdb5bbf5ec0"
+    },
+    {
+      "bytes": 1443219,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11914/study_20177/pic_033350.jpg",
+      "path": "inputs/pictures_100/subject_11914/study_20177/pic_033350.jpg",
+      "sha256": "205e07f5656abb7fa7a7ddc2f62953cbcf2bcc9bf7d8b26c576d2f1bcf90c5a8",
+      "source_bytes_unchanged": true,
+      "source_sha256": "205e07f5656abb7fa7a7ddc2f62953cbcf2bcc9bf7d8b26c576d2f1bcf90c5a8"
+    },
+    {
+      "bytes": 2063643,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11914/study_20177/pic_033351.jpg",
+      "path": "inputs/pictures_100/subject_11914/study_20177/pic_033351.jpg",
+      "sha256": "ce5307d956a19b082430354026deb54481afded950d8d078e143307d81f4641f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ce5307d956a19b082430354026deb54481afded950d8d078e143307d81f4641f"
+    },
+    {
+      "bytes": 1403897,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11916/study_20511/pic_033903.jpg",
+      "path": "inputs/pictures_100/subject_11916/study_20511/pic_033903.jpg",
+      "sha256": "cd2b3384cce0cb6ce00496d766b8a30672e0e0efbe50a9d4b62e74aca4e8528a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "cd2b3384cce0cb6ce00496d766b8a30672e0e0efbe50a9d4b62e74aca4e8528a"
+    },
+    {
+      "bytes": 2024780,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11916/study_20511/pic_033904.jpg",
+      "path": "inputs/pictures_100/subject_11916/study_20511/pic_033904.jpg",
+      "sha256": "523bfdd9dc603ca4543e25880a7a84b996a8ef061f9f8ca59373399f5bbd267e",
+      "source_bytes_unchanged": true,
+      "source_sha256": "523bfdd9dc603ca4543e25880a7a84b996a8ef061f9f8ca59373399f5bbd267e"
+    },
+    {
+      "bytes": 2022333,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11916/study_20511/pic_033905.jpg",
+      "path": "inputs/pictures_100/subject_11916/study_20511/pic_033905.jpg",
+      "sha256": "e827f74069fe39145ee272b651eac1a03ab6ce5b45e1bfdffdaff1d52e63b223",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e827f74069fe39145ee272b651eac1a03ab6ce5b45e1bfdffdaff1d52e63b223"
+    },
+    {
+      "bytes": 942380,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11918/study_20549/pic_033964.jpg",
+      "path": "inputs/pictures_100/subject_11918/study_20549/pic_033964.jpg",
+      "sha256": "a09bc991a9cc10ef0c0262ff2c970a77b946b28ce67089f3607eea8fb7c0fd61",
+      "source_bytes_unchanged": true,
+      "source_sha256": "a09bc991a9cc10ef0c0262ff2c970a77b946b28ce67089f3607eea8fb7c0fd61"
+    },
+    {
+      "bytes": 1066885,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11918/study_20549/pic_033965.jpg",
+      "path": "inputs/pictures_100/subject_11918/study_20549/pic_033965.jpg",
+      "sha256": "95b235bf5f54562077f5e0310e65e5bc3814b624b9fadf68034ff417ce1ebdab",
+      "source_bytes_unchanged": true,
+      "source_sha256": "95b235bf5f54562077f5e0310e65e5bc3814b624b9fadf68034ff417ce1ebdab"
+    },
+    {
+      "bytes": 1049104,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11919/study_20198/pic_033386.jpg",
+      "path": "inputs/pictures_100/subject_11919/study_20198/pic_033386.jpg",
+      "sha256": "383c07d5b1d826691637d8343e99a979e2795267bfe5b99a306248fb7da0f13e",
+      "source_bytes_unchanged": true,
+      "source_sha256": "383c07d5b1d826691637d8343e99a979e2795267bfe5b99a306248fb7da0f13e"
+    },
+    {
+      "bytes": 1322313,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11919/study_20198/pic_033387.jpg",
+      "path": "inputs/pictures_100/subject_11919/study_20198/pic_033387.jpg",
+      "sha256": "062d2363522f644a6465f55bff93dddb49c0b13855fe01525acb23ae26ec9d1b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "062d2363522f644a6465f55bff93dddb49c0b13855fe01525acb23ae26ec9d1b"
+    },
+    {
+      "bytes": 1442862,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11919/study_20198/pic_033388.jpg",
+      "path": "inputs/pictures_100/subject_11919/study_20198/pic_033388.jpg",
+      "sha256": "0d2f6c6eec70fd756dd5da63ee4cbb6136cfb96b6115fa3813fecfafe0b782e7",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0d2f6c6eec70fd756dd5da63ee4cbb6136cfb96b6115fa3813fecfafe0b782e7"
+    },
+    {
+      "bytes": 1138590,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11920/study_20229/pic_033440.jpg",
+      "path": "inputs/pictures_100/subject_11920/study_20229/pic_033440.jpg",
+      "sha256": "c0f28b673a531f5b69abccdab6ba42235fe15fc8bdccfafeee1360af925b6b30",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c0f28b673a531f5b69abccdab6ba42235fe15fc8bdccfafeee1360af925b6b30"
+    },
+    {
+      "bytes": 906714,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11920/study_20229/pic_033441.jpg",
+      "path": "inputs/pictures_100/subject_11920/study_20229/pic_033441.jpg",
+      "sha256": "106343c490c72c1551ff071cdd8fa76095130be3c470dc6c08cfd33c67b8ae93",
+      "source_bytes_unchanged": true,
+      "source_sha256": "106343c490c72c1551ff071cdd8fa76095130be3c470dc6c08cfd33c67b8ae93"
+    },
+    {
+      "bytes": 1398398,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11938/study_20258/pic_033487.jpg",
+      "path": "inputs/pictures_100/subject_11938/study_20258/pic_033487.jpg",
+      "sha256": "77e2c472891d4134bcb62c3698107a35a72a5ccef53c7624e4d6f6d6bbfa2822",
+      "source_bytes_unchanged": true,
+      "source_sha256": "77e2c472891d4134bcb62c3698107a35a72a5ccef53c7624e4d6f6d6bbfa2822"
+    },
+    {
+      "bytes": 1420748,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11940/study_20748/pic_034285.jpg",
+      "path": "inputs/pictures_100/subject_11940/study_20748/pic_034285.jpg",
+      "sha256": "b77ec4e2ee0caf31bd6e8cbcdb23f281c380e981f914cfc15f15fd8dd29c8bda",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b77ec4e2ee0caf31bd6e8cbcdb23f281c380e981f914cfc15f15fd8dd29c8bda"
+    },
+    {
+      "bytes": 1578540,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11940/study_20748/pic_034286.jpg",
+      "path": "inputs/pictures_100/subject_11940/study_20748/pic_034286.jpg",
+      "sha256": "b4aa8f9ee27d1bf97bbaba7f6840ec92a333a7137ff019f0e8aa182237bcff7f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b4aa8f9ee27d1bf97bbaba7f6840ec92a333a7137ff019f0e8aa182237bcff7f"
+    },
+    {
+      "bytes": 1071326,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11949/study_20326/pic_033597.jpg",
+      "path": "inputs/pictures_100/subject_11949/study_20326/pic_033597.jpg",
+      "sha256": "0acd043d5351c30285b0f53084cd438dc1d2a47d5c53931afe603b8a418008bb",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0acd043d5351c30285b0f53084cd438dc1d2a47d5c53931afe603b8a418008bb"
+    },
+    {
+      "bytes": 1229001,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11949/study_20326/pic_033598.jpg",
+      "path": "inputs/pictures_100/subject_11949/study_20326/pic_033598.jpg",
+      "sha256": "b46e0486e39c4d470687d8b9066fa0761e42c4affeeca9263382e957a5bdfcb9",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b46e0486e39c4d470687d8b9066fa0761e42c4affeeca9263382e957a5bdfcb9"
+    },
+    {
+      "bytes": 1459290,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11952/study_20591/pic_034032.jpg",
+      "path": "inputs/pictures_100/subject_11952/study_20591/pic_034032.jpg",
+      "sha256": "e83d33d7f276242da8815fdd2e4b17fe269675afa2879cca0fa045469218952d",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e83d33d7f276242da8815fdd2e4b17fe269675afa2879cca0fa045469218952d"
+    },
+    {
+      "bytes": 1677295,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11952/study_20591/pic_034033.jpg",
+      "path": "inputs/pictures_100/subject_11952/study_20591/pic_034033.jpg",
+      "sha256": "22fcf9757c120375a5dfe06a296c805ff724f7e4c70edf1d83655ccdb014b815",
+      "source_bytes_unchanged": true,
+      "source_sha256": "22fcf9757c120375a5dfe06a296c805ff724f7e4c70edf1d83655ccdb014b815"
+    },
+    {
+      "bytes": 2291603,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11972/study_20435/pic_033773.jpg",
+      "path": "inputs/pictures_100/subject_11972/study_20435/pic_033773.jpg",
+      "sha256": "faf8c5444fd45d33b52761c7ab4b9815a686e57b7c5567858434bfa868fc791a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "faf8c5444fd45d33b52761c7ab4b9815a686e57b7c5567858434bfa868fc791a"
+    },
+    {
+      "bytes": 1699582,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11972/study_20435/pic_033774.jpg",
+      "path": "inputs/pictures_100/subject_11972/study_20435/pic_033774.jpg",
+      "sha256": "5fc9d73c44bc69bd25796ef00f72cc0df46dad99d86144d53c2e6437c7201744",
+      "source_bytes_unchanged": true,
+      "source_sha256": "5fc9d73c44bc69bd25796ef00f72cc0df46dad99d86144d53c2e6437c7201744"
+    },
+    {
+      "bytes": 1803132,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11978/study_20682/pic_034181.jpg",
+      "path": "inputs/pictures_100/subject_11978/study_20682/pic_034181.jpg",
+      "sha256": "5861a5ef241caefa8cc0ab3b93a4baab3722e7ea03758ca8dadf66452ea4cf34",
+      "source_bytes_unchanged": true,
+      "source_sha256": "5861a5ef241caefa8cc0ab3b93a4baab3722e7ea03758ca8dadf66452ea4cf34"
+    },
+    {
+      "bytes": 1801612,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11978/study_20682/pic_034182.jpg",
+      "path": "inputs/pictures_100/subject_11978/study_20682/pic_034182.jpg",
+      "sha256": "b2dd137b0bd0f8dee7c06ea525c01b65f78e1492130eb34cb6f4b1698384b1a2",
+      "source_bytes_unchanged": true,
+      "source_sha256": "b2dd137b0bd0f8dee7c06ea525c01b65f78e1492130eb34cb6f4b1698384b1a2"
+    },
+    {
+      "bytes": 1804689,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11978/study_20682/pic_034183.jpg",
+      "path": "inputs/pictures_100/subject_11978/study_20682/pic_034183.jpg",
+      "sha256": "93e5a470471f5a019a9191721641c0f0ad0f63bd577caac555f18159ad489c8c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "93e5a470471f5a019a9191721641c0f0ad0f63bd577caac555f18159ad489c8c"
+    },
+    {
+      "bytes": 2061767,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11978/study_20682/pic_034184.jpg",
+      "path": "inputs/pictures_100/subject_11978/study_20682/pic_034184.jpg",
+      "sha256": "2be4c527517ef261d6251df4ab233f2b59dbe8a7607943271c7e6d683d075e93",
+      "source_bytes_unchanged": true,
+      "source_sha256": "2be4c527517ef261d6251df4ab233f2b59dbe8a7607943271c7e6d683d075e93"
+    },
+    {
+      "bytes": 1543919,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11984/study_20487/pic_033862.jpg",
+      "path": "inputs/pictures_100/subject_11984/study_20487/pic_033862.jpg",
+      "sha256": "28af1ed2d17d0e7387be31f005b375241b4046e03caeedfefffa85042165e017",
+      "source_bytes_unchanged": true,
+      "source_sha256": "28af1ed2d17d0e7387be31f005b375241b4046e03caeedfefffa85042165e017"
+    },
+    {
+      "bytes": 1530733,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_11984/study_20487/pic_033863.jpg",
+      "path": "inputs/pictures_100/subject_11984/study_20487/pic_033863.jpg",
+      "sha256": "e06485a3db48190c7f90b592066ed920c38885e9b98405df3a40d1e61bd83892",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e06485a3db48190c7f90b592066ed920c38885e9b98405df3a40d1e61bd83892"
+    },
+    {
+      "bytes": 1725496,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12004/study_20586/pic_034025.jpg",
+      "path": "inputs/pictures_100/subject_12004/study_20586/pic_034025.jpg",
+      "sha256": "59c1ec9f8b0bcf80fab3011d9907dd10c1180cb2808d938ad23fecb31c25821d",
+      "source_bytes_unchanged": true,
+      "source_sha256": "59c1ec9f8b0bcf80fab3011d9907dd10c1180cb2808d938ad23fecb31c25821d"
+    },
+    {
+      "bytes": 1218810,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12004/study_20586/pic_034026.jpg",
+      "path": "inputs/pictures_100/subject_12004/study_20586/pic_034026.jpg",
+      "sha256": "dbc22819cedab934055f077b1346418af3ec45404a1d894b0bd38e2a64b994de",
+      "source_bytes_unchanged": true,
+      "source_sha256": "dbc22819cedab934055f077b1346418af3ec45404a1d894b0bd38e2a64b994de"
+    },
+    {
+      "bytes": 2056124,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12005/study_20600/pic_034050.jpg",
+      "path": "inputs/pictures_100/subject_12005/study_20600/pic_034050.jpg",
+      "sha256": "ebb29c7e6d372c81814de024b62787b3a9ff87eec727bbbb936f5479693a9bff",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ebb29c7e6d372c81814de024b62787b3a9ff87eec727bbbb936f5479693a9bff"
+    },
+    {
+      "bytes": 1411385,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12005/study_20600/pic_034051.jpg",
+      "path": "inputs/pictures_100/subject_12005/study_20600/pic_034051.jpg",
+      "sha256": "0be03d9f5e8c04f3c190c2d3cad91117420c7c5f746945103b5536da62c815ac",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0be03d9f5e8c04f3c190c2d3cad91117420c7c5f746945103b5536da62c815ac"
+    },
+    {
+      "bytes": 1938782,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12039/study_20819/pic_034405.jpg",
+      "path": "inputs/pictures_100/subject_12039/study_20819/pic_034405.jpg",
+      "sha256": "0a4a66f4b8a240ec08221ede2216035592b8c7042023c51784440fa3c170b818",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0a4a66f4b8a240ec08221ede2216035592b8c7042023c51784440fa3c170b818"
+    },
+    {
+      "bytes": 1456652,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12039/study_20819/pic_034406.jpg",
+      "path": "inputs/pictures_100/subject_12039/study_20819/pic_034406.jpg",
+      "sha256": "8390801e491416516ddbc3077081fac4037921408d02043127d878b4fe6844d2",
+      "source_bytes_unchanged": true,
+      "source_sha256": "8390801e491416516ddbc3077081fac4037921408d02043127d878b4fe6844d2"
+    },
+    {
+      "bytes": 1590260,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100/subject_12039/study_20819/pic_034407.jpg",
+      "path": "inputs/pictures_100/subject_12039/study_20819/pic_034407.jpg",
+      "sha256": "453a65ecf6d1b9e0c4117a459e8067c2b0905ff7347a4f591b5a9fc7b79d1c5c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "453a65ecf6d1b9e0c4117a459e8067c2b0905ff7347a4f591b5a9fc7b79d1c5c"
+    },
+    {
+      "bytes": 1751630,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5/subject_11816/study_20093/pic_033208.jpg",
+      "path": "inputs/pictures_5/subject_11816/study_20093/pic_033208.jpg",
+      "sha256": "a0b1e036467c59339a7b2c939ee5ac7b0f47b8e9202230deca9be87f770f35a4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "a0b1e036467c59339a7b2c939ee5ac7b0f47b8e9202230deca9be87f770f35a4"
+    },
+    {
+      "bytes": 1750512,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5/subject_11827/study_20522/pic_033922.jpg",
+      "path": "inputs/pictures_5/subject_11827/study_20522/pic_033922.jpg",
+      "sha256": "755700300542c6d88b87393b41de9c6f97484baee18109e951a2ed7555a0b10f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "755700300542c6d88b87393b41de9c6f97484baee18109e951a2ed7555a0b10f"
+    },
+    {
+      "bytes": 1462514,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5/subject_11837/study_20050/pic_033136.jpg",
+      "path": "inputs/pictures_5/subject_11837/study_20050/pic_033136.jpg",
+      "sha256": "9b35db8f06dd09e6ccbaf4dc6c8e797285440f38727acd28510fe530fddba7bf",
+      "source_bytes_unchanged": true,
+      "source_sha256": "9b35db8f06dd09e6ccbaf4dc6c8e797285440f38727acd28510fe530fddba7bf"
+    },
+    {
+      "bytes": 868705,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5/subject_11843/study_20271/pic_033508.jpg",
+      "path": "inputs/pictures_5/subject_11843/study_20271/pic_033508.jpg",
+      "sha256": "3c8c26ed040b205ff211a0ca76d5fa71f2e4d5246ffaf91536329fd32944fdc3",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3c8c26ed040b205ff211a0ca76d5fa71f2e4d5246ffaf91536329fd32944fdc3"
+    },
+    {
+      "bytes": 871783,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5/subject_11843/study_20271/pic_033509.jpg",
+      "path": "inputs/pictures_5/subject_11843/study_20271/pic_033509.jpg",
+      "sha256": "21677d14871d9276c5b5c4ed62f6675b78054915663e113f57365e561dabde70",
+      "source_bytes_unchanged": true,
+      "source_sha256": "21677d14871d9276c5b5c4ed62f6675b78054915663e113f57365e561dabde70"
+    },
+    {
+      "bytes": 95966,
+      "derived": true,
+      "origin": "inputs/selection.original.json; only manifest_path and two provenance fields derived",
+      "path": "inputs/selection.json",
+      "sha256": "3604d31261dd3fdf4736fc50cc19573acabdafd4c79853d8feb7682f6fcd43c5"
+    },
+    {
+      "bytes": 95817,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+      "path": "inputs/selection.original.json",
+      "sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+      "source_bytes_unchanged": true,
+      "source_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3"
+    },
+    {
+      "bytes": 6721,
+      "origin": "/home/featurize/work/cloud_project_v2/kd_common.py",
+      "path": "kd_common.py",
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "source_bytes_unchanged": true,
+      "source_sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029"
+    },
+    {
+      "bytes": 3284,
+      "origin": "/home/featurize/work/cloud_project_v2/model_overnight.py",
+      "path": "model_overnight.py",
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0"
+    },
+    {
+      "bytes": 1850,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/composition_report.json",
+      "path": "models/equal512_768/composition_report.json",
+      "sha256": "0282fe609f0d33221c389c586580a4969b0a111e6c9709e23c25ac74dbcb8f9f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0282fe609f0d33221c389c586580a4969b0a111e6c9709e23c25ac74dbcb8f9f"
+    },
+    {
+      "bytes": 17341236,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/config.json",
+      "path": "models/equal512_768/config.json",
+      "sha256": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a",
+      "source_bytes_unchanged": true,
+      "source_sha256": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_00_fp16.pt",
+      "path": "models/equal512_768/student_00_fp16.pt",
+      "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_01_fp16.pt",
+      "path": "models/equal512_768/student_01_fp16.pt",
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "source_bytes_unchanged": true,
+      "source_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+    },
+    {
+      "bytes": 11283342,
+      "origin": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/config.json",
+      "path": "models/kd512/config.json",
+      "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+      "source_bytes_unchanged": true,
+      "source_sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"
+    },
+    {
+      "bytes": 1099,
+      "origin": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/export_report.json",
+      "path": "models/kd512/export_report.json",
+      "sha256": "3426f15387696bb0ba3ef9ea2054697c6f65a574059eb09c22258a8594f9985d",
+      "source_bytes_unchanged": true,
+      "source_sha256": "3426f15387696bb0ba3ef9ea2054697c6f65a574059eb09c22258a8594f9985d"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt",
+      "path": "models/kd512/student_fp16.pt",
+      "sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+      "source_bytes_unchanged": true,
+      "source_sha256": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5"
+    },
+    {
+      "bytes": 11283346,
+      "origin": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json",
+      "path": "models/kd768/config.json",
+      "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+      "source_bytes_unchanged": true,
+      "source_sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164"
+    },
+    {
+      "bytes": 1099,
+      "origin": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/export_report.json",
+      "path": "models/kd768/export_report.json",
+      "sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b",
+      "source_bytes_unchanged": true,
+      "source_sha256": "415c4fee4853b2769157e62f8b7ef46df45f4992515b776ac94cc1c6a2ddb35b"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt",
+      "path": "models/kd768/student_fp16.pt",
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "source_bytes_unchanged": true,
+      "source_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+    },
+    {
+      "bytes": 1890,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only/composition_report.json",
+      "path": "models/two768_timing_only/composition_report.json",
+      "sha256": "a78d3ba9130594022922bdda753165715a08f5c17d6dff9beb767209ffbb7b7f",
+      "source_bytes_unchanged": true,
+      "source_sha256": "a78d3ba9130594022922bdda753165715a08f5c17d6dff9beb767209ffbb7b7f"
+    },
+    {
+      "bytes": 17341231,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only/config.json",
+      "path": "models/two768_timing_only/config.json",
+      "sha256": "829ab373b9d7c84c8e360b9cc41b686897b1a35e519904b908a5b85644fb141c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "829ab373b9d7c84c8e360b9cc41b686897b1a35e519904b908a5b85644fb141c"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only/student_00_fp16.pt",
+      "path": "models/two768_timing_only/student_00_fp16.pt",
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "source_bytes_unchanged": true,
+      "source_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+    },
+    {
+      "bytes": 55712511,
+      "origin": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only/student_01_fp16.pt",
+      "path": "models/two768_timing_only/student_01_fp16.pt",
+      "sha256": "ce622ceba540dac3762517e1bc777e1499240d8fa8de5279b542cdfe6ac2caa4",
+      "source_bytes_unchanged": true,
+      "source_sha256": "ce622ceba540dac3762517e1bc777e1499240d8fa8de5279b542cdfe6ac2caa4"
+    },
+    {
+      "bytes": 4394,
+      "origin": "/home/featurize/work/cloud_project_v2/predict.py",
+      "path": "predict.py",
+      "sha256": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+      "source_bytes_unchanged": true,
+      "source_sha256": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42"
+    },
+    {
+      "bytes": 10131,
+      "origin": "/home/featurize/work/cloud_project_v2/prepare_latency_inputs.py",
+      "path": "prepare_latency_inputs.py",
+      "sha256": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+      "source_bytes_unchanged": true,
+      "source_sha256": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698"
+    },
+    {
+      "bytes": 3182,
+      "derived": true,
+      "origin": {
+        "command": [
+          "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+          "-B",
+          "benchmark_local_resources.py",
+          "--model-dir",
+          "models/equal512_768",
+          "--pictures-100",
+          "inputs/pictures_100",
+          "--pictures-5",
+          "inputs/pictures_5",
+          "--selection-json",
+          "inputs/selection.json",
+          "--output-dir",
+          "reports/preview_equal512_768",
+          "--profile",
+          "actual_t4_diagnostic",
+          "--memory-limit-gib",
+          "14"
+        ],
+        "cuda_visible_devices": "",
+        "cwd": "bundle root"
+      },
+      "path": "previews/equal512_768.json",
+      "sha256": "c125c86c18a37841659f17d8be6a865b1cc755d993d41dadcf4323793936355b"
+    },
+    {
+      "bytes": 2545,
+      "derived": true,
+      "origin": {
+        "command": [
+          "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+          "-B",
+          "benchmark_local_resources.py",
+          "--model-dir",
+          "models/kd512",
+          "--pictures-100",
+          "inputs/pictures_100",
+          "--pictures-5",
+          "inputs/pictures_5",
+          "--selection-json",
+          "inputs/selection.json",
+          "--output-dir",
+          "reports/preview_kd512",
+          "--profile",
+          "actual_t4_diagnostic",
+          "--memory-limit-gib",
+          "14"
+        ],
+        "cuda_visible_devices": "",
+        "cwd": "bundle root"
+      },
+      "path": "previews/kd512.json",
+      "sha256": "25ec9b4ec9c48d2da6a649c5b29141c1f81531282a6f6ecf22d8021bf7c55818"
+    },
+    {
+      "bytes": 2545,
+      "derived": true,
+      "origin": {
+        "command": [
+          "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+          "-B",
+          "benchmark_local_resources.py",
+          "--model-dir",
+          "models/kd768",
+          "--pictures-100",
+          "inputs/pictures_100",
+          "--pictures-5",
+          "inputs/pictures_5",
+          "--selection-json",
+          "inputs/selection.json",
+          "--output-dir",
+          "reports/preview_kd768",
+          "--profile",
+          "actual_t4_diagnostic",
+          "--memory-limit-gib",
+          "14"
+        ],
+        "cuda_visible_devices": "",
+        "cwd": "bundle root"
+      },
+      "path": "previews/kd768.json",
+      "sha256": "af2b8259f675ffc4295b0fbe217363b90d1ced3bac485a547862d7e187172702"
+    },
+    {
+      "bytes": 3171,
+      "derived": true,
+      "origin": {
+        "command": [
+          "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+          "-B",
+          "benchmark_local_resources.py",
+          "--model-dir",
+          "models/two768_timing_only",
+          "--pictures-100",
+          "inputs/pictures_100",
+          "--pictures-5",
+          "inputs/pictures_5",
+          "--selection-json",
+          "inputs/selection.json",
+          "--output-dir",
+          "reports/preview_two768_timing_only",
+          "--profile",
+          "actual_t4_diagnostic",
+          "--memory-limit-gib",
+          "14"
+        ],
+        "cuda_visible_devices": "",
+        "cwd": "bundle root"
+      },
+      "path": "previews/two768_timing_only.json",
+      "sha256": "614cd64f3d423f669b9ce7828c250c543cf7f10b676948bdbeafc6a82c26f183"
+    },
+    {
+      "bytes": 36282,
+      "origin": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/resource_stress_20261027/deploy_before_fast_inputs.py",
+      "path": "provenance/deploy_before_fast_inputs.py",
+      "sha256": "fd70c10e83a7fc0daa01782d62d0c941f0b2f06b87e59c0b2af89d9a22395849",
+      "source_bytes_unchanged": true,
+      "source_sha256": "fd70c10e83a7fc0daa01782d62d0c941f0b2f06b87e59c0b2af89d9a22395849"
+    },
+    {
+      "bytes": 321,
+      "origin": "/home/featurize/work/cloud_project_v2/requirements_inference.txt",
+      "path": "requirements_inference.txt",
+      "sha256": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+      "source_bytes_unchanged": true,
+      "source_sha256": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683"
+    },
+    {
+      "bytes": 3099,
+      "derived": true,
+      "origin": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/resource_stress_20261027/build_portable_bundle.py#LAUNCHER",
+      "path": "run_native.py",
+      "sha256": "96f704cd8edfb5428471283b8b2ad5246986d963e165b0c0e3ac2ed3f17586ce"
+    },
+    {
+      "bytes": 10249,
+      "origin": "/home/featurize/work/cloud_project_v2/run_resource_stress.py",
+      "path": "run_resource_stress.py",
+      "sha256": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+      "source_bytes_unchanged": true,
+      "source_sha256": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c"
+    },
+    {
+      "bytes": 1739,
+      "origin": "/home/featurize/work/cloud_project_v2/runtime_compat.py",
+      "path": "runtime_compat.py",
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "source_bytes_unchanged": true,
+      "source_sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7"
+    },
+    {
+      "bytes": 654436,
+      "origin": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "path": "valid_manifest.csv",
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "source_bytes_unchanged": true,
+      "source_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+    }
+  ],
+  "final_submission": false,
+  "original_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "original_selection_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+  "purpose": "portable native T4 diagnostic materials",
+  "schema_version": 1,
+  "source_files_unchanged_verified": true
+}

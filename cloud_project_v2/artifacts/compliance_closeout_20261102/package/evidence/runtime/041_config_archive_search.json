@@ -1,0 +1,34 @@
+{
+  "search_date_utc": "2026-11-02",
+  "record_origin": "Saved from completed archive-search tool output in this audit; not a new filesystem scan",
+  "required_config_sha256": "348901151c0ec1aa42b09015bf69c6be3b642173f58c9beb8b0161b271fbeb39",
+  "required_config_bytes": 11284048,
+  "search_scope": "Archives ending .zip/.tar/.gz recursively under /home/featurize/work, excluding this closeout package, cost_data_test.tar and competition_addons archives. Only config.json members smaller than 30000000 bytes were read; no image decoding or model loading.",
+  "archive_roots": {
+    "014": "/home/featurize/work/my_run_014_backup.tar.gz",
+    "038": "/home/featurize/work/deliveries/038_dual768_optimized_project_20261030.zip",
+    "031": "/home/featurize/work/deliveries/031_resource_stress_20261027/portable_t4_diagnostic.tar.gz",
+    "034": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/dual768_timing_only.tar.gz"
+  },
+  "checked_config_entries": [
+    {"archive": "014", "member": "runs/014_cloud_4090_max/config.json", "bytes": 1201, "sha256": "548991eac22487fbe336dba962989b461c0c3ff78f8d130ca80d492fca5058f6"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/student_0/config.json", "bytes": 2234, "sha256": "557152a342d24355257d39ca026a8857d97b6a54bcf344e9f6c5fd1f9ccdaa03"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/student_1/config.json", "bytes": 2234, "sha256": "5d824f1c3588c321af409e4954bebeec1793b1e772eccf4f61bb883384a8f01b"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/teacher_fold_0/config.json", "bytes": 955276, "sha256": "4cd3f074f739fda8b5c941c858688351651e2ffbf4d945291707540c35798a3d"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/teacher_fold_1/config.json", "bytes": 955282, "sha256": "48f142df2bc9086ba5fc51b082534a7dd732985be148031fafff30b4e4a148ea"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/teacher_fold_2/config.json", "bytes": 955282, "sha256": "ccc0f248a2d5fe6050bb9c2b0f5a815a3cbba0a43173ef783e69c4d536c4ab34"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/teacher_fold_3/config.json", "bytes": 955357, "sha256": "6781b5c59dfcaa45eab89e958738367822f337cd0cafc7497c0511ebcd513784"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/audit/training_evidence/runs/teacher_fold_4/config.json", "bytes": 955282, "sha256": "6f9026369ab38ae90f989abe07b65e66f24634f4a974790dcfb0ea615fcbde61"},
+    {"archive": "038", "member": "038_dual768_optimized_project_20261030/model/config.json", "bytes": 17341250, "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"},
+    {"archive": "031", "member": "portable_t4_diagnostic/models/equal512_768/config.json", "bytes": 17341236, "sha256": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"},
+    {"archive": "031", "member": "portable_t4_diagnostic/models/kd512/config.json", "bytes": 11283342, "sha256": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede"},
+    {"archive": "031", "member": "portable_t4_diagnostic/models/kd768/config.json", "bytes": 11283346, "sha256": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164"},
+    {"archive": "031", "member": "portable_t4_diagnostic/models/two768_timing_only/config.json", "bytes": 17341231, "sha256": "829ab373b9d7c84c8e360b9cc41b686897b1a35e519904b908a5b85644fb141c"},
+    {"archive": "034", "member": "bundle/model/033/config.json", "bytes": 17341250, "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"}
+  ],
+  "matches": [],
+  "errors": [
+    {"archive": "014", "error": "EOFError('Compressed file ended before the end-of-stream marker was reached')", "coverage": "Incomplete legacy archive; no claim to have inspected its unreadable remainder."}
+  ],
+  "interpretation": "No exact 041 configuration was found in the configurations successfully inspected. This is a missing-file finding, not evidence that another configuration is equivalent. No replacement config was created."
+}

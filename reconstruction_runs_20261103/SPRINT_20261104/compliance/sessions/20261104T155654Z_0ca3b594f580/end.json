@@ -1,0 +1,584 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "comparison": {
+      "baseline": {
+        "class_1_4_8_mean_auc": 0.7214038665340944,
+        "macro_auc": 0.8091159408519895,
+        "macro_f1_fixed_0_5": 0.4583846611824686,
+        "num_patients": 228,
+        "num_studies": 859,
+        "per_class_auc": [
+          0.6902195608782435,
+          0.8569408824883277,
+          0.803278250173806,
+          0.7569160407525842,
+          0.8796633941093969,
+          0.7941415245953245,
+          0.798409808772503,
+          0.7170759979714554,
+          0.9112302555541286,
+          0.8832836932241251
+        ],
+        "slices": {
+          "multiple_image_study": {
+            "macro_auc": 0.8486803506539287,
+            "num_studies": 468,
+            "per_class_auc": [
+              0.7915758896151053,
+              0.85957097643887,
+              0.8310522442972774,
+              0.8147929430870303,
+              0.9364143726092683,
+              0.8590269183168316,
+              0.8427006968956468,
+              0.7042880393264025,
+              0.949834528405957,
+              0.8975468975468974
+            ]
+          },
+          "single_image_study": {
+            "macro_auc": 0.745910333698239,
+            "num_studies": 391,
+            "per_class_auc": [
+              0.6001773049645389,
+              0.8570151921358355,
+              0.757078853046595,
+              0.7068254695373339,
+              0.8053985418202672,
+              0.6930667855096455,
+              0.7468718967229393,
+              0.6579688487844129,
+              0.8440886301148309,
+              0.7906118143459916
+            ]
+          }
+        }
+      },
+      "baseline_name": "submission_best_041_A",
+      "baseline_predictions_sha256": "672cd43cb85c2bc7544fcc0dac0550c3f6b8f878fabc4b80cf20684710bee900",
+      "bootstrap": {
+        "attempts": 200,
+        "interpretation": "Exploratory paired interval; historical validation selection is not corrected.",
+        "macro_auc_delta_95_percentile_interval": [
+          0.000565348052391573,
+          0.021613324995410847
+        ],
+        "per_class_auc_delta_95_percentile_intervals": [
+          [
+            -0.014283271521226127,
+            0.16447417527520225
+          ],
+          [
+            -0.020129359451032912,
+            0.0328852535616395
+          ],
+          [
+            -0.008237372387390687,
+            0.03405690918738155
+          ],
+          [
+            -0.015060319368131889,
+            0.024711772427922513
+          ],
+          [
+            -0.0015854784284229037,
+            0.007807221020359224
+          ],
+          [
+            -0.0076869511614258285,
+            0.007602792826953851
+          ],
+          [
+            -0.004243260215785643,
+            0.013602807306621903
+          ],
+          [
+            -0.006148083792428841,
+            0.02315158259882793
+          ],
+          [
+            -0.004222185209860149,
+            0.0035626399612448184
+          ],
+          [
+            -0.003657268821256554,
+            0.0040582166965605505
+          ]
+        ],
+        "samples": 200,
+        "seed": 20261104
+      },
+      "bootstrap_vs_historical_local_best": {
+        "attempts": 200,
+        "interpretation": "Exploratory paired interval; historical validation selection is not corrected.",
+        "macro_auc_delta_95_percentile_interval": [
+          -0.0009762685668222512,
+          0.0019321488211439042
+        ],
+        "per_class_auc_delta_95_percentile_intervals": [
+          [
+            -0.010229598983451115,
+            0.013333025524960377
+          ],
+          [
+            -0.004140659325704685,
+            0.0002483116535993389
+          ],
+          [
+            0.0010466508398887964,
+            0.007970724652316989
+          ],
+          [
+            -0.002460114923102996,
+            0.005092971535955335
+          ],
+          [
+            -0.0014152212055558138,
+            0.001028314176954066
+          ],
+          [
+            -0.0021405310155361485,
+            0.0018071668240380286
+          ],
+          [
+            -0.0013142527621201965,
+            0.0025252658467625703
+          ],
+          [
+            -0.00260981386174888,
+            0.002722795862972752
+          ],
+          [
+            -0.000617399286889897,
+            0.00043888392894687905
+          ],
+          [
+            -0.0017051906774929514,
+            0.001173438887723131
+          ]
+        ],
+        "samples": 200,
+        "seed": 20261104
+      },
+      "candidate": {
+        "class_1_4_8_mean_auc": 0.7440799112923192,
+        "macro_auc": 0.8179628779375786,
+        "macro_f1_fixed_0_5": 0.47728436125909923,
+        "num_patients": 228,
+        "num_studies": 859,
+        "per_class_auc": [
+          0.7475548902195609,
+          0.8561517722101664,
+          0.8167816460773303,
+          0.7597047668624971,
+          0.8825619448340346,
+          0.7944894544129097,
+          0.8025486626522895,
+          0.7249800767948997,
+          0.9111788878900733,
+          0.8836766774220238
+        ],
+        "slices": {
+          "multiple_image_study": {
+            "macro_auc": 0.8534276530763314,
+            "num_studies": 468,
+            "per_class_auc": [
+              0.8092471556523844,
+              0.853475559723362,
+              0.8300220750551877,
+              0.8241677124086514,
+              0.9364770803285885,
+              0.8603418935643565,
+              0.8404380486921893,
+              0.7273059421397017,
+              0.9518201875344732,
+              0.9009808756644201
+            ]
+          },
+          "single_image_study": {
+            "macro_auc": 0.7586612038725249,
+            "num_studies": 391,
+            "per_class_auc": [
+              0.6920212765957446,
+              0.8655049151027703,
+              0.7830645161290323,
+              0.7049167811879677,
+              0.8087982305234702,
+              0.6967594066339847,
+              0.7575306190003309,
+              0.6570205184205989,
+              0.8408269987600411,
+              0.780168776371308
+            ]
+          }
+        }
+      },
+      "candidate_image_predictions_sha256": "39ca5f7ae82a66e8bbda5a7de5041a926b84b546c5242d0c01b426b4d8aba939",
+      "candidate_inference_assets": [
+        {
+          "bytes": 1815,
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/config.json",
+          "sha256": "c633b1b0ff288f584a4682e7965e90b89dd09b0a8e926daf2b7d4973a216e306"
+        },
+        {
+          "bytes": 17277,
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/patch_fp16.pt",
+          "sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3"
+        },
+        {
+          "bytes": 5228097,
+          "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/config.json",
+          "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+        },
+        {
+          "bytes": 55712511,
+          "path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/student_fp16.pt",
+          "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+        },
+        {
+          "bytes": 177397507,
+          "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        }
+      ],
+      "candidate_inference_bytes": 238357207,
+      "candidate_name": "A_F2+Sprint_final_EMA",
+      "candidate_predictions_sha256": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+      "candidate_weights_sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+      "candidate_won": true,
+      "class1_auc_delta": 0.057335329341317354,
+      "class1_auc_delta_vs_historical_local_best": 0.0011976047904191933,
+      "complete": true,
+      "deployment_accepted": false,
+      "elapsed_is_official_latency_benchmark": false,
+      "fixed_classwise_probability_weights": [
+        [
+          0.0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1.0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "formal_T4_certification": false,
+      "historical_local_best": {
+        "class_1_4_8_mean_auc": 0.7434425712931896,
+        "macro_auc": 0.817614546496497,
+        "macro_f1_fixed_0_5": 0.47245659045830174,
+        "num_patients": 228,
+        "num_studies": 859,
+        "per_class_auc": [
+          0.7463572854291417,
+          0.8586177418294207,
+          0.8125568212203862,
+          0.7588309660147246,
+          0.8828892005610098,
+          0.7946137150620475,
+          0.8018484806049573,
+          0.7251394624357025,
+          0.9113137280082187,
+          0.8839780637993594
+        ],
+        "slices": {
+          "multiple_image_study": {
+            "macro_auc": 0.8540129641987784,
+            "num_studies": 468,
+            "per_class_auc": [
+              0.8152989590898088,
+              0.8581643418122143,
+              0.8278145695364238,
+              0.8228390049457445,
+              0.9366652034865492,
+              0.8604579207920793,
+              0.8404983859776148,
+              0.725213405520311,
+              0.9521787093215665,
+              0.9009991415054707
+            ]
+          },
+          "single_image_study": {
+            "macro_auc": 0.7569373058528164,
+            "num_studies": 391,
+            "per_class_auc": [
+              0.6790780141843972,
+              0.8668453976764968,
+              0.7767921146953405,
+              0.7031607879065507,
+              0.8096993528303432,
+              0.6958999172343541,
+              0.7570340946706389,
+              0.6587447554457153,
+              0.8405574424497279,
+              0.7815611814345991
+            ]
+          }
+        }
+      },
+      "historical_local_best_name": "A_F2+B_F2",
+      "historical_local_best_predictions_sha256": "050d3ff3dba70db0377253abdb6bb9227693b4f9d5a79d4e1bf77a1f4e29ae7c",
+      "macro_auc_delta": 0.008846937085589146,
+      "macro_auc_delta_vs_historical_local_best": 0.0003483314410815952,
+      "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "model_configuration": {
+        "augmentation": {
+          "brightness_contrast_probability": 0.5,
+          "brightness_delta": [
+            -0.1,
+            0.1
+          ],
+          "contrast_factor": [
+            0.9,
+            1.1
+          ],
+          "gamma_range": [
+            0.85,
+            1.15
+          ],
+          "horizontal_flip_probability": 0.5,
+          "preserve_full_frame": true,
+          "rotation_degrees": [
+            -5.0,
+            5.0
+          ],
+          "rotation_probability": 0.3
+        },
+        "authorization": "User requested one direct sprint candidate, immediate background training, no new controls or ablations, and exactly one final local-valid comparison.",
+        "backbone_lr": 1e-06,
+        "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+        "base_origin_provenance": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/pretrained_provenance.json",
+        "base_origin_provenance_sha256": "089c9acb9c3bc08b6290bda2a379f43e953deeac79670f556531debc50490959",
+        "base_patch": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/B_F2/patch_fp32.pt",
+        "base_patch_config": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/B_F2/config.json",
+        "base_patch_config_sha256": "dce51e7de857f5f5c6ab14ecf7266c06e7b5404805abb272b2a28a648b595b9a",
+        "base_patch_receipt": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/B_F2/training_receipt.json",
+        "base_patch_receipt_sha256": "d38842c748c8588703b6b759e7c4a29a7996f07dad2c509ea771e3326e7b391b",
+        "base_patch_sha256": "37d0cbd8c87e0aa485ce20610562b132f1b46c03701aa33edc247e7e5586658e",
+        "base_snapshot": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/best_ema_fp32.pt",
+        "base_snapshot_receipt": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/backup_receipt.json",
+        "base_snapshot_receipt_sha256": "f9027534836c680b8069628f7a42c3bef85c0c07d23df189972d036f715ee911",
+        "base_snapshot_sha256": "9cb733eb65b71eeb0fe7633122dcb085b47fc4c13b4f46f139f5b773a5e805a3",
+        "base_state_key": "model_state_dict",
+        "baseline_class1_auc": 0.7463572854291417,
+        "baseline_directory": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/valid",
+        "baseline_independent_audit": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/full_valid_independent_audit.json",
+        "baseline_independent_audit_sha256": "20db8c5ab34c8e696bfa8a07aed5246be9b167dd61cc4e9c37f36fa5dad432c4",
+        "baseline_macro_auc": 0.817614546496497,
+        "baseline_member_sources": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/member_sources.json",
+        "baseline_member_sources_sha256": "6285e69541ef5091c15f04f20d53a855a6eddf93f9c825ea9527b9c9a7889d8e",
+        "baseline_name": "A_F2_B_F2",
+        "baseline_predictions": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/valid/valid_predictions.csv",
+        "baseline_predictions_sha256": "050d3ff3dba70db0377253abdb6bb9227693b4f9d5a79d4e1bf77a1f4e29ae7c",
+        "baseline_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/valid/validation_report.json",
+        "baseline_report_sha256": "3d74b3ca04bc571fb96c4519b241daca339d4eefb14c05e30e659759b4539d78",
+        "baseline_top_config": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/actual/A_F2_B_F2/model_top_config.json",
+        "baseline_top_config_sha256": "178479bc6882444ddab505b8123bb772a999b01cd9500170f0fc9f4993d120ce",
+        "channels_last": true,
+        "checkpoint_dir": "/home/featurize/data/cxr_sprint_20261104",
+        "checkpoint_mode": "chunks",
+        "class1_weight": 2.0,
+        "clip_grad": 1.0,
+        "compliance": {
+          "inherited_origin": "Both parent encoders originate from documented generic ImageNet-22k/1k ConvNeXt weights; parent student training and strict-OOF teacher lineage are retained in their metadata. No new download or external medical initialization.",
+          "max_inference_bytes": 500000000,
+          "official_runtime_requirement": "Follow the merged official PDFs and written QA; no internal latency target may override an official eligibility gate. Accuracy research can run before official final timing verification.",
+          "source_rules": [
+            "/home/featurize/work/rules.pdf",
+            "/home/featurize/work/rules_1.pdf",
+            "/home/featurize/work/RULES_QA_CLARIFICATION_20261104.md"
+          ]
+        },
+        "data_boundary": {
+          "external_medical_data": false,
+          "legacy_H_is_independent_holdout": false,
+          "legacy_H_note": "Full official train and the existing Base/Tiny parents already include the former reconstruction H. Do not claim H is sealed or independent in this sprint.",
+          "new_ablations": false,
+          "new_controls": false,
+          "official_train_only": true,
+          "official_valid_training": false,
+          "test_access_for_training_or_selection": false
+        },
+        "drop_path": 0.15,
+        "drop_rate": 0.2,
+        "effective_studies": 32,
+        "ema_decay": 0.999,
+        "epochs": 4,
+        "evaluation": {
+          "candidate_count": 1,
+          "checkpoint": "fixed final epoch 4 EMA only",
+          "class1": "new Base only",
+          "compare_against": "Single final inference; pair with cached actual submission_best 041 and historical local-best A_F2_B_F2",
+          "comparison_count": 1,
+          "decoder": "full original image decode; aspect-preserving Pillow LANCZOS letterbox",
+          "intermediate_validation": false,
+          "on_win": "Select sprint for next submission; automatically prepare separate deployment_candidate and fixed test CSV, leaving submission_best immutable. Official timing eligibility remains pending.",
+          "other_classes": "equal probability average of new Base and fixed A_F2 Tiny",
+          "split": "original official valid only",
+          "study_aggregation": "all original views; FP64 probability mean",
+          "switch_if": "Macro-AUC strictly exceeds both cached baselines and class1 AUC is not below historical-local-best class1; otherwise retain 041. No additional candidates.",
+          "tta": "hflip2"
+        },
+        "expected_time": {
+          "basis": "Historical full-train Base four epochs took 178.87 min; current 11108-Study global epoch 26.93 min scales to about 44.9 min/full-train epoch. Added spatial head and ranking introduce overhead; update ETA from actual training throughput.",
+          "conditional_test_export_minutes": [
+            10,
+            25
+          ],
+          "final_evaluation_minutes": [
+            10,
+            25
+          ],
+          "inference_latency_measured": false,
+          "training_hours": [
+            3,
+            4
+          ]
+        },
+        "head_lr": 1e-05,
+        "image_root": "/home/featurize/data/cxr_first",
+        "image_size": 768,
+        "initialization": "Official-train-finetuned Base E10 FP32 EMA with official-train B_F2 FP32 classifier patch; optimizer resets. This is not a new public-pretrain initialization.",
+        "learning_rate_schedule": "one-epoch linear warmup then cosine over the fixed four epochs to 10% of each peak",
+        "loss": "complete-Study mean-sigmoid BCE, train-only sqrt pos_weight, class 1 weight 2; plus 0.15 class-averaged pairwise softplus ranking with detached training-only queue",
+        "old_head_lr": 1e-05,
+        "online_best_class1_auc": 0.6902195608782435,
+        "online_best_directory": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2",
+        "online_best_macro_auc": 0.8091159408519895,
+        "online_best_name": "041_Tiny768_A_P2_E9",
+        "online_best_predictions": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2/valid_predictions.csv",
+        "online_best_predictions_sha256": "672cd43cb85c2bc7544fcc0dac0550c3f6b8f878fabc4b80cf20684710bee900",
+        "online_best_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2/validation_report.json",
+        "online_best_report_sha256": "a0e1e840815c6c40ff7a7bc8a1dc1e3c43eb9262ca1416702a2665f75dd75e02",
+        "online_gap_diagnosis": "041 identity proven by SHA256; official valid has 859 Studies from 228 patients and class1 only 24 positive Studies/16 positive patients. Selection bias and distribution shift are plausible, not proven causes; no test probabilities are used to choose parameters.",
+        "output": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104",
+        "pack_images": 8,
+        "plan_id": "SPRINT_20261104",
+        "pos_weight_power": 0.5,
+        "precision": "autocast_float16",
+        "queue_capacity": 512,
+        "ranking_weight": 0.15,
+        "registered_at": "2026-11-04T23:28:50.148317+08:00",
+        "rules_pdf": "/home/featurize/work/rules.pdf",
+        "rules_pdf_sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+        "rules_qa": "/home/featurize/work/RULES_QA_CLARIFICATION_20261104.md",
+        "rules_qa_sha256": "f4c4e2d2e6d55167ac13ae4ce42549140d9818789886a9f1b289e88961bb21f5",
+        "rules_supplement_pdf": "/home/featurize/work/rules_1.pdf",
+        "rules_supplement_pdf_sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+        "schema": "cxr_sprint_v1",
+        "seed": 20261104,
+        "spatial_dim": 256,
+        "spatial_initialization": "zero final projection; preserve original global-head prediction at initialization",
+        "spatial_lr": 0.0001,
+        "spatial_pool_grid": [
+          2,
+          2
+        ],
+        "submission_best": "/home/featurize/work/submission_best.csv",
+        "submission_best_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+        "teacher_collection_lineage": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+        "teacher_collection_lineage_sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e",
+        "tiny_backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+        "tiny_config": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/config.json",
+        "tiny_config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+        "tiny_model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A",
+        "tiny_origin_provenance": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/pretrained_provenance.json",
+        "tiny_origin_provenance_sha256": "f7d3c2f9df7e24bfd8d678bc0b7a22c1e4f1922cf599e1ab88ef47f994fa5688",
+        "tiny_patch": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/patch_fp16.pt",
+        "tiny_patch_config": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/config.json",
+        "tiny_patch_config_sha256": "c633b1b0ff288f584a4682e7965e90b89dd09b0a8e926daf2b7d4973a216e306",
+        "tiny_patch_receipt": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits/A_F2/training_receipt.json",
+        "tiny_patch_receipt_sha256": "3cd1451a207345ed3787e98fd81fb731dea4692c213809672965fd04738fe3d8",
+        "tiny_patch_sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3",
+        "tiny_weights": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/student_fp16.pt",
+        "tiny_weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+        "train_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+        "train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+        "training_counts": {
+          "images": 30328,
+          "patients": 11055,
+          "studies": 18513
+        },
+        "valid_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+        "valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+        "validation_counts": {
+          "images": 1422,
+          "patients": 228,
+          "studies": 859
+        },
+        "view_chunk_size": 8,
+        "weight_decay": 0.05,
+        "workers": 6
+      },
+      "patient_smoothing": false,
+      "per_class_auc_delta": [
+        0.057335329341317354,
+        -0.0007891102781613091,
+        0.013503395903524229,
+        0.0027887261099128757,
+        0.0028985507246377384,
+        0.0003479298175852463,
+        0.004138853879786519,
+        0.00790407882344435,
+        -5.1367664055335105e-05,
+        0.00039298419789868255
+      ],
+      "per_class_auc_delta_vs_historical_local_best": [
+        0.0011976047904191933,
+        -0.0024659696192543823,
+        0.004224824856944087,
+        0.0008738008477725545,
+        -0.00032725572697522853,
+        -0.00012426064913773072,
+        0.0007001820473322429,
+        -0.00015938564080275608,
+        -0.00013484011814546282,
+        -0.0003013863773355663
+      ],
+      "selection_checks": {
+        "beats_historical_local_best_macro": true,
+        "beats_submission_best_macro": true,
+        "class1_not_below_historical_local_best": true
+      },
+      "selection_note": "A local validation win is not proof of an online improvement.",
+      "selection_rule": "candidate Macro-AUC strictly exceeds both submission_best_041 and historical local best; class 1 AUC is at least historical local best; otherwise retain submission_best_041",
+      "size_pass": true,
+      "submission_best_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+      "test_images_used": false,
+      "test_predictions_parsed": false,
+      "test_submission_identity_hash_only": true,
+      "thresholds_fitted": false,
+      "tta": "hflip2",
+      "validation_elapsed_seconds": 244.96602763699775,
+      "validation_images": 1422
+    },
+    "state": "completed",
+    "updated_at": "2026-11-05T03:04:16.032479+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "8dfa027517a9c69a74be97f2609172171c9c629ac77eb4d9033061c66a9d6b88",
+  "record_sha256": "fbd3e76c1068ece6bb4970818324e6b97f88a70be80e8749002384d9b0235549",
+  "recorded_at_hong_kong": "2026-11-05T03:04:16.114852+08:00",
+  "recorded_at_utc": "2026-11-04T19:04:16.114852+00:00",
+  "run_dir": "/home/featurize/data/cxr_sprint_20261104",
+  "session_id": "20261104T155654Z_0ca3b594f580",
+  "state": "completed",
+  "trainer": "sprint.train"
+}

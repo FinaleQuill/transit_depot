@@ -1,0 +1,9 @@
+test_config_rejects_unregistered_power_and_partial_offline_source (test_student_experiments.StudentExperimentTests.test_config_rejects_unregistered_power_and_partial_offline_source) ... ok
+test_offline_source_checks_original_bytes_and_license (test_student_experiments.StudentExperimentTests.test_offline_source_checks_original_bytes_and_license) ... ok
+test_sqrt_weight_is_used_by_both_kd_alignment_and_bce_gradient (test_student_experiments.StudentExperimentTests.test_sqrt_weight_is_used_by_both_kd_alignment_and_bce_gradient) ... ok
+test_weights_count_studies_not_views_and_original_is_unchanged (test_student_experiments.StudentExperimentTests.test_weights_count_studies_not_views_and_original_is_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.269s
+
+OK

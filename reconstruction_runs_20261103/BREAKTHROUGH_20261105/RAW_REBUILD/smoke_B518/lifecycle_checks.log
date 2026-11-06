@@ -1,0 +1,10 @@
+test_complete_local_checkpoint_precedes_failed_network_publication (raw_rebuild.test_train.LifecycleTests.test_complete_local_checkpoint_precedes_failed_network_publication) ... ok
+test_final_stage_decision_uses_only_selected_best_epoch (raw_rebuild.test_train.LifecycleTests.test_final_stage_decision_uses_only_selected_best_epoch) ... ok
+test_resume_rejects_changed_configuration_or_source_before_model_creation (raw_rebuild.test_train.LifecycleTests.test_resume_rejects_changed_configuration_or_source_before_model_creation) ... ok
+test_resume_repairs_best_publication_without_repeating_completed_epoch (raw_rebuild.test_train.LifecycleTests.test_resume_repairs_best_publication_without_repeating_completed_epoch) ... ok
+test_stop_preserves_completed_epoch_and_cannot_advance_stage (raw_rebuild.test_train.LifecycleTests.test_stop_preserves_completed_epoch_and_cannot_advance_stage) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.642s
+
+OK

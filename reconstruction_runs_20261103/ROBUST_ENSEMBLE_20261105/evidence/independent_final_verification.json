@@ -1,0 +1,403 @@
+{
+  "complete": true,
+  "passed": true,
+  "created_at": "2026-11-05T13:22:44.734166+08:00",
+  "scope": "CPU-only independent exact positive-negative pair enumeration on the sole completed final candidate; no alternative fusion, GPU, training, or test access.",
+  "input_sources": {
+    "plan": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/registered_plan.json",
+      "sha256": "d0b7689b91ee1bb21c0858216d8fda677ad8e6c29348bdf940e7cb33c7a33e7d",
+      "bytes": 19945
+    },
+    "report": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/report.json",
+      "sha256": "3d2b099d1b299659c7ae187e9f759577be4c4fbec880e838fb09fa23c22be250",
+      "bytes": 20024
+    },
+    "selection": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/selection.json",
+      "sha256": "78ab3fd43438120a2b4a5f380383d0b746fbbaf209e159c7ce768e797b2784a3",
+      "bytes": 906
+    },
+    "source": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/evidence/verify_final_result.py",
+      "sha256": "46e1f54a43a9b7cc0fc90a0a295542aec328feac136733ce21c0c1e87e95d640",
+      "bytes": 14256
+    },
+    "valid_manifest": {
+      "path": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "bytes": 654436
+    },
+    "cached_sprint_study": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/final_comparison/candidate_predictions.csv",
+      "sha256": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+      "bytes": 423159
+    },
+    "cached_sprint_image": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/final_comparison/candidate.image_predictions.csv",
+      "sha256": "39ca5f7ae82a66e8bbda5a7de5041a926b84b546c5242d0c01b426b4d8aba939",
+      "bytes": 887455
+    },
+    "cached_opacity_study": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/opacity512.predictions.csv",
+      "sha256": "8763669b71462a22866f99440711c565b7fbbd42628ae8a88f7434129d02197a",
+      "bytes": 422879
+    },
+    "cached_opacity_image": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/opacity512.image_predictions.csv",
+      "sha256": "1a87312ccfaf5b7f7c7a25fb85a84fc4361253a93b6812dbe110f50ebab43196",
+      "bytes": 886945
+    },
+    "candidate_study": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate_predictions.csv",
+      "sha256": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a",
+      "bytes": 422971
+    },
+    "candidate_image": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate.image_predictions.csv",
+      "sha256": "afabfd852d7c2716f7f93e99785099f7aa57c0facc0b08cec396de380b86ec70",
+      "bytes": 887191
+    },
+    "sprint_study": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint_predictions.csv",
+      "sha256": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+      "bytes": 423159
+    },
+    "sprint_image": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint.image_predictions.csv",
+      "sha256": "39ca5f7ae82a66e8bbda5a7de5041a926b84b546c5242d0c01b426b4d8aba939",
+      "bytes": 887455
+    },
+    "opacity_study": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity_predictions.csv",
+      "sha256": "8763669b71462a22866f99440711c565b7fbbd42628ae8a88f7434129d02197a",
+      "bytes": 422879
+    },
+    "opacity_image": {
+      "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity.image_predictions.csv",
+      "sha256": "1a87312ccfaf5b7f7c7a25fb85a84fc4361253a93b6812dbe110f50ebab43196",
+      "bytes": 886945
+    }
+  },
+  "inputs_unchanged": true,
+  "coverage": {
+    "images": 1422,
+    "studies": 859,
+    "patients": 228,
+    "single_image_studies": 391,
+    "multiple_image_studies": 468
+  },
+  "scores": {
+    "candidate": {
+      "all": {
+        "study_equal": {
+          "macro_auc": 0.8189923725979623,
+          "per_class_auc": [
+            0.7475548902195609,
+            0.857631353981719,
+            0.8196695010428365,
+            0.7614523685580427,
+            0.8832632071061244,
+            0.7942989214175655,
+            0.802330828237564,
+            0.726769542853003,
+            0.9120649800950302,
+            0.8848881324681771
+          ],
+          "num_studies": 859
+        },
+        "patient_equal": {
+          "macro_auc": 0.8732478498370663,
+          "per_class_auc": [
+            0.851803920246523,
+            0.8133779211411367,
+            0.9295027074737076,
+            0.8362145414754821,
+            0.9344061080306753,
+            0.894101655752719,
+            0.8466312461742184,
+            0.7677908661895291,
+            0.9605824396308498,
+            0.8980670922558218
+          ],
+          "num_studies": 859
+        }
+      },
+      "single_image_study": {
+        "study_equal": {
+          "macro_auc": 0.7590237529506139,
+          "per_class_auc": [
+            0.6920212765957446,
+            0.8638665475126601,
+            0.785394265232975,
+            0.7056039089937395,
+            0.8092078315720488,
+            0.6942764372572738,
+            0.7571333995365773,
+            0.66029656876832,
+            0.8426060704081082,
+            0.779831223628692
+          ],
+          "num_studies": 391
+        },
+        "patient_equal": {
+          "macro_auc": 0.8040000139820046,
+          "per_class_auc": [
+            0.7903771734329412,
+            0.7030071404395848,
+            0.8748883395357336,
+            0.7627008724902506,
+            0.864762649967184,
+            0.7741769765046642,
+            0.8035457095099481,
+            0.7124416320569474,
+            0.9246883957961999,
+            0.8294112500865922
+          ],
+          "num_studies": 391
+        }
+      },
+      "multiple_image_study": {
+        "study_equal": {
+          "macro_auc": 0.8547075263643082,
+          "per_class_auc": [
+            0.8092471556523844,
+            0.861094830617747,
+            0.8328182487122885,
+            0.82497970030265,
+            0.9361635417319872,
+            0.8604965965346535,
+            0.8411319274745829,
+            0.726243066396519,
+            0.9515995587424159,
+            0.9033006374778527
+          ],
+          "num_studies": 468
+        },
+        "patient_equal": {
+          "macro_auc": 0.8806360394572504,
+          "per_class_auc": [
+            0.8953039061276246,
+            0.8552431735158864,
+            0.9073841811937373,
+            0.846674208014051,
+            0.9615083409758628,
+            0.9057545862021088,
+            0.8450301336446517,
+            0.725839253525715,
+            0.9584787866702289,
+            0.9051438247026377
+          ],
+          "num_studies": 468
+        }
+      },
+      "ap_only": {
+        "study_equal": {
+          "macro_auc": 0.7510477694563165,
+          "per_class_auc": [
+            0.6640124902419985,
+            0.8342947630358557,
+            0.7737042682926829,
+            0.6920920920920921,
+            0.81199741196044,
+            0.7021622297212848,
+            0.7533403656821378,
+            0.6605868544600939,
+            0.8454021180664779,
+            0.772885101010101
+          ],
+          "num_studies": 442
+        },
+        "patient_equal": {
+          "macro_auc": 0.8091256865390063,
+          "per_class_auc": [
+            0.7791967981180038,
+            0.6790400166991776,
+            0.8734807491573935,
+            0.7989768102302862,
+            0.8715639088858372,
+            0.7836425505554331,
+            0.8109142627049909,
+            0.7106577830660065,
+            0.9323115941561584,
+            0.8514723918167768
+          ],
+          "num_studies": 442
+        }
+      }
+    },
+    "cached_sprint": {
+      "all": {
+        "study_equal": {
+          "macro_auc": 0.8179628779375786,
+          "per_class_auc": [
+            0.7475548902195609,
+            0.8561517722101664,
+            0.8167816460773304,
+            0.7597047668624972,
+            0.8825619448340346,
+            0.7944894544129099,
+            0.8025486626522896,
+            0.7249800767948996,
+            0.9111788878900732,
+            0.8836766774220237
+          ],
+          "num_studies": 859
+        },
+        "patient_equal": {
+          "macro_auc": 0.871671612213835,
+          "per_class_auc": [
+            0.851803920246523,
+            0.8136916134326728,
+            0.9293354602259815,
+            0.8283556017664191,
+            0.932396404892954,
+            0.8917699436387556,
+            0.8483069333295323,
+            0.7650567297556752,
+            0.959979117738862,
+            0.8960203971109764
+          ],
+          "num_studies": 859
+        }
+      },
+      "single_image_study": {
+        "study_equal": {
+          "macro_auc": 0.7586612038725249,
+          "per_class_auc": [
+            0.6920212765957446,
+            0.8655049151027703,
+            0.7830645161290323,
+            0.7049167811879676,
+            0.8087982305234701,
+            0.6967594066339848,
+            0.757530619000331,
+            0.6570205184205988,
+            0.840826998760041,
+            0.780168776371308
+          ],
+          "num_studies": 391
+        },
+        "patient_equal": {
+          "macro_auc": 0.8015738938911614,
+          "per_class_auc": [
+            0.7903771734329412,
+            0.7096488647761792,
+            0.8743621243946677,
+            0.744288722841435,
+            0.8629061929650284,
+            0.7739622521481738,
+            0.8038368552429149,
+            0.7053411605189804,
+            0.9224013466952,
+            0.8286142458960928
+          ],
+          "num_studies": 391
+        }
+      },
+      "multiple_image_study": {
+        "study_equal": {
+          "macro_auc": 0.8534276530763314,
+          "per_class_auc": [
+            0.8092471556523844,
+            0.8534755597233619,
+            0.8300220750551877,
+            0.8241677124086514,
+            0.9364770803285885,
+            0.8603418935643564,
+            0.8404380486921893,
+            0.7273059421397017,
+            0.9518201875344733,
+            0.90098087566442
+          ],
+          "num_studies": 468
+        },
+        "patient_equal": {
+          "macro_auc": 0.8791714238899597,
+          "per_class_auc": [
+            0.8953039061276246,
+            0.845668021713664,
+            0.9073070912336363,
+            0.846878244205709,
+            0.9611784688311975,
+            0.9034810224013781,
+            0.8458461053307852,
+            0.7235421391193213,
+            0.959164665013871,
+            0.9033445749224116
+          ],
+          "num_studies": 468
+        }
+      },
+      "ap_only": {
+        "study_equal": {
+          "macro_auc": 0.7507756427098713,
+          "per_class_auc": [
+            0.6640124902419985,
+            0.835086528673227,
+            0.7702743902439024,
+            0.6926259592926259,
+            0.8115352620390055,
+            0.705986751656043,
+            0.7531896724934699,
+            0.6582159624413145,
+            0.8440390059767222,
+            0.772790404040404
+          ],
+          "num_studies": 442
+        },
+        "patient_equal": {
+          "macro_auc": 0.8079991788778245,
+          "per_class_auc": [
+            0.7791967981180038,
+            0.6892653415234743,
+            0.8756563267128344,
+            0.7858606017353532,
+            0.869196038718381,
+            0.7847683608975066,
+            0.8124803894713298,
+            0.7042143064968427,
+            0.92853142708928,
+            0.8508221980152385
+          ],
+          "num_studies": 442
+        }
+      }
+    }
+  },
+  "max_auc_difference_from_report": 5.551115123125783e-16,
+  "image_to_study_max_difference": {
+    "candidate": 0.0,
+    "sprint": 0.0,
+    "opacity": 0.0,
+    "cached_sprint": 0.0,
+    "cached_opacity": 0.0
+  },
+  "parent_cache_max_difference": {
+    "sprint": {
+      "study": 0.0,
+      "image": 0.0
+    },
+    "opacity": {
+      "study": 0.0,
+      "image": 0.0
+    }
+  },
+  "registered_image_fusion_max_difference": 0.0,
+  "registered_study_fusion_max_difference": 2.220446049250313e-16,
+  "class1_max_difference": 0.0,
+  "selection_checks": {
+    "macro_strictly_better": true,
+    "class8_strictly_better": true,
+    "single_image_macro_not_worse": true,
+    "patient_equal_macro_not_worse": true,
+    "class1_exactly_preserved": true
+  },
+  "candidate_won": true,
+  "elapsed_seconds": 1.38285064700176,
+  "limitations": [
+    "Same reused official valid; this verifies implementation, not independent generalization.",
+    "Bootstrap intervals are not recomputed here; scoring and gates are independently verified."
+  ]
+}

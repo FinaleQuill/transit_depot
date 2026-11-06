@@ -1,0 +1,28 @@
+{
+  "recorded_at_hong_kong": "2026-10-26T22:09:29.955674+08:00",
+  "protected_files": {
+    "train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+    "run_teachers.py": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+    "run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "run_overnight.sh": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+    "train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "audit_trail.py": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "planned_handoff.py": "101e040ac874d9178cc51f09ca782248b34e08464ccd77da08c36377b0d8e765",
+    "teacher_collection.py": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+    "distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "training_evidence_monitor.py": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+    "data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "data/clean_v1_reviewed/test_manifest.csv": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+    "data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67"
+  },
+  "starting_commit": "640998e34d9898951f63729c49e0f96865788c52",
+  "scope": "Code and CPU tests only; user runs GPU diagnostic and training one stage at a time."
+}

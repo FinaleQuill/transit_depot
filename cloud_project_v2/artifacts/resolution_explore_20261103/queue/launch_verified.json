@@ -1,0 +1,18 @@
+{
+  "controller_pid": 132989,
+  "verified_utc": "2026-11-02T20:53:01.441511+00:00",
+  "state": "RUNNING",
+  "job": "eval_res640",
+  "plan_sha256": "610135e771957895d99b6e6662363c120cdfd47c7a9a3a44accee51da35342b3",
+  "source_commit": "da54617",
+  "roi_commit": "00f5db6",
+  "summary_commit": "0dd3b2b",
+  "test_counts": {
+    "roi_queue_evaluator_training_compatibility": 42,
+    "morning_report": 11
+  },
+  "prior_640_reused_without_retraining": true,
+  "test_accessed": false,
+  "new_training_started_at_recording": false,
+  "status_file": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/STATUS.json"
+}

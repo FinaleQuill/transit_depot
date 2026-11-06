@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-10-29T09:02:05.250753+00:00",
+  "python": "3.11.8",
+  "scope": "CPU tiny-state checks of merge_states only; no source033 weights,model construction,or CUDA inference",
+  "checks_passed": [
+    "ordered_fp32_formula_then_fp16",
+    "identical_integer_copy",
+    "shape_mismatch_rejected",
+    "integer_mismatch_rejected",
+    "dtype_mismatch_rejected",
+    "key_mismatch_rejected",
+    "nonfinite_source_rejected"
+  ],
+  "training_executed": false,
+  "gpu_executed": false,
+  "source033_weights_loaded": false
+}

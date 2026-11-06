@@ -1,0 +1,4 @@
+Hypothesis: one shared-backbone forward with class-specific spatial pooling can improve local-finding recognition versus the GAP 768 baseline.
+Expected effect: at least +0.005 full-valid Macro-AUC, with patient-paired comparison and per-class deltas reported; latency is recorded but is not an admission gate.
+Cost: one full official-train Tiny 768 run for three fixed epochs from the verified 041/E9 EMA, plus fixed 768+hflip2 valid, sampled-train gap, attention examples, and three-image timing.
+Failure criterion: incomplete compliance, missing or nonfinite attention evidence, or Macro-AUC gain below 0.005 with no class-supported improvement.

@@ -1,0 +1,24 @@
+{
+  "state": "completed",
+  "stage": "ready_for_review",
+  "test_predicted": false,
+  "final_submission_selected": false,
+  "registered_plan_sha256": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+  "packing_addendum_sha256": "d6ff67eb13776b66e1737bd953f9929919d82039108151edc158625e81cb5471",
+  "pipeline_pid": 9897,
+  "updated_hong_kong": "2026-11-01T19:57:25.389252+08:00",
+  "valid_scores": {
+    "A": 0.8091159408519895,
+    "B": 0.8105695698808949,
+    "X1": 0.8057123012655584,
+    "X2": 0.8070055493099509,
+    "A_B_class1_B_baseline": 0.8168300303208815,
+    "X1_single": 0.8057123012655584,
+    "X2_single": 0.8070055493099509,
+    "X1_B_class1_B": 0.8171491901128627,
+    "A_X2_class1_X2": 0.8163326847828072,
+    "X1_X2_class1_X2": 0.8159722808814015,
+    "B_X2_equal": 0.809104796121415
+  },
+  "reason": "两项固定4轮训练、最终FP16持久化及完整valid固定规则评估已完成；等待代理选模和端到端计时。没有自动生成test或更改044。"
+}

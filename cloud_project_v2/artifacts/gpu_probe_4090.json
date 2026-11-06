@@ -1,0 +1,116 @@
+{
+  "created_utc": "2026-10-18T18:56:13.326871+00:00",
+  "python": "/environment/miniconda3/envs/cxr4090/bin/python",
+  "synthetic_only": true,
+  "real_training_started": false,
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "timm": "1.0.30",
+    "albumentations": "2.0.8"
+  },
+  "results": [
+    {
+      "batch_size": 4,
+      "input_shape": [
+        4,
+        3,
+        512,
+        512
+      ],
+      "mode": "minimal",
+      "amp": "bfloat16",
+      "gradient_checkpointing": true,
+      "pretrained": false,
+      "optimizer_steps": 0,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "status": "ok",
+      "parameters": 87703050,
+      "baseline_allocated_gib": 0.3267197608947754,
+      "loss": 0.693554699420929,
+      "logits_dtype": "torch.bfloat16",
+      "gradients_finite": true,
+      "peak_allocated_gib": 1.5929408073425293,
+      "peak_reserved_gib": 1.869140625,
+      "seconds": 5.752,
+      "exit_code": 0
+    },
+    {
+      "batch_size": 4,
+      "input_shape": [
+        4,
+        3,
+        512,
+        512
+      ],
+      "mode": "resident",
+      "amp": "bfloat16",
+      "gradient_checkpointing": true,
+      "pretrained": false,
+      "optimizer_steps": 0,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "status": "ok",
+      "parameters": 87703050,
+      "resident_adam_moment_bytes": 701624400,
+      "baseline_allocated_gib": 1.633598804473877,
+      "loss": 0.6938496828079224,
+      "logits_dtype": "torch.bfloat16",
+      "gradients_finite": true,
+      "peak_allocated_gib": 2.5744376182556152,
+      "peak_reserved_gib": 2.80078125,
+      "seconds": 5.815,
+      "exit_code": 0
+    },
+    {
+      "batch_size": 8,
+      "input_shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "mode": "minimal",
+      "amp": "bfloat16",
+      "gradient_checkpointing": true,
+      "pretrained": false,
+      "optimizer_steps": 0,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "status": "ok",
+      "parameters": 87703050,
+      "baseline_allocated_gib": 0.3267197608947754,
+      "loss": 0.7678343057632446,
+      "logits_dtype": "torch.bfloat16",
+      "gradients_finite": true,
+      "peak_allocated_gib": 2.517760753631592,
+      "peak_reserved_gib": 3.271484375,
+      "seconds": 6.581,
+      "exit_code": 0
+    },
+    {
+      "batch_size": 8,
+      "input_shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "mode": "resident",
+      "amp": "bfloat16",
+      "gradient_checkpointing": true,
+      "pretrained": false,
+      "optimizer_steps": 0,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "status": "ok",
+      "parameters": 87703050,
+      "resident_adam_moment_bytes": 701624400,
+      "baseline_allocated_gib": 1.633598804473877,
+      "loss": 0.7676138877868652,
+      "logits_dtype": "torch.bfloat16",
+      "gradients_finite": true,
+      "peak_allocated_gib": 3.4992575645446777,
+      "peak_reserved_gib": 4.103515625,
+      "seconds": 6.741,
+      "exit_code": 0
+    }
+  ]
+}

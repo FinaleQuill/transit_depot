@@ -1,0 +1,77 @@
+=> 高分辨率384训练入口已进入，正在初始化依赖...
+=> 构建只读原图Study采样器与完整评估loader...
+=> 初始化convnextv2_base.fcmae_ft_in1k，首次用户运行可能下载预训练权重...
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project/train_highres.py", line 669, in <module>
+    main()
+  File "/home/featurize/work/cloud_project/train_highres.py", line 665, in main
+    print(json.dumps(run_training(HighResConfig(**vars(args))), ensure_ascii=False, indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project/train_highres.py", line 477, in run_training
+    model = build_highres_model(pretrained=True, **model_config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project/model_highres.py", line 274, in build_highres_model
+    backbone = timm.create_model(
+               ^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/_factory.py", line 175, in create_model
+    model = create_fn(
+            ^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/convnext.py", line 1382, in convnextv2_base
+    model = _create_convnext('convnextv2_base', pretrained=pretrained, **dict(model_args, **kwargs))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/convnext.py", line 705, in _create_convnext
+    model = build_model_with_cfg(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/_builder.py", line 459, in build_model_with_cfg
+    load_pretrained(
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/_builder.py", line 228, in load_pretrained
+    state_dict = load_state_dict_from_hf(pretrained_loc, weights_only=True, cache_dir=cache_dir)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/timm/models/_hub.py", line 238, in load_state_dict_from_hf
+    cached_safe_file = hf_hub_download(
+                       ^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 276, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1047, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1117, in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1762, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1669, in get_hf_file_metadata
+    response = _httpx2_follow_hub_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 764, in _httpx2_follow_hub_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 637, in http_backoff
+    return next(
+           ^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 504, in _http_backoff_base
+    client = get_session()
+             ^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 417, in get_session
+    _GLOBAL_CLIENT = _GLOBAL_CLIENT_FACTORY()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 345, in default_client_factory
+    return httpx2.Client(
+           ^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/httpx2/_client.py", line 674, in __init__
+    else self._init_proxy_transport(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/httpx2/_client.py", line 722, in _init_proxy_transport
+    return HTTPTransport(
+           ^^^^^^^^^^^^^^
+  File "/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/httpx2/_transports/default.py", line 187, in __init__
+    raise ImportError(
+ImportError: Using SOCKS proxy, but the 'socksio' package is not installed. Make sure to install httpx using `pip install httpx[socks]`.

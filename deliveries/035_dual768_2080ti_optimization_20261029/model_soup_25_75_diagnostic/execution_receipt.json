@@ -1,0 +1,56 @@
+{
+  "started_utc": "2026-10-29T09:07:48.919995+00:00",
+  "argv": [
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/model_soup/validate_weight_average.py",
+    "--execute",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--image-root",
+    "/home/featurize/data/cxr_first",
+    "--manifest",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+    "--baseline-predictions",
+    "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/valid_original/valid_predictions.csv",
+    "--baseline-report",
+    "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/valid_original/validation_report.json",
+    "--baseline-receipt",
+    "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/valid_original.receipt.json",
+    "--environment-probe",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/environment/fallback_environment_probe_full.json",
+    "--output-dir",
+    "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/model_soup_25_75_diagnostic"
+  ],
+  "diagnostic_only": true,
+  "training": false,
+  "seed": 43,
+  "source_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "source_weight_sha256": [
+    "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+  ],
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "versions": {
+    "torch": "2.10.0",
+    "torchvision": "0.25.0",
+    "timm": "1.0.30",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "cuda_build": "12.8",
+  "cudnn_version": 91002,
+  "inference_source_sha256": {
+    "deploy_kd.py": "ef914deeba87c86817e6600388079b49c94dc7a8224d28714b2d8d0e20c27bd8",
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7"
+  },
+  "baseline_predictions_sha256": "9f4154db2868c7501144d06ece76921f9d8c2fb01ad466553475a4bd8a816770",
+  "baseline_report_sha256": "950c091c6c66eaf6d2f38dd2977e251d2d6ca702799971acc26dcbdf291629a8",
+  "baseline_receipt_sha256": "da7c3dd728341e4b5d7552c8765b9d516f824d9fd739d58c2e659e7763737d22",
+  "environment_probe_sha256": "651273682935eb18eba3ca3b6f1482f50d415f755c5f5b26724ec94adad11012",
+  "T4_latency_certified": false,
+  "official_compliance_pass": false,
+  "ended_utc": "2026-10-29T09:10:34.472385+00:00",
+  "wall_seconds": 165.54748646500002,
+  "exit_code": 0
+}

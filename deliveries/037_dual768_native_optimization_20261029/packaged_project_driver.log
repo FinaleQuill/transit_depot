@@ -1,0 +1,6 @@
+{
+  "finished_utc": "2026-10-29T19:18:04.305041+00:00",
+  "exit_code": 0,
+  "copy_prepare_and_benchmark_wall_seconds": 55.083736565000436,
+  "note": "copy and preparation precede the timed three-round loop; no downloads or other GPU jobs overlap timing"
+}

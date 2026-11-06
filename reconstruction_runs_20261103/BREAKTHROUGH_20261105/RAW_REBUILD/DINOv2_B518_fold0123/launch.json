@@ -1,0 +1,17 @@
+{
+  "controller_pid": 314314,
+  "launched_at": "2026-11-06T10:26:14.176480+08:00",
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "raw_rebuild.launch",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/raw_rebuild/plan.json",
+    "--controller",
+    "--resume",
+    "--extension-receipt",
+    "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/extension_23_20261106/authorization.json"
+  ],
+  "detached": true
+}

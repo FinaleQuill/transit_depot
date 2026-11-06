@@ -1,0 +1,22 @@
+{
+  "registered_utc": "2026-11-02T07:54:02.934159+00:00",
+  "runner": "/home/featurize/work/cloud_project_v2/run_final_stage_review.py",
+  "runner_sha256": "8f10273c31b0ebf2dfd599e2e23c6efb5d74b09f654f25e309ba5398e708f223",
+  "frozen_receipts": [
+    {
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/pipeline_sources.json",
+      "sha256": "2c7ebb485c12e8f43afc2d34849b5e4aa25f9751a46ad57ba6d296a5705ca3a3",
+      "file_count": 31
+    },
+    {
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/sources.json",
+      "sha256": "30a84f059afc64bc8eae56ef41ed168d8c1c79e74a93f454aaa55b7590b8f109",
+      "file_count": 4
+    },
+    {
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/postreview_controller/sources.json",
+      "sha256": "73749a1515f5fd251395f37f310f9d5d0590d25efd55094189bf2c2783a53046",
+      "file_count": 15
+    }
+  ]
+}

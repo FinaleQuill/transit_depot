@@ -1,0 +1,22 @@
+{
+  "state": "epoch_complete",
+  "completed_epochs": 7,
+  "validated_epochs": 7,
+  "backward_batches": 13272,
+  "optimizer_updates": 6636,
+  "ema_updates": 6636,
+  "amp_skipped_steps": 0,
+  "schedule_updates": 1896,
+  "epochs_this_run": 2,
+  "best_epoch": 5,
+  "validation_complete": true,
+  "early_stopping": {
+    "patience": 3,
+    "min_delta": 0.0001,
+    "min_epochs": 1,
+    "best_auc": 0.7999705530021188,
+    "best_epoch": 5,
+    "bad_epochs": 2
+  },
+  "updated": "2026-10-19T01:46:27+08:00"
+}

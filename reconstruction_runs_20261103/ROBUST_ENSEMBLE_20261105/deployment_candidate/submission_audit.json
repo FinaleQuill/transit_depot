@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "images": 2218,
+  "studies": 1414,
+  "data_rows": 14140,
+  "image_data_rows": 22180,
+  "study_mean_max_absolute_error": 0.0,
+  "submission_sha256": "fedbbbef4fd45763a8f88bc2a7bfab36e6bc3ecd33bce0487ad54eaa7da29d5f",
+  "image_predictions_sha256": "556e167846cee552dbeb8a97b73745a64aa1f2dfba768810cf4a840aec04aaab",
+  "test_used_for_selection": false,
+  "test_labels_read": false
+}

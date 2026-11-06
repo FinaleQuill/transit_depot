@@ -1,0 +1,617 @@
+{
+  "created_utc": "2026-10-29T09:04:34.313783+00:00",
+  "cpu_only": true,
+  "bootstrap_rerun": false,
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "reference_historical_4090": {
+    "directory": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/valid_fp16_hflip2",
+    "prediction_sha256": "7000ce912c0c285fb36ca251897866a314b9c0d33b21c8ed1d92edc0f11a3f94",
+    "report_sha256": "722aa354fd3a47fe04d10f01da0d673f585f2f959f9ee551d7850db64ea81aec",
+    "coverage": {
+      "images": 1422,
+      "studies": 859,
+      "patients": 228,
+      "probability_rows": 8590
+    },
+    "metrics_recomputed": {
+      "studies": 859,
+      "macro_auc": 0.8083844422198005,
+      "per_class_auc": [
+        0.7108283433133733,
+        0.8490169001117907,
+        0.8048826140435318,
+        0.7581988547631442,
+        0.8812412342215988,
+        0.7856503802375864,
+        0.7899920646034636,
+        0.7192277041222923,
+        0.9063182226788237,
+        0.8784881041024004
+      ],
+      "macro_f1_fixed_0_5": 0.4510899186168643,
+      "per_class_positive_studies": [
+        24,
+        37,
+        46,
+        68,
+        115,
+        177,
+        193,
+        214,
+        260,
+        306
+      ]
+    },
+    "single_image_study_metrics": {
+      "studies": 391,
+      "macro_auc": 0.7441732195245162,
+      "per_class_auc": [
+        0.6115248226950355,
+        0.832737563300566,
+        0.7657706093189964,
+        0.7192701175752023,
+        0.7999918079790285,
+        0.6852995479722417,
+        0.7507447864945382,
+        0.6604977297545837,
+        0.8371610329397812,
+        0.7787341772151899
+      ],
+      "macro_f1_fixed_0_5": 0.4311402177716349,
+      "per_class_positive_studies": [
+        15,
+        18,
+        31,
+        37,
+        78,
+        113,
+        106,
+        137,
+        162,
+        75
+      ]
+    },
+    "multi_image_study_metrics": {
+      "studies": 468,
+      "macro_auc": 0.8474540661765758,
+      "per_class_auc": [
+        0.8082788671023965,
+        0.8734028836009846,
+        0.8242825607064017,
+        0.8060825274968628,
+        0.9390480968207187,
+        0.853225556930693,
+        0.8294868313874558,
+        0.7016640648354203,
+        0.9454495311638169,
+        0.8936197417210076
+      ],
+      "macro_f1_fixed_0_5": 0.4483496786486145,
+      "per_class_positive_studies": [
+        9,
+        19,
+        15,
+        31,
+        37,
+        64,
+        87,
+        77,
+        98,
+        231
+      ]
+    },
+    "source_report_metrics_match": true
+  },
+  "original_new_2080ti": {
+    "directory": "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/valid_original",
+    "prediction_sha256": "9f4154db2868c7501144d06ece76921f9d8c2fb01ad466553475a4bd8a816770",
+    "report_sha256": "950c091c6c66eaf6d2f38dd2977e251d2d6ca702799971acc26dcbdf291629a8",
+    "coverage": {
+      "images": 1422,
+      "studies": 859,
+      "patients": 228,
+      "probability_rows": 8590
+    },
+    "metrics_recomputed": {
+      "studies": 859,
+      "macro_auc": 0.8083852425302762,
+      "per_class_auc": [
+        0.7108283433133733,
+        0.8489840205168673,
+        0.8048826140435318,
+        0.758236037777943,
+        0.8812529219261337,
+        0.7856338121510347,
+        0.7899920646034636,
+        0.7192421937260016,
+        0.9063182226788237,
+        0.87848219456559
+      ],
+      "macro_f1_fixed_0_5": 0.4510899186168643,
+      "per_class_positive_studies": [
+        24,
+        37,
+        46,
+        68,
+        115,
+        177,
+        193,
+        214,
+        260,
+        306
+      ]
+    },
+    "single_image_study_metrics": {
+      "studies": 391,
+      "macro_auc": 0.7441625066589628,
+      "per_class_auc": [
+        0.6115248226950355,
+        0.832737563300566,
+        0.7657706093189964,
+        0.7192701175752023,
+        0.7999918079790285,
+        0.6852677150315146,
+        0.7507116848725588,
+        0.6604977297545837,
+        0.8371610329397812,
+        0.7786919831223629
+      ],
+      "macro_f1_fixed_0_5": 0.4311402177716349,
+      "per_class_positive_studies": [
+        15,
+        18,
+        31,
+        37,
+        78,
+        113,
+        106,
+        137,
+        162,
+        75
+      ]
+    },
+    "multi_image_study_metrics": {
+      "studies": 468,
+      "macro_auc": 0.8474486825723224,
+      "per_class_auc": [
+        0.8082788671023965,
+        0.8732856640487633,
+        0.8242825607064017,
+        0.8060825274968628,
+        0.9390480968207187,
+        0.853225556930693,
+        0.8295170000301686,
+        0.7016972797023948,
+        0.9454495311638169,
+        0.8936197417210076
+      ],
+      "macro_f1_fixed_0_5": 0.4483496786486145,
+      "per_class_positive_studies": [
+        9,
+        19,
+        15,
+        31,
+        37,
+        64,
+        87,
+        77,
+        98,
+        231
+      ]
+    },
+    "source_report_metrics_match": true
+  },
+  "hardware_environment_comparison": {
+    "probabilities_exactly_equal": false,
+    "max_absolute_probability_difference": 0.00032641738653182983,
+    "mean_absolute_probability_difference": 2.4457470783435053e-05,
+    "per_class_max_absolute_probability_difference": [
+      0.0002710074186325073,
+      0.00032641738653182983,
+      0.00022575631737709045,
+      0.0001861080527305603,
+      0.00019657611846923828,
+      0.0001474618911743164,
+      0.00020362436771392822,
+      0.0001685991883277893,
+      0.00021222233772277832,
+      0.0001368001103401184
+    ],
+    "per_class_mean_absolute_probability_difference": [
+      2.7105008942190107e-05,
+      2.359461900414466e-05,
+      2.665912918935052e-05,
+      3.073279427665883e-05,
+      2.0853625333888477e-05,
+      2.473136332868332e-05,
+      2.5088057051339084e-05,
+      2.3384208996593047e-05,
+      2.173587592881833e-05,
+      2.0690025782684127e-05
+    ],
+    "probabilities_exceeding_1e_minus_3": 0,
+    "changed_probability_values": 7261,
+    "fixed_p_ge_0_5_binary_changes": 0,
+    "per_class_fixed_p_ge_0_5_binary_changes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "within_study_class_order": {
+      "pairs_compared": 38655,
+      "strict_inversions": 0,
+      "ties_broken": 0,
+      "ties_created": 0,
+      "any_order_or_tie_changes": 0
+    },
+    "per_class_across_study_order": [
+      {
+        "class": 1,
+        "pairs_compared": 368511,
+        "strict_inversions": 17,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 17,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 2,
+        "pairs_compared": 368511,
+        "strict_inversions": 28,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 28,
+        "different_label_order_or_tie_changes": 3
+      },
+      {
+        "class": 3,
+        "pairs_compared": 368511,
+        "strict_inversions": 14,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 14,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 4,
+        "pairs_compared": 368511,
+        "strict_inversions": 20,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 20,
+        "different_label_order_or_tie_changes": 6
+      },
+      {
+        "class": 5,
+        "pairs_compared": 368511,
+        "strict_inversions": 10,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 10,
+        "different_label_order_or_tie_changes": 1
+      },
+      {
+        "class": 6,
+        "pairs_compared": 368511,
+        "strict_inversions": 13,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 13,
+        "different_label_order_or_tie_changes": 2
+      },
+      {
+        "class": 7,
+        "pairs_compared": 368511,
+        "strict_inversions": 14,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 14,
+        "different_label_order_or_tie_changes": 6
+      },
+      {
+        "class": 8,
+        "pairs_compared": 368511,
+        "strict_inversions": 13,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 13,
+        "different_label_order_or_tie_changes": 4
+      },
+      {
+        "class": 9,
+        "pairs_compared": 368511,
+        "strict_inversions": 17,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 17,
+        "different_label_order_or_tie_changes": 2
+      },
+      {
+        "class": 10,
+        "pairs_compared": 368511,
+        "strict_inversions": 27,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 27,
+        "different_label_order_or_tie_changes": 7
+      }
+    ],
+    "per_class_auc_delta": [
+      0.0,
+      -3.2879594923374e-05,
+      0.0,
+      3.718301479882502e-05,
+      1.1687704534857346e-05,
+      -1.656808655170483e-05,
+      0.0,
+      1.4489603709311183e-05,
+      0.0,
+      -5.9095368104555845e-06
+    ],
+    "macro_auc_delta": 8.003104756681978e-07
+  },
+  "interpretation": "Original frozen model weights on different GPU/environment. AUC microdifference is not an optimization or training gain. Valid-only development audit; no official T4 or test consistency claim.",
+  "optimized_new_2080ti": {
+    "directory": "/home/featurize/work/deliveries/035_dual768_2080ti_optimization_20261029/valid_optimized",
+    "prediction_sha256": "9f4154db2868c7501144d06ece76921f9d8c2fb01ad466553475a4bd8a816770",
+    "report_sha256": "950c091c6c66eaf6d2f38dd2977e251d2d6ca702799971acc26dcbdf291629a8",
+    "coverage": {
+      "images": 1422,
+      "studies": 859,
+      "patients": 228,
+      "probability_rows": 8590
+    },
+    "metrics_recomputed": {
+      "studies": 859,
+      "macro_auc": 0.8083852425302762,
+      "per_class_auc": [
+        0.7108283433133733,
+        0.8489840205168673,
+        0.8048826140435318,
+        0.758236037777943,
+        0.8812529219261337,
+        0.7856338121510347,
+        0.7899920646034636,
+        0.7192421937260016,
+        0.9063182226788237,
+        0.87848219456559
+      ],
+      "macro_f1_fixed_0_5": 0.4510899186168643,
+      "per_class_positive_studies": [
+        24,
+        37,
+        46,
+        68,
+        115,
+        177,
+        193,
+        214,
+        260,
+        306
+      ]
+    },
+    "single_image_study_metrics": {
+      "studies": 391,
+      "macro_auc": 0.7441625066589628,
+      "per_class_auc": [
+        0.6115248226950355,
+        0.832737563300566,
+        0.7657706093189964,
+        0.7192701175752023,
+        0.7999918079790285,
+        0.6852677150315146,
+        0.7507116848725588,
+        0.6604977297545837,
+        0.8371610329397812,
+        0.7786919831223629
+      ],
+      "macro_f1_fixed_0_5": 0.4311402177716349,
+      "per_class_positive_studies": [
+        15,
+        18,
+        31,
+        37,
+        78,
+        113,
+        106,
+        137,
+        162,
+        75
+      ]
+    },
+    "multi_image_study_metrics": {
+      "studies": 468,
+      "macro_auc": 0.8474486825723224,
+      "per_class_auc": [
+        0.8082788671023965,
+        0.8732856640487633,
+        0.8242825607064017,
+        0.8060825274968628,
+        0.9390480968207187,
+        0.853225556930693,
+        0.8295170000301686,
+        0.7016972797023948,
+        0.9454495311638169,
+        0.8936197417210076
+      ],
+      "macro_f1_fixed_0_5": 0.4483496786486145,
+      "per_class_positive_studies": [
+        9,
+        19,
+        15,
+        31,
+        37,
+        64,
+        87,
+        77,
+        98,
+        231
+      ]
+    },
+    "source_report_metrics_match": true
+  },
+  "same_environment_code_comparison": {
+    "probabilities_exactly_equal": true,
+    "max_absolute_probability_difference": 0.0,
+    "mean_absolute_probability_difference": 0.0,
+    "per_class_max_absolute_probability_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "per_class_mean_absolute_probability_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "probabilities_exceeding_1e_minus_3": 0,
+    "changed_probability_values": 0,
+    "fixed_p_ge_0_5_binary_changes": 0,
+    "per_class_fixed_p_ge_0_5_binary_changes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "within_study_class_order": {
+      "pairs_compared": 38655,
+      "strict_inversions": 0,
+      "ties_broken": 0,
+      "ties_created": 0,
+      "any_order_or_tie_changes": 0
+    },
+    "per_class_across_study_order": [
+      {
+        "class": 1,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 2,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 3,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 4,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 5,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 6,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 7,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 8,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 9,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      },
+      {
+        "class": 10,
+        "pairs_compared": 368511,
+        "strict_inversions": 0,
+        "ties_broken": 0,
+        "ties_created": 0,
+        "any_order_or_tie_changes": 0,
+        "different_label_order_or_tie_changes": 0
+      }
+    ],
+    "per_class_auc_delta": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "macro_auc_delta": 0.0
+  },
+  "same_environment_prediction_files_byte_identical": true
+}

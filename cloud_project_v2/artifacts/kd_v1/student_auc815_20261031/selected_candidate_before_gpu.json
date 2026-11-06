@@ -1,0 +1,15 @@
+{
+  "registered_hong_kong": "2026-10-31T15:34:20.443670+08:00",
+  "candidate": "AB_B100_class1",
+  "valid_cached_macro_auc": 0.8168300303208815,
+  "selection_source": "fifth_plan.json, exactly two manually chosen fixed class1 weights",
+  "rationale": "B preserves stronger class1, other9 retain A/B equal complementarity; no further weight search",
+  "validation_selected_hyperparameters": true,
+  "validation_fitted_class_weights": true,
+  "new_training": false,
+  "test_used_for_selection": false,
+  "model_forwards_per_image": 4,
+  "requested_80ms_status": "pending actual paired benchmark",
+  "next_fixed_decoder_variant": "sixth_decoder_plan.json; pixel changes independently evaluated",
+  "no_new_test_prediction_for_pair": true
+}

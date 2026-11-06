@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/paired_epoch_analysis.py", line 180, in <module>
+    main()
+  File "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/paired_epoch_analysis.py", line 154, in main
+    plot_history(history, partial)
+  File "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/stop_analysis_20261106/paired_epoch_analysis.py", line 133, in plot_history
+    f'Partial E22 ({partial["studies_done"]:,}/{partial["studies_total"]:,} Studies) excluded. '
+                    ~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'studies_done'

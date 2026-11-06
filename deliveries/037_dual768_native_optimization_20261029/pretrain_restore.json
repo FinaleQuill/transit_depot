@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-10-29T19:08:43.258783+00:00",
+  "files": [
+    {
+      "repo_id": "timm/convnext_tiny.fb_in22k_ft_in1k_384",
+      "revision": "32c741ba106f9e062174ef829354a16719c3dcac",
+      "source_url": "https://huggingface.co/timm/convnext_tiny.fb_in22k_ft_in1k_384/resolve/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+      "sha256": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "bytes": 114374272,
+      "local_path": "/tmp/dual768_2080ti_diagnosis/pretrain_originals/a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c.safetensors",
+      "seconds": 8.167682063998654,
+      "loaded_for_inference": false
+    },
+    {
+      "repo_id": "timm/convnext_base.fb_in22k_ft_in1k_384",
+      "revision": "2b2698d86523262ca8065d0957c7f80d963bb43f",
+      "source_url": "https://huggingface.co/timm/convnext_base.fb_in22k_ft_in1k_384/resolve/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+      "sha256": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "bytes": 354400320,
+      "local_path": "/tmp/dual768_2080ti_diagnosis/pretrain_originals/bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe.safetensors",
+      "seconds": 19.43502918000013,
+      "loaded_for_inference": false
+    }
+  ]
+}

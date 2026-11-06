@@ -1,0 +1,4 @@
+Hypothesis: the 896-trained EMA evaluated at fixed 768+hflip2 isolates training-resolution effects without changing inference compute.
+Expected effect: report all class scores and a sampled-train versus full-valid diagnostic; sensitivity claims require patient-paired bootstrap support.
+Cost: one FP16 pass over official valid and a deterministic 1000-Study official-train diagnostic, plus 30 three-image Studies over three rounds.
+Failure criterion: missing checkpoint SHA/compliance binding, incomplete official-valid coverage, or any test access.

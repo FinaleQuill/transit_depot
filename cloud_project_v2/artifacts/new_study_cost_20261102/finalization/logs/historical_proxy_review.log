@@ -1,0 +1,10 @@
+
+[2026-11-02T08:16:25.480387+00:00] command: bash /home/featurize/work/cloud_project_v2/run_tight_crop_environment.sh review_tight_crop_ab_results.py --run-root /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25 --output /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/final_stage_postreview --benchmark --timing-inputs /home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs
+{
+  "A_tiny": 0.8084579181248946,
+  "A_base": 0.8090094030970059,
+  "B_tiny": 0.8087495078309148,
+  "B_base": 0.8089967743958203,
+  "A_fused": 0.8171866747135906,
+  "B_fused": 0.817238650511413
+}

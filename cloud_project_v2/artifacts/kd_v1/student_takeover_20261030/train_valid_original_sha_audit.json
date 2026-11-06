@@ -1,0 +1,40 @@
+{
+  "started_at_utc": "2026-10-30T05:04:25.392518+00:00",
+  "unzip_pid_waited_for": 6130,
+  "unzip_observation": "Process ceased running before file checks; exit status unavailable to this observer",
+  "loader_function": "dataset.py:resolve_native_image_root",
+  "configured_image_root": "/home/featurize/data/cxr_first",
+  "read_only_data_audit": true,
+  "test_images_read": 0,
+  "splits": {
+    "train": {
+      "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+      "resolved_image_root": "/home/featurize/data/cxr_first",
+      "listed": 30328,
+      "present": 30328,
+      "sha256_match": 30328,
+      "missing": 0,
+      "sha256_mismatch": 0,
+      "read_errors": 0,
+      "bytes_hashed": 49457697219,
+      "elapsed_seconds": 311.39910947299995,
+      "pass": true
+    },
+    "valid": {
+      "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "resolved_image_root": "/home/featurize/data/cxr_first",
+      "listed": 1422,
+      "present": 1422,
+      "sha256_match": 1422,
+      "missing": 0,
+      "sha256_mismatch": 0,
+      "read_errors": 0,
+      "bytes_hashed": 2287282538,
+      "elapsed_seconds": 13.243598095999914,
+      "pass": true
+    }
+  },
+  "completed_at_utc": "2026-10-30T05:09:50.035904+00:00",
+  "all_pass": true,
+  "privacy": "Aggregate counts only; no identities, per-image paths, labels or test distributions."
+}

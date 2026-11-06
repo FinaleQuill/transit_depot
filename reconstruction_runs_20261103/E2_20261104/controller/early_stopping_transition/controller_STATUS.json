@@ -1,0 +1,159 @@
+{
+  "active_container": null,
+  "actual_epoch_auc": [
+    {
+      "epoch": 1,
+      "macro_auc": 0.7964362626416193
+    },
+    {
+      "epoch": 2,
+      "macro_auc": 0.7949818207528303
+    },
+    {
+      "epoch": 3,
+      "macro_auc": 0.7938159612591135
+    }
+  ],
+  "child_pid": null,
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--network=none",
+    "--shm-size=4g",
+    "--gpus",
+    "all",
+    "--name",
+    "cxr-e2-global-control-perf-1793781004_36434",
+    "--user",
+    "1000:1000",
+    "--volume",
+    "/home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro",
+    "--volume",
+    "/home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro",
+    "--volume",
+    "/home/featurize/data:/home/featurize/data:ro",
+    "--volume",
+    "/home/featurize/data/cxr_reconstruction_smokes_20261104:/home/featurize/data/cxr_reconstruction_smokes_20261104:rw",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/assets/e2_runtime_addons_20261104/site:/opt/cxr_e2_addons:ro",
+    "--env",
+    "PYTHONPATH=/opt/cxr_e2_addons:/home/featurize/work/cxr_research_20261103",
+    "--env",
+    "PYTHONNOUSERSITE=1",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--env",
+    "HF_HUB_OFFLINE=1",
+    "--env",
+    "HF_HUB_DISABLE_XET=1",
+    "--env",
+    "NO_ALBUMENTATIONS_UPDATE=1",
+    "--env",
+    "OMP_NUM_THREADS=1",
+    "--env",
+    "MKL_NUM_THREADS=1",
+    "--env",
+    "OPENBLAS_NUM_THREADS=1",
+    "--env",
+    "TZ=Asia/Hong_Kong",
+    "--env",
+    "PYTHONHASHSEED=20261104",
+    "--env",
+    "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "--workdir",
+    "/home/featurize/work/cxr_research_20261103",
+    "--entrypoint",
+    "python3",
+    "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "-u",
+    "-m",
+    "reconstruction.train_local_performance",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_control.json",
+    "--execute",
+    "--resume",
+    "--execution-profile",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/loader_workers6_prefetch2.json",
+    "--execution-profile-sha256",
+    "5f705ecc0bcd56535871bbe9e898d819ac0ad6b5d3b29f3c1c84efd093fa76ec"
+  ],
+  "completed_jobs": [],
+  "confirmation_evaluated": false,
+  "controller_pid": 36434,
+  "current_epoch_eta": null,
+  "current_job": "global_control",
+  "execution_profile": {
+    "path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/performance_20261104/loader_workers6_prefetch2.json",
+    "profile": {
+      "applies_to_arms": [
+        "global_control",
+        "global_local"
+      ],
+      "loader": {
+        "in_order": true,
+        "multiprocessing_context": "spawn",
+        "num_workers": 6,
+        "persistent_workers": false,
+        "pin_memory": true,
+        "prefetch_factor": 2,
+        "timeout": 180
+      },
+      "profile_id": "e2_workers6_prefetch2_20261104",
+      "schema": "cxr_e2_loader_execution_profile_v1",
+      "scope": "loader_execution_only"
+    },
+    "sha256": "5f705ecc0bcd56535871bbe9e898d819ac0ad6b5d3b29f3c1c84efd093fa76ec"
+  },
+  "job_histories": {
+    "global_control": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7964362626416193
+      },
+      {
+        "epoch": 2,
+        "macro_auc": 0.7949818207528303
+      },
+      {
+        "epoch": 3,
+        "macro_auc": 0.7938159612591135
+      }
+    ]
+  },
+  "last_exit_code": 0,
+  "log_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/logs/global_control_performance_1793781004_36434.log",
+  "monitor_error": null,
+  "official_valid_evaluated": false,
+  "performance_plan": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/performance_plan.json",
+  "performance_plan_sha256": "5635853b41428d473f34116ca4d766982790c7df018d6c9d6f36a85e0db10a95",
+  "started_at": "2026-11-04T16:29:58.888203+08:00",
+  "state": "paused",
+  "stop_reason": "controller_STOP",
+  "test_accessed": false,
+  "trainer_exit_code": 0,
+  "trainer_progress": {
+    "attempted_updates": 1044,
+    "best_epoch": 0,
+    "best_macro_auc": 0.7978381126852129,
+    "completed_epochs": 3,
+    "confirmation_evaluated": false,
+    "epoch_zero_evaluated": true,
+    "experiment_arm": "global_control",
+    "fixed_budget": true,
+    "official_valid_evaluated": false,
+    "optimizer_updates": 1043,
+    "skipped_updates": 1,
+    "state": "paused",
+    "test_accessed": false,
+    "updated_at": "2026-11-04T17:38:53.085748+08:00"
+  },
+  "updated_at": "2026-11-04T17:38:54.555512+08:00"
+}

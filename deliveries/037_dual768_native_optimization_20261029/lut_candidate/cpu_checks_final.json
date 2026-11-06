@@ -1,0 +1,15 @@
+{
+  "gpu_runs": 0,
+  "model_loads": 0,
+  "production_files_changed": 0,
+  "torch_version": "2.10.0+cu128",
+  "numpy_version": "1.26.4",
+  "checks": [
+    "all_3x256_values_float32_lut_byte_parity_gray_and_rgb",
+    "cpu_only_embedding_int32_channels_last_and_float16_bits",
+    "packed_20_probabilities_exact_with_nonfinite_raw_logit_rejection",
+    "24_mode_exif_fixtures_two_sizes_preserve_original_float32_and_source_bytes",
+    "non_eight_bit_intensity_policy_rejection_preserved"
+  ],
+  "status": "passed_cpu_checks_gpu_validation_still_required"
+}

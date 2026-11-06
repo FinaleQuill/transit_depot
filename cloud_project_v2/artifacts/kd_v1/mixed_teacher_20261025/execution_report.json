@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-10-25T19:51:00.688017+08:00",
+  "automatic_controller_status": {
+    "phase": "waiting_for_fold0_twenty_epochs",
+    "updated_at_utc": "2026-10-25T11:50:55.309182+00:00",
+    "controller_pid": 110769,
+    "original_completed_epochs": 14
+  },
+  "tmux_session": "cxr-kd-mixed",
+  "fixed_epochs": {
+    "0": 20,
+    "1": 12,
+    "2": 12,
+    "3": 12,
+    "4": 12
+  },
+  "retained_epoch13": {
+    "retained_at_utc": "2026-10-25T11:31:00.775451+00:00",
+    "epoch": 13,
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/last.pt",
+    "retained_checkpoint": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_last.pt",
+    "checkpoint_sha256": "571cd8dd2910fb6fe1483f49f48d2d9c1664d792210a74e35f6daa69cbe9eaf7",
+    "checkpoint_saved_at_utc": "2026-10-25T11:21:52.208702+00:00",
+    "source_stat": {
+      "size_bytes": 1402715292,
+      "inode": 2195,
+      "mtime_ns": 1792927312208701494
+    },
+    "method": "same-filesystem hard link to an immutable already-completed checkpoint; original last.pt uses atomic replacement",
+    "checkpoint_bytes_read": 0,
+    "status": {
+      "state": "paused",
+      "completed_epochs": 13,
+      "validated_epochs": 0,
+      "backward_batches": 157677,
+      "optimizer_updates": 9867,
+      "ema_updates": 9867,
+      "amp_skipped_steps": 0,
+      "fold": 0,
+      "training_complete": false,
+      "inference_ready": false,
+      "selection_protocol": "fixed_epoch_final_ema",
+      "last_checkpoint_sha256": "571cd8dd2910fb6fe1483f49f48d2d9c1664d792210a74e35f6daa69cbe9eaf7",
+      "best_checkpoint_sha256": null,
+      "updated_utc": "2026-10-25T11:21:56.866995+00:00"
+    },
+    "purpose": "Official valid diagnostic comparison only; this epoch13 intermediate remains training_complete=false and is not approved for OOF extraction."
+  },
+  "original_scheduler_pid": 12048,
+  "original_trainer_pid": 12060,
+  "training_restart_performed": false,
+  "signals_sent": 0,
+  "new_gpu_work_started_this_setup": false,
+  "source_archive_matches_runtime_code": true,
+  "protected_inputs_unchanged": true,
+  "teacher_collection": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+  "official_materials": "artifacts/kd_v1/compliance_repair_20261025/rules/",
+  "current_instructions": "docs/KD_V1_MIXED_USAGE.md",
+  "pending": [
+    "fold0 final20 completion",
+    "official valid comparison results",
+    "remaining four12-epoch teachers",
+    "strict OOF extraction",
+    "student and final deployment acceptance"
+  ]
+}

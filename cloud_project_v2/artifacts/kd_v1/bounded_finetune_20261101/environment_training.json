@@ -1,0 +1,17 @@
+{
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0",
+    "timm": "1.0.30",
+    "albumentations": "2.0.8",
+    "opencv-python-headless": "4.11.0.86",
+    "pydantic": "2.14.1",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.6.1"
+  },
+  "cuda": true,
+  "core_image_preserved": true,
+  "scipy_sklearn_overlay_training_only": true
+}

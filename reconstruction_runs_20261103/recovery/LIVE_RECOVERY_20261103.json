@@ -1,0 +1,160 @@
+{
+  "captured_at": "2026-11-03T23:59:36.349996+08:00",
+  "kind": "recovered_live_session_read_only_audit",
+  "cwd": "/home/featurize/work/cxr_research_20261103",
+  "git_head": "ec0c7cc4ec0538ea3361bb81f84afe8378d572cc",
+  "git_status": "## research/study-reconstruction-20261103\n?? reconstruction/local_data.py\n?? reconstruction/local_model.py\n?? reconstruction/test_watermark_review.py\n?? reconstruction/watermark_review.py\n",
+  "docker_ps": "CONTAINER ID                                                       IMAGE                                                                                                                                                  COMMAND                                                                                                                             CREATED             STATUS             PORTS     NAMES\n8232b5eb044b4910bf362a3fede86456975e2d3aeefd91d63ecf9d8bb851c4e2   crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b   \"python3 -u -m reconstruction.train --config /home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json --execute\"   About an hour ago   Up About an hour             cxr-reconstruct-e0-1793717705_331369\n",
+  "controller_status": {
+    "active_container": "cxr-reconstruct-e0-1793717705_331369",
+    "actual_epoch_auc": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7287554363943574
+      }
+    ],
+    "child_pid": 331372,
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull=never",
+      "--network=none",
+      "--shm-size=4g",
+      "--gpus",
+      "all",
+      "--name",
+      "cxr-reconstruct-e0-1793717705_331369",
+      "--user",
+      "1000:1000",
+      "--volume",
+      "/home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro",
+      "--volume",
+      "/home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro",
+      "--volume",
+      "/home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro",
+      "--volume",
+      "/home/featurize/data:/home/featurize/data:ro",
+      "--volume",
+      "/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:ro",
+      "--volume",
+      "/tmp/cxr_train_addons_20261103:/opt/cxr_train_addons:ro",
+      "--env",
+      "PYTHONPATH=/opt/cxr_train_addons:/home/featurize/work/cxr_research_20261103",
+      "--env",
+      "PYTHONNOUSERSITE=1",
+      "--env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "--env",
+      "HF_HUB_OFFLINE=1",
+      "--env",
+      "NO_ALBUMENTATIONS_UPDATE=1",
+      "--env",
+      "OMP_NUM_THREADS=1",
+      "--env",
+      "MKL_NUM_THREADS=1",
+      "--env",
+      "OPENBLAS_NUM_THREADS=1",
+      "--env",
+      "TZ=Asia/Hong_Kong",
+      "--env",
+      "PYTHONHASHSEED=20261103",
+      "--env",
+      "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "--workdir",
+      "/home/featurize/work/cxr_research_20261103",
+      "--entrypoint",
+      "python3",
+      "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+      "-u",
+      "-m",
+      "reconstruction.train",
+      "--config",
+      "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E0.json",
+      "--execute"
+    ],
+    "completed_jobs": [],
+    "confirmation_evaluated": false,
+    "controller_pid": 331369,
+    "current_epoch_eta": null,
+    "current_job": "E0",
+    "job_histories": {
+      "E0": [
+        {
+          "epoch": 1,
+          "macro_auc": 0.7287554363943574
+        }
+      ]
+    },
+    "log_path": "/home/featurize/work/reconstruction_runs_20261103/controller/logs/E0_1793717705_331369.log",
+    "monitor_error": null,
+    "official_valid_evaluated": false,
+    "started_at": "2026-11-03T22:55:05.503065+08:00",
+    "state": "training",
+    "test_accessed": false,
+    "trainer_progress": {
+      "epoch": 2,
+      "state": "evaluating_inner_dev",
+      "studies_done": 1283,
+      "studies_total": 3703,
+      "updated_at": "2026-11-03T23:59:24.456674+08:00"
+    },
+    "updated_at": "2026-11-03T23:59:27.556253+08:00"
+  },
+  "frozen_source_sha256_verified": {
+    "/home/featurize/work/cxr_research_20261103/audit_trail.py": true,
+    "/home/featurize/work/cxr_research_20261103/model_overnight.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/__init__.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/controller.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/data.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/model.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/provenance.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/runtime.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/splits.py": true,
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train.py": true,
+    "/home/featurize/work/cxr_research_20261103/runtime_compat.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_compliance.py": true,
+    "/home/featurize/work/cxr_research_20261103/training_hooks.py": true
+  },
+  "preserved_untracked_watermark_files": {
+    "watermark_review.py": "da2e37f75c3cf3ceac92ece2f58f5fda38145d1bff87840bb1969b34582d2060",
+    "test_watermark_review.py": "abcce73b668afb05652cf6bb4e30eea9a0059e70f19f32fc0054350314d08713"
+  },
+  "runs": {
+    "E0": {
+      "exists": true,
+      "history.jsonl": {
+        "sha256": "9d03fbf927581b08b138e29d6ec6e92c6b7edfe92e666384520ccf16f24aeb44",
+        "content": "{\"mean_loss\": 0.6665317780416369, \"studies\": 11108, \"images\": 18194, \"seconds\": 1746.4209815239883, \"data_wait_seconds\": 35.19138001423562, \"compute_seconds\": 1710.3552669997734, \"peak_gpu_bytes\": 14401821696, \"attempted_updates\": 348, \"optimizer_updates\": 347, \"skipped_updates\": 1, \"epoch\": 1, \"macro_auc\": 0.7287554363943574, \"best_macro_auc\": 0.7287554363943574, \"best_epoch\": 1, \"stale_epochs\": 0, \"recorded_at\": \"2026-11-03T23:30:13.572894+08:00\"}\n"
+      },
+      "progress.json": {
+        "sha256": "b10b1e8fb9a413f00267ca54a94589cddc9b7a530c0a3c2ffbac9ec2d2d7598d",
+        "content": "{\n  \"state\": \"evaluating_inner_dev\",\n  \"epoch\": 2,\n  \"studies_done\": 1409,\n  \"studies_total\": 3703,\n  \"updated_at\": \"2026-11-03T23:59:34.801484+08:00\"\n}\n"
+      },
+      "compliance/status.json": {
+        "sha256": "0783b729320f11b255ecac55fc91b6ec9624e5e5841d749af1721f3350ecda2d",
+        "content": "{\n  \"checkpoint_saves_this_session\": 2,\n  \"completed_epochs_this_session\": [\n    1\n  ],\n  \"demonstration_only\": false,\n  \"event_count\": 4,\n  \"final_members_frozen\": false,\n  \"hard_kill_policy\": \"Missing end means unclosed, never completed; next start reports it.\",\n  \"last_event\": \"epoch_completed\",\n  \"last_event_sha256\": \"c708ccebebd2feb956ad6e2ba91de1b68c9d73cb1204bc2ee05ba1e7ef8d35b9\",\n  \"schema_version\": 1,\n  \"session_event_count\": 4,\n  \"session_id\": \"20261103T145511Z_f6723dffed69\",\n  \"state\": \"running\",\n  \"updated_at_hong_kong\": \"2026-11-03T23:30:39.289183+08:00\"\n}\n"
+      },
+      "checkpoint_metadata": {
+        "best.pt": {
+          "bytes": 350451919,
+          "modified_ns": 1793719811539220444
+        },
+        "last.pt": {
+          "bytes": 1401817885,
+          "modified_ns": 1793719829222583800
+        }
+      }
+    },
+    "E1": {
+      "exists": false,
+      "checkpoint_metadata": {}
+    }
+  },
+  "actions": "No container or controller restarted, stopped or adopted; no H or test images read."
+}

@@ -1,0 +1,69 @@
+{
+  "epoch": 5,
+  "fold": 0,
+  "training": {
+    "loss": 0.3068470447015926,
+    "images": 24258,
+    "full_manifest_coverage": true,
+    "image_size": 512,
+    "seconds": 720.8836399030006,
+    "updates_this_epoch": 759,
+    "learning_rates": {
+      "backbone_decay": 1.7997838337669965e-05,
+      "backbone_no_decay": 1.7997838337669965e-05,
+      "head_decay": 0.00017997838337669965,
+      "head_no_decay": 0.00017997838337669965
+    },
+    "gpu_peak_allocated_gib": 3.4994401931762695
+  },
+  "validation": {
+    "macro_auc": 0.8024026369423698,
+    "per_class_auc": [
+      0.6976690888764673,
+      0.8216316586242784,
+      0.7890000302654279,
+      0.7190529933300797,
+      0.877425986364534,
+      0.7937378106551038,
+      0.8007971381893978,
+      0.7566765766837118,
+      0.8980910391680141,
+      0.8699440472666833
+    ],
+    "macro_ap": 0.4136435586732216,
+    "per_class_ap": [
+      0.07628784963458159,
+      0.24664327548563864,
+      0.17095826304864686,
+      0.1748722010602735,
+      0.4819061443830295,
+      0.476382402369157,
+      0.49763718744074836,
+      0.47602965718438633,
+      0.7215458392875417,
+      0.8141727668382128
+    ],
+    "loss": 0.30660276594185004,
+    "num_studies": 3703,
+    "unit": "Study",
+    "tta": "identity512"
+  },
+  "is_best": true,
+  "best_auc": 0.8024026369423698,
+  "best_epoch": 5,
+  "early_stopping": {
+    "reference_auc": 0.8024026369423698,
+    "bad_epochs": 0,
+    "patience": 4,
+    "min_delta": 0.0001
+  },
+  "progress": {
+    "completed_epochs": 5,
+    "validated_epochs": 5,
+    "backward_batches": 15165,
+    "optimizer_updates": 3795,
+    "ema_updates": 3795,
+    "amp_skipped_steps": 0
+  },
+  "checkpoint_sha256": "330b01c7717f7470ef8bfbb7763ca746d51666d5cc24c2f931ce8c8cd5a585e2"
+}

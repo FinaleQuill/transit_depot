@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-29T14:18:33.478005+00:00",
+  "ended_utc": "2026-10-29T14:19:30.169840+00:00",
+  "wall_seconds": 56.69188402899999,
+  "python_arguments": [
+    "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnose_current_v1.py",
+    "--source-root",
+    "/home/featurize/work/cloud_project_v2",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--inputs-root",
+    "/tmp/dual768_2080ti_diagnosis/inputs",
+    "--selection-json",
+    "/tmp/dual768_2080ti_diagnosis/inputs/selection.portable.json",
+    "--output-dir",
+    "/tmp/dual768_2080ti_diagnosis/diagnostic_local_v1"
+  ],
+  "exit_code": 0
+}

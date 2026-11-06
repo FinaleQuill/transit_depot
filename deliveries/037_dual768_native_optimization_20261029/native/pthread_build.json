@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python",
+    "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/run_container.py",
+    "native_lanczos/setup.py",
+    "build_ext",
+    "--inplace",
+    "--force",
+    "--build-temp",
+    "/tmp/dual768_2080ti_diagnosis/native_build",
+    "--build-lib",
+    "/tmp/dual768_2080ti_diagnosis/native_build_lib"
+  ],
+  "exit_code": 0,
+  "recorded_at_utc": "2026-10-29T14:49:49.935040+00:00",
+  "source_sha256": {
+    "native_lanczos/resample.c": "182a819afb16f719593a2ca49abc2cc2453e7fe5a3c0e87d68b7c44b87b70dd7",
+    "native_lanczos/setup.py": "a0b5672f2aacebcb09d89ce3ff71cd823997c4ec8efbb170ad17a42b95a79f07",
+    "fast_lanczos.py": "b822931d891aa72edd3b22d8363918ec18a1f1870804aeb3bc147e002e8c9fb6"
+  },
+  "previous_experimental_openmp_build": "Tool output recorded in conversation only; no file log or frozen first-version source was preserved."
+}

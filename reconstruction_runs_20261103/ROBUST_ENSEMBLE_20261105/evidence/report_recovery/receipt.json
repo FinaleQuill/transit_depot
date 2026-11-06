@@ -1,0 +1,28 @@
+{
+  "method": "CPU scoring of the original complete saved validation predictions",
+  "recovered_at": "2026-11-05T13:22:06.059192+08:00",
+  "original_failure": {
+    "complete": false,
+    "error": "TypeError: Object of type bool_ is not JSON serializable",
+    "elapsed_seconds": 398.0528115729976,
+    "selection_changed": false
+  },
+  "original_controller_status_preserved": true,
+  "original_records_archive": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/evidence/report_recovery",
+  "new_model_inferences": 0,
+  "new_candidates": 0,
+  "prediction_hashes_unchanged": {
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate_predictions.csv": "fb7c6f3a38dabc7ada3c84594fc40effe6606e205ce55fb35f13b743883ab58a",
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/candidate.image_predictions.csv": "afabfd852d7c2716f7f93e99785099f7aa57c0facc0b08cec396de380b86ec70",
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint_predictions.csv": "f6b47f09a80682578fe1ec11773870cb3db8ae81e2024e3026a40c4e03e7aae7",
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/sprint.image_predictions.csv": "39ca5f7ae82a66e8bbda5a7de5041a926b84b546c5242d0c01b426b4d8aba939",
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity_predictions.csv": "8763669b71462a22866f99440711c565b7fbbd42628ae8a88f7434129d02197a",
+    "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/opacity.image_predictions.csv": "1a87312ccfaf5b7f7c7a25fb85a84fc4361253a93b6812dbe110f50ebab43196"
+  },
+  "source_changes": [
+    "robust_ensemble/evaluate.py"
+  ],
+  "recovery_script_sha256": "b248d6d965a154f578ecaed2781ab2ae2ab977b02e2d059ef1b7dd965240c3ab",
+  "scoring_source_sha256": "ade79880120e2eec01d331031ebabd06c446528120f71aa543ba61553e8dfc82",
+  "elapsed_seconds": 21.01251510401198
+}

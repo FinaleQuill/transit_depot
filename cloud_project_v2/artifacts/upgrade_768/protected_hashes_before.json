@@ -1,0 +1,8 @@
+{
+  "data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "data/clean_v1_reviewed/test_manifest.csv": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "data/cv5_overnight/metadata_validation_report.json": "e61a22ac02c36a322501ae5abe9d4cf16042ec07c596769f40bfb3ef71c12a73",
+  "/home/featurize/work/submission.csv": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe"
+}

@@ -1,0 +1,15 @@
+{
+  "source_checkpoint_sha256": "65cdb72f63a5ec0d36486d4d8dcb34dd2fde5ed85aa52d3a10be2b0dbf633f42",
+  "source_snapshot_sha256": "aa3c632e7764b57a522920369e16d9cb4768e43e008c0588439b4438aa88fd6f",
+  "source_backup_receipt_sha256": "9976993a36f476b44e74be907f1c30dfa52d7bc3cd9086c6f0e016066a2f9aa9",
+  "source_epoch": 9,
+  "weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+  "tensor_bytes_equal_to_snapshot_fp16": true,
+  "historical_weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+  "historical_weights_file_equal": true,
+  "actual_inference_bytes": 60940608,
+  "size_pass": true,
+  "resume_supported": false,
+  "model_forward_executed": false
+}

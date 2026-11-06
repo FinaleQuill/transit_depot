@@ -1,0 +1,148 @@
+{
+  "complete": true,
+  "cases": [
+    {
+      "candidate": "kd512",
+      "mean_ms": 60.14063966111281,
+      "p95_ms": 69.29308568069246,
+      "max_ms": 71.8168613287465,
+      "round_mean_ms": [
+        60.158157432451844,
+        60.09345499885967,
+        60.17030655202689
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd512/local_resource_report.json",
+      "report_sha256": "863b73d6c6288d4e93b77cb02c390768acc02293b8dfd9d6274c74224b01c98c",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd512",
+        "--profile",
+        "optimized_native_kd512",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "max_probability_difference_from_original": 0.0
+    },
+    {
+      "candidate": "kd768",
+      "mean_ms": 109.2355305099045,
+      "p95_ms": 229.5540166499751,
+      "max_ms": 901.1194620009823,
+      "round_mean_ms": [
+        80.02404343831586,
+        79.69275029114215,
+        167.98979780025547
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd768/local_resource_report.json",
+      "report_sha256": "2c81d613226c52cb33275b39001290521da5366a286608ac9b51e6a6aad23bef",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/kd768",
+        "--profile",
+        "optimized_native_kd768",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "max_probability_difference_from_original": 0.0
+    },
+    {
+      "candidate": "equal512_768",
+      "mean_ms": 112.10777689955044,
+      "p95_ms": 124.83150193729671,
+      "max_ms": 127.28301431828488,
+      "round_mean_ms": [
+        112.20585964794736,
+        112.03572656057077,
+        112.08174449013313
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/equal512_768/local_resource_report.json",
+      "report_sha256": "70b733b3e02814d9a5391078ae60b3710557dccfd6db36e4cd543f3006a02cfd",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/equal512_768",
+        "--profile",
+        "optimized_native_equal512_768",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "max_probability_difference_from_original": 0.0
+    },
+    {
+      "candidate": "two768_timing_only",
+      "mean_ms": 79.24427995079897,
+      "p95_ms": 88.74084381726182,
+      "max_ms": 91.48049433133565,
+      "round_mean_ms": [
+        79.23932210193016,
+        79.26412471046206,
+        79.22939304000465
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/two768_timing_only/local_resource_report.json",
+      "report_sha256": "78ef4aa19db25646a61c292c6ff7604844f974adf7967279be4104bee8a23b12",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_controls/two768_timing_only",
+        "--profile",
+        "optimized_native_two768_timing_only",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "accuracy_claim": "none; E8/E13 checkpoints from one run only proxy two768 forward cost"
+    }
+  ],
+  "deploy_source_sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+  "CLAHE_enabled": false,
+  "DALI_used": false,
+  "true_T4": false,
+  "per_image_shared_preprocessing": true,
+  "per_image_shared_TTA_inputs": true,
+  "training_started": false
+}

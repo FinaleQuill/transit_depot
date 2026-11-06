@@ -1,0 +1,23 @@
+{
+  "train_manifest": "/home/featurize/data/raw_rebuild_20261105/source_train.csv",
+  "valid_manifest": "/home/featurize/data/raw_rebuild_20261105/valid.csv",
+  "raw_audit": "/home/featurize/data/raw_rebuild_20261105/audit.json",
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "soft_labels": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+  "image_root": "/home/featurize/data/cxr_first",
+  "pretrained_path": "/home/featurize/data/one_week_20261106/assets/tiny/model.safetensors",
+  "provenance_path": "/home/featurize/data/one_week_20261106/assets/tiny/provenance.json",
+  "image_size": 768,
+  "batch_size": 8,
+  "accumulation_steps": 4,
+  "workers": 6,
+  "epochs": 9,
+  "lr_horizon_epochs": 25,
+  "teacher_training_allowed": false,
+  "automatic_submission": false,
+  "data_policy": "official original unfiltered; every image preserved; no test access",
+  "seed": 44,
+  "include_valid": true,
+  "output": "/home/featurize/work/reconstruction_runs_20261103/ONE_WEEK_20261106/train_valid_seed44",
+  "checkpoint_dir": "/home/featurize/data/one_week_20261106/state/train_valid_seed44"
+}

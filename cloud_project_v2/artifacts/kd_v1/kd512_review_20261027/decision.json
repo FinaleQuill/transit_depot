@@ -1,0 +1,14 @@
+{
+  "reviewed_at_hong_kong": "2026-10-27T15:02:57.875491+08:00",
+  "decision": "Preserve027E7; user performs actualFP16export/valid next, thenpairedBCEcomparison and ONEfixedBCE/KDblenddiagnostic. Candidate028short12schedule proposal only; no training started.",
+  "best_native_BF16_auc": 0.8055938343065167,
+  "native_delta_over_BCE_best": 0.0019971923047202855,
+  "main_evidence": "Class1/4/8lateAUCrankingdecline while trainhardBCE/valBCEfallandAPrises. HighLRatbest supports only hypothesis of shorter horizon, not proven cause.",
+  "KD_FP16_validated": false,
+  "paired_patient_CI_available": false,
+  "new_gpu_or_training_started": false,
+  "gpu_processes": "",
+  "status_fix_separate_commit": "a876092a18447ef5bb6c6d461cf7b745ec1bf2e6",
+  "new_training_output_created": false,
+  "new_KD_exports_created": false
+}

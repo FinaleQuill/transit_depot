@@ -1,0 +1,80 @@
+{
+  "complete": true,
+  "cases": [
+    {
+      "candidate": "kd768",
+      "mean_ms": 77.3348306688907,
+      "p95_ms": 88.29094910179265,
+      "max_ms": 90.4784696661712,
+      "round_mean_ms": [
+        77.74553192954045,
+        77.99084551836131,
+        76.26811455877032
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/kd768/local_resource_report.json",
+      "report_sha256": "b6f83acde678bd5954f6abd3aeb99473fe821d5e7657a6900d27b02c2578b506",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/kd768",
+        "--profile",
+        "optimized_native_repeat_kd768",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "max_probability_difference_from_original": 0.0
+    },
+    {
+      "candidate": "two768_timing_only",
+      "mean_ms": 79.91696446755668,
+      "p95_ms": 89.35092191483515,
+      "max_ms": 94.75229433155619,
+      "round_mean_ms": [
+        79.64749047212536,
+        80.0318225796218,
+        80.07158035092289
+      ],
+      "report": "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/two768_timing_only/local_resource_report.json",
+      "report_sha256": "93afc76cdf4c42a0533fc2d04f772c577e56182fc7fe659f287bb837c7bda0f2",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "benchmark_local_resources.py",
+        "--model-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/models/two768_E8_E13_timing_only",
+        "--pictures-100",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_100",
+        "--pictures-5",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/pictures_5",
+        "--selection-json",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs/selection.json",
+        "--output-dir",
+        "/home/featurize/work/deliveries/031_resource_stress_20261027/optimized_native_repeat/two768_timing_only",
+        "--profile",
+        "optimized_native_repeat_two768_timing_only",
+        "--memory-limit-gib",
+        "16",
+        "--execute"
+      ],
+      "accuracy_claim": "none; E8/E13 checkpoints from one run only proxy two768 forward cost"
+    }
+  ],
+  "deploy_source_sha256": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+  "CLAHE_enabled": false,
+  "DALI_used": false,
+  "true_T4": false,
+  "per_image_shared_preprocessing": true,
+  "per_image_shared_TTA_inputs": true,
+  "training_started": false
+}

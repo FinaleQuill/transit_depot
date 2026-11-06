@@ -1,0 +1,14 @@
+{
+  "state": "blocked",
+  "stage": "training_failed",
+  "pid": 76257,
+  "started_utc": "2026-11-02T04:46:54.682600+00:00",
+  "child_pid": null,
+  "child_start_ticks": null,
+  "gpu_pids": [],
+  "error": "Training controller failed: RuntimeError: B_base has STOP marker; refusing automatic retry",
+  "source_receipt": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/postreview_controller/sources.json",
+  "test_predicted": false,
+  "updated_utc": "2026-11-02T08:08:22.400142+00:00",
+  "elapsed_seconds": 12087.7
+}

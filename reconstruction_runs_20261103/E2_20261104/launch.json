@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/environment/miniconda3/bin/python3",
+    "-u",
+    "-m",
+    "reconstruction.controller_local",
+    "--controller-dir",
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller",
+    "--configs",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_control.json",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E2_global_local.json",
+    "--execute"
+  ],
+  "automatic_AI_goal_created": false,
+  "cwd": "/home/featurize/work/cxr_research_20261103",
+  "git_commit": "18f90a8c98e21ffd79f357110c069fd892caaf49",
+  "pid": 11416,
+  "purpose": "E2 global control6 then global local6 then fixed CPU comparisons; background scientific work in progress",
+  "start_new_session": true,
+  "started_at": "2026-11-04T14:51:08.382737+08:00",
+  "stdin": "/dev/null",
+  "stdout_stderr": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller.launch.log"
+}

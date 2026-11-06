@@ -1,0 +1,23 @@
+{
+  "artifact_type": "tight_crop_ab_epoch_fp16",
+  "arm": "B",
+  "member": "base",
+  "source_epoch": 1,
+  "source_kind": "ap_selected_best",
+  "source_sha256": "c01a4c3f96a94a65025a9a90190ab915951e00d38beea5d22183b2cd0b6c00d9",
+  "weights_sha256": "c83818a60a628aa579260cfa855e718b303cd25f6dd69f9288c05c7f3d7f8617",
+  "model_config": {
+    "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+    "drop_rate": 0.2,
+    "drop_path_rate": 0.15,
+    "gradient_checkpointing": false
+  },
+  "decoder": "full_decode_exact_reference_v1",
+  "precision": "float16",
+  "tta": "hflip2",
+  "plan_sha256": "6f16ebd0023ea626b1be10f137011d0d8d1ed87ee3d6a663f26c50423b35bd32",
+  "earlystop_plan_sha256": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+  "preprocess_sha256": "545d3b48f3037663f7ee9159766bab990de83c903fa36d25a2758bfddd0eb96c",
+  "crop_sha256": "85ec065e2b4a9bb23a0defcafc3681cd474a579563affd3501ddcb4d2426cd8d",
+  "valid_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+}

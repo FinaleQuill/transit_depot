@@ -1,0 +1,514 @@
+{
+  "audited_at_hk": "2026-10-28T01:36:28.428039+08:00",
+  "run": "/home/featurize/work/runs/030_tiny768_kd_seed44",
+  "conclusion": "completed_13_committed_epochs_single_run_exit0",
+  "status": {
+    "state": "early_stopped",
+    "completed_epochs": 13,
+    "validated_epochs": 13,
+    "backward_batches": 49283,
+    "optimizer_updates": 12324,
+    "ema_updates": 12324,
+    "amp_skipped_steps": 0,
+    "best_auc": 0.8075698171794465,
+    "best_epoch": 8,
+    "last_checkpoint_sha256": "0dd18906725dfd2367f979bb72483151ec3436b376fbecad917351e25b1c796d",
+    "best_checkpoint_sha256": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+    "updated_utc": "2026-10-27T17:17:56.200999+00:00"
+  },
+  "progress": {
+    "completed_epochs": 13,
+    "validated_epochs": 13,
+    "backward_batches": 49283,
+    "optimizer_updates": 12324,
+    "ema_updates": 12324,
+    "amp_skipped_steps": 0
+  },
+  "best_epoch": 8,
+  "best_auc": 0.8075698171794465,
+  "last_auc": 0.8046978962388822,
+  "checkpoint_sha256": {
+    "last.pt": "0dd18906725dfd2367f979bb72483151ec3436b376fbecad917351e25b1c796d",
+    "best.pt": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498"
+  },
+  "recovery_state_checks": {
+    "best": {
+      "optimizer_parameters": 182,
+      "optimizer_states": 182,
+      "optimizer_steps": [
+        7584
+      ],
+      "param_groups": 4,
+      "scaler_state": {},
+      "rng_keys": [
+        "cuda",
+        "numpy",
+        "python",
+        "torch"
+      ],
+      "all_tensors_cpu_finite": true,
+      "recovery_tensor_count": 549,
+      "native_resume_metadata_passed": true,
+      "inference_ready": true,
+      "validation_complete": true,
+      "weights_source": "ema",
+      "schema_version": 8
+    },
+    "last": {
+      "optimizer_parameters": 182,
+      "optimizer_states": 182,
+      "optimizer_steps": [
+        12324
+      ],
+      "param_groups": 4,
+      "scaler_state": {},
+      "rng_keys": [
+        "cuda",
+        "numpy",
+        "python",
+        "torch"
+      ],
+      "all_tensors_cpu_finite": true,
+      "recovery_tensor_count": 549,
+      "native_resume_metadata_passed": true,
+      "inference_ready": true,
+      "validation_complete": true,
+      "weights_source": "ema",
+      "schema_version": 8
+    }
+  },
+  "fold_patient_counts": {
+    "0": 2211,
+    "1": 2211,
+    "2": 2211,
+    "3": 2211,
+    "4": 2211
+  },
+  "train_patients": 11055,
+  "native_resume_validation": "both_passed_reconciliation_selects_last",
+  "expected_metadata_rebuilt_from_native_fold_manifest_objective_and_loss": true,
+  "early_stopping": {
+    "reference_auc": 0.8075698171794465,
+    "bad_epochs": 5
+  },
+  "epoch_cap_also_reached": false,
+  "ledger_records": 21,
+  "ledger_role_counts": {
+    "best": 8,
+    "last": 13
+  },
+  "ledger_chain": "passed_pure_read",
+  "all_history_hash_bindings": "passed",
+  "ledger_source_versions_match_execution_archive": true,
+  "source_archives": [
+    {
+      "directory": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e",
+      "files": 41,
+      "python_files": 36,
+      "manifest_sha256": "882aa46c412b15f2aa222b2aa20451598bde2a9997ef0d6dec685d326ea2760a",
+      "all_archived_files_match_manifest": true
+    }
+  ],
+  "source_hashes": {
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/AGENTS.md": "bef926fc9d20bed80730aca17762aa0a69cf36c94befafc4a041e882b04c88a0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/audit_trail.py": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/build_training_evidence.py": "161ac0656b5575cf13ba98a298aacf143d589afab053595a0249359663b17600",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compare_student_candidates.py": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compose_students.py": "857390bb5f8eb128566c6bf95c83baf1b6d4fd8fcbbb89fcc085dcd37c6e1868",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/deploy_kd.py": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/diagnose_teacher_epochs.py": "82b9f7bb950d6fb8c8c0d487bbb33cd1fea292c524a1e75c03de3c226ef6e187",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_tta_data.py": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/export_student.py": "c09b101333e8871a69aeb9fb98af71d6816a0f60937e0831e1f38307d251a06d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels.py": "caf4737fe2f7cbf5ecb29a405493d287e0b00911510e19b27aa0db812c7fe089",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels_tta.py": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/package_kd_submission.py": "0c13977417ac476760a42da31bcf0ce3a85f32adb9fdfcad1873992b458de19e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/planned_handoff.py": "101e040ac874d9178cc51f09ca782248b34e08464ccd77da08c36377b0d8e765",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/preflight_kd.py": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/prepare_latency_inputs.py": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_inference.txt": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_kd.txt": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_overnight.sh": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_resource_stress.py": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_student_experiments.py": "205745a4dd8d93ed4268a2d3d68dc46b27c8d4639a5cf62238cd9c622ae4b299",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_teachers.py": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/teacher_collection.py": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_distill.py": "70d8a113ad0c98ad9855c2084d4d4f34e69856d7c6508766942402614574dcc3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/training_evidence_monitor.py": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_student.py": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher_tta.py": "b1c450b601d8712faf41b8ddabb63cc806e0184a8321e2a95fde4d4920b2cecd"
+  },
+  "input_hashes": {
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/tiny768_review_20261027/audit_script.py": "5341dfba4c6500f8d33a9451ecc354cd0d63e10e04e57b773ce1fac66bd998ab",
+    "data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2/soft_labels.npz": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+    "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2/metadata.json": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+    "/home/featurize/.cache/huggingface/hub/models--timm--convnext_tiny.fb_in22k_ft_in1k_384/snapshots/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c"
+  },
+  "train_valid_isolation": "passed_subject_study_image_file_pixel",
+  "strict_oof_native_loader": "passed",
+  "strict_oof_shape": [
+    30328,
+    2,
+    10
+  ],
+  "teacher_weight_files_not_rehashed": true,
+  "pretrained_provenance_native": "passed",
+  "original_pretrained_weights_sha256": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+  "finite_cpu_checkpoint_states": {
+    "best": {
+      "raw_model_state_dict": {
+        "tensors": 182,
+        "numel": 27827818,
+        "finite": true
+      },
+      "model_state_dict": {
+        "tensors": 182,
+        "numel": 27827818,
+        "finite": true
+      }
+    },
+    "last": {
+      "raw_model_state_dict": {
+        "tensors": 182,
+        "numel": 27827818,
+        "finite": true
+      },
+      "model_state_dict": {
+        "tensors": 182,
+        "numel": 27827818,
+        "finite": true
+      }
+    }
+  },
+  "command_receipts": [
+    {
+      "started_at": "2026-10-27T15:18:36.928770+00:00",
+      "command": [
+        "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+        "-u",
+        "/home/featurize/work/cloud_project_v2/train_distill.py",
+        "--fold-plan",
+        "data/cv5_overnight/folds.json",
+        "--soft-labels",
+        "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+        "--training-mode",
+        "distillation",
+        "--alpha",
+        "0.2",
+        "--temperature",
+        "2",
+        "--image-size",
+        "768",
+        "--seed",
+        "44",
+        "--validation-tta",
+        "hflip2",
+        "--batch-size",
+        "8",
+        "--accumulation-steps",
+        "4",
+        "--epochs",
+        "25",
+        "--patience",
+        "5",
+        "--output",
+        "../runs/030_tiny768_kd_seed44",
+        "--execute"
+      ],
+      "cwd": "/home/featurize/work/cloud_project_v2",
+      "source_archive": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e",
+      "console_log": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/console_20261027T151836Z_2819d80e.log",
+      "preexisting_run_artifacts": [],
+      "coverage_from_start": "complete",
+      "exit_code": 0,
+      "child_pid": 1023805,
+      "ended_at": "2026-10-27T17:17:58.039872+00:00",
+      "console_bytes": 30351
+    }
+  ],
+  "successful_epoch_log_coverage": [
+    {
+      "epoch": 1,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 2,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 3,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 4,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 5,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 6,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 7,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 8,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 9,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 10,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 11,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 12,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    },
+    {
+      "epoch": 13,
+      "receipt_index": 1,
+      "batch_progress_marks": 38,
+      "validation_lines": 1,
+      "images": 30328
+    }
+  ],
+  "committed_image_exposures": 394264,
+  "elapsed_first_start_to_final_exit_seconds": 7161.111102,
+  "mean_end_to_end_seconds_per_epoch": 550.8547001538461,
+  "committed_training_seconds": 6495.403276823054,
+  "config029_to030_differences": {
+    "output": {
+      "run029": "../runs/029_tiny768_kd_seed43",
+      "run030": "../runs/030_tiny768_kd_seed44"
+    },
+    "seed": {
+      "run029": 43,
+      "run030": 44
+    }
+  },
+  "lr_schedule_identical_to029_for_all_common_epochs": true,
+  "training_seconds_per_epoch": [
+    522.3857523530023,
+    511.2501717430132,
+    503.91679553099675,
+    492.751156525017,
+    506.3907539109932,
+    496.8016985169961,
+    492.02474546499434,
+    487.448678382003,
+    486.6399729429977,
+    498.43286253200495,
+    492.92652291001286,
+    502.665923699009,
+    501.7682423120132
+  ],
+  "mean_training_seconds_per_epoch": 499.64640590946567,
+  "gpu_peak_allocated_gib": 2.1601004600524902,
+  "original_run_files_unchanged": true,
+  "original_run_files_count": 53,
+  "original_run_hashes": {
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best.pt": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best_metrics.json": "5f3df7b1ebe6ce9c1b1f0d0e951615eecf8c6c312a41a8ee51731382947ebeb1",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/checkpoint_audit.jsonl": "c4f84a9e9376ca1769d5c6a989c210ad5fc7492609b0964a414ecd63bf65cbb2",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/config.json": "5d824f1c3588c321af409e4954bebeec1793b1e772eccf4f61bb883384a8f01b",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/command_20261027T151836Z_2819d80e.json": "05dec4f1f5f8ab3ddbfc4602e0529eecc48bb263cdd604df6da2915aa530e13c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/console_20261027T151836Z_2819d80e.log": "2d4c5ae5d58733df2e44faffc272d1e87cc4c2c27498828d747dd2ccc2c7e93d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/AGENTS.md": "bef926fc9d20bed80730aca17762aa0a69cf36c94befafc4a041e882b04c88a0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/audit_trail.py": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/build_training_evidence.py": "161ac0656b5575cf13ba98a298aacf143d589afab053595a0249359663b17600",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compare_student_candidates.py": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compose_students.py": "857390bb5f8eb128566c6bf95c83baf1b6d4fd8fcbbb89fcc085dcd37c6e1868",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/deploy_kd.py": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/diagnose_teacher_epochs.py": "82b9f7bb950d6fb8c8c0d487bbb33cd1fea292c524a1e75c03de3c226ef6e187",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_tta_data.py": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/environment_lock.txt": "5875323f1e238fd2964aa6c2ce3598f5845636e641ac76ef02c214f0578b049a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/export_student.py": "c09b101333e8871a69aeb9fb98af71d6816a0f60937e0831e1f38307d251a06d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels.py": "caf4737fe2f7cbf5ecb29a405493d287e0b00911510e19b27aa0db812c7fe089",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels_tta.py": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/package_kd_submission.py": "0c13977417ac476760a42da31bcf0ce3a85f32adb9fdfcad1873992b458de19e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/planned_handoff.py": "101e040ac874d9178cc51f09ca782248b34e08464ccd77da08c36377b0d8e765",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/preflight_kd.py": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/prepare_latency_inputs.py": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_inference.txt": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_kd.txt": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_overnight.sh": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_resource_stress.py": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_student_experiments.py": "205745a4dd8d93ed4268a2d3d68dc46b27c8d4639a5cf62238cd9c622ae4b299",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_teachers.py": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/source_manifest.json": "882aa46c412b15f2aa222b2aa20451598bde2a9997ef0d6dec685d326ea2760a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/teacher_collection.py": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_distill.py": "70d8a113ad0c98ad9855c2084d4d4f34e69856d7c6508766942402614574dcc3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/training_evidence_monitor.py": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_student.py": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher_tta.py": "b1c450b601d8712faf41b8ddabb63cc806e0184a8321e2a95fde4d4920b2cecd",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/history.jsonl": "f47900ce656256a3596c091d0006115bc807ce53b62b78a006c6c202e8e9e7ed",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/last.pt": "0dd18906725dfd2367f979bb72483151ec3436b376fbecad917351e25b1c796d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/pretrained_provenance.json": "801f20604b1404a1fecf4f640fab807d5d35472bba6b6eda571bc460c50f5b92",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/status.json": "77dc8ba241a869065c58def0a9d304430064777f1bec82c874825cf12d4e6d94"
+  },
+  "original_run_hashes_after": {
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best.pt": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/best_metrics.json": "5f3df7b1ebe6ce9c1b1f0d0e951615eecf8c6c312a41a8ee51731382947ebeb1",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/checkpoint_audit.jsonl": "c4f84a9e9376ca1769d5c6a989c210ad5fc7492609b0964a414ecd63bf65cbb2",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/config.json": "5d824f1c3588c321af409e4954bebeec1793b1e772eccf4f61bb883384a8f01b",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/command_20261027T151836Z_2819d80e.json": "05dec4f1f5f8ab3ddbfc4602e0529eecc48bb263cdd604df6da2915aa530e13c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/console_20261027T151836Z_2819d80e.log": "2d4c5ae5d58733df2e44faffc272d1e87cc4c2c27498828d747dd2ccc2c7e93d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/AGENTS.md": "bef926fc9d20bed80730aca17762aa0a69cf36c94befafc4a041e882b04c88a0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/audit_trail.py": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/build_training_evidence.py": "161ac0656b5575cf13ba98a298aacf143d589afab053595a0249359663b17600",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compare_student_candidates.py": "958b84ef7a613858fbbfe05efa84affea6e1476d8dd0af5f45898ede4c46f7cf",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/compose_students.py": "857390bb5f8eb128566c6bf95c83baf1b6d4fd8fcbbb89fcc085dcd37c6e1868",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/deploy_kd.py": "7cfc9a8df406cf81bb019081464513e895b03ac3284bb88a7d49b588f1fc2ece",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/diagnose_teacher_epochs.py": "82b9f7bb950d6fb8c8c0d487bbb33cd1fea292c524a1e75c03de3c226ef6e187",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_data.py": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/distill_tta_data.py": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/environment_lock.txt": "5875323f1e238fd2964aa6c2ce3598f5845636e641ac76ef02c214f0578b049a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/export_student.py": "c09b101333e8871a69aeb9fb98af71d6816a0f60937e0831e1f38307d251a06d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels.py": "caf4737fe2f7cbf5ecb29a405493d287e0b00911510e19b27aa0db812c7fe089",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/extract_soft_labels_tta.py": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/kd_common.py": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/package_kd_submission.py": "0c13977417ac476760a42da31bcf0ce3a85f32adb9fdfcad1873992b458de19e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/planned_handoff.py": "101e040ac874d9178cc51f09ca782248b34e08464ccd77da08c36377b0d8e765",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/preflight_kd.py": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/prepare_latency_inputs.py": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_inference.txt": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/requirements_kd.txt": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_overnight.sh": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_resource_stress.py": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_student_experiments.py": "205745a4dd8d93ed4268a2d3d68dc46b27c8d4639a5cf62238cd9c622ae4b299",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/run_teachers.py": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/runtime_compat.py": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/source_manifest.json": "882aa46c412b15f2aa222b2aa20451598bde2a9997ef0d6dec685d326ea2760a",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/teacher_collection.py": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_distill.py": "70d8a113ad0c98ad9855c2084d4d4f34e69856d7c6508766942402614574dcc3",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/training_evidence_monitor.py": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_student.py": "11eaf268ecb5c114787832c0757a122f4bc370fdc633e576d81f5b6f97e2b739",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/validate_teacher_tta.py": "b1c450b601d8712faf41b8ddabb63cc806e0184a8321e2a95fde4d4920b2cecd",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/history.jsonl": "f47900ce656256a3596c091d0006115bc807ce53b62b78a006c6c202e8e9e7ed",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/last.pt": "0dd18906725dfd2367f979bb72483151ec3436b376fbecad917351e25b1c796d",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/pretrained_provenance.json": "801f20604b1404a1fecf4f640fab807d5d35472bba6b6eda571bc460c50f5b92",
+    "/home/featurize/work/runs/030_tiny768_kd_seed44/status.json": "77dc8ba241a869065c58def0a9d304430064777f1bec82c874825cf12d4e6d94"
+  },
+  "original_sources_and_bound_inputs_unchanged": true,
+  "no_model_construction_or_forward": true,
+  "no_training_or_gpu_work": true,
+  "test_data_usage": false,
+  "deployment_review": {
+    "canonical_delivery_directory": "/home/featurize/work/deliveries/030_tiny768_kd_seed44",
+    "fp16_export": "outside_cpu_audit_scope",
+    "per_study_predictions": "outside_cpu_audit_scope",
+    "actual_fp16_auc": "pending",
+    "official_t4_timing": "pending"
+  },
+  "checkpoint_interval_seconds": [
+    589.140128,
+    575.178488,
+    556.929267,
+    548.035258,
+    554.309375,
+    551.270664,
+    553.099342,
+    537.267583,
+    526.88575,
+    538.053772,
+    538.063971,
+    546.485943,
+    542.486127
+  ],
+  "limitations": [
+    "Native cache verifies source-image hash fields, not a new full raw-image rehash.",
+    "Teacher large checkpoint binaries were not rehashed; native cache metadata provenance remains bound.",
+    "No new predictions, patient confidence intervals, FP16 deployment, or T4 timing produced."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "path": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/dual768_timing_only.tar.gz",
+  "size_bytes": 266803659,
+  "sha256": "ae2703c82d5d704b4fe7ed5a6d2702c14b2cca2e14673c4365ee2f0097b5b7a4",
+  "expected_size_bytes": 266803659,
+  "expected_sha256": "ae2703c82d5d704b4fe7ed5a6d2702c14b2cca2e14673c4365ee2f0097b5b7a4",
+  "passed": true
+}

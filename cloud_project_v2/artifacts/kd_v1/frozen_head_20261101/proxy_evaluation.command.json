@@ -1,0 +1,25 @@
+{
+  "stage": "proxy_evaluation",
+  "started_hong_kong": "2026-11-01T21:08:15.761754+08:00",
+  "command": [
+    "bash",
+    "/home/featurize/work/cloud_project_v2/run_student_environment.sh",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/frozen_head_evaluate.py",
+    "--cache",
+    "/tmp/cloud_student_runs_20261030/frozen_head_20261101/cache",
+    "--plan",
+    "/home/featurize/work/cloud_project_v2/docs/FROZEN_HEAD_PLAN_20261101.json",
+    "--plan-sha256",
+    "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+    "--fits-root",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/fits",
+    "--output",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/frozen_head_20261101/proxy_evaluation"
+  ],
+  "container": "codex-frozen-proxy-evaluation-20261101",
+  "plan_sha256": "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+  "exit_code": 0,
+  "finished_hong_kong": "2026-11-01T21:12:40.314660+08:00",
+  "seconds": 264.54942449399823
+}

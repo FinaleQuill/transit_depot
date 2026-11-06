@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "artifact_type": "fixed_student_ensemble",
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "precision": "float16",
+  "batch_size": 1,
+  "image_size": 768,
+  "tta": "hflip2",
+  "ensemble": true,
+  "gates": null,
+  "decoder_candidate": null,
+  "members": [
+    {
+      "directory": "A",
+      "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "tta": "hflip2",
+      "config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+      "weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f"
+    },
+    {
+      "directory": "B_F2",
+      "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+      "tta": "hflip2",
+      "config_sha256": "f4ab17e0b29317e7b009738a963c1dacc211efd4cdd42646891151d25f1741cd",
+      "weights_sha256": "da15fc8a8d20309844b9e86ff0050fd350ece63ec2875704ab6ea179a5119ef5"
+    }
+  ],
+  "model_weights": [
+    [
+      0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "rule_name": "A_B_F2",
+  "selection_plan_sha256": "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "test_used_for_selection": false,
+  "formal_T4_certification": false,
+  "aggregation": "fixed image class probability fusion after member hflip2; original Study FP64 mean"
+}

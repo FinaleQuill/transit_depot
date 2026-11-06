@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-25T16:09:28.206674+08:00",
+  "scope": {
+    "pdf_pages": 6,
+    "qa_tab": "BB08J2",
+    "qa_block_end_row_zero_based": 139,
+    "qa_block_end_col_zero_based": 27,
+    "qa_public_page_title": "【人工智能挑战赛·常见问题参考】2026年第八届全国高校计算机能力挑战赛"
+  },
+  "explicit_pdf_requirements": [
+    "non-medical public pretrained visual backbone weights with a license allowing competition use and redistribution; NC and gated rejected",
+    "only organizer medical training data for supervised fine-tuning",
+    "validation may be merged into training only after model/checkpoint/hyperparameter/threshold decisions are frozen",
+    "test data cannot participate in training, pseudolabels, fitting, checkpoint or parameter selection",
+    "fixed inference with declared precision, final submission predictions consistent with cost.py/predict.py",
+    "official T4 end-to-end batch1 timing on100 images after5 warmups, three repeats, mean <=100ms",
+    "inference-called weights and necessary configuration total<=500MB",
+    "source model name, public weight URL, full license, upstream dataset/model card, pretrained weight SHA256 and reproducible final submission materials",
+    "appendix A materials deadline is provincial/regional submission deadline"
+  ],
+  "explicit_qa_reproducibility_notice": [
+    "根据大赛规则，区域赛/省赛阶段仅依据CSV文件的准确性进行排名。区域赛/省赛结束前，请所有参赛队伍选手提交训练模型，用于复现校验模型是否满足100ms的性能要求，并同步开展合规性与反作弊审查；如有必要，还需提交训练过程文档以复现结果。校验通过后确认晋级；若未达标，晋级名次将依次顺延。"
+  ],
+  "stronger_user_supplied_requirements": [
+    "persistent full terminal training log",
+    "fixed and recorded training seeds and reproducibility boundary",
+    "append-only per-epoch checkpoint timestamp and SHA256 ledger",
+    "archive exact source and dependency versions actually used"
+  ],
+  "distinction": "The stronger user-supplied items improve traceability and should be implemented under the user request; they were not found as separate explicit clauses in this PDF or the publicly returned QA tab. Absence in these retrieved sources does not prove no later organizer notice exists.",
+  "term_occurrences": {
+    "完整训练日志": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "训练日志": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "随机种子": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "固定种子": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "checkpoint 时间戳": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "时间戳": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "备查": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "逐轮": {
+      "pdf": 0,
+      "qa_extracted": 0
+    },
+    "哈希": {
+      "pdf": 4,
+      "qa_extracted": 0
+    }
+  },
+  "source_priority_note": "Some earlier QA entries allow external unlabeled medical/self-supervised pretraining, which conflicts with the more specific dated2026-10-23 PDF. Apply the restrictive PDF requirements rather than relying on older permissive QA.",
+  "current_training_compliance_limit": "This source audit alone does not certify current training or final deployment; final byte size, FP16 predictions, output coverage and official T4 timing remain to be tested after training."
+}

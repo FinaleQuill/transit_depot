@@ -1,0 +1,14 @@
+{
+  "time_hong_kong": "2026-10-30T19:01:21.500669+08:00",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "original_image_root": "/home/featurize/data/cxr_first",
+  "images": 2218,
+  "sha256_matches": 2218,
+  "missing": 0,
+  "sha256_mismatch": 0,
+  "bytes_hashed": 3676899103,
+  "elapsed_seconds": 36.25755610299893,
+  "complete": true,
+  "purpose": "Read-only byte integrity against frozen official manifest; no probability or label distribution analysis",
+  "training_uses_test": false
+}

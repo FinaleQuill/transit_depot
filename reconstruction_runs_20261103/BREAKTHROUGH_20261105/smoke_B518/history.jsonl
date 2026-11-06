@@ -1,0 +1,1 @@
+{"epoch": 1, "loss": 0.6258713831193745, "studies": 64, "images": 101, "seconds": 24.141054452993558, "attempted_updates": 2, "optimizer_updates": 2, "skipped_updates": 0, "macro_auc": null, "patient_equal_macro_auc": null, "best_macro_auc": null, "best_epoch": null, "stale_epochs": 1, "recorded_at": "2026-11-05T19:54:09.180736+08:00"}

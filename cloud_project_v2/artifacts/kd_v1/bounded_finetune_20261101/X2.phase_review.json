@@ -1,0 +1,27 @@
+{
+  "stage": "X2",
+  "reviewed_hong_kong": "2026-11-01T19:57:25.376049+08:00",
+  "valid_scores": {
+    "A": 0.8091159408519895,
+    "B": 0.8105695698808949,
+    "X1": 0.8057123012655584,
+    "X2": 0.8070055493099509,
+    "A_B_class1_B_baseline": 0.8168300303208815,
+    "X1_single": 0.8057123012655584,
+    "X2_single": 0.8070055493099509,
+    "X1_B_class1_B": 0.8171491901128627,
+    "A_X2_class1_X2": 0.8163326847828072,
+    "X1_X2_class1_X2": 0.8159722808814015,
+    "B_X2_equal": 0.809104796121415
+  },
+  "history_epoch_seconds": [
+    2823.4160388600003,
+    2645.8837931889993,
+    2618.747640212001,
+    2644.2798648320004
+  ],
+  "comparison_report": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/comparison_after_X2/comparison_report.json",
+  "test_used": false,
+  "decision_basis": "Fixed recipes and final epochs; no extension or new weight search based on intermediate valid.",
+  "limitations": "Reused official valid; paired intervals do not correct historical selection. Final timing and real T4 retest remain pending."
+}

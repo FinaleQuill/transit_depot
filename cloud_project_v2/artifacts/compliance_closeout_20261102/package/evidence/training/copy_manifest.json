@@ -1,0 +1,698 @@
+[
+  {
+    "source": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_collection.json",
+    "package_path": "evidence/teachers/teacher_collection.json",
+    "bytes": 1215,
+    "sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e"
+  },
+  {
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/teacher_run.json",
+    "package_path": "evidence/teachers/teacher_run_fold0.json",
+    "bytes": 563,
+    "sha256": "039d4fa4037d35d31e3ffb35465fbaabc92309536ae27da02f4c222530ac7f84"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/teacher_run.json",
+    "package_path": "evidence/teachers/teacher_run_fold1_4.json",
+    "bytes": 563,
+    "sha256": "e057265e92e1fe646b3acdccee4f0387aa66aeae1c400a9e5a46af9f4dc8ab66"
+  },
+  {
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/config.json",
+    "package_path": "evidence/teachers/fold_0/config.json",
+    "bytes": 955276,
+    "sha256": "4cd3f074f739fda8b5c941c858688351651e2ffbf4d945291707540c35798a3d"
+  },
+  {
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/history.jsonl",
+    "package_path": "evidence/teachers/fold_0/history.jsonl",
+    "bytes": 9727,
+    "sha256": "36d6ec477a9f13a142266daf586944d2f7ee8e7f1a9fb182e88040ba4f9f5941"
+  },
+  {
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/checkpoint_audit.jsonl",
+    "package_path": "evidence/teachers/fold_0/checkpoint_audit.jsonl",
+    "bytes": 20849,
+    "sha256": "5f33ccdabb4d3c4ad1cfba36afc84fa490a396f424d6a206feb68db2b94c67ad"
+  },
+  {
+    "source": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/status.json",
+    "package_path": "evidence/teachers/fold_0/status.json",
+    "bytes": 551,
+    "sha256": "f185cf4af6606d4a3010de47e5d460d2d26dda1d992b5e674a0e3af28ee249fe"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/config.json",
+    "package_path": "evidence/teachers/fold_1/config.json",
+    "bytes": 955282,
+    "sha256": "48f142df2bc9086ba5fc51b082534a7dd732985be148031fafff30b4e4a148ea"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/history.jsonl",
+    "package_path": "evidence/teachers/fold_1/history.jsonl",
+    "bytes": 9374,
+    "sha256": "cb3cbc6639153915a1a3337a96848b3c3648673cef212318bc6b3ecea4ab7a13"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/checkpoint_audit.jsonl",
+    "package_path": "evidence/teachers/fold_1/checkpoint_audit.jsonl",
+    "bytes": 27683,
+    "sha256": "70f447f48652956817a6f8dede81069bcf7e45c2d5c8907a88d0913834b26bb9"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/status.json",
+    "package_path": "evidence/teachers/fold_1/status.json",
+    "bytes": 400,
+    "sha256": "14124f5aa561fd781d33c8d55097aabee76b6f2a0dc1dc9a7c5847b805d7dad3"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/config.json",
+    "package_path": "evidence/teachers/fold_2/config.json",
+    "bytes": 955282,
+    "sha256": "ccc0f248a2d5fe6050bb9c2b0f5a815a3cbba0a43173ef783e69c4d536c4ab34"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/history.jsonl",
+    "package_path": "evidence/teachers/fold_2/history.jsonl",
+    "bytes": 9374,
+    "sha256": "5114718b40d1510ad293daeb7a2e7f676147141b6b045f190796622e670cb6d4"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/checkpoint_audit.jsonl",
+    "package_path": "evidence/teachers/fold_2/checkpoint_audit.jsonl",
+    "bytes": 27683,
+    "sha256": "ea0fa88f43a1122fd91c5bae4b4252bdf9509dc7aff77e7a4e9d5cb5fca2792f"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/status.json",
+    "package_path": "evidence/teachers/fold_2/status.json",
+    "bytes": 400,
+    "sha256": "2b1b3b6c59404655b216731bcb6738aca55091739de4bded3a2f5feb1ea2206f"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/config.json",
+    "package_path": "evidence/teachers/fold_3/config.json",
+    "bytes": 955357,
+    "sha256": "6781b5c59dfcaa45eab89e958738367822f337cd0cafc7497c0511ebcd513784"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/history.jsonl",
+    "package_path": "evidence/teachers/fold_3/history.jsonl",
+    "bytes": 9374,
+    "sha256": "25d33f44fdd50c339da679b5777d570d04b994a7fbc6657f8bba8f72c258dd41"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/checkpoint_audit.jsonl",
+    "package_path": "evidence/teachers/fold_3/checkpoint_audit.jsonl",
+    "bytes": 27683,
+    "sha256": "873703dbd4907f0ad0716eee2d843498c93e8ed04a2900f046ced892e6b12b44"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/status.json",
+    "package_path": "evidence/teachers/fold_3/status.json",
+    "bytes": 549,
+    "sha256": "dc5d7cc591397bc4d83abc3934ca168589bc37d2b8a2319f1a4c5d3885ac38de"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/config.json",
+    "package_path": "evidence/teachers/fold_4/config.json",
+    "bytes": 955282,
+    "sha256": "6f9026369ab38ae90f989abe07b65e66f24634f4a974790dcfb0ea615fcbde61"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/history.jsonl",
+    "package_path": "evidence/teachers/fold_4/history.jsonl",
+    "bytes": 9373,
+    "sha256": "a2f7253230f6c58b3663c340aa976c16ee19e564633b03e46e25050bf238cec7"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/checkpoint_audit.jsonl",
+    "package_path": "evidence/teachers/fold_4/checkpoint_audit.jsonl",
+    "bytes": 27683,
+    "sha256": "fd314927b81c7ef516cd88fcad3e20074037f3965433e59c475129bae83c8028"
+  },
+  {
+    "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/status.json",
+    "package_path": "evidence/teachers/fold_4/status.json",
+    "bytes": 549,
+    "sha256": "a6341815ff7f845f085fabbe64defe751f816a6d3f4689fb38adbfea936c4ce9"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/0/train_teacher.py",
+    "package_path": "evidence/teachers/fold0_source/train_teacher.py",
+    "bytes": 20172,
+    "sha256": "042563ca251c8eba5711e14edbbb41d021f6caeae858da65db3a4ac06166c036"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/0/run_teachers.py",
+    "package_path": "evidence/teachers/fold0_source/run_teachers.py",
+    "bytes": 9028,
+    "sha256": "470b34d53b52a296c6364d9f103ed2180b3fe6e821e7490c0740385d81c39b3f"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/0/manifest.json",
+    "package_path": "evidence/teachers/fold0_source/manifest.json",
+    "bytes": 10598,
+    "sha256": "b42b077fdb33da8824459dbb12073726a497109915da3f00accc8f9dbd844461"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/4/train_teacher.py",
+    "package_path": "evidence/teachers/fold1_4_source/train_teacher.py",
+    "bytes": 22005,
+    "sha256": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/4/run_teachers.py",
+    "package_path": "evidence/teachers/fold1_4_source/run_teachers.py",
+    "bytes": 9208,
+    "sha256": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/4/run_mixed_teachers.py",
+    "package_path": "evidence/teachers/fold1_4_source/run_mixed_teachers.py",
+    "bytes": 17361,
+    "sha256": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/collected/source_archives/4/source_manifest.json",
+    "package_path": "evidence/teachers/fold1_4_source/source_manifest.json",
+    "bytes": 6245,
+    "sha256": "63273f367c52d5ce74767ae14450cbc141ec8c5c00c6beab5d98057a43616579"
+  },
+  {
+    "source": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2/metadata.json",
+    "package_path": "evidence/teachers/oof_metadata.json",
+    "bytes": 5194000,
+    "sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py",
+    "package_path": "evidence/training/source_current/run_mixed_teachers.py",
+    "bytes": 17361,
+    "sha256": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/train_teacher.py",
+    "package_path": "evidence/training/source_current/train_teacher.py",
+    "bytes": 22005,
+    "sha256": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/extract_soft_labels_tta.py",
+    "package_path": "evidence/training/source_current/extract_soft_labels_tta.py",
+    "bytes": 11527,
+    "sha256": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/distill_tta_data.py",
+    "package_path": "evidence/training/source_current/distill_tta_data.py",
+    "bytes": 7717,
+    "sha256": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/train_distill.py",
+    "package_path": "evidence/training/source_current/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/teacher_collection.py",
+    "package_path": "evidence/training/source_current/teacher_collection.py",
+    "bytes": 7682,
+    "sha256": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/cv_splits.py",
+    "package_path": "evidence/training/source_current/cv_splits.py",
+    "bytes": 14950,
+    "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/kd_common.py",
+    "package_path": "evidence/training/source_current/kd_common.py",
+    "bytes": 6721,
+    "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/run_bounded_pipeline.py",
+    "package_path": "evidence/training/source_current/run_bounded_pipeline.py",
+    "bytes": 10818,
+    "sha256": "e0aa888924c07a7bae02cf1aba9b5404fa48ee9a41f138d969d7560bdef65d06"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/tight_crop_ab_earlystop_training.py",
+    "package_path": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+    "bytes": 18869,
+    "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/study_student.py",
+    "package_path": "evidence/training/source_current/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/tight_crop_ab_training.py",
+    "package_path": "evidence/training/source_current/tight_crop_ab_training.py",
+    "bytes": 11798,
+    "sha256": "c667c7dfb28b66c914be0b9cc011cba2b2e34f812c0e6c7abb0f2cae2d2b5d77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/config.json",
+    "package_path": "evidence/training/student_A/config.json",
+    "bytes": 2590,
+    "sha256": "604f696b050cd9a8a6b5bfc1b41cd4ac65359b83e6041fd2e98ffb991a5b1cc7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/history.jsonl",
+    "package_path": "evidence/training/student_A/history.jsonl",
+    "bytes": 20621,
+    "sha256": "df367e7c309819106db8b087798bc33f17512408fe13196e28a897d4e86dc97f"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/student_A/checkpoint_audit.jsonl",
+    "bytes": 54476,
+    "sha256": "391a55369eb6a9552a9681d7e8f2fadf760776319b5181f2fa8e3364610ea0ee"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/evidence/console_20261030T052954Z_dc99f91e.log",
+    "package_path": "evidence/training/student_A/console_20261030T052954Z_dc99f91e.log",
+    "bytes": 32675,
+    "sha256": "72f2a7b1aa84ce86b2c6ee5ee4d8eb2f380dad9e81f71312472c873463137854"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/evidence/source_20261030T052954Z_dc99f91e/source_manifest.json",
+    "package_path": "evidence/training/student_A/source/source_manifest.json",
+    "bytes": 10509,
+    "sha256": "cd1b7db69eaa6212f54240d3a5f2d483e04eca46484ddca53d50b56fa68c6561"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/evidence/source_20261030T052954Z_dc99f91e/train_distill.py",
+    "package_path": "evidence/training/student_A/source/train_distill.py",
+    "bytes": 47996,
+    "sha256": "b77a2d435643e334f64a9cb9c5fc62b59cb7e3c622af54b339d3567cad65a5ba"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/A/metadata/evidence/source_20261030T052954Z_dc99f91e/study_student.py",
+    "package_path": "evidence/training/student_A/source/study_student.py",
+    "bytes": 30329,
+    "sha256": "fdc0496236e164ae6322c9f7ab612ac1bb68a6399943431fda9f262dfc55a116"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/config.json",
+    "package_path": "evidence/training/student_B/config.json",
+    "bytes": 4797,
+    "sha256": "bba2171dd1c60ef04e09a09a1a58d556960447448f78177ad3b117494346fe15"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/history.jsonl",
+    "package_path": "evidence/training/student_B/history.jsonl",
+    "bytes": 23263,
+    "sha256": "5ba598709e097a16eff0e1a00a72972080d2d4c5200a964d22fb653ab97eda82"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/student_B/checkpoint_audit.jsonl",
+    "bytes": 62420,
+    "sha256": "af3c4f4103929957deccefe7c5e4e5e9c9e9dd6c7328bb97ddf27812d6095e42"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/evidence/console_20261030T103505Z_a5480d3c.log",
+    "package_path": "evidence/training/student_B/console_20261030T103505Z_a5480d3c.log",
+    "bytes": 228570,
+    "sha256": "3f806b70a528332a545d11ce20ebb67debe810a643a997e5c1dbc3ad196ab74c"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/evidence/source_20261030T103505Z_a5480d3c/source_manifest.json",
+    "package_path": "evidence/training/student_B/source/source_manifest.json",
+    "bytes": 10927,
+    "sha256": "bbaf31a128e7760c31507d1a79108d95c9936dcafdf49da1c6ed35023a727850"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/evidence/source_20261030T103505Z_a5480d3c/train_distill.py",
+    "package_path": "evidence/training/student_B/source/train_distill.py",
+    "bytes": 47996,
+    "sha256": "b77a2d435643e334f64a9cb9c5fc62b59cb7e3c622af54b339d3567cad65a5ba"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/models/B/metadata/evidence/source_20261030T103505Z_a5480d3c/study_student.py",
+    "package_path": "evidence/training/student_B/source/study_student.py",
+    "bytes": 30895,
+    "sha256": "9ffc40fb4bedf25fb740abbb5890d00f7531aac5e58da5e83242ddeb47dda17f"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/config.json",
+    "package_path": "evidence/training/X1/config.json",
+    "bytes": 10289,
+    "sha256": "5407ac608876a66dbd3db6a6de7f7a0fcb531baa171cb58343f4044843f8b3d6"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/history.jsonl",
+    "package_path": "evidence/training/X1/history.jsonl",
+    "bytes": 6443,
+    "sha256": "ede458d70da41874c845d20fd8222317faaf0ece3809b209396f867921ab6dad"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/X1/checkpoint_audit.jsonl",
+    "bytes": 13103,
+    "sha256": "dc2bbf0ffc4b2c225dc8af0928d2d539b161e5b9cb3eb5f5d0d83ee32a20840d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/evidence/console_20261101T065749Z_f2a2138c.log",
+    "package_path": "evidence/training/X1/console_20261101T065749Z_f2a2138c.log",
+    "bytes": 68242,
+    "sha256": "5480d26f6c42d2f890a453c2fcb5526fb58e57dbab4abed669c9e484271aab46"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/evidence/source_20261101T065749Z_f2a2138c/source_manifest.json",
+    "package_path": "evidence/training/X1/source/source_manifest.json",
+    "bytes": 15256,
+    "sha256": "8c8a104b4eeab998187ca3ae7f226fcff4566ac69192b4737f4d772c1737e108"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/evidence/source_20261101T065749Z_f2a2138c/train_distill.py",
+    "package_path": "evidence/training/X1/source/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/evidence/source_20261101T065749Z_f2a2138c/study_student.py",
+    "package_path": "evidence/training/X1/source/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/training/X1_packed/evidence/source_20261101T065749Z_f2a2138c/run_bounded_finetune.py",
+    "package_path": "evidence/training/X1/source/run_bounded_finetune.py",
+    "bytes": 11804,
+    "sha256": "fa7ee4033cbe5978f0d5876e2230f9389281772cf9d426253872ea5698feb78a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/config.json",
+    "package_path": "evidence/training/crop_A_tiny/config.json",
+    "bytes": 11599,
+    "sha256": "1593b13c3badbc59280a08df0d66d7906196cf63e5603a39cf38309342be47ab"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/history.jsonl",
+    "package_path": "evidence/training/crop_A_tiny/history.jsonl",
+    "bytes": 21083,
+    "sha256": "58336b3789ff8f86a14e8e54f544b402e9d62dd41b000b190654381cc56f8b27"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/crop_A_tiny/checkpoint_audit.jsonl",
+    "bytes": 29608,
+    "sha256": "6d0fc1b5d5ef2fdc82fd75b60fd6f8293482b5828a4ae067b002ff448c9b9702"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/console_20261101T195155Z_4bc274c1.log",
+    "package_path": "evidence/training/crop_A_tiny/console_20261101T195155Z_4bc274c1.log",
+    "bytes": 102125,
+    "sha256": "4319ae35eb1d1cd693b1ca9687cc10ddf36e917c658449c8987630e60590ad77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/source_manifest.json",
+    "package_path": "evidence/training/crop_A_tiny/source/source_manifest.json",
+    "bytes": 21282,
+    "sha256": "0d2fcde08fe5ebc21f2547c5c79ed445a93a133c77b9b072630264d716e56163"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/train_distill.py",
+    "package_path": "evidence/training/crop_A_tiny/source/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/study_student.py",
+    "package_path": "evidence/training/crop_A_tiny/source/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/tight_crop_ab_training.py",
+    "package_path": "evidence/training/crop_A_tiny/source/tight_crop_ab_training.py",
+    "bytes": 11798,
+    "sha256": "c667c7dfb28b66c914be0b9cc011cba2b2e34f812c0e6c7abb0f2cae2d2b5d77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/tight_crop_ab_earlystop_training.py",
+    "package_path": "evidence/training/crop_A_tiny/source/tight_crop_ab_earlystop_training.py",
+    "bytes": 18869,
+    "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_tiny/evidence/source_20261101T195155Z_4bc274c1/run_bounded_finetune.py",
+    "package_path": "evidence/training/crop_A_tiny/source/run_bounded_finetune.py",
+    "bytes": 11804,
+    "sha256": "fa7ee4033cbe5978f0d5876e2230f9389281772cf9d426253872ea5698feb78a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/config.json",
+    "package_path": "evidence/training/crop_A_base/config.json",
+    "bytes": 12151,
+    "sha256": "6288587d8404d6b11992f1681b8cb110f9e97da5b36a81f45cdcbf6f3eca3487"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/history.jsonl",
+    "package_path": "evidence/training/crop_A_base/history.jsonl",
+    "bytes": 18010,
+    "sha256": "956e284ac47e9f675a2b11e0660f22a16691ac72d6b270ed85355c904e0351be"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/crop_A_base/checkpoint_audit.jsonl",
+    "bytes": 25145,
+    "sha256": "c18c06d6f4af040443b603f3630eda813671284545c26f58683c34f62a40e59b"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/console_20261101T221700Z_64e06eeb.log",
+    "package_path": "evidence/training/crop_A_base/console_20261101T221700Z_64e06eeb.log",
+    "bytes": 102125,
+    "sha256": "02fd2342d76fab2924812b10eb826ff67d737afbc3346974fcbd84726a26580f"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/source_manifest.json",
+    "package_path": "evidence/training/crop_A_base/source/source_manifest.json",
+    "bytes": 21282,
+    "sha256": "07781593d8555ff3a3b9300032fc11d6099ce5994d2a98505cfcc10cb1ba5cf1"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/train_distill.py",
+    "package_path": "evidence/training/crop_A_base/source/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/study_student.py",
+    "package_path": "evidence/training/crop_A_base/source/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/tight_crop_ab_training.py",
+    "package_path": "evidence/training/crop_A_base/source/tight_crop_ab_training.py",
+    "bytes": 11798,
+    "sha256": "c667c7dfb28b66c914be0b9cc011cba2b2e34f812c0e6c7abb0f2cae2d2b5d77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/tight_crop_ab_earlystop_training.py",
+    "package_path": "evidence/training/crop_A_base/source/tight_crop_ab_earlystop_training.py",
+    "bytes": 18869,
+    "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/A_base/evidence/source_20261101T221700Z_64e06eeb/run_bounded_finetune.py",
+    "package_path": "evidence/training/crop_A_base/source/run_bounded_finetune.py",
+    "bytes": 11804,
+    "sha256": "fa7ee4033cbe5978f0d5876e2230f9389281772cf9d426253872ea5698feb78a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/config.json",
+    "package_path": "evidence/training/crop_B_tiny/config.json",
+    "bytes": 11711,
+    "sha256": "4c6885ffc535ec8e9ddb994dd4d60e246a4c16bbcff9857a810aa48c689d0a4a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/history.jsonl",
+    "package_path": "evidence/training/crop_B_tiny/history.jsonl",
+    "bytes": 20991,
+    "sha256": "85fc1026c0e3406b2b849641b0305605a2778f9b02db31917e9d5d151173a64d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/crop_B_tiny/checkpoint_audit.jsonl",
+    "bytes": 32338,
+    "sha256": "ab6740982f57f94734caaf43876e67e58b1e7bcd6e148edf4283a350da0c022a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/console_20261102T024037Z_61c80be4.log",
+    "package_path": "evidence/training/crop_B_tiny/console_20261102T024037Z_61c80be4.log",
+    "bytes": 119065,
+    "sha256": "4c57cf53fabff0fe9b034ecef076cb3ff7ee31fc12fde07bed2a0b99aaf845ae"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/source_manifest.json",
+    "package_path": "evidence/training/crop_B_tiny/source/source_manifest.json",
+    "bytes": 21282,
+    "sha256": "0e7887c1cec74672d466dfbb7e81d5e24d9319612c803f49453b40ede7e6a63d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/train_distill.py",
+    "package_path": "evidence/training/crop_B_tiny/source/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/study_student.py",
+    "package_path": "evidence/training/crop_B_tiny/source/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/tight_crop_ab_training.py",
+    "package_path": "evidence/training/crop_B_tiny/source/tight_crop_ab_training.py",
+    "bytes": 11798,
+    "sha256": "c667c7dfb28b66c914be0b9cc011cba2b2e34f812c0e6c7abb0f2cae2d2b5d77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/tight_crop_ab_earlystop_training.py",
+    "package_path": "evidence/training/crop_B_tiny/source/tight_crop_ab_earlystop_training.py",
+    "bytes": 18869,
+    "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_tiny/evidence/source_20261102T024037Z_61c80be4/run_bounded_finetune.py",
+    "package_path": "evidence/training/crop_B_tiny/source/run_bounded_finetune.py",
+    "bytes": 11804,
+    "sha256": "fa7ee4033cbe5978f0d5876e2230f9389281772cf9d426253872ea5698feb78a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/config.json",
+    "package_path": "evidence/training/crop_B_base/config.json",
+    "bytes": 12175,
+    "sha256": "76bbe5d58703a06a2d3dd028a4f13e2e8c7fa97be4d2c5321bc7819f1e225eb8"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/history.jsonl",
+    "package_path": "evidence/training/crop_B_base/history.jsonl",
+    "bytes": 8998,
+    "sha256": "765d1ec2ceaf5b347805561e57375dec54488a80130b691a885f8b98d686ee77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/checkpoint_audit.jsonl",
+    "package_path": "evidence/training/crop_B_base/checkpoint_audit.jsonl",
+    "bytes": 14342,
+    "sha256": "86c71f8ea9e288321d64c5d4af21c352327b2503ac00a2a2e14c4be1786dd597"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/console_20261102T055123Z_db7ec019.log",
+    "package_path": "evidence/training/crop_B_base/console_20261102T055123Z_db7ec019.log",
+    "bytes": 51297,
+    "sha256": "d5a74794e2fdca91140b0602d5bc8df74db2c2330b67e8aa82726712471f5985"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/source_manifest.json",
+    "package_path": "evidence/training/crop_B_base/source/source_manifest.json",
+    "bytes": 21923,
+    "sha256": "9be1f3bbfa8df1919016c234b483e2759a7288e178be56f4743c864b9967317a"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/train_distill.py",
+    "package_path": "evidence/training/crop_B_base/source/train_distill.py",
+    "bytes": 56582,
+    "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/study_student.py",
+    "package_path": "evidence/training/crop_B_base/source/study_student.py",
+    "bytes": 33958,
+    "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/tight_crop_ab_training.py",
+    "package_path": "evidence/training/crop_B_base/source/tight_crop_ab_training.py",
+    "bytes": 11798,
+    "sha256": "c667c7dfb28b66c914be0b9cc011cba2b2e34f812c0e6c7abb0f2cae2d2b5d77"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/tight_crop_ab_earlystop_training.py",
+    "package_path": "evidence/training/crop_B_base/source/tight_crop_ab_earlystop_training.py",
+    "bytes": 18869,
+    "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/runs/B_base/evidence/source_20261102T055123Z_db7ec019/run_bounded_finetune.py",
+    "package_path": "evidence/training/crop_B_base/source/run_bounded_finetune.py",
+    "bytes": 11804,
+    "sha256": "fa7ee4033cbe5978f0d5876e2230f9389281772cf9d426253872ea5698feb78a"
+  },
+  {
+    "source": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/config.json",
+    "package_path": "evidence/weights/A_config.json",
+    "bytes": 5228097,
+    "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+  },
+  {
+    "source": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B/config.json",
+    "package_path": "evidence/weights/B_config.json",
+    "bytes": 5228541,
+    "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/models/X1/config.json",
+    "package_path": "evidence/weights/X1_config.json",
+    "bytes": 5233693,
+    "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode/config.json",
+    "package_path": "evidence/weights/045_config.json",
+    "bytes": 9517,
+    "sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/scores/A_tiny/export/config.json",
+    "package_path": "evidence/weights/crop_A_tiny_config.json",
+    "bytes": 1020,
+    "sha256": "75c21152530f4e83663b87f3945ccd5d2df1f83929314a1f3b8e552e16423520"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/scores/A_base/export/config.json",
+    "package_path": "evidence/weights/crop_A_base_config.json",
+    "bytes": 1021,
+    "sha256": "2afd48c332d25e57f0e742b1428100a7cd2233d3944efbb790ebb67bd4c34fb7"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/scores/B_tiny/export/config.json",
+    "package_path": "evidence/weights/crop_B_tiny_config.json",
+    "bytes": 1020,
+    "sha256": "b72f589fc5def8b3bd5f2dfea3d8e69d0a140b80ff26646f55af4fef52b61964"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/scores/B_base/export/config.json",
+    "package_path": "evidence/weights/crop_B_base_config.json",
+    "bytes": 1021,
+    "sha256": "0c950b6c16a2cba2684941d45b9e6ea9dfb584c87b4a2f626d4e92cfdcbc5d11"
+  },
+  {
+    "source": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/execution_receipt.json",
+    "package_path": "evidence/weights/041_execution_receipt.json",
+    "bytes": 5220,
+    "sha256": "86dc27eb9c5d98c389cbcda68a8929facdde34b118212f18c31281c38f11a3bc"
+  },
+  {
+    "source": "/home/featurize/work/deliveries/043_base768_B_submission_20261031/B_export_restoration.json",
+    "package_path": "evidence/weights/043_export_restoration.json",
+    "bytes": 807,
+    "sha256": "113847c4bd3284088f5538ec26485520153e2480702633452465b96a4b960bef"
+  },
+  {
+    "source": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/evaluations/X1/final_export_binding.json",
+    "package_path": "evidence/weights/X1_final_export_binding.json",
+    "bytes": 447,
+    "sha256": "476bd294ab0946c3181036914131c2e84411da66dc3a351a72483d78b9b86507"
+  }
+]

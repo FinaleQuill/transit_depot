@@ -1,0 +1,68 @@
+test_duplicates_test_records_and_conflicting_study_labels_fail (tests.test_study_student.CompleteStudyDataTests.test_duplicates_test_records_and_conflicting_study_labels_fail) ... ok
+test_noncontiguous_views_are_complete_and_preserve_first_seen_study_order (tests.test_study_student.CompleteStudyDataTests.test_noncontiguous_views_are_complete_and_preserve_first_seen_study_order) ... ok
+test_real_dataloader_default_conversion_preserves_all_views_per_study (tests.test_study_student.CompleteStudyDataTests.test_real_dataloader_default_conversion_preserves_all_views_per_study) ... ok
+test_study_config_is_base_and_cannot_silently_change_batch_semantics (tests.test_study_student.CompleteStudyDataTests.test_study_config_is_base_and_cannot_silently_change_batch_semantics) ... ok
+test_tail_window_uses_actual_study_count_and_unit_total_weight (tests.test_study_student.CompleteStudyDataTests.test_tail_window_uses_actual_study_count_and_unit_total_weight) ... ok
+test_aggregation_happens_before_bce_and_is_not_logit_mean (tests.test_study_student.ProbabilityMeanLossTests.test_aggregation_happens_before_bce_and_is_not_logit_mean) ... ok
+test_conflicting_labels_nonbinary_labels_and_empty_views_are_rejected (tests.test_study_student.ProbabilityMeanLossTests.test_conflicting_labels_nonbinary_labels_and_empty_views_are_rejected) ... ok
+test_extreme_logits_have_finite_loss_and_nonzero_opposite_label_gradients (tests.test_study_student.ProbabilityMeanLossTests.test_extreme_logits_have_finite_loss_and_nonzero_opposite_label_gradients) ... ok
+test_gradient_matches_analytic_derivative_through_probability_mean (tests.test_study_student.ProbabilityMeanLossTests.test_gradient_matches_analytic_derivative_through_probability_mean) ... ok
+test_kd_aligns_each_raw_teacher_view_then_mean_probabilities_and_images (tests.test_study_student.ProbabilityMeanLossTests.test_kd_aligns_each_raw_teacher_view_then_mean_probabilities_and_images) ... ok
+test_single_view_matches_original_weighted_image_bce (tests.test_study_student.ProbabilityMeanLossTests.test_single_view_matches_original_weighted_image_bce) ... ok
+test_weighted_bce_matches_independent_float64_probability_formula (tests.test_study_student.ProbabilityMeanLossTests.test_weighted_bce_matches_independent_float64_probability_formula) ... ok
+test_preview_never_opens_images_or_constructs_model_or_queries_cuda (tests.test_study_student.StudyContinuationTests.test_preview_never_opens_images_or_constructs_model_or_queries_cuda) ... ok
+test_resume_rejects_corrupt_auc_and_progress_counters (tests.test_study_student.StudyContinuationTests.test_resume_rejects_corrupt_auc_and_progress_counters) ... ok
+test_resume_requires_complete_states_and_unchanged_protocol (tests.test_study_student.StudyContinuationTests.test_resume_requires_complete_states_and_unchanged_protocol) ... ok
+test_epoch_keeps_all_views_and_steps_once_per_full_or_tail_study_window (tests.test_study_student.StudyEpochTests.test_epoch_keeps_all_views_and_steps_once_per_full_or_tail_study_window) ... ok
+test_epoch_rejects_incomplete_study_before_silently_training_partial_views (tests.test_study_student.StudyEpochTests.test_epoch_rejects_incomplete_study_before_silently_training_partial_views) ... ok
+test_first_best_is_a_complete_resume_source (tests.test_kd_student.ResumeTests.test_first_best_is_a_complete_resume_source) ... ok
+test_new_best_commit_is_promoted_after_interruption (tests.test_kd_student.ResumeTests.test_new_best_commit_is_promoted_after_interruption) ... ok
+test_normal_resume_retains_last (tests.test_kd_student.ResumeTests.test_normal_resume_retains_last) ... ok
+test_progress_and_missing_best_bindings_are_rejected (tests.test_kd_student.ResumeTests.test_progress_and_missing_best_bindings_are_rejected) ... ok
+test_nc_and_unpinned_sources_rejected (tests.test_kd_student.SourceTests.test_nc_and_unpinned_sources_rejected) ... ok
+test_valid_provenance_and_tampering (tests.test_kd_student.SourceTests.test_valid_provenance_and_tampering) ... ok
+test_alpha_warmup_and_no_kd_baseline (tests.test_kd_student.StudentMathTests.test_alpha_warmup_and_no_kd_baseline) ... ok
+test_bad_labels_weights_temperature_and_shape_rejected (tests.test_kd_student.StudentMathTests.test_bad_labels_weights_temperature_and_shape_rejected) ... ok
+test_extreme_logits_remain_finite (tests.test_kd_student.StudentMathTests.test_extreme_logits_remain_finite) ... ok
+test_identical_scores_zero_kl_even_with_many_simultaneous_positives (tests.test_kd_student.StudentMathTests.test_identical_scores_zero_kl_even_with_many_simultaneous_positives) ... ok
+test_independent_bernoulli_kl_matches_scalar_reference (tests.test_kd_student.StudentMathTests.test_independent_bernoulli_kl_matches_scalar_reference) ... ok
+test_student_preprocessing_is_fixed_512 (tests.test_kd_student.StudentMathTests.test_student_preprocessing_is_fixed_512) ... ok
+test_weighted_logit_alignment_uses_both_teacher_and_student_prior (tests.test_kd_student.StudentMathTests.test_weighted_logit_alignment_uses_both_teacher_and_student_prior) ... ok
+test_kd_student_tta (unittest.loader._FailedTest.test_kd_student_tta) ... ERROR
+test_atomic_full_backup_and_minimal_snapshots (tests.test_student_checkpoint_backup.BackupTests.test_atomic_full_backup_and_minimal_snapshots) ... ok
+test_copy_failure_does_not_replace_old_target (tests.test_student_checkpoint_backup.BackupTests.test_copy_failure_does_not_replace_old_target) ... ok
+test_disk_refusal_preserves_old_snapshot (tests.test_student_checkpoint_backup.BackupTests.test_disk_refusal_preserves_old_snapshot) ... ok
+test_final_metadata_refresh_never_reads_weights (tests.test_student_checkpoint_backup.BackupTests.test_final_metadata_refresh_never_reads_weights) ... ok
+test_hash_mismatch_preserves_previous_backups (tests.test_student_checkpoint_backup.BackupTests.test_hash_mismatch_preserves_previous_backups) ... ok
+test_metadata_budget_is_shared_across_runs (tests.test_student_checkpoint_backup.BackupTests.test_metadata_budget_is_shared_across_runs) ... ok
+test_refresh_without_receipt_retries (tests.test_student_checkpoint_backup.BackupTests.test_refresh_without_receipt_retries) ... ok
+test_repeat_is_no_op (tests.test_student_checkpoint_backup.BackupTests.test_repeat_is_no_op) ... ok
+test_source_change_during_copy_preserves_target (tests.test_student_checkpoint_backup.BackupTests.test_source_change_during_copy_preserves_target) ... ok
+test_cache_guard_detects_manifest_and_prediction_tampering (tests.test_student_experiment_evaluation.EvaluationTests.test_cache_guard_detects_manifest_and_prediction_tampering) ... ok
+test_exact_study_coverage_guard_and_slices (tests.test_student_experiment_evaluation.EvaluationTests.test_exact_study_coverage_guard_and_slices) ... ok
+test_history_reports_class1_late_decline_instead_of_assuming_repair (tests.test_student_experiment_evaluation.EvaluationTests.test_history_reports_class1_late_decline_instead_of_assuming_repair) ... ok
+test_labels_reject_test_and_inconsistent_study (tests.test_student_experiment_evaluation.EvaluationTests.test_labels_reject_test_and_inconsistent_study) ... ok
+test_report_highlights_target_classes_and_latency_warning (tests.test_student_experiment_evaluation.EvaluationTests.test_report_highlights_target_classes_and_latency_warning) ... ok
+test_study_probability_average_and_exact_image_csv_coverage (tests.test_student_experiment_evaluation.EvaluationTests.test_study_probability_average_and_exact_image_csv_coverage) ... ok
+test_exact_resume_and_ema_initialization_are_mutually_exclusive (tests.test_student_ema_warm_start.StudentEmaWarmStartTests.test_exact_resume_and_ema_initialization_are_mutually_exclusive) ... ok
+test_repeated_resume_without_original_snapshot_retains_lineage (tests.test_student_ema_warm_start.StudentEmaWarmStartTests.test_repeated_resume_without_original_snapshot_retains_lineage) ... ok
+test_strict_load_retains_values_and_rejects_partial_or_wrong_shapes (tests.test_student_ema_warm_start.StudentEmaWarmStartTests.test_strict_load_retains_values_and_rejects_partial_or_wrong_shapes) ... ok
+test_tiny_study_recipe_has_explicit_registered_learning_rates_and_views (tests.test_student_ema_warm_start.StudentEmaWarmStartTests.test_tiny_study_recipe_has_explicit_registered_learning_rates_and_views) ... ok
+
+======================================================================
+ERROR: test_kd_student_tta (unittest.loader._FailedTest.test_kd_student_tta)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_kd_student_tta
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/tests/test_kd_student_tta.py", line 16, in <module>
+    import test_kd_student as legacy_student_tests
+ModuleNotFoundError: No module named 'test_kd_student'
+
+
+----------------------------------------------------------------------
+Ran 50 tests in 3.273s
+
+FAILED (errors=1)

@@ -1,0 +1,27 @@
+{
+  "state": "completed",
+  "stage": "done",
+  "pid": 83862,
+  "started_utc": "2026-11-02T07:54:02.885214+00:00",
+  "child_pid": null,
+  "gpu_pids": [],
+  "error": null,
+  "test_predicted": false,
+  "updated_utc": "2026-11-02T08:40:04.181102+00:00",
+  "B_base": {
+    "user_stop": true,
+    "training_controller_state": "failed",
+    "training_controller_error": "RuntimeError: B_base has STOP marker; refusing automatic retry",
+    "postreview_controller_state": "blocked",
+    "B_base_state": "paused",
+    "stop_path": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/B_base/STOP",
+    "selection_basis": "best.pt among completed, validated epochs",
+    "no_new_selection_logic": true,
+    "completed_epochs": 3,
+    "last_sha256": "a8d6fcea5cada478138f029475228a6ec902769aaab9f24cb236d67ac35d913f",
+    "best_sha256": "c01a4c3f96a94a65025a9a90190ab915951e00d38beea5d22183b2cd0b6c00d9",
+    "best_epoch": 1,
+    "best_auc": 0.7364903493721539
+  },
+  "completed_utc": "2026-11-02T08:40:04.181070+00:00"
+}

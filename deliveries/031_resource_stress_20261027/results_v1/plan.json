@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-27T12:40:17.398352+00:00",
+  "model_dirs": {
+    "kd512": "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2",
+    "kd768": "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2",
+    "equal512_768": "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2"
+  },
+  "inputs": "/home/featurize/work/deliveries/031_resource_stress_20261027/inputs",
+  "output": "/home/featurize/work/deliveries/031_resource_stress_20261027/results_v1",
+  "percentages": [
+    100,
+    30,
+    20,
+    10
+  ],
+  "memory_allocator_limit_gib": 16,
+  "actual_T4_test": false,
+  "hardware_clock_or_power_changes": false,
+  "executed": true,
+  "limitation": "MPS quotas do not reproduce T4 architecture, bandwidth, kernels or latency",
+  "source_hashes": {
+    "/home/featurize/work/cloud_project_v2/run_resource_stress.py": "cdd7f27aad7aa3f46177e4ac47ef872655aca712bf9f123491274765b768056c",
+    "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "/home/featurize/work/cloud_project_v2/prepare_latency_inputs.py": "8c97b7e45d5e5cf08d299c045a528b0c78c2d32bff328935ba3610e28fc91698",
+    "/home/featurize/work/cloud_project_v2/cost.py": "c7f4f55d1d0a0dcbfeebfeb0ddaf827e08a1fc86f6cdffb5665b0a5b51f5b5ca",
+    "/home/featurize/work/cloud_project_v2/predict.py": "50a92fa928a328c61cc550ce633b8f569338504f5aa4c3d4158fbf72f2021d42",
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": "fd70c10e83a7fc0daa01782d62d0c941f0b2f06b87e59c0b2af89d9a22395849",
+    "/home/featurize/work/cloud_project_v2/model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0"
+  },
+  "inference_input_hashes": {
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/student_fp16.pt": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+    "/home/featurize/work/deliveries/027_tiny512_kd_seed43/fp16_hflip2/config.json": "33aa58fa6a0247942b033767704b03b2026ff4e71b5f16c2c55b71a10ef7aede",
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/student_fp16.pt": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "/home/featurize/work/deliveries/029_tiny768_kd_seed43/fp16_hflip2/config.json": "078cd8d0e59048d86cccbc64af870f0e8892a9d84b9da747798e08245529f164",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_00_fp16.pt": "0f97bfe548835819393bd1d1c0195e8b5ef240c0a82b838e8d9b48d7194c95a5",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/student_01_fp16.pt": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+    "/home/featurize/work/deliveries/031_resource_stress_20261027/models/kd512_kd768_equal_hflip2/config.json": "e7a5f16c4ccae10de9b321d9c90b3ad8f218e04eb1b35136f65e65315afca71a"
+  },
+  "selection_sha256": "da3919fbaaf563346aede282453248536ef5b982a93e08c6fb0c2ccaa7a3c0e3",
+  "cases": [],
+  "calibration": []
+}

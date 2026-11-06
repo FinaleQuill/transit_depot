@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-11-03T13:48:28.468430+00:00",
+  "input_paths": {
+    "predictions.npz": "artifacts/resolution_explore_20261103/evaluations/res768_best/predictions.npz",
+    "metadata.json": "artifacts/resolution_explore_20261103/evaluations/res768_best/metadata.json",
+    "report.json": "artifacts/resolution_explore_20261103/evaluations/res768_best/report.json"
+  },
+  "input_sha256": {
+    "predictions.npz": "bed0ed1153edf8920d92a979c3dcf52f680ec02e1f63d9ae05810dc01a2e23bb",
+    "metadata.json": "471f69d5afcda794bb17a9b5df7a9533a942126fc3634fbbc33c489bca1672db",
+    "report.json": "955da15ff220e6969d53414c819b6c1ca3263441c185de3222aa260318737fab"
+  },
+  "preregistration_sha256": "67a9d076b2d6a7ad5fa8a56eaf50a7ba218c339617242bd2e302a35e69e71388",
+  "replay_script_sha256": "fb6fd8702a95f7f9b1cb5e6c4fc5f22f988130858477a8b001e00107a69f1ffd"
+}

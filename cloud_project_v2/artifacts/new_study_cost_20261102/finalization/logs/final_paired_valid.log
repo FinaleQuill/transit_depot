@@ -1,0 +1,2 @@
+
+[2026-11-02T08:13:49.841331+00:00] command: bash /home/featurize/work/cloud_project_v2/run_tight_crop_environment.sh tight_crop_ab_earlystop_evaluate.py --action final --selection /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/selection.json --output /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/evaluation

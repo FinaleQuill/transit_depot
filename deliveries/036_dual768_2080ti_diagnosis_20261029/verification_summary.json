@@ -1,0 +1,220 @@
+{
+  "checked_at_utc": "2026-10-29T14:20:56.543741+00:00",
+  "prediction_files": [
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_nfs_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/benchmark_local_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true,
+      "byte_equal_previous_environment_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnostic_nfs_v1/gpu_path.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnostic_nfs_v1/gpu_path.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnostic_local_v1/gpu_path.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "rows": 530,
+      "byte_equal_current_nfs_round1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/036_dual768_2080ti_diagnosis_20261029/diagnostic_local_v1/gpu_path.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "rows": 1000,
+      "byte_equal_current_nfs_round1": true
+    }
+  ],
+  "all_current_outputs_byte_identical": true,
+  "protected_source_unchanged": {
+    "/home/featurize/work/cloud_project_v2/deploy_kd.py": true,
+    "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py": true,
+    "/home/featurize/work/cloud_project_v2/cost.py": true,
+    "/home/featurize/work/cloud_project_v2/predict.py": true,
+    "/home/featurize/work/cloud_project_v2/run_in_competition.sh": true,
+    "/home/featurize/work/cloud_project_v2/requirements_inference.txt": true
+  },
+  "033_protected_files": [
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/config.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_00_fp16.pt",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_01_fp16.pt",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/valid_fp16_hflip2/valid_predictions.csv",
+      "unchanged": true
+    }
+  ],
+  "benchmarks": {
+    "benchmark_nfs_v1": {
+      "mean_ms": 156.40944966999768,
+      "round_mean_ms": [
+        223.3075306499995,
+        126.29974161999371,
+        119.62107673999981
+      ],
+      "median_ms": 128.0826255000041,
+      "p95_ms": 255.86522189996685,
+      "max_ms": 1090.2411773332308,
+      "peak_allocated_bytes": 212291584,
+      "peak_reserved_bytes": 249561088,
+      "status": "local_stress_completed"
+    },
+    "benchmark_local_v1": {
+      "mean_ms": 120.71399483000732,
+      "round_mean_ms": [
+        120.3341029499984,
+        120.04881787002205,
+        121.75906367000152
+      ],
+      "median_ms": 127.66649650003123,
+      "p95_ms": 134.927588666748,
+      "max_ms": 139.62952966653575,
+      "peak_allocated_bytes": 212291584,
+      "peak_reserved_bytes": 249561088,
+      "status": "local_stress_completed"
+    }
+  },
+  "diagnostics": {
+    "diagnostic_nfs_v1": {
+      "cpu_load_ms": 152.63637776998848,
+      "cpu_byte_parity_100": true,
+      "stages_ms": {
+        "reference_current_file_path_load_ms": 152.63637776998848,
+        "raw_file_read_ms": 15.814734660007161,
+        "memory_bytes_header_open_ms": 0.2506906899884598,
+        "memory_bytes_decode_ms": 32.24468356001353,
+        "exif_and_color_ms": 0.021231699988675246,
+        "lanczos_resize_ms": 51.13027894999959,
+        "letterbox_pad_ms": 0.16495360001727022,
+        "numpy_uint8_view_ms": 0.21838531998355393,
+        "float32_chw_normalize_ms": 2.494000030001189,
+        "staged_path_total_ms": 102.35009194997701
+      },
+      "gpu_path_wall_ms": 39.717597439985184,
+      "four_forward_event_sum_ms": 37.40293159484863,
+      "pure_forward_kernel_sum_ms": 35.939208400000005,
+      "profiler_completed": "completed"
+    },
+    "diagnostic_local_v1": {
+      "cpu_load_ms": 82.37073242000179,
+      "cpu_byte_parity_100": true,
+      "stages_ms": {
+        "reference_current_file_path_load_ms": 82.37073242000179,
+        "raw_file_read_ms": 0.4411813299998357,
+        "memory_bytes_header_open_ms": 0.24167079998733243,
+        "memory_bytes_decode_ms": 30.956303349996688,
+        "exif_and_color_ms": 0.019774799989136227,
+        "lanczos_resize_ms": 48.9535007499876,
+        "letterbox_pad_ms": 0.11231170000428392,
+        "numpy_uint8_view_ms": 0.16496037000706565,
+        "float32_chw_normalize_ms": 2.2475977799922475,
+        "staged_path_total_ms": 83.14779342000293
+      },
+      "gpu_path_wall_ms": 39.107116909999604,
+      "four_forward_event_sum_ms": 36.65033274650574,
+      "pure_forward_kernel_sum_ms": 35.93430740000001,
+      "profiler_completed": "completed"
+    }
+  },
+  "training_runs": 0,
+  "test_prediction_regenerations": 0,
+  "production_inference_changes": 0,
+  "git_status_before_report": ""
+}

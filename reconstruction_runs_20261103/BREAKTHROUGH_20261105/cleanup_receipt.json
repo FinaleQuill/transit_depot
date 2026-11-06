@@ -1,0 +1,304 @@
+{
+  "started_at_hong_kong": "2026-11-05T19:51:03.142021+08:00",
+  "status": "completed",
+  "authorized_scope": "Only three exact-byte weight duplicate groups; preserve all paths and canonical source files; no other removals",
+  "audit_saved_before_replacement": [
+    {
+      "source": "/tmp/cxr_rules_data_audit_20261105.md",
+      "destination": "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/audit/cxr_rules_data_audit_20261105.md",
+      "sha256": "f3b033552f8695257bdbb90206b785fef77db5f8dfea03e4f28cb58da118d8f2"
+    },
+    {
+      "source": "/tmp/cxr_rules_data_audit_20261105.json",
+      "destination": "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/audit/cxr_rules_data_audit_20261105.json",
+      "sha256": "26874616f83b745771cd36ce05404b8d27cdaf91dddacb7f27e71bf5bea53017"
+    },
+    {
+      "source": "/tmp/cxr_cleanup_duplicate_candidates_20261105.json",
+      "destination": "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/audit/cxr_cleanup_duplicate_candidates_20261105.json",
+      "sha256": "23c98304ea78d798683e77b15e70653bd0d8d40faabe4f7e42a67b7527bd66cb"
+    }
+  ],
+  "script_sha256": "1836e694d84b9e5b6a32f56c1392ebae2170700d2da815ef7536fd56783bef24",
+  "groups": [
+    {
+      "canonical_verified_backup": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+      "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf",
+      "before": [
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+          "bytes": 450343581,
+          "inode": 108967,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+          "bytes": 450343581,
+          "inode": 106964,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/last.pt",
+          "bytes": 450343581,
+          "inode": 94306,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        }
+      ],
+      "after": [
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+          "bytes": 450343581,
+          "inode": 108967,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+          "bytes": 450343581,
+          "inode": 108967,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/last.pt",
+          "bytes": 450343581,
+          "inode": 108967,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562552994854289,
+          "mode": 420,
+          "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf"
+        }
+      ]
+    },
+    {
+      "canonical_verified_backup": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/best.pt",
+      "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1",
+      "before": [
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/best.pt",
+          "bytes": 450343581,
+          "inode": 111020,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562550914853770,
+          "mode": 420,
+          "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/best.pt",
+          "bytes": 450343581,
+          "inode": 104687,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562550914853770,
+          "mode": 420,
+          "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+        }
+      ],
+      "after": [
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/best.pt",
+          "bytes": 450343581,
+          "inode": 111020,
+          "device": 47,
+          "nlink": 2,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562550914853770,
+          "mode": 420,
+          "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+        },
+        {
+          "path": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/best.pt",
+          "bytes": 450343581,
+          "inode": 111020,
+          "device": 47,
+          "nlink": 2,
+          "allocated_bytes": 447250944,
+          "mtime_ns": 1793562550914853770,
+          "mode": 420,
+          "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1"
+        }
+      ]
+    },
+    {
+      "canonical_verified_backup": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+      "before": [
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+          "bytes": 177397507,
+          "inode": 145582,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793818786362482456,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        },
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/model/sprint_fp16.pt",
+          "bytes": 177397507,
+          "inode": 135499,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793820369652146667,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        },
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/model/base768.pt",
+          "bytes": 177397507,
+          "inode": 147391,
+          "device": 47,
+          "nlink": 1,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793856204504150827,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        }
+      ],
+      "after": [
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+          "bytes": 177397507,
+          "inode": 145582,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793818786362482456,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        },
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/model/sprint_fp16.pt",
+          "bytes": 177397507,
+          "inode": 145582,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793818786362482456,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        },
+        {
+          "path": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/model/base768.pt",
+          "bytes": 177397507,
+          "inode": 145582,
+          "device": 47,
+          "nlink": 3,
+          "allocated_bytes": 177426944,
+          "mtime_ns": 1793818786362482456,
+          "mode": 420,
+          "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "target": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt",
+      "canonical": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+      "original_inode": 106964,
+      "new_inode": 108967,
+      "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf",
+      "timestamp": "2026-11-05T19:51:12.576103+08:00"
+    },
+    {
+      "target": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/last.pt",
+      "canonical": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/last.pt",
+      "original_inode": 94306,
+      "new_inode": 108967,
+      "sha256": "cf78aad40c404378d926079288746dbc7ab2cee46c8edbc8283944ff9f2c93cf",
+      "timestamp": "2026-11-05T19:51:12.635126+08:00"
+    },
+    {
+      "target": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_A_tiny_run/best.pt",
+      "canonical": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/runs/A_tiny/best.pt",
+      "original_inode": 104687,
+      "new_inode": 111020,
+      "sha256": "0cca788dde32782951dd0ef1dfe17c590f6d1d1541c14c8ffcf945286de333e1",
+      "timestamp": "2026-11-05T19:51:12.691654+08:00"
+    },
+    {
+      "target": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/deployment_candidate/model/sprint_fp16.pt",
+      "canonical": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+      "original_inode": 135499,
+      "new_inode": 145582,
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+      "timestamp": "2026-11-05T19:51:12.718028+08:00"
+    },
+    {
+      "target": "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/model/base768.pt",
+      "canonical": "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/sprint_fp16.pt",
+      "original_inode": 147391,
+      "new_inode": 145582,
+      "sha256": "b0da46052aeb32874496b6fd52b343ae505b0c6b22a852028ae26f68603430dd",
+      "timestamp": "2026-11-05T19:51:12.744232+08:00"
+    }
+  ],
+  "limitations": [
+    "Hard links share inode metadata; never modify retained checkpoints in place. To restore independent copies, run the saved restore script.",
+    "Filesystem free-space delta is global and can include concurrent unrelated activity."
+  ],
+  "restore_script": "/home/featurize/work/reconstruction_runs_20261103/BREAKTHROUGH_20261105/audit/restore_independent_weight_copies.py",
+  "process_precheck": {
+    "nvidia_compute": "",
+    "docker_running": ""
+  },
+  "independent_inodes_before": 8,
+  "logical_duplicate_bytes_removed": 1705825757,
+  "allocated_duplicate_bytes_removed": 1696606720,
+  "filesystem_before": {
+    "total_bytes": 53687091200,
+    "available_bytes": 3280994304,
+    "free_bytes": 3280994304,
+    "df_text": "Filesystem                                                                                 1B-blocks        Used  Available Use% Mounted on\n10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ 53687091200 50406096896 3280994304  94% /home/featurize/work\n"
+  },
+  "independent_inodes_after": 3,
+  "filesystem_after": {
+    "total_bytes": 53687091200,
+    "available_bytes": 4977590272,
+    "free_bytes": 4977590272,
+    "df_text": "Filesystem                                                                                 1B-blocks        Used  Available Use% Mounted on\n10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ 53687091200 48709500928 4977590272  91% /home/featurize/work\n"
+  },
+  "observed_available_bytes_delta": 1696595968,
+  "all_original_paths_preserved": true,
+  "all_original_sha256_preserved": true,
+  "canonical_files_unmodified": true,
+  "completed_at_hong_kong": "2026-11-05T19:51:26.017780+08:00",
+  "restore_preview_validation": {
+    "executed_without_execute_flag": true,
+    "all_canonical_and_target_hashes_checked": true,
+    "target_count": 5,
+    "exit_code": 0,
+    "no_weights_changed": true
+  }
+}

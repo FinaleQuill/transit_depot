@@ -1,0 +1,4 @@
+Hypothesis: same-patient bootstrap contrasts at common 768 inference identify resolution-sensitive and lower-resolution noninferior classes.
+Expected effect: 2000 paired patient resamples for each 640/896 versus 768 contrast and fixed 50:50 768/896 Tiny fusion.
+Cost: CPU metric aggregation and bootstrap, with one fixed 30-Study three-image timing matrix for single and dual models.
+Failure criterion: different valid identities, missing paired intervals, non-fixed fusion weights, incomplete compliance inputs, or test access.

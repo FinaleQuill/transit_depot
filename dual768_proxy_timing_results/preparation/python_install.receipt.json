@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/tmp/dual768_timing_bootstrap/bin/uv",
+    "python",
+    "install",
+    "3.12.15"
+  ],
+  "exit_code": 0,
+  "ended_utc": "2026-10-28T18:02:21.534128+00:00"
+}

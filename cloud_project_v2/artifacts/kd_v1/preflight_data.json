@@ -1,0 +1,88 @@
+{
+  "training_started": false,
+  "models_built": 0,
+  "pretrained_downloads": 0,
+  "approved_backbones": [
+    "convnext_base.fb_in22k_ft_in1k_384",
+    "convnext_tiny.fb_in22k_ft_in1k_384"
+  ],
+  "environment": {
+    "python": "3.11.8",
+    "packages": {
+      "torch": "2.2.2",
+      "torchvision": "0.17.2",
+      "timm": "1.0.30",
+      "numpy": "1.26.4",
+      "Pillow": "10.3.0",
+      "opencv-python-headless": "4.11.0.86",
+      "albumentations": "2.0.8",
+      "scikit-learn": "1.9.1",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "2.3.0"
+    },
+    "training_environment_pass": false,
+    "problems": [
+      "Use the documented Python 3.12 training environment",
+      "Use torch 2.10.0 + CUDA 12.8 from requirements_kd.txt",
+      "Use torchvision 0.25.0 paired with torch 2.10.0"
+    ],
+    "cuda_execution_checked": false
+  },
+  "data": {
+    "data_pass": true,
+    "splits": {
+      "train": {
+        "images": 30328,
+        "studies": 18513,
+        "patients": 11055,
+        "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+        "resolved_image_root": "/home/featurize/data/cxr_first/cxr_first"
+      },
+      "valid": {
+        "images": 1422,
+        "studies": 859,
+        "patients": 228,
+        "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+        "resolved_image_root": "/home/featurize/data/cxr_first/cxr_first"
+      }
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "training_images": 24258,
+        "oof_images": 6070,
+        "patient_overlap": 0
+      },
+      {
+        "fold": 1,
+        "training_images": 24266,
+        "oof_images": 6062,
+        "patient_overlap": 0
+      },
+      {
+        "fold": 2,
+        "training_images": 24275,
+        "oof_images": 6053,
+        "patient_overlap": 0
+      },
+      {
+        "fold": 3,
+        "training_images": 24249,
+        "oof_images": 6079,
+        "patient_overlap": 0
+      },
+      {
+        "fold": 4,
+        "training_images": 24264,
+        "oof_images": 6064,
+        "patient_overlap": 0
+      }
+    ],
+    "missing_or_empty_count": 0,
+    "missing_image_ids_first20": [],
+    "image_existence_checked": true,
+    "image_bytes_sha256_checked": false,
+    "note": "Training Dataset verifies each accepted image SHA256 when it is read."
+  },
+  "ready_for_training_preflight": false
+}

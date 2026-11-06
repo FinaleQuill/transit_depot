@@ -1,0 +1,36 @@
+Waiting for trainer and runner to exit at the epoch boundary
+GPU released; frozen fold bests: [(0, 6, 0.806735188701427), (1, 5, 0.8013960260129787), (2, 5, 0.7947949064601583), (3, 5, 0.8032683722108362), (4, 5, 0.7996021371442283)]
+Starting inference only: ['--ensemble-plan', '/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/ensemble_plan_768_equal.json', '--output', '/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference', '--image-root', '/home/featurize/data/cxr_first', '--work-root', '/home/featurize/work', '--valid-manifest', '/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv', '--test-manifest', '/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv', '--sample-submission', '/home/featurize/work/submission.csv', '--batch-size', '8', '--num-workers', '8', '--prefetch-factor', '2', '--device', 'cuda']
+Ensemble official_valid: fold=0, epoch=6, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=859
+TTA completed: resolution=768, hflip=True, studies=859
+Ensemble official_valid: fold=1, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=859
+TTA completed: resolution=768, hflip=True, studies=859
+Ensemble official_valid: fold=2, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=859
+TTA completed: resolution=768, hflip=True, studies=859
+Ensemble official_valid: fold=3, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=859
+TTA completed: resolution=768, hflip=True, studies=859
+Ensemble official_valid: fold=4, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=859
+TTA completed: resolution=768, hflip=True, studies=859
+Official valid ensemble AUC=0.800248; starting test with frozen protocol
+Ensemble test: fold=0, epoch=6, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=1414
+TTA completed: resolution=768, hflip=True, studies=1414
+Ensemble test: fold=1, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=1414
+TTA completed: resolution=768, hflip=True, studies=1414
+Ensemble test: fold=2, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=1414
+TTA completed: resolution=768, hflip=True, studies=1414
+Ensemble test: fold=3, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=1414
+TTA completed: resolution=768, hflip=True, studies=1414
+Ensemble test: fold=4, epoch=5, weight=0.200000
+TTA completed: resolution=768, hflip=False, studies=1414
+TTA completed: resolution=768, hflip=True, studies=1414
+Complete locally validated submission: /home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv
+INFERENCE COMPLETE /home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv

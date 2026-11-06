@@ -1,0 +1,13 @@
+{
+  "tests": 17,
+  "passed": 17,
+  "failed": 0,
+  "runtime": "pinned competition image with isolated training addons",
+  "gpu_allocations": 0,
+  "training_runs_started": 0,
+  "source_sha256": {
+    "study_student.py": "9ffc40fb4bedf25fb740abbb5890d00f7531aac5e58da5e83242ddeb47dda17f",
+    "tests/test_study_student.py": "24cea478d5bbb71496a7b991f10a38ff61bc016ddb5092d47c1d8eeb3f9bb339"
+  },
+  "test_log_sha256": "cb7f2508a03bba6dfb2ef424d59cbd2f2563751dde287d2c3b7f18c23f00a39e"
+}

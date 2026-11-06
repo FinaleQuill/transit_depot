@@ -1,0 +1,1 @@
+{"gpu": "NVIDIA GeForce RTX 4090", "sm_count": 38, "requested_thread_percentage": 30, "fp16_gemm_n": 4096, "fp16_gemm_repeats": 30, "fp16_gemm_ms": 84.70425415039062, "fp16_gemm_tflops": 48.67723168708151, "copy_payload_bytes": 268435456, "copy_repeats": 30, "copy_ms": 17.457151412963867, "copy_read_plus_write_gbps": 922.6091347319939, "T4_equivalence_proved": false}

@@ -1,0 +1,9 @@
+{
+  "state": "stopped_by_signal",
+  "updated_at": "2026-11-06T20:00:41.828326+08:00",
+  "completed_epochs": 2,
+  "backward_batches": 9821,
+  "optimizer_updates": 2454,
+  "ema_updates": 2454,
+  "amp_skipped_steps": 2
+}

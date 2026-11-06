@@ -1,0 +1,14 @@
+{
+  "zip": "/tmp/A_training_handoff_20261030.zip",
+  "bytes": 1079864445,
+  "sha256": "b8c36ec213ce133cab2a4392c7b94d889d96ca4126b9d59acc4c5466922850bf",
+  "file_count": 3767,
+  "CRC_verified": true,
+  "manifest_member_set_verified": true,
+  "zip_legacy_timestamps_clamped_without_changing_file_bytes": true,
+  "editable_training_verified": true,
+  "teacher_retraining_required": false,
+  "raw_images_included": false,
+  "checkpoint_format": "full best E9 + full last E14; optimizer/scaler/RNG included",
+  "cpu_tests_passed": 31
+}

@@ -1,0 +1,13 @@
+test_cli_refuses_to_replace_an_existing_report (test_audit_student_submission.SubmissionAuditTests.test_cli_refuses_to_replace_an_existing_report) ... ok
+test_complete_identity_coverage_and_manifest_order_exact_mean (test_audit_student_submission.SubmissionAuditTests.test_complete_identity_coverage_and_manifest_order_exact_mean) ... ok
+test_extra_or_missing_csv_columns_are_rejected (test_audit_student_submission.SubmissionAuditTests.test_extra_or_missing_csv_columns_are_rejected) ... ok
+test_known_test_labels_and_wrong_manifest_sha_are_rejected (test_audit_student_submission.SubmissionAuditTests.test_known_test_labels_and_wrong_manifest_sha_are_rejected) ... ok
+test_missing_or_duplicate_rows_are_rejected (test_audit_student_submission.SubmissionAuditTests.test_missing_or_duplicate_rows_are_rejected) ... ok
+test_original_sha_check_is_explicit_and_detects_tampering (test_audit_student_submission.SubmissionAuditTests.test_original_sha_check_is_explicit_and_detects_tampering) ... ok
+test_wrong_study_mean_is_rejected (test_audit_student_submission.SubmissionAuditTests.test_wrong_study_mean_is_rejected) ... ok
+test_wrong_study_unknown_class_nonfinite_and_range_are_rejected (test_audit_student_submission.SubmissionAuditTests.test_wrong_study_unknown_class_nonfinite_and_range_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.079s
+
+OK

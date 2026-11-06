@@ -1,0 +1,32 @@
+{
+  "state": "training",
+  "updated_utc": "2026-10-18T18:32:58+00:00",
+  "gpu": {
+    "name": "NVIDIA RTX A4000",
+    "memory_mib": 16376
+  },
+  "folds": {
+    "0": {},
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {}
+  },
+  "failures": {},
+  "microbatches": {
+    "0": 2,
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2
+  },
+  "valid_microbatches": {
+    "0": 4,
+    "1": 4,
+    "2": 4,
+    "3": 4,
+    "4": 4
+  },
+  "elapsed_seconds": 0.0017479369998909533,
+  "hours_limit": 0
+}

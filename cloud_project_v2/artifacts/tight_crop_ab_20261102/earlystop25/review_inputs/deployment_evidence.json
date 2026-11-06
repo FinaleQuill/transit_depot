@@ -1,0 +1,148 @@
+{
+  "purpose": "Read-only historical deployment evidence for the post-B_base review",
+  "generated_utc": "2026-11-02T04:36:59+00:00",
+  "metric_scope": "Official valid Study Macro-AUC; local batch-1 serial read-to-CSV timing where measured",
+  "not_a_ranked_same_environment_comparison": true,
+  "candidates": [
+    {
+      "id": "026_direct_supervised_tiny512",
+      "model": "one ConvNeXt V1 Tiny512, seed43, E6 EMA",
+      "training": "direct BCE, alpha=0, no teacher logits",
+      "inference": "FP16, hflip2, full original decode and aspect-preserving letterbox",
+      "valid_macro_auc": 0.8036346771755589,
+      "asset_bytes": 55778119,
+      "timing_ms_per_image": null,
+      "timing_gpu": null,
+      "timing_status": "No actual batch-1 end-to-end benchmark located; FP16 valid and size only",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/BCE_FP16_REVIEW_20261027.md",
+        "../deliveries/026_tiny512_bce_seed43/valid_fp16_hflip2/validation_report.json"
+      ]
+    },
+    {
+      "id": "027_kd_tiny512",
+      "model": "one ConvNeXt V1 Tiny512, seed43, E7 EMA",
+      "training": "strict-OOF teacher KD, alpha=.2, T=2",
+      "inference": "FP16, hflip2, full original decode and aspect-preserving letterbox",
+      "valid_macro_auc": 0.8054022578869962,
+      "asset_bytes": 66995853,
+      "timing_ms_per_image": null,
+      "timing_gpu": null,
+      "timing_status": "No actual batch-1 end-to-end benchmark located; FP16 valid and size only",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/KD512_FP16_REVIEW_20261027.md",
+        "../deliveries/027_tiny512_kd_seed43/valid_fp16_hflip2/validation_report.json"
+      ]
+    },
+    {
+      "id": "033_dual_kd_tiny768",
+      "model": "two ConvNeXt V1 Tiny768, seeds43/44, E8 EMA, fixed .25/.75",
+      "training": "strict-OOF teacher KD",
+      "inference": "FP16, hflip2 each member, full original decode, no crop",
+      "valid_macro_auc": 0.8083844422198005,
+      "asset_bytes": 128766272,
+      "timing_ms_per_image": 79.28030016395496,
+      "timing_gpu": "RTX 4090",
+      "timing_status": "Actual 4090 100-image/5-warmup/3-round batch-1 serial end-to-end; not a 2080Ti or T4 result",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/DUAL_TINY768_DEPLOYMENT_REVIEW_20261028.md",
+        "../deliveries/033_dual_tiny768_seed43_25_seed44_75/valid_fp16_hflip2/validation_report.json",
+        "../deliveries/033_dual_tiny768_seed43_25_seed44_75/latency4090/local_resource_report.json"
+      ]
+    },
+    {
+      "id": "041_single_kd_tiny768_A",
+      "model": "one ConvNeXt V1 Tiny768 P2, E9 EMA",
+      "training": "strict-OOF teacher KD, sqrt pos-weight",
+      "inference": "FP16, hflip2, full original decode and aspect-preserving letterbox, no crop",
+      "valid_macro_auc": 0.809115940852,
+      "asset_bytes": 66996559,
+      "timing_ms_per_image": 73.935760687,
+      "timing_gpu": "RTX 2080 Ti",
+      "timing_status": "Actual 2080Ti batch-1 serial read-to-CSV; B training CUDA context resident but frozen",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/A_SUBMISSION_AND_SPEED_20261030.md",
+        "../deliveries/041_tiny768_p2_A_submission_20261030/submission.csv.report.json"
+      ]
+    },
+    {
+      "id": "043_single_kd_base768_B",
+      "model": "one ConvNeXt V1 Base768, E10 EMA",
+      "training": "strict-OOF teacher KD plus complete-Study hard BCE",
+      "inference": "FP16, hflip2, full original decode and aspect-preserving letterbox, no crop",
+      "valid_macro_auc": 0.8105695698808949,
+      "asset_bytes": null,
+      "timing_ms_per_image": 74.549656133,
+      "timing_gpu": "RTX 2080 Ti",
+      "timing_status": "Actual 2080Ti 100-image/5-warmup/3-round batch-1 serial read-to-CSV; local disk",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/B_SUBMISSION_AND_OPTIMIZATION_20261031.md",
+        "artifacts/kd_v1/student_B_submission_20261031/full_valid_reproduced/validation_report.json"
+      ]
+    },
+    {
+      "id": "044_tiny_base_class1B_draft768",
+      "model": "Tiny A E9 plus Base B E10; class1 B-only, remaining classes equal",
+      "training": "historical KD members, valid-selected class-specific fusion",
+      "inference": "FP16, hflip2 each member, JPEG draft768 decode, no crop",
+      "valid_macro_auc": 0.8166770734158482,
+      "asset_bytes": 241433757,
+      "timing_ms_per_image": 84.820141257,
+      "timing_gpu": "RTX 2080 Ti",
+      "timing_status": "Actual 2080Ti 100-image/5-warmup/3-round batch-1 serial read-to-CSV; local disk",
+      "official_t4_verified": false,
+      "platform_feedback": "User reports 044 not better than 043, slightly worse or about equal; absolute scores unavailable",
+      "sources": [
+        "docs/SELECTED_816677_SUBMISSION_20261031.md",
+        "docs/PLATFORM_FEEDBACK_20261031.md",
+        "../deliveries/044_tiny_base_class1B_draft768_20261031/model/config.json"
+      ]
+    },
+    {
+      "id": "historical_AB_full_decode",
+      "model": "Tiny A E9 plus Base B E10; class1 B-only, remaining classes equal",
+      "inference": "FP16, hflip2 each member, full original decode, no crop",
+      "valid_macro_auc": 0.816830030,
+      "asset_bytes": null,
+      "timing_ms_per_image": 92.866369,
+      "timing_gpu": "RTX 2080 Ti",
+      "timing_status": "Historical actual end-to-end result, distinct pixel pipeline from 044 draft",
+      "official_t4_verified": false,
+      "sources": ["docs/SELECTED_816677_SUBMISSION_20261031.md"]
+    },
+    {
+      "id": "045_X1_plus_historical_B_full_decode",
+      "model": "new X1 E4 Tiny plus historical B E10 Base; class1 B-only, remaining equal",
+      "training": "X1 complete-Study KD finetune, historical B",
+      "inference": "FP16, hflip2 each member, full original decode, no crop",
+      "valid_macro_auc": 0.8171491901128627,
+      "asset_bytes": 241450000,
+      "asset_bytes_is_approximate": true,
+      "timing_ms_per_image": 93.490616,
+      "timing_gpu": "RTX 2080 Ti",
+      "timing_status": "Actual 2080Ti 100-image/5-warmup/3-round batch-1 serial read-to-CSV; local disk",
+      "official_t4_verified": false,
+      "sources": [
+        "docs/BEST_817149_SUBMISSION_20261101.md",
+        "docs/BOUNDED_FINETUNE_REVIEW_20261101.md"
+      ]
+    }
+  ],
+  "new_tight_crop_AB": {
+    "status": "Training in progress; no complete paired deployed FP16/batch-1 AUC or end-to-end timing yet",
+    "decode": "full original decode plus body-envelope detector for B only; A full frame; never EXACT_BLACK",
+    "latency_note": "Historic 044 draft768 84.82ms cannot be used as the no-crop baseline for the new full-decode B",
+    "source": "docs/TIGHT_CROP_AB_EARLYSTOP_RUN_20261102.md"
+  },
+  "cautions": [
+    "No candidate above has formal organizer T4 cost_report.json certification.",
+    "2080Ti and 4090 latency are different hardware and cannot be ranked as a controlled speed comparison.",
+    "Historical model-selection comparisons reused valid; patient intervals do not remove selection bias.",
+    "The new crop changes pixels and has no deployment timing or clinical safety claim."
+  ]
+}

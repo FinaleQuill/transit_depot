@@ -1,0 +1,16 @@
+{
+  "observed_hong_kong": "2026-11-02T03:54:26.638555+08:00",
+  "controller_pid": 32068,
+  "trainer_pid": 33036,
+  "auc_watcher_pid": 32284,
+  "state": "running",
+  "stage": "train_A_tiny",
+  "original_E1_preserved": true,
+  "actual_E2_progress": [
+    "packed_study epoch=2 studies=6/18513 images=8 packs=1 loss=0.317984 alpha=0.2000"
+  ],
+  "amendment_commit": "cf194c8",
+  "overall_E1_auc_native_replay": 0.808700868165945,
+  "ap_only_E1_auc": 0.7389646145830319,
+  "old_controller_exited_naturally": true
+}

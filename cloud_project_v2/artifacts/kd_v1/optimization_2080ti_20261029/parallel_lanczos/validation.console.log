@@ -1,0 +1,50 @@
+All byte-parity tests passed: {'direct_resize_cases': 168, 'mode_geometry_exif_size_cases': 480, 'real_image_size_cases': 210, 'non8bit_rejections': 3}
+{
+  "started_utc": "2026-10-29T09:04:42.996096+00:00",
+  "ended_utc": "2026-10-29T09:05:53.373155+00:00",
+  "scope": "CPU-only prototype; concurrent fullvalid GPU job and host activity; timings are diagnostic,not formal benchmark",
+  "production_source_changed": false,
+  "gpu_or_training_executed": false,
+  "python": "3.12.15",
+  "numpy": "1.26.4",
+  "Pillow": "10.4.0",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "max_executor_workers_per_image": 4,
+  "pool_lifetime": "one decoded source image; all futures joined before returning; no cross-image work/prefetch",
+  "checks": {
+    "direct_resize_cases": 168,
+    "mode_geometry_exif_size_cases": 480,
+    "real_image_size_cases": 210,
+    "non8bit_rejections": 3
+  },
+  "all_byte_parity_checks_pass": true,
+  "real_images": 105,
+  "real_sizes": [
+    512,
+    768
+  ],
+  "reference": "Frozen033 deploy_kd.py and original Pillow2D resize",
+  "prototype_sha256": "c5dfb3543f9b441dd853def945da5a0135747e5f916c4c21640d74a86ba88432",
+  "mean_sample_median_resize_ms": {
+    "original_2d": 47.612883500050884,
+    "parallel_2": 56.649876499989205,
+    "parallel_4": 40.51880775000427
+  },
+  "mean_sample_load768_ms": {
+    "original_load768_ms": 101.55478224999115,
+    "parallel4_load768_ms": 77.42762374994072
+  },
+  "source_references": [
+    "https://github.com/python-pillow/Pillow/blob/10.4.0/src/libImaging/Resample.c#L604-L653"
+  ],
+  "deployment_status": "not_deployed;requires_root_review_and_isolated_real_gpu_benchmark/fullvalid_byte_parity_before_any_acceptance"
+}

@@ -1,0 +1,8 @@
+# Official evaluation container already provides these CUDA-compatible packages.
+# Do not replace the organizer's torch/CUDA installation with training wheels.
+torch==2.10.0
+torchvision==0.25.0
+timm==1.0.30
+numpy>=1.26,<3
+Pillow>=10,<13
+# No Albumentations, sklearn, OpenCV or pretrained download is needed at inference.

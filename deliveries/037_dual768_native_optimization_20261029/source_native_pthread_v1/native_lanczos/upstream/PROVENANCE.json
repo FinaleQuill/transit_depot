@@ -1,0 +1,26 @@
+{
+  "upstream": "Pillow",
+  "version": "10.4.0",
+  "license": "HPND",
+  "fetched_utc": "2026-10-29T14:46:05.755482+00:00",
+  "files": [
+    {
+      "name": "Resample.c",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/10.4.0/src/libImaging/Resample.c",
+      "bytes": 26741,
+      "sha256": "150216c594b1adbaee8fc4757f13ccc8b5829cfa032d00a784221ce9f3cf5aea"
+    },
+    {
+      "name": "Imaging.h",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/10.4.0/src/libImaging/Imaging.h",
+      "bytes": 21112,
+      "sha256": "2623c2fddf516d402e9bbca7a26512238feaaef4ff73328269b25204efb98dbf"
+    },
+    {
+      "name": "LICENSE",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/10.4.0/LICENSE",
+      "bytes": 1455,
+      "sha256": "cf234c27a3f275f5a050f4df3946f8855704226fe4e7ca8b33928cbcecbced37"
+    }
+  ]
+}

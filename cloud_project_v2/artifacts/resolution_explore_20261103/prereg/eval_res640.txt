@@ -1,0 +1,4 @@
+Hypothesis: a 640-trained EMA evaluated at the fixed 768+hflip2 pipeline provides the low-resolution member of the sensitivity comparison.
+Expected effect: retain all ten class scores and a sampled-train versus full-valid diagnostic; no test data or score tuning is involved.
+Cost: one FP16 pass over official valid and a deterministic 1000-Study official-train diagnostic, plus 30 three-image Studies over three rounds.
+Failure criterion: missing checkpoint SHA/compliance binding, incomplete official-valid coverage, or any test access.

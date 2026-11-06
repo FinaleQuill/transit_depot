@@ -1,0 +1,53 @@
+{
+  "original_csv_unchanged": true,
+  "existing_submissions_unchanged": {
+    "submission_best.csv": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+    "submission.csv": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+    "submission4.csv": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+    "submission_robust_0818992.csv": "fedbbbef4fd45763a8f88bc2a7bfab36e6bc3ecd33bce0487ad54eaa7da29d5f",
+    "submission (2).csv": "ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661"
+  },
+  "raw_manifest_durable_copies": {
+    "loader_verification.json": "e0d469f62ed020a0f50fe49576b72818fd54845fc8baeaa526ec08f10d24fedc",
+    "dev.csv": "6f35f5272011e5e5f811d31097004e8176f29e845ad5223c14c7234bc9f81d62",
+    "folds.json": "efbe91213c28fa55f82cb7ee72d069e9b93acaa72cb45f0aa60b33159a0b4777",
+    "source_train.csv": "4df97bb5f30ec733e5c78b66a63418c26c53396e5e49fb1f494f70ba11e89d7a",
+    "audit.json": "77d9f2db3b664561bf10955c1815954bed54d99207ae0d5aba24beacbcd30d7a",
+    "valid.csv": "46eb2ac5a9fb3eb92e5715e4a5af99c36e07aab9b28ee7fe2d0c244e74f95481",
+    "train.csv": "898c4096282ba765ed8f5f234200cff31f93ffc6ac5bdaf6970616d2f41b9f6e"
+  },
+  "source_commit": "b0a4847ae2a0cfb6c1eb8c7df8e21621fbeecbd7",
+  "cpu_tests_passed": 30,
+  "gpu_smoke": {
+    "state": "smoke_completed",
+    "best_macro_auc": null,
+    "best_epoch": null,
+    "attempted_updates": 2,
+    "optimizer_updates": 2,
+    "skipped_updates": 0,
+    "updated_at": "2026-11-05T21:57:53.820666+08:00",
+    "official_valid_evaluated": false,
+    "test_used": false,
+    "stage_decision": {
+      "state": "not_evaluated",
+      "reason": "Smoke or no complete candidate",
+      "automatic_submission": false
+    },
+    "next_action": "Review paired evidence; confirm on another patient fold before full-data refit"
+  },
+  "formal_launch": {
+    "controller_pid": 244322,
+    "launched_at": "2026-11-05T21:58:57.184700+08:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "-m",
+      "raw_rebuild.launch",
+      "--config",
+      "/home/featurize/work/cxr_research_20261103/raw_rebuild/plan.json",
+      "--controller"
+    ],
+    "detached": true
+  },
+  "new_platform_score_available": false
+}

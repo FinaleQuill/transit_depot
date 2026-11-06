@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-11-03T01:55:19.246978+00:00",
+  "command": [
+    "/home/featurize/work/cloud_project_v2/exploration_evaluate.py",
+    "evaluate",
+    "--checkpoint",
+    "/home/featurize/work/runs/031_resolution_train640_eval768_20261103/last.pt",
+    "--checkpoint-sha256",
+    "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8",
+    "--output",
+    "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res640_retry1",
+    "--train-gap-studies",
+    "1000",
+    "--timing"
+  ],
+  "source_checkpoint_sha256": "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8",
+  "test_accessed": false
+}

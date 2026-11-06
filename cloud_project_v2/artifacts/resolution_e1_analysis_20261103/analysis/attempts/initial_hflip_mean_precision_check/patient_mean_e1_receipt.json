@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "started_utc": "2026-11-03T13:47:32.921237+00:00",
+  "preregistration_mtime_ns": 1793713468461407150,
+  "preregistration_sha256": "67a9d076b2d6a7ad5fa8a56eaf50a7ba218c339617242bd2e302a35e69e71388",
+  "input_sha256": {
+    "predictions.npz": "bed0ed1153edf8920d92a979c3dcf52f680ec02e1f63d9ae05810dc01a2e23bb",
+    "metadata.json": "471f69d5afcda794bb17a9b5df7a9533a942126fc3634fbbc33c489bca1672db",
+    "report.json": "955da15ff220e6969d53414c819b6c1ca3263441c185de3222aa260318737fab"
+  },
+  "script_sha256": "ce239efb60c0057676e2db76c77788d70ddd363ff68e509b6c9ba09a8cab41ab",
+  "compute_device": "CPU",
+  "training_started": false,
+  "test_or_submission_files_read_by_this_script": false,
+  "finished_utc": "2026-11-03T13:47:32.956215+00:00",
+  "error": "AssertionError('Cannot reproduce saved hflip2 Study probabilities: 2.9802322387695312e-08')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/analysis/replay_patient_mean_e1.py\", line 261, in <module>\n    main()\n  File \"/home/featurize/work/cloud_project_v2/artifacts/resolution_e1_analysis_20261103/analysis/replay_patient_mean_e1.py\", line 126, in main\n    assert difference < 1e-12, f\"Cannot reproduce saved {mode} Study probabilities: {difference}\"\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: Cannot reproduce saved hflip2 Study probabilities: 2.9802322387695312e-08\n"
+}

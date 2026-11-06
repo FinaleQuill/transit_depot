@@ -1,0 +1,42 @@
+{
+  "schema": "cxr_e2_stopping_check_v1",
+  "stopping_policy": {
+    "path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/early_stopping_20261104/patience3.json",
+    "sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+    "policy": {
+      "schema": "cxr_e2_early_stopping_v1",
+      "policy_id": "e2_patience3_20261104",
+      "patience": 3,
+      "min_delta": 0.0001,
+      "max_epochs": 6,
+      "metric": "macro_auc",
+      "mode": "max",
+      "baseline_epoch": 0,
+      "applies_to_arms": [
+        "global_control",
+        "global_local"
+      ]
+    }
+  },
+  "policy_sha256": "4e9645b0020d8b32d1e6df0448214bf1148e757d7ccd1d2d8a99aad6e419631b",
+  "source_sha256": {
+    "/home/featurize/work/cxr_research_20261103/reconstruction/train_local_earlystop.py": "6b7686330f972e447527c477ba7c5a203e9f9ce485903961f1397fde3ad234e5",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/early_stop_policy.py": "01124f33a853300257f85a4fb6135f20f6c33bdc1e87042a9d4df13fd1ef969a"
+  },
+  "decision": {
+    "completed_epochs": 2,
+    "bad_epochs": 2,
+    "best_macro_auc": 0.7978381126852129,
+    "best_epoch": 0,
+    "significant_best_macro_auc": 0.7978381126852129,
+    "significant_best_epoch": 0,
+    "stop": false,
+    "stop_reason": null,
+    "first_stop_epoch": null
+  },
+  "history_sha256": "f5a03550dd832fdbcb4f549b2ece13fcd418b844340a32151a1bd4bdb10b1488",
+  "baseline_sha256": "d231da001a226481d7b6a54981ef36eeceb3a0967e5349462f64df7322ec01c6",
+  "updated_at": "2026-11-04T22:54:05.655544+08:00",
+  "stop_created": false,
+  "stop_sha256": null
+}

@@ -1,0 +1,29 @@
+{
+  "observed_at_hong_kong": "2026-10-31T14:48:43.494427+08:00",
+  "source_sha256": "14f10e396688ebf748be6c89dd10f2b38c1d4fbe93fcad661eebc428fd681a67",
+  "models": [
+    {
+      "label": "A",
+      "model_dir": "/tmp/cloud_student_runs_20261030/A_evaluation/fp16",
+      "backbone": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "source_checkpoint_sha256": "65cdb72f63a5ec0d36486d4d8dcb34dd2fde5ed85aa52d3a10be2b0dbf633f42",
+      "source_epoch": 9,
+      "inference_asset_bytes": 60940262,
+      "original_validation_dir": "artifacts/kd_v1/student_upper_bound_20261030/reports/A/valid_hflip2",
+      "original_validation_report_sha256": "a0e1e840815c6c40ff7a7bc8a1dc1e3c43eb9262ca1416702a2665f75dd75e02"
+    },
+    {
+      "label": "B",
+      "model_dir": "/tmp/cloud_student_runs_20261030/B_evaluation/fp16",
+      "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+      "weights_sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411",
+      "source_checkpoint_sha256": "bf69b6e16917ab03b8f9318287a8ef660e21ebfb71095648527071377ae126eb",
+      "source_epoch": 10,
+      "inference_asset_bytes": 180489224,
+      "original_validation_dir": "artifacts/kd_v1/student_upper_bound_20261030/reports/B/valid_hflip2",
+      "original_validation_report_sha256": "d8c8da462af3d0b3b413b80cab04dda1d7a3250524c5b99aa79175989b08aabb"
+    }
+  ],
+  "notes": "Source snapshot recorded while fullvalid multiscale job runs, without modifying running source. Original cached 768/hflip2/one-member identities explicitly verified. Input audit only, not new training or T4 certification."
+}

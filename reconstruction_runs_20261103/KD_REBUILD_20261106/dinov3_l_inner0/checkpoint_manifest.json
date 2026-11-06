@@ -1,0 +1,9 @@
+{
+  "last": "/home/featurize/data/kd_rebuild_20261106/state/dinov3_l_inner0/last.pt",
+  "last_sha256": "956b8278cd723dbdad05d894ae23279ffedbf277eac5dd3f5c3408777a4c00e1",
+  "ema": "/home/featurize/data/kd_rebuild_20261106/state/dinov3_l_inner0/latest_ema_fp16.pt",
+  "ema_sha256": "354c3785315a901fa5d8e7b67181c10f84a00e723337d3a87f5590a87b339007",
+  "completed_epoch": 2,
+  "checkpoint_storage": "local data disk; evidence on persistent workspace",
+  "updated_at": "2026-11-06T17:41:24.341034+08:00"
+}

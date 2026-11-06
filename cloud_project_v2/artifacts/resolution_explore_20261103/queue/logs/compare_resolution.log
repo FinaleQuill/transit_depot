@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 847, in <module>
+    main()
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 843, in main
+    return evaluate(args) if args.action == "evaluate" else compare(args)
+                                                            ^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 733, in compare
+    bundles[name], metadata[name], original[name] = load_evaluation(path)
+                                                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 676, in load_evaluation
+    path = Path(path).resolve(strict=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1242, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 432, in realpath
+  File "<frozen posixpath>", line 476, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res640'
+{
+  "output": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/comparisons/resolution",
+  "candidate_auc": {
+    "res640_identity": 0.8016764312589222,
+    "res640_hflip2": 0.8022793195784516,
+    "res768_identity": 0.806489778133014,
+    "res768_hflip2": 0.8072222955518169,
+    "res896_identity": 0.8064851862134171,
+    "res896_hflip2": 0.8072268501782279,
+    "res768_res896_equal_identity": 0.8070099397098345,
+    "res768_res896_equal_hflip2": 0.8076343222621366
+  }
+}

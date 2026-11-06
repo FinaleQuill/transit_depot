@@ -1,0 +1,538 @@
+{
+  "train": {
+    "images": 30328,
+    "studies": 18513,
+    "patients": 11055,
+    "study_image_count_hist": {
+      "1": 8511,
+      "2": 8371,
+      "3": 1463,
+      "4": 157,
+      "5": 9,
+      "6": 1,
+      "7": 1
+    },
+    "patient_study_count_hist": {
+      "1": 7526,
+      "2": 1861,
+      "3": 785,
+      "4": 371,
+      "5": 209,
+      "6": 106,
+      "7": 75,
+      "8": 40,
+      "9": 29,
+      "10": 14,
+      "11": 17,
+      "12": 8,
+      "13": 5,
+      "14": 2,
+      "15": 2,
+      "18": 4,
+      "21": 1
+    },
+    "max_studies_per_patient": 21,
+    "study_weighted_patient_effective_n": 6390.7805291912955,
+    "top10_patients_study_fraction": 0.008858639874682656,
+    "view_position": {
+      "AP": 12147,
+      "PA": 7598,
+      "LATERAL": 6552,
+      "LL": 2828,
+      "": 1202,
+      "PA LLD": 1
+    },
+    "study_view_sets": {
+      "AP": 9331,
+      "LATERAL|PA": 4549,
+      "LL|PA": 2238,
+      "AP|LATERAL": 1385,
+      "": 547,
+      "AP|LL": 194,
+      "|LL": 179,
+      "PA": 40,
+      "LATERAL": 16,
+      "AP|LATERAL|PA": 10,
+      "AP|PA": 7,
+      "LL": 7,
+      "AP|LL|PA": 6,
+      "LATERAL|LL": 2,
+      "|LL|PA": 1,
+      "LL|PA|PA LLD": 1
+    },
+    "orientation": {
+      "Erect": 23639,
+      "Recumbent": 3383,
+      "": 3306
+    },
+    "file_duplicates": 0,
+    "pixel_duplicates": 0,
+    "study_label_consistency_failures": 0,
+    "image_width_quantiles": {
+      "0.0": 1067.0,
+      "0.1": 1769.0,
+      "0.5": 2544.0,
+      "0.9": 3056.0,
+      "1.0": 4280.0
+    },
+    "image_height_quantiles": {
+      "0.0": 1409.0,
+      "0.1": 2021.0,
+      "0.5": 3043.0,
+      "0.9": 3056.0,
+      "1.0": 4280.0
+    },
+    "non_ok": {
+      "ok": 30328
+    },
+    "positive_studies": [
+      622,
+      900,
+      942,
+      1436,
+      2404,
+      3885,
+      3968,
+      4508,
+      4654,
+      6683
+    ],
+    "study_prevalence": [
+      0.033598012207637876,
+      0.04861448711716091,
+      0.05088316318262842,
+      0.07756711500027008,
+      0.1298546966996165,
+      0.2098525360557446,
+      0.21433587208988278,
+      0.24350456436017934,
+      0.25139091449251877,
+      0.36098957489331823
+    ],
+    "patient_positive_counts": [
+      572,
+      592,
+      814,
+      1284,
+      1742,
+      2792,
+      2906,
+      3295,
+      2859,
+      5724
+    ],
+    "no_finding_cooccurrence": 0,
+    "labels_encoding_mismatch": 0,
+    "within_patient_discordance": [
+      {
+        "class": 1,
+        "mixed_patients": 377,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 1565
+      },
+      {
+        "class": 2,
+        "mixed_patients": 387,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 1781
+      },
+      {
+        "class": 3,
+        "mixed_patients": 588,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 2520
+      },
+      {
+        "class": 4,
+        "mixed_patients": 749,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 2927
+      },
+      {
+        "class": 5,
+        "mixed_patients": 1055,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 4241
+      },
+      {
+        "class": 6,
+        "mixed_patients": 1510,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 5746
+      },
+      {
+        "class": 7,
+        "mixed_patients": 1588,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 5983
+      },
+      {
+        "class": 8,
+        "mixed_patients": 1652,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 6228
+      },
+      {
+        "class": 9,
+        "mixed_patients": 1470,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 5655
+      },
+      {
+        "class": 10,
+        "mixed_patients": 1364,
+        "multi_study_patients": 3529,
+        "studies_in_mixed_patients": 4919
+      }
+    ]
+  },
+  "valid": {
+    "images": 1422,
+    "studies": 859,
+    "patients": 228,
+    "study_image_count_hist": {
+      "1": 391,
+      "2": 380,
+      "3": 81,
+      "4": 7
+    },
+    "patient_study_count_hist": {
+      "1": 119,
+      "2": 33,
+      "3": 21,
+      "4": 10,
+      "5": 10,
+      "6": 4,
+      "7": 3,
+      "8": 5,
+      "9": 3,
+      "10": 3,
+      "11": 3,
+      "12": 1,
+      "13": 3,
+      "14": 2,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "26": 2,
+      "36": 1,
+      "39": 1,
+      "89": 1
+    },
+    "max_studies_per_patient": 89,
+    "study_weighted_patient_effective_n": 45.077952226770115,
+    "top10_patients_study_fraction": 0.34342258440046564,
+    "view_position": {
+      "AP": 584,
+      "PA": 364,
+      "LATERAL": 284,
+      "LL": 151,
+      "": 39
+    },
+    "study_view_sets": {
+      "AP": 442,
+      "LATERAL|PA": 193,
+      "LL|PA": 122,
+      "AP|LATERAL": 57,
+      "": 17,
+      "|LL": 11,
+      "AP|LL": 9,
+      "PA": 4,
+      "AP|LATERAL|PA": 1,
+      "|PA": 1,
+      "AP|LL|PA": 1,
+      "LATERAL": 1
+    },
+    "orientation": {
+      "Erect": 1088,
+      "Recumbent": 199,
+      "": 135
+    },
+    "file_duplicates": 0,
+    "pixel_duplicates": 0,
+    "study_label_consistency_failures": 0,
+    "image_width_quantiles": {
+      "0.0": 1266.0,
+      "0.1": 1763.1,
+      "0.5": 2544.0,
+      "0.9": 3056.0,
+      "1.0": 3520.0
+    },
+    "image_height_quantiles": {
+      "0.0": 1716.0,
+      "0.1": 2021.0,
+      "0.5": 2960.0,
+      "0.9": 3056.0,
+      "1.0": 4280.0
+    },
+    "non_ok": {
+      "ok": 1422
+    },
+    "positive_studies": [
+      24,
+      37,
+      46,
+      68,
+      115,
+      177,
+      193,
+      214,
+      260,
+      306
+    ],
+    "study_prevalence": [
+      0.027939464493597205,
+      0.04307334109429569,
+      0.05355064027939464,
+      0.07916181606519208,
+      0.13387660069848661,
+      0.2060535506402794,
+      0.22467986030267753,
+      0.24912689173457508,
+      0.30267753201396974,
+      0.3562281722933644
+    ],
+    "patient_positive_counts": [
+      16,
+      13,
+      24,
+      37,
+      34,
+      66,
+      64,
+      72,
+      52,
+      166
+    ],
+    "no_finding_cooccurrence": 0,
+    "labels_encoding_mismatch": 0,
+    "within_patient_discordance": [
+      {
+        "class": 1,
+        "mixed_patients": 15,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 298
+      },
+      {
+        "class": 2,
+        "mixed_patients": 12,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 119
+      },
+      {
+        "class": 3,
+        "mixed_patients": 22,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 367
+      },
+      {
+        "class": 4,
+        "mixed_patients": 32,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 416
+      },
+      {
+        "class": 5,
+        "mixed_patients": 27,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 386
+      },
+      {
+        "class": 6,
+        "mixed_patients": 49,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 516
+      },
+      {
+        "class": 7,
+        "mixed_patients": 54,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 533
+      },
+      {
+        "class": 8,
+        "mixed_patients": 57,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 578
+      },
+      {
+        "class": 9,
+        "mixed_patients": 41,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 484
+      },
+      {
+        "class": 10,
+        "mixed_patients": 61,
+        "multi_study_patients": 109,
+        "studies_in_mixed_patients": 537
+      }
+    ]
+  },
+  "test": {
+    "images": 2218,
+    "studies": 1414,
+    "patients": 136,
+    "study_image_count_hist": {
+      "1": 775,
+      "2": 496,
+      "3": 122,
+      "4": 20,
+      "5": 1
+    },
+    "patient_study_count_hist": {
+      "1": 11,
+      "2": 16,
+      "3": 10,
+      "4": 10,
+      "5": 13,
+      "6": 10,
+      "7": 6,
+      "8": 4,
+      "9": 9,
+      "10": 4,
+      "11": 3,
+      "12": 4,
+      "13": 1,
+      "14": 3,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 1,
+      "20": 3,
+      "21": 2,
+      "22": 2,
+      "23": 1,
+      "24": 2,
+      "26": 1,
+      "27": 1,
+      "28": 1,
+      "29": 1,
+      "30": 2,
+      "32": 1,
+      "34": 1,
+      "39": 1,
+      "40": 1,
+      "48": 1,
+      "52": 1,
+      "62": 1
+    },
+    "max_studies_per_patient": 62,
+    "study_weighted_patient_effective_n": 65.2374053771861,
+    "top10_patients_study_fraction": 0.28005657708628007,
+    "view_position": {
+      "AP": 1090,
+      "PA": 402,
+      "LATERAL": 370,
+      "LL": 217,
+      "": 139
+    },
+    "study_view_sets": {
+      "AP": 838,
+      "LATERAL|PA": 183,
+      "LL|PA": 167,
+      "AP|LATERAL": 119,
+      "": 70,
+      "|LL": 20,
+      "AP|LL": 10,
+      "PA": 4,
+      "|LL|PA": 1,
+      "|AP|LL": 1,
+      "AP|LL|PA": 1
+    },
+    "orientation": {
+      "Erect": 1587,
+      "": 369,
+      "Recumbent": 262
+    },
+    "file_duplicates": 0,
+    "pixel_duplicates": 0,
+    "study_label_consistency_failures": 0,
+    "image_width_quantiles": {
+      "0.0": 1286.0,
+      "0.1": 1760.0,
+      "0.5": 2544.0,
+      "0.9": 3056.0,
+      "1.0": 4280.0
+    },
+    "image_height_quantiles": {
+      "0.0": 1554.0,
+      "0.1": 2021.0,
+      "0.5": 2778.0,
+      "0.9": 3056.0,
+      "1.0": 4280.0
+    },
+    "non_ok": {
+      "ok": 2218
+    }
+  },
+  "overlaps": {
+    "train_valid": {
+      "subject_id": 0,
+      "study_key": 0,
+      "file_sha256": 0,
+      "pixel_sha256": 0
+    },
+    "train_test": {
+      "subject_id": 0,
+      "study_key": 0,
+      "file_sha256": 0,
+      "pixel_sha256": 0
+    },
+    "valid_test": {
+      "subject_id": 0,
+      "study_key": 0,
+      "file_sha256": 0,
+      "pixel_sha256": 0
+    }
+  },
+  "cost_archive": {
+    "pictures_100": {
+      "images": 18,
+      "studies": 10,
+      "patients": 9,
+      "study_image_hist": {
+        "3": 3,
+        "2": 2,
+        "1": 5
+      },
+      "test_manifest_matches": 18,
+      "all_bytes_identical_to_test_manifest": true,
+      "all_study_images_present": true,
+      "all_patient_studies_present": false
+    },
+    "pictures_5": {
+      "images": 10,
+      "studies": 5,
+      "patients": 5,
+      "study_image_hist": {
+        "3": 2,
+        "1": 2,
+        "2": 1
+      },
+      "test_manifest_matches": 10,
+      "all_bytes_identical_to_test_manifest": true,
+      "all_study_images_present": true,
+      "all_patient_studies_present": false
+    }
+  },
+  "audit_provenance": {
+    "raw_image_rehash": "cost archive all 28 image bytes hashed; full dataset overlaps checked from existing immutable per-image SHA manifest, not rehashed in this audit",
+    "label_check": "Original train/valid label strings compared by Dicom_id with clean manifest; zero changes",
+    "original_train_image_count": 30344,
+    "train_excluded_images": 16,
+    "sources_sha256": {
+      "/home/featurize/work/rules.pdf": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+      "/home/featurize/work/rules_1.pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+      "/home/featurize/work/RULES_QA_CLARIFICATION_20261104.md": "f4c4e2d2e6d55167ac13ae4ce42549140d9818789886a9f1b289e88961bb21f5",
+      "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+      "/home/featurize/data/cxr_first/train.csv": "3a07b4bb5c81758718d4ccb69885c9160103aeb55ab8206c71fef152de334f17",
+      "/home/featurize/data/cxr_first/valid.csv": "7e1930138718eee4595f48820c26b69d95fb021bc9d48b46006c0aacd2415df6",
+      "/home/featurize/data/cxr_first/test.csv": "63e107d840cbf27aee7c1c0ced1157aef454baa1141fdc3851e6c3011471529e"
+    },
+    "test_usage": "Read-only integrity/metadata inventory; no labels, prediction fitting, model selection, or training changes based on test statistics"
+  }
+}

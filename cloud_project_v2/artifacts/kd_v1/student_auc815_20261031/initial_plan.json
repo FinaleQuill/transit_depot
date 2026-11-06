@@ -1,0 +1,28 @@
+{
+  "goal": "official-valid Macro-AUC >= 0.815 exploratory; no guarantee",
+  "teachers": "frozen original OOF; no teacher training or changed logits",
+  "test_used": false,
+  "initial_candidates_before_computing_combinations": {
+    "A_B_equal": [
+      0.5,
+      0.5,
+      0.0
+    ],
+    "B_033_equal": [
+      0.0,
+      0.5,
+      0.5
+    ],
+    "A_B_033_equal": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "candidate_order": [
+    "A",
+    "B",
+    "033"
+  ],
+  "selection_note": "Predeclared three fixed equal means; no per-class label-fitted weights. Any later candidates separately registered. Same official valid used previously for epoch selection, so uncertainty is exploratory."
+}

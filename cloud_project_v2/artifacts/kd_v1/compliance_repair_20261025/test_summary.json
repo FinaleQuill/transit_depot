@@ -1,0 +1,17 @@
+{
+  "tests": 63,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "patterns": {
+    "test_audit_trail.py": 14,
+    "test_training_log_cli.py": 4,
+    "test_kd_teacher.py": 11,
+    "test_kd_student.py": 13,
+    "test_kd_package.py": 13,
+    "test_training_evidence_monitor.py": 8
+  },
+  "model_forwards": 0,
+  "gpu_work": 0,
+  "note": "Small fixtures, mocked CLI dispatch and CPU metadata/loss tests only."
+}

@@ -1,0 +1,624 @@
+{
+  "created_utc": "2026-11-02T15:04:18.114413+00:00",
+  "scope": "逐项打开XLSX包内引用；原首轮后补正文档的当前文件哈希。第二轮首ZIP原始快照另存selfcheck/round2_stranger_review.json。",
+  "references_opened": 98,
+  "failed_references": [],
+  "references": [
+    {
+      "cell": "xl/worksheets/sheet1.xml!H21",
+      "path": "evidence/teachers/fold_0/config.json",
+      "exists": true,
+      "sha256": "4cd3f074f739fda8b5c941c858688351651e2ffbf4d945291707540c35798a3d"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H21",
+      "path": "evidence/teachers/fold_0/history.jsonl",
+      "exists": true,
+      "sha256": "36d6ec477a9f13a142266daf586944d2f7ee8e7f1a9fb182e88040ba4f9f5941"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H21",
+      "path": "evidence/teachers/fold_0/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "5f33ccdabb4d3c4ad1cfba36afc84fa490a396f424d6a206feb68db2b94c67ad"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H21",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H22",
+      "path": "evidence/teachers/fold_1/config.json",
+      "exists": true,
+      "sha256": "48f142df2bc9086ba5fc51b082534a7dd732985be148031fafff30b4e4a148ea"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H22",
+      "path": "evidence/teachers/fold_1/history.jsonl",
+      "exists": true,
+      "sha256": "cb3cbc6639153915a1a3337a96848b3c3648673cef212318bc6b3ecea4ab7a13"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H22",
+      "path": "evidence/teachers/fold_1/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "70f447f48652956817a6f8dede81069bcf7e45c2d5c8907a88d0913834b26bb9"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H22",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H23",
+      "path": "evidence/teachers/fold_2/config.json",
+      "exists": true,
+      "sha256": "ccc0f248a2d5fe6050bb9c2b0f5a815a3cbba0a43173ef783e69c4d536c4ab34"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H23",
+      "path": "evidence/teachers/fold_2/history.jsonl",
+      "exists": true,
+      "sha256": "5114718b40d1510ad293daeb7a2e7f676147141b6b045f190796622e670cb6d4"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H23",
+      "path": "evidence/teachers/fold_2/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "ea0fa88f43a1122fd91c5bae4b4252bdf9509dc7aff77e7a4e9d5cb5fca2792f"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H23",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H24",
+      "path": "evidence/teachers/fold_3/config.json",
+      "exists": true,
+      "sha256": "6781b5c59dfcaa45eab89e958738367822f337cd0cafc7497c0511ebcd513784"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H24",
+      "path": "evidence/teachers/fold_3/history.jsonl",
+      "exists": true,
+      "sha256": "25d33f44fdd50c339da679b5777d570d04b994a7fbc6657f8bba8f72c258dd41"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H24",
+      "path": "evidence/teachers/fold_3/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "873703dbd4907f0ad0716eee2d843498c93e8ed04a2900f046ced892e6b12b44"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H24",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H25",
+      "path": "evidence/teachers/fold_4/config.json",
+      "exists": true,
+      "sha256": "6f9026369ab38ae90f989abe07b65e66f24634f4a974790dcfb0ea615fcbde61"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H25",
+      "path": "evidence/teachers/fold_4/history.jsonl",
+      "exists": true,
+      "sha256": "a2f7253230f6c58b3663c340aa976c16ee19e564633b03e46e25050bf238cec7"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H25",
+      "path": "evidence/teachers/fold_4/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "fd314927b81c7ef516cd88fcad3e20074037f3965433e59c475129bae83c8028"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H25",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H26",
+      "path": "evidence/teachers/teacher_collection.json",
+      "exists": true,
+      "sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H26",
+      "path": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "sha256": "5659a564dd5db453d5cedce0d77dd45ad723971fa66d9237b7b753caa78d7b5e"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H27",
+      "path": "evidence/training/source_current/run_mixed_teachers.py",
+      "exists": true,
+      "sha256": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H28",
+      "path": "evidence/training/source_current/train_teacher.py",
+      "exists": true,
+      "sha256": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H29",
+      "path": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "exists": true,
+      "sha256": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H30",
+      "path": "evidence/training/source_current/distill_tta_data.py",
+      "exists": true,
+      "sha256": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H31",
+      "path": "evidence/training/source_current/train_distill.py",
+      "exists": true,
+      "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H32",
+      "path": "evidence/training/source_current/teacher_collection.py",
+      "exists": true,
+      "sha256": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H33",
+      "path": "evidence/training/source_current/cv_splits.py",
+      "exists": true,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H34",
+      "path": "evidence/training/source_current/kd_common.py",
+      "exists": true,
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H35",
+      "path": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H35",
+      "path": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "sha256": "5659a564dd5db453d5cedce0d77dd45ad723971fa66d9237b7b753caa78d7b5e"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H35",
+      "path": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "sha256": "a0dbb271b61aadfe6fa2c6712cc59de7179b03e67db03d57e14898377c5764ea"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H36",
+      "path": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H37",
+      "path": "evidence/teachers/oof_metadata.json",
+      "exists": true,
+      "sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H37",
+      "path": "evidence/training/source_current/extract_soft_labels_tta.py",
+      "exists": true,
+      "sha256": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H37",
+      "path": "evidence/training/source_current/distill_tta_data.py",
+      "exists": true,
+      "sha256": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H38",
+      "path": "evidence/training/student_A/config.json",
+      "exists": true,
+      "sha256": "604f696b050cd9a8a6b5bfc1b41cd4ac65359b83e6041fd2e98ffb991a5b1cc7"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H38",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H38",
+      "path": "evidence/training/student_A/config.json",
+      "exists": true,
+      "sha256": "604f696b050cd9a8a6b5bfc1b41cd4ac65359b83e6041fd2e98ffb991a5b1cc7"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H39",
+      "path": "evidence/training/student_B/config.json",
+      "exists": true,
+      "sha256": "bba2171dd1c60ef04e09a09a1a58d556960447448f78177ad3b117494346fe15"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H39",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H39",
+      "path": "evidence/training/student_B/config.json",
+      "exists": true,
+      "sha256": "bba2171dd1c60ef04e09a09a1a58d556960447448f78177ad3b117494346fe15"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H40",
+      "path": "evidence/training/source_current/run_bounded_pipeline.py",
+      "exists": true,
+      "sha256": "e0aa888924c07a7bae02cf1aba9b5404fa48ee9a41f138d969d7560bdef65d06"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H41",
+      "path": "evidence/weights/X1_config.json",
+      "exists": true,
+      "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H41",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H41",
+      "path": "evidence/training/X1/config.json",
+      "exists": true,
+      "sha256": "5407ac608876a66dbd3db6a6de7f7a0fcb531baa171cb58343f4044843f8b3d6"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H42",
+      "path": "evidence/weights/045_config.json",
+      "exists": true,
+      "sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H42",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H42",
+      "path": "evidence/training/student_B/config.json",
+      "exists": true,
+      "sha256": "bba2171dd1c60ef04e09a09a1a58d556960447448f78177ad3b117494346fe15"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H43",
+      "path": "evidence/training/source_current/tight_crop_ab_earlystop_training.py",
+      "exists": true,
+      "sha256": "93c3fd768a20a2941b9a35f9fa9c901e450a47cfd7bc0a9dc6e81171e1d7dba2"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H44",
+      "path": "evidence/training/crop_A_tiny/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "6d0fc1b5d5ef2fdc82fd75b60fd6f8293482b5828a4ae067b002ff448c9b9702"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H44",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H44",
+      "path": "evidence/training/crop_A_tiny/config.json",
+      "exists": true,
+      "sha256": "1593b13c3badbc59280a08df0d66d7906196cf63e5603a39cf38309342be47ab"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H45",
+      "path": "evidence/training/crop_A_base/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "c18c06d6f4af040443b603f3630eda813671284545c26f58683c34f62a40e59b"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H45",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H45",
+      "path": "evidence/training/crop_A_base/config.json",
+      "exists": true,
+      "sha256": "6288587d8404d6b11992f1681b8cb110f9e97da5b36a81f45cdcbf6f3eca3487"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H46",
+      "path": "evidence/training/crop_B_tiny/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "ab6740982f57f94734caaf43876e67e58b1e7bcd6e148edf4283a350da0c022a"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H46",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H46",
+      "path": "evidence/training/crop_B_tiny/config.json",
+      "exists": true,
+      "sha256": "4c6885ffc535ec8e9ddb994dd4d60e246a4c16bbcff9857a810aa48c689d0a4a"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H47",
+      "path": "evidence/training/crop_B_base/checkpoint_audit.jsonl",
+      "exists": true,
+      "sha256": "86c71f8ea9e288321d64c5d4af21c352327b2503ac00a2a2e14c4be1786dd597"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H47",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H47",
+      "path": "evidence/training/crop_B_base/config.json",
+      "exists": true,
+      "sha256": "76bbe5d58703a06a2d3dd028a4f13e2e8c7fa97be4d2c5321bc7819f1e225eb8"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H48",
+      "path": "declarations.md",
+      "exists": true,
+      "sha256": "569f088ff694563ae5ed2f816f66fcc1b092106f8e6b7a5e3e1ba54f583ad7ee"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H48",
+      "path": "evidence/teachers/SELECTION_EVIDENCE.md",
+      "exists": true,
+      "sha256": "5659a564dd5db453d5cedce0d77dd45ad723971fa66d9237b7b753caa78d7b5e"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H48",
+      "path": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "sha256": "a0dbb271b61aadfe6fa2c6712cc59de7179b03e67db03d57e14898377c5764ea"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H48",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H50",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H51",
+      "path": "evidence/weights/A_config.json",
+      "exists": true,
+      "sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H51",
+      "path": "evidence/weights/B_config.json",
+      "exists": true,
+      "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H51",
+      "path": "evidence/weights/X1_config.json",
+      "exists": true,
+      "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H52",
+      "path": "evidence/weights/inventory.json",
+      "exists": true,
+      "sha256": "227bd1714e2b43673668ebd92885e36bd6f2355e15919033992c155d190cdcfc"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H53",
+      "path": "declarations.md",
+      "exists": true,
+      "sha256": "569f088ff694563ae5ed2f816f66fcc1b092106f8e6b7a5e3e1ba54f583ad7ee"
+    },
+    {
+      "cell": "xl/worksheets/sheet1.xml!H54",
+      "path": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "exists": true,
+      "sha256": "a0dbb271b61aadfe6fa2c6712cc59de7179b03e67db03d57e14898377c5764ea"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H2",
+      "path": "evidence/teachers/fold_0/config.json",
+      "exists": true,
+      "sha256": "4cd3f074f739fda8b5c941c858688351651e2ffbf4d945291707540c35798a3d"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I2",
+      "path": "evidence/teachers/fold_0/history.jsonl",
+      "exists": true,
+      "sha256": "36d6ec477a9f13a142266daf586944d2f7ee8e7f1a9fb182e88040ba4f9f5941"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H3",
+      "path": "evidence/teachers/fold_1/config.json",
+      "exists": true,
+      "sha256": "48f142df2bc9086ba5fc51b082534a7dd732985be148031fafff30b4e4a148ea"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I3",
+      "path": "evidence/teachers/fold_1/history.jsonl",
+      "exists": true,
+      "sha256": "cb3cbc6639153915a1a3337a96848b3c3648673cef212318bc6b3ecea4ab7a13"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H4",
+      "path": "evidence/teachers/fold_2/config.json",
+      "exists": true,
+      "sha256": "ccc0f248a2d5fe6050bb9c2b0f5a815a3cbba0a43173ef783e69c4d536c4ab34"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I4",
+      "path": "evidence/teachers/fold_2/history.jsonl",
+      "exists": true,
+      "sha256": "5114718b40d1510ad293daeb7a2e7f676147141b6b045f190796622e670cb6d4"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H5",
+      "path": "evidence/teachers/fold_3/config.json",
+      "exists": true,
+      "sha256": "6781b5c59dfcaa45eab89e958738367822f337cd0cafc7497c0511ebcd513784"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I5",
+      "path": "evidence/teachers/fold_3/history.jsonl",
+      "exists": true,
+      "sha256": "25d33f44fdd50c339da679b5777d570d04b994a7fbc6657f8bba8f72c258dd41"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H6",
+      "path": "evidence/teachers/fold_4/config.json",
+      "exists": true,
+      "sha256": "6f9026369ab38ae90f989abe07b65e66f24634f4a974790dcfb0ea615fcbde61"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I6",
+      "path": "evidence/teachers/fold_4/history.jsonl",
+      "exists": true,
+      "sha256": "a2f7253230f6c58b3663c340aa976c16ee19e564633b03e46e25050bf238cec7"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H7",
+      "path": "evidence/training/student_A/config.json",
+      "exists": true,
+      "sha256": "604f696b050cd9a8a6b5bfc1b41cd4ac65359b83e6041fd2e98ffb991a5b1cc7"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I7",
+      "path": "evidence/training/student_A/console_20261030T052954Z_dc99f91e.log",
+      "exists": true,
+      "sha256": "72f2a7b1aa84ce86b2c6ee5ee4d8eb2f380dad9e81f71312472c873463137854"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H8",
+      "path": "evidence/training/student_B/config.json",
+      "exists": true,
+      "sha256": "bba2171dd1c60ef04e09a09a1a58d556960447448f78177ad3b117494346fe15"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I8",
+      "path": "evidence/training/student_B/console_20261030T103505Z_a5480d3c.log",
+      "exists": true,
+      "sha256": "3f806b70a528332a545d11ce20ebb67debe810a643a997e5c1dbc3ad196ab74c"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H9",
+      "path": "evidence/training/X1/config.json",
+      "exists": true,
+      "sha256": "5407ac608876a66dbd3db6a6de7f7a0fcb531baa171cb58343f4044843f8b3d6"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I9",
+      "path": "evidence/training/X1/console_20261101T065749Z_f2a2138c.log",
+      "exists": true,
+      "sha256": "5480d26f6c42d2f890a453c2fcb5526fb58e57dbab4abed669c9e484271aab46"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H10",
+      "path": "evidence/training/crop_A_tiny/config.json",
+      "exists": true,
+      "sha256": "1593b13c3badbc59280a08df0d66d7906196cf63e5603a39cf38309342be47ab"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I10",
+      "path": "evidence/training/crop_A_tiny/original_E1_console.log",
+      "exists": true,
+      "sha256": "1670fb1f7fe8cc277953353e7795c453999f81d2d05d60102634df6dbf239517"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H11",
+      "path": "evidence/training/crop_A_base/config.json",
+      "exists": true,
+      "sha256": "6288587d8404d6b11992f1681b8cb110f9e97da5b36a81f45cdcbf6f3eca3487"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I11",
+      "path": "evidence/training/crop_A_base/console_20261101T221700Z_64e06eeb.log",
+      "exists": true,
+      "sha256": "02fd2342d76fab2924812b10eb826ff67d737afbc3346974fcbd84726a26580f"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H12",
+      "path": "evidence/training/crop_B_tiny/config.json",
+      "exists": true,
+      "sha256": "4c6885ffc535ec8e9ddb994dd4d60e246a4c16bbcff9857a810aa48c689d0a4a"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I12",
+      "path": "evidence/training/crop_B_tiny/console_20261102T024037Z_61c80be4.log",
+      "exists": true,
+      "sha256": "4c57cf53fabff0fe9b034ecef076cb3ff7ee31fc12fde07bed2a0b99aaf845ae"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!H13",
+      "path": "evidence/training/crop_B_base/config.json",
+      "exists": true,
+      "sha256": "76bbe5d58703a06a2d3dd028a4f13e2e8c7fa97be4d2c5321bc7819f1e225eb8"
+    },
+    {
+      "cell": "xl/worksheets/sheet3.xml!I13",
+      "path": "evidence/training/crop_B_base/console_20261102T055123Z_db7ec019.log",
+      "exists": true,
+      "sha256": "d5a74794e2fdca91140b0602d5bc8df74db2c2330b67e8aa82726712471f5985"
+    }
+  ],
+  "corrections": [
+    {
+      "problem": "草稿F38/F39将last EMA哈希写在best_ema_fp32行",
+      "fixed_location": "模型核验材料与数据声明清单.xlsx#申报清单草案!F38:F39",
+      "evidence": "evidence/weights/inventory.json",
+      "result": "现在F38=aa3c632e…aa88fd6f，F39=9cb733eb…a5e805a3，与现存best_ema_fp32文件一致"
+    },
+    {
+      "problem": "原表统一warmup与绝对路径不能单凭包内审阅",
+      "fixed_location": "模型核验材料与数据声明清单.xlsx#逐权重配置!A2:J13",
+      "evidence": "evidence/training/WARMUP_BY_WEIGHT.md",
+      "result": "逐权重列KD/LR warmup、seed、起点、包内config和日志"
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "gap": "最终推理成员/最终学生权重未冻结",
+      "location": "模型核验材料与数据声明清单.xlsx#申报清单草案!E52",
+      "effect": "无法形成最终加载文件/哈希/总体积闭环；不得标已满足"
+    },
+    {
+      "gap": "未找到官方现行空表版本确认",
+      "location": "模型核验材料与数据声明清单.xlsx#自查!B8",
+      "effect": "按旧底稿改制的表格内容可审阅，不能自称现行官方模板认证"
+    }
+  ],
+  "final_refresh_utc": "2026-11-02",
+  "workbook_sha256": "27bcf6d742c51beed7b8bf72804ba28803dcea8b99f8f58fd3b3eee8597a0759"
+}

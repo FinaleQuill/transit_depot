@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-11-04T14:25:04.526186+08:00",
+  "state": "ready_for_root_smoke",
+  "runtime_source": "/home/featurize/work/cxr_research_20261103/reconstruction/runtime_local.py",
+  "runtime_source_sha256": "498022f9a5ebe3c65950700d726e11e964490ea43c0c547dc85036609abf7425",
+  "runtime_image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+  "addon_manifest": "/home/featurize/work/reconstruction_runs_20261103/assets/e2_runtime_addons_20261104/manifest.json",
+  "addon_manifest_sha256": "9d31553bb8f063802b80052ec4948b6ffc608f8c13eba1fcf1a3fd5c8283c21f",
+  "addon_inventory_bytes": 17059586,
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "timm": "1.0.30",
+    "PIL": "10.4.0",
+    "numpy": "1.26.4",
+    "safetensors": "0.8.0",
+    "huggingface_hub": "0.34.4",
+    "tqdm": "4.67.1"
+  },
+  "gpu": [
+    {
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "total_memory": 23078109184
+    }
+  ],
+  "mount_options_verified": {
+    "/opt/cxr_e2_addons": "ro,relatime",
+    "/home/featurize/data": "ro,relatime",
+    "/home/featurize/work/cxr_research_20261103": "ro,relatime",
+    "/home/featurize/work/reconstruction_runs_20261103": "rw,relatime",
+    "/home/featurize/data/cxr_reconstruction_smokes_20261104": "rw,relatime",
+    "/home/featurize/work/reconstruction_runs_20261103/assets": "ro,relatime",
+    "/home/featurize/work/reconstruction_runs_20261103/splits": "ro,relatime"
+  },
+  "old_runtime_unchanged": true,
+  "old_runtime_sha256": "127898df741c59865a17995394cb7755a962436434085259d51cde3124095f85",
+  "initial_attempt": "addon_install.json failed during missing tqdm metadata lookup before any download/install; preserved. Explicit corrected retry succeeded.",
+  "training_runs": 0,
+  "model_forwards": 0,
+  "model_weights_downloaded": 0,
+  "remote_git_push": false,
+  "committed": false
+}

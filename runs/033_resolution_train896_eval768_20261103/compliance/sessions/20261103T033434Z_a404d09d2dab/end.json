@@ -1,0 +1,27 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "amp_skipped_steps": 2,
+    "backward_batches": 22746,
+    "best_auc": 0.8078904926291515,
+    "best_checkpoint_sha256": "021a82e516a90b72d651af6f0c9af06fed94617db200589b6553228e6f1a2e8a",
+    "best_epoch": 1,
+    "completed_epochs": 3,
+    "ema_updates": 2842,
+    "last_checkpoint_sha256": "dbde1f6a2e2cb1d9672735a388d6b893db1d7c8454be7ed1991517c0ae58ecbc",
+    "optimizer_updates": 2842,
+    "state": "completed",
+    "updated_utc": "2026-11-03T04:57:46.566395+00:00",
+    "validated_epochs": 3
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "8a9aeab1d6831e12646721f753068197d8b240f68e2fd2fb0d185616a20375d5",
+  "record_sha256": "f94fad2f2ff15a6319c04c5fd9c868d449587f3ca62e92a173c3375068e50557",
+  "recorded_at_hong_kong": "2026-11-03T12:57:46.642335+08:00",
+  "recorded_at_utc": "2026-11-03T04:57:46.642335+00:00",
+  "run_dir": "/home/featurize/work/runs/033_resolution_train896_eval768_20261103",
+  "session_id": "20261103T033434Z_a404d09d2dab",
+  "state": "completed",
+  "trainer": "train_distill.run_training"
+}

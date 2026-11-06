@@ -1,0 +1,37 @@
+{
+  "arm": "global_local",
+  "benchmark_deadline_seconds": 600,
+  "boundary_epoch": 2,
+  "controller_pid": 51006,
+  "controller_stop_sha256": "912b9138ead028abb3cc6969ffbd7f73314d0c4f783d11dccca6f6729126180d",
+  "do_not_start_GPU_probe_before_complete_boundary": true,
+  "minimum_gpu_headroom_bytes": 1610612736,
+  "minimum_speedup": 1.08,
+  "progress_at_request": {
+    "attempted_updates": 487,
+    "compute_seconds": 3195.177612446194,
+    "data_wait_seconds": 23.917467411807593,
+    "elapsed_seconds": 3219.095071560001,
+    "epoch": 2,
+    "estimated_epoch_seconds": 8039.053069893996,
+    "gradient_norm": 3.0578725337982178,
+    "images_done": 7243,
+    "learning_rates": [
+      4.930519331142547e-06,
+      4.930519331142547e-06,
+      4.9305193311425464e-05,
+      4.9305193311425464e-05
+    ],
+    "mean_loss": 0.45000905723014945,
+    "optimizer_updates": 487,
+    "peak_gpu_bytes": 14616630784,
+    "regions_done": 36215,
+    "skipped_updates": 0,
+    "state": "training",
+    "studies_done": 4448,
+    "studies_total": 11108,
+    "updated_at": "2026-11-04T21:18:19.095975+08:00"
+  },
+  "requested_at": "2026-11-04T21:18:27.921513+08:00",
+  "scope": "train-only activation retention probe; all data, images, five regions, optimizer budget, LR and early stop unchanged"
+}

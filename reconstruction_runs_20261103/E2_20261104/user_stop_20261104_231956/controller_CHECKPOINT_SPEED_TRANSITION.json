@@ -1,0 +1,9 @@
+{
+  "benchmark_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/checkpoint_speed_20261104/benchmark/RESULT.json",
+  "checkpoint_profile_adopted": true,
+  "next_epoch": 3,
+  "no_training_epochs_repeated": true,
+  "pid": 90510,
+  "state": "activated",
+  "updated_at": "2026-11-04T23:00:16.911462+08:00"
+}

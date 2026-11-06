@@ -1,0 +1,14 @@
+{
+  "controller_pid": 218075,
+  "launched_at": "2026-11-05T20:04:09.138443+08:00",
+  "command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "-m",
+    "breakthrough.launch",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/breakthrough/plan.json",
+    "--controller"
+  ],
+  "detached": true
+}

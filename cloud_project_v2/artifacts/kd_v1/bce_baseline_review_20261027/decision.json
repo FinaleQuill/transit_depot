@@ -1,0 +1,16 @@
+{
+  "checked_at_hong_kong": "2026-10-27T11:56:52.930698+08:00",
+  "decision": "Keep E6 pureBCE baseline; user runs FP16 export plus officialvalid deployment validation next. No E11 continuation or new KD/768/ensemble training yet.",
+  "runtime_code_modified": false,
+  "new_model_builds": 0,
+  "new_forward_passes": 0,
+  "new_training_started": false,
+  "new_exports_created": false,
+  "gpu_processes": "",
+  "source_manifests_sha256": {
+    "train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+  },
+  "patient_uncertainty_pending_saved_student_predictions": true,
+  "source_git_commit": "1c70debaad740a41b26d7244bf8cdd61ac25a64d"
+}

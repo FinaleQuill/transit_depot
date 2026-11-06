@@ -1,0 +1,9 @@
+{
+  "last": "/home/featurize/data/kd_rebuild_20261106/state/mechanics/convnext_l/last.pt",
+  "last_sha256": "1d89b7a520b6ae3cbd496fdc0f429473bb96b9dda5adc21ce6f50af16a2bcfd1",
+  "ema": "/home/featurize/data/kd_rebuild_20261106/state/mechanics/convnext_l/latest_ema_fp16.pt",
+  "ema_sha256": "bebfd7504fd56812c897c29581ba93d149a22d57520227a69aa09ac535ad4d99",
+  "completed_epoch": 2,
+  "checkpoint_storage": "local data disk; evidence on persistent workspace",
+  "updated_at": "2026-11-06T15:33:32.773705+08:00"
+}

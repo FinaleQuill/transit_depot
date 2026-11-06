@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-11-04T14:22:15.638086+08:00",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--network=bridge",
+    "--user",
+    "1000:1000",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/assets/e2_runtime_addons_20261104:/addons:rw",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--entrypoint",
+    "python3",
+    "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "-u",
+    "-c",
+    "import subprocess,sys\npackages=['timm==1.0.30','safetensors==0.8.0','huggingface-hub==0.34.4','tqdm==4.67.1']\nsubprocess.run([sys.executable,'-m','pip','download','--no-deps','--only-binary=:all:','--disable-pip-version-check','--dest','/addons/wheels',*packages],check=True)\nsubprocess.run([sys.executable,'-m','pip','install','--no-index','--no-deps','--no-compile','--disable-pip-version-check','--target','/addons/site','--find-links','/addons/wheels',*packages],check=True)\n"
+  ],
+  "exit_code": 0,
+  "stdout": "Collecting timm==1.0.30\n  Downloading timm-1.0.30-py3-none-any.whl.metadata (33 kB)\nCollecting safetensors==0.8.0\n  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)\nCollecting huggingface-hub==0.34.4\n  Downloading huggingface_hub-0.34.4-py3-none-any.whl.metadata (14 kB)\nCollecting tqdm==4.67.1\n  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)\nDownloading timm-1.0.30-py3-none-any.whl (2.7 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 2.7/2.7 MB 3.1 MB/s  0:00:01\nDownloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)\nDownloading huggingface_hub-0.34.4-py3-none-any.whl (561 kB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 561.5/561.5 kB 12.4 MB/s  0:00:00\nDownloading tqdm-4.67.1-py3-none-any.whl (78 kB)\nSaved /addons/wheels/timm-1.0.30-py3-none-any.whl\nSaved /addons/wheels/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\nSaved /addons/wheels/huggingface_hub-0.34.4-py3-none-any.whl\nSaved /addons/wheels/tqdm-4.67.1-py3-none-any.whl\nSuccessfully downloaded timm safetensors huggingface-hub tqdm\nLooking in links: /addons/wheels\nProcessing /addons/wheels/timm-1.0.30-py3-none-any.whl\nProcessing /addons/wheels/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\nProcessing /addons/wheels/huggingface_hub-0.34.4-py3-none-any.whl\nProcessing /addons/wheels/tqdm-4.67.1-py3-none-any.whl\nInstalling collected packages: tqdm, timm, safetensors, huggingface-hub\n\nSuccessfully installed huggingface-hub-0.34.4 safetensors-0.8.0 timm-1.0.30 tqdm-4.67.1\n",
+  "stderr": "",
+  "purpose": "restore generic runtime dependencies; first attempt only failed during base metadata probe",
+  "training_executed": false
+}

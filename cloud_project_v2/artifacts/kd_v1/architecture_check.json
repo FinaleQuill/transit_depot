@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+      "parameters": 87576714,
+      "fp32_parameter_bytes": 350306856,
+      "fp16_parameter_bytes": 175153428,
+      "forward_calls": 0,
+      "pretrained": false
+    },
+    {
+      "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "parameters": 27827818,
+      "fp32_parameter_bytes": 111311272,
+      "fp16_parameter_bytes": 55655636,
+      "forward_calls": 0,
+      "pretrained": false
+    }
+  ],
+  "model_forwards": 0,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "pretrained_downloads": 0
+}

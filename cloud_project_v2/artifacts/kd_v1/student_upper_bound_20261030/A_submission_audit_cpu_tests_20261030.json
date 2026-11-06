@@ -1,0 +1,12 @@
+{
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "gpu_work": false,
+  "real_test_predictions_read": false,
+  "files": {
+    "audit_student_submission.py": "8a7cbf375aa786aed9e2042c312199b34513919c57124df7e201d5f4345b68d7",
+    "tests/test_audit_student_submission.py": "ff756fee27058c71fbdeabdfcc751e6ec9c7323a6581c9cdda5eb28fb39aaf44"
+  },
+  "log": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/A_submission_audit_cpu_tests_20261030.log"
+}

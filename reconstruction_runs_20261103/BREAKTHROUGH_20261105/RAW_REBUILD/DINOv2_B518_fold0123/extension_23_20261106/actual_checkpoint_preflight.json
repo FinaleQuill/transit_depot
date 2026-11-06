@@ -1,0 +1,25 @@
+{
+  "parent_epoch": 18,
+  "next_epoch": 19,
+  "optimizer_updates": 8334,
+  "stale": 0,
+  "best_epoch": 18,
+  "best_auc": 0.8046352631165428,
+  "train_images": 24277,
+  "dev_images": 6067,
+  "unchanged_state_fields": [
+    "model",
+    "ema",
+    "optimizer",
+    "scaler",
+    "evidence",
+    "progress",
+    "epoch",
+    "best",
+    "meaningful",
+    "stale",
+    "best_epoch",
+    "rng"
+  ],
+  "extension_validated": true
+}

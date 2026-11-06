@@ -1,0 +1,789 @@
+{
+  "method": "AST import graph and compile(source, filename, exec); no module imported or executed",
+  "root_modules": [
+    "predict",
+    "cost",
+    "submission_runtime",
+    "train_teacher",
+    "train_distill",
+    "study_student",
+    "model_overnight",
+    "kd_common",
+    "prepare_inference",
+    "export_student",
+    "extract_soft_labels_tta"
+  ],
+  "unchanged_local_modules": [
+    "audit_trail",
+    "benchmark_local_resources",
+    "compare_student_candidates",
+    "cost",
+    "cv_splits",
+    "dataset",
+    "dataset_overnight",
+    "deploy_kd",
+    "distill_data",
+    "distill_tta_data",
+    "export_student",
+    "extract_soft_labels_tta",
+    "fast_lanczos",
+    "inference_inputs",
+    "inference_reproducibility",
+    "inference_runtime",
+    "kd_common",
+    "model_overnight",
+    "planned_handoff",
+    "predict",
+    "prepare_inference",
+    "runtime_compat",
+    "student_draft_pair",
+    "student_ensemble",
+    "student_experiment_evaluation",
+    "student_experiments",
+    "student_fixed_pair",
+    "study_packing",
+    "study_student",
+    "submission_runtime",
+    "submit_student_candidate",
+    "teacher_collection",
+    "train_distill",
+    "train_overnight",
+    "train_teacher",
+    "training_evidence_monitor"
+  ],
+  "local_import_edges": [
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "distill_tta_data",
+      "line": 16
+    },
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "teacher_collection",
+      "line": 18
+    },
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "cv_splits",
+      "line": 65
+    },
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "dataset",
+      "line": 66
+    },
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "dataset_overnight",
+      "line": 81
+    },
+    {
+      "module": "extract_soft_labels_tta",
+      "dependency": "model_overnight",
+      "line": 82
+    },
+    {
+      "module": "model_overnight",
+      "dependency": "runtime_compat",
+      "line": 13
+    },
+    {
+      "module": "dataset_overnight",
+      "dependency": "dataset",
+      "line": 22
+    },
+    {
+      "module": "dataset",
+      "dependency": "runtime_compat",
+      "line": 21
+    },
+    {
+      "module": "cv_splits",
+      "dependency": "dataset",
+      "line": 18
+    },
+    {
+      "module": "teacher_collection",
+      "dependency": "kd_common",
+      "line": 114
+    },
+    {
+      "module": "teacher_collection",
+      "dependency": "distill_data",
+      "line": 124
+    },
+    {
+      "module": "distill_data",
+      "dependency": "cv_splits",
+      "line": 40
+    },
+    {
+      "module": "distill_data",
+      "dependency": "kd_common",
+      "line": 136
+    },
+    {
+      "module": "distill_tta_data",
+      "dependency": "distill_data",
+      "line": 16
+    },
+    {
+      "module": "distill_tta_data",
+      "dependency": "distill_data",
+      "line": 17
+    },
+    {
+      "module": "export_student",
+      "dependency": "deploy_kd",
+      "line": 13
+    },
+    {
+      "module": "export_student",
+      "dependency": "model_overnight",
+      "line": 66
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "kd_common",
+      "line": 72
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "fast_lanczos",
+      "line": 358
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "inference_runtime",
+      "line": 410
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "model_overnight",
+      "line": 414
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "inference_inputs",
+      "line": 453
+    },
+    {
+      "module": "deploy_kd",
+      "dependency": "inference_inputs",
+      "line": 476
+    },
+    {
+      "module": "prepare_inference",
+      "dependency": "inference_runtime",
+      "line": 22
+    },
+    {
+      "module": "study_student",
+      "dependency": "audit_trail",
+      "line": 28
+    },
+    {
+      "module": "study_student",
+      "dependency": "kd_common",
+      "line": 29
+    },
+    {
+      "module": "study_student",
+      "dependency": "train_distill",
+      "line": 30
+    },
+    {
+      "module": "study_student",
+      "dependency": "dataset_overnight",
+      "line": 131
+    },
+    {
+      "module": "study_student",
+      "dependency": "train_overnight",
+      "line": 185
+    },
+    {
+      "module": "study_student",
+      "dependency": "cv_splits",
+      "line": 292
+    },
+    {
+      "module": "study_student",
+      "dependency": "dataset",
+      "line": 293
+    },
+    {
+      "module": "study_student",
+      "dependency": "dataset_overnight",
+      "line": 294
+    },
+    {
+      "module": "study_student",
+      "dependency": "model_overnight",
+      "line": 295
+    },
+    {
+      "module": "study_student",
+      "dependency": "student_experiments",
+      "line": 296
+    },
+    {
+      "module": "study_student",
+      "dependency": "train_overnight",
+      "line": 297
+    },
+    {
+      "module": "study_student",
+      "dependency": "model_overnight",
+      "line": 57
+    },
+    {
+      "module": "study_student",
+      "dependency": "model_overnight",
+      "line": 77
+    },
+    {
+      "module": "study_student",
+      "dependency": "dataset_overnight",
+      "line": 109
+    },
+    {
+      "module": "study_student",
+      "dependency": "dataset_overnight",
+      "line": 122
+    },
+    {
+      "module": "study_student",
+      "dependency": "study_packing",
+      "line": 182
+    },
+    {
+      "module": "study_student",
+      "dependency": "kd_common",
+      "line": 385
+    },
+    {
+      "module": "study_student",
+      "dependency": "training_evidence_monitor",
+      "line": 565
+    },
+    {
+      "module": "training_evidence_monitor",
+      "dependency": "audit_trail",
+      "line": 24
+    },
+    {
+      "module": "study_packing",
+      "dependency": "study_student",
+      "line": 38
+    },
+    {
+      "module": "study_packing",
+      "dependency": "train_distill",
+      "line": 39
+    },
+    {
+      "module": "study_packing",
+      "dependency": "train_overnight",
+      "line": 40
+    },
+    {
+      "module": "train_overnight",
+      "dependency": "runtime_compat",
+      "line": 9
+    },
+    {
+      "module": "train_overnight",
+      "dependency": "model_overnight",
+      "line": 30
+    },
+    {
+      "module": "train_overnight",
+      "dependency": "dataset_overnight",
+      "line": 367
+    },
+    {
+      "module": "train_overnight",
+      "dependency": "cv_splits",
+      "line": 583
+    },
+    {
+      "module": "train_overnight",
+      "dependency": "dataset_overnight",
+      "line": 584
+    },
+    {
+      "module": "train_distill",
+      "dependency": "audit_trail",
+      "line": 26
+    },
+    {
+      "module": "train_distill",
+      "dependency": "kd_common",
+      "line": 28
+    },
+    {
+      "module": "train_distill",
+      "dependency": "model_overnight",
+      "line": 139
+    },
+    {
+      "module": "train_distill",
+      "dependency": "dataset_overnight",
+      "line": 425
+    },
+    {
+      "module": "train_distill",
+      "dependency": "train_overnight",
+      "line": 426
+    },
+    {
+      "module": "train_distill",
+      "dependency": "train_overnight",
+      "line": 524
+    },
+    {
+      "module": "train_distill",
+      "dependency": "train_overnight",
+      "line": 545
+    },
+    {
+      "module": "train_distill",
+      "dependency": "cv_splits",
+      "line": 615
+    },
+    {
+      "module": "train_distill",
+      "dependency": "dataset",
+      "line": 616
+    },
+    {
+      "module": "train_distill",
+      "dependency": "dataset_overnight",
+      "line": 617
+    },
+    {
+      "module": "train_distill",
+      "dependency": "model_overnight",
+      "line": 618
+    },
+    {
+      "module": "train_distill",
+      "dependency": "train_overnight",
+      "line": 619
+    },
+    {
+      "module": "train_distill",
+      "dependency": "model_overnight",
+      "line": 73
+    },
+    {
+      "module": "train_distill",
+      "dependency": "distill_tta_data",
+      "line": 353
+    },
+    {
+      "module": "train_distill",
+      "dependency": "distill_data",
+      "line": 355
+    },
+    {
+      "module": "train_distill",
+      "dependency": "student_experiments",
+      "line": 637
+    },
+    {
+      "module": "train_distill",
+      "dependency": "training_evidence_monitor",
+      "line": 926
+    },
+    {
+      "module": "train_distill",
+      "dependency": "student_experiments",
+      "line": 733
+    },
+    {
+      "module": "student_experiments",
+      "dependency": "kd_common",
+      "line": 9
+    },
+    {
+      "module": "student_experiments",
+      "dependency": "train_overnight",
+      "line": 31
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "audit_trail",
+      "line": 20
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "planned_handoff",
+      "line": 21
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "model_overnight",
+      "line": 22
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "train_overnight",
+      "line": 23
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "cv_splits",
+      "line": 49
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "kd_common",
+      "line": 86
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "dataset_overnight",
+      "line": 138
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "kd_common",
+      "line": 139
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "training_evidence_monitor",
+      "line": 374
+    },
+    {
+      "module": "train_teacher",
+      "dependency": "cv_splits",
+      "line": 272
+    },
+    {
+      "module": "submission_runtime",
+      "dependency": "deploy_kd",
+      "line": 25
+    },
+    {
+      "module": "submission_runtime",
+      "dependency": "student_ensemble",
+      "line": 12
+    },
+    {
+      "module": "submission_runtime",
+      "dependency": "submit_student_candidate",
+      "line": 15
+    },
+    {
+      "module": "submission_runtime",
+      "dependency": "student_fixed_pair",
+      "line": 23
+    },
+    {
+      "module": "submission_runtime",
+      "dependency": "student_draft_pair",
+      "line": 19
+    },
+    {
+      "module": "student_draft_pair",
+      "dependency": "deploy_kd",
+      "line": 11
+    },
+    {
+      "module": "student_draft_pair",
+      "dependency": "student_fixed_pair",
+      "line": 12
+    },
+    {
+      "module": "student_draft_pair",
+      "dependency": "inference_inputs",
+      "line": 44
+    },
+    {
+      "module": "student_fixed_pair",
+      "dependency": "deploy_kd",
+      "line": 13
+    },
+    {
+      "module": "student_fixed_pair",
+      "dependency": "student_experiment_evaluation",
+      "line": 15
+    },
+    {
+      "module": "student_fixed_pair",
+      "dependency": "inference_inputs",
+      "line": 113
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "deploy_kd",
+      "line": 19
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "inference_reproducibility",
+      "line": 25
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "kd_common",
+      "line": 85
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "model_overnight",
+      "line": 86
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "model_overnight",
+      "line": 132
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "deploy_kd",
+      "line": 288
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "compare_student_candidates",
+      "line": 325
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "dataset",
+      "line": 326
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "benchmark_local_resources",
+      "line": 350
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "cost",
+      "line": 351
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "inference_runtime",
+      "line": 188
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "model_overnight",
+      "line": 191
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "inference_inputs",
+      "line": 192
+    },
+    {
+      "module": "student_experiment_evaluation",
+      "dependency": "cost",
+      "line": 264
+    },
+    {
+      "module": "cost",
+      "dependency": "deploy_kd",
+      "line": 25
+    },
+    {
+      "module": "cost",
+      "dependency": "inference_reproducibility",
+      "line": 28
+    },
+    {
+      "module": "cost",
+      "dependency": "fast_lanczos",
+      "line": 155
+    },
+    {
+      "module": "cost",
+      "dependency": "submission_runtime",
+      "line": 279
+    },
+    {
+      "module": "benchmark_local_resources",
+      "dependency": "cost",
+      "line": 20
+    },
+    {
+      "module": "benchmark_local_resources",
+      "dependency": "deploy_kd",
+      "line": 21
+    },
+    {
+      "module": "compare_student_candidates",
+      "dependency": "deploy_kd",
+      "line": 15
+    },
+    {
+      "module": "compare_student_candidates",
+      "dependency": "dataset",
+      "line": 71
+    },
+    {
+      "module": "submit_student_candidate",
+      "dependency": "deploy_kd",
+      "line": 12
+    },
+    {
+      "module": "submit_student_candidate",
+      "dependency": "predict",
+      "line": 13
+    },
+    {
+      "module": "submit_student_candidate",
+      "dependency": "student_experiment_evaluation",
+      "line": 14
+    },
+    {
+      "module": "predict",
+      "dependency": "deploy_kd",
+      "line": 8
+    },
+    {
+      "module": "predict",
+      "dependency": "inference_reproducibility",
+      "line": 10
+    },
+    {
+      "module": "predict",
+      "dependency": "submission_runtime",
+      "line": 88
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "deploy_kd",
+      "line": 15
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "student_experiment_evaluation",
+      "line": 18
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "inference_inputs",
+      "line": 104
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "inference_inputs",
+      "line": 112
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "student_draft_pair",
+      "line": 115
+    },
+    {
+      "module": "student_ensemble",
+      "dependency": "inference_inputs",
+      "line": 118
+    }
+  ],
+  "missing_local_import_files": [],
+  "external_import_modules": [
+    "PIL",
+    "__future__",
+    "albumentations",
+    "argparse",
+    "collections",
+    "copy",
+    "csv",
+    "cv2",
+    "dataclasses",
+    "datetime",
+    "fcntl",
+    "gc",
+    "hashlib",
+    "huggingface_hub",
+    "importlib",
+    "io",
+    "json",
+    "math",
+    "native_lanczos",
+    "numpy",
+    "os",
+    "pathlib",
+    "platform",
+    "random",
+    "re",
+    "shutil",
+    "signal",
+    "sklearn",
+    "subprocess",
+    "sys",
+    "tarfile",
+    "tempfile",
+    "time",
+    "timm",
+    "torch",
+    "typing",
+    "urllib",
+    "uuid"
+  ],
+  "syntax_checked_files": [
+    "code/audit_trail.py",
+    "code/benchmark_local_resources.py",
+    "code/compare_student_candidates.py",
+    "code/cost.py",
+    "code/cv_splits.py",
+    "code/dataset.py",
+    "code/dataset_overnight.py",
+    "code/deploy_kd.py",
+    "code/distill_data.py",
+    "code/distill_tta_data.py",
+    "code/export_student.py",
+    "code/extract_soft_labels_tta.py",
+    "code/fast_lanczos.py",
+    "code/inference_inputs.py",
+    "code/inference_reproducibility.py",
+    "code/inference_runtime.py",
+    "code/kd_common.py",
+    "code/model.py",
+    "code/model_overnight.py",
+    "code/native_lanczos/__init__.py",
+    "code/native_lanczos/setup.py",
+    "code/planned_handoff.py",
+    "code/predict.py",
+    "code/prepare_inference.py",
+    "code/runtime_compat.py",
+    "code/student_draft_pair.py",
+    "code/student_ensemble.py",
+    "code/student_experiment_evaluation.py",
+    "code/student_experiments.py",
+    "code/student_fixed_pair.py",
+    "code/study_packing.py",
+    "code/study_student.py",
+    "code/submission_runtime.py",
+    "code/submit_student_candidate.py",
+    "code/teacher_collection.py",
+    "code/train.py",
+    "code/train_distill.py",
+    "code/train_overnight.py",
+    "code/train_teacher.py",
+    "code/training_evidence_monitor.py",
+    "code/utils.py",
+    "cost.py"
+  ],
+  "syntax_errors": [],
+  "dynamic_import_and_runtime_execution_verified": false,
+  "model_forward_executed": false,
+  "training_executed": false,
+  "test_images_read": false,
+  "new_timing_executed": false,
+  "wrapper_files_created_for_package": [
+    "train.py",
+    "model.py",
+    "utils.py",
+    "requirements.txt",
+    "../cost.py"
+  ]
+}

@@ -1,0 +1,24 @@
+[VALID] 100/1422 images
+[VALID] 200/1422 images
+[VALID] 300/1422 images
+[VALID] 400/1422 images
+[VALID] 500/1422 images
+[VALID] 600/1422 images
+[VALID] 700/1422 images
+[VALID] 800/1422 images
+[VALID] 900/1422 images
+[VALID] 1000/1422 images
+[VALID] 1100/1422 images
+[VALID] 1200/1422 images
+[VALID] 1300/1422 images
+[VALID] 1400/1422 images
+{
+  "macro_auc": 0.8169045290460086,
+  "mean_ms": 87.1001873432639,
+  "round_mean_ms": [
+    86.58956017985474,
+    88.43417904005037,
+    86.27682280988665
+  ],
+  "size_bytes": 241448514
+}

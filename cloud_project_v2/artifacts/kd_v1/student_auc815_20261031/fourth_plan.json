@@ -1,0 +1,32 @@
+{
+  "registered_at_utc": "2026-10-31T07:22:16.325824+00:00",
+  "batch": 4,
+  "candidates": [
+    "B_study_rms",
+    "B_study_max",
+    "AB_study_rms",
+    "AB_study_max"
+  ],
+  "baselines": [
+    "B_study_mean",
+    "AB_study_mean"
+  ],
+  "input": "Frozen original A/B FP16 768 hflip2 per-image probabilities, SHA-bound to original full official-valid reports",
+  "AB": "Fixed 0.5*A+0.5*B per image, followed by Study pooling",
+  "pooling": {
+    "rms": "sqrt(mean(image_probability**2)) per Study and class",
+    "max": "max(image_probability) per Study and class"
+  },
+  "all_classes_same_method": true,
+  "parameters_fitted": false,
+  "test_used": false,
+  "new_model_inference": false,
+  "bootstrap": {
+    "samples": 1000,
+    "seed": 20261031,
+    "sampling_unit": "patient with all Studies",
+    "reference": "each candidate own B/AB Study mean"
+  },
+  "stop_rule": "Report these four candidates only, including failures; no expanded search even if >=.815",
+  "interpretation": "Fourth exploratory batch on same repeatedly used official valid, not independent confirmation. AB requires real inference and timing; B-only pooling changes semantics and requires direct validation. Does not replace user requested frozen-B mean-pooling submission CSV."
+}

@@ -1,0 +1,242 @@
+{
+  "captured_at": "2026-10-25T08:24:58.005938+00:00",
+  "python_executable": "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+  "python_version": "3.12.15 (main, Oct 13 2026, 16:52:04) [GCC 15.3.0]",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 1370,
+      "sha256": "43e35dd53c62393645aaa5aad84e6a8694492c42ab9711d19a75773be2cb5875",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "audit_trail.py",
+      "bytes": 7976,
+      "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+      "source_mtime_ns": 1792916252593556597
+    },
+    {
+      "path": "cost.py",
+      "bytes": 9393,
+      "sha256": "c6cc3cda7360a17b0b29c8025dffd729377408bb434e03e162b3890679ab73be",
+      "source_mtime_ns": 1792907935968098615
+    },
+    {
+      "path": "cv_splits.py",
+      "bytes": 14950,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "source_mtime_ns": 1792347598082273083
+    },
+    {
+      "path": "dataset.py",
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "source_mtime_ns": 1792421780770713925
+    },
+    {
+      "path": "dataset_highres.py",
+      "bytes": 24804,
+      "sha256": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "dataset_overnight.py",
+      "bytes": 13643,
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "source_mtime_ns": 1792421793566597221
+    },
+    {
+      "path": "dataset_tiny.py",
+      "bytes": 8827,
+      "sha256": "d695cd2109a700c766c4efa1ac383aa44906a0cbb8d9293680ff0d03eef865a5",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "deploy_kd.py",
+      "bytes": 21544,
+      "sha256": "84e71bdee954b3d5d2d6542af1d9dd76f57676e001af5c96ac548cd4fd096451",
+      "source_mtime_ns": 1792907990060923844
+    },
+    {
+      "path": "distill_data.py",
+      "bytes": 17036,
+      "sha256": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+      "source_mtime_ns": 1792907762456683786
+    },
+    {
+      "path": "export_student.py",
+      "bytes": 5281,
+      "sha256": "610b1fbb10c813b05cfff9a4ce52d72c7e6cbfbd21798322f9de6ebe72fa902b",
+      "source_mtime_ns": 1792907721225621209
+    },
+    {
+      "path": "extract_soft_labels.py",
+      "bytes": 8059,
+      "sha256": "7e5743df99f9c90cb1ed2e8384beab2436fc64ddc4183b0418e785a411d104e1",
+      "source_mtime_ns": 1792907659533509453
+    },
+    {
+      "path": "inference.py",
+      "bytes": 41491,
+      "sha256": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e",
+      "source_mtime_ns": 1792347669045616192
+    },
+    {
+      "path": "inference_overnight.py",
+      "bytes": 30402,
+      "sha256": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+      "source_mtime_ns": 1792421811729011539
+    },
+    {
+      "path": "kd_common.py",
+      "bytes": 6721,
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "source_mtime_ns": 1792908357461391707
+    },
+    {
+      "path": "model.py",
+      "bytes": 17413,
+      "sha256": "d71b07f1abba5aaec08f1d9e572e49674cb38b19cd355c0995327e448cbceb74",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "model_highres.py",
+      "bytes": 15904,
+      "sha256": "f3433953ce63cfacb3b80b538bfa15d116a102a56ec969f4c5162d696e6531a4",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "source_mtime_ns": 1792907882741188718
+    },
+    {
+      "path": "model_tiny.py",
+      "bytes": 2871,
+      "sha256": "ae92dd5f215bc488291c43e4d95fbaf4b88f54802f18c33390528a380b09f3b0",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "package_kd_submission.py",
+      "bytes": 40764,
+      "sha256": "f3e4c5d307deb769943e025e0771775eaef95ba9d4f439d0465dc4cb6a9dbb7b",
+      "source_mtime_ns": 1792916205481204139
+    },
+    {
+      "path": "predict.py",
+      "bytes": 4061,
+      "sha256": "d4a65092607915b9587aedf5a3c2a0739d935a024178379e93a9f951bd5fcee3",
+      "source_mtime_ns": 1792907935966098806
+    },
+    {
+      "path": "preflight_kd.py",
+      "bytes": 5100,
+      "sha256": "0fcd9b870bf0394b3c09c4af5f3201a155929706eea5a21c7053ec2249ce349e",
+      "source_mtime_ns": 1792908028219272414
+    },
+    {
+      "path": "probe_gpu_memory.py",
+      "bytes": 10865,
+      "sha256": "a2db1824dc46449702bccaa4dd3b22ff3653c2aeabb79059bc92cf7ef544e067",
+      "source_mtime_ns": 1792422482252432027
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 1160,
+      "sha256": "b84ee51ca3c144fd13a504f8ab949f8cb7ea36f0db8e2329ff2a13df1a593021",
+      "source_mtime_ns": 1792421795378439071
+    },
+    {
+      "path": "requirements_inference.txt",
+      "bytes": 321,
+      "sha256": "75e8ae6267b67d07cf061b48c41cf3205ec7b901218cc32907c819b54eaf3683",
+      "source_mtime_ns": 1792907721229620827
+    },
+    {
+      "path": "requirements_kd.txt",
+      "bytes": 507,
+      "sha256": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+      "source_mtime_ns": 1792912443419980090
+    },
+    {
+      "path": "run_all_folds.py",
+      "bytes": 19897,
+      "sha256": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+      "source_mtime_ns": 1792422482472408855
+    },
+    {
+      "path": "run_cloud.sh",
+      "bytes": 7480,
+      "sha256": "4f1067d5bf2fa3d8536d26fcf6739c50ddac8fb2f444cfa5c9786ba31490f5f0",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "run_overnight.sh",
+      "bytes": 1290,
+      "sha256": "02b186aa997c60f3903be17ba3ecdca6c9b022e0894d5afe99181b6fc4ba853b",
+      "source_mtime_ns": 1792916150731610228
+    },
+    {
+      "path": "run_teachers.py",
+      "bytes": 9208,
+      "sha256": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+      "source_mtime_ns": 1792916285108747320
+    },
+    {
+      "path": "runtime_compat.py",
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "train.py",
+      "bytes": 59362,
+      "sha256": "2fef5fa8e7b9c319ac51a21be48f2c03ad3731fc82096d47717291d1cd4a87ad",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "train_distill.py",
+      "bytes": 30909,
+      "sha256": "5c86a48501f12d9bc43dcc0ca4b437481b26340b96f4ca96150d053e83ac23f1",
+      "source_mtime_ns": 1792916264632382967
+    },
+    {
+      "path": "train_highres.py",
+      "bytes": 42047,
+      "sha256": "64ce9ba70cb978e9dbf1959aeacb8e430dc602ab6f4e7b94d6dbe1335bf40ce0",
+      "source_mtime_ns": 1792360820000000000
+    },
+    {
+      "path": "train_overnight.py",
+      "bytes": 51361,
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "source_mtime_ns": 1792421825919772098
+    },
+    {
+      "path": "train_teacher.py",
+      "bytes": 21693,
+      "sha256": "fdbf842d574a8adb5215c17393681cdeb13c650f46c2b487611a8bc8b8bd2ed3",
+      "source_mtime_ns": 1792916252595556400
+    },
+    {
+      "path": "train_tiny.py",
+      "bytes": 51079,
+      "sha256": "a43f7cb74f371b56a015824da39b67da8f6bfa4cf6e4ec219ea6acbb1fa74921",
+      "source_mtime_ns": 1792342934014401746
+    },
+    {
+      "path": "training_evidence_monitor.py",
+      "bytes": 16983,
+      "sha256": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+      "source_mtime_ns": 1792916490860682382
+    },
+    {
+      "path": "validate_student.py",
+      "bytes": 4696,
+      "sha256": "a0fd612039a5f2fccfd55c72e4b7b8b47d7623e8bd9b682031cdf00a67e5a633",
+      "source_mtime_ns": 1792907852047123096
+    }
+  ],
+  "claim": "On-disk source and environment captured at the declared time."
+}

@@ -1,0 +1,27 @@
+test_gray_and_rgb_pixels_match_independent_original_float32_then_half_path (tests.test_frozen_head_cache.FrozenFeatureInputTests.test_gray_and_rgb_pixels_match_independent_original_float32_then_half_path) ... ok
+test_test_split_and_changed_original_bytes_are_rejected (tests.test_frozen_head_cache.FrozenFeatureInputTests.test_test_split_and_changed_original_bytes_are_rejected) ... ok
+test_complete_study_probability_bce_matches_float64_formula_and_gradient (tests.test_frozen_head_fit.FrozenHeadObjectiveTests.test_complete_study_probability_bce_matches_float64_formula_and_gradient) ... /home/featurize/work/cloud_project_v2/tests/test_frozen_head_fit.py:29: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(hard), float(expected), places=6)
+ok
+test_lr_has_registered_warmup_and_exact_final_minimum (tests.test_frozen_head_fit.FrozenHeadObjectiveTests.test_lr_has_registered_warmup_and_exact_final_minimum) ... ok
+test_padding_is_excluded_and_has_zero_gradient (tests.test_frozen_head_fit.FrozenHeadObjectiveTests.test_padding_is_excluded_and_has_zero_gradient) ... ok
+test_rank_rewards_positive_negative_order_and_is_class_balanced (tests.test_frozen_head_fit.FrozenHeadObjectiveTests.test_rank_rewards_positive_negative_order_and_is_class_balanced) ... ok
+test_study_anchor_gives_equal_weight_to_unequal_view_counts (tests.test_frozen_head_fit.FrozenHeadObjectiveTests.test_study_anchor_gives_equal_weight_to_unequal_view_counts) ... ok
+test_conflicting_labels_tampered_features_and_wrong_source_are_rejected (tests.test_frozen_head_fit.TrainOnlyCacheTests.test_conflicting_labels_tampered_features_and_wrong_source_are_rejected) ... ok
+test_preview_does_not_open_feature_cache_or_train (tests.test_frozen_head_fit.TrainOnlyCacheTests.test_preview_does_not_open_feature_cache_or_train) ... ok
+test_small_fit_reads_only_train_and_emits_exact_two_tensor_cpu_patch (tests.test_frozen_head_fit.TrainOnlyCacheTests.test_small_fit_reads_only_train_and_emits_exact_two_tensor_cpu_patch) ... ok
+test_config_binds_base_and_patch_without_querying_runtime (tests.test_frozen_head_predictor.FrozenHeadTests.test_config_binds_base_and_patch_without_querying_runtime) ... ok
+test_invalid_patch_is_rejected_before_any_head_row_changes (tests.test_frozen_head_predictor.FrozenHeadTests.test_invalid_patch_is_rejected_before_any_head_row_changes) ... ok
+test_loader_binds_external_encoder_inventory_and_never_changes_source_files (tests.test_frozen_head_predictor.FrozenHeadTests.test_loader_binds_external_encoder_inventory_and_never_changes_source_files) ... ok
+test_merged_export_refuses_persistent_output_before_reading_sources (tests.test_frozen_head_predictor.FrozenHeadTests.test_merged_export_refuses_persistent_output_before_reading_sources) ... ok
+test_merged_exports_preserve_encoder_bytes_key_order_and_full_parent_identity (tests.test_frozen_head_predictor.FrozenHeadTests.test_merged_exports_preserve_encoder_bytes_key_order_and_full_parent_identity) ... ok
+test_original_head_overlay_preserves_tensor_bytes_and_logits (tests.test_frozen_head_predictor.FrozenHeadTests.test_original_head_overlay_preserves_tensor_bytes_and_logits) ... ok
+test_selected_rows_change_and_other_rows_stay_bit_identical (tests.test_frozen_head_predictor.FrozenHeadTests.test_selected_rows_change_and_other_rows_stay_bit_identical) ... ok
+test_tiny_original_head_patch_preserves_output_and_has_768_features (tests.test_frozen_head_predictor.FrozenHeadTests.test_tiny_original_head_patch_preserves_output_and_has_768_features) ... ok
+test_wrong_feature_dimension_and_duplicate_rows_are_rejected (tests.test_frozen_head_predictor.FrozenHeadTests.test_wrong_feature_dimension_and_duplicate_rows_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.686s
+
+OK

@@ -1,0 +1,35 @@
+{
+  "recorded_at_hong_kong": "2026-10-31T16:16:51.010353+08:00",
+  "source": "user_message_in_current_conversation",
+  "user_verbatim": "实际上这个0.816的csv成绩不如0.810的，或者应该说基本一样，因为差0.01分数。你把这个事情记录下来，修改下交接文档，方便后续优化",
+  "independently_verified_on_platform": false,
+  "comparison": {
+    "044_vs_043": "not_better; slightly_worse_or_approximately_equal_as_reported",
+    "approximate_gap_user_display_points": 0.01,
+    "unit_note": "User said 分; no conversion to AUC or percentage",
+    "043_absolute_platform_score": null,
+    "044_absolute_platform_score": null,
+    "exact_signed_score_delta": null
+  },
+  "versions": {
+    "043": {
+      "csv": "/home/featurize/work/deliveries/043_base768_B_submission_20261031/submission.csv",
+      "csv_sha256": "f61321af3102e0a08cf4a4aa618bf1d4ae3e0108232b281402a668b2441dacff",
+      "local_valid_auc": 0.8105695698808949,
+      "recorded_2080ti_mean_ms": 74.54965613333874
+    },
+    "044": {
+      "csv": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/submission.csv",
+      "csv_sha256": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+      "local_valid_auc": 0.8166770734158482,
+      "recorded_2080ti_mean_ms": 84.82014125668533
+    }
+  },
+  "conclusion": "Local valid gain did not yield a demonstrated real-submission improvement in user feedback. Keep simpler043 as an important baseline; do not presume044 superior.",
+  "causal_explanation": "unknown; no ablation or test labels establish cause",
+  "optimization_remains_stopped": true,
+  "future_80ms_goal_retained": true,
+  "new_submission_or_switch_requested": false,
+  "csv_or_model_modified": false,
+  "leaderboard_feedback_parameter_search_authorized": false
+}

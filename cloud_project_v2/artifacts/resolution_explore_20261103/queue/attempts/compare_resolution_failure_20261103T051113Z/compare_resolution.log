@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 847, in <module>
+    main()
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 843, in main
+    return evaluate(args) if args.action == "evaluate" else compare(args)
+                                                            ^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 733, in compare
+    bundles[name], metadata[name], original[name] = load_evaluation(path)
+                                                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 676, in load_evaluation
+    path = Path(path).resolve(strict=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1242, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 432, in realpath
+  File "<frozen posixpath>", line 476, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/evaluations/res640'

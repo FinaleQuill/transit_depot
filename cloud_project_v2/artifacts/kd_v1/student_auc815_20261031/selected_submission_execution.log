@@ -1,0 +1,8 @@
+{
+  "delivery": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031",
+  "macro_auc": 0.8166770734158482,
+  "mean_ms": 84.82014125668533,
+  "sha256": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+  "prediction_wall_seconds": 232.75277254499997,
+  "audit_pass": true
+}

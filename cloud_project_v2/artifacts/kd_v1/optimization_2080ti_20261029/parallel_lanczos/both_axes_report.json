@@ -1,0 +1,339 @@
+{
+  "started_utc": "2026-10-29T09:06:07.205563+00:00",
+  "ended_utc": "2026-10-29T09:07:22.098107+00:00",
+  "scope": "CPU-only prototype; concurrent fullvalid GPU job and host activity; timings are diagnostic,not formal benchmark",
+  "production_source_changed": false,
+  "gpu_or_training_executed": false,
+  "python": "3.12.15",
+  "numpy": "1.26.4",
+  "Pillow": "10.4.0",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "max_executor_workers_per_image": 4,
+  "pool_lifetime": "one decoded source image; all futures joined before returning; no cross-image work/prefetch",
+  "checks": {
+    "direct_resize_cases": 168,
+    "mode_geometry_exif_size_cases": 480,
+    "real_image_size_cases": 210,
+    "non8bit_rejections": 3
+  },
+  "all_byte_parity_checks_pass": true,
+  "real_images": 105,
+  "real_sizes": [
+    512,
+    768
+  ],
+  "reference": "Frozen033 deploy_kd.py and original Pillow2D resize",
+  "prototype_sha256": "087a37b4031632adb88f718ed8d9c8e9f233d6b8e6a4c63cfc2e3e57a44a935d",
+  "samples": [
+    {
+      "sample_index": 0,
+      "source_mode": "L",
+      "source_size": [
+        3056,
+        2544
+      ],
+      "target_size": [
+        768,
+        639
+      ],
+      "median_resize_ms": {
+        "original_2d": 63.314153999954215,
+        "parallel_2": 71.25368499987417,
+        "parallel_4": 51.561430999981894
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          63.60656000015297,
+          63.128839999990305,
+          63.314153999954215
+        ],
+        "parallel_2": [
+          69.49894700005643,
+          71.25368499987417,
+          73.36851000013667
+        ],
+        "parallel_4": [
+          50.003955999955,
+          51.561430999981894,
+          58.57304899996052
+        ]
+      },
+      "original_load768_ms": 126.66930299997148,
+      "parallel4_load768_ms": 100.5324830000518
+    },
+    {
+      "sample_index": 1,
+      "source_mode": "L",
+      "source_size": [
+        2597,
+        2539
+      ],
+      "target_size": [
+        768,
+        751
+      ],
+      "median_resize_ms": {
+        "original_2d": 63.548043000082544,
+        "parallel_2": 68.96880699991925,
+        "parallel_4": 52.256601000181035
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          61.81635299981281,
+          98.4745920000023,
+          63.548043000082544
+        ],
+        "parallel_2": [
+          76.47566900004676,
+          68.96880699991925,
+          65.86914800004706
+        ],
+        "parallel_4": [
+          52.256601000181035,
+          60.21004399985941,
+          52.23719499986146
+        ]
+      },
+      "original_load768_ms": 159.8597309998695,
+      "parallel4_load768_ms": 117.19675399990592
+    },
+    {
+      "sample_index": 2,
+      "source_mode": "L",
+      "source_size": [
+        3050,
+        2539
+      ],
+      "target_size": [
+        768,
+        639
+      ],
+      "median_resize_ms": {
+        "original_2d": 63.7352500000361,
+        "parallel_2": 73.22297199993955,
+        "parallel_4": 55.78240299996651
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          63.410125000018525,
+          63.7352500000361,
+          64.35574000011002
+        ],
+        "parallel_2": [
+          73.45420199999353,
+          72.33142500012946,
+          73.22297199993955
+        ],
+        "parallel_4": [
+          63.27909299989187,
+          55.78240299996651,
+          54.309548999981416
+        ]
+      },
+      "original_load768_ms": 136.89046700005747,
+      "parallel4_load768_ms": 103.4277280000424
+    },
+    {
+      "sample_index": 3,
+      "source_mode": "L",
+      "source_size": [
+        2431,
+        2539
+      ],
+      "target_size": [
+        735,
+        768
+      ],
+      "median_resize_ms": {
+        "original_2d": 55.51140700003998,
+        "parallel_2": 63.373337000030006,
+        "parallel_4": 44.02924200007874
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          55.447007000111626,
+          55.51140700003998,
+          55.61486600004173
+        ],
+        "parallel_2": [
+          61.899306999976034,
+          64.1357730000891,
+          63.373337000030006
+        ],
+        "parallel_4": [
+          44.02924200007874,
+          42.11338000004616,
+          56.84898000004068
+        ]
+      },
+      "original_load768_ms": 112.59910100011439,
+      "parallel4_load768_ms": 88.8991200001783
+    },
+    {
+      "sample_index": 4,
+      "source_mode": "L",
+      "source_size": [
+        2920,
+        2395
+      ],
+      "target_size": [
+        768,
+        630
+      ],
+      "median_resize_ms": {
+        "original_2d": 61.11628500002553,
+        "parallel_2": 70.99816699997064,
+        "parallel_4": 50.86986299988894
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          61.11628500002553,
+          60.95957100001215,
+          61.69884399992043
+        ],
+        "parallel_2": [
+          70.29939800008833,
+          71.9990019999841,
+          70.99816699997064
+        ],
+        "parallel_4": [
+          50.86986299988894,
+          51.30536399997254,
+          47.66263600004095
+        ]
+      },
+      "original_load768_ms": 122.20853000007992,
+      "parallel4_load768_ms": 95.24289799992403
+    },
+    {
+      "sample_index": 5,
+      "source_mode": "L",
+      "source_size": [
+        1620,
+        2022
+      ],
+      "target_size": [
+        615,
+        768
+      ],
+      "median_resize_ms": {
+        "original_2d": 33.38011300002108,
+        "parallel_2": 40.33964699988246,
+        "parallel_4": 31.21086600003764
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          33.38011300002108,
+          33.26902699996026,
+          33.80292700012433
+        ],
+        "parallel_2": [
+          39.402289999998175,
+          40.33964699988246,
+          41.144985000073575
+        ],
+        "parallel_4": [
+          30.282345999921745,
+          33.52728100003333,
+          31.21086600003764
+        ]
+      },
+      "original_load768_ms": 74.5154509997974,
+      "parallel4_load768_ms": 57.40178300015941
+    },
+    {
+      "sample_index": 6,
+      "source_mode": "L",
+      "source_size": [
+        1560,
+        2022
+      ],
+      "target_size": [
+        593,
+        768
+      ],
+      "median_resize_ms": {
+        "original_2d": 32.282830999974976,
+        "parallel_2": 38.7780890000613,
+        "parallel_4": 29.79907600001752
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          32.282830999974976,
+          32.51539899997624,
+          32.26649300017925
+        ],
+        "parallel_2": [
+          49.24112100002276,
+          38.7780890000613,
+          38.31092000018543
+        ],
+        "parallel_4": [
+          29.253487000005407,
+          30.580725999925562,
+          29.79907600001752
+        ]
+      },
+      "original_load768_ms": 72.34439899980316,
+      "parallel4_load768_ms": 51.22743599986279
+    },
+    {
+      "sample_index": 7,
+      "source_mode": "L",
+      "source_size": [
+        2022,
+        1736
+      ],
+      "target_size": [
+        768,
+        659
+      ],
+      "median_resize_ms": {
+        "original_2d": 35.949396999967576,
+        "parallel_2": 43.16397399998095,
+        "parallel_4": 31.71985400013
+      },
+      "all_resize_ms": {
+        "original_2d": [
+          35.6302739999137,
+          35.949396999967576,
+          37.35010399987004
+        ],
+        "parallel_2": [
+          43.091966000019966,
+          44.37665599994034,
+          43.16397399998095
+        ],
+        "parallel_4": [
+          31.02012099998319,
+          31.71985400013,
+          41.2023680000857
+        ]
+      },
+      "original_load768_ms": 84.50281999989784,
+      "parallel4_load768_ms": 62.788195000166525
+    }
+  ],
+  "mean_sample_median_resize_ms": {
+    "original_2d": 51.10468500001275,
+    "parallel_2": 58.76233474995729,
+    "parallel_4": 43.403667000035284
+  },
+  "mean_sample_load768_ms": {
+    "original_load768_ms": 111.1987252499489,
+    "parallel4_load768_ms": 84.5895496250364
+  },
+  "source_references": [
+    "https://github.com/python-pillow/Pillow/blob/10.4.0/src/libImaging/Resample.c#L604-L653"
+  ],
+  "deployment_status": "not_deployed;requires_root_review_and_isolated_real_gpu_benchmark/fullvalid_byte_parity_before_any_acceptance"
+}

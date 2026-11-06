@@ -1,0 +1,15 @@
+{
+  "artifact_type": "kd_teacher_run",
+  "schema_version": 6,
+  "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+  "image_size": 768,
+  "selection_protocol": "fixed_epoch_final_ema",
+  "epochs": 20,
+  "seed": 43,
+  "effective_batch_size": 32,
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "image_root": "/home/featurize/data/cxr_first",
+  "official_valid_used_for_training": false,
+  "outer_fold_used_for_selection": false
+}

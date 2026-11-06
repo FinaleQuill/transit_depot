@@ -1,0 +1,4 @@
+Hypothesis: at shared 768+hflip2 inference, matched valid-selected E1/best Tiny checkpoints reveal whether training-resolution differences reproduce on held-out patients.
+Expected effect: report Macro-AUC, AP-only and class-wise deltas with 2000 patient-bootstrap 95% CI; flag |delta|>0.003, while CI overlap remains inconclusive; no threshold or coefficient tuning.
+Cost: evaluate three completed best checkpoints on official valid with a fixed 1000-study train diagnostic, then CPU patient bootstrap; no training or test inference.
+Failure criterion: missing checkpoint lifecycle evidence or identity, incomplete common valid rows, mismatched patient/study identities, missing intervals, or any test access.

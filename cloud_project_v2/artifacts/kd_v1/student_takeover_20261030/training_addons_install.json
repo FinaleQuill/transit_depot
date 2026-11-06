@@ -1,0 +1,26 @@
+{
+  "source_lock": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/source_20261027T151836Z_2819d80e/environment_lock.txt",
+  "source_lock_sha256": "5875323f1e238fd2964aa6c2ce3598f5845636e641ac76ef02c214f0578b049a",
+  "installed_target": "/tmp/cloud_student_training_addons_cp312",
+  "packages": {
+    "threadpoolctl": "3.7.0",
+    "pydantic_core": "2.50.1",
+    "pydantic": "2.14.1",
+    "socksio": "1.0.0",
+    "albumentations": "2.0.8",
+    "scipy": "1.15.3",
+    "albucore": "0.0.24",
+    "joblib": "1.6.0",
+    "opencv-python-headless": "4.11.0.86",
+    "annotated-types": "0.8.0",
+    "typing-inspection": "0.4.4",
+    "stringzilla": "5.3.1",
+    "scikit-learn": "1.6.1",
+    "simsimd": "6.5.16"
+  },
+  "no_deps": true,
+  "target_python": "CPython 3.12 Linux x86_64",
+  "image_core_replaced": false,
+  "scipy_sklearn_overlaid_for_training_only": true,
+  "runtime_import_probe_pending": true
+}

@@ -1,0 +1,22 @@
+{
+  "time_hong_kong": "2026-10-30T13:42:37.855360+08:00",
+  "A_host_training_pid": 9288,
+  "A_container": "00b2580dbdbd",
+  "A_tmux": "student_a_20261030",
+  "A_log": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/A.train.log",
+  "controller_host_pid": 13107,
+  "controller_container": "a8daf4091276",
+  "controller_tmux": "student_ab_pipeline_20261030",
+  "controller_log": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/pipeline.log",
+  "controller_stage": "A_training",
+  "last_A_progress": "student epoch=1 batch=2200/3791 loss=0.658397 alpha=0.0580",
+  "current_training_runs_started": 1,
+  "B_started": false,
+  "B_automatically_queued": true,
+  "production_inference_sources_unchanged": true,
+  "038_readonly": true,
+  "test_regenerated": false,
+  "assets_deleted": false,
+  "no_new_training_scores_claimed": true,
+  "first_epoch_backup_pending": "Models will be backed up after first validated committed checkpoint; metadata is already being synchronized"
+}

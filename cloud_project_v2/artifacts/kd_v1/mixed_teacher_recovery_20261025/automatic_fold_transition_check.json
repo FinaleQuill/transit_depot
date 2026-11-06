@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-25T14:04:11.351607+00:00",
+  "scope": "Real scheduler and four real harmless Python subprocesses; fixture status only, no medical data, model or GPU.",
+  "source_sha256": "d902bf94e3f30b276b6077f2eb4be21e6d779a4049045ecf6f9674eaaa7c03a3",
+  "launched_fold_order": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "each_child_requires_previous_fold_completed": true,
+  "epochs_each": 12,
+  "exit_code": 0,
+  "all_requested_complete": true,
+  "lock_released": true
+}

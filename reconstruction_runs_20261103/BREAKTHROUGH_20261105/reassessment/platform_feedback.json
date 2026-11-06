@@ -1,0 +1,44 @@
+{
+  "source": "User reported platform scores in current conversation; not independently fetched from platform",
+  "recorded_at_hong_kong": "2026-11-05T20:32:59.203740+08:00",
+  "entries": [
+    {
+      "filename": "submission_best.csv",
+      "score_display": 76.92,
+      "sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+      "bytes": 691900,
+      "identical_paths": [
+        "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/submission.csv",
+        "/home/featurize/work/cloud_project_v2/artifacts/compliance_closeout_20261102/package/submission.csv"
+      ]
+    },
+    {
+      "filename": "submission_robust_0818992.csv",
+      "score_display": 76.75,
+      "sha256": "fedbbbef4fd45763a8f88bc2a7bfab36e6bc3ecd33bce0487ad54eaa7da29d5f",
+      "bytes": 692679,
+      "identical_paths": [
+        "/home/featurize/work/reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/deployment_candidate/submission.csv"
+      ]
+    },
+    {
+      "filename": "submission (2).csv",
+      "score_display": 76.72,
+      "sha256": "ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661",
+      "bytes": 686443,
+      "identical_paths": [
+        "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv"
+      ]
+    },
+    {
+      "filename": "submission4.csv",
+      "score_display": 76.91,
+      "sha256": "3ff38f2c4c248ce4913c712f30f89ad53d54b98a2e82acb1ac458517833e99d8",
+      "bytes": 691742,
+      "identical_paths": [
+        "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/submission.csv"
+      ]
+    }
+  ],
+  "not_used_for_parameter_search": true
+}

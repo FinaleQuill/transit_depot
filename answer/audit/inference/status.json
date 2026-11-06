@@ -1,0 +1,6 @@
+{
+  "status": "complete",
+  "submission": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv",
+  "ensemble_plan_sha256": "fc3f066d8e76bd0c9a63f358446ff9312755e4e543f92e42ffa8aba1c284a045",
+  "fold_count": 5
+}

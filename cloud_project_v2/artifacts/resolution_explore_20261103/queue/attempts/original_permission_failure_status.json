@@ -1,0 +1,5 @@
+{
+  "state": "stopped",
+  "error": "RuntimeError: STOP: training failed (1): res640; retain evidence",
+  "updated_at": "2026-11-02T18:51:52.688240+00:00"
+}

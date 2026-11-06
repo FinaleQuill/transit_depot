@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/tmp/dual768_timing_env/bin/python",
+    "-B",
+    "/home/featurize/work/dual768_proxy_timing_results/analysis/diagnose_segments.py",
+    "--bundle-root",
+    "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle",
+    "--output-dir",
+    "/home/featurize/work/dual768_proxy_timing_results/diagnostic_20261029_020648"
+  ],
+  "environment_overrides": {
+    "PYTHONHASHSEED": "43",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "HF_HUB_OFFLINE": "1"
+  },
+  "started_utc": "2026-10-28T18:06:48.225762+00:00",
+  "output_dir": "/home/featurize/work/dual768_proxy_timing_results/diagnostic_20261029_020648",
+  "diagnostic_only": true,
+  "instrumented": true,
+  "replaces_primary_benchmark": false,
+  "exit_code": 0,
+  "ended_utc": "2026-10-28T18:07:22.616904+00:00",
+  "wall_seconds": 34.38897973900009
+}

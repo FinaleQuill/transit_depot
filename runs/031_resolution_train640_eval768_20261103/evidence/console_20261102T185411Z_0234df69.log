@@ -1,0 +1,168 @@
+student epoch=2 batch=1/7582 loss=0.727819 alpha=0.1000
+student epoch=2 batch=100/7582 loss=0.382865 alpha=0.1013
+student epoch=2 batch=200/7582 loss=0.398309 alpha=0.1026
+student epoch=2 batch=300/7582 loss=0.399204 alpha=0.1040
+student epoch=2 batch=400/7582 loss=0.406765 alpha=0.1053
+student epoch=2 batch=500/7582 loss=0.404639 alpha=0.1066
+student epoch=2 batch=600/7582 loss=0.405855 alpha=0.1079
+student epoch=2 batch=700/7582 loss=0.409632 alpha=0.1092
+student epoch=2 batch=800/7582 loss=0.408766 alpha=0.1106
+student epoch=2 batch=900/7582 loss=0.406054 alpha=0.1119
+student epoch=2 batch=1000/7582 loss=0.404585 alpha=0.1132
+student epoch=2 batch=1100/7582 loss=0.403470 alpha=0.1145
+student epoch=2 batch=1200/7582 loss=0.403555 alpha=0.1158
+student epoch=2 batch=1300/7582 loss=0.401777 alpha=0.1171
+student epoch=2 batch=1400/7582 loss=0.399109 alpha=0.1185
+student epoch=2 batch=1500/7582 loss=0.398689 alpha=0.1198
+student epoch=2 batch=1600/7582 loss=0.398092 alpha=0.1211
+student epoch=2 batch=1700/7582 loss=0.396046 alpha=0.1224
+student epoch=2 batch=1800/7582 loss=0.395518 alpha=0.1237
+student epoch=2 batch=1900/7582 loss=0.396229 alpha=0.1251
+student epoch=2 batch=2000/7582 loss=0.396811 alpha=0.1264
+student epoch=2 batch=2100/7582 loss=0.396033 alpha=0.1277
+student epoch=2 batch=2200/7582 loss=0.394400 alpha=0.1290
+student epoch=2 batch=2300/7582 loss=0.395499 alpha=0.1303
+student epoch=2 batch=2400/7582 loss=0.396747 alpha=0.1317
+student epoch=2 batch=2500/7582 loss=0.396132 alpha=0.1330
+student epoch=2 batch=2600/7582 loss=0.396089 alpha=0.1343
+student epoch=2 batch=2700/7582 loss=0.395894 alpha=0.1356
+student epoch=2 batch=2800/7582 loss=0.396532 alpha=0.1369
+student epoch=2 batch=2900/7582 loss=0.396231 alpha=0.1382
+student epoch=2 batch=3000/7582 loss=0.395730 alpha=0.1396
+student epoch=2 batch=3100/7582 loss=0.396519 alpha=0.1409
+student epoch=2 batch=3200/7582 loss=0.395908 alpha=0.1422
+student epoch=2 batch=3300/7582 loss=0.396125 alpha=0.1435
+student epoch=2 batch=3400/7582 loss=0.396672 alpha=0.1448
+student epoch=2 batch=3500/7582 loss=0.396046 alpha=0.1462
+student epoch=2 batch=3600/7582 loss=0.395206 alpha=0.1475
+student epoch=2 batch=3700/7582 loss=0.395153 alpha=0.1488
+student epoch=2 batch=3800/7582 loss=0.394093 alpha=0.1501
+student epoch=2 batch=3900/7582 loss=0.394121 alpha=0.1514
+student epoch=2 batch=4000/7582 loss=0.393631 alpha=0.1528
+student epoch=2 batch=4100/7582 loss=0.393825 alpha=0.1541
+student epoch=2 batch=4200/7582 loss=0.393346 alpha=0.1554
+student epoch=2 batch=4300/7582 loss=0.392790 alpha=0.1567
+student epoch=2 batch=4400/7582 loss=0.392628 alpha=0.1580
+student epoch=2 batch=4500/7582 loss=0.392108 alpha=0.1594
+student epoch=2 batch=4600/7582 loss=0.392187 alpha=0.1607
+student epoch=2 batch=4700/7582 loss=0.391935 alpha=0.1620
+student epoch=2 batch=4800/7582 loss=0.391915 alpha=0.1633
+student epoch=2 batch=4900/7582 loss=0.391331 alpha=0.1646
+student epoch=2 batch=5000/7582 loss=0.390762 alpha=0.1659
+student epoch=2 batch=5100/7582 loss=0.391129 alpha=0.1673
+student epoch=2 batch=5200/7582 loss=0.391315 alpha=0.1686
+student epoch=2 batch=5300/7582 loss=0.391647 alpha=0.1699
+student epoch=2 batch=5400/7582 loss=0.392088 alpha=0.1712
+student epoch=2 batch=5500/7582 loss=0.391606 alpha=0.1725
+student epoch=2 batch=5600/7582 loss=0.390660 alpha=0.1739
+student epoch=2 batch=5700/7582 loss=0.389878 alpha=0.1752
+student epoch=2 batch=5800/7582 loss=0.389685 alpha=0.1765
+student epoch=2 batch=5900/7582 loss=0.389435 alpha=0.1778
+student epoch=2 batch=6000/7582 loss=0.390070 alpha=0.1791
+student epoch=2 batch=6100/7582 loss=0.390083 alpha=0.1805
+student epoch=2 batch=6200/7582 loss=0.390335 alpha=0.1818
+student epoch=2 batch=6300/7582 loss=0.390094 alpha=0.1831
+student epoch=2 batch=6400/7582 loss=0.389806 alpha=0.1844
+student epoch=2 batch=6500/7582 loss=0.389461 alpha=0.1857
+student epoch=2 batch=6600/7582 loss=0.389383 alpha=0.1870
+student epoch=2 batch=6700/7582 loss=0.389486 alpha=0.1884
+student epoch=2 batch=6800/7582 loss=0.389119 alpha=0.1897
+student epoch=2 batch=6900/7582 loss=0.388758 alpha=0.1910
+student epoch=2 batch=7000/7582 loss=0.387874 alpha=0.1923
+student epoch=2 batch=7100/7582 loss=0.387509 alpha=0.1936
+student epoch=2 batch=7200/7582 loss=0.387443 alpha=0.1950
+student epoch=2 batch=7300/7582 loss=0.387104 alpha=0.1963
+student epoch=2 batch=7400/7582 loss=0.387063 alpha=0.1976
+student epoch=2 batch=7500/7582 loss=0.386978 alpha=0.1989
+student epoch=2 valid_AUC=0.80246877 best=0.80322236@1
+student epoch=3 batch=1/7582 loss=0.319293 alpha=0.2000
+student epoch=3 batch=100/7582 loss=0.401253 alpha=0.2000
+student epoch=3 batch=200/7582 loss=0.388983 alpha=0.2000
+student epoch=3 batch=300/7582 loss=0.380662 alpha=0.2000
+student epoch=3 batch=400/7582 loss=0.382094 alpha=0.2000
+student epoch=3 batch=500/7582 loss=0.365588 alpha=0.2000
+student epoch=3 batch=600/7582 loss=0.368203 alpha=0.2000
+student epoch=3 batch=700/7582 loss=0.367794 alpha=0.2000
+student epoch=3 batch=800/7582 loss=0.367745 alpha=0.2000
+student epoch=3 batch=900/7582 loss=0.366525 alpha=0.2000
+student epoch=3 batch=1000/7582 loss=0.369408 alpha=0.2000
+student epoch=3 batch=1100/7582 loss=0.367129 alpha=0.2000
+student epoch=3 batch=1200/7582 loss=0.366544 alpha=0.2000
+student epoch=3 batch=1300/7582 loss=0.365505 alpha=0.2000
+student epoch=3 batch=1400/7582 loss=0.366753 alpha=0.2000
+student epoch=3 batch=1500/7582 loss=0.366449 alpha=0.2000
+student epoch=3 batch=1600/7582 loss=0.364871 alpha=0.2000
+student epoch=3 batch=1700/7582 loss=0.363729 alpha=0.2000
+student epoch=3 batch=1800/7582 loss=0.364128 alpha=0.2000
+student epoch=3 batch=1900/7582 loss=0.363934 alpha=0.2000
+student epoch=3 batch=2000/7582 loss=0.364597 alpha=0.2000
+student epoch=3 batch=2100/7582 loss=0.364181 alpha=0.2000
+student epoch=3 batch=2200/7582 loss=0.365157 alpha=0.2000
+student epoch=3 batch=2300/7582 loss=0.367120 alpha=0.2000
+student epoch=3 batch=2400/7582 loss=0.366728 alpha=0.2000
+student epoch=3 batch=2500/7582 loss=0.365909 alpha=0.2000
+student epoch=3 batch=2600/7582 loss=0.366302 alpha=0.2000
+student epoch=3 batch=2700/7582 loss=0.366213 alpha=0.2000
+student epoch=3 batch=2800/7582 loss=0.365675 alpha=0.2000
+student epoch=3 batch=2900/7582 loss=0.365424 alpha=0.2000
+student epoch=3 batch=3000/7582 loss=0.365889 alpha=0.2000
+student epoch=3 batch=3100/7582 loss=0.366800 alpha=0.2000
+student epoch=3 batch=3200/7582 loss=0.366635 alpha=0.2000
+student epoch=3 batch=3300/7582 loss=0.367074 alpha=0.2000
+student epoch=3 batch=3400/7582 loss=0.367094 alpha=0.2000
+student epoch=3 batch=3500/7582 loss=0.366909 alpha=0.2000
+student epoch=3 batch=3600/7582 loss=0.366168 alpha=0.2000
+student epoch=3 batch=3700/7582 loss=0.366692 alpha=0.2000
+student epoch=3 batch=3800/7582 loss=0.366953 alpha=0.2000
+student epoch=3 batch=3900/7582 loss=0.367306 alpha=0.2000
+student epoch=3 batch=4000/7582 loss=0.367867 alpha=0.2000
+student epoch=3 batch=4100/7582 loss=0.367797 alpha=0.2000
+student epoch=3 batch=4200/7582 loss=0.367812 alpha=0.2000
+student epoch=3 batch=4300/7582 loss=0.367798 alpha=0.2000
+student epoch=3 batch=4400/7582 loss=0.367220 alpha=0.2000
+student epoch=3 batch=4500/7582 loss=0.366857 alpha=0.2000
+student epoch=3 batch=4600/7582 loss=0.367623 alpha=0.2000
+student epoch=3 batch=4700/7582 loss=0.367783 alpha=0.2000
+student epoch=3 batch=4800/7582 loss=0.367660 alpha=0.2000
+student epoch=3 batch=4900/7582 loss=0.367665 alpha=0.2000
+student epoch=3 batch=5000/7582 loss=0.367514 alpha=0.2000
+student epoch=3 batch=5100/7582 loss=0.367777 alpha=0.2000
+student epoch=3 batch=5200/7582 loss=0.367876 alpha=0.2000
+student epoch=3 batch=5300/7582 loss=0.367661 alpha=0.2000
+student epoch=3 batch=5400/7582 loss=0.367342 alpha=0.2000
+student epoch=3 batch=5500/7582 loss=0.367514 alpha=0.2000
+student epoch=3 batch=5600/7582 loss=0.368377 alpha=0.2000
+student epoch=3 batch=5700/7582 loss=0.368122 alpha=0.2000
+student epoch=3 batch=5800/7582 loss=0.367831 alpha=0.2000
+student epoch=3 batch=5900/7582 loss=0.367220 alpha=0.2000
+student epoch=3 batch=6000/7582 loss=0.367639 alpha=0.2000
+student epoch=3 batch=6100/7582 loss=0.367206 alpha=0.2000
+student epoch=3 batch=6200/7582 loss=0.368372 alpha=0.2000
+student epoch=3 batch=6300/7582 loss=0.368319 alpha=0.2000
+student epoch=3 batch=6400/7582 loss=0.368254 alpha=0.2000
+student epoch=3 batch=6500/7582 loss=0.368521 alpha=0.2000
+student epoch=3 batch=6600/7582 loss=0.368653 alpha=0.2000
+student epoch=3 batch=6700/7582 loss=0.368547 alpha=0.2000
+student epoch=3 batch=6800/7582 loss=0.368199 alpha=0.2000
+student epoch=3 batch=6900/7582 loss=0.368061 alpha=0.2000
+student epoch=3 batch=7000/7582 loss=0.368685 alpha=0.2000
+student epoch=3 batch=7100/7582 loss=0.368621 alpha=0.2000
+student epoch=3 batch=7200/7582 loss=0.368593 alpha=0.2000
+student epoch=3 batch=7300/7582 loss=0.368511 alpha=0.2000
+student epoch=3 batch=7400/7582 loss=0.368755 alpha=0.2000
+student epoch=3 batch=7500/7582 loss=0.368639 alpha=0.2000
+student epoch=3 valid_AUC=0.80226404 best=0.80322236@1
+{
+  "state": "completed",
+  "completed_epochs": 3,
+  "validated_epochs": 3,
+  "backward_batches": 22746,
+  "optimizer_updates": 2842,
+  "ema_updates": 2842,
+  "amp_skipped_steps": 2,
+  "best_auc": 0.8032223602009431,
+  "best_epoch": 1,
+  "last_checkpoint_sha256": "071634889fe44132053ec20a1e8f11ad1ebb158013006cd6f29bb0b924eabdd8",
+  "best_checkpoint_sha256": "c0ab39552c5af89b8cda931aea67234340656cd0733a7be4c95fe69c5671a316",
+  "updated_utc": "2026-11-02T19:38:22.110203+00:00"
+}

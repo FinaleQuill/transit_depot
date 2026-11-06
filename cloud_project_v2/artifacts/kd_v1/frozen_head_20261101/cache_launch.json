@@ -1,0 +1,22 @@
+{
+  "started_hong_kong": "2026-11-01T20:40:42.206611+08:00",
+  "pid": 57264,
+  "container": "codex-frozen-head-cache-20261101",
+  "command": [
+    "bash",
+    "/home/featurize/work/cloud_project_v2/run_student_environment.sh",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/frozen_head_cache.py",
+    "--plan-path",
+    "/home/featurize/work/cloud_project_v2/docs/FROZEN_HEAD_PLAN_20261101.json",
+    "--plan-sha256",
+    "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+    "--output",
+    "/tmp/cloud_student_runs_20261030/frozen_head_20261101/cache",
+    "--image-root",
+    "/home/featurize/data/cxr_first"
+  ],
+  "detached": true,
+  "new_trainable_encoder": false,
+  "test_used": false
+}

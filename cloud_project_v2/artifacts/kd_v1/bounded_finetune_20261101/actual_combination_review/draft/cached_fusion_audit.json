@@ -1,0 +1,22 @@
+{
+  "required": false,
+  "decoder_changes_pixels": true,
+  "restored_source_aliases": {
+    "B": {
+      "restored_validation": {
+        "validation_dir": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_B_submission_20261031/full_valid_reproduced",
+        "files_sha256": {
+          "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_B_submission_20261031/full_valid_reproduced/validation_report.json": "95ffc1af938f094180083b837b88d32bcbd2ff0f302372433095568a4bf96d9c",
+          "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_B_submission_20261031/full_valid_reproduced/valid_predictions.csv": "4fefff394a6263a264cecfea195df3854921828183b78607284eb472500979e5",
+          "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_B_submission_20261031/full_valid_reproduced/valid.image_predictions.csv": "9726800e59f8311535c53ce1228bb7c9d43c45b187145ca50339c5032a1f6231"
+        },
+        "deployment_config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+        "images": 1422,
+        "studies": 859,
+        "image_to_study_bitwise_equal": true
+      },
+      "all_image_probabilities_equal_to_historical_source": true,
+      "actual_config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+    }
+  }
+}

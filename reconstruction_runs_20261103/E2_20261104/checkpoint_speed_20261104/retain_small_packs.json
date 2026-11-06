@@ -1,0 +1,9 @@
+{
+  "schema": "cxr_e2_checkpoint_execution_v1",
+  "profile_id": "e2_retain_small_packs_20261104",
+  "max_retained_regions": 10,
+  "applies_to_arms": [
+    "global_local"
+  ],
+  "scope": "training_activation_retention_only"
+}

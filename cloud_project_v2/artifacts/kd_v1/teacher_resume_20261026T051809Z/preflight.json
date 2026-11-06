@@ -1,0 +1,36 @@
+{
+  "recorded_at_hong_kong": "2026-10-26T13:18:09.237835+08:00",
+  "authorization": "User: 恢复训练",
+  "protected_inputs": {
+    "data/clean_v1_reviewed/train_clean.csv": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "data/cv5_overnight/folds.json": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67"
+  },
+  "source_sha256": {
+    "run_mixed_teachers.py": "5bca296bd7a5661763640f5ff5350d4fb98b52bf8017d9c30d5a5860d136bafd",
+    "run_mixed_teachers.sh": "9735c382a5b1a6352660e43109c43f3b05fb465deece8cf17a9a71fdcaba8af3",
+    "validate_teacher.py": "1a592ac104d7c5835ff49ae131caf91a2632c4a2bfed46b894eac30ce635d715",
+    "train_teacher.py": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d"
+  },
+  "plan_sha256": "8dde54b9c21da4eeabf7f8731da02d9912cf238b484483901ea62bb52c657d23",
+  "teacher_collection_sha256": "0ec962fab2cc0db3b87619ea6d9c05bf6205ad8441b4e479d0732d4bd4f03b3e",
+  "write_probes": [
+    {
+      "directory": "/home/featurize/work/cloud_project_v2",
+      "write_fsync_rename_readback_delete": "passed"
+    },
+    {
+      "directory": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3",
+      "write_fsync_rename_readback_delete": "passed"
+    },
+    {
+      "directory": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence",
+      "write_fsync_rename_readback_delete": "passed"
+    }
+  ],
+  "transition_lock_available": true,
+  "stop_file_absent": true,
+  "runner_lock_absent": true,
+  "disk_available_bytes": 11486101504,
+  "scope": "Resume frozen mixed teachers only; no OOF/student or new experiments"
+}

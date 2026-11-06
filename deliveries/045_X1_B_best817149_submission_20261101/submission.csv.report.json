@@ -1,0 +1,64 @@
+{
+  "submission": "/tmp/cloud_student_runs_20261030/best817149_submission_20261101/submission.csv",
+  "submission_sha256": "7379ac54cf4a8c66dd021e0f7c36a5fdaa69f32f6af2efd7ce3a4cf9bc3920da",
+  "studies": 1414,
+  "images": 2218,
+  "data_rows": 14140,
+  "batch_size": 1,
+  "precision": "float16",
+  "tta": "hflip2",
+  "ensemble": true,
+  "member_count": 2,
+  "image_sizes": [
+    768
+  ],
+  "deployment_config_sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d",
+  "manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "deployment_inventory": {
+    "files": [
+      {
+        "path": "B/config.json",
+        "bytes": 5228541,
+        "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+      },
+      {
+        "path": "B/student_fp16.pt",
+        "bytes": 175261029,
+        "sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+      },
+      {
+        "path": "X1/config.json",
+        "bytes": 5233693,
+        "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+      },
+      {
+        "path": "X1/student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16"
+      },
+      {
+        "path": "config.json",
+        "bytes": 9517,
+        "sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+      },
+      {
+        "path": "make_report.json",
+        "bytes": 3173,
+        "sha256": "dd8ac546bdc00802a60da24ff092b9c5d1711b41671752c0b35e9ac8ad4d73ec"
+      }
+    ],
+    "total_bytes": 241448464,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "image_predictions": "/tmp/cloud_student_runs_20261030/best817149_submission_20261101/submission.image_predictions.csv",
+  "image_predictions_sha256": "a12c4f07fee6a8fc5bea3951059414ef35dc186f2677ae5ba8a8e868fb510e44",
+  "latency_status": "pending_cost_py_T4_measurement",
+  "reproducibility": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  }
+}

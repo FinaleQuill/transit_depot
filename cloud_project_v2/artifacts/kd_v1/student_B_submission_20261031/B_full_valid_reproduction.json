@@ -1,0 +1,70 @@
+{
+  "macro_auc": 0.8105695698808949,
+  "historical_comparison": {
+    "compared_studies": 859,
+    "valid_compared_studies": 859,
+    "expected_studies": 859,
+    "reference_studies": 859,
+    "mismatched_studies": [],
+    "mismatched_study_count": 0,
+    "missing_result_studies": [],
+    "unexpected_result_studies": [],
+    "missing_reference_studies": [],
+    "reused_reference_studies": [],
+    "uncompared_reference_studies": 0,
+    "reference_superset_allowed": false,
+    "identity_coverage_match": true,
+    "invalid_probability_studies": [],
+    "probability_mismatched_studies": [],
+    "binary_mismatched_studies": [],
+    "gate_mismatched_studies": [],
+    "sample_class_order_mismatched_studies": [],
+    "cross_study_class_order_mismatched_studies": [],
+    "semantic_mismatched_study_count": 0,
+    "semantic_match": true,
+    "absolute_tolerance": 0.0,
+    "max_absolute_error": 0.0,
+    "binary_threshold": 0.5,
+    "gate_thresholds": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+    "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+    "match": true
+  },
+  "all_1422_image_probabilities_exact": true,
+  "max_image_probability_error": 0.0,
+  "valid_wall_seconds": 124.54876754599991,
+  "quota": {
+    "requested_thread_percentage": null,
+    "baseline_sm_count": 68,
+    "cuda_visible_sm_count": 68,
+    "native_baseline_sm_count": 68,
+    "mode": "native",
+    "environment": {
+      "CUDA_MPS_PIPE_DIRECTORY": null,
+      "CUDA_MPS_LOG_DIRECTORY": null,
+      "CUDA_MPS_ACTIVE_THREAD_PERCENTAGE": null,
+      "CUDA_MPS_ENABLE_PER_CTX_DEVICE_MULTIPROCESSOR_PARTITIONING": null,
+      "CUDA_MPS_PINNED_DEVICE_MEM_LIMIT": null,
+      "CUDA_VISIBLE_DEVICES": null
+    },
+    "physical_device_name": "NVIDIA GeForce RTX 2080 Ti",
+    "allocator": {
+      "requested_limit_gib": 8.0,
+      "requested_limit_bytes": 8589934592,
+      "applied_fraction": 0.3722113680766959,
+      "device_total_bytes": 23078109184,
+      "scope": "PyTorch caching allocator only; no bandwidth or hardware-capacity equivalence"
+    }
+  }
+}

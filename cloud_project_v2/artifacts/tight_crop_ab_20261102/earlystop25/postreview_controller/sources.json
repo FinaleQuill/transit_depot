@@ -1,0 +1,22 @@
+{
+  "registered_utc": "2026-11-02T04:46:54.680191+00:00",
+  "git_head": "604d8edd48f1a14647b09bddbdb736a34c823a43",
+  "sha256": {
+    "run_tight_crop_postreview.py": "48c35b286344e523a36b032abf30f5178ebd75a2925a0231941a9743889b1491",
+    "docs/TIGHT_CROP_AB_EARLYSTOP_PLAN_20261102.json": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+    "review_tight_crop_ab_results.py": "194c0825057cef18a347b4e7726fb0f8b8d093258e0424bcf25fe9fe83c75776",
+    "render_tight_crop_strategy_review.py": "ec0683abef1ac82264c3feaf73c8bbeec14f6d40f8e404cbde23b2ed83e351de",
+    "run_tight_crop_environment.sh": "13767fc77759f15dbfcad0a9d726aa3b6fbfa5bf7e982e34a42da20e0607a129",
+    "benchmark_local_resources.py": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+    "cost.py": "9abd449a66cbd6558a0a0ba18e175f7b4a6ffcc149c6583db5e11fca61426efb",
+    "deploy_kd.py": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+    "inference_inputs.py": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+    "inference_reproducibility.py": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed",
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "tight_crop.py": "85ec065e2b4a9bb23a0defcafc3681cd474a579563affd3501ddcb4d2426cd8d",
+    "tight_crop_ab_preprocess.py": "545d3b48f3037663f7ee9159766bab990de83c903fa36d25a2758bfddd0eb96c",
+    "tight_crop_ab_evaluate.py": "09b37134a6272f0556bcea95451344a48a31a41f782afa7d93adf6aa8fd7348e",
+    "tight_crop_ab_earlystop_evaluate.py": "2e20c54d3e6af0615e879e56a05c67b946582c949b7d293ce3397722bbfe3ffe"
+  },
+  "training_source_receipt": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/sources.json"
+}

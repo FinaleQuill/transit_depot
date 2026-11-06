@@ -1,0 +1,29 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "attempted_updates": 1044,
+    "best_epoch": 0,
+    "best_macro_auc": 0.7978381126852129,
+    "completed_epochs": 3,
+    "confirmation_evaluated": false,
+    "epoch_zero_evaluated": true,
+    "experiment_arm": "global_control",
+    "fixed_budget": true,
+    "official_valid_evaluated": false,
+    "optimizer_updates": 1043,
+    "skipped_updates": 1,
+    "state": "paused",
+    "test_accessed": false,
+    "updated_at": "2026-11-04T17:38:53.085748+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "f685612bdca4cd501979bccc59bf4cf87f5ec983791fd1e8bdfc7acf2dbc2132",
+  "record_sha256": "2f5435efff021916cf6a2976bfcd6b6c3bd37fe65ff360db981f2d62b84b979b",
+  "recorded_at_hong_kong": "2026-11-04T17:38:53.176233+08:00",
+  "recorded_at_utc": "2026-11-04T09:38:53.176233+00:00",
+  "run_dir": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_control_seed20261104",
+  "session_id": "20261104T083028Z_b672e9b496e9",
+  "state": "paused",
+  "trainer": "reconstruction.train_local"
+}

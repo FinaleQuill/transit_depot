@@ -1,0 +1,2170 @@
+[
+  {
+    "param_names": [
+      "backbone.stem.0.weight"
+    ],
+    "lr": 3.155584295764536e-06,
+    "base_lr": 3.155584295764536e-06,
+    "lr_scale": 0.1577792147882268,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 0,
+    "group_name": "teacher:backbone:0:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stem.0.bias",
+      "backbone.stem.1.weight",
+      "backbone.stem.1.bias"
+    ],
+    "lr": 3.155584295764536e-06,
+    "base_lr": 3.155584295764536e-06,
+    "lr_scale": 0.1577792147882268,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 0,
+    "group_name": "teacher:backbone:0:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.0.gamma",
+      "backbone.stages.0.blocks.0.conv_dw.bias",
+      "backbone.stages.0.blocks.0.norm.weight",
+      "backbone.stages.0.blocks.0.norm.bias",
+      "backbone.stages.0.blocks.0.mlp.fc1.bias",
+      "backbone.stages.0.blocks.0.mlp.fc2.bias"
+    ],
+    "lr": 3.3216676797521437e-06,
+    "base_lr": 3.3216676797521437e-06,
+    "lr_scale": 0.16608338398760716,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 1,
+    "group_name": "teacher:backbone:1:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.0.conv_dw.weight",
+      "backbone.stages.0.blocks.0.mlp.fc1.weight",
+      "backbone.stages.0.blocks.0.mlp.fc2.weight"
+    ],
+    "lr": 3.3216676797521437e-06,
+    "base_lr": 3.3216676797521437e-06,
+    "lr_scale": 0.16608338398760716,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 1,
+    "group_name": "teacher:backbone:1:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.1.gamma",
+      "backbone.stages.0.blocks.1.conv_dw.bias",
+      "backbone.stages.0.blocks.1.norm.weight",
+      "backbone.stages.0.blocks.1.norm.bias",
+      "backbone.stages.0.blocks.1.mlp.fc1.bias",
+      "backbone.stages.0.blocks.1.mlp.fc2.bias"
+    ],
+    "lr": 3.4964922944759407e-06,
+    "base_lr": 3.4964922944759407e-06,
+    "lr_scale": 0.174824614723797,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 2,
+    "group_name": "teacher:backbone:2:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.1.conv_dw.weight",
+      "backbone.stages.0.blocks.1.mlp.fc1.weight",
+      "backbone.stages.0.blocks.1.mlp.fc2.weight"
+    ],
+    "lr": 3.4964922944759407e-06,
+    "base_lr": 3.4964922944759407e-06,
+    "lr_scale": 0.174824614723797,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 2,
+    "group_name": "teacher:backbone:2:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.2.gamma",
+      "backbone.stages.0.blocks.2.conv_dw.bias",
+      "backbone.stages.0.blocks.2.norm.weight",
+      "backbone.stages.0.blocks.2.norm.bias",
+      "backbone.stages.0.blocks.2.mlp.fc1.bias",
+      "backbone.stages.0.blocks.2.mlp.fc2.bias"
+    ],
+    "lr": 3.6805182047115167e-06,
+    "base_lr": 3.6805182047115167e-06,
+    "lr_scale": 0.18402591023557582,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 3,
+    "group_name": "teacher:backbone:3:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.0.blocks.2.conv_dw.weight",
+      "backbone.stages.0.blocks.2.mlp.fc1.weight",
+      "backbone.stages.0.blocks.2.mlp.fc2.weight"
+    ],
+    "lr": 3.6805182047115167e-06,
+    "base_lr": 3.6805182047115167e-06,
+    "lr_scale": 0.18402591023557582,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 3,
+    "group_name": "teacher:backbone:3:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.downsample.0.weight",
+      "backbone.stages.1.downsample.0.bias",
+      "backbone.stages.1.downsample.1.bias",
+      "backbone.stages.1.blocks.0.gamma",
+      "backbone.stages.1.blocks.0.conv_dw.bias",
+      "backbone.stages.1.blocks.0.norm.weight",
+      "backbone.stages.1.blocks.0.norm.bias",
+      "backbone.stages.1.blocks.0.mlp.fc1.bias",
+      "backbone.stages.1.blocks.0.mlp.fc2.bias"
+    ],
+    "lr": 3.874229689170018e-06,
+    "base_lr": 3.874229689170018e-06,
+    "lr_scale": 0.19371148445850087,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 4,
+    "group_name": "teacher:backbone:4:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.downsample.1.weight",
+      "backbone.stages.1.blocks.0.conv_dw.weight",
+      "backbone.stages.1.blocks.0.mlp.fc1.weight",
+      "backbone.stages.1.blocks.0.mlp.fc2.weight"
+    ],
+    "lr": 3.874229689170018e-06,
+    "base_lr": 3.874229689170018e-06,
+    "lr_scale": 0.19371148445850087,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 4,
+    "group_name": "teacher:backbone:4:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.blocks.1.gamma",
+      "backbone.stages.1.blocks.1.conv_dw.bias",
+      "backbone.stages.1.blocks.1.norm.weight",
+      "backbone.stages.1.blocks.1.norm.bias",
+      "backbone.stages.1.blocks.1.mlp.fc1.bias",
+      "backbone.stages.1.blocks.1.mlp.fc2.bias"
+    ],
+    "lr": 4.078136514915808e-06,
+    "base_lr": 4.078136514915808e-06,
+    "lr_scale": 0.2039068257457904,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 5,
+    "group_name": "teacher:backbone:5:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.blocks.1.conv_dw.weight",
+      "backbone.stages.1.blocks.1.mlp.fc1.weight",
+      "backbone.stages.1.blocks.1.mlp.fc2.weight"
+    ],
+    "lr": 4.078136514915808e-06,
+    "base_lr": 4.078136514915808e-06,
+    "lr_scale": 0.2039068257457904,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 5,
+    "group_name": "teacher:backbone:5:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.blocks.2.gamma",
+      "backbone.stages.1.blocks.2.conv_dw.bias",
+      "backbone.stages.1.blocks.2.norm.weight",
+      "backbone.stages.1.blocks.2.norm.bias",
+      "backbone.stages.1.blocks.2.mlp.fc1.bias",
+      "backbone.stages.1.blocks.2.mlp.fc2.bias"
+    ],
+    "lr": 4.292775278858746e-06,
+    "base_lr": 4.292775278858746e-06,
+    "lr_scale": 0.21463876394293727,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 6,
+    "group_name": "teacher:backbone:6:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.1.blocks.2.conv_dw.weight",
+      "backbone.stages.1.blocks.2.mlp.fc1.weight",
+      "backbone.stages.1.blocks.2.mlp.fc2.weight"
+    ],
+    "lr": 4.292775278858746e-06,
+    "base_lr": 4.292775278858746e-06,
+    "lr_scale": 0.21463876394293727,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 6,
+    "group_name": "teacher:backbone:6:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.downsample.0.weight",
+      "backbone.stages.2.downsample.0.bias",
+      "backbone.stages.2.downsample.1.bias",
+      "backbone.stages.2.blocks.0.gamma",
+      "backbone.stages.2.blocks.0.conv_dw.bias",
+      "backbone.stages.2.blocks.0.norm.weight",
+      "backbone.stages.2.blocks.0.norm.bias",
+      "backbone.stages.2.blocks.0.mlp.fc1.bias",
+      "backbone.stages.2.blocks.0.mlp.fc2.bias"
+    ],
+    "lr": 4.518710819851311e-06,
+    "base_lr": 4.518710819851311e-06,
+    "lr_scale": 0.22593554099256555,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 7,
+    "group_name": "teacher:backbone:7:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.downsample.1.weight",
+      "backbone.stages.2.blocks.0.conv_dw.weight",
+      "backbone.stages.2.blocks.0.mlp.fc1.weight",
+      "backbone.stages.2.blocks.0.mlp.fc2.weight"
+    ],
+    "lr": 4.518710819851311e-06,
+    "base_lr": 4.518710819851311e-06,
+    "lr_scale": 0.22593554099256555,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 7,
+    "group_name": "teacher:backbone:7:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.1.gamma",
+      "backbone.stages.2.blocks.1.conv_dw.bias",
+      "backbone.stages.2.blocks.1.norm.weight",
+      "backbone.stages.2.blocks.1.norm.bias",
+      "backbone.stages.2.blocks.1.mlp.fc1.bias",
+      "backbone.stages.2.blocks.1.mlp.fc2.bias"
+    ],
+    "lr": 4.756537705106644e-06,
+    "base_lr": 4.756537705106644e-06,
+    "lr_scale": 0.23782688525533216,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 8,
+    "group_name": "teacher:backbone:8:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.1.conv_dw.weight",
+      "backbone.stages.2.blocks.1.mlp.fc1.weight",
+      "backbone.stages.2.blocks.1.mlp.fc2.weight"
+    ],
+    "lr": 4.756537705106644e-06,
+    "base_lr": 4.756537705106644e-06,
+    "lr_scale": 0.23782688525533216,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 8,
+    "group_name": "teacher:backbone:8:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.2.gamma",
+      "backbone.stages.2.blocks.2.conv_dw.bias",
+      "backbone.stages.2.blocks.2.norm.weight",
+      "backbone.stages.2.blocks.2.norm.bias",
+      "backbone.stages.2.blocks.2.mlp.fc1.bias",
+      "backbone.stages.2.blocks.2.mlp.fc2.bias"
+    ],
+    "lr": 5.006881794849099e-06,
+    "base_lr": 5.006881794849099e-06,
+    "lr_scale": 0.2503440897424549,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 9,
+    "group_name": "teacher:backbone:9:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.2.conv_dw.weight",
+      "backbone.stages.2.blocks.2.mlp.fc1.weight",
+      "backbone.stages.2.blocks.2.mlp.fc2.weight"
+    ],
+    "lr": 5.006881794849099e-06,
+    "base_lr": 5.006881794849099e-06,
+    "lr_scale": 0.2503440897424549,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 9,
+    "group_name": "teacher:backbone:9:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.3.gamma",
+      "backbone.stages.2.blocks.3.conv_dw.bias",
+      "backbone.stages.2.blocks.3.norm.weight",
+      "backbone.stages.2.blocks.3.norm.bias",
+      "backbone.stages.2.blocks.3.mlp.fc1.bias",
+      "backbone.stages.2.blocks.3.mlp.fc2.bias"
+    ],
+    "lr": 5.270401889314841e-06,
+    "base_lr": 5.270401889314841e-06,
+    "lr_scale": 0.26352009446574204,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 10,
+    "group_name": "teacher:backbone:10:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.3.conv_dw.weight",
+      "backbone.stages.2.blocks.3.mlp.fc1.weight",
+      "backbone.stages.2.blocks.3.mlp.fc2.weight"
+    ],
+    "lr": 5.270401889314841e-06,
+    "base_lr": 5.270401889314841e-06,
+    "lr_scale": 0.26352009446574204,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 10,
+    "group_name": "teacher:backbone:10:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.4.gamma",
+      "backbone.stages.2.blocks.4.conv_dw.bias",
+      "backbone.stages.2.blocks.4.norm.weight",
+      "backbone.stages.2.blocks.4.norm.bias",
+      "backbone.stages.2.blocks.4.mlp.fc1.bias",
+      "backbone.stages.2.blocks.4.mlp.fc2.bias"
+    ],
+    "lr": 5.547791462436675e-06,
+    "base_lr": 5.547791462436675e-06,
+    "lr_scale": 0.27738957312183377,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 11,
+    "group_name": "teacher:backbone:11:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.4.conv_dw.weight",
+      "backbone.stages.2.blocks.4.mlp.fc1.weight",
+      "backbone.stages.2.blocks.4.mlp.fc2.weight"
+    ],
+    "lr": 5.547791462436675e-06,
+    "base_lr": 5.547791462436675e-06,
+    "lr_scale": 0.27738957312183377,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 11,
+    "group_name": "teacher:backbone:11:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.5.gamma",
+      "backbone.stages.2.blocks.5.conv_dw.bias",
+      "backbone.stages.2.blocks.5.norm.weight",
+      "backbone.stages.2.blocks.5.norm.bias",
+      "backbone.stages.2.blocks.5.mlp.fc1.bias",
+      "backbone.stages.2.blocks.5.mlp.fc2.bias"
+    ],
+    "lr": 5.839780486775448e-06,
+    "base_lr": 5.839780486775448e-06,
+    "lr_scale": 0.2919890243387724,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 12,
+    "group_name": "teacher:backbone:12:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.5.conv_dw.weight",
+      "backbone.stages.2.blocks.5.mlp.fc1.weight",
+      "backbone.stages.2.blocks.5.mlp.fc2.weight"
+    ],
+    "lr": 5.839780486775448e-06,
+    "base_lr": 5.839780486775448e-06,
+    "lr_scale": 0.2919890243387724,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 12,
+    "group_name": "teacher:backbone:12:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.6.gamma",
+      "backbone.stages.2.blocks.6.conv_dw.bias",
+      "backbone.stages.2.blocks.6.norm.weight",
+      "backbone.stages.2.blocks.6.norm.bias",
+      "backbone.stages.2.blocks.6.mlp.fc1.bias",
+      "backbone.stages.2.blocks.6.mlp.fc2.bias"
+    ],
+    "lr": 6.147137354500472e-06,
+    "base_lr": 6.147137354500472e-06,
+    "lr_scale": 0.3073568677250236,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 13,
+    "group_name": "teacher:backbone:13:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.6.conv_dw.weight",
+      "backbone.stages.2.blocks.6.mlp.fc1.weight",
+      "backbone.stages.2.blocks.6.mlp.fc2.weight"
+    ],
+    "lr": 6.147137354500472e-06,
+    "base_lr": 6.147137354500472e-06,
+    "lr_scale": 0.3073568677250236,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 13,
+    "group_name": "teacher:backbone:13:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.7.gamma",
+      "backbone.stages.2.blocks.7.conv_dw.bias",
+      "backbone.stages.2.blocks.7.norm.weight",
+      "backbone.stages.2.blocks.7.norm.bias",
+      "backbone.stages.2.blocks.7.mlp.fc1.bias",
+      "backbone.stages.2.blocks.7.mlp.fc2.bias"
+    ],
+    "lr": 6.470670899474181e-06,
+    "base_lr": 6.470670899474181e-06,
+    "lr_scale": 0.323533544973709,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 14,
+    "group_name": "teacher:backbone:14:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.7.conv_dw.weight",
+      "backbone.stages.2.blocks.7.mlp.fc1.weight",
+      "backbone.stages.2.blocks.7.mlp.fc2.weight"
+    ],
+    "lr": 6.470670899474181e-06,
+    "base_lr": 6.470670899474181e-06,
+    "lr_scale": 0.323533544973709,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 14,
+    "group_name": "teacher:backbone:14:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.8.gamma",
+      "backbone.stages.2.blocks.8.conv_dw.bias",
+      "backbone.stages.2.blocks.8.norm.weight",
+      "backbone.stages.2.blocks.8.norm.bias",
+      "backbone.stages.2.blocks.8.mlp.fc1.bias",
+      "backbone.stages.2.blocks.8.mlp.fc2.bias"
+    ],
+    "lr": 6.811232525762297e-06,
+    "base_lr": 6.811232525762297e-06,
+    "lr_scale": 0.3405616262881148,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 15,
+    "group_name": "teacher:backbone:15:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.8.conv_dw.weight",
+      "backbone.stages.2.blocks.8.mlp.fc1.weight",
+      "backbone.stages.2.blocks.8.mlp.fc2.weight"
+    ],
+    "lr": 6.811232525762297e-06,
+    "base_lr": 6.811232525762297e-06,
+    "lr_scale": 0.3405616262881148,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 15,
+    "group_name": "teacher:backbone:15:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.9.gamma",
+      "backbone.stages.2.blocks.9.conv_dw.bias",
+      "backbone.stages.2.blocks.9.norm.weight",
+      "backbone.stages.2.blocks.9.norm.bias",
+      "backbone.stages.2.blocks.9.mlp.fc1.bias",
+      "backbone.stages.2.blocks.9.mlp.fc2.bias"
+    ],
+    "lr": 7.169718448170838e-06,
+    "base_lr": 7.169718448170838e-06,
+    "lr_scale": 0.3584859224085419,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 16,
+    "group_name": "teacher:backbone:16:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.9.conv_dw.weight",
+      "backbone.stages.2.blocks.9.mlp.fc1.weight",
+      "backbone.stages.2.blocks.9.mlp.fc2.weight"
+    ],
+    "lr": 7.169718448170838e-06,
+    "base_lr": 7.169718448170838e-06,
+    "lr_scale": 0.3584859224085419,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 16,
+    "group_name": "teacher:backbone:16:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.10.gamma",
+      "backbone.stages.2.blocks.10.conv_dw.bias",
+      "backbone.stages.2.blocks.10.norm.weight",
+      "backbone.stages.2.blocks.10.norm.bias",
+      "backbone.stages.2.blocks.10.mlp.fc1.bias",
+      "backbone.stages.2.blocks.10.mlp.fc2.bias"
+    ],
+    "lr": 7.547072050706145e-06,
+    "base_lr": 7.547072050706145e-06,
+    "lr_scale": 0.37735360253530725,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 17,
+    "group_name": "teacher:backbone:17:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.10.conv_dw.weight",
+      "backbone.stages.2.blocks.10.mlp.fc1.weight",
+      "backbone.stages.2.blocks.10.mlp.fc2.weight"
+    ],
+    "lr": 7.547072050706145e-06,
+    "base_lr": 7.547072050706145e-06,
+    "lr_scale": 0.37735360253530725,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 17,
+    "group_name": "teacher:backbone:17:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.11.gamma",
+      "backbone.stages.2.blocks.11.conv_dw.bias",
+      "backbone.stages.2.blocks.11.norm.weight",
+      "backbone.stages.2.blocks.11.norm.bias",
+      "backbone.stages.2.blocks.11.mlp.fc1.bias",
+      "backbone.stages.2.blocks.11.mlp.fc2.bias"
+    ],
+    "lr": 7.944286369164365e-06,
+    "base_lr": 7.944286369164365e-06,
+    "lr_scale": 0.3972143184582182,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 18,
+    "group_name": "teacher:backbone:18:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.11.conv_dw.weight",
+      "backbone.stages.2.blocks.11.mlp.fc1.weight",
+      "backbone.stages.2.blocks.11.mlp.fc2.weight"
+    ],
+    "lr": 7.944286369164365e-06,
+    "base_lr": 7.944286369164365e-06,
+    "lr_scale": 0.3972143184582182,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 18,
+    "group_name": "teacher:backbone:18:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.12.gamma",
+      "backbone.stages.2.blocks.12.conv_dw.bias",
+      "backbone.stages.2.blocks.12.norm.weight",
+      "backbone.stages.2.blocks.12.norm.bias",
+      "backbone.stages.2.blocks.12.mlp.fc1.bias",
+      "backbone.stages.2.blocks.12.mlp.fc2.bias"
+    ],
+    "lr": 8.362406704383542e-06,
+    "base_lr": 8.362406704383542e-06,
+    "lr_scale": 0.4181203352191771,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 19,
+    "group_name": "teacher:backbone:19:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.12.conv_dw.weight",
+      "backbone.stages.2.blocks.12.mlp.fc1.weight",
+      "backbone.stages.2.blocks.12.mlp.fc2.weight"
+    ],
+    "lr": 8.362406704383542e-06,
+    "base_lr": 8.362406704383542e-06,
+    "lr_scale": 0.4181203352191771,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 19,
+    "group_name": "teacher:backbone:19:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.13.gamma",
+      "backbone.stages.2.blocks.13.conv_dw.bias",
+      "backbone.stages.2.blocks.13.norm.weight",
+      "backbone.stages.2.blocks.13.norm.bias",
+      "backbone.stages.2.blocks.13.mlp.fc1.bias",
+      "backbone.stages.2.blocks.13.mlp.fc2.bias"
+    ],
+    "lr": 8.802533373035308e-06,
+    "base_lr": 8.802533373035308e-06,
+    "lr_scale": 0.44012666865176536,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 20,
+    "group_name": "teacher:backbone:20:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.13.conv_dw.weight",
+      "backbone.stages.2.blocks.13.mlp.fc1.weight",
+      "backbone.stages.2.blocks.13.mlp.fc2.weight"
+    ],
+    "lr": 8.802533373035308e-06,
+    "base_lr": 8.802533373035308e-06,
+    "lr_scale": 0.44012666865176536,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 20,
+    "group_name": "teacher:backbone:20:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.14.gamma",
+      "backbone.stages.2.blocks.14.conv_dw.bias",
+      "backbone.stages.2.blocks.14.norm.weight",
+      "backbone.stages.2.blocks.14.norm.bias",
+      "backbone.stages.2.blocks.14.mlp.fc1.bias",
+      "backbone.stages.2.blocks.14.mlp.fc2.bias"
+    ],
+    "lr": 9.265824603195061e-06,
+    "base_lr": 9.265824603195061e-06,
+    "lr_scale": 0.46329123015975304,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 21,
+    "group_name": "teacher:backbone:21:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.14.conv_dw.weight",
+      "backbone.stages.2.blocks.14.mlp.fc1.weight",
+      "backbone.stages.2.blocks.14.mlp.fc2.weight"
+    ],
+    "lr": 9.265824603195061e-06,
+    "base_lr": 9.265824603195061e-06,
+    "lr_scale": 0.46329123015975304,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 21,
+    "group_name": "teacher:backbone:21:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.15.gamma",
+      "backbone.stages.2.blocks.15.conv_dw.bias",
+      "backbone.stages.2.blocks.15.norm.weight",
+      "backbone.stages.2.blocks.15.norm.bias",
+      "backbone.stages.2.blocks.15.mlp.fc1.bias",
+      "backbone.stages.2.blocks.15.mlp.fc2.bias"
+    ],
+    "lr": 9.753499582310592e-06,
+    "base_lr": 9.753499582310592e-06,
+    "lr_scale": 0.48767497911552954,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 22,
+    "group_name": "teacher:backbone:22:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.15.conv_dw.weight",
+      "backbone.stages.2.blocks.15.mlp.fc1.weight",
+      "backbone.stages.2.blocks.15.mlp.fc2.weight"
+    ],
+    "lr": 9.753499582310592e-06,
+    "base_lr": 9.753499582310592e-06,
+    "lr_scale": 0.48767497911552954,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 22,
+    "group_name": "teacher:backbone:22:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.16.gamma",
+      "backbone.stages.2.blocks.16.conv_dw.bias",
+      "backbone.stages.2.blocks.16.norm.weight",
+      "backbone.stages.2.blocks.16.norm.bias",
+      "backbone.stages.2.blocks.16.mlp.fc1.bias",
+      "backbone.stages.2.blocks.16.mlp.fc2.bias"
+    ],
+    "lr": 1.0266841665590098e-05,
+    "base_lr": 1.0266841665590098e-05,
+    "lr_scale": 0.5133420832795048,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 23,
+    "group_name": "teacher:backbone:23:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.16.conv_dw.weight",
+      "backbone.stages.2.blocks.16.mlp.fc1.weight",
+      "backbone.stages.2.blocks.16.mlp.fc2.weight"
+    ],
+    "lr": 1.0266841665590098e-05,
+    "base_lr": 1.0266841665590098e-05,
+    "lr_scale": 0.5133420832795048,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 23,
+    "group_name": "teacher:backbone:23:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.17.gamma",
+      "backbone.stages.2.blocks.17.conv_dw.bias",
+      "backbone.stages.2.blocks.17.norm.weight",
+      "backbone.stages.2.blocks.17.norm.bias",
+      "backbone.stages.2.blocks.17.mlp.fc1.bias",
+      "backbone.stages.2.blocks.17.mlp.fc2.bias"
+    ],
+    "lr": 1.0807201753252734e-05,
+    "base_lr": 1.0807201753252734e-05,
+    "lr_scale": 0.5403600876626367,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 24,
+    "group_name": "teacher:backbone:24:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.17.conv_dw.weight",
+      "backbone.stages.2.blocks.17.mlp.fc1.weight",
+      "backbone.stages.2.blocks.17.mlp.fc2.weight"
+    ],
+    "lr": 1.0807201753252734e-05,
+    "base_lr": 1.0807201753252734e-05,
+    "lr_scale": 0.5403600876626367,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 24,
+    "group_name": "teacher:backbone:24:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.18.gamma",
+      "backbone.stages.2.blocks.18.conv_dw.bias",
+      "backbone.stages.2.blocks.18.norm.weight",
+      "backbone.stages.2.blocks.18.norm.bias",
+      "backbone.stages.2.blocks.18.mlp.fc1.bias",
+      "backbone.stages.2.blocks.18.mlp.fc2.bias"
+    ],
+    "lr": 1.1376001845529195e-05,
+    "base_lr": 1.1376001845529195e-05,
+    "lr_scale": 0.5688000922764597,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 25,
+    "group_name": "teacher:backbone:25:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.18.conv_dw.weight",
+      "backbone.stages.2.blocks.18.mlp.fc1.weight",
+      "backbone.stages.2.blocks.18.mlp.fc2.weight"
+    ],
+    "lr": 1.1376001845529195e-05,
+    "base_lr": 1.1376001845529195e-05,
+    "lr_scale": 0.5688000922764597,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 25,
+    "group_name": "teacher:backbone:25:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.19.gamma",
+      "backbone.stages.2.blocks.19.conv_dw.bias",
+      "backbone.stages.2.blocks.19.norm.weight",
+      "backbone.stages.2.blocks.19.norm.bias",
+      "backbone.stages.2.blocks.19.mlp.fc1.bias",
+      "backbone.stages.2.blocks.19.mlp.fc2.bias"
+    ],
+    "lr": 1.1974738784767575e-05,
+    "base_lr": 1.1974738784767575e-05,
+    "lr_scale": 0.5987369392383787,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 26,
+    "group_name": "teacher:backbone:26:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.19.conv_dw.weight",
+      "backbone.stages.2.blocks.19.mlp.fc1.weight",
+      "backbone.stages.2.blocks.19.mlp.fc2.weight"
+    ],
+    "lr": 1.1974738784767575e-05,
+    "base_lr": 1.1974738784767575e-05,
+    "lr_scale": 0.5987369392383787,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 26,
+    "group_name": "teacher:backbone:26:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.20.gamma",
+      "backbone.stages.2.blocks.20.conv_dw.bias",
+      "backbone.stages.2.blocks.20.norm.weight",
+      "backbone.stages.2.blocks.20.norm.bias",
+      "backbone.stages.2.blocks.20.mlp.fc1.bias",
+      "backbone.stages.2.blocks.20.mlp.fc2.bias"
+    ],
+    "lr": 1.2604988194492183e-05,
+    "base_lr": 1.2604988194492183e-05,
+    "lr_scale": 0.6302494097246091,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 27,
+    "group_name": "teacher:backbone:27:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.20.conv_dw.weight",
+      "backbone.stages.2.blocks.20.mlp.fc1.weight",
+      "backbone.stages.2.blocks.20.mlp.fc2.weight"
+    ],
+    "lr": 1.2604988194492183e-05,
+    "base_lr": 1.2604988194492183e-05,
+    "lr_scale": 0.6302494097246091,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 27,
+    "group_name": "teacher:backbone:27:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.21.gamma",
+      "backbone.stages.2.blocks.21.conv_dw.bias",
+      "backbone.stages.2.blocks.21.norm.weight",
+      "backbone.stages.2.blocks.21.norm.bias",
+      "backbone.stages.2.blocks.21.mlp.fc1.bias",
+      "backbone.stages.2.blocks.21.mlp.fc2.bias"
+    ],
+    "lr": 1.3268408625781247e-05,
+    "base_lr": 1.3268408625781247e-05,
+    "lr_scale": 0.6634204312890623,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 28,
+    "group_name": "teacher:backbone:28:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.21.conv_dw.weight",
+      "backbone.stages.2.blocks.21.mlp.fc1.weight",
+      "backbone.stages.2.blocks.21.mlp.fc2.weight"
+    ],
+    "lr": 1.3268408625781247e-05,
+    "base_lr": 1.3268408625781247e-05,
+    "lr_scale": 0.6634204312890623,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 28,
+    "group_name": "teacher:backbone:28:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.22.gamma",
+      "backbone.stages.2.blocks.22.conv_dw.bias",
+      "backbone.stages.2.blocks.22.norm.weight",
+      "backbone.stages.2.blocks.22.norm.bias",
+      "backbone.stages.2.blocks.22.mlp.fc1.bias",
+      "backbone.stages.2.blocks.22.mlp.fc2.bias"
+    ],
+    "lr": 1.3966745921874996e-05,
+    "base_lr": 1.3966745921874996e-05,
+    "lr_scale": 0.6983372960937497,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 29,
+    "group_name": "teacher:backbone:29:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.22.conv_dw.weight",
+      "backbone.stages.2.blocks.22.mlp.fc1.weight",
+      "backbone.stages.2.blocks.22.mlp.fc2.weight"
+    ],
+    "lr": 1.3966745921874996e-05,
+    "base_lr": 1.3966745921874996e-05,
+    "lr_scale": 0.6983372960937497,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 29,
+    "group_name": "teacher:backbone:29:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.23.gamma",
+      "backbone.stages.2.blocks.23.conv_dw.bias",
+      "backbone.stages.2.blocks.23.norm.weight",
+      "backbone.stages.2.blocks.23.norm.bias",
+      "backbone.stages.2.blocks.23.mlp.fc1.bias",
+      "backbone.stages.2.blocks.23.mlp.fc2.bias"
+    ],
+    "lr": 1.4701837812499997e-05,
+    "base_lr": 1.4701837812499997e-05,
+    "lr_scale": 0.7350918906249998,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 30,
+    "group_name": "teacher:backbone:30:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.23.conv_dw.weight",
+      "backbone.stages.2.blocks.23.mlp.fc1.weight",
+      "backbone.stages.2.blocks.23.mlp.fc2.weight"
+    ],
+    "lr": 1.4701837812499997e-05,
+    "base_lr": 1.4701837812499997e-05,
+    "lr_scale": 0.7350918906249998,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 30,
+    "group_name": "teacher:backbone:30:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.24.gamma",
+      "backbone.stages.2.blocks.24.conv_dw.bias",
+      "backbone.stages.2.blocks.24.norm.weight",
+      "backbone.stages.2.blocks.24.norm.bias",
+      "backbone.stages.2.blocks.24.mlp.fc1.bias",
+      "backbone.stages.2.blocks.24.mlp.fc2.bias"
+    ],
+    "lr": 1.5475618749999998e-05,
+    "base_lr": 1.5475618749999998e-05,
+    "lr_scale": 0.7737809374999998,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 31,
+    "group_name": "teacher:backbone:31:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.24.conv_dw.weight",
+      "backbone.stages.2.blocks.24.mlp.fc1.weight",
+      "backbone.stages.2.blocks.24.mlp.fc2.weight"
+    ],
+    "lr": 1.5475618749999998e-05,
+    "base_lr": 1.5475618749999998e-05,
+    "lr_scale": 0.7737809374999998,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 31,
+    "group_name": "teacher:backbone:31:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.25.gamma",
+      "backbone.stages.2.blocks.25.conv_dw.bias",
+      "backbone.stages.2.blocks.25.norm.weight",
+      "backbone.stages.2.blocks.25.norm.bias",
+      "backbone.stages.2.blocks.25.mlp.fc1.bias",
+      "backbone.stages.2.blocks.25.mlp.fc2.bias"
+    ],
+    "lr": 1.6290125e-05,
+    "base_lr": 1.6290125e-05,
+    "lr_scale": 0.8145062499999999,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 32,
+    "group_name": "teacher:backbone:32:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.25.conv_dw.weight",
+      "backbone.stages.2.blocks.25.mlp.fc1.weight",
+      "backbone.stages.2.blocks.25.mlp.fc2.weight"
+    ],
+    "lr": 1.6290125e-05,
+    "base_lr": 1.6290125e-05,
+    "lr_scale": 0.8145062499999999,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 32,
+    "group_name": "teacher:backbone:32:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.26.gamma",
+      "backbone.stages.2.blocks.26.conv_dw.bias",
+      "backbone.stages.2.blocks.26.norm.weight",
+      "backbone.stages.2.blocks.26.norm.bias",
+      "backbone.stages.2.blocks.26.mlp.fc1.bias",
+      "backbone.stages.2.blocks.26.mlp.fc2.bias"
+    ],
+    "lr": 1.7147499999999998e-05,
+    "base_lr": 1.7147499999999998e-05,
+    "lr_scale": 0.8573749999999999,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 33,
+    "group_name": "teacher:backbone:33:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.2.blocks.26.conv_dw.weight",
+      "backbone.stages.2.blocks.26.mlp.fc1.weight",
+      "backbone.stages.2.blocks.26.mlp.fc2.weight"
+    ],
+    "lr": 1.7147499999999998e-05,
+    "base_lr": 1.7147499999999998e-05,
+    "lr_scale": 0.8573749999999999,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 33,
+    "group_name": "teacher:backbone:33:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.downsample.0.weight",
+      "backbone.stages.3.downsample.0.bias",
+      "backbone.stages.3.downsample.1.bias",
+      "backbone.stages.3.blocks.0.gamma",
+      "backbone.stages.3.blocks.0.conv_dw.bias",
+      "backbone.stages.3.blocks.0.norm.weight",
+      "backbone.stages.3.blocks.0.norm.bias",
+      "backbone.stages.3.blocks.0.mlp.fc1.bias",
+      "backbone.stages.3.blocks.0.mlp.fc2.bias"
+    ],
+    "lr": 1.805e-05,
+    "base_lr": 1.805e-05,
+    "lr_scale": 0.9025,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 34,
+    "group_name": "teacher:backbone:34:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.downsample.1.weight",
+      "backbone.stages.3.blocks.0.conv_dw.weight",
+      "backbone.stages.3.blocks.0.mlp.fc1.weight",
+      "backbone.stages.3.blocks.0.mlp.fc2.weight"
+    ],
+    "lr": 1.805e-05,
+    "base_lr": 1.805e-05,
+    "lr_scale": 0.9025,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 34,
+    "group_name": "teacher:backbone:34:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.blocks.1.gamma",
+      "backbone.stages.3.blocks.1.conv_dw.bias",
+      "backbone.stages.3.blocks.1.norm.weight",
+      "backbone.stages.3.blocks.1.norm.bias",
+      "backbone.stages.3.blocks.1.mlp.fc1.bias",
+      "backbone.stages.3.blocks.1.mlp.fc2.bias"
+    ],
+    "lr": 1.9e-05,
+    "base_lr": 1.9e-05,
+    "lr_scale": 0.95,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 35,
+    "group_name": "teacher:backbone:35:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.blocks.1.conv_dw.weight",
+      "backbone.stages.3.blocks.1.mlp.fc1.weight",
+      "backbone.stages.3.blocks.1.mlp.fc2.weight"
+    ],
+    "lr": 1.9e-05,
+    "base_lr": 1.9e-05,
+    "lr_scale": 0.95,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 35,
+    "group_name": "teacher:backbone:35:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.blocks.2.gamma",
+      "backbone.stages.3.blocks.2.conv_dw.bias",
+      "backbone.stages.3.blocks.2.norm.weight",
+      "backbone.stages.3.blocks.2.norm.bias",
+      "backbone.stages.3.blocks.2.mlp.fc1.bias",
+      "backbone.stages.3.blocks.2.mlp.fc2.bias",
+      "backbone.head.norm.weight",
+      "backbone.head.norm.bias"
+    ],
+    "lr": 2e-05,
+    "base_lr": 2e-05,
+    "lr_scale": 1.0,
+    "weight_decay": 0.0,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 36,
+    "group_name": "teacher:backbone:36:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "backbone.stages.3.blocks.2.conv_dw.weight",
+      "backbone.stages.3.blocks.2.mlp.fc1.weight",
+      "backbone.stages.3.blocks.2.mlp.fc2.weight"
+    ],
+    "lr": 2e-05,
+    "base_lr": 2e-05,
+    "lr_scale": 1.0,
+    "weight_decay": 0.05,
+    "role": "backbone",
+    "model_role": "teacher",
+    "layer_id": 36,
+    "group_name": "teacher:backbone:36:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "head.1.weight"
+    ],
+    "lr": 0.0002,
+    "base_lr": 0.0002,
+    "lr_scale": 1.0,
+    "weight_decay": 0.05,
+    "role": "head",
+    "model_role": "teacher",
+    "layer_id": -1,
+    "group_name": "teacher:head:-1:0.05",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  {
+    "param_names": [
+      "head.1.bias"
+    ],
+    "lr": 0.0002,
+    "base_lr": 0.0002,
+    "lr_scale": 1.0,
+    "weight_decay": 0.0,
+    "role": "head",
+    "model_role": "teacher",
+    "layer_id": -1,
+    "group_name": "teacher:head:-1:0",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": false,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  }
+]

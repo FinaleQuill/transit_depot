@@ -1,0 +1,30 @@
+[exploration valid] 100/1422
+[exploration valid] 200/1422
+[exploration valid] 300/1422
+[exploration valid] 400/1422
+[exploration valid] 500/1422
+[exploration valid] 600/1422
+[exploration valid] 700/1422
+[exploration valid] 800/1422
+[exploration valid] 900/1422
+[exploration valid] 1000/1422
+[exploration valid] 1100/1422
+[exploration valid] 1200/1422
+[exploration valid] 1300/1422
+[exploration valid] 1400/1422
+[exploration valid] 1422/1422
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 836, in <module>
+    main()
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 832, in main
+    return evaluate(args) if args.action == "evaluate" else compare(args)
+           ^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 620, in evaluate
+    bundle = save_predictions(output, records, np.stack(per_view))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 473, in save_predictions
+    bundle = aggregate_predictions(records, per_view)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/exploration_evaluate.py", line 112, in aggregate_predictions
+    raise ValueError("Original ten-class binary targets are required")
+ValueError: Original ten-class binary targets are required

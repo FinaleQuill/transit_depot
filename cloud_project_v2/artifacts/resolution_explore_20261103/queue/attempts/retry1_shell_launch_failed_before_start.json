@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-11-03T01:52:54Z",
+  "state": "FAILED_BEFORE_CONTROLLER_START",
+  "failure_reason": "Shell background process was terminated before the controller wrote a durable status heartbeat.",
+  "shell_pid": 143238,
+  "controller_log": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/queue/retry1_controller.log",
+  "controller_log_bytes": 0,
+  "run_child_started": false,
+  "recovery": "Launch with subprocess.Popen(start_new_session=True) and verify a durable controller heartbeat before returning."
+}

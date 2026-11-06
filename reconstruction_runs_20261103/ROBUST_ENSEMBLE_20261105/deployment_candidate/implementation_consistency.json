@@ -1,0 +1,9 @@
+{
+  "match": true,
+  "studies": 3,
+  "images": 5,
+  "max_absolute_error": 0.0,
+  "selection": "first three lexicographic original valid Studies; all images",
+  "auc_evaluated": false,
+  "model_or_recipe_changed": false
+}

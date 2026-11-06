@@ -1,0 +1,14 @@
+test_best_checkpoint_used_when_atomic_last_commit_was_interrupted (test_overnight_runner.RunnerTests.test_best_checkpoint_used_when_atomic_last_commit_was_interrupted) ... ok
+test_config_mismatch_does_not_call_child_or_overwrite (test_overnight_runner.RunnerTests.test_config_mismatch_does_not_call_child_or_overwrite) ... ok
+test_epoch_boundary_budget_leaves_partial_ensemble (test_overnight_runner.RunnerTests.test_epoch_boundary_budget_leaves_partial_ensemble) ... ok
+test_first_epoch_oom_reduces_microbatch_preserving_effective_batch (test_overnight_runner.RunnerTests.test_first_epoch_oom_reduces_microbatch_preserving_effective_batch) ... ok
+test_inference_oom_retries_fresh_directory_and_smaller_batch (test_overnight_runner.RunnerTests.test_inference_oom_retries_fresh_directory_and_smaller_batch) ... ok
+test_initial_stop_file_does_not_launch_any_child (test_overnight_runner.RunnerTests.test_initial_stop_file_does_not_launch_any_child) ... ok
+test_non_oom_failure_preserves_best_and_finishes_other_folds (test_overnight_runner.RunnerTests.test_non_oom_failure_preserves_best_and_finishes_other_folds) ... ok
+test_oom_reduction_retains_non_power_of_two_effective_batch (test_overnight_runner.RunnerTests.test_oom_reduction_retains_non_power_of_two_effective_batch) ... ok
+test_round_robin_runs_all_folds_before_any_second_epoch (test_overnight_runner.RunnerTests.test_round_robin_runs_all_folds_before_any_second_epoch) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.031s
+
+OK

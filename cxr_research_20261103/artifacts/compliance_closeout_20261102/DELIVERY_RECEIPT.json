@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-11-02T15:52:23.394113+00:00",
+  "artifact_type": "review_draft_not_final_submission",
+  "zip_path": "/home/featurize/work/cloud_project_v2/artifacts/compliance_closeout_20261102/队伍名待确认_最终提交材料_审查草案.zip",
+  "zip_bytes": 75272995,
+  "zip_sha256": "77e83aaaa7f26aabe02c22f93c5f8a5c5959e89bef619481969ff126d288fe55",
+  "zip_files": 322,
+  "payload_sha_mismatches": 0,
+  "matrix": {
+    "rows": 29,
+    "satisfied": 19,
+    "pending": 7,
+    "not_applicable": 3
+  },
+  "frozen_a1_a5_cells_unchanged": 62,
+  "cost100": {
+    "images": 100,
+    "complete_studies": 54,
+    "warmup_images": 5,
+    "rounds": 3,
+    "max_probability_error": 0,
+    "binary_mismatches": 0,
+    "rank_mismatches": 0,
+    "official_image": true,
+    "gpu": "RTX 2080 Ti",
+    "official_designated_sample": false,
+    "T4_certified": false
+  },
+  "submission_sha256": "44dde95be64f42c151af7b23ee4a81ffb2158822eabb9f6249a59a73f795f66e",
+  "inference_model_files_041_bytes": 66996559,
+  "remaining_blockers": [
+    "Final inference members are not frozen; final inventory cannot be certified.",
+    "Official designated sample/T4/Study timing acceptance is incomplete."
+  ],
+  "naming_note": "Team name not supplied; placeholder draft name, no platform upload.",
+  "operations": "No training, optimization, machine rental or weight changes; only user-requested fixed100 output integrity forward check; background cost process exited."
+}

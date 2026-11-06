@@ -1,0 +1,249 @@
+{
+  "created_utc": "2026-10-28T18:08:58.549583+00:00",
+  "cpu_only": true,
+  "audit_pass": true,
+  "checks": {
+    "main_exit_code_zero": true,
+    "receipt_exit_zero": true,
+    "main_uninstrumented": true,
+    "protocol_original": true,
+    "proxy_fields_false": true,
+    "original_atol_1e_minus_7": true,
+    "all_131_sha256sum_entries_match": true,
+    "config_sha_frozen": true,
+    "seeds_43_44": true,
+    "fixed_25_75": true,
+    "two_768_hflip2": true,
+    "gpu_sm68_allocator8": true,
+    "frozen_source_serial_four_forward_structure": true,
+    "round_1.csv_hash_and_coverage": true,
+    "round_1.image_predictions.csv_hash_and_coverage": true,
+    "round_2.csv_hash_and_coverage": true,
+    "round_2.image_predictions.csv_hash_and_coverage": true,
+    "round_3.csv_hash_and_coverage": true,
+    "round_3.image_predictions.csv_hash_and_coverage": true,
+    "three_study_csvs_identical": true,
+    "three_image_csvs_identical": true,
+    "reported_4090_summary_accurate": true,
+    "timing_100_by_3_finite": true,
+    "exported_300_observations_exactly_retained": true,
+    "timing_summary_matches": true,
+    "diagnostic_separate_after_main": true,
+    "diagnostic_single_round_exit_zero": true,
+    "diagnostic_100_images_four_forward_spans": true,
+    "diagnostic_round_1.csv_same_predictions": true,
+    "diagnostic_round_1.image_predictions.csv_same_predictions": true,
+    "preserved_dual768_033_native_20261029_020459.console.log": true,
+    "preserved_dual768_033_native_20261029_020459.execution_receipt.txt": true,
+    "preserved_comparison_with_4090.console.log": true,
+    "preserved_comparison_with_4090.exit_code.txt": true
+  },
+  "details": {
+    "bundle_integrity": {
+      "files": 131,
+      "all_match": true
+    },
+    "csvs": [
+      {
+        "file": "round_1.csv",
+        "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+        "rows": 530
+      },
+      {
+        "file": "round_1.image_predictions.csv",
+        "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+        "rows": 1000
+      },
+      {
+        "file": "round_2.csv",
+        "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+        "rows": 530
+      },
+      {
+        "file": "round_2.image_predictions.csv",
+        "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+        "rows": 1000
+      },
+      {
+        "file": "round_3.csv",
+        "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+        "rows": 530
+      },
+      {
+        "file": "round_3.image_predictions.csv",
+        "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+        "rows": 1000
+      }
+    ],
+    "cross_4090_independently_recomputed": [
+      {
+        "round": 1,
+        "level": "study",
+        "rows": 530,
+        "samples": 53,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 1.9770578710048648e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": [
+          {
+            "class": 3,
+            "study_a": [
+              "subject_11907",
+              "study_20158"
+            ],
+            "study_b": [
+              "subject_12004",
+              "study_20586"
+            ],
+            "current_probabilities": [
+              0.06618829281069338,
+              0.06620680773630738
+            ],
+            "reference_probabilities": [
+              0.06621594750322402,
+              0.06621382618322968
+            ]
+          }
+        ]
+      },
+      {
+        "round": 1,
+        "level": "image",
+        "rows": 1000,
+        "samples": 100,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 2.4192805275561112e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": []
+      },
+      {
+        "round": 2,
+        "level": "study",
+        "rows": 530,
+        "samples": 53,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 1.9770578710048648e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": [
+          {
+            "class": 3,
+            "study_a": [
+              "subject_11907",
+              "study_20158"
+            ],
+            "study_b": [
+              "subject_12004",
+              "study_20586"
+            ],
+            "current_probabilities": [
+              0.06618829281069338,
+              0.06620680773630738
+            ],
+            "reference_probabilities": [
+              0.06621594750322402,
+              0.06621382618322968
+            ]
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "level": "image",
+        "rows": 1000,
+        "samples": 100,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 2.4192805275561112e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": []
+      },
+      {
+        "round": 3,
+        "level": "study",
+        "rows": 530,
+        "samples": 53,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 1.9770578710048648e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": [
+          {
+            "class": 3,
+            "study_a": [
+              "subject_11907",
+              "study_20158"
+            ],
+            "study_b": [
+              "subject_12004",
+              "study_20586"
+            ],
+            "current_probabilities": [
+              0.06618829281069338,
+              0.06620680773630738
+            ],
+            "reference_probabilities": [
+              0.06621594750322402,
+              0.06621382618322968
+            ]
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "level": "image",
+        "rows": 1000,
+        "samples": 100,
+        "max_abs": 0.0002449899911880493,
+        "mean_abs": 2.4192805275561112e-05,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": []
+      }
+    ],
+    "timing": {
+      "round_means": [
+        139.51890265000316,
+        138.19681042000303,
+        137.9006788100015
+      ],
+      "mean": 138.53879729333588,
+      "per_image_mean_p95": 152.52762708334257,
+      "per_image_mean_max": 156.82162633330185,
+      "all_300_p95": 153.75970669993535,
+      "all_300_max": 158.83734399994864,
+      "raw_gt_100ms": 300
+    },
+    "diagnostic_vs_native_round1": {
+      "round_1.csv": {
+        "rows": 530,
+        "samples": 53,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": []
+      },
+      "round_1.image_predictions.csv": {
+        "rows": 1000,
+        "samples": 100,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "gt_1e_minus_3": 0,
+        "binary_changes": 0,
+        "within_sample_order_or_tie_changes": [],
+        "across_study_order_or_tie_changes": []
+      }
+    }
+  },
+  "scope_note": "Independent artifact audit only. Proxy measurements do not constitute T4 certification or official test consistency. The class-3 cross-Study inversion is retained and is not called prediction-semantic compliance."
+}

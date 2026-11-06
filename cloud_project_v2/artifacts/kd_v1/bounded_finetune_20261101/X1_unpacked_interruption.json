@@ -1,0 +1,10 @@
+{
+  "time_hong_kong": "2026-11-01T14:56:24.625560+08:00",
+  "reason": "Observed single-Study forward overhead is too slow for the two-stage budget. No epoch or valid evaluation completed.",
+  "container_exit": 137,
+  "completed_epochs": 0,
+  "valid_evaluations": 0,
+  "weights_selected": false,
+  "original_run_preserved": true,
+  "test_used": false
+}

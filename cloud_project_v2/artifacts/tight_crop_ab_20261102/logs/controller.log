@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_pipeline.py", line 516, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_pipeline.py", line 511, in main
+    pipeline(args.resume)
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_pipeline.py", line 470, in pipeline
+    run_job(arm, member, state, hashes, resume=resume)
+  File "/home/featurize/work/cloud_project_v2/run_tight_crop_ab_pipeline.py", line 356, in run_job
+    raise RuntimeError(f"{name} has STOP marker; refusing automatic retry")
+RuntimeError: A_tiny has STOP marker; refusing automatic retry

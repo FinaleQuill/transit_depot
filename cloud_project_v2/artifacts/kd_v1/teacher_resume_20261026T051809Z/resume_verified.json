@@ -1,0 +1,21 @@
+{
+  "verified_at_hong_kong": "2026-10-26T13:20:23.032582+08:00",
+  "controller_pid": 431460,
+  "runner_pid": 431461,
+  "trainer_pid": 431636,
+  "active_fold": 3,
+  "resumed_epoch": 5,
+  "saved_checkpoint_epoch": 4,
+  "training_progress_lines": [
+    "fold=3 epoch=5 size=768 batch=200/12125 loss=0.910747 images=400/24249 updates=3044 peak=2.41GiB",
+    "fold=3 epoch=5 size=768 batch=300/12125 loss=0.872940 images=600/24249 updates=3050 peak=2.41GiB",
+    "fold=3 epoch=5 size=768 batch=400/12125 loss=0.869921 images=800/24249 updates=3057 peak=2.41GiB"
+  ],
+  "gpu_processes": "431636, /home/featurize/.conda/envs/cxr-kd-v1/bin/python, 3182 MiB",
+  "phase": "training_folds_1_to_4_twelve_epochs",
+  "previous_io_error_preserved_in_historical_state": "RuntimeError: training_folds_1_to_4_twelve_epochs exited with code 1; later stages were not started",
+  "scope": "Resume original20/12/12/12/12 plan; no additional validation, OOF extraction or student training",
+  "protected_inputs_and_plan_unchanged": true,
+  "background_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/controller_background_20261026T051826Z.log",
+  "viewer_session": "cxr-kd-mixed"
+}

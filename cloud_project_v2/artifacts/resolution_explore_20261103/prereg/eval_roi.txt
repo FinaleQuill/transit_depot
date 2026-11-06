@@ -1,0 +1,4 @@
+Hypothesis: magnify-only ROI preprocessing retains its trained geometry and yields comparable scores on the original official valid set.
+Expected effect: report all-class and AP-only results, sampled-train gap, ROI diagnostics, and 768+hflip2 three-image timing.
+Cost: one FP16 pass over official valid and a deterministic 1000-Study official-train diagnostic, plus 30 three-image Studies over three rounds.
+Failure criterion: any checkpoint/ROI-version mismatch, incomplete coverage, no-crop behavior inconsistent with training, or test access.

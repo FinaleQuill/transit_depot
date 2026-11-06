@@ -1,0 +1,47 @@
+{
+  "verified_at": "2026-11-03T01:27:30+08:00",
+  "mode": "living_review_package",
+  "snapshot": {
+    "snapshot": "artifacts/compliance_closeout_20261102/snapshots/closeout_c8bd868",
+    "archive": {
+      "bytes": 75272995,
+      "sha256": "77e83aaaa7f26aabe02c22f93c5f8a5c5959e89bef619481969ff126d288fe55"
+    },
+    "payload_files_verified": 321,
+    "read_only_mode_bits": true,
+    "independent_copy": true,
+    "original_unchanged": true
+  },
+  "frozen_material": {
+    "frozen_files_verified": 9,
+    "workbook_unchanged": true,
+    "A1_A5_cells": 62,
+    "A1_A5_frozen": true,
+    "upstream_reverified": false
+  },
+  "living_payload_files": 330,
+  "historical_payload_files": 321,
+  "changed_paths": [
+    "PACKAGE_STRUCTURE.md",
+    "README.md",
+    "code/study_student.py",
+    "code/train_distill.py",
+    "code/train_overnight.py",
+    "code/train_teacher.py"
+  ],
+  "added_paths": [
+    "LIVING_PACKAGE.json",
+    "LIVING_PACKAGE.md",
+    "REVIEW2_FREEZE_CHECKLIST_20261103.json",
+    "REVIEW2_FREEZE_CHECKLIST_20261103.md",
+    "code/demo_training_compliance.py",
+    "code/frozen_head_fit.py",
+    "code/manage_living_compliance.py",
+    "code/training_compliance.py",
+    "code/training_hooks.py"
+  ],
+  "removed_paths": [],
+  "final_members_frozen": false,
+  "official_compliance_pass": false,
+  "historical_receipt_unchanged": true
+}

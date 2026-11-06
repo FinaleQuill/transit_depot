@@ -1,0 +1,8 @@
+{
+  "archive": "/home/featurize/work/runs/027_tiny512_kd_seed43/evidence/source_20261027T052101Z_35bc50e3",
+  "files_verified": 38,
+  "ledger_records_verified": 19,
+  "runtime_source_before_fix_matches_archive": true,
+  "train_distill_sha256": "6a8bbd7811f9721cb137b267d77dd148a5517f242dd11331d658b33ab82aef65",
+  "archive_source_manifest_sha256": "539c33a18f523481235e74eecf34b78de70cf93ac601e0f97c272b1ce33817fd"
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "model": "convnextv2_base.fcmae_ft_in1k",
+  "run_name": "020_convnextv2_base768_posbce_cv5_4090",
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "source_train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "official_valid_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "test_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "sample_submission": "/home/featurize/work/submission.csv",
+  "sample_submission_sha256": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe",
+  "image_root": "/home/featurize/data/cxr_first",
+  "epochs": 20,
+  "patience": 4,
+  "seed": 43,
+  "effective_batch_size": 32,
+  "input_size": 768,
+  "loss": "study_equal_BCEWithLogitsLoss_fold_train_neg_over_pos",
+  "num_workers": 8,
+  "prefetch_factor": 2,
+  "round_robin_epochs_per_visit": 1,
+  "tta": {
+    "scales": [
+      768
+    ],
+    "hflip": true
+  },
+  "ensemble_weighting": "uniform_probability_mean",
+  "holdout_used_for_fold_selection": false,
+  "code_sha256": {
+    "run_all_folds.py": "229b6f8d6a47f84a88e42cb09f30121540f28694fb26a16e9bbbc524c9b8029c",
+    "train_overnight.py": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+    "model_overnight.py": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+    "dataset.py": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+    "dataset_highres.py": "36d115a264715f23b3b1d6d03141aa1022cefd92354f4fd4cfbccfc3fc3fdd9f",
+    "dataset_overnight.py": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+    "cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "inference_overnight.py": "ca840c959f5ddac0a52de78d2ce614dda8f614eac5fe4fb5b8bc3344ee7cfa44",
+    "inference.py": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e"
+  }
+}

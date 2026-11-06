@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "model": "convnextv2_base.fcmae_ft_in1k",
+  "run_name": "019_convnextv2_base512_cv5_4090",
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "source_train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "official_valid_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "test_manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "sample_submission": "/home/featurize/work/submission.csv",
+  "sample_submission_sha256": "145f565567d1baf50746284520f53044451954e27f9c84a2a5fcc4a63f46e8fe",
+  "image_root": "/home/featurize/data/cxr_first",
+  "epochs": 20,
+  "patience": 4,
+  "seed": 43,
+  "effective_batch_size": 32,
+  "round_robin_epochs_per_visit": 1,
+  "tta": {
+    "scales": [
+      384,
+      512
+    ],
+    "hflip": true
+  },
+  "ensemble_weighting": "uniform_probability_mean",
+  "holdout_used_for_fold_selection": false,
+  "code_sha256": {
+    "run_all_folds.py": "628c600c34d7f9e0efdc6d5f93e3164565ee60701822622d0fedf453a769f7c1",
+    "train_overnight.py": "11a2d8ff65269530d520eeb510ec73e59680df6561e9d3af06bba01731938bc4",
+    "model_overnight.py": "9446054931a79f7cb802fcefe7c809366cc68fb88b94ba8648dbb0ef6a830667",
+    "dataset_overnight.py": "4cbe7b329ff329d5ca0804dd8b89d531d4356bb47af6ac750fd2ca560e9e5971",
+    "cv_splits.py": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+    "inference_overnight.py": "41439c4064c51a7a4f91d68aa3caeac500674d2893254fe70f24142a9f2ee7e6",
+    "inference.py": "5ea57777df771698277ead1fa1ac3ae11ea8a48d8dbd5134c85a20c37d07fe3e"
+  }
+}

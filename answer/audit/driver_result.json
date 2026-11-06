@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "finished_hong_kong": "2026-10-20T13:14:14.306989+08:00",
+  "submission_final": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv",
+  "upload_filename_alias": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission.csv",
+  "sha256": "b092d26196c5586af55a9173cc5c8582c003bd2e9135aa94ce17f2f760a0620b",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

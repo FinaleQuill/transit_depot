@@ -1,0 +1,17 @@
+{
+  "plan_sha256": "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+  "sources_sha256": {
+    "frozen_head_cache.py": "8bb4d94dc584b11015f1378408ffe94e2b3793ec3d4d8f056b2a53a4b6cf5e55",
+    "frozen_head_fit.py": "bdb72911138d69a3f7d556bde80440a5719cd49920a6b5c277e9a09bc6f4b3cc",
+    "frozen_head_evaluate.py": "2c7eb1e38d3815cac62172cef7d3970daef42471306983bccf920f8e1678b205",
+    "frozen_head_predictor.py": "27e5385d84eb7ee31d8e9f15e9b1ed774797762f621d9696e21367c0495b2f2a",
+    "frozen_head_actual.py": "8eb6387ecfe43ddf62023d90980a466003508629f76900566e9b62f808b30ec2",
+    "student_ensemble.py": "ef8a49ba99bc9d914253b0dd0fd5651c46ea1a7174213ec7da4893254947a25d",
+    "inference_inputs.py": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+    "deploy_kd.py": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+    "cost.py": "9abd449a66cbd6558a0a0ba18e175f7b4a6ffcc149c6583db5e11fca61426efb",
+    "model_overnight.py": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+    "run_frozen_head_pipeline.py": "ae4399c9fbe316b2bef3645d5e78733e6d33a40932c71455ce5411aa41a47ea1"
+  },
+  "created_hong_kong": "2026-11-01T20:46:15.190969+08:00"
+}

@@ -1,0 +1,1 @@
+[CONCLUSION] 100 images, batch=1 serial, 3 rounds: 66.296 ms; FP16; CSV agreement=True; GPU=NVIDIA GeForce RTX 2080 Ti; local T4 checks passed=False; official retest required.

@@ -1,0 +1,8 @@
+{
+  "stage": "X1",
+  "registered_plan_sha256": "c73aef018b7841bf3d47cd0e88b79f79d4c32aef1555ec8cdadd119ece76ee93",
+  "final_ema_receipt_sha256": "05a5938a5822c8b0a4dcb35a9dedfe1493440840babe4447a04440ff1505fa80",
+  "deployment_config_sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386",
+  "weights_sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16",
+  "actual_fp16_macro_auc": 0.8057123012655584
+}

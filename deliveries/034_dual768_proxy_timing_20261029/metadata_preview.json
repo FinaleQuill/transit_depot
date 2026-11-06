@@ -1,0 +1,100 @@
+{
+  "profile": "dual768_033_portable_metadata_only",
+  "executed": false,
+  "local_stress_test": true,
+  "T4_latency_certified": false,
+  "official_compliance_pass": false,
+  "T4_elapsed_ms": null,
+  "status": "metadata_preview",
+  "protocol": {
+    "measured_images": 100,
+    "warmup_images": 5,
+    "rounds": 3,
+    "precision": "float16",
+    "batch_size": 1,
+    "execution": "serial",
+    "timing": "read_file_to_prediction_CSV_write_including_preprocess_postprocess",
+    "model_initialization_timed": false,
+    "aggregation": "per_image_three_round_mean_then_100_image_mean"
+  },
+  "coverage": {
+    "measured": {
+      "images": 100,
+      "studies": 53,
+      "patients": 40,
+      "complete_studies_proven": true
+    },
+    "warmup": {
+      "images": 5,
+      "studies": 4,
+      "patients": 4,
+      "complete_studies_proven": true
+    },
+    "selection_sha256": "79aad246fd6486001529be8f9732a56ebe061833afd8401c5e6fd7dcc6b7880b",
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "origin_split": "valid",
+    "hashes_verified": true,
+    "patient_disjoint": true
+  },
+  "inference_files": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "deployment_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "deployment": {
+    "member_count": 2,
+    "tta": "hflip2",
+    "ensemble": true,
+    "image_sizes": [
+      768
+    ],
+    "members": [
+      {
+        "weights_file": "student_00_fp16.pt",
+        "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+        "weights_source": "ema",
+        "training_mode": "distillation",
+        "source_checkpoint_sha256": "46e06022d963b58d262eaa99ba376de40c3ef182f50a9619f0d09dcf2a0870b7",
+        "source_checkpoint_schema_version": 8,
+        "seed": 43,
+        "image_size": 768,
+        "tta": "hflip2"
+      },
+      {
+        "weights_file": "student_01_fp16.pt",
+        "weights_sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+        "weights_source": "ema",
+        "training_mode": "distillation",
+        "source_checkpoint_sha256": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+        "source_checkpoint_schema_version": 8,
+        "seed": 44,
+        "image_size": 768,
+        "tta": "hflip2"
+      }
+    ]
+  },
+  "requested_resources": {
+    "thread_percentage": null,
+    "baseline_sm_count": 128,
+    "memory_limit_gib": 8.0
+  },
+  "note": "Dedicated local stress test. MPS and an allocator cap do not emulate T4 architecture, bandwidth, memory or latency. Actual T4 retest required."
+}

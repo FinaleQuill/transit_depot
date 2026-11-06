@@ -1,0 +1,165 @@
+{
+  "recorded_utc": "2026-10-27T15:12:30.010301+00:00",
+  "scope": "CPU-only read/preview; no model construction, model forward, GPU task or training; write only this ignored proposal artifact",
+  "project": "/home/featurize/work/cloud_project_v2",
+  "preview_environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NO_ALBUMENTATIONS_UPDATE": "1"
+  },
+  "preview_command_argv": [
+    "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+    "-u",
+    "train_distill.py",
+    "--fold-plan",
+    "data/cv5_overnight/folds.json",
+    "--soft-labels",
+    "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "--training-mode",
+    "distillation",
+    "--alpha",
+    "0.2",
+    "--temperature",
+    "2",
+    "--image-size",
+    "768",
+    "--seed",
+    "44",
+    "--validation-tta",
+    "hflip2",
+    "--batch-size",
+    "8",
+    "--accumulation-steps",
+    "4",
+    "--epochs",
+    "25",
+    "--patience",
+    "5",
+    "--output",
+    "../runs/030_tiny768_kd_seed44"
+  ],
+  "preview_returncode": 0,
+  "preview_stdout_raw": "{\n  \"dry_run\": true,\n  \"training_started\": false,\n  \"config\": {\n    \"fold_plan\": \"data/cv5_overnight/folds.json\",\n    \"soft_labels\": \"../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2\",\n    \"output\": \"../runs/030_tiny768_kd_seed44\",\n    \"image_root\": \"/home/featurize/data/cxr_first\",\n    \"batch_size\": 8,\n    \"accumulation_steps\": 4,\n    \"valid_batch_size\": 4,\n    \"num_workers\": 8,\n    \"prefetch_factor\": 2,\n    \"epochs\": 25,\n    \"patience\": 5,\n    \"min_delta\": 0.0001,\n    \"seed\": 44,\n    \"backbone_lr\": 5e-05,\n    \"head_lr\": 0.0005,\n    \"warmup_epochs\": 1,\n    \"min_lr_ratio\": 0.05,\n    \"weight_decay\": 0.05,\n    \"dropout\": 0.2,\n    \"drop_path\": 0.1,\n    \"ema_decay\": 0.999,\n    \"grad_clip\": 1.0,\n    \"amp_dtype\": \"auto\",\n    \"alpha\": 0.2,\n    \"temperature\": 2.0,\n    \"kd_warmup_epochs\": 2,\n    \"align_teacher_pos_weight\": true,\n    \"image_size\": 768,\n    \"validation_tta\": \"hflip2\",\n    \"training_mode\": \"distillation\",\n    \"resume\": null\n  },\n  \"schema_version\": 8,\n  \"teacher_cache_required\": true,\n  \"model_config\": {\n    \"backbone_name\": \"convnext_tiny.fb_in22k_ft_in1k_384\",\n    \"drop_rate\": 0.2,\n    \"drop_path_rate\": 0.1,\n    \"gradient_checkpointing\": true\n  },\n  \"preprocessing\": {\n    \"image_size\": 768,\n    \"validation_size\": 768,\n    \"training_scales\": [\n      768\n    ],\n    \"cache_mode\": \"RGB\",\n    \"color_mode\": \"RGB\",\n    \"mean\": [\n      0.485,\n      0.456,\n      0.406\n    ],\n    \"std\": [\n      0.229,\n      0.224,\n      0.225\n    ],\n    \"resize\": \"letterboxLANCZOS\",\n    \"exif_transpose\": true,\n    \"data_source\": \"raw_readonly\",\n    \"eval_transform\": \"EXIF+RGB+LetterboxLANCZOS+Normalize\",\n    \"validation_tta\": \"hflip2\"\n  }\n}\n",
+  "preview_stderr_raw": "",
+  "preview": {
+    "dry_run": true,
+    "training_started": false,
+    "config": {
+      "fold_plan": "data/cv5_overnight/folds.json",
+      "soft_labels": "../runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+      "output": "../runs/030_tiny768_kd_seed44",
+      "image_root": "/home/featurize/data/cxr_first",
+      "batch_size": 8,
+      "accumulation_steps": 4,
+      "valid_batch_size": 4,
+      "num_workers": 8,
+      "prefetch_factor": 2,
+      "epochs": 25,
+      "patience": 5,
+      "min_delta": 0.0001,
+      "seed": 44,
+      "backbone_lr": 5e-05,
+      "head_lr": 0.0005,
+      "warmup_epochs": 1,
+      "min_lr_ratio": 0.05,
+      "weight_decay": 0.05,
+      "dropout": 0.2,
+      "drop_path": 0.1,
+      "ema_decay": 0.999,
+      "grad_clip": 1.0,
+      "amp_dtype": "auto",
+      "alpha": 0.2,
+      "temperature": 2.0,
+      "kd_warmup_epochs": 2,
+      "align_teacher_pos_weight": true,
+      "image_size": 768,
+      "validation_tta": "hflip2",
+      "training_mode": "distillation",
+      "resume": null
+    },
+    "schema_version": 8,
+    "teacher_cache_required": true,
+    "model_config": {
+      "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "drop_rate": 0.2,
+      "drop_path_rate": 0.1,
+      "gradient_checkpointing": true
+    },
+    "preprocessing": {
+      "image_size": 768,
+      "validation_size": 768,
+      "training_scales": [
+        768
+      ],
+      "cache_mode": "RGB",
+      "color_mode": "RGB",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "resize": "letterboxLANCZOS",
+      "exif_transpose": true,
+      "data_source": "raw_readonly",
+      "eval_transform": "EXIF+RGB+LetterboxLANCZOS+Normalize",
+      "validation_tta": "hflip2"
+    }
+  },
+  "reference_config": "../runs/029_tiny768_kd_seed43/config.json",
+  "configuration_differences": {
+    "output": {
+      "029": "../runs/029_tiny768_kd_seed43",
+      "proposed": "../runs/030_tiny768_kd_seed44"
+    },
+    "seed": {
+      "029": 43,
+      "proposed": 44
+    }
+  },
+  "only_seed_and_output_changed": true,
+  "output_exists_after_preview": false,
+  "training_started": false,
+  "training_cli_already_supports_proposal": true,
+  "training_code_changes_required": false,
+  "cpu_input_validation": {
+    "train_manifest_sha_matches_fold_plan": true,
+    "valid_manifest_sha_matches_fold_plan": true,
+    "train_count": 30328,
+    "valid_count": 1422,
+    "train_valid_overlaps": {
+      "subject_id": 0,
+      "study_key": 0,
+      "image_id": 0,
+      "file_sha256": 0,
+      "pixel_sha256": 0
+    },
+    "prepare_student_objective_passed": true,
+    "teacher_cache_schema": "cxr_strict_oof_view_logits_v2",
+    "teacher_raw_logits_shape": [
+      30328,
+      2,
+      10
+    ],
+    "teacher_count": 5,
+    "distillation_protocol_equals_029": true,
+    "local_pretrained_exists": true,
+    "local_pretrained_sha_matches_029": true
+  },
+  "disk_budget": {
+    "free_bytes": 4167041024,
+    "free_gib": 3.880859375,
+    "reference_single_checkpoint_bytes": 450333725,
+    "estimated_best_last_atomic_temp_bytes": 1351001175,
+    "estimated_best_last_atomic_temp_gib": 1.2582178926095366,
+    "sufficient_for_this_run_without_deleting_old_artifacts": true,
+    "estimate_note": "Based on 029 actual checkpoints; best and last plus one atomic save temporary checkpoint. Log/source archive overhead is small but filesystem free space may change."
+  },
+  "process_observation": "ps showed no actual train_distill.py, run_student_experiments.py or training_evidence_monitor process; only the checking shell and rg matched. Existing tmux sessions student028/student029; no student030. No GPU query or GPU work executed.",
+  "runtime_estimate": "029 completed 13 epochs in 2h00m44s, training mean about 8m19s/epoch; different seed may early-stop at another epoch. Allow roughly 2h for similar early stop, up to about 4h at 25 epochs; calibrate from first epoch.",
+  "launch_note": "Only after intentional training authorization, run same argv with --execute inside a new student030 tmux session; omit CUDA_VISIBLE_DEVICES from training environment. Do not repeat training command in an already running session. New run is from the same ImageNet pretrained weights, not --resume from 029."
+}

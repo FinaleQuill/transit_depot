@@ -1,0 +1,60 @@
+{
+  "schema": "raw_dino20_cnn50_v1",
+  "created": "2026-11-06T13:41:12.697309+08:00",
+  "members": {
+    "dino": {
+      "file": "dino.pt",
+      "bytes": 175641838,
+      "sha256": "d4ea37cab889f04c4d72714e870b3d4b84f4deb9ab5c3d34fbde88fa141f74cc",
+      "source": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/DINOv2_B518_fold0123/best.pt",
+      "source_sha256": "3692e1a28a672fee7c2dee957147d35491cf786803122e3ae7fde269928d3e9c",
+      "epoch": 20,
+      "fp16_tensors": 50,
+      "fp32_tensors": 129
+    },
+    "cnn": {
+      "file": "cnn.pt",
+      "bytes": 175572823,
+      "sha256": "b09fbfd316fd03262421e201b0a9da01b58d94e80dcac61568ac9579d8edfb11",
+      "source": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/best.pt",
+      "source_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+      "epoch": 12,
+      "fp16_tensors": 113,
+      "fp32_tensors": 231,
+      "model_config": {
+        "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+        "drop_rate": 0.2,
+        "drop_path_rate": 0.15,
+        "gradient_checkpointing": false
+      }
+    }
+  },
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "weights": {
+    "dino": 0.5,
+    "cnn": 0.5
+  },
+  "image_sizes": {
+    "dino": 518,
+    "cnn": 768
+  },
+  "image_chunk": 2,
+  "storage": "FP16 matrix/conv weights; FP32 other tensors",
+  "execution": "FP32 master parameters; CUDA FP16 autocast",
+  "views": "all original images; identity only; complete Study probability mean",
+  "cnn_history": "Frozen historical teacher, not newly trained on raw data",
+  "training_started": false,
+  "test_fitting": false,
+  "cross_study_pooling": false
+}

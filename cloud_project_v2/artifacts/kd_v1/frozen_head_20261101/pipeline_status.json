@@ -1,0 +1,22 @@
+{
+  "state": "completed",
+  "stage": "ready_for_review",
+  "pipeline_pid": 58479,
+  "plan_sha256": "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+  "test_used_for_training": false,
+  "new_test_prediction_scheduled": false,
+  "updated_hong_kong": "2026-11-01T21:21:44.284238+08:00",
+  "actual_results": {
+    "A_F2_B_F2": {
+      "macro_auc": 0.817614546496497,
+      "mean_ms": 102.95976144998953
+    },
+    "A_B_F2": {
+      "macro_auc": 0.8176141604028002,
+      "mean_ms": 95.40965559669226
+    }
+  },
+  "target_met_in_actual_valid": false,
+  "improved_over_existing_best": true,
+  "reason": "四个固定12轮小头、预登记组合代理评估和最高两项实际FP16/完整valid/计时均完成；等待复盘。045CSV保持既定版本，没有自动新test预测。"
+}

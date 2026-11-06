@@ -1,0 +1,15 @@
+{
+  "registered_at_hong_kong": "2026-10-31T15:31:12.235326+08:00",
+  "candidate": "AB_B100_class1_JPEG_draft_2x",
+  "base_candidate": "AB_B100_class1",
+  "model_weights": "unchanged A/B best EMA FP16; B class1, equal other classes",
+  "fixed_preprocessing_change": "For JPEG L/RGB only, PIL draft(mode,(1536,1536)) before load, EXIF transpose then original letterboxLANCZOS to768. Other modes/formats follow original full decode. No image cropping or stochastic transforms.",
+  "rationale": "Fixed per-image reduced-IDCT decoding may cut CPU decoding/resizing enough for pair <=80ms; output pixels can change, so this is a new valid-selected candidate, not an equal-output speed claim.",
+  "candidate_count": 1,
+  "test_used_for_selection": false,
+  "teachers_changed": false,
+  "training": false,
+  "gate": "Accept only if full original valid Macro-AUC >=.815 and original100+5 batch1 serial3 E2E mean <=80ms. Otherwise keep all failed evidence; do not claim completed target.",
+  "formal_T4_certification": false,
+  "stop_rule": "One fixed decode setting; no dense decoder/weight parameter search."
+}

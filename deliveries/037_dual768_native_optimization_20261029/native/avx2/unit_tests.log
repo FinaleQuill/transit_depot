@@ -1,0 +1,12 @@
+test_missing_extension_and_rgb_keep_original_pillow (test_native_lanczos.FallbackTests.test_missing_extension_and_rgb_keep_original_pillow) ... ok
+test_pillow_abi_version_mismatch_uses_pillow (test_native_lanczos.FallbackTests.test_pillow_abi_version_mismatch_uses_pillow) ... ok
+test_constants_edges_checkerboard_and_large_odd_sizes (test_native_lanczos.NativeLanczosTests.test_constants_edges_checkerboard_and_large_odd_sizes) ... ok
+test_generic_fallback_and_cpu_dispatch_match (test_native_lanczos.NativeLanczosTests.test_generic_fallback_and_cpu_dispatch_match) ... ok
+test_integer_boundaries_and_single_axis_resize (test_native_lanczos.NativeLanczosTests.test_integer_boundaries_and_single_axis_resize) ... ok
+test_invalid_threads_fail_before_native_access (test_native_lanczos.NativeLanczosTests.test_invalid_threads_fail_before_native_access) ... ok
+test_simultaneous_callers_do_not_mix_images (test_native_lanczos.NativeLanczosTests.test_simultaneous_callers_do_not_mix_images) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.309s
+
+OK

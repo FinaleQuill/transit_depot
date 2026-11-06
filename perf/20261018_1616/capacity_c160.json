@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "oom",
+  "mode": "gpu",
+  "created_hong_kong": "2026-10-18T16:19:56.046977+08:00",
+  "config": {
+    "mode": "gpu",
+    "batch_size": 16,
+    "view_chunk_size": 160,
+    "num_workers": 12,
+    "prefetch_factor": 1,
+    "warmup_steps": 2,
+    "steps": 2,
+    "min_views": 0,
+    "largest_bags": false,
+    "image_root": "/home/featurize/data/cxr_first",
+    "train_manifest": "/home/featurize/work/cloud_project/data/clean_v1_reviewed/train_clean.csv",
+    "worker_timeout": 180,
+    "seed": 43,
+    "output": "/home/featurize/work/perf/20261018_1616/capacity_c160.json"
+  },
+  "data_policy": "train whitelist only; raw images and labels read-only; no valid/test reads; no saved weights/epoch metrics",
+  "script_sha256": "4c907b8d28c3574d08ed0f94af3bb72b8ed1b79de4aec59dcb6e1353ee7e3fee",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_gib": 23.54461669921875
+  },
+  "train_manifest_sha256_before": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "effective_num_workers": 0,
+  "capacity_batch": {
+    "unique_real_studies": 16,
+    "original_real_views": 26,
+    "processed_views": 160,
+    "repeated_views": 134,
+    "fixed_batch_reused": true,
+    "largest_real_train_bags": false,
+    "meaning": "capacity/compute benchmark only; repeated views are not additional data or training results"
+  },
+  "updates": {
+    "optimizer": 1,
+    "ema": 1,
+    "backward": 1,
+    "amp_skipped": 0
+  },
+  "training_policy": {
+    "phase": "full_finetune",
+    "all_parameters_trainable": true,
+    "trainable_parameters": 90210836,
+    "amp": "float16",
+    "inner_activation_checkpoint": true,
+    "outer_cpu_view_checkpoint": true,
+    "rank_weight": 0.2,
+    "loss": "StudyBCE+PairwiseLogisticRank",
+    "optimizer": "AdamW",
+    "adamw_foreach": false,
+    "adamw_fused": false,
+    "ema_device": "cpu",
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "pretrained": true,
+    "image_size": 384,
+    "warmup_excluded_from_throughput": 2
+  },
+  "startup_seconds": 8.242351803999554,
+  "steps": [],
+  "warmup": [
+    {
+      "index": 1,
+      "studies": 16,
+      "images": 160,
+      "actual_images_chunk_max": 160,
+      "loader_wait_seconds": 0.0,
+      "loss": 0.8451269268989563,
+      "compute_seconds": 15.775210209998477,
+      "finite_gradient_norm": true,
+      "grad_scaler_scale_before": 65536.0,
+      "optimizer_seconds": 0.07777359700048692,
+      "optimizer_updated": true,
+      "ema_seconds": 0.10068198699991626,
+      "peak_allocated_gib": 19.99698543548584,
+      "peak_reserved_gib": 22.96484375,
+      "total_seconds": 15.953975712000101
+    }
+  ],
+  "first_batch_wait_seconds": 0.0,
+  "train_manifest_sha256_after": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "train_manifest_unchanged": true,
+  "error_type": "OutOfMemoryError",
+  "error": "CUDA out of memory. Tried to allocate 2.81 GiB. GPU 0 has a total capacity of 23.54 GiB of which 770.56 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 17.86 GiB is allocated by PyTorch, and 4.41 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/featurize/work/cloud_project/tools/perf_probe.py\", line 294, in main\n    probe(args, result)\n  File \"/home/featurize/work/cloud_project/tools/perf_probe.py\", line 226, in probe\n    scaler.scale(loss).backward()\n  File \"/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/torch/_tensor.py\", line 631, in backward\n    torch.autograd.backward(\n  File \"/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 381, in backward\n    _engine_run_backward(\n  File \"/environment/miniconda3/envs/cxr-cloud/lib/python3.12/site-packages/torch/autograd/graph.py\", line 869, in _engine_run_backward\n    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.81 GiB. GPU 0 has a total capacity of 23.54 GiB of which 770.56 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 17.86 GiB is allocated by PyTorch, and 4.41 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n",
+  "peak_allocated_gib": 19.99698543548584,
+  "peak_reserved_gib": 22.96875
+}

@@ -1,0 +1,17 @@
+{
+  "recommended_reference": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:1.0",
+  "verified_digest": "sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6",
+  "docker_root": "/var/lib/docker",
+  "docker_root_mount": "/dev/vda3 ext4 (local root disk)",
+  "host_environment_unchanged": true,
+  "model_inference_performed_by_environment_agent": false,
+  "training_performed": false,
+  "image_stack_observed_from_config": {
+    "python_major_minor": "3.12",
+    "pytorch_declared": "2.10.0",
+    "cuda_build_declared": "12.8.1",
+    "torchvision_declared": "0.25.0+cu128",
+    "runtime_versions_pending": true
+  },
+  "core_packages_policy": "Keep organizer torch/torchvision/CUDA/numpy/Pillow as supplied. Only add missing inference/validation packages separately, pin versions and record additions."
+}

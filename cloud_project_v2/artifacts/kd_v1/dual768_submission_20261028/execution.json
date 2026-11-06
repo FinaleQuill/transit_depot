@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/dual768_submission_20261028/run_prediction.py",
+    "--invoke",
+    "--model-dir",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2",
+    "--image-root",
+    "/home/featurize/data/cxr_first",
+    "--manifest",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/test_manifest.csv",
+    "--output",
+    "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv"
+  ],
+  "application_entrypoint": "predict.py:main",
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "source_archive": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/dual768_submission_20261028/source",
+  "seed": 43,
+  "deployment_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "test_manifest_sha256": "fdfd651ff0663b3dd6f232ecbb0cd32949d78092e162ae2595b4563cdbe224f3",
+  "training_started": false,
+  "test_used_for_fitting_or_selection": false,
+  "platform_uploaded": false,
+  "started_utc": "2026-10-27T18:21:07.627916+00:00",
+  "exit_code": 0,
+  "ended_utc": "2026-10-27T18:24:14.039110+00:00",
+  "seconds": 186.41059136600234
+}

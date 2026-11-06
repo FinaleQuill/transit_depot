@@ -1,0 +1,35 @@
+{
+  "best_epoch": 18,
+  "decision": {
+    "state": "eligible_for_second_fold",
+    "eligible_variants": [
+      "single_candidate",
+      "fixed_50_50_blend"
+    ],
+    "variants": {
+      "single_candidate": {
+        "eligible": true,
+        "reasons": []
+      },
+      "fixed_50_50_blend": {
+        "eligible": true,
+        "reasons": []
+      }
+    },
+    "training_complete": true,
+    "minimum_valid_bootstrap_replicates": 100,
+    "minimum_valid_bootstrap_fraction": 0.9,
+    "difficult_slices": [
+      "ap_projection_only",
+      "single_image_study",
+      "at_least_5_studies_patient"
+    ],
+    "automatic_submission": false,
+    "automatic_training_stop": false,
+    "hidden_test_improvement_established": false,
+    "meaning": "Eligibility for a separately held-out patient-fold confirmation only; absence of significant slice harm is not proof of non-inferiority."
+  },
+  "development_selection_bias_remains": true,
+  "automatic_submission": false,
+  "next_stage_requires_fresh_initialization": true
+}

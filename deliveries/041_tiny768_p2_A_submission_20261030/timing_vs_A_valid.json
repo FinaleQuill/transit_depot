@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "round": 1,
+      "study_probability_values": 530,
+      "max_absolute_error_to_A_full_valid": 0.0,
+      "all_fp64_bytes_identical": true
+    },
+    {
+      "round": 2,
+      "study_probability_values": 530,
+      "max_absolute_error_to_A_full_valid": 0.0,
+      "all_fp64_bytes_identical": true
+    },
+    {
+      "round": 3,
+      "study_probability_values": 530,
+      "max_absolute_error_to_A_full_valid": 0.0,
+      "all_fp64_bytes_identical": true
+    }
+  ],
+  "test_used_for_selection": false
+}

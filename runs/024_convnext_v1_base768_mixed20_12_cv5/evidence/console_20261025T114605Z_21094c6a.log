@@ -1,0 +1,27 @@
+Current fold0 continues unchanged. Waiting for twenty epochs and the planned scheduler handoff.
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py", line 201, in execute
+    time.sleep(15)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py", line 280, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py", line 276, in main
+    return execute(plan)
+           ^^^^^^^^^^^^^
+  File "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py", line 250, in execute
+    update("failed", error=f"{type(error).__name__}: {error}")
+  File "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py", line 163, in update
+    write_json(state_path, state)
+  File "/home/featurize/work/cloud_project_v2/training_evidence_monitor.py", line 34, in write_json
+    path = Path(path)
+           ^^^^^^^^^^
+  File "/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/pathlib.py", line 1162, in __init__
+    super().__init__(*args)
+  File "/home/featurize/.conda/envs/cxr-kd-v1/lib/python3.12/pathlib.py", line 366, in __init__
+    paths.extend(arg._raw_paths)
+KeyboardInterrupt

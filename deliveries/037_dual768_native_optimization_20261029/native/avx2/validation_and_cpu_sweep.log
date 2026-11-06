@@ -1,0 +1,27 @@
+checked 25
+checked 50
+checked 75
+checked 100
+{
+  "implementation": "avx2",
+  "count": 105,
+  "pillow_version": "10.4.0",
+  "python": "3.12.3",
+  "native_available": true,
+  "no_gpu_work": true,
+  "all_uint8_byte_equal": true,
+  "all_float32_byte_equal": true,
+  "pillow_mean_ms": 52.208836628597055,
+  "native_mean_ms": {
+    "1": 23.936485142890195,
+    "2": 26.990810666683544,
+    "4": 15.549862647570816,
+    "8": 10.58546299999372
+  },
+  "native_p95_ms": {
+    "1": 29.250976599996648,
+    "2": 31.07720280013382,
+    "4": 25.797484399845416,
+    "8": 14.174431999708759
+  }
+}

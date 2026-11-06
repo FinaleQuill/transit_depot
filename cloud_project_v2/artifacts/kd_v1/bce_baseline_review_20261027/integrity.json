@@ -1,0 +1,224 @@
+{
+  "checked_at_hong_kong": "2026-10-27T11:53:47.180708+08:00",
+  "complete": true,
+  "mismatches": [],
+  "run": "/home/featurize/work/runs/026_tiny512_bce_seed43",
+  "receipt_exit_code": 0,
+  "fresh_start_evidence_complete": true,
+  "started_at_hong_kong": "2026-10-27T02:24:31.983786+08:00",
+  "ended_at_hong_kong": "2026-10-27T03:44:19.767491+08:00",
+  "elapsed_seconds": 4787.783705,
+  "epochs_completed": 11,
+  "best_epoch": 6,
+  "best_macro_auc": 0.8035966420017964,
+  "checkpoints": {
+    "best.pt": {
+      "epoch": 6,
+      "schema_version": 9,
+      "training_mode": "supervised_bce",
+      "teacher_count": 0,
+      "sha256": "0a28142df8d7c7fcf954648215115ac0c6eb185788f4c5f802525b637a7553af",
+      "size_bytes": 445553053,
+      "weights_source": "ema",
+      "training_precision": "bfloat16",
+      "validation_macro_auc": 0.8035966420017964,
+      "best_epoch": 6,
+      "early_stopping": {
+        "reference_auc": 0.8035966420017964,
+        "bad_epochs": 0
+      },
+      "progress": {
+        "completed_epochs": 6,
+        "validated_epochs": 6,
+        "backward_batches": 22746,
+        "optimizer_updates": 5688,
+        "ema_updates": 5688,
+        "amp_skipped_steps": 0
+      },
+      "native_checkpoint_protocol_validator_passed": true
+    },
+    "last.pt": {
+      "epoch": 11,
+      "schema_version": 9,
+      "training_mode": "supervised_bce",
+      "teacher_count": 0,
+      "sha256": "7b371d7382fa251c55984421bbe3116e3ebe44bcee2241fe611632b5f96669f4",
+      "size_bytes": 445553053,
+      "weights_source": "ema",
+      "training_precision": "bfloat16",
+      "validation_macro_auc": 0.7933786084320165,
+      "best_epoch": 6,
+      "early_stopping": {
+        "reference_auc": 0.8035966420017964,
+        "bad_epochs": 5
+      },
+      "progress": {
+        "completed_epochs": 11,
+        "validated_epochs": 11,
+        "backward_batches": 41701,
+        "optimizer_updates": 10428,
+        "ema_updates": 10428,
+        "amp_skipped_steps": 0
+      },
+      "native_checkpoint_protocol_validator_passed": true
+    }
+  },
+  "ledger": {
+    "records": 17,
+    "chain_checked": true,
+    "epoch_last_records": 11,
+    "best_records": 6,
+    "historical_recovery_records": 0,
+    "retention_limit": "Full hash chain and metadata retained; historical rolling checkpoint binaries were replaced. Only current best E6 and last E11 binaries are verified as present."
+  },
+  "console_epoch_coverage": {
+    "1": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "2": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "3": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "4": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "5": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "6": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "7": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "8": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "9": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "10": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    },
+    "11": {
+      "batch_records": 38,
+      "expected_records": 38,
+      "points_complete": true,
+      "epoch_summary_records": 1
+    }
+  },
+  "source_archive_files_verified": 38,
+  "source_archive_file_checks": {
+    "AGENTS.md": true,
+    "audit_trail.py": true,
+    "build_training_evidence.py": true,
+    "compare_student_candidates.py": true,
+    "compose_students.py": true,
+    "cost.py": true,
+    "cv_splits.py": true,
+    "dataset.py": true,
+    "dataset_overnight.py": true,
+    "deploy_kd.py": true,
+    "diagnose_teacher_epochs.py": true,
+    "distill_data.py": true,
+    "distill_tta_data.py": true,
+    "export_student.py": true,
+    "extract_soft_labels.py": true,
+    "extract_soft_labels_tta.py": true,
+    "kd_common.py": true,
+    "model_overnight.py": true,
+    "package_kd_submission.py": true,
+    "planned_handoff.py": true,
+    "predict.py": true,
+    "preflight_kd.py": true,
+    "requirements_inference.txt": true,
+    "requirements_kd.txt": true,
+    "run_mixed_teachers.py": true,
+    "run_mixed_teachers.sh": true,
+    "run_overnight.sh": true,
+    "run_student_experiments.py": true,
+    "run_teachers.py": true,
+    "runtime_compat.py": true,
+    "teacher_collection.py": true,
+    "train_distill.py": true,
+    "train_overnight.py": true,
+    "train_teacher.py": true,
+    "training_evidence_monitor.py": true,
+    "validate_student.py": true,
+    "validate_teacher.py": true,
+    "validate_teacher_tta.py": true
+  },
+  "environment_lock_retained": true,
+  "pretraining": {
+    "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+    "repo_id": "timm/convnext_tiny.fb_in22k_ft_in1k_384",
+    "revision": "32c741ba106f9e062174ef829354a16719c3dcac",
+    "source_pretrain": "ImageNet-22k",
+    "source_finetune": "ImageNet-1k",
+    "license": "apache-2.0",
+    "weights_sha256": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+    "actual_original_weight_hash_matches": true,
+    "materials_sha_verified": {
+      "model_card": true,
+      "apache_license": true,
+      "upstream_license": true
+    }
+  },
+  "num_training_images_each_epoch": 30328,
+  "num_validation_studies_each_epoch": 859,
+  "audit_cpu_checkpoint_loads": 5,
+  "audit_gpu_work": 0,
+  "audit_real_backbone_constructed": false,
+  "final_fp16_validation_done": false,
+  "paired_patient_uncertainty_available": false,
+  "limits": [
+    "This audit verifies existing BF16 validation metadata and training evidence, not fresh independent model inference.",
+    "No per-Study student predictions were saved by the training loop, so patient paired bootstrap and teacher/student probability comparison still need validation predictions.",
+    "Checkpoint bytes include optimizer/raw/EMA/RNG and are not final inference model size.",
+    "Final FP16 accuracy and T4 end-to-end timing are not yet certified."
+  ],
+  "inference_size_estimate": {
+    "state_entries": 182,
+    "total_state_elements": 27827818,
+    "floating_state_elements": 27827818,
+    "nonfloating_state_bytes": 0,
+    "floating_tensor_dtypes": [
+      "torch.float32"
+    ],
+    "pure_fp16_state_bytes": 55655636,
+    "pure_fp16_state_decimal_MB": 55.655636,
+    "includes_serialization_overhead_or_config": false
+  }
+}

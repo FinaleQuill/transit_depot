@@ -1,0 +1,116 @@
+{
+  "captured_utc": "2026-10-28T17:59:48.356687+00:00",
+  "cpu_count": 8,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "cuda_visible_devices": null,
+  "mps_environment": {},
+  "mps_processes": [],
+  "commands": [
+    {
+      "name": "nvidia_smi_before",
+      "argv": [
+        "nvidia-smi",
+        "-q"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "gpu_processes_before",
+      "argv": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "gpu_query_before",
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,uuid,driver_version,memory.total,temperature.gpu,power.draw,power.limit,clocks.current.graphics,clocks.current.sm,clocks.current.memory,utilization.gpu",
+        "--format=csv"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "cpu",
+      "argv": [
+        "lscpu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "block_devices",
+      "argv": [
+        "lsblk",
+        "-o",
+        "NAME,TYPE,SIZE,ROTA,FSTYPE,MOUNTPOINTS"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "disk_space",
+      "argv": [
+        "df",
+        "-h",
+        "/home/featurize/work",
+        "/tmp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "input_mount",
+      "argv": [
+        "findmnt",
+        "-T",
+        "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "output_mount",
+      "argv": [
+        "findmnt",
+        "-T",
+        "/home/featurize/work/dual768_proxy_timing_results"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "local_environment_mount",
+      "argv": [
+        "findmnt",
+        "-T",
+        "/tmp"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "process_names_before",
+      "argv": [
+        "ps",
+        "-eo",
+        "pid,ppid,comm,pcpu,pmem",
+        "--sort=-pcpu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "os",
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

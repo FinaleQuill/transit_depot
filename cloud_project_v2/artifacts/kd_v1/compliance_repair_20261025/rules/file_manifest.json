@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-10-25T16:10:29.216405+08:00",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3119,
+      "sha256": "e7bb9a419f815ddc080256e422e58db126cec5d891137ac7363bbe3ac5576d50"
+    },
+    {
+      "path": "_extractor/pypdf-6.21.2-py3-none-any.whl",
+      "bytes": 407766,
+      "sha256": "1d44d1a3a200f25062adff0085b02040e4646431ac2ccac22e42679e91466084"
+    },
+    {
+      "path": "official_rules.pdf",
+      "bytes": 544529,
+      "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6"
+    },
+    {
+      "path": "official_rules_extracted.txt",
+      "bytes": 8884,
+      "sha256": "de3590ad9113428b300b919633f6c5e9a3fcbad38bdd7354d5134c3d8bb4f451"
+    },
+    {
+      "path": "official_task.html",
+      "bytes": 54627,
+      "sha256": "7aaa706dc268be4401de8e4a6375811ec8919295fc2d59b572de6b0ff01a1ea5"
+    },
+    {
+      "path": "qa_block_0_related_sheet.bin",
+      "bytes": 17601,
+      "sha256": "4a45679ac08727ddb6cf3c81f22cce4c1d75f7a4f1df47c8d01699f7fa35d6e8"
+    },
+    {
+      "path": "qa_block_utf8_diagnostic.txt",
+      "bytes": 18697,
+      "sha256": "41c159ec4eb27bb8cdd234bd8ad4a701ea85de3f66ca1e09277f1ff9fe427c01"
+    },
+    {
+      "path": "qa_cell_texts_extracted.json",
+      "bytes": 17035,
+      "sha256": "6056357cce6f3725fefb9d13b6db1cdcf9694b57a0d7d50714aa9cd6072f76a6"
+    },
+    {
+      "path": "qa_decoded_0_workbook.bin",
+      "bytes": 2585,
+      "sha256": "79ead20bcc281584abddd7c9db57b3aaf7d18e6a28926a5e151dc2130f858893"
+    },
+    {
+      "path": "qa_public_opendoc.jsonp",
+      "bytes": 18669,
+      "sha256": "f2af57d1d5cf702dece8eabbcd8352b4b389da075408acca6b5afdccebb8c01f"
+    },
+    {
+      "path": "qa_public_page.html",
+      "bytes": 448659,
+      "sha256": "40d916c18626ea27ec536bb78f1f21262acac9f0b54e4118b3846967a59a96e0"
+    },
+    {
+      "path": "qa_readable_text.txt",
+      "bytes": 12768,
+      "sha256": "1fd31c952c11daa9802db0661a0905a5b9ed2d815ff7fbfe9c78ab6bc26bc00a"
+    },
+    {
+      "path": "qa_visible_text.txt",
+      "bytes": 724,
+      "sha256": "1dc30e247167b5c5bfdfc044e1cad494d60644ec8395a367dc3b40782395981a"
+    },
+    {
+      "path": "rules_findings.json",
+      "bytes": 3515,
+      "sha256": "458a979858b6f5b30b5a2c803e35391ef4a34a360f249622f593e293e5be4b9e"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2043,
+      "sha256": "2a2bb853645998b12ff0cf1514cc5f77d2daffb6430893766ef1fd302dccc824"
+    }
+  ]
+}

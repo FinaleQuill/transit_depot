@@ -1,0 +1,571 @@
+{
+  "checked_at_hong_kong": "2026-10-27T02:19:42.265982+08:00",
+  "complete": true,
+  "mismatches": [],
+  "run": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_epoch_logits_v2",
+  "receipt_exit_code": 0,
+  "duration_seconds": 257.654708,
+  "started_at_hong_kong": "2026-10-27T02:11:44.595399+08:00",
+  "ended_at_hong_kong": "2026-10-27T02:16:02.250107+08:00",
+  "num_images": 1422,
+  "num_studies": 859,
+  "num_patients": 228,
+  "raw_sources": [
+    {
+      "id": "fold0_e20",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    },
+    {
+      "id": "fold1_e12",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    },
+    {
+      "id": "fold2_e12",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    },
+    {
+      "id": "fold3_e12",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    },
+    {
+      "id": "fold4_e12",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    },
+    {
+      "id": "fold0_e13",
+      "num_images": 1422,
+      "shape": [
+        1422,
+        2,
+        10
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "npz_sha256_matches": true,
+      "metadata_sha256_matches": true,
+      "all_original_manifest_identities_hashes_labels_match": true,
+      "source_metadata_matches_report": true
+    }
+  ],
+  "saved_study_results": [
+    {
+      "member": "fold0_e20",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.7713447476336297,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e20",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.774955760096513,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e20",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7712186377164292,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e20",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7750497455220428,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.7901741299781342,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7899384892207875,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7899563002288287,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7895073919812429,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.7937600388163382,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7946132711238152,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7934691435665385,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7945825780374257,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.7797138939328614,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7794587413612944,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7801567280703943,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.779773844917776,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.7974334717672339,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7985976181660799,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7988005400575245,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7999371541550414,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e13",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.781233357654685,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e13",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7836662157419251,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e13",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.7810752666575251,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "fold0_e13",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.7838683201043898,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.8016390623403039,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "B_13_12_12_12_12",
+      "policy": "raw_probability",
+      "tta": "identity",
+      "macro_auc": 0.801877928387977,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.8024670163998529,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "B_13_12_12_12_12",
+      "policy": "raw_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.8025674515283624,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.8035299716279706,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "B_13_12_12_12_12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "identity",
+      "macro_auc": 0.8035271180472167,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.8043257753467092,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    },
+    {
+      "member": "B_13_12_12_12_12",
+      "policy": "train_pos_weight_corrected_probability",
+      "tta": "hflip2",
+      "macro_auc": 0.8042834567742883,
+      "num_studies": 859,
+      "csv_rows": 8590,
+      "csv_and_npz_hashes_match": true,
+      "original_labels_coverage_match": true,
+      "independent_raw_aggregation_max_abs_difference": 0.0,
+      "per_class_auc_max_abs_difference": 0.0
+    }
+  ],
+  "previous_vs_new_raw_probability": [
+    {
+      "member": "fold0_e20",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold0_e20",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold1_e12",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold2_e12",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold3_e12",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "fold4_e12",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "tta": "identity",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    },
+    {
+      "member": "A_20_12_12_12_12",
+      "tta": "hflip2",
+      "max_abs_probability_difference": 0.0,
+      "macro_auc_difference": 0.0
+    }
+  ],
+  "all_A_vs_B_deltas_independently_recomputed": true,
+  "report_sha256": "400a6313cae296dbccebee74470e47da60a9a330affcc951e94d51d679826872",
+  "raw_index_sha256": "2ed5f5f46ae133a13484158c854ba2046b0067ebe612a024401696a6d5b5d106",
+  "audit_model_loads": 0,
+  "audit_gpu_work": false,
+  "source_artifacts_modified": false
+}

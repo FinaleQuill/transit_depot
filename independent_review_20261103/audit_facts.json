@@ -1,0 +1,230 @@
+{
+  "observed_hong_kong": "2026-11-03T22:05:50.861142+08:00",
+  "git_head": "ed50d7143589d7349b1894132fce913ae418f0cb",
+  "git_commit_count": 114,
+  "git_status": "?? fixed_student_candidate.py\n?? review_student_upper_bound.py\n?? student_probability_fusion.py\n",
+  "rules_sha256": {
+    "rules.pdf": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "rules_1.pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44"
+  },
+  "data": {
+    "train": {
+      "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/train_clean.csv",
+      "manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+      "images": 30328,
+      "studies": 18513,
+      "patients": 11055,
+      "study_image_count_distribution": {
+        "1": 8511,
+        "2": 8371,
+        "3": 1463,
+        "4": 157,
+        "5": 9,
+        "6": 1,
+        "7": 1
+      },
+      "positive_studies": [
+        622,
+        900,
+        942,
+        1436,
+        2404,
+        3885,
+        3968,
+        4508,
+        4654,
+        6683
+      ],
+      "positive_patients": [
+        572,
+        592,
+        814,
+        1284,
+        1742,
+        2792,
+        2906,
+        3295,
+        2859,
+        5724
+      ],
+      "maximum_studies_per_patient": 21,
+      "top10_studies": 164,
+      "top10_share": 0.008858639874682656,
+      "median_dimensions": {
+        "width": 2544.0,
+        "height": 3043.0
+      },
+      "study_views": {
+        "AP": {
+          "studies": 9331,
+          "class10_positive": 1823
+        },
+        "AP+LATERAL": {
+          "studies": 1385,
+          "class10_positive": 615
+        },
+        "LL+MISSING": {
+          "studies": 179,
+          "class10_positive": 21
+        },
+        "LATERAL+PA": {
+          "studies": 4549,
+          "class10_positive": 3134
+        },
+        "LL+PA": {
+          "studies": 2238,
+          "class10_positive": 777
+        },
+        "AP+LL": {
+          "studies": 194,
+          "class10_positive": 26
+        },
+        "MISSING": {
+          "studies": 547,
+          "class10_positive": 252
+        },
+        "PA": {
+          "studies": 40,
+          "class10_positive": 15
+        },
+        "LATERAL": {
+          "studies": 16,
+          "class10_positive": 11
+        },
+        "AP+LATERAL+PA": {
+          "studies": 10,
+          "class10_positive": 5
+        },
+        "AP+LL+PA": {
+          "studies": 6,
+          "class10_positive": 0
+        },
+        "LL": {
+          "studies": 7,
+          "class10_positive": 1
+        },
+        "LL+MISSING+PA": {
+          "studies": 1,
+          "class10_positive": 0
+        },
+        "AP+PA": {
+          "studies": 7,
+          "class10_positive": 3
+        },
+        "LL+PA+PA LLD": {
+          "studies": 1,
+          "class10_positive": 0
+        },
+        "LATERAL+LL": {
+          "studies": 2,
+          "class10_positive": 0
+        }
+      }
+    },
+    "valid": {
+      "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+      "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+      "images": 1422,
+      "studies": 859,
+      "patients": 228,
+      "study_image_count_distribution": {
+        "1": 391,
+        "2": 380,
+        "3": 81,
+        "4": 7
+      },
+      "positive_studies": [
+        24,
+        37,
+        46,
+        68,
+        115,
+        177,
+        193,
+        214,
+        260,
+        306
+      ],
+      "positive_patients": [
+        16,
+        13,
+        24,
+        37,
+        34,
+        66,
+        64,
+        72,
+        52,
+        166
+      ],
+      "maximum_studies_per_patient": 89,
+      "top10_studies": 295,
+      "top10_share": 0.34342258440046564,
+      "median_dimensions": {
+        "width": 2544.0,
+        "height": 2960.0
+      },
+      "study_views": {
+        "AP+LATERAL": {
+          "studies": 57,
+          "class10_positive": 31
+        },
+        "AP": {
+          "studies": 442,
+          "class10_positive": 90
+        },
+        "LATERAL+PA": {
+          "studies": 193,
+          "class10_positive": 134
+        },
+        "AP+LL": {
+          "studies": 9,
+          "class10_positive": 2
+        },
+        "MISSING": {
+          "studies": 17,
+          "class10_positive": 4
+        },
+        "LL+PA": {
+          "studies": 122,
+          "class10_positive": 43
+        },
+        "MISSING+PA": {
+          "studies": 1,
+          "class10_positive": 0
+        },
+        "LL+MISSING": {
+          "studies": 11,
+          "class10_positive": 1
+        },
+        "PA": {
+          "studies": 4,
+          "class10_positive": 0
+        },
+        "LATERAL": {
+          "studies": 1,
+          "class10_positive": 1
+        },
+        "AP+LL+PA": {
+          "studies": 1,
+          "class10_positive": 0
+        },
+        "AP+LATERAL+PA": {
+          "studies": 1,
+          "class10_positive": 0
+        }
+      }
+    }
+  },
+  "train_valid_manifest_overlaps": {
+    "subject_id": 0,
+    "study_key": 0,
+    "file_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "stop_files": {
+    "artifacts/resolution_explore_20261103/STOP": "User requested save and stop at 2026-11-03T13:55:53.328431+00:00; do not resume without new authorization.\n",
+    "artifacts/resolution_explore_20261103/queue/STOP": "User requested save and stop at 2026-11-03T13:55:54.334726+00:00; do not resume without new authorization.\n",
+    "artifacts/resolution_explore_20261103/roi_queue_20261103/STOP": "User requested save and stop at 2026-11-03T13:55:55.374102+00:00; do not resume without new authorization.\n"
+  }
+}

@@ -1,0 +1,63 @@
+[ALLOCATOR] requested=8 GiB (8589934592 bytes); applied_fraction=0.372211368077; device_total_bytes=23078109184
+STAGE full_decode full_valid 2026-10-31T15:42:40.516189+08:00
+[VALID] 100/1422 images
+[VALID] 200/1422 images
+[VALID] 300/1422 images
+[VALID] 400/1422 images
+[VALID] 500/1422 images
+[VALID] 600/1422 images
+[VALID] 700/1422 images
+[VALID] 800/1422 images
+[VALID] 900/1422 images
+[VALID] 1000/1422 images
+[VALID] 1100/1422 images
+[VALID] 1200/1422 images
+[VALID] 1300/1422 images
+[VALID] 1400/1422 images
+ACTUAL_VALID full_decode 0.8168300303208815
+ROUND_MS full_decode 1 89.88896531995579
+ROUND_MS full_decode 2 94.15303780000158
+ROUND_MS full_decode 3 94.55710320003163
+STAGE draft_target768 full_valid 2026-10-31T15:45:53.738194+08:00
+[VALID] 100/1422 images
+[VALID] 200/1422 images
+[VALID] 300/1422 images
+[VALID] 400/1422 images
+[VALID] 500/1422 images
+[VALID] 600/1422 images
+[VALID] 700/1422 images
+[VALID] 800/1422 images
+[VALID] 900/1422 images
+[VALID] 1000/1422 images
+[VALID] 1100/1422 images
+[VALID] 1200/1422 images
+[VALID] 1300/1422 images
+[VALID] 1400/1422 images
+ACTUAL_VALID draft_target768 0.8166770734158482
+ROUND_MS draft_target768 1 86.07328883005266
+ROUND_MS draft_target768 2 85.42330082998433
+ROUND_MS draft_target768 3 82.96383411001898
+{
+  "full_decode": {
+    "macro_auc": 0.8168300303208815,
+    "mean_ms": 92.86636877332967,
+    "round_mean_ms": [
+      89.88896531995579,
+      94.15303780000158,
+      94.55710320003163
+    ],
+    "meets_requested_auc_and_latency": false,
+    "asset_bytes": 241433577
+  },
+  "draft_target768": {
+    "macro_auc": 0.8166770734158482,
+    "mean_ms": 84.82014125668533,
+    "round_mean_ms": [
+      86.07328883005266,
+      85.42330082998433,
+      82.96383411001898
+    ],
+    "meets_requested_auc_and_latency": false,
+    "asset_bytes": 241433757
+  }
+}

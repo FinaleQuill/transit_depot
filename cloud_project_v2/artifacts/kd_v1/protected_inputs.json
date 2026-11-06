@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-25T14:12:29.590849+08:00",
+  "protected_inputs": {
+    "data/clean_v1_reviewed/valid_manifest.csv": true,
+    "data/clean_v1_reviewed/train_clean.csv": true,
+    "data/clean_v1_reviewed/test_manifest.csv": true,
+    "data/cv5_overnight/folds.json": true
+  },
+  "all_unchanged": true,
+  "active_new_training_processes": [],
+  "training_started_this_task": false,
+  "model_forwards_this_task": 0,
+  "backward_calls_this_task": 0,
+  "optimizer_updates_this_task": 0,
+  "pretrained_downloads_this_task": 0
+}

@@ -1,0 +1,948 @@
+{
+  "readonly": true,
+  "models_loaded": false,
+  "checkpoint_binaries_read": false,
+  "source_manifest": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/evidence_manifest.json",
+  "source_manifest_sha256": "fbb14da583e325d6b19767e077907645f56f586a3ba1bf208fb23b912e034699",
+  "teacher_runs": [
+    {
+      "id": "teacher_fold_0",
+      "role": "teacher",
+      "complete": true,
+      "expected_epochs": 20,
+      "source_archive_id": "source_before_patch",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/config.json",
+          "exists": true,
+          "bytes": 955276
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/checkpoint_audit.jsonl",
+          "exists": true,
+          "bytes": 20849
+        }
+      },
+      "ledger_chain_valid": true,
+      "ledger_newline_complete": true,
+      "ledger_records": 21,
+      "last_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_expected_epochs": [],
+      "recovered_save_records": 1
+    },
+    {
+      "id": "teacher_fold_1",
+      "role": "teacher",
+      "complete": true,
+      "expected_epochs": 12,
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/config.json",
+          "exists": true,
+          "bytes": 955282
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/checkpoint_audit.jsonl",
+          "exists": true,
+          "bytes": 27683
+        }
+      },
+      "ledger_chain_valid": true,
+      "ledger_newline_complete": true,
+      "ledger_records": 13,
+      "last_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "missing_expected_epochs": [],
+      "recovered_save_records": 0
+    },
+    {
+      "id": "teacher_fold_2",
+      "role": "teacher",
+      "complete": true,
+      "expected_epochs": 12,
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/config.json",
+          "exists": true,
+          "bytes": 955282
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/checkpoint_audit.jsonl",
+          "exists": true,
+          "bytes": 27683
+        }
+      },
+      "ledger_chain_valid": true,
+      "ledger_newline_complete": true,
+      "ledger_records": 13,
+      "last_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "missing_expected_epochs": [],
+      "recovered_save_records": 0
+    },
+    {
+      "id": "teacher_fold_3",
+      "role": "teacher",
+      "complete": true,
+      "expected_epochs": 12,
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/config.json",
+          "exists": true,
+          "bytes": 955357
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/checkpoint_audit.jsonl",
+          "exists": true,
+          "bytes": 27683
+        }
+      },
+      "ledger_chain_valid": true,
+      "ledger_newline_complete": true,
+      "ledger_records": 13,
+      "last_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "missing_expected_epochs": [],
+      "recovered_save_records": 0
+    },
+    {
+      "id": "teacher_fold_4",
+      "role": "teacher",
+      "complete": true,
+      "expected_epochs": 12,
+      "source_archive_id": "source_20261026T051826Z_5864de2d",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/config.json",
+          "exists": true,
+          "bytes": 955282
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/checkpoint_audit.jsonl",
+          "exists": true,
+          "bytes": 27683
+        }
+      },
+      "ledger_chain_valid": true,
+      "ledger_newline_complete": true,
+      "ledger_records": 13,
+      "last_epochs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "missing_expected_epochs": [],
+      "recovered_save_records": 0
+    }
+  ],
+  "stale_student_runs": [
+    {
+      "id": "student",
+      "role": "student",
+      "complete": false,
+      "expected_epochs": 25,
+      "source_archive_id": "source_after_patch",
+      "paths": {
+        "config": {
+          "path": "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/config.json",
+          "exists": false,
+          "bytes": null
+        },
+        "checkpoint_audit": {
+          "path": "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/checkpoint_audit.jsonl",
+          "exists": false,
+          "bytes": null
+        }
+      }
+    }
+  ],
+  "missing_references": [
+    "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/config.json",
+    "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/checkpoint_audit.jsonl"
+  ],
+  "controller_receipts": [
+    {
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T114605Z_21094c6a.json",
+      "keys": [
+        "started_at",
+        "command",
+        "cwd",
+        "source_archive",
+        "console_log",
+        "preexisting_run_artifacts",
+        "coverage_from_start",
+        "exit_code",
+        "child_pid",
+        "ended_at",
+        "console_bytes"
+      ],
+      "started_at": "2026-10-25T11:46:05.529716+00:00",
+      "ended_at": "2026-10-25T13:07:22.152494+00:00",
+      "exit_code": -2,
+      "source_archive": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261025T114605Z_21094c6a",
+      "console_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T114605Z_21094c6a.log",
+      "coverage_from_start": "complete",
+      "console_bytes": 1345
+    },
+    {
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261025T133827Z_c1c4fc8e.json",
+      "keys": [
+        "started_at",
+        "command",
+        "cwd",
+        "source_archive",
+        "console_log",
+        "preexisting_run_artifacts",
+        "coverage_from_start",
+        "exit_code",
+        "child_pid"
+      ],
+      "started_at": "2026-10-25T13:38:27.833480+00:00",
+      "ended_at": null,
+      "exit_code": null,
+      "source_archive": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261025T133827Z_c1c4fc8e",
+      "console_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T133827Z_c1c4fc8e.log",
+      "coverage_from_start": "complete",
+      "console_bytes": null
+    },
+    {
+      "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/command_20261026T051826Z_5864de2d.json",
+      "keys": [
+        "started_at",
+        "command",
+        "cwd",
+        "source_archive",
+        "console_log",
+        "preexisting_run_artifacts",
+        "coverage_from_start",
+        "exit_code",
+        "child_pid",
+        "ended_at",
+        "console_bytes"
+      ],
+      "started_at": "2026-10-26T05:18:26.882722+00:00",
+      "ended_at": "2026-10-26T11:26:24.681200+00:00",
+      "exit_code": 0,
+      "source_archive": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261026T051826Z_5864de2d",
+      "console_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261026T051826Z_5864de2d.log",
+      "coverage_from_start": "complete",
+      "console_bytes": 250742
+    }
+  ],
+  "students": [
+    {
+      "run": "/home/featurize/work/runs/029_tiny768_kd_seed43",
+      "seed": 43,
+      "state": "early_stopped",
+      "completed_epochs": 13,
+      "best_epoch": 8,
+      "receipts": [
+        {
+          "path": "/home/featurize/work/runs/029_tiny768_kd_seed43/evidence/command_20261027T100645Z_b5d2ceaa.json",
+          "coverage_from_start": "complete",
+          "ended_at": "2026-10-27T12:07:29.820569+00:00",
+          "exit_code": 0,
+          "preexisting_run_artifacts": [],
+          "archive_exists": true,
+          "console_path": "/home/featurize/work/runs/029_tiny768_kd_seed43/evidence/console_20261027T100645Z_b5d2ceaa.log",
+          "console_exists": true,
+          "console_bytes_declared": 30489,
+          "console_bytes_actual": 30489
+        }
+      ]
+    },
+    {
+      "run": "/home/featurize/work/runs/030_tiny768_kd_seed44",
+      "seed": 44,
+      "state": "early_stopped",
+      "completed_epochs": 13,
+      "best_epoch": 8,
+      "receipts": [
+        {
+          "path": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/command_20261027T151836Z_2819d80e.json",
+          "coverage_from_start": "complete",
+          "ended_at": "2026-10-27T17:17:58.039872+00:00",
+          "exit_code": 0,
+          "preexisting_run_artifacts": [],
+          "archive_exists": true,
+          "console_path": "/home/featurize/work/runs/030_tiny768_kd_seed44/evidence/console_20261027T151836Z_2819d80e.log",
+          "console_exists": true,
+          "console_bytes_declared": 30351,
+          "console_bytes_actual": 30351
+        }
+      ]
+    }
+  ],
+  "historical_limitations": [
+    {
+      "blocking": false,
+      "detail": "Epoch1 hash and trainer status commit timestamp recovered from an earlier original read-only tool observation. Exact checkpoint file mtime was not retained by the former code and cannot be recreated; no substitute is claimed to be that file mtime."
+    },
+    {
+      "blocking": false,
+      "detail": "Pre-attachment console output is recovered rendered tmux history, with all expected logged batch markers verified. Raw byte-exact stdout/stderr capture begins at 16:06:17 HKT."
+    }
+  ],
+  "teacher_console_coverage": {
+    "group_declarations": [
+      {
+        "run_id": "teacher_fold_0",
+        "coverage_from_start": "complete",
+        "log_ids": [
+          "recovered",
+          "live"
+        ],
+        "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+      }
+    ],
+    "controller_logs": [
+      {
+        "id": "recovered",
+        "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_recovered_before_attachment.txt",
+        "bytes": 36259,
+        "coverage_declaration": "partial",
+        "run_ids": [
+          "teacher_fold_0"
+        ]
+      },
+      {
+        "id": "live",
+        "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_live.raw.log",
+        "bytes": 28999787,
+        "coverage_declaration": "partial",
+        "run_ids": [
+          "teacher_fold_0"
+        ]
+      },
+      {
+        "id": "command_20261025T114605Z_21094c6a",
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T114605Z_21094c6a.log",
+        "bytes": 1345,
+        "coverage_declaration": "complete",
+        "run_ids": [
+          "teacher_fold_1",
+          "teacher_fold_2",
+          "teacher_fold_3",
+          "teacher_fold_4"
+        ]
+      },
+      {
+        "id": "command_20261025T133827Z_c1c4fc8e",
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T133827Z_c1c4fc8e.log",
+        "bytes": 371127,
+        "coverage_declaration": "complete",
+        "run_ids": [
+          "teacher_fold_1",
+          "teacher_fold_2",
+          "teacher_fold_3",
+          "teacher_fold_4"
+        ]
+      },
+      {
+        "id": "command_20261026T051826Z_5864de2d",
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261026T051826Z_5864de2d.log",
+        "bytes": 250742,
+        "coverage_declaration": "complete",
+        "run_ids": [
+          "teacher_fold_1",
+          "teacher_fold_2",
+          "teacher_fold_3",
+          "teacher_fold_4"
+        ]
+      }
+    ]
+  },
+  "controller_log_content_audit": {
+    "logs": [
+      {
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T114605Z_21094c6a.log",
+        "bytes": 1345,
+        "sha256": "77bb279acdc5cd370cf0941677f5f7180c596c39d4b2120bfaf7f9046b321341",
+        "actual_batch_marker_folds": [],
+        "has_runtime_error": false,
+        "has_keyboard_interrupt": true,
+        "last_nonempty_line": "KeyboardInterrupt"
+      },
+      {
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T133827Z_c1c4fc8e.log",
+        "bytes": 371127,
+        "sha256": "9164acce21adff2bd28b8fecd9b5e3813734a8d48b45ccda0fd0bb0c45a22d80",
+        "actual_batch_marker_folds": [
+          1,
+          2,
+          3
+        ],
+        "has_runtime_error": true,
+        "has_keyboard_interrupt": false,
+        "last_nonempty_line": "RuntimeError: training_folds_1_to_4_twelve_epochs exited with code 1; later stages were not started"
+      },
+      {
+        "path": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261026T051826Z_5864de2d.log",
+        "bytes": 250742,
+        "sha256": "bbf0b328ab0e98241d034eee4ad6c73c17cdb1dd345263d5918aa58e4e320a51",
+        "actual_batch_marker_folds": [
+          3,
+          4
+        ],
+        "has_runtime_error": false,
+        "has_keyboard_interrupt": false,
+        "last_nonempty_line": "Mixed teacher collection complete. OOF extraction and student training remain manual next steps."
+      }
+    ],
+    "epoch_marker_coverage": [
+      {
+        "fold": 1,
+        "epoch": 1,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 2,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 3,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 4,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 5,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 6,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 7,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 8,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 9,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 10,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 11,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 1,
+        "epoch": 12,
+        "batch_total": 12133,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 1,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 2,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 3,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 4,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 5,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 6,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 7,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 8,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 9,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 10,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 11,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 2,
+        "epoch": 12,
+        "batch_total": 12138,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 1,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 2,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 3,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 4,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 5,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 6,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 7,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 8,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 9,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 10,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 11,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 3,
+        "epoch": 12,
+        "batch_total": 12125,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 1,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 2,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 3,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 4,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 5,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 6,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 7,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 8,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 9,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 10,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 11,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      },
+      {
+        "fold": 4,
+        "epoch": 12,
+        "batch_total": 12132,
+        "expected_logged_markers": 123,
+        "observed_unique_markers": 123,
+        "missing_markers": [],
+        "conflicting_batch_totals": false,
+        "epoch_completion_summary_present": true
+      }
+    ],
+    "all_48_teacher_epochs_have_all_expected_markers_and_completion_summaries": true,
+    "scope": "Verifies logged first/100-step/final batch markers, not every batch nor original stdout byte completeness; partial failed fold3 epoch5 attempt and resumed attempt are both retained in original logs."
+  },
+  "suggested_teacher_only_index": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/teacher_only/evidence_manifest.json",
+  "suggested_combined_index": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/final_dual768_evidence_20261029/combined/evidence_manifest.json"
+}

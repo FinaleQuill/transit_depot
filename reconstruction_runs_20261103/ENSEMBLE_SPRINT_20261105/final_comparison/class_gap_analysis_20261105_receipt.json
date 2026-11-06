@@ -1,0 +1,19 @@
+{
+  "state": "complete",
+  "elapsed_seconds": 3.931352339001023,
+  "input_sha256": {
+    "/home/featurize/work/reconstruction_runs_20261103/SPRINT_20261104/final_comparison/analyze_class_gaps.py": "bd7f4927c0ce247952d23e5e66dcbe906e2a9c5e4939337c069f49312e591036",
+    "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/analyze_class_gaps.py": "d2182e8666613f1450596e0bb633c8cb2fd5f05e9bcd25789399016d6d57da12",
+    "/home/featurize/work/cxr_research_20261103/ensemble_sprint/plan.json": "86660c5e5ccf47259dccdfdf57372a030ef6203e16c04a0b3c9eada47cbab417",
+    "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/report.json": "3afa79e1c9629b361e21bcac7033e9c8c10f0a5dc441dba56aff3fe281f4c95c",
+    "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/final_comparison/candidate_predictions.csv": "d9bda517ffe30aa0df443cfdc656234be18fe85e4019f4d81bf3f0eb2d8e37b8",
+    "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112"
+  },
+  "output_sha256": "df8e782475dff0132e414e61169ad2d559044cfee35cd24ffc4906d587b398fa",
+  "samples_requested": 10000,
+  "samples_valid": 10000,
+  "seed": 20261105,
+  "new_model_inference_runs": 0,
+  "test_images_read": false,
+  "source_script_changes": "Only manifest source changed to ensemble_sprint/plan.json; bootstrap code unchanged."
+}

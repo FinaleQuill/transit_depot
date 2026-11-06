@@ -1,0 +1,21 @@
+{
+  "cpu_only": true,
+  "models_executed": false,
+  "cuda_work": false,
+  "phase": "project_package_tests",
+  "results": [
+    {
+      "pattern": "*package*.py",
+      "exit_code": 0,
+      "log": "package_tests.log"
+    },
+    {
+      "pattern": "test_inference_consistency.py",
+      "exit_code": 0,
+      "log": "inference_consistency_final.log"
+    }
+  ],
+  "passed": true,
+  "initial_failure_preserved": "package_tests.failed_initial.log",
+  "initial_failure_reason": "Sidecar validation local variable shadowed pretraining originals; fixed by separate image_manifest_rows variable"
+}

@@ -1,0 +1,107 @@
+{
+  "checked_at_hong_kong": "2026-10-27T12:44:01.031740+08:00",
+  "complete": true,
+  "mismatches": [],
+  "checks": {
+    "deployment_schema_and_protocol_validator": true,
+    "measured_inventory_matches_export": true,
+    "measured_inventory_matches_validation_report": true,
+    "model_size_limit": true,
+    "one_supervised_schema9_member": true,
+    "frozen_hflip2_fp16_batch1": true,
+    "source_best_sha": true,
+    "config_sha_bound": true,
+    "csv_sha_bound": true,
+    "source_training_metrics_consistent": true,
+    "original_valid_manifest_sha": true,
+    "exact_csv_header": true,
+    "exact_study_class_coverage": true,
+    "exact_counts": true,
+    "report_image_count_consistent_with_manifest": true,
+    "independent_per_class_auc_matches": true,
+    "independent_macro_auc_matches": true,
+    "independent_fixed_threshold_f1_matches": true,
+    "auc_difference_from_source_matches": true,
+    "no_valid_parameter_fitting_reported": true
+  },
+  "counts": {
+    "valid_manifest_images": 1422,
+    "saved_prediction_studies": 859,
+    "saved_prediction_patients": 228,
+    "saved_prediction_rows": 8590,
+    "classes": 10
+  },
+  "image_coverage_limit": "1422 images is stated by the completed validation report and matches the original manifest; no per-image prediction file was saved, so this audit independently proves complete Study/class coverage, not a replay of per-image forwards.",
+  "actual_inference_inventory": {
+    "files": [
+      {
+        "path": "student_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "99bcdda13ab2c11e9b37e3e4c453ec8e32d873c9fbc0031983dbebc73e53bf2c"
+      },
+      {
+        "path": "config.json",
+        "bytes": 65608,
+        "sha256": "5913d54f67df0b84d491d088e797667a2f04a8bbf20d0763ac1528a6d0bfc5bd"
+      }
+    ],
+    "total_bytes": 55778119,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "independent_metrics": {
+    "macro_auc": 0.8036346771755589,
+    "per_class_auc": [
+      0.6958582834331337,
+      0.8606562767146708,
+      0.7935183699663083,
+      0.7471740908752883,
+      0.8874357176250585,
+      0.7769024305382972,
+      0.7810764132007655,
+      0.7131058465550967,
+      0.8994542185694105,
+      0.8811651242775591
+    ],
+    "macro_f1_fixed_0_5": 0.4391026321007601,
+    "training_precision_macro_auc": 0.8035966420017964,
+    "fp16_minus_training_precision_macro_auc": 3.803517376255172e-05,
+    "per_class_delta_from_training_precision": [
+      -0.0001497005988023714,
+      0.000526073518774095,
+      0.00028076367720186735,
+      -0.00030675987209027866,
+      0.0002980364656381962,
+      -8.698245439620056e-05,
+      0.00010891720736283528,
+      0.0002173440556400008,
+      -0.0002857326313085995,
+      -0.0002216076303940273
+    ]
+  },
+  "artifact_hashes": {
+    "config_sha256": "5913d54f67df0b84d491d088e797667a2f04a8bbf20d0763ac1528a6d0bfc5bd",
+    "export_report_sha256": "7af3e9080cb988924851c122fda972d5d2dac0592ab6fd50e2d0a71bdebc18d8",
+    "validation_report_sha256": "eaf4829eeaf30aee47fe39734b85a1e8843b8b25470e8d6bcbbcf8248f1c99f5",
+    "valid_predictions_sha256": "f0bc49419ec49c5b3e062a559ec13e4599016df98c349dda46b3c16502a3ea2f",
+    "source_best_sha256": "0a28142df8d7c7fcf954648215115ac0c6eb185788f4c5f802525b637a7553af"
+  },
+  "frozen_config_status": {
+    "config_fp16_validation_status": "pending_same_deployment_validation",
+    "export_fp16_validation_status": "pending_same_deployment_validation",
+    "separate_validation_report_complete": true,
+    "explanation": "Frozen export/config retain their initial pending marker. The separately hash-bound completed validation report supplies the actual FP16 validation evidence; do not mutate config after validation without regenerating bound reports.",
+    "latency_status": "pending_T4_measurement",
+    "T4_certified": false
+  },
+  "audit_limitations": [
+    "No independent forward or tensor dtype load in this audit; the successfully completed shared Predictor implementation requires FP16 disk tensors before inference.",
+    "Validation source metadata and current hashes do not provide standalone wall-clock runtime receipts.",
+    "T4 end-to-end timing, final test CSV consistency and complete final package acceptance remain pending."
+  ],
+  "source_artifacts_modified": false,
+  "audit_model_builds": 0,
+  "audit_model_forwards": 0,
+  "audit_gpu_work": false,
+  "audit_training_started": false
+}

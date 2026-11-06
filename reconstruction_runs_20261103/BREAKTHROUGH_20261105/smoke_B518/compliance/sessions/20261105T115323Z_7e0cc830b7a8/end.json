@@ -1,0 +1,25 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "attempted_updates": 2,
+    "best_epoch": null,
+    "best_macro_auc": null,
+    "next_action": "Review development evidence before full-train refit; do not use fold4 as independent confirmation",
+    "official_valid_evaluated": false,
+    "optimizer_updates": 2,
+    "skipped_updates": 0,
+    "state": "smoke_completed",
+    "test_used": false,
+    "updated_at": "2026-11-05T19:54:18.051130+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "8289cd913771f828228e2f3194b713fcc17077f9408977fa9bcb06e99e10194b",
+  "record_sha256": "ba26cd1231b6ad9d712f587bc9d88ece02b7524f7e5e805a73b4b82eee9ce69d",
+  "recorded_at_hong_kong": "2026-11-05T19:54:18.159727+08:00",
+  "recorded_at_utc": "2026-11-05T11:54:18.159727+00:00",
+  "run_dir": "/home/featurize/data/cxr_breakthrough_20261105/state/smoke_B518",
+  "session_id": "20261105T115323Z_7e0cc830b7a8",
+  "state": "smoke_completed",
+  "trainer": "breakthrough.train"
+}

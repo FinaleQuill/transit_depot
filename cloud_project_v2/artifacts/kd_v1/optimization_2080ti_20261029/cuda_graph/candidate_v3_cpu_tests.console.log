@@ -1,0 +1,16 @@
+test_capture_failure_raises_without_eager_fallback (test_fast_inference_inputs.FastInferenceInputTests.test_capture_failure_raises_without_eager_fallback) ... ok
+test_capture_workload_has_no_host_sync_or_cpu_transfer (test_fast_inference_inputs.FastInferenceInputTests.test_capture_workload_has_no_host_sync_or_cpu_transfer) ... ok
+test_cpu_replay_refreshes_static_inputs_and_never_reuses_predictions (test_fast_inference_inputs.FastInferenceInputTests.test_cpu_replay_refreshes_static_inputs_and_never_reuses_predictions) ... ok
+test_different_resolutions_transform_each_size_once (test_fast_inference_inputs.FastInferenceInputTests.test_different_resolutions_transform_each_size_once) ... ok
+test_every_uint8_value_keeps_exact_float32_normalization (test_fast_inference_inputs.FastInferenceInputTests.test_every_uint8_value_keeps_exact_float32_normalization) ... ok
+test_jpeg_l_and_rgb_decode_and_exif_are_byte_identical (test_fast_inference_inputs.FastInferenceInputTests.test_jpeg_l_and_rgb_decode_and_exif_are_byte_identical) ... ok
+test_modes_exif_and_odd_letterbox_geometry_are_byte_identical (test_fast_inference_inputs.FastInferenceInputTests.test_modes_exif_and_odd_letterbox_geometry_are_byte_identical) ... ok
+test_non_eight_bit_modes_keep_the_original_rejection_and_file (test_fast_inference_inputs.FastInferenceInputTests.test_non_eight_bit_modes_keep_the_original_rejection_and_file) ... ok
+test_nonfinite_original_logits_are_rejected_after_all_views (test_fast_inference_inputs.FastInferenceInputTests.test_nonfinite_original_logits_are_rejected_after_all_views) ... ok
+test_same_resolution_tta_shares_inputs_but_keeps_four_forwards_and_arithmetic (test_fast_inference_inputs.FastInferenceInputTests.test_same_resolution_tta_shares_inputs_but_keeps_four_forwards_and_arithmetic) ... ok
+test_wrong_logit_shape_is_rejected_before_later_forwards (test_fast_inference_inputs.FastInferenceInputTests.test_wrong_logit_shape_is_rejected_before_later_forwards) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 28.901s
+
+OK

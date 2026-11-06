@@ -1,0 +1,2 @@
+[ALLOCATOR] requested=8 GiB (8589934592 bytes); applied_fraction=0.372211368077; device_total_bytes=23078109184
+[LOCAL STRESS] benchmark_nfs_v1: 156.409 ms/image; visible SMs=68; T4 certified=False

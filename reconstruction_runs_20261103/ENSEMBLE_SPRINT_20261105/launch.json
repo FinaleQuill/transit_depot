@@ -1,0 +1,10 @@
+{
+  "state": "launched",
+  "launched_at": "2026-11-05T03:38:50.869236+08:00",
+  "controller_pid": 174948,
+  "detached": true,
+  "config": "/home/featurize/work/cxr_research_20261103/ensemble_sprint/plan.json",
+  "config_sha256": "86660c5e5ccf47259dccdfdf57372a030ef6203e16c04a0b3c9eada47cbab417",
+  "log": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/controller.log",
+  "status": "/home/featurize/work/reconstruction_runs_20261103/ENSEMBLE_SPRINT_20261105/controller_status.json"
+}

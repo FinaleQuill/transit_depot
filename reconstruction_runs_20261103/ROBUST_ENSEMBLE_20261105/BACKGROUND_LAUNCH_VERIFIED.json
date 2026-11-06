@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-05T13:12:01.534033+08:00",
+  "controller_pid": 201971,
+  "controller_ppid": 1,
+  "session_id": 201971,
+  "stdin": "/dev/null",
+  "has_tty": false,
+  "source_commit": "35ee40d80985ffce9b68d10f7738b95287523710",
+  "new_training_runs": 0,
+  "state": "running",
+  "note": "Actual validation progress verified; user requested dialogue closure while detached pipeline continues.",
+  "verified_progress_at": "2026-11-05T13:14:11.384079+08:00",
+  "observed_images_done": 500,
+  "observed_image_progress": [
+    100,
+    200,
+    300
+  ],
+  "parent_cache_check_failed": false,
+  "controller_current_state": "running"
+}

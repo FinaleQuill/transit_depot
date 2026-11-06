@@ -1,0 +1,47 @@
+{
+  "python": "3.12.3 (main, Jan  8 2026, 11:30:50) [GCC 13.3.0]",
+  "executable": "/usr/bin/python",
+  "platform": "Linux-5.15.0-105-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "timm": null,
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "pandas": "2.2.3",
+    "opencv-python": null,
+    "albumentations": "2.0.8",
+    "huggingface-hub": null,
+    "safetensors": null,
+    "PyYAML": "6.0.3",
+    "packaging": "25.0",
+    "pytest": null
+  },
+  "probe_runs_model_inference": false,
+  "torch": {
+    "version": "2.10.0+cu128",
+    "git_version": "449b1768410104d3ed79d3bcfe4ba1d65c7f22c0",
+    "cuda_build": "12.8",
+    "cudnn_version": 91002,
+    "cuda_available": false,
+    "gpu_count": 0,
+    "arch_list": []
+  },
+  "import_checks": {
+    "torchvision": "ok",
+    "timm": "ModuleNotFoundError(\"No module named 'timm'\")",
+    "numpy": "ok",
+    "PIL": "ok",
+    "scipy": "ok",
+    "sklearn": "ok"
+  },
+  "module_runtime_versions": {
+    "torchvision": "0.25.0+cu128",
+    "numpy": "1.26.4",
+    "PIL": "10.4.0",
+    "scipy": "1.17.1",
+    "sklearn": "1.5.2"
+  }
+}

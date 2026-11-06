@@ -1,0 +1,16 @@
+{
+  "stage": "actual_comparison",
+  "started_hong_kong": "2026-11-01T21:20:32.984662+08:00",
+  "command": [
+    "bash",
+    "/home/featurize/work/cloud_project_v2/run_student_environment.sh",
+    "-u",
+    "-c",
+    "import json,numpy as np\nfrom pathlib import Path\nfrom dataset import read_manifest\nfrom deploy_kd import read_submission,sha256_file\nfrom compare_student_candidates import paired_intervals\nfrom student_experiment_evaluation import score_probabilities,validation_labels\nroot=Path(\"artifacts/kd_v1/frozen_head_20261101\")\nrecords=read_manifest(\"data/clean_v1_reviewed/valid_manifest.csv\",split=\"valid\")\nlabels,counts=validation_labels(records);keys=sorted(labels)\npaths={\"current_best_817149\":Path(\"artifacts/kd_v1/bounded_finetune_20261101/actual_combination_review/full_decode/valid\")}\npaths.update({p.parent.name:p.parent/\"valid\" for p in (root/\"actual\").glob(\"*/actual_audit.json\")})\narrays={};scores={};bindings={}\nfor name,path in paths.items():\n report=json.loads((path/\"validation_report.json\").read_text())\n assert report[\"complete\"] and report[\"predictions_sha256\"]==sha256_file(path/\"valid_predictions.csv\")\n values=read_submission(path/\"valid_predictions.csv\");scores[name]=score_probabilities(labels,values,counts)\n arrays[name]=np.array([values[k] for k in keys]);bindings[name]={\"report_sha256\":sha256_file(path/\"validation_report.json\"),\"predictions_sha256\":sha256_file(path/\"valid_predictions.csv\")}\nintervals=paired_intervals(np.array([labels[k] for k in keys]),arrays,np.array([k[0] for k in keys]),samples=1000,seed=50,reference=\"current_best_817149\")\n(root/\"actual_comparison.json\").write_text(json.dumps({\"scores\":scores,\"paired_patient_bootstrap\":intervals,\"bindings\":bindings,\"test_used\":False,\"selection_adjusted\":False},indent=2)+chr(10))\n"
+  ],
+  "container": "codex-frozen-actual-comparison-20261101",
+  "plan_sha256": "a6b906e232c9304983d16644329de8edffbb8a49079e5f0e4cf6a063ce551565",
+  "exit_code": 0,
+  "finished_hong_kong": "2026-11-01T21:21:44.280324+08:00",
+  "seconds": 71.29096124100033
+}

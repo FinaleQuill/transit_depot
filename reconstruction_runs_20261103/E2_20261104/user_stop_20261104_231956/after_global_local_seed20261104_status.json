@@ -1,0 +1,6 @@
+{
+  "state": "interrupted",
+  "error": "KeyboardInterrupt: Training interrupted by signal 15",
+  "updated_at": "2026-11-04T23:20:17.177383+08:00",
+  "compliance_status": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/compliance/status.json"
+}

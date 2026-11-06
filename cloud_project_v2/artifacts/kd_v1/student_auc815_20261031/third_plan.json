@@ -1,0 +1,42 @@
+{
+  "candidate_methods": [
+    "AB_logit_mean",
+    "AB_train_debiased_probability_mean"
+  ],
+  "global_model_weights": [
+    0.5,
+    0.5
+  ],
+  "input_predictions": "unchanged 768 hflip2 probability per image; transform/fuse before original Study mean",
+  "logit_mean": "sigmoid((logit(clip(qA,1e-7,1-1e-7))+logit(clip(qB,1e-7,1-1e-7)))/2)",
+  "train_debiased_probability_mean": "0.5*(qA/(qA+w*(1-qA))+qB/(qB+w*(1-qB)))",
+  "train_only_pos_weight": [
+    5.363176819279344,
+    4.4237992721189325,
+    4.318896414830786,
+    3.4484868103759725,
+    2.5886125900626666,
+    1.94042545985435,
+    1.9145690368263542,
+    1.7625831048264642,
+    1.7256501673905025,
+    1.3304747650384092
+  ],
+  "train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "train_studies": 18513,
+  "positive_studies": [
+    622,
+    900,
+    942,
+    1436,
+    2404,
+    3885,
+    3968,
+    4508,
+    4654,
+    6683
+  ],
+  "test_used": false,
+  "validation_fitted_parameters": false,
+  "selection_note": "Third bounded exploratory batch after failed multiscale; no per-class valid fit. Weight correction is the weighted-BCE optimum inverse, not a promise of calibration for a KD-trained Study model."
+}

@@ -1,0 +1,18 @@
+{
+  "tests": 77,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "patterns": {
+    "test_teacher_collection.py": 12,
+    "test_kd_softlabels.py": 10,
+    "test_validate_teacher.py": 11,
+    "test_planned_handoff.py": 9,
+    "test_training_log_cli.py": 4,
+    "test_kd_teacher.py": 11,
+    "test_mixed_transition.py": 7,
+    "test_kd_package.py": 13
+  },
+  "gpu_work": 0,
+  "description": "Small fixtures, mocked models/CLI/processes, standard-library lock subprocess only; no real checkpoints loaded."
+}

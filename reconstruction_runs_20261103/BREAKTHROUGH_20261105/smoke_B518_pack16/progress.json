@@ -1,0 +1,12 @@
+{
+  "state": "smoke_completed",
+  "best_macro_auc": null,
+  "best_epoch": null,
+  "attempted_updates": 4,
+  "optimizer_updates": 4,
+  "skipped_updates": 0,
+  "updated_at": "2026-11-05T20:03:49.435849+08:00",
+  "official_valid_evaluated": false,
+  "test_used": false,
+  "next_action": "Review development evidence before full-train refit; do not use fold4 as independent confirmation"
+}

@@ -1,0 +1,16 @@
+.Current fold0 continues unchanged. Waiting for twenty epochs and the planned scheduler handoff.
+Starting validating_epoch13_and_epoch20: ['/home/featurize/.conda/envs/cxr-kd-v1/bin/python', 'validate_teacher.py', '--output-dir', '/tmp/mixed-plan-test-s2f2hbt6/collection/validation']
+..Current fold0 continues unchanged. Waiting for twenty epochs and the planned scheduler handoff.
+Starting validating_epoch13_and_epoch20: ['/home/featurize/.conda/envs/cxr-kd-v1/bin/python', 'validate_teacher.py', '--output-dir', '/tmp/mixed-plan-test-o9lr4sye/collection/validation']
+Starting training_folds_1_to_4_twelve_epochs: ['/home/featurize/.conda/envs/cxr-kd-v1/bin/python', 'run_teachers.py', '--epochs', '12']
+Mixed teacher collection complete. OOF extraction and student training remain manual next steps.
+.Current fold0 continues unchanged. Waiting for twenty epochs and the planned scheduler handoff.
+..Current fold0 continues unchanged. Waiting for twenty epochs and the planned scheduler handoff.
+Starting validating_epoch13_and_epoch20: ['/home/featurize/.conda/envs/cxr-kd-v1/bin/python', 'validate_teacher.py', '--output-dir', '/tmp/mixed-plan-test-j_bsasbx/collection/validation_retry_20261025T133935638077']
+Starting training_folds_1_to_4_twelve_epochs: ['/home/featurize/.conda/envs/cxr-kd-v1/bin/python', 'run_teachers.py', '--epochs', '12']
+Mixed teacher collection complete. OOF extraction and student training remain manual next steps.
+....
+----------------------------------------------------------------------
+Ran 10 tests in 0.477s
+
+OK

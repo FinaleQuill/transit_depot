@@ -1,0 +1,18 @@
+{
+  "observed_hong_kong": "2026-10-31T15:25:47.212365+08:00",
+  "user_priority": "fixed B .8105695698808949 submission.csv and actual 2080Ti latency, then optimize valid toward .815 with potential <=80ms",
+  "fixed_B": {
+    "epoch": 10,
+    "backbone": "convnext_base.fb_in22k_ft_in1k_384",
+    "precision": "float16",
+    "image_size": 768,
+    "tta": "hflip2",
+    "study_aggregation": "original arithmetic probability mean"
+  },
+  "test_for_selection": false,
+  "teacher_training": false,
+  "platform_upload": false,
+  "new_B_export_only_not_retraining": true,
+  "snapshot_is_not_full_resume_checkpoint": true,
+  "additional_valid_screen": "registered fourth fixed RMS/max batch; all rejected"
+}

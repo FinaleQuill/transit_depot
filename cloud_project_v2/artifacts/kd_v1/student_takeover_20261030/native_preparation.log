@@ -1,0 +1,26 @@
+running build_ext
+building 'native_lanczos._core' extension
+creating /tmp/native-lanczos-build-ijbrfwg2/native_lanczos
+x86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/usr/include/python3.12 -c native_lanczos/resample.c -o /tmp/native-lanczos-build-ijbrfwg2/native_lanczos/resample.o -O3 -pthread -fno-fast-math -ffp-contract=off
+creating build/lib.linux-x86_64-cpython-312/native_lanczos
+x86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 /tmp/native-lanczos-build-ijbrfwg2/native_lanczos/resample.o -L/usr/lib/x86_64-linux-gnu -o build/lib.linux-x86_64-cpython-312/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -pthread
+copying build/lib.linux-x86_64-cpython-312/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -> native_lanczos
+{
+  "python": "3.12.3 (main, Jan  8 2026, 11:30:50) [GCC 13.3.0]",
+  "core_versions": {
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "10.4.0"
+  },
+  "timm": "1.0.30",
+  "cuda_build": "12.8",
+  "native_available": true,
+  "native_implementation": "avx2",
+  "native_threads_max": 8,
+  "native_prepared": true,
+  "model_inference_executed": false,
+  "training_executed": false,
+  "core_packages_replaced": false,
+  "project_local_addons": null
+}

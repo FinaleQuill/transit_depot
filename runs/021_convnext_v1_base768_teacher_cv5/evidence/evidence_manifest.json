@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "artifact_type": "kd_training_evidence",
+  "created_at_utc": "2026-10-25T08:19:17.732313+00:00",
+  "source_archives": [
+    {
+      "id": "source_before_patch",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_before_patch",
+      "captured_at": "2026-10-25T16:06:17+08:00",
+      "description": "Current disk source archived after fold0 launch, before this audit patch. No claim of pre-launch bytecode attestation."
+    },
+    {
+      "id": "source_after_patch",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/source_after_patch",
+      "captured_at": "2026-10-25T08:24:58.007892+00:00",
+      "description": "Audit/logging-only patch for subsequent processes. Algorithm, seeds, data and training horizon preserved."
+    }
+  ],
+  "source_version_timeline": [
+    {
+      "run_id": "teacher_fold_0",
+      "source_archive_id": "source_before_patch",
+      "applies_to": "already_running",
+      "note": "The already running fold0 retains its in-memory code; its checkpoints are recorded by a separate status observer without a restart."
+    },
+    {
+      "run_id": "teacher_folds_1_to_4_and_student",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Future CLI executions additionally capture source and logs at process start; individual command receipts supersede this common after-patch snapshot."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    },
+    {
+      "run_id": "student",
+      "source_archive_id": "source_after_patch",
+      "applies_to": "future_processes",
+      "note": "Audit-only changes apply when this run next starts; command-start receipts will record the exact source again."
+    }
+  ],
+  "console_logs": [
+    {
+      "id": "recovered",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_recovered_before_attachment.txt",
+      "capture_method": "tmux_rendered_scrollback",
+      "coverage_from_start": "partial",
+      "run_ids": [
+        "teacher_fold_0"
+      ],
+      "note": "Recovered full available terminal scrollback including launch and all logged batch markers of completed epochs. Not byte-exact original stdout."
+    },
+    {
+      "id": "live",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/console_live.raw.log",
+      "capture_method": "tmux_pipe_stdout_stderr",
+      "coverage_from_start": "partial",
+      "run_ids": [
+        "teacher_fold_0",
+        "teacher_fold_1",
+        "teacher_fold_2",
+        "teacher_fold_3",
+        "teacher_fold_4"
+      ],
+      "attached_at": "2026-10-25T16:06:17+08:00"
+    }
+  ],
+  "console_coverage": [
+    {
+      "run_id": "teacher_fold_0",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "recovered",
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    },
+    {
+      "run_id": "teacher_fold_1",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    },
+    {
+      "run_id": "teacher_fold_2",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    },
+    {
+      "run_id": "teacher_fold_3",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    },
+    {
+      "run_id": "teacher_fold_4",
+      "coverage_from_start": "complete",
+      "log_ids": [
+        "live"
+      ],
+      "coverage_explanation": "For fold0: rendered launch history and every expected batch marker of completed epochs are present, followed by a continuous raw pipe. For later folds: pipe was attached before their launch."
+    }
+  ],
+  "runs": [
+    {
+      "id": "teacher_fold_0",
+      "role": "teacher",
+      "fold": 0,
+      "expected_epochs": 20,
+      "complete": true,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/config.json",
+      "source_archive_id": "source_before_patch",
+      "completed_epochs": 20
+    },
+    {
+      "id": "teacher_fold_1",
+      "role": "teacher",
+      "fold": 1,
+      "expected_epochs": 20,
+      "complete": false,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_1/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_1/config.json",
+      "source_archive_id": "source_after_patch"
+    },
+    {
+      "id": "teacher_fold_2",
+      "role": "teacher",
+      "fold": 2,
+      "expected_epochs": 20,
+      "complete": false,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_2/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_2/config.json",
+      "source_archive_id": "source_after_patch"
+    },
+    {
+      "id": "teacher_fold_3",
+      "role": "teacher",
+      "fold": 3,
+      "expected_epochs": 20,
+      "complete": false,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_3/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_3/config.json",
+      "source_archive_id": "source_after_patch"
+    },
+    {
+      "id": "teacher_fold_4",
+      "role": "teacher",
+      "fold": 4,
+      "expected_epochs": 20,
+      "complete": false,
+      "checkpoint_audit": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_4/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_4/config.json",
+      "source_archive_id": "source_after_patch"
+    },
+    {
+      "id": "student",
+      "role": "student",
+      "expected_epochs": 25,
+      "complete": false,
+      "checkpoint_audit": "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/checkpoint_audit.jsonl",
+      "config": "/home/featurize/work/runs/022_convnext_v1_tiny512_kd/config.json",
+      "source_archive_id": "source_after_patch"
+    }
+  ],
+  "supporting_files": [
+    {
+      "kind": "dependency_lock",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_lock.txt"
+    },
+    {
+      "kind": "environment_record",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/environment_record.json"
+    },
+    {
+      "kind": "organizer_notice",
+      "path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/compliance_repair_20261025/rules/user_forwarded_official_notice.txt"
+    },
+    {
+      "kind": "historical_observation",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_status_observation.json"
+    },
+    {
+      "kind": "historical_observation_original",
+      "path": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/evidence/historic_epoch_1_original_tool_record.json"
+    }
+  ],
+  "historical_missing_evidence": [
+    {
+      "blocking": false,
+      "detail": "Epoch1 hash and trainer status commit timestamp recovered from an earlier original read-only tool observation. Exact checkpoint file mtime was not retained by the former code and cannot be recreated; no substitute is claimed to be that file mtime."
+    },
+    {
+      "blocking": false,
+      "detail": "Pre-attachment console output is recovered rendered tmux history, with all expected logged batch markers verified. Raw byte-exact stdout/stderr capture begins at 16:06:17 HKT."
+    }
+  ],
+  "console_marker_check": [
+    {
+      "fold": 0,
+      "epoch": 1,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    },
+    {
+      "fold": 0,
+      "epoch": 2,
+      "expected_markers": 123,
+      "observed_markers": 123,
+      "missing_markers": []
+    }
+  ],
+  "verification_scope": "Retention repair only; future checkpoints and final model/CSV/T4 compliance remain pending until produced and independently checked.",
+  "updated_at_utc": "2026-10-25T13:26:32.971417+00:00"
+}

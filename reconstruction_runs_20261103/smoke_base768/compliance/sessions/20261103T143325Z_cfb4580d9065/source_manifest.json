@@ -1,0 +1,86 @@
+[
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/000___init__.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/__init__.py",
+    "sha256": "4b6551200ed222f9c975241ff2b5ff5660c5288c5d699a6500f25347028d8551",
+    "size_bytes": 78
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/001_data.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/data.py",
+    "sha256": "e1a2718615ea1e7893637318363c382e75284db5fe97779908055897ba10c524",
+    "size_bytes": 11736
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/002_evaluate.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/evaluate.py",
+    "sha256": "1048f1baeae15e31747f0c4ca8f47d2a5eacfeb55777ddeb399d34852c6a0232",
+    "size_bytes": 15526
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/003_model.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/model.py",
+    "sha256": "4b178fc0549870fc3fe77a1e349be1399a41f11a3b3a87487a142c30f9297b91",
+    "size_bytes": 16603
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/004_provenance.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/provenance.py",
+    "sha256": "2e6f4823b01700bdb4075488fd27227d66f11fc4740e65baa41f0aa16f5fe4f5",
+    "size_bytes": 4400
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/005_runtime.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/runtime.py",
+    "sha256": "e6e4e808799987d587b44118a2fdde072cc0d7c0a4716a7d51b2710a76833557",
+    "size_bytes": 2336
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/006_splits.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/splits.py",
+    "sha256": "1182db0d056f78d5d17a6bae94e0df622dcbbab95749fb185f4cf94dc81761b2",
+    "size_bytes": 10353
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/007_test_data.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/test_data.py",
+    "sha256": "3f3a3697da6782c085989dc7555cde86fd08d3d435215d17e5f74dfea2c369b5",
+    "size_bytes": 9140
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/008_test_evaluate.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/test_evaluate.py",
+    "sha256": "b64c36854fc9efea8d2d010c509f79bfe6d6c7c1d98803360e3aa2c6012cba3f",
+    "size_bytes": 8392
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/009_test_model.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/test_model.py",
+    "sha256": "cafc49bde939d445563c463b218254e76435937076c291c0046ced0f12645dfa",
+    "size_bytes": 8326
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/010_train.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/reconstruction/train.py",
+    "sha256": "eb3e9fcc6793018d441e8887d2cda18b8d96c83104e8f6bf870fadd721d36dd6",
+    "size_bytes": 19795
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/011_training_compliance.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/training_compliance.py",
+    "sha256": "393b01704689e96c8b4d7bb354a3e3a8d440261b11d7244750a6861645bb5885",
+    "size_bytes": 12786
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/012_audit_trail.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/audit_trail.py",
+    "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+    "size_bytes": 7976
+  },
+  {
+    "archived_path": "sessions/20261103T143325Z_cfb4580d9065/source/013_training_hooks.py",
+    "original_path": "/home/featurize/work/cxr_research_20261103/training_hooks.py",
+    "sha256": "54e54a13f477bb12e22ab92407d3b5b6f0c8aacb1c22f668c607cf99a49713e9",
+    "size_bytes": 4278
+  }
+]

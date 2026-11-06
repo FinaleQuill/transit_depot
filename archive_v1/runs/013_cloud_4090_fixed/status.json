@@ -1,0 +1,12 @@
+{
+  "state": "epoch_complete",
+  "completed_epochs": 2,
+  "validated_epochs": 2,
+  "backward_batches": 2316,
+  "optimizer_updates": 2312,
+  "ema_updates": 2312,
+  "amp_skipped_steps": 4,
+  "best_epoch": 2,
+  "validation_complete": true,
+  "updated": "2026-10-18T16:10:07+08:00"
+}

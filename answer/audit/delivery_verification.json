@@ -1,0 +1,20 @@
+{
+  "completed_hong_kong": "2026-10-20T13:14:46.034738+08:00",
+  "all_passed": true,
+  "submission_final": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv",
+  "submission_for_upload": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission.csv",
+  "sha256": "b092d26196c5586af55a9173cc5c8582c003bd2e9135aa94ce17f2f760a0620b",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "macro_auc_official_valid": 0.8002477167909007,
+  "macro_f1_at_0_5_official_valid": 0.42424374963405304,
+  "data_rows": 14140,
+  "studies": 1414,
+  "source_hashes_unchanged_at_delivery": true,
+  "platform_upload_performed": false
+}

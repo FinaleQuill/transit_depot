@@ -1,0 +1,8 @@
+{
+  "source_checkpoint_sha256": "e34216e3d894c5deb22c7de52562421b8c9d2e9b1dd94ae6bf4bc5317ef1fab2",
+  "actual_inference_bytes": 180495241,
+  "size_limit_bytes": 500000000,
+  "size_pass": true,
+  "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+  "model_forward_executed": false
+}

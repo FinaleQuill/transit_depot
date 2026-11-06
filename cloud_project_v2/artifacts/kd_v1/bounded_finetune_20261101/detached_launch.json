@@ -1,0 +1,10 @@
+{
+  "pipeline_pid": 9897,
+  "command": [
+    "/environment/miniconda3/bin/python3",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/run_bounded_pipeline.py"
+  ],
+  "detached": true,
+  "test_prediction_enabled": false
+}

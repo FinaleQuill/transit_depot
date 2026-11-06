@@ -1,0 +1,17 @@
+{
+  "gpu_processes": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "gpu_state": {
+    "exit_code": 0,
+    "stdout": "0 %, 1 MiB",
+    "stderr": ""
+  },
+  "tmux": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "no server running on /tmp/tmux-1000/default"
+  }
+}

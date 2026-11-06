@@ -1,0 +1,13 @@
+{
+  "captured_utc": "2026-10-28T18:07:52.606794+00:00",
+  "bundle_sha256_exit_code": 0,
+  "all_131_declared_files_unchanged": true,
+  "portable_selection_changed_fields": [
+    "manifest_path"
+  ],
+  "manifest_path": "/home/featurize/work/deliveries/034_dual768_proxy_timing_20261029/bundle/inputs/valid_manifest.csv",
+  "no_production_source_edits": true,
+  "no_test_csv_regeneration": true,
+  "gpu_processes_final_empty": true,
+  "project_git_status": ""
+}

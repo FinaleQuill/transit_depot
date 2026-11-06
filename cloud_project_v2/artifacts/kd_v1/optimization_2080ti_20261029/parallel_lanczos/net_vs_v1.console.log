@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-29T09:08:13.206490+00:00",
+  "scope": "CPU-only diagnostic after both artifact validation jobs stopped; fixed8 images,3 alternating-order observations per implementation; no formal GPU/end-to-end benchmark",
+  "comparison": "current_v1 includes CHW normalization and deferred finite checks; CPU load path only,not old033",
+  "python": "3.12.15",
+  "numpy": "1.26.4",
+  "Pillow": "10.4.0",
+  "max_workers_per_source_image": 4,
+  "cross_image_prefetch": false,
+  "current_v1_source_sha256": "ef914deeba87c86817e6600388079b49c94dc7a8224d28714b2d8d0e20c27bd8",
+  "parallel_source_sha256": "087a37b4031632adb88f718ed8d9c8e9f233d6b8e6a4c63cfc2e3e57a44a935d",
+  "all_float32_byte_parity_checks_pass": true,
+  "mean_sample_median_ms": {
+    "current_v1_load768_ms": 97.7569868749697,
+    "parallel_both_axes4_load768_ms": 88.06954250013632
+  },
+  "net_cpu_ms_saved": 9.687444374833376,
+  "loadavg": "1.92 2.01 1.68 2/450 17475\n",
+  "training_or_gpu_executed": false,
+  "production_source_changed": false
+}

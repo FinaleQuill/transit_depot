@@ -1,0 +1,22 @@
+{
+  "state": "failed",
+  "stage": "train_A_tiny",
+  "pid": 28152,
+  "child_pid": null,
+  "started_utc": "2026-11-01T19:21:38.352530+00:00",
+  "jobs": {
+    "A_tiny": {
+      "state": "running",
+      "retries": 0,
+      "mirrored_epoch": 1,
+      "last_exit_code": 0
+    }
+  },
+  "evaluations": {},
+  "error": "RuntimeError: A_tiny has STOP marker; refusing automatic retry",
+  "source_manifest": "/home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/pipeline_sources.json",
+  "run_root": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102",
+  "test_predicted": false,
+  "updated_utc": "2026-11-01T19:49:44.913012+00:00",
+  "elapsed_seconds": 1686.6
+}

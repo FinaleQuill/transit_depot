@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-10-25T13:38:30.084590+00:00",
+  "checkpoints": [
+    "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/retained/epoch_013_last.pt",
+    "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt"
+  ],
+  "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "image_root": "/home/featurize/data/cxr_first",
+  "image_size": 768,
+  "precision": "bfloat16",
+  "batch_size": 4,
+  "num_workers": 8,
+  "seed": 43,
+  "diagnostic_only": true,
+  "thresholds_fitted": false,
+  "test_used": false,
+  "diagnostic_source_archive": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/validation_epoch13_vs20/evidence/diagnostic_source_20261025T133828Z_e80af81e",
+  "checkpoint_selection_performed": false,
+  "pretrained_downloads": false,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch_version": "2.10.0+cu128"
+}

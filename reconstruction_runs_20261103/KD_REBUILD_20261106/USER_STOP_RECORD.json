@@ -1,0 +1,35 @@
+{
+  "stopped_at": "2026-11-06T18:11:38+08:00",
+  "user_instruction": "比赛只剩一周，每天只有一次提交机会，时间不够。先停止现在的思路。",
+  "action": "Wrote experiment STOP and sent SIGTERM to the active teacher container; no alternative run started.",
+  "controller": {
+    "pid": 12157,
+    "state": "failed",
+    "exit_code": 130,
+    "reason": "Container received SIGTERM; expected user stop, not numerical failure."
+  },
+  "current_run": "dinov3_l_inner0",
+  "interrupted_epoch": 3,
+  "interrupted_progress": {
+    "studies_done": 5408,
+    "studies_total": 9879,
+    "optimizer_updates": 787,
+    "skipped_updates": 0
+  },
+  "last_complete_epoch": 2,
+  "checkpoint": {
+    "last_path": "/home/featurize/data/kd_rebuild_20261106/state/dinov3_l_inner0/last.pt",
+    "last_sha256": "956b8278cd723dbdad05d894ae23279ffedbf277eac5dd3f5c3408777a4c00e1",
+    "ema_path": "/home/featurize/data/kd_rebuild_20261106/state/dinov3_l_inner0/latest_ema_fp16.pt",
+    "ema_sha256": "354c3785315a901fa5d8e7b67181c10f84a00e723337d3a87f5590a87b339007",
+    "sha256_verified_after_stop": true
+  },
+  "completed_teachers": 0,
+  "students_started": false,
+  "submission_generated_or_replaced": false,
+  "gpu_training_processes_remaining": 0,
+  "experiment_stop_file_present": true,
+  "automatic_restart": false,
+  "automatic_queue_continuation": false,
+  "next_training_requires_new_explicit_user_authorization": true
+}

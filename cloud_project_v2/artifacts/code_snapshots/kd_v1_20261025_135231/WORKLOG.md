@@ -1,0 +1,845 @@
+# 工作记录（新工程）
+
+### 2026-10-16 23:50 · 封存旧工程并重建
+
+- 结果：旧工程归档到 archive/legacy_20261016_2345，原图/图片缓存/截图保留，原始三份CSV哈希已登记；训练0。
+- 试错：PowerShell隐藏Git目录移动部分完成，已保留两边元数据并核对HEAD后合并，剩余项目用校验路径后的同盘原子移动完成；未丢弃原件。
+- 下一步：全量解码、文件与像素哈希、近重复/质量/标签审计，输出清洗清单、复核项和验收报告。
+
+### 2026-10-17 00:00 · 清洗实现与清单核查
+
+- 任务：CLEAN-V1，全量33984原图、固定官方划分；只做CPU数据处理，训练/模型推理0。
+- 事实：train/valid/test为30344/1422/2218图，Study为18513/859/1414；元数据问题、跨患者、孤儿图均0，源CSV哈希与封存前一致；图片解码尚待完成。
+- 改动：新metadata审计、可恢复扫描、精确/感知哈希查重；资料依据写入docs/CLEANING_REFERENCES.md。测试伪标签不用；质量/近重复只复核，不自动补医学标签。
+- 学习点/下一步：多视角不能当重复垃圾；先全量解码，再按训练集分布列质量候选，输出新清单与可回滚缓存。
+
+### 2026-10-17 00:02 · 启动全量图像审计
+
+- 执行：`.venv-competition\Scripts\python.exe -m cxr_clean --stage scan --workers 4 --output data/clean_v1`；run_id=CLEAN-V1，原图33984张，训练0、推理0。
+- 改动：严格完整解码、字节/完整像素SHA、pHash/dHash、常量图和512尺度质量统计；SQLite支持可核对断点恢复。metadata 8项、图像10项合成测试通过。
+- 决策：跨test身份关联仅报告，不反向影响训练筛选；pHash≤4仅复核，质量分位数只从train拟合。原图只读，排除只改新清单。
+- 验收/下一步：解码覆盖33984、源哈希不变、标签不改、valid/test覆盖不变；完成扫描后生成清单和300尺寸缓存。
+
+
+### 2026-10-17 00:07 · 清洗边界复核与续跑修正
+
+- 事实：32项合成测试通过；覆盖坏图/精确与近重复/测试隔离/多标签原样保留/缓存损坏重建，当前全量扫描进行中，训练0。
+- 试错：原analyze/cache只核对SQLite的ID集合，源图或审计代码改变后可能复用旧结果；替换为每阶段检查路径、大小、mtime、代码指纹。原标签验收共享列表也已改为重解析原字符串，防止误通过。
+- 对比：同一合成数据与固定seed43验证策略，医学模型train/val/test指标不适用；未改变原图或标签。
+- 学习点/下一步：断点不是“文件存在就跳过”；证据必须绑定源内容与处理版本。扫描后生成300RGB无损缓存并逐张回读、核对源SHA。
+- 阶段证据（00:08，未完成全量）：约2.3万图均可解码，发现13组像素重复，均为同Study；最终数量以全量报告为准，不据此推断其余图片无问题。
+
+### 2026-10-17 00:12 · 全量解码完成，启动清单与缓存
+
+- 事实：33984/33984原图完整扫描完成，耗时525秒；解码失败0、常量图0，均为8bit灰度JPEG；不是只检查文件头。完整记录见scan.sqlite3、full_scan_completion.json。
+- 执行：`.venv-competition\Scripts\python.exe -m cxr_clean --stage cache --workers 8 --output data/clean_v1`；8进程仅CPU数据处理，训练/模型推理0。
+- 目标/下一步：生成精确去重、标签和质量复核CSV，再建保比例300RGB缓存；每张重新核对源SHA，写后完整解码，最后计数/覆盖/标签验收。原图与原CSV保持只读。
+- 清单结果（00:13）：train30344→30330图，排除14张同Study/同标签/同像素重复；18513 Study和11055患者均保留。2769张质量/相似候选仅复核；train-valid精确内容交叉0。缓存生成中，尚未宣告验收完成。
+- 独立复核/重放（00:16）：14张均能找到同Study/标签/双SHA的保留代表；十类Study阳性数前后完全相同。相同原始索引/扫描快照重放，17份清洗决策产物逐字节一致（缓存路径填入前），证据replay_check.json；候选2769=质量825+近似1972−重叠28。
+
+### 2026-10-17 00:18 · 发现非恒定但内容残缺的异常图
+
+- 事实：视觉核对train:019927原图与300缓存，二者均只剩窄条影像；512尺度近黑像素97.156965%，熵0.421597。同Study另有train:019928，尚待一起复核；不是缓存生成造成。
+- 替换决策：原规则只自动排损坏/常量与精确重复，无法隔离此非恒定残片；新增逐图、绑定原SHA的技术复核隔离，不把97%阈值推广到其他图，也不改疾病标签。
+- 对照/风险：同数据/划分，模型seed与epoch不适用、训练0；先保留自动清洗v1，再派生复核版本，单独记录每项证据和Study/标签影响；医学正确性仍待专业复核。
+- 学习点/下一步：可解码不等于有用，自动分数先定位问题、再看原图确认；检查其余极端候选，隔离后验收并保留回滚路径。
+- 复核追加（00:21）：train:003713原图/缓存均为灰色噪声、无可见胸廓（std20.459235，熵6.378179，非恒定）；同Study完整图train:003714已查看保留。隔离配置增至2项，预期train30330→30328，Study/十类Study阳性数应不变；证据与原SHA写docs/manual_review_v1.json。
+
+
+### 2026-10-17 00:27 · 复核版验收与交付
+
+- 执行：`.venv-competition\Scripts\python.exe -X utf8 -m cxr_clean.curate --parent data/clean_v1 --output data/clean_v1_reviewed --decisions docs/manual_review_v1.json`；训练/推理0。
+- 结果：原始30344→父版30330→复核30328图；14重复+2技术隔离，18513 Study/11055患者及十类Study阳性数不变；33968继承缓存SHA全通过，valid/test覆盖完整，38项测试通过。
+- 决策/学习点：保留2项逐图隔离，父版原貌可回滚；不要把“文件可解码”当“内容合格”，也不要把2769个算法候选全删。已看48个展示位并核对2张异常原图与同Study正常视角；其余候选医学含义待验证。
+- 证据/下一步：data/clean_v1_reviewed/DELIVERY_REPORT.md、train_clean.csv、technical_review_evidence.jpg、acceptance.json；17份最终决策字段重放一致。完成交付后停在数据阶段，后续优先专业复核及训练方案，未经后续授权不启动训练。
+- 最终交付校验：初稿未处理test空targets而报JSONDecodeError；修正校验脚本按None核对（未改数据），14项交付检查全部通过、63份文件哈希登记；CSV SHA256见delivery_check.json。测试集无标签不能当全阴性，父产物未变。
+
+### 2026-10-17 00:44 · 工程与训练准备（仅写代码）
+
+- 授权范围：只创建根目录dataset.py、model.py和必要工作记录；原图/缓存/清洗CSV只读，不运行Python脚本、训练、模型前向、反向传播、权重下载或性能测试，训练0。
+- 目标：接入复核版清单与300缓存，在线增强/Mixup/CutMix、多标签软标签、Study概率汇总，以及B3十维logits和仅train估计的BCE正例权重；注释用中文。
+- 判断/下一步：test空targets必须保持无标签；Mixup/CutMix只在train批次执行，CutMix比例按实际裁剪面积；先静态核对依赖接口，文件写完即停，等用户审查。
+- 完成（00:50）：根dataset.py已写入只读缓存Dataset、Albumentations2.x增强、Mixup/CutMix训练collate、预取/worker种子、跨batch完整Study概率均值；model.py提供B3十维logits、仅train负/正比pos_weight和BCEWithLogitsLoss。
+- 静态审阅：未发现阻断问题；CutMix按真实裁剪面积混合标签、test=None、eval无随机变换、损失前无Sigmoid。当前环境缺albumentations/timm，未安装；未运行任何Python/测试/训练/模型/权重下载，原图与缓存未动，实验0。
+- 学习点/交接：多热混合后保持浮点软标签，不能argmax；pos_weight默认逐图统计匹配逐图损失，可选Study统计须另记实验。仅静态核对，运行正确性待后续授权验证；两文件保存后停止，等待用户人工审查，撤销只需移除这两个新文件。
+
+### 2026-10-17 00:58 · 训练与推理脚本准备（只写文件）
+
+- 范围：只创建train.py、inference.py及工作记录；不执行Python/训练/推理/测试，不安装依赖或下载权重，训练0、推理0。dataset.py/model.py及原图/缓存保持原样。
+- 目标/判断：分阶段冻结与小学习率微调；按原始硬标签统计训练指标，验证按Study聚合后独立选十类F1阈值；权重与同epoch阈值绑定保存，以Macro-AUC选best。
+- 待核对：用户描述的11列宽表与现有官方三列长表记录冲突；先读取官方来源，保留完整概率，明确区分正式提交与本地阈值判定表。文件写完静态审阅后停下。
+- 完成（2026-10-17 01:09）：根train.py支持冻结主干仅训头部→解冻全网小LR、在线优化loss+无增强训练/验证Study AUC/F1、验证逐类精确F1阈值；best.pt内嵌同轮阈值，thresholds.json绑定权重SHA/epoch；inference.py对logits仅一次Sigmoid、Study均值后阈值判定并导出校验。
+- 格式决策：2026-10-17重新读取官网七.2（https://www.ncccu.org.cn/index/Paper/case1.html），正式submission.csv为Study_id/Predict_class/Probability长表、每Study十行；用户所需11列概率/二值宽表另存。Gate显式可选；保持连续概率，不在test调阈值。
+- 静态试错/交接：补CUDA初始化前cuBLAS确定性配置、ZoneInfo改固定UTC+8、AMP溢出交GradScaler处理；均为潜在问题防护，未运行验证，不能归因任何模型收益。训练/推理/测试/安装/下载均0，未生成权重/阈值/CSV；原图缓存及已审dataset.py/model.py未改。文件已保存，下一步等人工审查与后续授权；回滚仅移除两个新文件。
+
+### 2026-10-17 01:50 · 挂机前安全检查（不启动训练）
+
+- 授权：执行四个文件py_compile、读取两个Python环境的依赖元数据/路径、静态核对AUC日志与STOP/权重保存；不导入训练模块、不构建模型、不训练/推理/安装/下载。
+- 计划：优先确认带CUDA的.venv，区分.venv-competition的CPU环境；只检查runs/deliveries，不预建正式run目录，以免触发防覆盖拒绝。
+- 判断/下一步：语法通过不代表依赖齐全或GPU运行通过；汇总实测结果后只给手动安装/启动及缩小batch命令，训练次数保持0。
+- 结果（01:52）：四文件py_compile在.venv Python3.14.2及.venv-competition Python3.12.15均通过；.venv torch2.11.0+cu128/CUDA可用、sklearn1.9.1、pip check无破损；缺timm/albumentations/OpenCV。competition是torch2.10.0+cpu。数据CSV/缓存存在，runs/deliveries尚无，未来脚本会建父目录。
+- 控制逻辑确认：每完整epoch控制台打印train_AUC/val_AUC，history.jsonl键为train.macro_auc/val.macro_auc；默认检查output/STOP，当前轮训练+验证+训练诊断+保存结束后停；last.pt每完整轮保存，best.pt按valid Macro-AUC择优（并列F1），阈值绑定。last不含优化器/RNG，无续训入口。
+- 结论/交接：语法/路径逻辑通过，依赖未齐，不能称为可直接挂机。仅建议用户补装timm、albumentations==2.0.8及opencv-python-headless（cv2普通/无GUI只选一种）；未安装、未改源码/图片/缓存、训练/推理0。建议补齐后用.venv手动执行train.py --epochs 15 --freeze-epochs 2 --batch-size 16 --device cuda --output runs/b3_overnight_20261017_01，显存不足改--batch-size 8；该run目录未预建。下一步由用户安装及手动启动，当前停止操作。
+
+### 2026-10-17T02:01:19+08:00 · b3_overnight_20261017_01
+
+- 任务：新run注册，数据/配置见E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_01；目标：冻结2轮后全网微调；计划15轮，当前完成0轮/反传0批，尚未启动优化。
+
+### 2026-10-17T02:01:42+08:00 · b3_overnight_20261017_01
+
+- 执行：启动epoch=1/15，phase=head_only，lr=[('backbone', 1e-05), ('head', 0.001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T02:04:36+08:00 · b3_overnight_20261017_01
+
+- 结果：epoch=1完成，train loss/AUC/F1=1.213605/0.721451/0.354391，valid=1.116747/0.700285/0.385046；事实：best=True，阈值与同轮权重绑定；推测：泛化收益仍待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_01/history.jsonl。
+
+### 2026-10-17T02:04:36+08:00 · b3_overnight_20261017_01
+
+- 执行：启动epoch=2/15，phase=head_only，lr=[('backbone', 1e-05), ('head', 0.001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T02:06:02+08:00 · b3_overnight_20261017_01
+
+- 失败/中断：RuntimeError: DataLoader worker (pid(s) 50616, 4796, 42632) exited unexpectedly；已完成1轮，实际反传批数3792；保留完整轮best/last，禁止把部分轮称为完整训练。
+
+### 2026-10-17 02:12 · Windows Worker防护与50轮余弦调度（仅代码）
+
+- 事实：用户run b3_overnight_20261017_01完成1个完整epoch；epoch2训练后验证发生worker退出，日志累计反传3792批，best/last仍为epoch1；原配置workers4/prefetch2/persistent=True/epochs15。根因未复现，不能认定一定是OpenCV或persistent导致。
+- 授权/方案：本次启动训练0、推理0，仅修改train.py/dataset.py并py_compile四文件；关闭OpenCV线程，持久worker禁用、prefetch1，50轮+解冻后48轮余弦衰减。评估故障串行定位并跳过不可读样本；缺验证覆盖时指标无效、不调阈值/不覆盖best，仍保存last并继续。
+- 对照/风险：备份见artifacts/code_snapshots/windows_loader_20261017_0212；此次同时改多个变量（混杂变量，效果结论不可靠），未做同seed/同epoch训练对照。50轮与余弦不能保证提分，也不能消除验证过拟合；依用户限制跳过技能中的训练复现步骤，仅静态审阅与语法反馈。
+- 学习点/下一步：预取量与常驻worker都增加Windows资源占用；坏批次不能冒充完整验证。保留原run/权重/阈值原貌，修改后检查学习率不会被阶段函数每轮重置，并登记真实语法结果。
+- 执行中：dataset.py已关闭cv2线程并强制persistent_workers=False、默认prefetch=1，新增可定位ID的读取异常/120秒worker超时；train.py已加入顺序取批、故障后串行逐图复核与缺图验证失效标记，50轮默认值及学习率重置条件已修改。仅静态编辑，未执行训练；下一步接入调度器与保存逻辑。
+- 修改完成待检查：train.py解冻时仅创建一次CosineAnnealingLR(T_max=epochs-freeze_epochs, eta_min=0)，每个优化轮末step一次；history记录本轮/下一轮lr。Worker故障后串行复核并记录ID，缺图时AUC/F1/阈值为null且不覆盖best，last显式未验证；后续评估保持串行。已交独立agent静态复核，接下来仅执行四文件py_compile。
+
+### 2026-10-17 02:19 · 补丁语法检查与交接
+
+- 检查结果：执行 `.\.venv\Scripts\python.exe -m py_compile train.py dataset.py inference.py model.py`，退出码0；四文件语法通过（仅生成pyc，不导入执行训练模块）。本次训练0、推理0、安装0；真实worker稳定性和指标变化均待验证。
+- 独立静态复核通过：确认freeze_epochs=0/2的余弦衔接、取批异常捕获范围、缺图不择best和history的JSON类型；SHA256复核原run的best.pt/last.pt/thresholds.json及model.py/inference.py均未改变。原图、缓存与CSV未执行写操作。
+- 交接/回滚：建议用户在项目目录手动运行 `.\.venv\Scripts\python.exe train.py --epochs 50 --freeze-epochs 2 --batch-size 16 --num-workers 2 --prefetch-factor 1 --worker-timeout 120 --device cuda --output runs/b3_overnight_20261017_02`（未执行；新run、非续训，目录当前不存在）；显存不足改batch-size 8，多进程仍不稳可改num-workers 0。替换结论：代码保留、训练效果待验证，无新实验指标；回滚仅从上述快照复制train.py/dataset.py。下一步由用户手动验证完整epoch、学习率及坏图事件记录。
+
+### 2026-10-17 02:33 · 四Worker启动建议与实时进度（仅代码）
+
+- 任务/授权：用户反馈workers=0时GPU约4%（用户报告，未复测），要求恢复4进程建议命令并增加实时输出；执行者主agent，训练/推理0，只改代码及py_compile，不做性能短测。
+- 核查/计划：dataset.py:31已有cv2.setNumThreads(0)，工厂:372强制persistent_workers=False，train.py:478调用同样显式False；prefetch=1。接下来显式传epoch、首批/每50批/尾批打印loss且flush=True，准备期/取批前打印启动提示；防护存在不代表Windows崩溃概率为0。
+- 学习点/边界：取批前打印能区分“正在等数据”和“已经开始优化”，批次日志帮助看是否在推进；输出flush不等同于排除死锁。用户禁止训练，本次仅静态核查，不作加速效果或根因结论；不改旧run/权重/清洗数据。
+- 修改：仅train.py新增epoch关键字参数并同步唯一调用处；enumerate(start=1)，首批/每50批/尾批输出Epoch、Batch、Loss且flush=True；run_training入口有准备提示，每轮取批前打印“=> 开始训练，数据加载中...”。dataset.py防护已存在，无需改写；下一步只执行两文件语法检查。
+- 验证：执行 `.\.venv\Scripts\python.exe -m py_compile train.py dataset.py`，退出码0，语法通过；未执行训练/推理/性能短测，吞吐量和GPU利用率变化待用户实测。命令建议使用--num-workers 4 --prefetch-factor 1及新目录runs/b3_overnight_20261017_03（当前不存在），保持50轮与既有调度。
+- 最新指令取代上述命令建议：用户指定--num-workers 8 --prefetch-factor 2 --batch-size 16，仅用于交付命令，不改低内存默认值；不是已测得的性能提升。指定“=> 开始训练，数据加载中...”已放在run_training的epoch循环前，每轮取首批前另报epoch；无tqdm，首批/50批/尾批均flush。8×2最多预取16批，内存压力高于4×1，实际速度/稳定性待用户运行验证；接下来重新py_compile。
+
+### 2026-10-17 02:35 · 最新8Worker指令交付
+
+- 事实/结果：按最新位置修改后再次执行 `.\.venv\Scripts\python.exe -m py_compile train.py dataset.py`，退出码0；两文件语法通过。独立agent已核对epoch传参、计数、flush与Worker防护；本次训练/推理/安装均0。
+- 交接：建议手动命令 `.\.venv\Scripts\python.exe -u train.py --epochs 50 --freeze-epochs 2 --num-workers 8 --prefetch-factor 2 --batch-size 16 --worker-timeout 120 --device cuda --output runs/b3_overnight_20261017_03`（未执行，新run非续训）；结论为代码保留、性能待验证，无新模型实验指标。回滚可仅移除train.py的进度/启动print，并把enumerate/epoch传参恢复，数据及旧权重未动。下一步由用户手动观察日志与吞吐。
+
+### 2026-10-17 02:44 · 启动无输出诊断（不训练）
+
+- 任务/授权：用户执行8worker/prefetch1命令后连启动准备提示都未见（用户报告）；本次仅静态检查、只读主机/进程状态、有限时的依赖导入诊断及py_compile，训练/前向/反向/推理均0，不终止用户进程。
+- 事实/假设：当前首条print位于run_training，而其前必须先导入numpy/torch/dataset(cv2/Pillow)/model；顶层导入阻塞、Python/终端未真正进入脚本、资源紧张均待验证。不能看到“无输出”就归因8worker；分派只读代码与主机核查，计划加导入前标记/阶段完成日志及DataLoader构建提示。
+- 学习点/边界：`-u`只能刷新已经执行的print；若程序卡在更早的import，后来加的print不会显示。依diagnosing-bugs诊断思路用不含训练的导入探针缩小范围，跳过用户禁止的训练复现；不动图片缓存/CSV/旧run，下一步保留诊断输出并补上事实结论。
+- 导入探针负面结果：`.venv python -X utf8 -u -c <逐项import+faulthandler 25秒限时>`中numpy 0.084秒成功；import torch超25秒，探针自退出1（未运行训练）。栈为torch/__init__.py:244 → platform.machine → uname → win32_ver → _wmi_query，卡在Python3.14的Windows系统信息查询，尚未到dataset/DataLoader。证据artifacts/startup_import_probe_20261017_0245.log；下一步检查安全回退方式，不再猜测8worker上限。
+- 回退对照：同一.venv新进程、同导入顺序，仅在torch前设platform._wmi=None，让Python既有OSError分支回退查询；torch 1.673秒，numpy/cv2/PIL/dataset/model/train/sklearn/albumentations/timm全部成功，进程6.67秒退出0。证据artifacts/startup_import_fallback_probe_20261017_0247.log。未创建模型/loader、训练0；系统缓存未控制（混杂变量，不能据此量化整体提速），但超时栈与回退成功一致支持WMI为本次启动阻塞点。
+- 修复/回滚：新增runtime_compat.py，仅Windows CPython3.14在第三方导入前令platform._wmi=None（私有属性，有版本依赖），使用标准库原有回退，不改系统服务/第三方库；train.py及dataset.py均调用，覆盖spawn重导入。train新增脚本最早标记、依赖分段日志、各make_dataloader前提示及模型初始化提示；备份artifacts/code_snapshots/startup_wmi_20261017_0248，回滚恢复两文件并移除新helper。未改变训练策略/样本/权重；下一步验证实际import路径并py_compile。
+
+### 2026-10-17 02:49 · 启动修复验证与交接
+
+- 验证：新进程不预设回退、直接import修补后的train（不执行main），连同torch/dataset/model共1.517秒导入成功；epochs=1/freeze_epochs=0/workers=0配置校验通过，未调用run_training。证据artifacts/startup_import_patched_probe_20261017_0250.log；train.py/dataset.py/runtime_compat.py的py_compile已退出0。
+- 主机核查：i9-14900HX、24核32逻辑线程，RAM31.73GiB/空闲17.80GiB，提交剩余40.18GiB；采样时无python进程且目标run03未创建，没有8worker进程上限/内存耗尽证据。CIM/WMI同样等待超10秒，改原生接口0.74秒完成；不据空闲快照保证训练峰值内存/吞吐。
+- 静态复核：子agent确认__main__保护、spawn不重入/不刷屏、factory构造不spawn、cv2线程0和persistent=False均保留；补入runtime_compat.py到provenance代码哈希清单。学习点：启动无输出应先查导入栈而不是盲目降worker；用户的一轮测试还需--freeze-epochs 0和新--output，避免配置校验误判为死锁。
+- 最终检查/下一步：最后改动后执行 `.\.venv\Scripts\python.exe -m py_compile train.py dataset.py`，退出码0；更新实验STARTUP-WMI-20261017，结论“启动导入回退保留；训练/8worker稳定性待验证”。本次训练0、推理0、下载0；用户手动单进程命令：`.\.venv\Scripts\python.exe -X utf8 -u train.py --epochs 1 --freeze-epochs 0 --num-workers 0 --batch-size 16 --device cuda --output runs/b3_startup_single_20261017_01`，尚未执行、未预建目录；若最早标记仍不出现，需先检查终端是否停在PowerShell的续行提示。
+
+### 2026-10-17T02:52:04+08:00 · b3_startup_single_20261017_01
+
+- 任务：新run注册，数据/配置见E:\PycharmCodes\计挑人工智能赛道\runs\b3_startup_single_20261017_01；目标：冻结0轮后全网微调；计划1轮，当前完成0轮/反传0批，尚未启动优化。
+
+### 2026-10-17T02:52:25+08:00 · b3_startup_single_20261017_01
+
+- 执行：启动epoch=1/1，phase=full_finetune，lr=[('backbone', 1e-05), ('head', 0.0001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:02:19+08:00 · b3_startup_single_20261017_01
+
+- 结果：epoch=1完成，train loss/AUC/F1=1.238877/0.726732/0.362115，valid=1.097822/0.687135/0.367317；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_startup_single_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:02:19+08:00 · b3_startup_single_20261017_01
+
+- 交接：completed，完成1轮、完整验证1轮、反传1896批，best epoch=1；证据E:\PycharmCodes\计挑人工智能赛道\runs\b3_startup_single_20261017_01；下一步经授权用inference.py生成测试提交。
+
+### 2026-10-17T03:03:24+08:00 · b3_overnight_20261017_02
+
+- 任务：新run注册，数据/配置见E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02；目标：冻结2轮后全网微调；计划50轮，当前完成0轮/反传0批，尚未启动优化。
+
+### 2026-10-17T03:03:41+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=1/50，phase=head_only，lr=[('backbone', 1e-05), ('head', 0.001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:09:51+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=1完成，train loss/AUC/F1=1.213629/0.721636/0.349517，valid=1.117580/0.697172/0.376667；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:09:51+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=2/50，phase=head_only，lr=[('backbone', 1e-05), ('head', 0.001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:15:50+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=2完成，train loss/AUC/F1=1.113662/0.744258/0.368542，valid=1.072204/0.702996/0.375764；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:15:50+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=3/50，phase=full_finetune，lr=[('backbone', 1e-05), ('head', 0.0001)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:25:10+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=3完成，train loss/AUC/F1=1.169473/0.749498/0.371985，valid=1.059668/0.712537/0.384565；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:25:10+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=4/50，phase=full_finetune，lr=[('backbone', 9.989294616193018e-06), ('head', 9.989294616193017e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:34:14+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=4完成，train loss/AUC/F1=1.058211/0.782806/0.405562，valid=0.986478/0.740638/0.397287；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:34:14+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=5/50，phase=full_finetune，lr=[('backbone', 9.957224306869053e-06), ('head', 9.957224306869053e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:43:16+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=5完成，train loss/AUC/F1=1.004060/0.807955/0.431118，valid=0.958960/0.757799/0.421931；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:43:16+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=6/50，phase=full_finetune，lr=[('backbone', 9.903926402016153e-06), ('head', 9.903926402016153e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T03:52:18+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=6完成，train loss/AUC/F1=0.980605/0.827681/0.454421，valid=0.957826/0.764686/0.428872；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T03:52:18+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=7/50，phase=full_finetune，lr=[('backbone', 9.829629131445342e-06), ('head', 9.829629131445342e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:01:20+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=7完成，train loss/AUC/F1=0.957344/0.843370/0.463920，valid=0.956098/0.769244/0.434046；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:01:20+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=8/50，phase=full_finetune，lr=[('backbone', 9.73465064747553e-06), ('head', 9.73465064747553e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:10:28+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=8完成，train loss/AUC/F1=0.939606/0.858393/0.484652，valid=0.951108/0.773001/0.436963；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:10:28+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=9/50，phase=full_finetune，lr=[('backbone', 9.619397662556435e-06), ('head', 9.619397662556433e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:19:31+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=9完成，train loss/AUC/F1=0.917445/0.869497/0.517736，valid=0.955321/0.773927/0.439565；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:19:31+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=10/50，phase=full_finetune，lr=[('backbone', 9.484363707663443e-06), ('head', 9.484363707663441e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:28:32+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=10完成，train loss/AUC/F1=0.891289/0.880361/0.520731，valid=0.961438/0.776532/0.441899；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:28:32+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=11/50，phase=full_finetune，lr=[('backbone', 9.330127018922195e-06), ('head', 9.330127018922194e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:37:34+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=11完成，train loss/AUC/F1=0.875815/0.892142/0.553715，valid=0.996022/0.775356/0.440851；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:37:34+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=12/50，phase=full_finetune，lr=[('backbone', 9.157348061512728e-06), ('head', 9.157348061512727e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:46:36+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=12完成，train loss/AUC/F1=0.854149/0.902232/0.583224，valid=0.997085/0.776540/0.447707；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:46:36+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=13/50，phase=full_finetune，lr=[('backbone', 8.966766701456177e-06), ('head', 8.966766701456176e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T04:55:38+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=13完成，train loss/AUC/F1=0.838869/0.909165/0.596789，valid=1.006247/0.773711/0.440275；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T04:55:38+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=14/50，phase=full_finetune，lr=[('backbone', 8.759199037394888e-06), ('head', 8.759199037394886e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:04:40+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=14完成，train loss/AUC/F1=0.813860/0.915849/0.618966，valid=1.020214/0.776107/0.446493；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:04:40+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=15/50，phase=full_finetune，lr=[('backbone', 8.535533905932739e-06), ('head', 8.535533905932737e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:13:48+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=15完成，train loss/AUC/F1=0.801122/0.923205/0.605301，valid=1.061886/0.775566/0.442564；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:13:48+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=16/50，phase=full_finetune，lr=[('backbone', 8.296729075500345e-06), ('head', 8.296729075500344e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:22:49+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=16完成，train loss/AUC/F1=0.783632/0.928855/0.645796，valid=1.079821/0.773636/0.443672；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:22:49+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=17/50，phase=full_finetune，lr=[('backbone', 8.043807145043604e-06), ('head', 8.043807145043604e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:31:52+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=17完成，train loss/AUC/F1=0.766263/0.933593/0.669976，valid=1.109741/0.773433/0.441578；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:31:52+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=18/50，phase=full_finetune，lr=[('backbone', 7.777851165098012e-06), ('head', 7.777851165098013e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:40:55+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=18完成，train loss/AUC/F1=0.741907/0.936364/0.642576，valid=1.109700/0.775159/0.441576；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:40:55+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=19/50，phase=full_finetune，lr=[('backbone', 7.5e-06), ('head', 7.500000000000001e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:49:59+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=19完成，train loss/AUC/F1=0.730785/0.941243/0.687680，valid=1.072430/0.773566/0.449484；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:49:59+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=20/50，phase=full_finetune，lr=[('backbone', 7.211443451095007e-06), ('head', 7.211443451095007e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T05:59:01+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=20完成，train loss/AUC/F1=0.724716/0.946272/0.681245，valid=1.150602/0.771770/0.445924；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T05:59:01+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=21/50，phase=full_finetune，lr=[('backbone', 6.913417161825449e-06), ('head', 6.91341716182545e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:08:06+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=21完成，train loss/AUC/F1=0.709794/0.948733/0.655757，valid=1.114992/0.771859/0.443300；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:08:06+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=22/50，phase=full_finetune，lr=[('backbone', 6.607197326515808e-06), ('head', 6.607197326515808e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:17:13+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=22完成，train loss/AUC/F1=0.691521/0.952534/0.679066，valid=1.195910/0.770725/0.437979；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:17:13+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=23/50，phase=full_finetune，lr=[('backbone', 6.2940952255126035e-06), ('head', 6.294095225512603e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:26:17+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=23完成，train loss/AUC/F1=0.677959/0.955148/0.719449，valid=1.188913/0.772225/0.442982；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:26:17+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=24/50，phase=full_finetune，lr=[('backbone', 5.975451610080642e-06), ('head', 5.975451610080642e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:35:21+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=24完成，train loss/AUC/F1=0.660720/0.958213/0.699015，valid=1.235980/0.770402/0.444468；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:35:21+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=25/50，phase=full_finetune，lr=[('backbone', 5.652630961100259e-06), ('head', 5.652630961100259e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:44:24+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=25完成，train loss/AUC/F1=0.656989/0.961491/0.732839，valid=1.398425/0.766273/0.443741；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:44:24+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=26/50，phase=full_finetune，lr=[('backbone', 5.327015646150717e-06), ('head', 5.3270156461507165e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T06:53:28+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=26完成，train loss/AUC/F1=0.638764/0.963979/0.723068，valid=1.350061/0.768846/0.445460；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T06:53:28+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=27/50，phase=full_finetune，lr=[('backbone', 5e-06), ('head', 4.9999999999999996e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:02:32+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=27完成，train loss/AUC/F1=0.646823/0.963958/0.709010，valid=1.257080/0.765235/0.442294；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:02:32+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=28/50，phase=full_finetune，lr=[('backbone', 4.672984353849285e-06), ('head', 4.672984353849284e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:11:37+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=28完成，train loss/AUC/F1=0.628766/0.967771/0.753402，valid=1.381572/0.766314/0.440401；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:11:37+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=29/50，phase=full_finetune，lr=[('backbone', 4.347369038899742e-06), ('head', 4.347369038899742e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:20:44+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=29完成，train loss/AUC/F1=0.623978/0.969254/0.746342，valid=1.394800/0.761260/0.441193；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:20:44+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=30/50，phase=full_finetune，lr=[('backbone', 4.024548389919359e-06), ('head', 4.024548389919359e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:29:47+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=30完成，train loss/AUC/F1=0.626331/0.967242/0.701428，valid=1.234886/0.766071/0.440238；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:29:47+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=31/50，phase=full_finetune，lr=[('backbone', 3.705904774487397e-06), ('head', 3.7059047744873964e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:38:51+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=31完成，train loss/AUC/F1=0.611451/0.971493/0.741294，valid=1.414707/0.762338/0.444027；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:38:51+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=32/50，phase=full_finetune，lr=[('backbone', 3.392802673484192e-06), ('head', 3.392802673484192e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:47:54+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=32完成，train loss/AUC/F1=0.610887/0.970291/0.706258，valid=1.273646/0.761758/0.440564；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:47:54+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=33/50，phase=full_finetune，lr=[('backbone', 3.0865828381745523e-06), ('head', 3.086582838174552e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T07:56:58+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=33完成，train loss/AUC/F1=0.596342/0.972024/0.741516，valid=1.291815/0.763050/0.446389；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T07:56:58+08:00 · b3_overnight_20261017_02
+
+- 执行：启动epoch=34/50，phase=full_finetune，lr=[('backbone', 2.7885565489049944e-06), ('head', 2.7885565489049943e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T08:06:08+08:00 · b3_overnight_20261017_02
+
+- 结果：epoch=34完成，train loss/AUC/F1=0.598987/0.975417/0.736175，valid=1.461283/0.761974/0.442964；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T08:06:08+08:00 · b3_overnight_20261017_02
+
+- 交接：stopped_at_epoch_boundary，完成34轮、完整验证34轮、反传64464批，best epoch=12；证据E:\PycharmCodes\计挑人工智能赛道\runs\b3_overnight_20261017_02；下一步经授权用inference.py生成测试提交。
+
+### 2026-10-17 08:14 · 34轮结果诊断与抑制过拟合（仅代码）
+
+- 任务/授权：执行者主agent；分析用户run02完整history/config/provenance及当前dataset/model/train，自行制定不平衡/正则/早停/增强方案并改代码；本次训练/续训/前向/反向/推理均0，仅只读统计、静态核查和py_compile。历史run/权重/CSV/图片缓存保留原貌。
+- 已知事实：run02实际epochs=50、freeze=2、workers=0、seed=43，34轮完整验证后轮末停止；best epoch12，epoch34 train AUC=0.975417、val AUC=0.761974、val loss=1.461283。下一步逐轮核对峰值/逐类支持数/真实pos_weight与增强默认值，区分数据稀缺、阈值波动和过拟合，不把用户推断直接当根因。
+- 计划/学习点：分派只读指标分析与模型接口审查；先备份/hash旧产物，再实现有配置和证据的受限权重、正则化与AUC早停，保留B3和同划分基线。缺少新训练对照时所有提分效果均待验证；多变量方案必须标“混杂变量，结论不可靠”，不能伪造改进指标。
+- 保护完成：当前train.py/model.py/dataset.py备份到artifacts/code_snapshots/overfit_20261017_0816；原run history/best/last/thresholds、train/valid清单及dataset/inference记录SHA256，结束时复核。事实：旧实现已是原始Nneg/Npos加权BCE，并非未处理不平衡；timm本地源码drop_rate/drop_path默认0，需检查冻结阶段根模块eval造成的分类头功能式Dropout失效。
+- 代码进行中：train默认20轮/冻结2，加入AUC早停patience5、min_delta0.001、最早第8轮累计；头/骨干lr减半，WD1e-3且bias/BN不衰减，Dropout0.3/DropPath0.1，固定BN统计可关闭；Mixup保留alpha0.2，CutMix条件概率0.5→0.2。模型agent实现开方且封顶10的BCE权重和可选soft-target Focal；此组合多变量（混杂变量，提分归因不可靠），待训练验证。评估另记无权重BCE，避免不同损失数值直接对比。
+- 统计结果：34/34轮验证完整，跳过/回退均0，清单SHA与run一致；最低val loss为E8=0.951108（非E12），AUC峰E12=0.776540，仅比E10高0.000008；最高F1 E19=0.449484。第1类622/18513个train阳性Study、24/859个valid阳性Study，E34 train AUC0.999941/valid0.635729；图级原权重32.92394→sqrt5.73794，本数据cap10实际不触发。证据artifacts/overfit_review_20261017_0814；损失更温和是否改善召回/泛化待验证，不把稀缺或错标当已确诊。
+- 早停回放/诊断接口：仅对已有34轮日志回放，delta0.001/patience5在E15停，精确best仍保留E12（与显著改善计数分离）；不等于新配置会在E15停。train已增加逐类precision/recall、TP/FP/FN和AP及正例数，帮助区分误报/漏报；CLI同步新默认值，原始BCE与BN解冻均保留开关，下一步成品审查与语法检查。
+
+### 2026-10-17 08:21 · 优化补丁成品审查
+
+- 实现完成：model.py新增Dropout/DropPath参数、sqrt权重BCE及可选soft-target Focal，train.py已接入各配置并保留B3十类logits/逐类阈值/完整Study汇总/Worker防护；详细依据与消融限制见docs/OPTIMIZATION_PLAN_20261017.md。
+- 对比记录：EXPERIMENTS末尾追加B3-RUN02-POSTMORTEM与B3-REG20-PLAN（训练/val/test新指标均未运行）。首次定位对比表尾部时上下文不匹配，写入未生效，已改为末尾追加，历史实验行未改；失败日志与旧run保留。下一步只检查语法、纯日志早停回放及旧产物SHA，不运行任何模型。
+- 检查结果：执行`.\.venv\Scripts\python.exe -m py_compile model.py train.py dataset.py inference.py`退出0；用标准库AST仅抽取实际EarlyStopping类回放，E15停止/精确best E12，预热/禁用/NaN守卫均通过，见control_replay.json。旧run history/best/last/thresholds、train/valid清单、dataset.py/inference.py八项SHA均未变；建议新run目录不存在，未预建。独立静态复核无阻塞，未执行Focal数值/模型加载/训练测试，不能把语法通过当提分验证。
+- 交接：本次训练/续训/模型前向/反向/推理均0。建议用户人工审查后手动执行`.\.venv\Scripts\python.exe -X utf8 -u train.py --epochs 20 --freeze-epochs 2 --batch-size 16 --num-workers 8 --prefetch-factor 1 --worker-timeout 120 --seed 43 --device cuda --output runs/b3_regularized20_20261017_01`；此命令未执行，读取新默认配置，原run workers0→8也使随机增强序列不严格可比。更新B3-REG20-PLAN，结论为代码保留/效果待验证；下一步先检查少数类precision/recall和完整验证AUC，再以同新配置切原始权重/Focal/BN做单变量对照，不承诺提分。
+
+### 2026-10-17T08:23:02+08:00 · b3_reg20_20261017_01
+
+- 任务：新run注册，数据/配置见E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01；目标：冻结2轮后全网微调；计划20轮，当前完成0轮/反传0批，尚未启动优化。
+
+### 2026-10-17T08:23:19+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=1/20，phase=head_only，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 0.0005), ('head_no_decay', 0.0005)]；只读既有缓存，在线增强。
+
+### 2026-10-17T08:29:27+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=1完成，train loss/AUC/F1=0.841427/0.694595/0.337960，valid=0.645775/0.673477/0.363160；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T08:29:27+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=2/20，phase=head_only，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 0.0005), ('head_no_decay', 0.0005)]；只读既有缓存，在线增强。
+
+### 2026-10-17T08:35:29+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=2完成，train loss/AUC/F1=0.728444/0.724116/0.363715，valid=0.608590/0.703301/0.374453；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T08:35:29+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=3/20，phase=full_finetune，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 5e-05), ('head_no_decay', 5e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T08:44:38+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=3完成，train loss/AUC/F1=0.613782/0.755415/0.381257，valid=0.562203/0.728833/0.393213；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T08:44:38+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=4/20，phase=full_finetune，lr=[('backbone_decay', 4.962019382530521e-06), ('backbone_no_decay', 4.962019382530521e-06), ('head_decay', 4.962019382530521e-05), ('head_no_decay', 4.962019382530521e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T08:53:40+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=4完成，train loss/AUC/F1=0.574302/0.771442/0.387384，valid=0.550029/0.745200/0.410481；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T08:53:40+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=5/20，phase=full_finetune，lr=[('backbone_decay', 4.849231551964771e-06), ('backbone_no_decay', 4.849231551964771e-06), ('head_decay', 4.849231551964772e-05), ('head_no_decay', 4.849231551964772e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:02:43+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=5完成，train loss/AUC/F1=0.562652/0.783602/0.407686，valid=0.541008/0.757715/0.416926；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:02:43+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=6/20，phase=full_finetune，lr=[('backbone_decay', 4.665063509461097e-06), ('backbone_no_decay', 4.665063509461097e-06), ('head_decay', 4.665063509461098e-05), ('head_no_decay', 4.665063509461098e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:11:45+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=6完成，train loss/AUC/F1=0.551570/0.791720/0.417115，valid=0.539089/0.760343/0.419037；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:11:45+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=7/20，phase=full_finetune，lr=[('backbone_decay', 4.415111107797444e-06), ('backbone_no_decay', 4.415111107797444e-06), ('head_decay', 4.415111107797445e-05), ('head_no_decay', 4.415111107797445e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:20:45+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=7完成，train loss/AUC/F1=0.546451/0.800218/0.422234，valid=0.531439/0.769562/0.429533；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:20:45+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=8/20，phase=full_finetune，lr=[('backbone_decay', 4.1069690242163476e-06), ('backbone_no_decay', 4.1069690242163476e-06), ('head_decay', 4.1069690242163484e-05), ('head_no_decay', 4.1069690242163484e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:29:51+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=8完成，train loss/AUC/F1=0.541220/0.804700/0.427189，valid=0.530186/0.770395/0.432525；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:29:51+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=9/20，phase=full_finetune，lr=[('backbone_decay', 3.7499999999999992e-06), ('backbone_no_decay', 3.7499999999999992e-06), ('head_decay', 3.7500000000000003e-05), ('head_no_decay', 3.7500000000000003e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:38:46+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=9完成，train loss/AUC/F1=0.534577/0.809856/0.438592，valid=0.527988/0.773715/0.433468；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:38:46+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=10/20，phase=full_finetune，lr=[('backbone_decay', 3.3550503583141717e-06), ('backbone_no_decay', 3.3550503583141717e-06), ('head_decay', 3.355050358314173e-05), ('head_no_decay', 3.355050358314173e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:47:37+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=10完成，train loss/AUC/F1=0.530857/0.814114/0.437043，valid=0.527559/0.774802/0.437898；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:47:37+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=11/20，phase=full_finetune，lr=[('backbone_decay', 2.934120444167326e-06), ('backbone_no_decay', 2.934120444167326e-06), ('head_decay', 2.9341204441673266e-05), ('head_no_decay', 2.9341204441673266e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T09:56:30+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=11完成，train loss/AUC/F1=0.528191/0.818361/0.448238，valid=0.522207/0.779158/0.439812；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T09:56:30+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=12/20，phase=full_finetune，lr=[('backbone_decay', 2.4999999999999998e-06), ('backbone_no_decay', 2.4999999999999998e-06), ('head_decay', 2.5e-05), ('head_no_decay', 2.5e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:05:25+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=12完成，train loss/AUC/F1=0.525998/0.821059/0.455760，valid=0.522075/0.779495/0.438571；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:05:25+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=13/20，phase=full_finetune，lr=[('backbone_decay', 2.065879555832674e-06), ('backbone_no_decay', 2.065879555832674e-06), ('head_decay', 2.0658795558326743e-05), ('head_no_decay', 2.0658795558326743e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:14:21+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=13完成，train loss/AUC/F1=0.519914/0.824888/0.455476，valid=0.520743/0.781827/0.441667；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:14:21+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=14/20，phase=full_finetune，lr=[('backbone_decay', 1.644949641685829e-06), ('backbone_no_decay', 1.644949641685829e-06), ('head_decay', 1.644949641685829e-05), ('head_no_decay', 1.644949641685829e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:23:38+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=14完成，train loss/AUC/F1=0.522000/0.826655/0.455652，valid=0.519455/0.782681/0.443291；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:23:38+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=15/20，phase=full_finetune，lr=[('backbone_decay', 1.2500000000000005e-06), ('backbone_no_decay', 1.2500000000000005e-06), ('head_decay', 1.2500000000000007e-05), ('head_no_decay', 1.2500000000000007e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:32:49+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=15完成，train loss/AUC/F1=0.518260/0.827626/0.464521，valid=0.522302/0.782203/0.442896；事实：验证完整=True，跳过图数=0，串行恢复=False，best=False；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:32:49+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=16/20，phase=full_finetune，lr=[('backbone_decay', 8.930309757836516e-07), ('backbone_no_decay', 8.930309757836516e-07), ('head_decay', 8.930309757836517e-06), ('head_no_decay', 8.930309757836517e-06)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:41:51+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=16完成，train loss/AUC/F1=0.515817/0.828836/0.466281，valid=0.520104/0.783105/0.444706；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:41:51+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=17/20，phase=full_finetune，lr=[('backbone_decay', 5.848888922025553e-07), ('backbone_no_decay', 5.848888922025553e-07), ('head_decay', 5.8488889220255536e-06), ('head_no_decay', 5.8488889220255536e-06)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:50:52+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=17完成，train loss/AUC/F1=0.515562/0.829494/0.465817，valid=0.522054/0.783219/0.445385；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:50:52+08:00 · b3_reg20_20261017_01
+
+- 执行：启动epoch=18/20，phase=full_finetune，lr=[('backbone_decay', 3.349364905389038e-07), ('backbone_no_decay', 3.349364905389038e-07), ('head_decay', 3.3493649053890386e-06), ('head_no_decay', 3.3493649053890386e-06)]；只读既有缓存，在线增强。
+
+### 2026-10-17T10:59:58+08:00 · b3_reg20_20261017_01
+
+- 结果：epoch=18完成，train loss/AUC/F1=0.516714/0.829937/0.467790，valid=0.520126/0.783324/0.444201；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T10:59:58+08:00 · b3_reg20_20261017_01
+
+- 交接：stopped_at_epoch_boundary，完成18轮、完整验证18轮、反传34128批，best epoch=18；证据E:\PycharmCodes\计挑人工智能赛道\runs\b3_reg20_20261017_01；下一步经授权用inference.py生成测试提交。
+
+### 2026-10-17 20:41 · 数据与在线增强独立审计（只读，不训练）
+
+- 任务/授权：编写并执行audit_data_and_aug.py，产出DATA_AUG_AUDIT_REPORT.md与aug_visualization.png；允许图像解码、CPU数据增强/标签插值验证，不构建模型、不训练/推理/反传。原图、三个清单和images300均只读，dataset/model/train不改。
+- 范围/计划：全量独立解析CSV与集合泄露；重算缓存文件/像素SHA256和清单前后指纹，核对孤儿及随机100图；按图/Study统计标签冲突与不平衡；直接调用真实build_transforms连续5次并记录各变换实际触发，动态强制验证Mixup/CutMix公式。test空targets预期未知，不伪造全阴性统计，也不据test调整训练建议。
+- 判断/学习点：用可重放执行证据区分“代码写了增强”“实际触发”“强度是否足够”；5次不能保证每种随机变换都触发，需额外训练样本频次探针。失败/异常样本ID全部保留，审计发现不自动修复数据；本次训练/推理0，下一步分工编写只读审计模块并运行。
+
+### 2026-10-17 20:44 · 审计实现与首轮执行
+
+- 脚本进行中：主入口audit_data_and_aug.py已创建，写入新artifacts子目录并生成独立报告/终端原样记录/PNG；两子模块分别负责独立CSV+全量缓存SHA和真实CPU增强/Collator验证。test空标签按unknown处理，已知隔离缓存train:003713/019927是否为孤儿仍须本次枚举验证；未修改业务代码或源数据，下一步完成模块安全复核后实际执行。
+- 执行准备：audit_integrity.py/audit_augmentation.py已完成，独立静态复核确认无数据写入/模型调用；补空清单守卫、重复表头校验和隔离缓存SHA匹配。`.\.venv\Scripts\python.exe -m py_compile audit_data_and_aug.py audit_integrity.py audit_augmentation.py`退出0；CPU审计进程限制torch线程2，不改任何训练参数。接下来实际运行主脚本，所有终端输出保留在新证据目录。
+- 首次执行结果：运行`.\.venv\Scripts\python.exe -X utf8 -u audit_data_and_aug.py --seed 43 --output-dir artifacts/data_aug_audit_20261017_2048`。三清单33968行合法/身份无冲突，33970缓存全解码/文件SHA/像素SHA完成；跨split患者/Study/实算缓存哈希交集均0，100/100随机图通过。2孤儿ID及排除SHA吻合。200次增强触发亮度100、噪声39、旋转61、Cutout52；Mixup/CutMix图像与软标签最大误差均0。本次训练/推理0；标签与原CSV映射将作为新增补充项复验，现有证据不冒称已覆盖该项。
+
+### 2026-10-17 20:49 · 首轮结果与审计范围补充
+
+- 首轮审计20:49:18退出0，9个受保护文件及33970缓存前后SHA全部一致。已实际查看六宫格：第1次有噪点/轻旋转/黑色Cutout，第2次亮度旋转，第3/4次亮度对比，第5次无随机操作且与原图一致，符合p机制而非失效。原审计代码快照保存在首轮证据目录；为补原CSV哈希/标签映射新范围，将新增独立来源模块并完整重跑一版（原报告/证据保留，不覆盖首轮），不据test调参。
+- 报告严谨性补充：增加实际计数总览、各增强概率/触发次数表、五次像素差及完整异常ID，并将新原标签复验接入主入口。核对本地Albumentations composition.py:163–176对子变换传播相同初始seed，因此“无随机变换21%”只标独立抽样近似，不冒称已证明联合独立；有效性以实测200次为准。接下来等来源模块完成后编译并重跑最终版。
+- 来源模块已就绪：audit_source_labels.py独立读三原CSV，复算验收SHA/逐图targets与Subject-Study-Dicom映射、清单+排除覆盖和Study阳性守恒，不打开原图。四审计文件py_compile退出0；准备重跑新增范围到artifacts/data_aug_audit_20261017_2053，首轮产物及代码快照继续保留，本次仍训练/推理0。
+
+### 2026-10-17 20:55 · 数据与增强审计最终交付
+
+- 最终执行：`.\.venv\Scripts\python.exe -X utf8 -u audit_data_and_aug.py --seed 43 --output-dir artifacts/data_aug_audit_20261017_2053`于20:54:34退出0，integrity/source_labels/augmentation严重项均0；33970缓存+9文件前后全量SHA不变。源CSV验收SHA吻合，train30328/valid1422逐图10维原标签全部一致，16排除分区、Study覆盖及阳性数守恒；test2218标签未知保留。
+- 动态证据：原图+连续5次图已实际查看并在报告第8节写明观察；200次四增强触发100/39/61/52，153次输出变化；valid/test5次确定性、真实CPU工厂接线与Mixup/CutMix图像/标签公式均通过（最大误差0）。仅CPU图像数据变换，本次训练/推理/模型前后向均0，未运行多进程稳定性测试。
+- 交付/边界：DATA_AUG_AUDIT_REPORT.md含真实终端输出、逐项数值/完整异常ID、原始标签复验和视觉结论；aug_visualization.png、四模块源码及最终CSV/JSON证据保留，首轮快照不覆盖。2孤儿train:003713/019927是已登记隔离且SHA吻合；工程通过不代表医学错漏标/近似图已排除，也不证明增强强度最优。
+- 决策/下一步：EXPERIMENTS追加AUDIT-DATA-AUG-20261017-01/02，保留首轮覆盖不足与扩展决策。当前不改数据或增强参数；若后续获授权，仅用train驱动单变量强度对照，并与现有正则配置区分变量。回滚只删除本次派生审计产物即可，源数据无需回滚。
+- 最终文件核对：4审计模块SHA与实际执行记录一致，根目录报告/PNG与最终证据副本SHA相同；delivery_sha256.json已保存交付指纹。报告含两个已解释孤儿的确切ID、test未知说明和逐类图/Study统计，可交付；没有新增训练授权或启动动作。
+
+### 2026-10-17 21:59 · B3软标签ASL与EMA接入（仅代码）
+
+- 授权/改动：按用户分步方案仅修改model.py、train.py、inference.py；B3/300、学习率、增强、冻结与早停保持基线配置，dataset.py不变。默认ASL正/负gamma=0/4、clip=0.05，不叠加pos_weight；BCE/Focal保留对照。
+- 实现/决策：EMA decay上限0.999、衰减预热、BN buffers直接拷贝；optimizer post-step hook只在实际更新后更新EMA，AMP跳步单独计数。train/valid诊断、阈值和best使用同一EMA权重，schema2主权重供推理strict加载，raw另存；兼容历史schema1。
+- 静态验收：执行`.venv/Scripts/python.exe -m py_compile model.py train.py inference.py`退出0，两项独立静态复审无阻断；31个保护文件（dataset、原CSV、清单及既有run产物）前后SHA全部一致。本次训练/续训/模型前向/反向/推理/下载均0，运行与提分效果未验证。
+- 证据/交接：改前快照与verification.json见artifacts/code_snapshots/b3_asl_ema_20261017_215431；拟用runs/b3_asl_ema_20261017_01，目录未创建。用户手动启动后先核对完整验证、weights=ema及更新/跳步计数，再考虑ConvNeXt；回滚恢复快照中三个代码文件即可。
+
+### 2026-10-17T22:04:07+08:00 · b3_asl_ema_20261017_01
+
+- 任务：新run注册，数据/配置见E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01；目标：冻结2轮后全网微调；计划20轮，当前完成0轮/反传0批，尚未启动优化。
+
+### 2026-10-17T22:04:41+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=1/20，phase=head_only，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 0.0005), ('head_no_decay', 0.0005)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:12:14+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=1完成，train loss/AUC/F1=0.253776/0.665433/0.327570，valid=0.155140/0.647482/0.350712；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=1896、AMP跳步=0；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:12:14+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=2/20，phase=head_only，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 0.0005), ('head_no_decay', 0.0005)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:19:20+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=2完成，train loss/AUC/F1=0.187363/0.700787/0.347216，valid=0.132833/0.680526/0.361192；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=3792、AMP跳步=0；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:19:20+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=3/20，phase=full_finetune，lr=[('backbone_decay', 5e-06), ('backbone_no_decay', 5e-06), ('head_decay', 5e-05), ('head_no_decay', 5e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:29:44+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=3完成，train loss/AUC/F1=0.115406/0.734503/0.363726，valid=0.105741/0.712668/0.383477；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=5686、AMP跳步=2；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:29:44+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=4/20，phase=full_finetune，lr=[('backbone_decay', 4.962019382530521e-06), ('backbone_no_decay', 4.962019382530521e-06), ('head_decay', 4.962019382530521e-05), ('head_no_decay', 4.962019382530521e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:39:14+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=4完成，train loss/AUC/F1=0.105241/0.754399/0.376887，valid=0.103065/0.732307/0.396216；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=7581、AMP跳步=3；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:39:14+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=5/20，phase=full_finetune，lr=[('backbone_decay', 4.849231551964771e-06), ('backbone_no_decay', 4.849231551964771e-06), ('head_decay', 4.849231551964772e-05), ('head_no_decay', 4.849231551964772e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:48:38+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=5完成，train loss/AUC/F1=0.103260/0.767340/0.397676，valid=0.101602/0.746222/0.406117；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=9477、AMP跳步=3；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:48:38+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=6/20，phase=full_finetune，lr=[('backbone_decay', 4.665063509461097e-06), ('backbone_no_decay', 4.665063509461097e-06), ('head_decay', 4.665063509461098e-05), ('head_no_decay', 4.665063509461098e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T22:57:51+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=6完成，train loss/AUC/F1=0.101601/0.777016/0.407041，valid=0.100508/0.756556/0.416209；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=11372、AMP跳步=4；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T22:57:51+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=7/20，phase=full_finetune，lr=[('backbone_decay', 4.415111107797444e-06), ('backbone_no_decay', 4.415111107797444e-06), ('head_decay', 4.415111107797445e-05), ('head_no_decay', 4.415111107797445e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T23:07:10+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=7完成，train loss/AUC/F1=0.100773/0.784121/0.406650，valid=0.099678/0.762856/0.425527；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=13267、AMP跳步=5；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T23:07:10+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=8/20，phase=full_finetune，lr=[('backbone_decay', 4.1069690242163476e-06), ('backbone_no_decay', 4.1069690242163476e-06), ('head_decay', 4.1069690242163484e-05), ('head_no_decay', 4.1069690242163484e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T23:16:31+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=8完成，train loss/AUC/F1=0.100017/0.790295/0.414183，valid=0.099022/0.767488/0.427834；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=15162、AMP跳步=6；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T23:16:31+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=9/20，phase=full_finetune，lr=[('backbone_decay', 3.7499999999999992e-06), ('backbone_no_decay', 3.7499999999999992e-06), ('head_decay', 3.7500000000000003e-05), ('head_no_decay', 3.7500000000000003e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T23:25:51+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=9完成，train loss/AUC/F1=0.099138/0.794923/0.423560，valid=0.098592/0.769797/0.431063；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=17057、AMP跳步=7；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T23:25:51+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=10/20，phase=full_finetune，lr=[('backbone_decay', 3.3550503583141717e-06), ('backbone_no_decay', 3.3550503583141717e-06), ('head_decay', 3.355050358314173e-05), ('head_no_decay', 3.355050358314173e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T23:35:58+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=10完成，train loss/AUC/F1=0.098672/0.799130/0.425429，valid=0.098241/0.771389/0.431802；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=18952、AMP跳步=8；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T23:35:58+08:00 · b3_asl_ema_20261017_01
+
+- 执行：启动epoch=11/20，phase=full_finetune，lr=[('backbone_decay', 2.934120444167326e-06), ('backbone_no_decay', 2.934120444167326e-06), ('head_decay', 2.9341204441673266e-05), ('head_no_decay', 2.9341204441673266e-05)]；只读既有缓存，在线增强。
+
+### 2026-10-17T23:45:28+08:00 · b3_asl_ema_20261017_01
+
+- 结果：epoch=11完成，train loss/AUC/F1=0.098178/0.802516/0.427737，valid=0.097865/0.773598/0.435500；事实：验证完整=True，跳过图数=0，串行恢复=False，best=True，权重=ema，EMA更新=20848、AMP跳步=8；推测：泛化收益待独立评价。证据：E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01/history.jsonl及data_loading_events.jsonl。
+
+### 2026-10-17T23:45:28+08:00 · b3_asl_ema_20261017_01
+
+- 交接：stopped_at_epoch_boundary，完成11轮、完整验证11轮、反传20856批，best epoch=11；证据E:\PycharmCodes\计挑人工智能赛道\runs\b3_asl_ema_20261017_01；下一步经授权用inference.py生成测试提交。
+
+### 2026-10-17 23:47:29 +08:00 · runs训练顺序浏览入口
+
+- 试错：给已结束的b3_overnight_20261017_01加001前缀，Rename-Item及Directory.Move均被Windows拒绝（0x80070005）；未改权限/解除占用，所有原目录名称和路径保持原样。
+- 替换：新增runs/00_训练顺序中的001～005 Windows快捷入口，按provenance.created排序；runs/README.md和run_order.json记录真实先后、启动验证/中断状态及目标路径。
+- 校验：5入口目标均正确；4个已停止run的33个文件大小/mtime及25份小文件SHA不变；5份训练源码和第005次run配置/provenance共7份SHA一致；快捷入口创建前后均未检出Python进程。
+- 边界：不操作当前第005次训练目录或进程，不创建STOP/不设自动改名；本次新增训练/推理/反传0。回滚仅移除本次新增的快捷入口目录与两份索引，原始记录无需恢复。
+- 状态事实：首次检查005仍有进程；后续status显示其23:45:28完成11轮后轮末停止，已有STOP修改时间23:37:03；本次未创建/修改STOP或发出停止操作，不推断标记来源。
+
+### 2026-10-18 00:23 · 原图384与ConvNeXt V2 Study训练重构（仅代码）
+
+- 授权/改动：用户批准优先重构并锁384，新增dataset_highres.py、model_highres.py、train_highres.py，扩展inference.py的schema3；原dataset.py/model.py/train.py保持原样。原图只读逐次核SHA、内存保比例补边；完整Study监督与train类别感知正负采样，不改标签/划分/原清单。
+- 架构/内存：ConvNeXt V2-Base最后两级特征+十类注意力/全局分支，Study均值概率对应logit上BCE+渐增0.2 Rank；微批2、累积16、AMP与非重入检查点固定启用、CPU保存视角输入、GPU逐张处理。EMA在CPU先构建后raw入GPU，eval交换同源权重；提供Tiny/128维/1层手动OOM备用，不保证未经实测8GB绝不OOM。
+- 静态试错/修正：交叉复审发现并修正默认cuda无索引、EMA初始化短暂GPU副本、完成轮数元数据落后一轮及缺验证阈值来源标记；补推理导入前Windows兼容。四文件py_compile最终退出0，三项独立静态复审后无已知阻断；仅语法/文本证据，不冒称已跑通模型。
+- 保护/交接：44项保护文件SHA全部不变，原图/缓存未打开或写入；本次新增训练/续训/模型前向/反向/推理/下载均0。证据artifacts/code_snapshots/highres384_20261018_000830/verification.json，说明docs/HIGHRES384_USAGE.md；新run006目录未创建，用户手动运行后核验显存与完整valid，暂不实现512/TTA。
+
+### 2026-10-18T00:34:20+08:00 · 006_convnextv2_base_hr384_20261018_01
+
+- 任务：384原图/ConvNeXt V2类别注意力/Study BCE+Rank新run；微批2、累积16、AMP/检查点/CPU EMA；初始完成0轮，尚未反传。
+
+### 2026-10-18T00:43:07+08:00 · 007_convnextv2_base_hr384_multi_20261018_01
+
+- 任务：384原图/ConvNeXt V2类别注意力/Study BCE+Rank新run；微批2、累积16、AMP/检查点/CPU EMA；初始完成0轮，尚未反传。
+
+### 2026-10-18T01:32:20+08:00 · 007_convnextv2_base_hr384_multi_20261018_01
+
+- 结果：epoch=1，完整验证=True，Study AUC/F1=0.733583/0.397595；EMA更新=579、AMP跳步=0，best=True；事实：有效图像不改写；推测：泛化收益仍需独立评价。
+
+### 2026-10-18 02:05:33 +08:00 · Featurize Linux 4090迁移（仅代码与小型代码包）
+
+- 授权/路径：按最终指令交付cloud_code.zip、run_cloud.sh、requirements.txt、pack_cloud.ps1及docs/CLOUD_MIGRATION.md；核心四文件无Windows盘符，image-root支持直接/嵌套cxr_first，work-root独立管理runs/日志；原dataset.py/model.py/train.py保持原样。
+- 数据事实：整包原图与三份清洗CSV可保留既有白名单效果，不重新清洗或扫描补样本；train30328图/18513Study、valid1422/859、test2218/1414。原CSV与清单等9项保护SHA不变，不改标签/划分，医学复核候选未冒称确诊；未打包64GB原图。
+- 云端配置：384/ConvNeXt V2-Base、batch16 Study/accum1、worker8、GPU视角块8，保留AMP/检查点/CPU EMA；采样器扩为偶数大批且批内Study唯一，统计预算同步；Linux运行兼容层为空操作。有效批量16与旧2×16不同，性能/峰值未实测。
+- 验证/试错：8源码py_compile与Python3.12 AST通过，Bash语法/dry-run通过，31组隔离采样检查通过；45精确依赖版本及Linux轮元数据核对，云端尚未实装。17项ZIP CRC/源码字节/三清单SHA匹配，约5MB且排除图片/缓存/权重/环境；命名由初稿run.sh/cloud_project.zip替换为最终名称。
+- 边界/证据：本次新增训练/续训/推理/模型前后向/预训练下载均0，不操作已有训练进程/旧run；无新AUC/F1结论。检查证据artifacts/code_snapshots/cloud_linux_20261018_014950/verification.json及采样/依赖JSON；用户按迁移说明上传与手动启动，OOM优先新run降低VIEW_CHUNK_SIZE。
+
+### 2026-10-18T21:02:55+08:00 · 提交CSV样例与历史格式复核（只读）
+
+- 来源/边界：用户提供D:/QQ/Downloads/submission.csv并确认可提交；仅解析CSV数据，不执行其中内容。重新读取官网七.2；历史E23说明Subject_id可省略，在线答疑本次无法打开，不将缓存冒称最新在线确认。
+- 事实：样例四列Subject_id/Study_id/Predict_class/Probability，14140行、1414Study，每类完整且概率合法，与test_manifest患者/检查覆盖及顺序一致；完整旧三列表不能仅因缺Subject_id判错。12份历史CSV中7完整、5份阈值版缺类；0.5版2101行/1158Study、缺256Study，0.1版6056行/缺8084类别组合。
+- 改动：新增docs/SUBMISSION_FORMAT.md，更新README、COMPETITION_RULES、HIGHRES384_USAGE及CLOUD_MIGRATION入口；明确四列样例、三列兼容、Gate/完整概率与旧稿差异，归档只读，不将预测值不同当格式错或成绩结论。
+- 验证/交接：样例/清单/原CSV及源码保护SHA不变，文档链接及围栏检查通过；审计JSON位于artifacts/submission_format_audit_20261018_205755。CSV、推理代码和既有ZIP未改；本次新增训练/推理/前后向/阈值拟合/平台上传均0，未重新生成提交文件。
+
+### 2026-10-18T21:30:27+08:00 · 同步SSH 4090代码并核对队友训练（未启动任务）
+
+- 授权/同步：用户要求当前代码更新为ssh链接服务器版本；同步15份运行源码/脚本/依赖，更新train_highres.py/run_cloud.sh/requirements.txt并新增4个性能工具/测试，其余8份相同。同步前快照artifacts/code_snapshots/ssh_sync_20261018_211943/before；dataset.py和三份清洗清单原样，未复制原图/权重/运行目录。
+- 文档/保护：导入4090性能历史报告、合并README与CLOUD_MIGRATION并保留CSV格式说明/本地日志，新增docs/SSH_TEAMMATE_COMPARISON_20261018.md；15份运行文件与SSH SHA完全一致，23项数据/冻结文件SHA未变，队友15份审计源SHA未变；旧cloud_code.zip未重打包。
+- 既有成绩事实：SSH014备份12轮、bestE6官方valid AUC=.7977187851、F1@.5=.3184669751、调valid阈值F1=.4861241884；队友官方valid AUC=.7973891020/F1@.5=.2582292922，train内部audit AUC=.8014390079。用户明确SSH未提交平台，旧封存无可用平台分数；队友包平台数值null，仅效果改善反馈，不把这些本地指标当线上分。
+- 训练差异/推测：队友Tiny320/逐图Study逆图数BCE/shuffle全覆盖/3轮3035更新；SSH V2-Base384/整Study BCE+Rank/有放回类采样/128Study批，best6轮870更新。小模型、完整覆盖及更密更新可能解释接近表现，非因果实验；队友与SSH官方valid身份标签一致，不能混比内部audit或不同阈值F1。
+- 校验/边界：12源码py_compile/Python3.12 AST、Bash语法/dry-run和文档复审通过；审计JSON与verification.json在上述快照目录。本次新增训练/续训/模型前后向/推理/阈值拟合/平台提交/远程SSH连接均0；未运行包含前后向的测试，不操作云端既有进程。
+
+### 2026-10-18T22:00:19+08:00 · Tiny v2完整遍历泛化基线（仅代码与打包）
+
+- 授权/结构：新增model_tiny.py/dataset_tiny.py/train_tiny.py，run_cloud.sh切ConvNeXt-Tiny.fb_in1k标准GAP/Norm/Dropout/Linear10；新训练移除注意力、Rank和类别采样，旧Base/B3模块仅为历史权重兼容保留。原图384、清洗清单与旧dataset.py/dataset_highres.py保持原样。
+- 训练设计：32张图/累积1、shuffle无放回、drop_last=False，每轮30328图/948批末24；BCE乘固定N/(S*n_views)保持Study等权，pos_weight默认关闭。全网首轮起训、backbone5e-5/head5e-4、warmup1+cosine、最多25轮/valid AUC早停5轮；AMP优先BF16、channels_last、GPU EMA、12持久worker，checkpoint默认关。
+- 推理/静态修正：新增schema4严格绑定Tiny架构、EMA、BF16/FP16、预处理与同轮valid阈值，保留schema1/2/3。复审修正FP16 fused AdamW可能跳步仍触发hook的问题，仅BF16用fused、FP16用foreach，EMA仅在成功optimizer.step后更新；AST检查夹具的行号/变量名问题已修正，未发生实际训练故障。
+- 校验事实：11源码py_compile、Py3.12 AST、Bash语法/dry-run/真实CLI解析、85元数据协议检查、54组尾窗归一及完整清单权重等价性检查通过；26项冻结源码/CSV SHA不变，图片未打开/改写。缺图valid禁止正式指标、调阈值、选best及早停计数，不将静态检查冒称GPU跑通。
+- 交付/边界：pack_cloud.ps1默认生成cloud_code_v2.zip，新增docs/TINY_V2_USAGE.md并更新README/云端说明；包验证与SHA见artifacts/code_snapshots/tiny_v2_20261018_214520/verification.json。云端新代码目录cloud_project_v2、run015_cloud_tiny_b32_v2；本次新增训练/续训/推理/模型前后向/预训练下载/远程连接均0，不操作旧训练进程；暂无新AUC/F1或显存实测。
+
+### 2026-10-19T01:01:05+08:00 · A4000 Tiny 最佳权重热重启代码
+
+- 事实：源016的best.pt为epoch5，EMA valid AUC=0.7999705530；分别保存在线/EMA权重，无优化器/scaler/RNG状态。
+- 修改：train_tiny.py新增--resume；严格恢复两份权重和累计EMA步数，从epoch6开始；新run保留源best基线及阈值绑定。
+- 策略：源基础LR×0.1，无warmup、剩余轮局部余弦、patience最多3；原BCE/Study等权/增强不变，未使用test选参。
+- 验证：CPU真实182+182张量严格加载及逻辑测试；本次训练/验证/模型前后向执行次数均为0，预期效果尚未实测。
+- 回滚：原入口备份于work/code_backups/warm_restart_20261019_005643/train_tiny.py；手动命令见docs/WARM_RESTART.md。
+
+### 2026-10-19T02:29:59+08:00 · Base512 五折通宵流程（未启动训练）
+
+- 改动：新增患者/精确内容隔离五折、ConvNeXt V2-Base、多尺度512/448/384、Study等权BCE、AMP/EMA/检查点与完整续训；原Tiny权重与入口保留。
+- 调度：run_all_folds.py逐折每轮推进，最多20轮/早停4；实际A4000 16GB使用2×16、workers4，OOM降微批重试；best/last中断恢复和锁保护通过纯元数据测试。
+- 推理：新增384/512×翻转TTA及等权软投票，原官方valid独立评估与定阈值，test不选参；按样例四列/14140行生成submission_final.csv。
+- 验证：11源码py_compile、Bash/tmux语法、真实元数据dry-run/CLI help及34项CPU逻辑测试通过；清单、样例和源016 best保护SHA不变。
+- 边界：本次训练/模型前后向/实际推理均0，仅缓存官方预训练权重；无新AUC或显存/耗时实测。交付docs/OVERNIGHT_CV.md；证据artifacts/overnight_cv_preflight/verification.json。
+
+### 2026-10-19T02:59:36+08:00 · 4090 显存探针与通宵入口预检（真实训练0次）
+
+- 环境：RTX4090/24564MiB/16CPU；base缺依赖且旧cxr-cloud路径不存在，新建cxr4090独立环境，torch2.5.1+cu121/timm1.0.30/A2.0.8，pip check/运行模块导入/CPU增强通过。
+- 探针：4个独立进程各执行一次随机输入512的BF16+激活检查点前后向，batch4/8纯allocated峰值1.59/2.52GiB，加GPU EMA/Adam缓冲/已有梯度后2.57/3.50GiB（reserved2.80/4.10）；均无OOM、梯度有限，optimizer.step=0。
+- 入口：run_overnight.sh默认新run019、batch8×累积4、workers4；保留512/448/384多尺度。venv解释器改实体副本防resolve回base；官方权重缓存与CPU离线读取380张量通过，禁worker联网版本检查。
+- 验证/边界：Bash语法、py_compile和五折dry-run通过；16项原始CSV/清单/划分/核心代码SHA不变，新run未创建；定向清理后GPU1MiB且无计算进程。本次真实训练/续训/真实数据模型推理均0，未执行交付的tmux启动行。
+- 证据：artifacts/gpu_probe_4090.json、pretrained_cache_4090.json、requirements_4090_probe.txt、preflight_4090.json；原A4000 run018及权重、原图、标签和旧tmux记录保留。
+
+### 2026-10-19T08:28:59+08:00 · 手动停止019并交付官方valid最佳AUC提交
+
+- 按用户要求创建STOP，当前轮完整验证保存后退出；019各折完成5/4/4/4/4轮，训练进程已退出，保留全部best/last。
+- 019官方valid评估完成后因分数较低取消测试推理，不伪造新预测。相同官方valid比较：016 AUC=0.799970553；019五折TTA集成AUC=0.793435823；按较高者选择016_a4000_tiny_v2，不使用内部单折成绩或测试答案选模型。
+- 交付：/home/featurize/work/deliveries/best_auc_20261019/submission.csv；四列14140行/1414Study/每Study十类，样例身份与顺序、完整性及概率[0,1]校验通过，根样例和源清单未改。
+- 证据：同目录validation_report.json/provenance.json；SHA256=c985cf8736ebb342af6c8662acbbb277042fa8ef779524b18751220333969650；成绩为本地官方valid，未上传平台。
+
+### 2026-10-19T17:02:00+08:00 · 官网Gate格式更新与现有run核对
+
+- 重新读取官网及20261019示例图；Gate可在末列自定义，排名以Macro AUC为主、同分再看F1。最新best_auc CSV经源权重SHA及14140概率逐值核对，来自016 epoch5 EMA，未套用当前019代码阈值。
+- 新交付：../deliveries/gate_update_20261019/submission.csv；只追加同源十类Gate，1414Study/14140行完整、原四列和行序原样，输入CSV/模型/阈值/清单哈希未变；SHA256=b2b16d56d5129871e65e914d9e268936b2471cc83799dcfa9b6424024a9878bf。
+- 016验证AUC=0.799970553，F1@.5=.320549344→保存阈值F1=.469460937；阈值同valid调优，不当作测试成绩。017新增最佳AUC=.799877379，019官方valid集成=.793435823；017继承best与016相同，018无有效完成轮，019内部单折不能直比。
+- 格式文档与交付来源记录已更新；本次训练0次、模型推理0次、阈值重新拟合0次，旧交付保留，未上传平台。
+
+### 2026-10-19T23:08:58+08:00 · 768原图与正样本加权BCE新机预检（真实训练0次）
+
+- 环境/数据：独立cxr4090 Python3.11、torch2.11.0+cu126/timm1.0.30/A2.0.8实装，pip check/18模块导入/官方权重SHA及CPU离线加载通过；原图解压完成，30328/1422/2218张清单原图存在且大小与ZIP一致。
+- 修改：固定原图768等比例LANCZOS+Pad，主损失FP32 BCEWithLogitsLoss；每折仅训练Study去重计算neg/pos，全train十类权重1.770~28.764，保留Study等权与shuffle，辅助Rank/Focal不启用；旧512推理元数据兼容、新目标拒绝旧resume。
+- 探针：batch1/2/4全BF16/激活检查点+GPU EMA/FP32 Adam moments/已有梯度常驻，allocated峰值2.196/2.693/3.734GiB、reserved2.369/3.178/4.699GiB；均无OOM、梯度有限，未执行optimizer.step。独立20微批复测2/4吞吐15.97/15.53图每秒，选择2×累积16=32。
+- 性能/验证：真实原图CPU供给4/8/12worker约34/64/90图每秒，默认8/prefetch2；49项CPU测试、最终runner9项复验、语法及启动dry-run通过，6项清单/划分/样例SHA不变；原图只读不改标签。
+- 交付/边界：证据artifacts/upgrade_768/、环境锁artifacts/requirements_768_4090.txt、手动单行tmux见docs/768_PREFLIGHT.md；新run020目录未创建，本次真实训练/真实图像模型推理/优化器更新均0。合成探针不是完整训练step，未声称新AUC或泛化提升。

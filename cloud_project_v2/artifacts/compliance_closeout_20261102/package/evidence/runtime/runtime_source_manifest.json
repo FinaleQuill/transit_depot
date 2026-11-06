@@ -1,0 +1,454 @@
+{
+  "unchanged_copies": [
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/audit_trail.py",
+      "package_path": "code/audit_trail.py",
+      "bytes": 7976,
+      "sha256": "b33e3e672920d662d89e11a8967f7e807e8877fe6c654e104ad617d05e7a313a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/benchmark_local_resources.py",
+      "package_path": "code/benchmark_local_resources.py",
+      "bytes": 17063,
+      "sha256": "2b503728398d390eed2c39040931f7f925c2ba4f12ca3e7bd343d1873ebd6db6",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/compare_student_candidates.py",
+      "package_path": "code/compare_student_candidates.py",
+      "bytes": 9836,
+      "sha256": "94e5902bf2d576bd1afc6dbe4cf11a5af5309088bdf1ae009643c50d3b2765ec",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/cost.py",
+      "package_path": "code/cost.py",
+      "bytes": 16049,
+      "sha256": "9abd449a66cbd6558a0a0ba18e175f7b4a6ffcc149c6583db5e11fca61426efb",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/cv_splits.py",
+      "package_path": "code/cv_splits.py",
+      "bytes": 14950,
+      "sha256": "e4e9403d13181b15161d4cfc2e6968d729cccaaeaeec428c4378dbb0db1be5d6",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/dataset.py",
+      "package_path": "code/dataset.py",
+      "bytes": 28911,
+      "sha256": "d2fbace7635762d9d24e0d3ce58a207bf9033645e75b31a0e2dc23a07d6b2b8a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/dataset_overnight.py",
+      "package_path": "code/dataset_overnight.py",
+      "bytes": 13643,
+      "sha256": "304d2dcbc5d5ebe8cec815b58ca6f791b6c2daa8c5666353d3cb21ea45ec7586",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/deploy_kd.py",
+      "package_path": "code/deploy_kd.py",
+      "bytes": 38675,
+      "sha256": "3634abef87cb309132858ee9f2bffa286f120d11b497d869a7ed38e899ece3a1",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/distill_data.py",
+      "package_path": "code/distill_data.py",
+      "bytes": 17036,
+      "sha256": "31dd699e07a3b5cdabb7e65660168e88b282d4e2c642f3c269e3da2431b8ff0a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/distill_tta_data.py",
+      "package_path": "code/distill_tta_data.py",
+      "bytes": 7717,
+      "sha256": "3aca8ce7d158f1321fc6a0fa7a0fc54cd80aa83ff79fcdc66e5fea75c8d40156",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/export_student.py",
+      "package_path": "code/export_student.py",
+      "bytes": 9255,
+      "sha256": "c09b101333e8871a69aeb9fb98af71d6816a0f60937e0831e1f38307d251a06d",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/extract_soft_labels_tta.py",
+      "package_path": "code/extract_soft_labels_tta.py",
+      "bytes": 11527,
+      "sha256": "30058d69296d1394744d022d267fc1acfca2152c0f8f465b812d1e48a720e9bc",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/fast_lanczos.py",
+      "package_path": "code/fast_lanczos.py",
+      "bytes": 1720,
+      "sha256": "923dd39de0d44d83cd87e20deecc3f8b3d9325f09eebac96f21b5b5079c82ad7",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/inference_inputs.py",
+      "package_path": "code/inference_inputs.py",
+      "bytes": 6146,
+      "sha256": "7f8107f8d2384ecbb20455344238bb2dbc9300c9758ea9c903249fc50f9b2cb3",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/inference_reproducibility.py",
+      "package_path": "code/inference_reproducibility.py",
+      "bytes": 7907,
+      "sha256": "90cdb3202915e5e7d143a5ad0462d4fd371c7d639bf64b8d4c5b049f69bc85ed",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/inference_runtime.py",
+      "package_path": "code/inference_runtime.py",
+      "bytes": 1049,
+      "sha256": "3f49ced38900374924786d2a3c8300522e84b642ffda6779da69e58467cc93e6",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/kd_common.py",
+      "package_path": "code/kd_common.py",
+      "bytes": 6721,
+      "sha256": "419e99531658eb770b42fb69269217d1469ece8ea2058adcef840dd663d83029",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/model_overnight.py",
+      "package_path": "code/model_overnight.py",
+      "bytes": 3284,
+      "sha256": "c891591f362b570bc79c98169b635379ac508f4379f932532b752007c2dd97d0",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/planned_handoff.py",
+      "package_path": "code/planned_handoff.py",
+      "bytes": 3314,
+      "sha256": "101e040ac874d9178cc51f09ca782248b34e08464ccd77da08c36377b0d8e765",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/predict.py",
+      "package_path": "code/predict.py",
+      "bytes": 4814,
+      "sha256": "856213ad8774ebc500905fea47a863f04e1505ccd42504cf5b02c4d36de44b22",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/prepare_inference.py",
+      "package_path": "code/prepare_inference.py",
+      "bytes": 6784,
+      "sha256": "6fe2bb7b87f9d36df4d79d358da5663f3b927b1025a353068a09fca9b1ea9297",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/runtime_compat.py",
+      "package_path": "code/runtime_compat.py",
+      "bytes": 1739,
+      "sha256": "a39563bcdf87e71e543ad024d94f064017b9a9b6647a040f77174cb4bc6f37c7",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/student_draft_pair.py",
+      "package_path": "code/student_draft_pair.py",
+      "bytes": 3478,
+      "sha256": "8fd57027db1fc35ae1f86970f6b463f08f72b710a7a08b801cc33df7d07b29fe",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/student_ensemble.py",
+      "package_path": "code/student_ensemble.py",
+      "bytes": 6908,
+      "sha256": "ef8a49ba99bc9d914253b0dd0fd5651c46ea1a7174213ec7da4893254947a25d",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/student_experiment_evaluation.py",
+      "package_path": "code/student_experiment_evaluation.py",
+      "bytes": 28927,
+      "sha256": "bbff7fbf05360cad832e731043e06032abeacb5d2145c3a02201bd6c96aef9f4",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/student_experiments.py",
+      "package_path": "code/student_experiments.py",
+      "bytes": 1982,
+      "sha256": "9b3f45856544663b1a182a1d60bdcf7f6adacfbbe9e841d97736a3a5dd085a53",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/student_fixed_pair.py",
+      "package_path": "code/student_fixed_pair.py",
+      "bytes": 7470,
+      "sha256": "7d57474ff1c0b3a7605bad2068eaefdc0b205cbee82eab180cc5d5310fa5a932",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/study_packing.py",
+      "package_path": "code/study_packing.py",
+      "bytes": 6748,
+      "sha256": "ee6006a5e8bf9e2ea64d0fbdefbfbf0122df0630b2b809567776a4f1c80b2b1a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/study_student.py",
+      "package_path": "code/study_student.py",
+      "bytes": 33958,
+      "sha256": "bfebd18e16781479644ecbc521f4012a19761525f1c8dfe6f7b6372ed4aa30e7",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/submission_runtime.py",
+      "package_path": "code/submission_runtime.py",
+      "bytes": 1118,
+      "sha256": "11a15cda537bcaf494d426a5085cd413edf866b5ce1967a25efa987667a10d67",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/submit_student_candidate.py",
+      "package_path": "code/submit_student_candidate.py",
+      "bytes": 1676,
+      "sha256": "489f7bde538298342bd2e57f1f073723cb0a4e08a1009974f915debd0080ff92",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/teacher_collection.py",
+      "package_path": "code/teacher_collection.py",
+      "bytes": 7682,
+      "sha256": "f536f4d72f58557e371441bb1c2a987574f9bd675f132e82b6288a5b102eec5c",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/train_distill.py",
+      "package_path": "code/train_distill.py",
+      "bytes": 56582,
+      "sha256": "679ae40ffbb15008f7419a6d4b102e9f97ea934d2b9298fcd8862f7dbbf40b60",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/train_overnight.py",
+      "package_path": "code/train_overnight.py",
+      "bytes": 51361,
+      "sha256": "0f07ee03c73cd80f96dba49541b9ebf65c0fe3afa4db888261fc81fe9f7042f2",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/train_teacher.py",
+      "package_path": "code/train_teacher.py",
+      "bytes": 22005,
+      "sha256": "bbf1b12f690a684e1c52c821f31b1b490f1b3cd7c747a21ba0b773c94c35b82d",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/training_evidence_monitor.py",
+      "package_path": "code/training_evidence_monitor.py",
+      "bytes": 16983,
+      "sha256": "44e71bdd4007b292817c041f4073af9c34f4ee8e232a3aaebbf022cbff157aeb",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/requirements_inference.txt",
+      "package_path": "code/requirements_inference.txt",
+      "bytes": 396,
+      "sha256": "220ac6dadb4c17ebc6ee7a2e481b8a3fc85414d2abd9d35be349e1369748ef55",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/requirements_kd.txt",
+      "package_path": "code/requirements_kd.txt",
+      "bytes": 507,
+      "sha256": "046e97333ed99baf972506275fe8f25bdc5a7aa8903560d660135ee1859723bc",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/__init__.py",
+      "package_path": "code/native_lanczos/__init__.py",
+      "bytes": 75,
+      "sha256": "18a083aec5668338b823deeb26758f44cb09b4b0f17de8278eadeaddf1a16729",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/setup.py",
+      "package_path": "code/native_lanczos/setup.py",
+      "bytes": 758,
+      "sha256": "8b7d3509aa17d48b282af37cf92db0034b0da22ee606f851658ca614296814b9",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/resample.c",
+      "package_path": "code/native_lanczos/resample.c",
+      "bytes": 15049,
+      "sha256": "813f452e4f9e98899479939df74d6325ea6739256e0b5fbe74320c301ceaf7af",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/README.md",
+      "package_path": "code/native_lanczos/README.md",
+      "bytes": 3064,
+      "sha256": "2e4cf441c822ce414e85f054d5cd978651c9deb0e3fa3f663c631e41caee8fe8",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/upstream/LICENSE",
+      "package_path": "code/native_lanczos/upstream/LICENSE",
+      "bytes": 1455,
+      "sha256": "cf234c27a3f275f5a050f4df3946f8855704226fe4e7ca8b33928cbcecbced37",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/upstream/PROVENANCE.json",
+      "package_path": "code/native_lanczos/upstream/PROVENANCE.json",
+      "bytes": 867,
+      "sha256": "dbba2e6e6d65ba676c1ac4a727f68008207c9f53a3e9012e0a5bbb14624d787a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/upstream/Resample.c",
+      "package_path": "code/native_lanczos/upstream/Resample.c",
+      "bytes": 26741,
+      "sha256": "150216c594b1adbaee8fc4757f13ccc8b5829cfa032d00a784221ce9f3cf5aea",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/upstream/Imaging.h",
+      "package_path": "code/native_lanczos/upstream/Imaging.h",
+      "bytes": 21112,
+      "sha256": "2623c2fddf516d402e9bbca7a26512238feaaef4ff73328269b25204efb98dbf",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+      "package_path": "code/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so",
+      "bytes": 63888,
+      "sha256": "565419dc32e7f45e7d0c1c155c2d8b4b1da74d298299a43199563f1711ea391f",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/environment/competition_addons_cp312_linux_x86_64.tar.gz",
+      "package_path": "code/vendor/competition_addons_cp312_linux_x86_64.tar.gz",
+      "bytes": 8554684,
+      "sha256": "eb7ecd612df5568f9f87b9f3bc3ec71cf775ed3d00c4b072467f308e2f32fe10",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/optimization_2080ti_20261029/environment/competition_addons_archive_manifest.json",
+      "package_path": "code/vendor/competition_addons_archive_manifest.json",
+      "bytes": 132778,
+      "sha256": "be7c9ba00b31ad59f34d870f44c533f6c685144f895e37a28b33a7d9094c5060",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_takeover_20261030/inference_environment_probe.json",
+      "package_path": "evidence/runtime/historical_041_related_inference_environment.json",
+      "bytes": 1448,
+      "sha256": "8da6e1d66ec021f476f9ea927d748ccc90870d27d5b092a922c5d8bae48bb4f7",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/pipeline_source/environment_lock.txt",
+      "package_path": "evidence/runtime/historical_pipeline_environment_lock.txt",
+      "bytes": 2283,
+      "sha256": "299c3697c95faf41fe48550186efbcf5827a24412b432f8f30982d4e942fbcd5",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/near_official/ENVIRONMENT_VERIFICATION.md",
+      "package_path": "evidence/runtime/official_3_image_on_2080ti_near_official_record.md",
+      "bytes": 1682,
+      "sha256": "d3275fb8de71a866aa04299d31570cbf226d9d8429511fe150d84a3aa8e11678",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/README.md",
+      "package_path": "evidence/runtime/041_historical/README.md",
+      "bytes": 5357,
+      "sha256": "b87821b9e806fcb8101171331bb475b9b76c2ba92a83c26a800f9ce3c46f75e4",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/execution_receipt.json",
+      "package_path": "evidence/runtime/041_historical/execution_receipt.json",
+      "bytes": 5220,
+      "sha256": "86dc27eb9c5d98c389cbcda68a8929facdde34b118212f18c31281c38f11a3bc",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/submission.csv.report.json",
+      "package_path": "evidence/runtime/041_historical/submission.csv.report.json",
+      "bytes": 1509,
+      "sha256": "e5957092fa64aabec3253593df9c3f9e9a6dca0d9070718395f05afd7f82058f",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/submission.audit.json",
+      "package_path": "evidence/runtime/041_historical/submission.audit.json",
+      "bytes": 1459,
+      "sha256": "55441098683c86fa1e0eab062d3d0ffc5d2cf48ab50157c2f8a08b61b58d1c2e",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/submission.image_predictions.csv",
+      "package_path": "evidence/runtime/041_historical/submission.image_predictions.csv",
+      "bytes": 1352956,
+      "sha256": "3cb7e6bd1d936702b3487ec8d06c0f69e4f615ec25823d12f881c07ddb98f82a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/local_resource_report.json",
+      "package_path": "evidence/runtime/041_historical/local_resource_report.json",
+      "bytes": 25719,
+      "sha256": "7cee3cc413de8889cbcc27b393ddbe94cb0ab2f0053f0f5c3ed06d9ec4c30b9e",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/041_tiny768_p2_A_submission_20261030/timing_vs_A_valid.json",
+      "package_path": "evidence/runtime/041_historical/timing_vs_A_valid.json",
+      "bytes": 550,
+      "sha256": "f7cd3af56fa9d91b53e5995c8c0926dcd1422217efdfd80324eba385cdec546a",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A/student_fp16.pt",
+      "package_path": "model/historical_041/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "unchanged_copy": true
+    },
+    {
+      "source_path": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/INSPECTION.md",
+      "package_path": "evidence/runtime/official_sample_INSPECTION_20261102.md",
+      "bytes": 4216,
+      "sha256": "c44429a0481d3bda20c169f38e4730237a2f98ac4728f95eec2e47cfb79bf085",
+      "unchanged_copy": true
+    }
+  ],
+  "new_packaging_wrappers": [
+    {
+      "path": "code/train.py",
+      "sha256": "6ce2198789c5a93d229b75e67c8d401ea90c10385a2fef9cf3fffac8ee658665"
+    },
+    {
+      "path": "code/model.py",
+      "sha256": "f790edb5be7f860896d516d5815720bb08795b7c4c3b55c74a7fd3c64f54e0a3"
+    },
+    {
+      "path": "code/utils.py",
+      "sha256": "da2bddc771ec48eebdb65cf32080adbb95f010d9982e0ce33cd33648577d201d"
+    },
+    {
+      "path": "code/requirements.txt",
+      "sha256": "7a9634def07234cd30d02f7a189219b7e93735f1a9a309389e79b53b0e2e1c7b"
+    },
+    {
+      "path": "cost.py",
+      "sha256": "683fe9a57b1ab29feb93f02420146bca82117714bcf3a0696ac9ff9cb1759f81"
+    }
+  ],
+  "source_root": "/home/featurize/work/cloud_project_v2"
+}

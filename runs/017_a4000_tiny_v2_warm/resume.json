@@ -1,0 +1,23 @@
+{
+  "kind": "weights_warm_restart",
+  "checkpoint": "/home/featurize/work/runs/016_a4000_tiny_v2/best.pt",
+  "checkpoint_sha256": "2c3f88b25e04ea86af20eaf2e41d42db241cb5013657283afa3eabdf54893b4b",
+  "epoch": 5,
+  "start_epoch": 6,
+  "baseline_auc": 0.7999705530021188,
+  "baseline_f1": 0.4694609370723987,
+  "raw_weights": "raw_model_state_dict",
+  "ema_weights": "model_state_dict",
+  "source_optimizer_updates": 4740,
+  "lr_factor_of_source_base": 0.1,
+  "backbone_lr": 5e-06,
+  "head_lr": 5e-05,
+  "schedule_epochs": 5,
+  "schedule_updates_reset": true,
+  "optimizer_reset": true,
+  "scaler_reset": true,
+  "rng_restored": false,
+  "early_stopping_bad_epochs_reset": true,
+  "exact_resume": false,
+  "policy": "lower LR; local cosine without warmup; patience<=3; unchanged BCE/augmentation"
+}

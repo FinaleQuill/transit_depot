@@ -1,0 +1,37 @@
+test_finite_smoke_score_never_enters_selection (reconstruction.test_train_local.CPUTrainerTests.test_finite_smoke_score_never_enters_selection) ... ok
+test_global_control_uses_ordinary_global_path_without_geometry_keyword (reconstruction.test_train_local.CPUTrainerTests.test_global_control_uses_ordinary_global_path_without_geometry_keyword) ... ok
+test_highest_view_smoke_preserves_complete_group_and_selection_is_deterministic (reconstruction.test_train_local.CPUTrainerTests.test_highest_view_smoke_preserves_complete_group_and_selection_is_deterministic) ... ok
+test_training_and_evaluation_pass_geometry_and_retain_complete_studies (reconstruction.test_train_local.CPUTrainerTests.test_training_and_evaluation_pass_geometry_and_retain_complete_studies) ... /home/featurize/work/cxr_research_20261103/reconstruction/test_train_local.py:83: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=False)
+{"state": "training", "epoch": 1, "studies_done": 3, "studies_total": 3, "images_done": 7, "regions_done": 35, "mean_loss": 0.667833944161733, "elapsed_seconds": 0.06399765399964963, "data_wait_seconds": 0.0008669630001350015, "compute_seconds": 0.06313245999990613, "estimated_epoch_seconds": 0.06399765399964963, "peak_gpu_bytes": 0, "gradient_norm": 0.5241187810897827, "learning_rates": [0.01], "attempted_updates": 2, "optimizer_updates": 2, "skipped_updates": 0, "updated_at": "2026-11-04T14:31:48.411376+08:00"}
+ok
+test_actual_epoch_zero_checkpoint_callback_and_closed_hash_chain (reconstruction.test_train_local.EvidenceTests.test_actual_epoch_zero_checkpoint_callback_and_closed_hash_chain) ... ok
+test_baseline_recorder_rejects_duplicate_or_foreign_roles_and_preserves_positive_epochs (reconstruction.test_train_local.EvidenceTests.test_baseline_recorder_rejects_duplicate_or_foreign_roles_and_preserves_positive_epochs) ... ok
+test_epoch_zero_checkpoint_can_resume_without_any_completed_training (reconstruction.test_train_local.EvidenceTests.test_epoch_zero_checkpoint_can_resume_without_any_completed_training) ... ok
+test_epoch_zero_probability_guard_fails_before_optimization_if_local_output_drifted (reconstruction.test_train_local.EvidenceTests.test_epoch_zero_probability_guard_fails_before_optimization_if_local_output_drifted) ... ok
+test_loader_uses_bounded_prefetch_and_identical_seed (reconstruction.test_train_local.EvidenceTests.test_loader_uses_bounded_prefetch_and_identical_seed) ... ok
+test_parent_payload_rejects_mismatched_epoch_evidence_and_extra_heads (reconstruction.test_train_local.EvidenceTests.test_parent_payload_rejects_mismatched_epoch_evidence_and_extra_heads) ... ok
+test_resume_retains_epoch_zero_if_all_trained_epochs_are_worse (reconstruction.test_train_local.EvidenceTests.test_resume_retains_epoch_zero_if_all_trained_epochs_are_worse) ... ok
+test_checkpoint_bytes_are_verified (reconstruction.test_controller_local.LocalQueueTests.test_checkpoint_bytes_are_verified) ... ok
+test_fewer_epochs_cannot_claim_fixed_budget_complete (reconstruction.test_controller_local.LocalQueueTests.test_fewer_epochs_cannot_claim_fixed_budget_complete) ... ok
+test_interrupt_cannot_be_silently_declared_completed (reconstruction.test_controller_local.LocalQueueTests.test_interrupt_cannot_be_silently_declared_completed) ... ok
+test_self_consistent_but_wrong_update_budget_is_rejected (reconstruction.test_controller_local.LocalQueueTests.test_self_consistent_but_wrong_update_budget_is_rejected) ... ok
+test_stop_before_start_never_launches_a_job (reconstruction.test_controller_local.LocalQueueTests.test_stop_before_start_never_launches_a_job) ... ok
+test_trainer_failure_never_advances_or_retries (reconstruction.test_controller_local.LocalQueueTests.test_trainer_failure_never_advances_or_retries) ... ok
+test_true_lifecycle_can_select_untrained_epoch_zero (reconstruction.test_controller_local.LocalQueueTests.test_true_lifecycle_can_select_untrained_epoch_zero) ... ok
+test_augmented_global_tensor_remains_bitwise_identical_to_e0 (reconstruction.test_local.LocalDataTests.test_augmented_global_tensor_remains_bitwise_identical_to_e0) ... ok
+test_hash_change_and_test_records_rejected (reconstruction.test_local.LocalDataTests.test_hash_change_and_test_records_rejected) ... ok
+test_source_crop_affine_tracks_rotation_reflection_and_letterbox (reconstruction.test_local.LocalDataTests.test_source_crop_affine_tracks_rotation_reflection_and_letterbox) ... ok
+test_source_pixels_are_cropped_before_downsampling_and_all_views_retained (reconstruction.test_local.LocalDataTests.test_source_pixels_are_cropped_before_downsampling_and_all_views_retained) ... ok
+test_e0_transfer_and_zero_residual_exact_global_equality (reconstruction.test_local.LocalModelTests.test_e0_transfer_and_zero_residual_exact_global_equality) ... ok
+test_every_local_receives_only_study_loss_gradient (reconstruction.test_local.LocalModelTests.test_every_local_receives_only_study_loss_gradient) ... ok
+test_group_mass_and_duplicate_local_invariance (reconstruction.test_local.LocalModelTests.test_group_mass_and_duplicate_local_invariance) ... ok
+test_no_local_fallback_and_single_view_after_head_has_trained (reconstruction.test_local.LocalModelTests.test_no_local_fallback_and_single_view_after_head_has_trained) ... ok
+test_packed_checkpointed_chunks_match_independent_study_gradients (reconstruction.test_local.LocalModelTests.test_packed_checkpointed_chunks_match_independent_study_gradients) ... ok
+test_region_and_view_permutation_preserve_prediction (reconstruction.test_local.LocalModelTests.test_region_and_view_permutation_preserve_prediction) ... ok
+test_stochastic_global_path_matches_e0_at_same_rng_state (reconstruction.test_local.LocalModelTests.test_stochastic_global_path_matches_e0_at_same_rng_state) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 4.305s
+
+OK

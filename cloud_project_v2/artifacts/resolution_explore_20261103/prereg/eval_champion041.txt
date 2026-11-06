@@ -1,0 +1,4 @@
+Hypothesis: the unchanged verified 041/E9 initialization must be re-evaluated in the identical fixed768 FP16 protocol to avoid recommending a regressed internal winner.
+Expected effect: establish a current protocol-matched anchor with Macro-AUC, AP-only, per-class metrics, sampled-train gap and three-image P50/P95; no improvement claim.
+Cost: official-valid evaluation, fixed 1000 official-train Study diagnostic and identity/hflip2 timing; zero training, no test or CSV; historical backup receipt and snapshot SHA bound before launch.
+Failure criterion: snapshot/receipt SHA mismatch, missing train/valid lineage, incomplete probabilities or timing, or any test access.

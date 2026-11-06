@@ -1,0 +1,2 @@
+
+[2026-11-01T19:51:14.276803+00:00] command: bash /home/featurize/work/cloud_project_v2/run_tight_crop_environment.sh tight_crop_ab_earlystop_training.py --arm A --member tiny --output /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/A_tiny --migrate-from /home/featurize/work/cloud_project_v2/artifacts/tight_crop_ab_20261102/earlystop25/migration/original_E1/last.pt --migrate-ap-score /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/migration/A_tiny_E1_monitor/monitor.json --execute

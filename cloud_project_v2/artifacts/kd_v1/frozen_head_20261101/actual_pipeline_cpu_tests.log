@@ -1,0 +1,14 @@
+test_evidence_copy_excludes_models_weights_and_feature_cache (tests.test_frozen_head_actual.ActualHeadTests.test_evidence_copy_excludes_models_weights_and_feature_cache) ... ok
+test_independent_valid_replay_rejects_changed_Study_means (tests.test_frozen_head_actual.ActualHeadTests.test_independent_valid_replay_rejects_changed_Study_means) ... ok
+test_prepare_pair_keeps_sources_unchanged_and_binds_merged_patch_identity (tests.test_frozen_head_actual.ActualHeadTests.test_prepare_pair_keeps_sources_unchanged_and_binds_merged_patch_identity) ... ok
+test_probability_identity_requires_all_ten_exact_float_bytes (tests.test_frozen_head_actual.ActualHeadTests.test_probability_identity_requires_all_ten_exact_float_bytes) ... ok
+test_registered_pair_rejects_unregistered_members_or_weights (tests.test_frozen_head_actual.ActualHeadTests.test_registered_pair_rejects_unregistered_members_or_weights) ... ok
+test_dead_cache_is_not_silently_restarted_or_used_for_fitting (tests.test_frozen_head_pipeline.FrozenHeadPipelineTests.test_dead_cache_is_not_silently_restarted_or_used_for_fitting) ... ok
+test_final_comparison_is_valid_python_and_uses_actual_saved_outputs (tests.test_frozen_head_pipeline.FrozenHeadPipelineTests.test_final_comparison_is_valid_python_and_uses_actual_saved_outputs) ... ok
+test_head_config_refuses_e11_even_if_receipt_claims_completed (tests.test_frozen_head_pipeline.FrozenHeadPipelineTests.test_head_config_refuses_e11_even_if_receipt_claims_completed) ... ok
+test_stage_timeout_kills_only_the_named_container_and_never_marks_success (tests.test_frozen_head_pipeline.FrozenHeadPipelineTests.test_stage_timeout_kills_only_the_named_container_and_never_marks_success) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.737s
+
+OK

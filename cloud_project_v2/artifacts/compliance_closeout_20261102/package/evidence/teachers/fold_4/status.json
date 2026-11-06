@@ -1,0 +1,16 @@
+{
+  "state": "completed",
+  "completed_epochs": 12,
+  "validated_epochs": 0,
+  "backward_batches": 145584,
+  "optimizer_updates": 9108,
+  "ema_updates": 9108,
+  "amp_skipped_steps": 0,
+  "fold": 4,
+  "training_complete": true,
+  "inference_ready": true,
+  "selection_protocol": "fixed_epoch_final_ema",
+  "last_checkpoint_sha256": "140609230371d16ac2636d741f244f3c7ee736489362c5d8dedd1eb81eabe23d",
+  "best_checkpoint_sha256": "548fc85a44153532d20c14e43db9a787ddf10091aec76bd926f55d5e4f8ab253",
+  "updated_utc": "2026-10-26T11:26:23.163207+00:00"
+}

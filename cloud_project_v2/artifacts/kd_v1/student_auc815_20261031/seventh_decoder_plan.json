@@ -1,0 +1,19 @@
+{
+  "registered_at_hong_kong": "2026-10-31T15:37:22.437061+08:00",
+  "candidate": "AB_B100_class1_JPEG_draft_target768",
+  "base_candidate": "AB_B100_class1",
+  "decode_target": [
+    768,
+    768
+  ],
+  "fixed_preprocessing_change": "For JPEG L/RGB only, PIL draft(mode,(768,768)) before load, then original EXIF/letterboxLANCZOS768. Decoder picks a fixed supported scale from source dimensions. Other formats/modes unchanged.",
+  "rationale": "Original valid header sizes show this target enables scaled IDCT in100/100 timing images;1536 target enables0/100 and was superseded without measuring candidate scores.",
+  "test_used_for_selection": false,
+  "validation_selected_hyperparameters": true,
+  "changes_pixels": true,
+  "equal_output_optimization": false,
+  "model_weights_unchanged": true,
+  "new_training": false,
+  "stop_rule": "Evaluate this one actual reduced-decode variant; accept only full valid>=.815 and2080Ti original100+5 serial3 mean<=80ms; no dense decoder/weight search.",
+  "formal_T4_certification": false
+}

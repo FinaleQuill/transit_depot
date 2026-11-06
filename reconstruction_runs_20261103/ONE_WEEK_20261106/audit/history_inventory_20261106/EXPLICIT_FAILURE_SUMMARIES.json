@@ -1,0 +1,153 @@
+[
+  {
+    "path": "cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/eval_res640_failure_20261102T205707Z/evaluations_res640/evaluation_failed.json",
+    "sha256": "217ae1fd814840cff8ec1ce02e0bbb5f56aa0d6025baf14646284716a9fd4674",
+    "kind": "json",
+    "top_level_keys": [
+      "failed_utc",
+      "error",
+      "test_accessed",
+      "complete"
+    ],
+    "fields": {
+      "error": "ValueError: Original ten-class binary targets are required"
+    }
+  },
+  {
+    "path": "cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/eval_res640_failure_20261102T205707Z/evaluations_res640_original/evaluation_failed.json",
+    "sha256": "217ae1fd814840cff8ec1ce02e0bbb5f56aa0d6025baf14646284716a9fd4674",
+    "kind": "json",
+    "top_level_keys": [
+      "failed_utc",
+      "error",
+      "test_accessed",
+      "complete"
+    ],
+    "fields": {
+      "error": "ValueError: Original ten-class binary targets are required"
+    }
+  },
+  {
+    "path": "cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/original_permission_failure_status.json",
+    "sha256": "33628232022f564ab2a54a0b1489428b45516341fbd8949a8cfe55ebc1fb48cb",
+    "kind": "json",
+    "top_level_keys": [
+      "state",
+      "error",
+      "updated_at"
+    ],
+    "fields": {
+      "state": "stopped",
+      "error": "RuntimeError: STOP: training failed (1): res640; retain evidence"
+    }
+  },
+  {
+    "path": "cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/retry1_shell_launch_failed_before_start.json",
+    "sha256": "5a506042f91d08299d36b13f753a25fdc706b3a4e28782939c4af09fdd123449",
+    "kind": "json",
+    "top_level_keys": [
+      "recorded_utc",
+      "state",
+      "failure_reason",
+      "shell_pid",
+      "controller_log",
+      "controller_log_bytes",
+      "run_child_started",
+      "recovery"
+    ],
+    "fields": {
+      "state": "FAILED_BEFORE_CONTROLLER_START"
+    }
+  },
+  {
+    "path": "cloud_project_v2/artifacts/resolution_explore_20261103/queue/attempts/shell_launch_failed_before_start.json",
+    "sha256": "976dbf33f80de95d2ec8241e6ecd73ddb3121baaa6c367b0101bb84af54271cf",
+    "kind": "json",
+    "top_level_keys": [
+      "recorded_utc",
+      "state",
+      "failure_reason",
+      "pid",
+      "recovery"
+    ],
+    "fields": {
+      "state": "FAILED"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/BREAKTHROUGH_20261105/DINOv2_B518_fold0123/failure.json",
+    "sha256": "61b4b67bef657f3731fb17d8526fa6a4e666b0fa6f9e334e07d70169399d1216",
+    "kind": "json",
+    "top_level_keys": [
+      "error",
+      "updated_at"
+    ],
+    "fields": {
+      "error": "KeyboardInterrupt: Training interrupted by signal 15"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/BREAKTHROUGH_20261105/RAW_REBUILD/DINOv2_B518_fold0123/failure.json",
+    "sha256": "1a188dc0bbcddfe50bde008fe6ede83f8a4ece7efb995c9d92ccfbbe47eae634",
+    "kind": "json",
+    "top_level_keys": [
+      "error",
+      "updated_at"
+    ],
+    "fields": {
+      "error": "KeyboardInterrupt: Training interrupted by signal 15"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/BREAKTHROUGH_20261105/smoke_B518/failure.json",
+    "sha256": "256a9875b11ee26fd73e29d4ae1d064eb3758c1c7ecb89ead777d6a2edc92735",
+    "kind": "json",
+    "top_level_keys": [
+      "error",
+      "updated_at"
+    ],
+    "fields": {
+      "error": "TypeError: the JSON object must be str, bytes or bytearray, not tuple"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/KD_REBUILD_20261106/dinov3_l_inner0/failure.json",
+    "sha256": "a2761bcf03096d8996f4893da8f9680e7cc95dbcabeaa204ce14b2ce955866b8",
+    "kind": "json",
+    "top_level_keys": [
+      "error",
+      "updated_at"
+    ],
+    "fields": {
+      "error": "KeyboardInterrupt: Training interrupted by signal 15"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/evidence/report_recovery/failure.json",
+    "sha256": "d728f0a589a50f851735445e826abe1a1efd1da74c3d643d6aaaec75ab0095c2",
+    "kind": "json",
+    "top_level_keys": [
+      "complete",
+      "error",
+      "elapsed_seconds",
+      "selection_changed"
+    ],
+    "fields": {
+      "error": "TypeError: Object of type bool_ is not JSON serializable"
+    }
+  },
+  {
+    "path": "reconstruction_runs_20261103/ROBUST_ENSEMBLE_20261105/final_comparison/failure.json",
+    "sha256": "d728f0a589a50f851735445e826abe1a1efd1da74c3d643d6aaaec75ab0095c2",
+    "kind": "json",
+    "top_level_keys": [
+      "complete",
+      "error",
+      "elapsed_seconds",
+      "selection_changed"
+    ],
+    "fields": {
+      "error": "TypeError: Object of type bool_ is not JSON serializable"
+    }
+  }
+]

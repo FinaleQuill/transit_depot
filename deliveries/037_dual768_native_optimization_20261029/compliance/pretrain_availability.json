@@ -1,0 +1,52 @@
+{
+  "readonly_small_directory_checks": [
+    {
+      "path": "/home/featurize/.cache/huggingface/hub",
+      "exists": false,
+      "children": []
+    },
+    {
+      "path": "/home/featurize/.cache/torch/hub/checkpoints",
+      "exists": false,
+      "children": []
+    }
+  ],
+  "pretrains": [
+    {
+      "repo_id": "timm/convnext_tiny.fb_in22k_ft_in1k_384",
+      "revision": "32c741ba106f9e062174ef829354a16719c3dcac",
+      "sha256": "a5cbe10cfa2e90ec787a082253033ac0a61de0264b68210815a988e53a1a5d7c",
+      "candidate_paths": [
+        {
+          "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnext_tiny.fb_in22k_ft_in1k_384/snapshots/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+          "exists": false,
+          "bytes": null
+        },
+        {
+          "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnext_tiny.fb_in22k_ft_in1k_384/snapshots/32c741ba106f9e062174ef829354a16719c3dcac/model.safetensors",
+          "exists": false,
+          "bytes": null
+        }
+      ]
+    },
+    {
+      "repo_id": "timm/convnext_base.fb_in22k_ft_in1k_384",
+      "revision": "2b2698d86523262ca8065d0957c7f80d963bb43f",
+      "sha256": "bc0cfafc7d7755e8271f51343c4374725bf6409c0434e64028a863c4aca7d9fe",
+      "candidate_paths": [
+        {
+          "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnext_base.fb_in22k_ft_in1k_384/snapshots/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+          "exists": false,
+          "bytes": null
+        },
+        {
+          "path": "/home/featurize/.cache/huggingface/hub/models--timm--convnext_base.fb_in22k_ft_in1k_384/snapshots/2b2698d86523262ca8065d0957c7f80d963bb43f/model.safetensors",
+          "exists": false,
+          "bytes": null
+        }
+      ]
+    }
+  ],
+  "download_performed": false,
+  "full_disk_scan": false
+}

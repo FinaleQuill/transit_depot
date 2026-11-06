@@ -1,0 +1,1023 @@
+{
+  "profile": "local_native_avx2_lut_v1",
+  "executed": true,
+  "local_stress_test": true,
+  "T4_latency_certified": false,
+  "official_compliance_pass": false,
+  "T4_elapsed_ms": null,
+  "status": "local_stress_completed",
+  "protocol": {
+    "measured_images": 100,
+    "warmup_images": 5,
+    "rounds": 3,
+    "precision": "float16",
+    "batch_size": 1,
+    "execution": "serial",
+    "timing": "read_file_to_prediction_CSV_write_including_preprocess_postprocess",
+    "model_initialization_timed": false,
+    "aggregation": "per_image_three_round_mean_then_100_image_mean"
+  },
+  "coverage": {
+    "measured": {
+      "images": 100,
+      "studies": 53,
+      "patients": 40,
+      "complete_studies_proven": true
+    },
+    "warmup": {
+      "images": 5,
+      "studies": 4,
+      "patients": 4,
+      "complete_studies_proven": true
+    },
+    "selection_sha256": "327bdd88cd414df3d83b129652f7f3599f9ec6039bf0b42ea7ae6726a516de62",
+    "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "origin_split": "valid",
+    "hashes_verified": true,
+    "patient_disjoint": true
+  },
+  "inference_files": {
+    "files": [
+      {
+        "path": "student_00_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269"
+      },
+      {
+        "path": "student_01_fp16.pt",
+        "bytes": 55712511,
+        "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489"
+      },
+      {
+        "path": "config.json",
+        "bytes": 17341250,
+        "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590"
+      }
+    ],
+    "total_bytes": 128766272,
+    "limit_bytes": 500000000,
+    "size_pass": true
+  },
+  "deployment_config_sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+  "deployment": {
+    "member_count": 2,
+    "tta": "hflip2",
+    "ensemble": true,
+    "image_sizes": [
+      768
+    ],
+    "members": [
+      {
+        "weights_file": "student_00_fp16.pt",
+        "weights_sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+        "weights_source": "ema",
+        "training_mode": "distillation",
+        "source_checkpoint_sha256": "46e06022d963b58d262eaa99ba376de40c3ef182f50a9619f0d09dcf2a0870b7",
+        "source_checkpoint_schema_version": 8,
+        "seed": 43,
+        "image_size": 768,
+        "tta": "hflip2"
+      },
+      {
+        "weights_file": "student_01_fp16.pt",
+        "weights_sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+        "weights_source": "ema",
+        "training_mode": "distillation",
+        "source_checkpoint_sha256": "845694e880f5e29bd8fc5b10eb0fac4b0c80e356e8b441c4e7315219711ed498",
+        "source_checkpoint_schema_version": 8,
+        "seed": 44,
+        "image_size": 768,
+        "tta": "hflip2"
+      }
+    ]
+  },
+  "requested_resources": {
+    "thread_percentage": null,
+    "baseline_sm_count": 68,
+    "memory_limit_gib": 8
+  },
+  "note": "Dedicated local stress test. MPS and an allocator cap do not emulate T4 architecture, bandwidth, memory or latency. Actual T4 retest required.",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "resources": {
+    "requested_thread_percentage": null,
+    "baseline_sm_count": 68,
+    "cuda_visible_sm_count": 68,
+    "native_baseline_sm_count": 68,
+    "mode": "native",
+    "environment": {
+      "CUDA_MPS_PIPE_DIRECTORY": null,
+      "CUDA_MPS_LOG_DIRECTORY": null,
+      "CUDA_MPS_ACTIVE_THREAD_PERCENTAGE": null,
+      "CUDA_MPS_ENABLE_PER_CTX_DEVICE_MULTIPROCESSOR_PARTITIONING": null,
+      "CUDA_MPS_PINNED_DEVICE_MEM_LIMIT": null,
+      "CUDA_VISIBLE_DEVICES": null
+    },
+    "physical_device_name": "NVIDIA GeForce RTX 2080 Ti",
+    "allocator": {
+      "requested_limit_gib": 8,
+      "requested_limit_bytes": 8589934592,
+      "applied_fraction": 0.3722113680766959,
+      "device_total_bytes": 23078109184,
+      "scope": "PyTorch caching allocator only; no bandwidth or hardware-capacity equivalence"
+    }
+  },
+  "per_image_round_ms": [
+    [
+      81.53637400027947,
+      80.99686200148426,
+      96.70230200208607
+    ],
+    [
+      79.81364999795915,
+      79.44529000087641,
+      94.14013599962345
+    ],
+    [
+      86.42942599908565,
+      86.87172600184567,
+      129.00235999768483
+    ],
+    [
+      75.42446099978406,
+      74.9774130017613,
+      90.9327570007008
+    ],
+    [
+      81.68640999792842,
+      92.67577100035851,
+      97.38033399844426
+    ],
+    [
+      60.05387999903178,
+      59.96645599952899,
+      72.12214899846003
+    ],
+    [
+      55.92651999904774,
+      55.312922999291914,
+      67.28863900207216
+    ],
+    [
+      62.38430699886521,
+      62.77015000159736,
+      75.12253100139787
+    ],
+    [
+      60.207174999959534,
+      59.35115399915958,
+      72.04682099836646
+    ],
+    [
+      65.13276600162499,
+      64.6945099979348,
+      77.69912100047804
+    ],
+    [
+      82.01042699874961,
+      78.68570600112434,
+      81.53841900275438
+    ],
+    [
+      79.21695899858605,
+      77.06862799750525,
+      77.61629000015091
+    ],
+    [
+      78.27261800048291,
+      76.66866200088407,
+      76.47806300155935
+    ],
+    [
+      82.288415000221,
+      81.3788419982302,
+      80.86974599791574
+    ],
+    [
+      76.92568200218375,
+      76.70380000126897,
+      86.97417900111759
+    ],
+    [
+      75.97178899959545,
+      75.54600500225206,
+      75.35830499909935
+    ],
+    [
+      82.0008830014558,
+      81.9785290004802,
+      82.08700999966823
+    ],
+    [
+      77.10646499981522,
+      76.5668550011469,
+      75.991506997525
+    ],
+    [
+      76.8722130014794,
+      76.81473900083802,
+      77.65355700030341
+    ],
+    [
+      63.56010600211448,
+      63.244783003028715,
+      62.95311099893297
+    ],
+    [
+      61.4086440000392,
+      60.47355500049889,
+      60.57616600082838
+    ],
+    [
+      81.94436399935512,
+      88.78173999983119,
+      88.01697599847103
+    ],
+    [
+      79.93837599860854,
+      82.25011999820708,
+      81.31676900302409
+    ],
+    [
+      80.2818970005319,
+      77.71564799986663,
+      107.9266179986007
+    ],
+    [
+      83.59951300008106,
+      82.78583900028025,
+      101.81094899962773
+    ],
+    [
+      78.90389100066386,
+      91.25388699976611,
+      95.06874399812659
+    ],
+    [
+      79.78084000205854,
+      78.35760000307346,
+      95.08907800045563
+    ],
+    [
+      88.38847700098995,
+      89.17386000030092,
+      107.2215040003357
+    ],
+    [
+      74.13945000007516,
+      73.2909140024276,
+      89.30555500046466
+    ],
+    [
+      77.02050200168742,
+      76.69922900095116,
+      92.99182500035386
+    ],
+    [
+      79.17322600042098,
+      77.89113100079703,
+      84.66784800111782
+    ],
+    [
+      80.33604800220928,
+      79.35730399913155,
+      82.03840700298315
+    ],
+    [
+      79.38011900114361,
+      79.59111300078803,
+      81.36270500108367
+    ],
+    [
+      80.79403499868931,
+      79.77066599778482,
+      81.78388599844766
+    ],
+    [
+      77.11962800021865,
+      77.31611099734437,
+      81.71045700146351
+    ],
+    [
+      78.09293399986927,
+      83.86611399691901,
+      82.38570299727144
+    ],
+    [
+      60.66051300149411,
+      61.07075399995665,
+      66.77439500344917
+    ],
+    [
+      59.816277000209084,
+      58.41282699839212,
+      60.47123600001214
+    ],
+    [
+      73.7246030003007,
+      116.56475900235819,
+      104.37946900128736
+    ],
+    [
+      72.90203499724157,
+      99.90432400081772,
+      90.74512599909212
+    ],
+    [
+      79.96265399924596,
+      105.38976599855232,
+      94.49390300142113
+    ],
+    [
+      78.05318700047792,
+      103.10303499863949,
+      91.21144299933803
+    ],
+    [
+      83.26671099712257,
+      103.17449499780196,
+      91.93697999944561
+    ],
+    [
+      77.15362100134371,
+      104.7936569993908,
+      92.23940100127948
+    ],
+    [
+      87.5940099977015,
+      100.51248099989607,
+      97.10677299881354
+    ],
+    [
+      77.36073900014162,
+      83.71753200117382,
+      85.56203600164736
+    ],
+    [
+      82.45527100007166,
+      92.53351200095494,
+      81.00380399991991
+    ],
+    [
+      108.55634499966982,
+      87.78711299964925,
+      79.0310899974429
+    ],
+    [
+      91.3306479997118,
+      83.40701399720274,
+      74.93628900192562
+    ],
+    [
+      87.83873700303957,
+      82.14267899893457,
+      73.3278320003592
+    ],
+    [
+      94.77504999813391,
+      88.19955000217305,
+      86.42636500007939
+    ],
+    [
+      74.59177000055206,
+      70.72277599945664,
+      62.61495600119815
+    ],
+    [
+      91.49594900009106,
+      86.13004899962107,
+      110.94165399845224
+    ],
+    [
+      95.74253100072383,
+      89.32233000086853,
+      96.97480400063796
+    ],
+    [
+      96.76957000192488,
+      95.91791799903149,
+      126.54455700248946
+    ],
+    [
+      81.8657739982882,
+      92.41589500015834,
+      99.37663799792062
+    ],
+    [
+      79.25824199992348,
+      88.1612880002649,
+      94.97790100067505
+    ],
+    [
+      76.44858099956764,
+      86.19176900174352,
+      92.1482300000207
+    ],
+    [
+      75.66565500019351,
+      85.99392299947795,
+      90.87671899760608
+    ],
+    [
+      61.406908000208205,
+      69.61379299900727,
+      72.9692349996185
+    ],
+    [
+      64.83943099738099,
+      73.20000500112656,
+      75.54981000066618
+    ],
+    [
+      78.3163730011438,
+      86.80407500287401,
+      87.94308399956208
+    ],
+    [
+      76.38212000165367,
+      86.53582400074811,
+      76.37984100074391
+    ],
+    [
+      76.95054599753348,
+      86.97888800088549,
+      76.96597099857172
+    ],
+    [
+      59.18095699962578,
+      72.45436200173572,
+      58.80203299966524
+    ],
+    [
+      56.145501002902165,
+      67.01518399859197,
+      55.94605000078445
+    ],
+    [
+      74.07059400065918,
+      84.02714099793229,
+      74.61640700057615
+    ],
+    [
+      83.18457000132184,
+      92.34642899900791,
+      82.78120300019509
+    ],
+    [
+      74.07673299894668,
+      83.38742200066918,
+      74.15705599851208
+    ],
+    [
+      82.64069800134166,
+      93.59595000205445,
+      83.51332299935166
+    ],
+    [
+      83.20448599988595,
+      92.24846299912315,
+      116.61944300067262
+    ],
+    [
+      59.091494000313105,
+      68.8523550015816,
+      73.43901900094352
+    ],
+    [
+      60.3161729995918,
+      70.97242600138998,
+      74.89840100242873
+    ],
+    [
+      60.232822001125896,
+      69.6652090009593,
+      73.82118600071408
+    ],
+    [
+      72.1841790000326,
+      73.14855699951295,
+      77.5282030008384
+    ],
+    [
+      96.846149997873,
+      77.68676699924981,
+      79.05362399833393
+    ],
+    [
+      75.99971699892194,
+      70.2413670005626,
+      74.199670998496
+    ],
+    [
+      71.33552600134863,
+      67.39866600037203,
+      70.59400100115454
+    ],
+    [
+      120.67140600265702,
+      83.40699200198287,
+      83.42894700035686
+    ],
+    [
+      91.95765099866549,
+      83.57122400047956,
+      74.5763650011213
+    ],
+    [
+      134.46130900047137,
+      91.4857289972133,
+      77.09846699799527
+    ],
+    [
+      74.96293999793124,
+      70.76576100007514,
+      62.05479400159675
+    ],
+    [
+      101.60963599992101,
+      73.26372600073228,
+      64.14571299683303
+    ],
+    [
+      91.64591599983396,
+      106.91668300205492,
+      75.4223500007356
+    ],
+    [
+      94.08133099714178,
+      96.35158300079638,
+      78.83647899870994
+    ],
+    [
+      106.8983000004664,
+      104.55135400115978,
+      86.80115600145655
+    ],
+    [
+      107.80117499962216,
+      96.18808499726583,
+      79.21367100061616
+    ],
+    [
+      102.03928199916845,
+      95.62963799908175,
+      90.01833699949202
+    ],
+    [
+      92.0964900033141,
+      95.91346699744463,
+      79.4282220012974
+    ],
+    [
+      80.57855700099026,
+      95.82334299921058,
+      80.27921699977014
+    ],
+    [
+      82.81597899986082,
+      83.69025900174165,
+      82.18073099851608
+    ],
+    [
+      76.15586800238816,
+      76.70956600122736,
+      76.8648179982847
+    ],
+    [
+      76.13956600107485,
+      75.97885699942708,
+      76.25940899743
+    ],
+    [
+      82.19228199959616,
+      80.46563300013077,
+      79.0131969988579
+    ],
+    [
+      62.60345099872211,
+      64.5752079981321,
+      62.94505799814942
+    ],
+    [
+      83.77114099857863,
+      83.9612780000607,
+      83.73411799766473
+    ],
+    [
+      74.53064000219456,
+      74.29186300214496,
+      74.25833600063925
+    ],
+    [
+      82.00292699984857,
+      84.83066700136987,
+      81.03554899935261
+    ],
+    [
+      76.2522330005595,
+      76.302374000079,
+      76.1557219993847
+    ],
+    [
+      77.70351199724246,
+      108.21351300182869,
+      77.41316999818082
+    ]
+  ],
+  "per_image_mean_ms": [
+    86.41184600128327,
+    84.466358666153,
+    100.76783733287205,
+    80.44487700074872,
+    90.58083833224373,
+    64.04749499900693,
+    59.509360666803936,
+    66.75899600062014,
+    63.86838333249519,
+    69.17546566667927,
+    80.74485066754278,
+    77.96729233208073,
+    77.13978100097545,
+    81.51233433212231,
+    80.20122033485677,
+    75.62536633364896,
+    82.02214066720141,
+    76.55494233282904,
+    77.1135030008736,
+    63.25266666802539,
+    60.81945500045549,
+    86.24769333255244,
+    81.16842166661324,
+    88.64138766633307,
+    89.39876699999634,
+    88.40884066618553,
+    84.40917266852921,
+    94.92794700054219,
+    78.91197300098914,
+    82.23718533433082,
+    80.57740166744527,
+    80.57725300144132,
+    80.11131233433844,
+    80.7828623316406,
+    78.71539866634218,
+    81.44825033135324,
+    62.835220668299975,
+    59.56677999953778,
+    98.22294366798208,
+    87.85049499905047,
+    93.28210766640647,
+    90.78922166615182,
+    92.79272866479005,
+    91.39555966733799,
+    95.0710879988037,
+    82.21343566765427,
+    85.33086233364884,
+    91.79151599892066,
+    83.22465033294672,
+    81.10308266744444,
+    89.80032166679545,
+    69.30983400040229,
+    96.18921733272146,
+    94.01322166741011,
+    106.41068166781527,
+    91.21943566545572,
+    87.46581033362115,
+    84.92952666711062,
+    84.17876566575917,
+    67.99664533294465,
+    71.19641533305791,
+    84.35451066785997,
+    79.7659283343819,
+    80.29846833233023,
+    63.47911733367558,
+    59.702245000759525,
+    77.5713806663892,
+    86.10406733350828,
+    77.2070703327093,
+    86.58332366758259,
+    97.35746399989391,
+    67.12762266761274,
+    68.72900000113684,
+    67.90640566759976,
+    74.28697966679465,
+    84.52884699848558,
+    73.48025166599352,
+    69.77606433429173,
+    95.83578166833225,
+    83.36841333342211,
+    101.01516833189332,
+    69.26116499986772,
+    79.67302499916211,
+    91.32831633420817,
+    89.75646433221603,
+    99.41693666769424,
+    94.40097699916805,
+    95.89575233258074,
+    89.14605966735205,
+    85.56037233332366,
+    82.89565633337286,
+    76.57675066730008,
+    76.12594399931065,
+    80.55703733286161,
+    63.37457233166788,
+    83.82217899876802,
+    74.36027966832626,
+    82.62304766685702,
+    76.23677633334107,
+    87.77673166575066
+  ],
+  "image_order": [
+    "subject_11814/study_20175/pic_033347.jpg",
+    "subject_11814/study_20363/pic_033656.jpg",
+    "subject_11814/study_20363/pic_033657.jpg",
+    "subject_11817/study_20005/pic_033066.jpg",
+    "subject_11817/study_20259/pic_033488.jpg",
+    "subject_11818/study_20367/pic_033663.jpg",
+    "subject_11818/study_20367/pic_033664.jpg",
+    "subject_11818/study_20367/pic_033665.jpg",
+    "subject_11818/study_20689/pic_034197.jpg",
+    "subject_11818/study_20689/pic_034198.jpg",
+    "subject_11828/study_20649/pic_034123.jpg",
+    "subject_11829/study_20389/pic_033703.jpg",
+    "subject_11829/study_20757/pic_034302.jpg",
+    "subject_11829/study_20757/pic_034303.jpg",
+    "subject_11829/study_20757/pic_034304.jpg",
+    "subject_11829/study_20757/pic_034305.jpg",
+    "subject_11829/study_20856/pic_034479.jpg",
+    "subject_11829/study_20856/pic_034480.jpg",
+    "subject_11829/study_20856/pic_034481.jpg",
+    "subject_11832/study_20936/pic_034614.jpg",
+    "subject_11832/study_20936/pic_034615.jpg",
+    "subject_11833/study_20287/pic_033530.jpg",
+    "subject_11833/study_20292/pic_033539.jpg",
+    "subject_11833/study_20292/pic_033540.jpg",
+    "subject_11833/study_20430/pic_033765.jpg",
+    "subject_11836/study_20225/pic_033432.jpg",
+    "subject_11836/study_20225/pic_033433.jpg",
+    "subject_11836/study_20371/pic_033670.jpg",
+    "subject_11836/study_20371/pic_033671.jpg",
+    "subject_11836/study_20641/pic_034110.jpg",
+    "subject_11836/study_20659/pic_034142.jpg",
+    "subject_11836/study_20659/pic_034143.jpg",
+    "subject_11836/study_20662/pic_034147.jpg",
+    "subject_11836/study_20662/pic_034148.jpg",
+    "subject_11836/study_20733/pic_034264.jpg",
+    "subject_11836/study_20733/pic_034265.jpg",
+    "subject_11842/study_20173/pic_033342.jpg",
+    "subject_11842/study_20173/pic_033343.jpg",
+    "subject_11844/study_20041/pic_033120.jpg",
+    "subject_11844/study_20041/pic_033121.jpg",
+    "subject_11848/study_20057/pic_033146.jpg",
+    "subject_11850/study_20460/pic_033814.jpg",
+    "subject_11850/study_20460/pic_033815.jpg",
+    "subject_11851/study_20777/pic_034337.jpg",
+    "subject_11854/study_20056/pic_033145.jpg",
+    "subject_11857/study_20456/pic_033808.jpg",
+    "subject_11857/study_20456/pic_033809.jpg",
+    "subject_11862/study_20502/pic_033888.jpg",
+    "subject_11862/study_20502/pic_033889.jpg",
+    "subject_11868/study_20284/pic_033526.jpg",
+    "subject_11868/study_20284/pic_033527.jpg",
+    "subject_11874/study_20638/pic_034104.jpg",
+    "subject_11888/study_20119/pic_033254.jpg",
+    "subject_11889/study_20122/pic_033258.jpg",
+    "subject_11890/study_20226/pic_033434.jpg",
+    "subject_11890/study_20226/pic_033435.jpg",
+    "subject_11895/study_20186/pic_033365.jpg",
+    "subject_11895/study_20186/pic_033366.jpg",
+    "subject_11895/study_20186/pic_033367.jpg",
+    "subject_11902/study_20933/pic_034607.jpg",
+    "subject_11902/study_20933/pic_034608.jpg",
+    "subject_11903/study_20432/pic_033768.jpg",
+    "subject_11903/study_20432/pic_033769.jpg",
+    "subject_11903/study_20918/pic_034579.jpg",
+    "subject_11907/study_20158/pic_033315.jpg",
+    "subject_11907/study_20158/pic_033316.jpg",
+    "subject_11914/study_20177/pic_033350.jpg",
+    "subject_11914/study_20177/pic_033351.jpg",
+    "subject_11916/study_20511/pic_033903.jpg",
+    "subject_11916/study_20511/pic_033904.jpg",
+    "subject_11916/study_20511/pic_033905.jpg",
+    "subject_11918/study_20549/pic_033964.jpg",
+    "subject_11918/study_20549/pic_033965.jpg",
+    "subject_11919/study_20198/pic_033386.jpg",
+    "subject_11919/study_20198/pic_033387.jpg",
+    "subject_11919/study_20198/pic_033388.jpg",
+    "subject_11920/study_20229/pic_033440.jpg",
+    "subject_11920/study_20229/pic_033441.jpg",
+    "subject_11938/study_20258/pic_033487.jpg",
+    "subject_11940/study_20748/pic_034285.jpg",
+    "subject_11940/study_20748/pic_034286.jpg",
+    "subject_11949/study_20326/pic_033597.jpg",
+    "subject_11949/study_20326/pic_033598.jpg",
+    "subject_11952/study_20591/pic_034032.jpg",
+    "subject_11952/study_20591/pic_034033.jpg",
+    "subject_11972/study_20435/pic_033773.jpg",
+    "subject_11972/study_20435/pic_033774.jpg",
+    "subject_11978/study_20682/pic_034181.jpg",
+    "subject_11978/study_20682/pic_034182.jpg",
+    "subject_11978/study_20682/pic_034183.jpg",
+    "subject_11978/study_20682/pic_034184.jpg",
+    "subject_11984/study_20487/pic_033862.jpg",
+    "subject_11984/study_20487/pic_033863.jpg",
+    "subject_12004/study_20586/pic_034025.jpg",
+    "subject_12004/study_20586/pic_034026.jpg",
+    "subject_12005/study_20600/pic_034050.jpg",
+    "subject_12005/study_20600/pic_034051.jpg",
+    "subject_12039/study_20819/pic_034405.jpg",
+    "subject_12039/study_20819/pic_034406.jpg",
+    "subject_12039/study_20819/pic_034407.jpg"
+  ],
+  "mean_ms": 81.50994598338002,
+  "median_ms": 81.76723749966186,
+  "p95_ms": 97.40073798329831,
+  "max_ms": 106.41068166781527,
+  "round_mean_ms": [
+    79.69787513004121,
+    82.14922767016105,
+    82.6827351499378
+  ],
+  "latency_limit_ms": 100.0,
+  "latency_pass_on_current_hardware": true,
+  "comparison": {
+    "status": "matched",
+    "rounds": [
+      {
+        "compared_studies": 53,
+        "valid_compared_studies": 53,
+        "expected_studies": 53,
+        "reference_studies": 53,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      },
+      {
+        "compared_studies": 53,
+        "valid_compared_studies": 53,
+        "expected_studies": 53,
+        "reference_studies": 53,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      },
+      {
+        "compared_studies": 53,
+        "valid_compared_studies": 53,
+        "expected_studies": 53,
+        "reference_studies": 53,
+        "mismatched_studies": [],
+        "mismatched_study_count": 0,
+        "missing_result_studies": [],
+        "unexpected_result_studies": [],
+        "missing_reference_studies": [],
+        "reused_reference_studies": [],
+        "uncompared_reference_studies": 0,
+        "reference_superset_allowed": false,
+        "identity_coverage_match": true,
+        "invalid_probability_studies": [],
+        "probability_mismatched_studies": [],
+        "binary_mismatched_studies": [],
+        "gate_mismatched_studies": [],
+        "sample_class_order_mismatched_studies": [],
+        "cross_study_class_order_mismatched_studies": [],
+        "semantic_mismatched_study_count": 0,
+        "semantic_match": true,
+        "absolute_tolerance": 1e-07,
+        "max_absolute_error": 0.0,
+        "binary_threshold": 0.5,
+        "gate_thresholds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "ordering_policy": "exact class order/ties within each Study and exact per-class order/ties across compared Studies",
+        "order_mismatch_count_definition": "Studies with changed sorted-position/tie-group signatures; not a count of pairwise inversions",
+        "match": true
+      }
+    ]
+  },
+  "peak_allocated_bytes": 212227584,
+  "peak_reserved_bytes": 249561088,
+  "round_outputs": [
+    {
+      "path": "round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "image_predictions": "round_1.image_predictions.csv",
+      "image_predictions_sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "studies": 53,
+      "study_classes": 10,
+      "image_classes": 10
+    },
+    {
+      "path": "round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "image_predictions": "round_2.image_predictions.csv",
+      "image_predictions_sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "studies": 53,
+      "study_classes": 10,
+      "image_classes": 10
+    },
+    {
+      "path": "round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "image_predictions": "round_3.image_predictions.csv",
+      "image_predictions_sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "studies": 53,
+      "study_classes": 10,
+      "image_classes": 10
+    }
+  ]
+}

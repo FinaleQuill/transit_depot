@@ -1,0 +1,15 @@
+{
+  "verified_at_hong_kong": "2026-11-04T00:18:59.848716+08:00",
+  "verification_method": "Actual SHA256 of complete on-disk checkpoint, file inode and mtime stable during read, equals checkpoint_saved lifecycle event",
+  "source_session": "E0 existing uninterrupted container",
+  "epoch": 2,
+  "best.pt": {
+    "sha256": "ce320d9307ab5827e199c8e3b3a1f7efc085ae83132d0db5959ebeb1fc1929a6",
+    "bytes": 350451919
+  },
+  "last.pt": {
+    "sha256": "fe78345f16280934077f1af3078e84f6268a4c51ffaa1a24720ed15d4e875d55",
+    "bytes": 1401817885
+  },
+  "note": "Hashes verified in recovery command; files intentionally continue updating as later epochs complete. No checkpoint loaded into GPU."
+}

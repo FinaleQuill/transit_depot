@@ -1,0 +1,6 @@
+{
+  "failed_utc": "2026-11-02T20:56:51.539261+00:00",
+  "error": "ValueError: Original ten-class binary targets are required",
+  "test_accessed": false,
+  "complete": false
+}

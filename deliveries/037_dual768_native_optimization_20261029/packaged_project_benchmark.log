@@ -1,0 +1,60 @@
+{
+  "project_root": "/tmp/dual768_2080ti_diagnosis/final_project_isolated",
+  "model_dir": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/model",
+  "official_T4_certified": false,
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "sm": 68,
+  "allocator_gib": 8,
+  "external_addons_removed": true,
+  "same_105_image_hashes": true,
+  "protocol": {
+    "measured": 100,
+    "warmup": 5,
+    "rounds": 3,
+    "batch": 1,
+    "serial": true,
+    "timing": "file_read_to_actual_CSV_write",
+    "model_initialization_timed": false
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "precision": "float16",
+    "device": "cuda",
+    "driver": "610.57.04",
+    "official_gpu": false,
+    "official_environment_compatible": false,
+    "preprocessing": {
+      "grayscale_resize": "avx2",
+      "native_available": true,
+      "native_threads_max": 8,
+      "uint8_lookup_input": true,
+      "serial_images": true
+    }
+  },
+  "mean_ms": 82.19088717006042,
+  "round_mean_ms": [
+    85.2905793800528,
+    75.75184231009189,
+    85.53023982003651
+  ],
+  "p95_ms": 97.28374653404899,
+  "max_ms": 108.46018800051145,
+  "image_and_study_CSV_byte_equal_all_rounds": true,
+  "module_paths": {
+    "cost": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/cost.py",
+    "deploy_kd": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/deploy_kd.py",
+    "model_overnight": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/model_overnight.py",
+    "inference_inputs": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/inference_inputs.py",
+    "fast_lanczos": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/fast_lanczos.py",
+    "timm": "/tmp/dual768_2080ti_diagnosis/final_project_isolated/code/_runtime_addons/timm/__init__.py"
+  }
+}

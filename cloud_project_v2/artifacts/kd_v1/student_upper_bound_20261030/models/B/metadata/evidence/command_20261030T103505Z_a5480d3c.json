@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-10-30T10:35:06.062940+00:00",
+  "command": [
+    "/usr/bin/python",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/study_student.py",
+    "--fold-plan",
+    "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+    "--soft-labels",
+    "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/oof_logits_tta_v2",
+    "--output",
+    "/tmp/cloud_student_runs_20261030/040_base768_p2_p3_seed44",
+    "--image-root",
+    "/home/featurize/data/cxr_first",
+    "--pretrained-provenance-path",
+    "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/student_upper_bound_20261030/base_original_pretrained_provenance.json",
+    "--pretrained-weights-path",
+    "/home/featurize/work/deliveries/038_dual768_optimized_project_20261030/pretrain_model/timm__convnext_base.fb_in22k_ft_in1k_384_bc0cfafc7d77/model.safetensors",
+    "--seed",
+    "44",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "source_archive": "/tmp/cloud_student_runs_20261030/040_base768_p2_p3_seed44/evidence/source_20261030T103505Z_a5480d3c",
+  "console_log": "/tmp/cloud_student_runs_20261030/040_base768_p2_p3_seed44/evidence/console_20261030T103505Z_a5480d3c.log",
+  "preexisting_run_artifacts": [],
+  "coverage_from_start": "complete",
+  "exit_code": 0,
+  "child_pid": 22,
+  "ended_at": "2026-10-31T06:37:23.825111+00:00",
+  "console_bytes": 228570
+}

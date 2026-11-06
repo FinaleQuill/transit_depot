@@ -1,0 +1,18 @@
+{
+  "completed": true,
+  "time": "2026-11-06T13:51:50.127463+08:00",
+  "studies": 1414,
+  "images": 2218,
+  "patients": 136,
+  "rows": 14140,
+  "elapsed_seconds": 223.18015288299648,
+  "loaded_asset_bytes": 351216394,
+  "package_config_sha256": "5dfe59a9e361726be558885a3232255688b55b0c33db6c98a0d023e3627d5664",
+  "cuda_device": "NVIDIA GeForce RTX 2080 Ti",
+  "metrics": {},
+  "training_started": false,
+  "csv_sha256": {
+    "dino": "f65ba02666cff8f685df6e2ff54113387fee442a360d2feb0a1a25b6204d92d4",
+    "blend": "a5055b9c329a698c2e85fa2b1a6a41280b1961a958d96d455fb688960ad6f02f"
+  }
+}

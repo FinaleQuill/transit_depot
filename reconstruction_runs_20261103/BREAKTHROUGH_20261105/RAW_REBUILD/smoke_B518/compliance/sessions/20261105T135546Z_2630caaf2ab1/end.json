@@ -1,0 +1,30 @@
+{
+  "audit_schema_version": 1,
+  "demonstration_only": false,
+  "details": {
+    "attempted_updates": 2,
+    "best_epoch": null,
+    "best_macro_auc": null,
+    "next_action": "Review paired evidence; confirm on another patient fold before full-data refit",
+    "official_valid_evaluated": false,
+    "optimizer_updates": 2,
+    "skipped_updates": 0,
+    "stage_decision": {
+      "automatic_submission": false,
+      "reason": "Smoke or no complete candidate",
+      "state": "not_evaluated"
+    },
+    "state": "smoke_completed",
+    "test_used": false,
+    "updated_at": "2026-11-05T21:57:53.820666+08:00"
+  },
+  "event_type": "training_ended",
+  "previous_record_sha256": "80fea082f9764280490b925a93a6abc4965c6363a6318b0df3dc353c914d1627",
+  "record_sha256": "38c8c511c909267e3ff34557628caaf17d50d26214d89df6bd1e4008651c4f4d",
+  "recorded_at_hong_kong": "2026-11-05T21:57:53.914465+08:00",
+  "recorded_at_utc": "2026-11-05T13:57:53.914465+00:00",
+  "run_dir": "/home/featurize/data/cxr_breakthrough_20261105/state/RAW_REBUILD/smoke_B518",
+  "session_id": "20261105T135546Z_2630caaf2ab1",
+  "state": "smoke_completed",
+  "trainer": "raw_rebuild.train"
+}

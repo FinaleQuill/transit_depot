@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "purpose": "geometry preprocessing A/B audit",
+  "test_access": "forbidden; no test manifest or image may be read",
+  "A_original": {
+    "name": "original_letterbox",
+    "crop": "none",
+    "resize": "longest_side_then_center_zero_pad",
+    "geometry_invariant": true
+  },
+  "B_candidate": {
+    "name": "review_only_safe_geometry_crop",
+    "crop": "candidate coordinates only; not a deployment transform",
+    "max_side_fraction": 0.08,
+    "safe_margin_original_px": "max(2% of source side, 32)",
+    "aspect_envelope_source": "train metadata P1-P99",
+    "geometry_invariant": true,
+    "fallback": "A full frame when signals disagree or limits fail"
+  },
+  "selection": "no candidate crop is selected for deployment by this audit; any A/B inference requires separate authorization",
+  "do_not_do": [
+    "no automatic deletion",
+    "no label edits",
+    "no fixed global black threshold crop",
+    "no test-derived threshold or selection"
+  ]
+}

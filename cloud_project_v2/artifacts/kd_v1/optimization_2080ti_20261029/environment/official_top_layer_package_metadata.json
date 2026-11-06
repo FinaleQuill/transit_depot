@@ -1,0 +1,17 @@
+{
+  "source": "Read-only inspection of completed public OCI layer package METADATA; not runtime import validation",
+  "image_digest": "sha256:5e333ae965f02b4c80e4a5c89a9d33cae9ba54ffaea2f73217ffcd4b4a7fabc6",
+  "layer": {
+    "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+    "digest": "sha256:32ff6aec82ab56b4e99995b102748a5044171d36597134af3a0bff872c670534",
+    "size": 172936923
+  },
+  "packages": {
+    "albumentations": "2.0.8",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "Pillow": "10.4.0",
+    "scikit-learn": "1.5.2",
+    "scipy": "1.17.1"
+  }
+}

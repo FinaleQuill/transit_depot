@@ -1,0 +1,4 @@
+Hypothesis: training at 640, 768, or 896 while holding 768+hflip2 inference fixed will expose class-specific training-resolution sensitivity.
+Expected effect: at least one class improves by 0.01 at 896 with patient-paired CI excluding zero; 640 noninferiority is assessed against a preregistered 0.01 margin.
+Cost: fixed-E3 and best-checkpoint valid comparisons, class-wise patient bootstrap, sampled-train gap, timing, and fixed equal-weight 768/896 Tiny fusion.
+Failure criterion: any test access, missing paired patient intervals, incomplete compliance, or no class satisfying the preregistered high-resolution support threshold.

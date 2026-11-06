@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-11-04T14:15:11.443022+08:00",
+  "git_commit": "6aa3709ded84ad6048e669a0512a2c599283b64e",
+  "git_worktree_clean": true,
+  "evaluation_state": "evaluation_complete_user_cutoff",
+  "original_training_evidence_unchanged": true,
+  "files_sha256": {
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/REPORT.md": "453a69e72639cfd9b14d041b7246001a5166c50d420b1afdd02814d13f2bc13d",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/STATUS.json": "a9a14e815a81b90e5d8ae34efe7b1d86df413649171e92931d382f96d6e83676",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/learning_curves.pdf": "a2d6485fa8c6aba9cf498e90e1abb216daa0bdbb9ca55d6d5183fac4740ae518",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/learning_curves.png": "4a85f3ebb4c0538f9b7593da46e073287978bd10721d63b82644a4ffdd664a61",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/paired_report.json": "590c92747d5c4bedfd75fec9b8824bf0eb482db5b4ddca398039e2fa2dd877f6",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/patient_diagnostics/REPORT.md": "7cd49bfa39f70a496122546869310e96cfd4aba31a1477ffe0eada9cac1f9185",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/patient_diagnostics/report.json": "5a8f45b3c3a02ba1c24fbe4e358a27f7181bf9d3bf64edf9befdde5090d1affd",
+    "/home/featurize/work/reconstruction_runs_20261103/controller/closeout_20261104/worklog_append_verification.json": "ebf18cfd73787e6d94130d1b8296335116230a67236817d220d1d40ea0aad135",
+    "/home/featurize/work/cxr_research_20261103/docs/RECONSTRUCTION_E0_E1_REVIEW_20261104.md": "31d983822309a6435ac1ee23d701f6d3ea35c613a290142a329c551fe54b381e"
+  },
+  "new_training_runs": 0,
+  "resume_e1": false,
+  "holdout_H_accessed": false,
+  "official_validation_accessed": false,
+  "test_accessed": false,
+  "remote_push": false
+}

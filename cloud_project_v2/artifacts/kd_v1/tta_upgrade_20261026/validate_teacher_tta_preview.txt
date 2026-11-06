@@ -1,0 +1,40 @@
+{
+  "dry_run": true,
+  "checkpoints_loaded": 0,
+  "gpu_used": false,
+  "manifest": "/home/featurize/work/cloud_project_v2/data/clean_v1_reviewed/valid_manifest.csv",
+  "manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "teachers": [
+    {
+      "fold_index": 0,
+      "checkpoint": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0/best.pt",
+      "epochs": 20
+    },
+    {
+      "fold_index": 1,
+      "checkpoint": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_1/best.pt",
+      "epochs": 12
+    },
+    {
+      "fold_index": 2,
+      "checkpoint": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_2/best.pt",
+      "epochs": 12
+    },
+    {
+      "fold_index": 3,
+      "checkpoint": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_3/best.pt",
+      "epochs": 12
+    },
+    {
+      "fold_index": 4,
+      "checkpoint": "/home/featurize/work/runs/023_convnext_v1_base768_teacher12_cv5/fold_4/best.pt",
+      "epochs": 12
+    }
+  ],
+  "comparison": [
+    "each_fold_identity_vs_hflip2",
+    "ensemble5_identity_vs_hflip2"
+  ],
+  "output_dir": "../runs/024_convnext_v1_base768_mixed20_12_cv5/teacher_tta_valid",
+  "next": "Use --execute only after all five teachers finish and the GPU is idle."
+}

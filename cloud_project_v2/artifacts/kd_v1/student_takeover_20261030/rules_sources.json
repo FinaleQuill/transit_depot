@@ -1,0 +1,14 @@
+[
+  {
+    "file": "/home/featurize/work/rules.pdf",
+    "bytes": 544529,
+    "sha256": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6",
+    "pages": 6
+  },
+  {
+    "file": "/home/featurize/work/rules_1.pdf",
+    "bytes": 220706,
+    "sha256": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "pages": 5
+  }
+]

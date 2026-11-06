@@ -1,0 +1,4 @@
+Hypothesis: a report generated only from completed queue evidence will expose candidate metrics, per-class resolution sensitivity, ROI atlas, dual-Tiny fusion, timing, and compliance state.
+Expected effect: present missing stages as incomplete and preserve unresolved human decisions without producing CSV or a stronger-model declaration.
+Cost: CPU-only reading and formatting of registered reports and receipts; no data inference, training, or test access.
+Failure criterion: any missing evidence is presented as complete, any preregistration/compliance failure is hidden, or a CSV/platform submission is produced.

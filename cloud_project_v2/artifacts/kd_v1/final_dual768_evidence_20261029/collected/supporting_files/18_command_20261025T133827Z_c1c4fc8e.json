@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-10-25T13:38:27.833480+00:00",
+  "command": [
+    "/home/featurize/.conda/envs/cxr-kd-v1/bin/python",
+    "-u",
+    "/home/featurize/work/cloud_project_v2/run_mixed_teachers.py",
+    "--execute"
+  ],
+  "cwd": "/home/featurize/work/cloud_project_v2",
+  "source_archive": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/source_20261025T133827Z_c1c4fc8e",
+  "console_log": "/home/featurize/work/runs/024_convnext_v1_base768_mixed20_12_cv5/evidence/console_20261025T133827Z_c1c4fc8e.log",
+  "preexisting_run_artifacts": [
+    "plan.json",
+    "teacher_collection.json",
+    "transition_status.json"
+  ],
+  "coverage_from_start": "complete",
+  "exit_code": null,
+  "child_pid": 146121
+}

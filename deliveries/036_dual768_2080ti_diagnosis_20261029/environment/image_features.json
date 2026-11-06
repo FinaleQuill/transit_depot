@@ -1,0 +1,1 @@
+{"libjpeg_turbo": true, "libjpeg_turbo_version": "3.0.3", "jpeg_version": "6.2", "cpu_affinity": [0, 1, 2, 3, 4, 5, 6, 7], "cpu_threads_before_predictor": 1, "torch_num_interop_threads": 8}

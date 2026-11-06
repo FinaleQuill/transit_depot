@@ -1,0 +1,26 @@
+{
+  "artifact_type": "historic_status_observation",
+  "status": {
+    "state": "paused",
+    "completed_epochs": 1,
+    "validated_epochs": 0,
+    "backward_batches": 12129,
+    "optimizer_updates": 759,
+    "ema_updates": 759,
+    "amp_skipped_steps": 0,
+    "fold": 0,
+    "training_complete": false,
+    "inference_ready": false,
+    "selection_protocol": "fixed_epoch_final_ema",
+    "last_checkpoint_sha256": "ef562e7301da425678333f271244164d4958ffd693f9725eef2efe9012be49a3",
+    "best_checkpoint_sha256": null,
+    "updated_utc": "2026-10-25T07:45:32.514891+00:00"
+  },
+  "observed_at_utc": "2026-10-25T08:00:31.354Z",
+  "recovered_at_utc": "2026-10-25T08:09:03.343412+00:00",
+  "source_session": "/home/featurize/.codex/sessions/2026/10/25/rollout-2026-10-25T07-56-30-01a1720f-a458-73a0-b199-fce5581a6ea8.jsonl",
+  "source_line": 71,
+  "original_record_sha256": "db10626f1a0b104298ef685fc3ff1f20e5e502def1ee9f7dd89317af8e24c7c4",
+  "original_record_file": "historic_epoch_1_original_tool_record.json",
+  "limitation": "Recovered from a previously recorded read-only status.json observation. The epoch-1 checkpoint binary was overwritten by the original rolling-save design and has not been rehashed or recreated."
+}

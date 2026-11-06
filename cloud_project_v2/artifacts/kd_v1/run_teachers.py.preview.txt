@@ -1,0 +1,23 @@
+{
+  "execute": false,
+  "run_dir": "/home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5",
+  "artifact_type": "kd_teacher_run",
+  "schema_version": 6,
+  "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+  "image_size": 768,
+  "selection_protocol": "fixed_epoch_final_ema",
+  "epochs": 20,
+  "seed": 43,
+  "effective_batch_size": 32,
+  "fold_plan": "/home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json",
+  "fold_plan_sha256": "e541696e1418be7848a328a65f12e2a0df1874a0dcc00d506eee581be1eefe67",
+  "image_root": "/home/featurize/data/cxr_first",
+  "official_valid_used_for_training": false,
+  "outer_fold_used_for_selection": false
+}
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 0 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_0 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 1 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_1 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 2 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_2 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 3 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_3 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0
+/home/featurize/.conda/envs/cxr-kd-v1/bin/python -u /home/featurize/work/cloud_project_v2/train_teacher.py --execute --fold-plan /home/featurize/work/cloud_project_v2/data/cv5_overnight/folds.json --fold 4 --output /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/fold_4 --image-root /home/featurize/data/cxr_first --batch-size 2 --accumulation-steps 16 --epochs 20 --num-workers 8 --prefetch-factor 2 --seed 43 --amp-dtype auto --stop-file /home/featurize/work/runs/021_convnext_v1_base768_teacher_cv5/STOP --max-epochs-this-call 0
+Dry-run only: no model, image loading, weight download or training was started.

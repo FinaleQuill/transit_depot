@@ -1,0 +1,296 @@
+{
+  "plan_id": "frozen_head_auc_20261101",
+  "registered_at_hong_kong": "2026-11-01T20:33:04.190189+08:00",
+  "registered_before_new_head_validation": true,
+  "test_used_for_design_or_fitting": false,
+  "historical_valid_informed_design": true,
+  "goal_valid_auc": 0.82,
+  "deadline_hong_kong": "2026-11-02T02:37:00+08:00",
+  "budget": {
+    "cache_seconds_max": 5400,
+    "all_head_fitting_seconds_max": 7200,
+    "actual_evaluation_seconds_max": 3600,
+    "gpu_jobs": 1
+  },
+  "rationale": "Previous full-encoder warm starts degraded both single models. Freeze old A/B representations and change only the train-fitted classifier objective; shared original encoders keep forward counts and persistent storage small.",
+  "encoders": {
+    "A": {
+      "base_model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A",
+      "base_config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+      "base_weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "source_epoch": 9,
+      "backbone_name": "convnext_tiny.fb_in22k_ft_in1k_384",
+      "feature_dim": 768
+    },
+    "B": {
+      "base_model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B",
+      "base_config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+      "base_weights_sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411",
+      "source_epoch": 10,
+      "backbone_name": "convnext_base.fb_in22k_ft_in1k_384",
+      "feature_dim": 1024
+    }
+  },
+  "cache": {
+    "schema": "frozen_fc_cache_v1",
+    "train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+    "valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+    "feature_input": "exact production FP16 full-decode 768 ImageNet normalization",
+    "feature_contract": "actual head.fc input after frozen global_pool/norm/flatten/pre_logits/drop with model.eval; identity and hflip separately",
+    "dtype": "float16",
+    "train_batch": 16,
+    "valid_batch": 1,
+    "train_workers": 4,
+    "valid_workers": 0,
+    "no_test_cache": true
+  },
+  "common": {
+    "epochs": 12,
+    "batch_studies": 256,
+    "learning_rate": 0.0002,
+    "min_learning_rate": 1e-05,
+    "warmup_epochs": 1,
+    "grad_clip": 1.0,
+    "temperature": 1.0,
+    "num_threads": 4,
+    "weight_decay": 0.0,
+    "pos_weight_power": 0.5,
+    "checkpoint": "fixed final epoch, no validation selection or early stop",
+    "validation_tta": "hflip2",
+    "anchor": "mean squared raw-logit change from original frozen FP16 head, equal image/view within Study then equal Study/class",
+    "hard_target": "original Study label vs mean sigmoid of all original images and fixed identity/hflip feature views"
+  },
+  "recipes": {
+    "F1": {
+      "bce_weight": 1.0,
+      "rank_weight": 0.0,
+      "anchor_weight": 0.1,
+      "seed": 48
+    },
+    "F2": {
+      "bce_weight": 0.5,
+      "rank_weight": 0.5,
+      "anchor_weight": 0.1,
+      "seed": 49
+    }
+  },
+  "rank_definition": "per class average softplus((score_negative-score_positive)/temperature) over all positive-negative Study pairs in each fixed shuffled minibatch; score=logit(mean image/view sigmoid). Average only classes with both labels; no valid fitting.",
+  "single_candidates": [
+    "A_F1",
+    "A_F2",
+    "B_F1",
+    "B_F2"
+  ],
+  "pair_candidates": {
+    "A_F1_B": {
+      "members": [
+        "A_F1",
+        "B"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A_F2_B": {
+      "members": [
+        "A_F2",
+        "B"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A_B_F1": {
+      "members": [
+        "A",
+        "B_F1"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A_B_F2": {
+      "members": [
+        "A",
+        "B_F2"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A_F1_B_F1": {
+      "members": [
+        "A_F1",
+        "B_F1"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A_F2_B_F2": {
+      "members": [
+        "A_F2",
+        "B_F2"
+      ],
+      "weights": [
+        [
+          0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    }
+  },
+  "selection": {
+    "existing_best_valid": 0.8171491901128627,
+    "candidate_order": "Score all four final heads and the six fixed pairs from cached valid features. Actual FP16 full-valid reproduce at most the best two fixed pairs by proxy score; no new fusion or class search. Keep current best CSV if none improves.",
+    "cached_valid_scores_are_provisional": true,
+    "patient_bootstrap": 1000,
+    "bootstrap_seed": 50,
+    "actual_latency_gate_ms": 100,
+    "preferred_latency_ms": 80,
+    "max_inference_assets_bytes": 500000000,
+    "T4_status": "not certified; existing hardware is RTX2080Ti",
+    "no_automatic_test_prediction": true
+  },
+  "storage": {
+    "local_root": "/tmp/cloud_student_runs_20261030/frozen_head_20261101",
+    "persistent_evidence": "artifacts/kd_v1/frozen_head_20261101",
+    "only_head_patches_persisted": true,
+    "full_merged_validation_exports_tmp_only": true
+  }
+}

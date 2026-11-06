@@ -1,0 +1,71 @@
+{
+  "AI_goal_at_verification": null,
+  "E0_E1_frozen_unchanged": true,
+  "E1_epoch13_restarted": false,
+  "E2_plan_frozen_unchanged": true,
+  "E3_E4_queued": false,
+  "advancing": true,
+  "can_close_conversation_without_stopping_training": true,
+  "container": {
+    "host_pid": 11455,
+    "id": "3ad7d5a0381030a285f1a6cdacd4b1021aef958f66c0bedaeadb85d035d13311",
+    "image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "name": "cxr-e2-global-control-1793775068_11416",
+    "network": "none",
+    "running": true,
+    "started_at": "2026-11-04T06:51:10.100755223Z"
+  },
+  "controller": {
+    "fd": {
+      "0": "/dev/null",
+      "1": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller.launch.log",
+      "2": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller.launch.log"
+    },
+    "pgid": 11416,
+    "pid": 11416,
+    "ppid": 1,
+    "sid": 11416,
+    "starttime_ticks": 453437,
+    "tty_nr": 0
+  },
+  "launch_commit": "18f90a8c98e21ffd79f357110c069fd892caaf49",
+  "launch_sha256": "80eabb7458c6160813e30638ce4ae76ead7fdb50e7109d3be3b4067e8c4ca2c4",
+  "new_AI_goal_created": false,
+  "passed": true,
+  "progress_snapshots": [
+    {
+      "controller_state": "training",
+      "controller_updated_at": "2026-11-04T14:52:17.997740+08:00",
+      "log_bytes": 0,
+      "observed_at": "2026-11-04T14:52:30.457053+08:00",
+      "progress": {
+        "epoch": 0,
+        "state": "evaluating_inner_dev",
+        "studies_done": 129,
+        "studies_total": 3703,
+        "updated_at": "2026-11-04T14:52:21.655530+08:00"
+      }
+    },
+    {
+      "controller_state": "training",
+      "controller_updated_at": "2026-11-04T14:53:18.287063+08:00",
+      "log_bytes": 0,
+      "observed_at": "2026-11-04T14:53:36.583905+08:00",
+      "progress": {
+        "epoch": 0,
+        "state": "evaluating_inner_dev",
+        "studies_done": 385,
+        "studies_total": 3703,
+        "updated_at": "2026-11-04T14:53:29.229637+08:00"
+      }
+    }
+  ],
+  "queue": [
+    "global_control_6_epochs",
+    "global_local_6_epochs",
+    "three_fixed_patient_paired_comparisons"
+  ],
+  "research_complete": false,
+  "stage": "full inner development epoch0 baseline; no formal optimization updates completed yet",
+  "verified_at": "2026-11-04T14:53:36.588279+08:00"
+}

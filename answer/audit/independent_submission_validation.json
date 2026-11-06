@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "submission": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission_final.csv",
+  "sha256": "b092d26196c5586af55a9173cc5c8582c003bd2e9135aa94ce17f2f760a0620b",
+  "bytes": 683937,
+  "header": [
+    "Subject_id",
+    "Study_id",
+    "Predict_class",
+    "Probability"
+  ],
+  "encoding": "UTF-8",
+  "utf8_bom": false,
+  "terminal_newline": true,
+  "data_rows": 14140,
+  "lines_including_header": 14141,
+  "manifest_images": 2218,
+  "studies": 1414,
+  "subjects": 136,
+  "classes": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "duplicate_keys": 0,
+  "missing_keys": 0,
+  "unexpected_keys": 0,
+  "malformed_rows": 0,
+  "template_identity_order_equal": true,
+  "manifest_identity_order_equal": true,
+  "invalid_probability_rows": 0,
+  "invalid_gate_rows": 0,
+  "probability_min": 0.005373648123349994,
+  "probability_max": 0.9848667025566101,
+  "wide_max_absolute_difference": 0.0,
+  "official_rule_url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+  "platform_upload_performed": false,
+  "errors": [],
+  "checked_hong_kong": "2026-10-20T13:14:22.333054+08:00",
+  "upload_filename_alias": "/home/featurize/work/deliveries/020_768_ensemble_20261020_124902/inference/submission.csv",
+  "alias_sha256": "b092d26196c5586af55a9173cc5c8582c003bd2e9135aa94ce17f2f760a0620b",
+  "frozen_plan_sha256": "fc3f066d8e76bd0c9a63f358446ff9312755e4e543f92e42ffa8aba1c284a045",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "tta": {
+    "scales": [
+      768
+    ],
+    "hflip": true
+  },
+  "fold_normalized_weights": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "protocol_and_artifact_checks": {
+    "inference_status_complete": true,
+    "driver_status_complete": true,
+    "final_path_matches_status": true,
+    "final_path_matches_driver": true,
+    "upload_alias_path_matches_driver": true,
+    "upload_alias_equal_bytes": true,
+    "driver_sha256_matches_csv": true,
+    "frozen_plan_sha256_matches_status": true,
+    "frozen_plan_sha256_matches_provenance": true,
+    "five_distinct_folds_0_to_4": true,
+    "driver_folds_match_plan": true,
+    "plan_five_equal_weights": true,
+    "plan_768_hflip": true,
+    "actual_protocol_768_hflip": true,
+    "actual_protocol_aggregation": true,
+    "actual_five_equal_weights": true,
+    "provenance_five_models": true,
+    "actual_models_match_frozen_plan": true,
+    "actual_weights_are_ema": true,
+    "test_not_used_for_fitting": true,
+    "platform_upload_not_performed": true
+  }
+}

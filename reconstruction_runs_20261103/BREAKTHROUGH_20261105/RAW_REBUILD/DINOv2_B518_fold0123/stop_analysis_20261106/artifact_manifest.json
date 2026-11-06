@@ -1,0 +1,54 @@
+{
+  "paired_epoch_analysis.log": {
+    "bytes": 802,
+    "sha256": "8b5b2d0cc9c830099f994a9cda86ed6f9bac91ba52562a28f87cf86d07317d5e"
+  },
+  "progress.json.before_stop_summary": {
+    "bytes": 474,
+    "sha256": "56351a3abd287c4f436e9aa9045b496958ca272de4893395ac84f4a2e5ff92e3"
+  },
+  "paired_epoch_analysis_retry.log": {
+    "bytes": 1146,
+    "sha256": "5d9e56fac4a02ec9688c1374203934c875d594db37d5cf0832ed2cd34a181bf7"
+  },
+  "e21_minus_e20.json": {
+    "bytes": 45572,
+    "sha256": "a65741b13cd12caea13eaf054edfe9040b41b9238be89df91c3dc0530ec402ef"
+  },
+  "paired_comparison_summary.json": {
+    "bytes": 12339,
+    "sha256": "fd972d952a779a5aa4e610ae7f0a5e8c9720bc8bfb2891c18a9d876aebe66d57"
+  },
+  "completed_epoch_curve.csv": {
+    "bytes": 1310,
+    "sha256": "5a7616b7837f142de04eea45a548952db1299396fcd19a1d528540a92b45015a"
+  },
+  "e20_fixed_blend_minus_e20_single.json": {
+    "bytes": 47077,
+    "sha256": "35498f01b35f1710b8ee854eacf957fa8b166f65865407d87a5cd23c83a0584e"
+  },
+  "training_loss_dev_auc_epochs_01_21.png": {
+    "bytes": 163928,
+    "sha256": "79676a43919a0c81714687f3ede58a9f3bcbebb6a5684c35f06d6689f0b73411"
+  },
+  "paired_epoch_analysis.py": {
+    "bytes": 10174,
+    "sha256": "67263e5954b17711d9a8e3134eac2531993549d5ebca699d84bdbe52f0ee3164"
+  },
+  "status.json.before_stop_summary": {
+    "bytes": 450,
+    "sha256": "947d6fd6d914604e47f65eb983f9d1889a4e8f59b73dca858f7fa343f29794bf"
+  },
+  "e20_minus_e18.json": {
+    "bytes": 45538,
+    "sha256": "f39ecec6c4e1c729608fcb6005b0e0e5e90f34fec74e0d314d747b987d83e2bf"
+  },
+  "model_decision.json": {
+    "bytes": 1649,
+    "sha256": "0fa9e848705f56afe2fdb4787efe35bd3ae02b7fdb125843fefa6d78a2d0a209"
+  },
+  "stage_decision.json.before_stop_summary": {
+    "bytes": 1021,
+    "sha256": "a7edc6a66bb563675443ad71731d91e0b6fceca8d7d381363fa8949d4b60de1a"
+  }
+}

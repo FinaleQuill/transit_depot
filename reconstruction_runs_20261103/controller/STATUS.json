@@ -1,0 +1,262 @@
+{
+  "active_container": null,
+  "actual_epoch_auc": [
+    {
+      "epoch": 1,
+      "macro_auc": 0.7301085166617338
+    },
+    {
+      "epoch": 2,
+      "macro_auc": 0.7683542960298733
+    },
+    {
+      "epoch": 3,
+      "macro_auc": 0.779356341065881
+    },
+    {
+      "epoch": 4,
+      "macro_auc": 0.789189355371055
+    },
+    {
+      "epoch": 5,
+      "macro_auc": 0.7944633755709165
+    },
+    {
+      "epoch": 6,
+      "macro_auc": 0.797973436093981
+    },
+    {
+      "epoch": 7,
+      "macro_auc": 0.7992390384597867
+    },
+    {
+      "epoch": 8,
+      "macro_auc": 0.7991284688902273
+    },
+    {
+      "epoch": 9,
+      "macro_auc": 0.7979022364291601
+    },
+    {
+      "epoch": 10,
+      "macro_auc": 0.7949880995564443
+    },
+    {
+      "epoch": 11,
+      "macro_auc": 0.7927237201315706
+    },
+    {
+      "epoch": 12,
+      "macro_auc": 0.7901893089395156
+    }
+  ],
+  "child_pid": null,
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--network=none",
+    "--shm-size=4g",
+    "--gpus",
+    "all",
+    "--name",
+    "cxr-reconstruct-e1-1793744244_331369",
+    "--user",
+    "1000:1000",
+    "--volume",
+    "/home/featurize/work/cxr_research_20261103:/home/featurize/work/cxr_research_20261103:ro",
+    "--volume",
+    "/home/featurize/work/cloud_project_v2:/home/featurize/work/cloud_project_v2:ro",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103:/home/featurize/work/reconstruction_runs_20261103:rw",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/assets:/home/featurize/work/reconstruction_runs_20261103/assets:ro",
+    "--volume",
+    "/home/featurize/work/reconstruction_runs_20261103/splits:/home/featurize/work/reconstruction_runs_20261103/splits:ro",
+    "--volume",
+    "/home/featurize/data:/home/featurize/data:ro",
+    "--volume",
+    "/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:/tmp/cloud_student_runs_20261030/tight_crop_ab_assets/038_dual768_optimized_project_20261030/pretrain_model:ro",
+    "--volume",
+    "/tmp/cxr_train_addons_20261103:/opt/cxr_train_addons:ro",
+    "--env",
+    "PYTHONPATH=/opt/cxr_train_addons:/home/featurize/work/cxr_research_20261103",
+    "--env",
+    "PYTHONNOUSERSITE=1",
+    "--env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "--env",
+    "HF_HUB_OFFLINE=1",
+    "--env",
+    "NO_ALBUMENTATIONS_UPDATE=1",
+    "--env",
+    "OMP_NUM_THREADS=1",
+    "--env",
+    "MKL_NUM_THREADS=1",
+    "--env",
+    "OPENBLAS_NUM_THREADS=1",
+    "--env",
+    "TZ=Asia/Hong_Kong",
+    "--env",
+    "PYTHONHASHSEED=20261103",
+    "--env",
+    "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "--workdir",
+    "/home/featurize/work/cxr_research_20261103",
+    "--entrypoint",
+    "python3",
+    "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete@sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "-u",
+    "-m",
+    "reconstruction.train",
+    "--config",
+    "/home/featurize/work/cxr_research_20261103/reconstruction/configs/E1.json",
+    "--execute"
+  ],
+  "completed_jobs": [
+    {
+      "best_epoch": 8,
+      "best_macro_auc": 0.7978396535270589,
+      "epochs": 14,
+      "history_sha256": "3c9d610ace809f9dbe290c8c2ff62d9326ad7d04075bd9be3c99146c8e87e1d8",
+      "ledger_sha256": "f3e91de9abdd8d506753edebe8c4897f1de9e32ccaf063474b90742e8e1e633e",
+      "name": "E0",
+      "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E0_base768_seed20261103/epoch_08/predictions.npz",
+      "prediction_sha256": "8e48a469622833e7514b728e0e2e7f3a8fdf8ae2c675e5a77f7fe37b6150d1c5",
+      "report_sha256": "9e9be227a709f21134416eed6ebe8a83bafc06517fbfc7659485e1828392a2a6",
+      "state": "early_stopped",
+      "verified_at": "2026-11-04T06:17:24.613998+08:00"
+    }
+  ],
+  "confirmation_evaluated": false,
+  "controller_pid": 331369,
+  "current_epoch_eta": null,
+  "current_job": "E1",
+  "job_histories": {
+    "E0": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7287554363943574
+      },
+      {
+        "epoch": 2,
+        "macro_auc": 0.7640501061493883
+      },
+      {
+        "epoch": 3,
+        "macro_auc": 0.7774432875814724
+      },
+      {
+        "epoch": 4,
+        "macro_auc": 0.7879218965440287
+      },
+      {
+        "epoch": 5,
+        "macro_auc": 0.7927617498737767
+      },
+      {
+        "epoch": 6,
+        "macro_auc": 0.7967543049612942
+      },
+      {
+        "epoch": 7,
+        "macro_auc": 0.7977129198534167
+      },
+      {
+        "epoch": 8,
+        "macro_auc": 0.7978396535270589
+      },
+      {
+        "epoch": 9,
+        "macro_auc": 0.7973657123816565
+      },
+      {
+        "epoch": 10,
+        "macro_auc": 0.7950999065603823
+      },
+      {
+        "epoch": 11,
+        "macro_auc": 0.7934200582407025
+      },
+      {
+        "epoch": 12,
+        "macro_auc": 0.7913820043788619
+      },
+      {
+        "epoch": 13,
+        "macro_auc": 0.7891589813948421
+      },
+      {
+        "epoch": 14,
+        "macro_auc": 0.7867753350918617
+      }
+    ],
+    "E1": [
+      {
+        "epoch": 1,
+        "macro_auc": 0.7301085166617338
+      },
+      {
+        "epoch": 2,
+        "macro_auc": 0.7683542960298733
+      },
+      {
+        "epoch": 3,
+        "macro_auc": 0.779356341065881
+      },
+      {
+        "epoch": 4,
+        "macro_auc": 0.789189355371055
+      },
+      {
+        "epoch": 5,
+        "macro_auc": 0.7944633755709165
+      },
+      {
+        "epoch": 6,
+        "macro_auc": 0.797973436093981
+      },
+      {
+        "epoch": 7,
+        "macro_auc": 0.7992390384597867
+      },
+      {
+        "epoch": 8,
+        "macro_auc": 0.7991284688902273
+      },
+      {
+        "epoch": 9,
+        "macro_auc": 0.7979022364291601
+      },
+      {
+        "epoch": 10,
+        "macro_auc": 0.7949880995564443
+      },
+      {
+        "epoch": 11,
+        "macro_auc": 0.7927237201315706
+      },
+      {
+        "epoch": 12,
+        "macro_auc": 0.7901893089395156
+      }
+    ]
+  },
+  "last_exit_code": 130,
+  "log_path": "/home/featurize/work/reconstruction_runs_20261103/controller/logs/E1_1793744244_331369.log",
+  "monitor_error": null,
+  "official_valid_evaluated": false,
+  "started_at": "2026-11-03T22:55:05.503065+08:00",
+  "state": "paused",
+  "stop_reason": "controller_STOP",
+  "test_accessed": false,
+  "trainer_exit_code": 130,
+  "trainer_progress": {
+    "compliance_status": "/home/featurize/work/reconstruction_runs_20261103/E1_base768_seed20261103/compliance/status.json",
+    "error": "KeyboardInterrupt: Training interrupted by signal 15",
+    "state": "interrupted",
+    "updated_at": "2026-11-04T13:04:14.480793+08:00"
+  },
+  "updated_at": "2026-11-04T13:04:17.358404+08:00"
+}

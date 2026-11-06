@@ -1,0 +1,34 @@
+{
+  "schema_version": 5,
+  "class_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "thresholds": [
+    0.6833451688289642,
+    0.670484060049057,
+    0.7883686363697053,
+    0.6627991259098054,
+    0.7590648949146271,
+    0.5442855387926102,
+    0.5199432780345281,
+    0.41061471700668334,
+    0.6934940934181214,
+    0.6355322152376175
+  ],
+  "source": "official_valid_Study_F1",
+  "comparison": ">=",
+  "ensemble_plan_sha256": "fc3f066d8e76bd0c9a63f358446ff9312755e4e543f92e42ffa8aba1c284a045",
+  "ensemble_protocol_sha256": "20b38b59d87f49c36bd3ec032814d86a4fc26990f28727baa646eb70942f8e87",
+  "official_valid_manifest_sha256": "c136b2d9f2646fdfa65e0db91d24b1ab5a021e7b038dcaf243855b8779bb5112",
+  "submission_filters_rows": false,
+  "thresholds_affect_probability_submission": false
+}

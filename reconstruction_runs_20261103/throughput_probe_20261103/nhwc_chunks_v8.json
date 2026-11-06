@@ -1,0 +1,41 @@
+{
+  "kind": "synthetic_training_mechanics_only",
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "views": 8,
+  "studies_per_update": 4,
+  "image_size": 768,
+  "channels_last": true,
+  "checkpoint_mode": "chunks",
+  "view_chunk_size": 4,
+  "warmup": 3,
+  "repeats": 3,
+  "seconds": [
+    0.6804603459895588,
+    0.684356898011174,
+    0.6745155150128994
+  ],
+  "mean_seconds": 0.6797775863378774,
+  "images_per_second": 11.76855512859418,
+  "peak_allocated_gib": 7.5187273025512695,
+  "peak_reserved_gib": 7.69140625,
+  "attempted_optimizer_steps": 6,
+  "successful_optimizer_steps": 6,
+  "losses": [
+    0.652805507183075,
+    0.658424973487854,
+    0.6176039576530457
+  ],
+  "includes": [
+    "forward",
+    "backward",
+    "AdamW",
+    "EMA"
+  ],
+  "excludes": [
+    "source image loading",
+    "initialization",
+    "validation",
+    "checkpoint writing"
+  ],
+  "data": "synthetic random tensors only"
+}

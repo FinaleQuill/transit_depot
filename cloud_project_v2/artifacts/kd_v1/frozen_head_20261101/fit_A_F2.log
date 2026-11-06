@@ -1,0 +1,13 @@
+frozen_head encoder=A recipe=F2 epoch=1/12 loss=0.298708 bce=0.380774 rank=0.216216 anchor=0.002131
+frozen_head encoder=A recipe=F2 epoch=2/12 loss=0.296704 bce=0.378186 rank=0.213724 anchor=0.007487
+frozen_head encoder=A recipe=F2 epoch=3/12 loss=0.295017 bce=0.376312 rank=0.211469 anchor=0.011258
+frozen_head encoder=A recipe=F2 epoch=4/12 loss=0.293701 bce=0.375082 rank=0.209585 anchor=0.013677
+frozen_head encoder=A recipe=F2 epoch=5/12 loss=0.293507 bce=0.374074 rank=0.209622 anchor=0.016594
+frozen_head encoder=A recipe=F2 epoch=6/12 loss=0.292495 bce=0.373346 rank=0.208181 anchor=0.017311
+frozen_head encoder=A recipe=F2 epoch=7/12 loss=0.292035 bce=0.372846 rank=0.207561 anchor=0.018317
+frozen_head encoder=A recipe=F2 epoch=8/12 loss=0.291637 bce=0.372404 rank=0.206985 anchor=0.019424
+frozen_head encoder=A recipe=F2 epoch=9/12 loss=0.291345 bce=0.372036 rank=0.206577 anchor=0.020388
+frozen_head encoder=A recipe=F2 epoch=10/12 loss=0.291419 bce=0.371851 rank=0.206872 anchor=0.020572
+frozen_head encoder=A recipe=F2 epoch=11/12 loss=0.291420 bce=0.371720 rank=0.206968 anchor=0.020761
+frozen_head encoder=A recipe=F2 epoch=12/12 loss=0.291347 bce=0.371654 rank=0.206881 anchor=0.020791
+{"state": "completed", "encoder": "A", "recipe": "F2", "final_epoch": 12, "head_patch_fp16_sha256": "fd92ffc02908f22bd68e4ddfb2b191c8899230fe058cf9b576bcf61b23cf1fa3"}

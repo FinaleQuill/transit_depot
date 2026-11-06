@@ -1,0 +1,19 @@
+{
+  "scope": "4 highest-view optimization Studies,22images; mechanical equivalence only",
+  "baseline_max_abs_probability_difference": 0.0,
+  "baseline_mean_abs_probability_difference": 0.0,
+  "tolerance": 2e-06,
+  "passed": true,
+  "inputs": {
+    "global_control": {
+      "path": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_control_chunk4/epoch_00/predictions.npz",
+      "sha256": "afc15c4fb6d0476155e6a2999d2397c07dead0f717f715e6881b89535a5f8f20"
+    },
+    "global_local": {
+      "path": "/home/featurize/data/cxr_reconstruction_smokes_20261104/global_local_chunk4/epoch_00/predictions.npz",
+      "sha256": "afc15c4fb6d0476155e6a2999d2397c07dead0f717f715e6881b89535a5f8f20"
+    }
+  },
+  "dev_images_read": false,
+  "effect_evidence": false
+}

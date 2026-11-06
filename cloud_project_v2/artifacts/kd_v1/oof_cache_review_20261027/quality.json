@@ -1,0 +1,788 @@
+{
+  "checked_at_hong_kong": "2026-10-27T13:11:24.172557+08:00",
+  "cache_npz_sha256": "573d0bf0f846f7f802cbb536a67ba640d209fae9d448aa72e3e8a31e2894b6c5",
+  "cache_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+  "train_manifest_sha256": "f9a06316cfa8ab10ad4488e60a2dcf934cbc942727edd9ad2c31689823db6aef",
+  "source_script_sha256": "dbc69008ad05cb81ae444da17b72ea4d48b2dfc9d233a8e86e331019c4648907",
+  "num_images": 30328,
+  "num_studies": 18513,
+  "num_patients": 11055,
+  "raw_shape": [
+    30328,
+    2,
+    10
+  ],
+  "stored_dtype": "float32",
+  "teacher_forward_precision": [
+    "bfloat16"
+  ],
+  "all_finite": true,
+  "global_raw_logit_min": -17.375,
+  "global_raw_logit_max": 12.625,
+  "quantile_probabilities": [
+    0.0,
+    0.001,
+    0.01,
+    0.5,
+    0.99,
+    0.999,
+    1.0
+  ],
+  "pooled_identity": {
+    "macro_auc": 0.7876527763403216,
+    "per_class_auc": [
+      0.6463368475877773,
+      0.8254953727360472,
+      0.7518756477360097,
+      0.6912298799652825,
+      0.8682972225713987,
+      0.7872049742230218,
+      0.7927494032701627,
+      0.739097853567952,
+      0.8992371308022634,
+      0.8750034309433012
+    ],
+    "studies": 18513,
+    "positive_studies": [
+      622,
+      900,
+      942,
+      1436,
+      2404,
+      3885,
+      3968,
+      4508,
+      4654,
+      6683
+    ]
+  },
+  "pooled_hflip2": {
+    "macro_auc": 0.7895095408687609,
+    "per_class_auc": [
+      0.6458899649736768,
+      0.8308495303342859,
+      0.7550336874078729,
+      0.6940026927028699,
+      0.8697364481094839,
+      0.7885032636058066,
+      0.7941930077956065,
+      0.7411209933579939,
+      0.8999672960155247,
+      0.8757985243844888
+    ],
+    "studies": 18513,
+    "positive_studies": [
+      622,
+      900,
+      942,
+      1436,
+      2404,
+      3885,
+      3968,
+      4508,
+      4654,
+      6683
+    ]
+  },
+  "by_fold": [
+    {
+      "fold": 0,
+      "epoch": 20,
+      "images": 6070,
+      "patients": 2211,
+      "identity": {
+        "macro_auc": 0.7855663186383252,
+        "per_class_auc": [
+          0.6561777529346002,
+          0.8265020342511118,
+          0.7529417995823371,
+          0.6871888726207905,
+          0.8630704189363407,
+          0.7869731365971968,
+          0.7893585626811924,
+          0.740066198913862,
+          0.8892637917863887,
+          0.8641206180794305
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          125,
+          180,
+          188,
+          288,
+          481,
+          777,
+          793,
+          900,
+          930,
+          1336
+        ]
+      },
+      "hflip2": {
+        "macro_auc": 0.7873809083541081,
+        "per_class_auc": [
+          0.6540793739519284,
+          0.8370359857444727,
+          0.7543559516963771,
+          0.6882961200585651,
+          0.8647283940580031,
+          0.7851508377824168,
+          0.7911630114013078,
+          0.7443738851230823,
+          0.8900013183966745,
+          0.8646242053282535
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          125,
+          180,
+          188,
+          288,
+          481,
+          777,
+          793,
+          900,
+          930,
+          1336
+        ]
+      }
+    },
+    {
+      "fold": 1,
+      "epoch": 12,
+      "images": 6062,
+      "patients": 2211,
+      "identity": {
+        "macro_auc": 0.7916503318418104,
+        "per_class_auc": [
+          0.6790140013343191,
+          0.8356284308158244,
+          0.7683584930951854,
+          0.6853087169231868,
+          0.8631715205760533,
+          0.7775032175032174,
+          0.7879520665652642,
+          0.7376393728222996,
+          0.9069839107745131,
+          0.8749435880082416
+        ],
+        "studies": 3702,
+        "positive_studies": [
+          124,
+          180,
+          189,
+          287,
+          481,
+          777,
+          794,
+          902,
+          931,
+          1337
+        ]
+      },
+      "hflip2": {
+        "macro_auc": 0.7932172993521771,
+        "per_class_auc": [
+          0.6807788185867037,
+          0.8380000315477317,
+          0.7705288143659905,
+          0.6856408241974075,
+          0.8633667699175306,
+          0.7805275605275606,
+          0.7904235341401641,
+          0.7387610864745011,
+          0.9083425426999989,
+          0.8758030110641823
+        ],
+        "studies": 3702,
+        "positive_studies": [
+          124,
+          180,
+          189,
+          287,
+          481,
+          777,
+          794,
+          902,
+          931,
+          1337
+        ]
+      }
+    },
+    {
+      "fold": 2,
+      "epoch": 12,
+      "images": 6053,
+      "patients": 2211,
+      "identity": {
+        "macro_auc": 0.7908279136512398,
+        "per_class_auc": [
+          0.671089994410285,
+          0.8065608540700792,
+          0.7836377530946399,
+          0.6938148210103714,
+          0.8691481797497156,
+          0.7962242830663884,
+          0.7889402124735794,
+          0.7273194510362284,
+          0.901147813876063,
+          0.8703957737250467
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          125,
+          180,
+          188,
+          287,
+          480,
+          777,
+          794,
+          903,
+          931,
+          1336
+        ]
+      },
+      "hflip2": {
+        "macro_auc": 0.7920560728502399,
+        "per_class_auc": [
+          0.6679496925656792,
+          0.8088008957012648,
+          0.7868844768620805,
+          0.6970288415246145,
+          0.8710821956769056,
+          0.7969331014443797,
+          0.7898630412175192,
+          0.7290944866318622,
+          0.9016228728903273,
+          0.8713011239877659
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          125,
+          180,
+          188,
+          287,
+          480,
+          777,
+          794,
+          903,
+          931,
+          1336
+        ]
+      }
+    },
+    {
+      "fold": 3,
+      "epoch": 12,
+      "images": 6079,
+      "patients": 2211,
+      "identity": {
+        "macro_auc": 0.7933638441713151,
+        "per_class_auc": [
+          0.6208731038585296,
+          0.8571585138928313,
+          0.7498191640688842,
+          0.7066658030665285,
+          0.8730014931132251,
+          0.7892471614276125,
+          0.8063631239105946,
+          0.7430437419008574,
+          0.8994132284948613,
+          0.8880531079792254
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          124,
+          180,
+          188,
+          287,
+          481,
+          777,
+          794,
+          902,
+          931,
+          1336
+        ]
+      },
+      "hflip2": {
+        "macro_auc": 0.7950778810527889,
+        "per_class_auc": [
+          0.6262595877385104,
+          0.8596114422682688,
+          0.7524620925516783,
+          0.7080774832923973,
+          0.8741377819590109,
+          0.7913463458576241,
+          0.8063507848914989,
+          0.7452289766641783,
+          0.8990592591559292,
+          0.8882450561487923
+        ],
+        "studies": 3703,
+        "positive_studies": [
+          124,
+          180,
+          188,
+          287,
+          481,
+          777,
+          794,
+          902,
+          931,
+          1336
+        ]
+      }
+    },
+    {
+      "fold": 4,
+      "epoch": 12,
+      "images": 6064,
+      "patients": 2211,
+      "identity": {
+        "macro_auc": 0.7957959782172328,
+        "per_class_auc": [
+          0.6364352494635677,
+          0.8393274023597703,
+          0.7772152413484608,
+          0.7181312206345238,
+          0.8772188231983327,
+          0.7866101266101265,
+          0.7933859219355334,
+          0.7471948935313653,
+          0.9019695705211371,
+          0.8804713325695094
+        ],
+        "studies": 3702,
+        "positive_studies": [
+          124,
+          180,
+          189,
+          287,
+          481,
+          777,
+          793,
+          901,
+          931,
+          1338
+        ]
+      },
+      "hflip2": {
+        "macro_auc": 0.7983705809647671,
+        "per_class_auc": [
+          0.6358030256585945,
+          0.8445864092371759,
+          0.7822592426919214,
+          0.7241856739839099,
+          0.8789089402253017,
+          0.7890024090024089,
+          0.7953036993944522,
+          0.7485807550102013,
+          0.9034026267917563,
+          0.8816730276519492
+        ],
+        "studies": 3702,
+        "positive_studies": [
+          124,
+          180,
+          189,
+          287,
+          481,
+          777,
+          793,
+          901,
+          931,
+          1338
+        ]
+      }
+    }
+  ],
+  "student_full_train_pos_weight": [
+    28.7636661529541,
+    19.56999969482422,
+    18.65286636352539,
+    11.892061233520508,
+    6.700915336608887,
+    3.7652509212493896,
+    3.665574550628662,
+    3.106699228286743,
+    2.9778685569763184,
+    1.7701630592346191
+  ],
+  "teacher_to_student_log_weight_offset_max_abs": 0.0012204647064208984,
+  "effective_soft_target": {
+    "formula": "mean_views(sigmoid((raw_logits - log(teacher_train_pos_weight) + log(student_full_train_pos_weight))/2))",
+    "temperature": 2.0,
+    "perview_before_mean": true,
+    "native_torch_target_max_absolute_difference": 1.0182262510927131e-07,
+    "native_KL_when_student_matches_targets_max": 1.5199184133507515e-07,
+    "all_finite": true,
+    "min": 0.0001740928516343895,
+    "max": 0.9980035647661514,
+    "all_classes_nonconstant": true,
+    "statistics_scope": "quantiles/std are image-level; target means and mean image entropy use equal Study weighting; positive/negative means are Study-mean targets"
+  },
+  "per_class": [
+    {
+      "class_id": 1,
+      "positive_studies": 622,
+      "raw_logits_quantiles": [
+        -17.0,
+        -13.625,
+        -11.3125,
+        -3.421875,
+        2.171875,
+        4.125,
+        9.75
+      ],
+      "raw_logits_std": 2.778946201086511,
+      "unique_raw_logits": 2176,
+      "view_logits_mean_absolute_difference": 0.5995119214057922,
+      "exact_equal_view_logits_fraction": 0.011408599314165128,
+      "raw_sigmoid_view_mean_absolute_difference": 0.03834508810491978,
+      "raw_sigmoid_below_1e_6_fraction": 0.0007913479293062516,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.0002692244862882115,
+        0.001220802513245336,
+        0.003794879557270765,
+        0.15571836689460364,
+        0.7387894593819935,
+        0.8789280262989224,
+        0.9877465509705738
+      ],
+      "T2_aligned_target_std": 0.1775743565936353,
+      "T2_aligned_target_study_equal_mean": 0.21591651448807953,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.6138050495094498,
+      "T2_aligned_target_positive_study_mean": 0.3168965900820564,
+      "T2_aligned_target_negative_study_mean": 0.21240583274757038,
+      "pooled_raw_hflip2_oof_auc": 0.6458899649736768
+    },
+    {
+      "class_id": 2,
+      "positive_studies": 900,
+      "raw_logits_quantiles": [
+        -17.375,
+        -15.0625,
+        -13.0625,
+        -5.0,
+        4.4375,
+        8.543125000000146,
+        12.625
+      ],
+      "raw_logits_std": 3.6204269133730067,
+      "unique_raw_logits": 2144,
+      "view_logits_mean_absolute_difference": 0.6680896878242493,
+      "exact_equal_view_logits_fraction": 0.014409126879451332,
+      "raw_sigmoid_view_mean_absolute_difference": 0.029958169578812994,
+      "raw_sigmoid_below_1e_6_fraction": 0.005176734370878396,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.0001740928516343895,
+        0.0006128044147013234,
+        0.0015439735941639647,
+        0.07642262319708455,
+        0.8960712414830906,
+        0.9853050793714552,
+        0.9980035647661514
+      ],
+      "T2_aligned_target_std": 0.20542508247696822,
+      "T2_aligned_target_study_equal_mean": 0.17802681522014926,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.47035544192495016,
+      "T2_aligned_target_positive_study_mean": 0.5143635011389722,
+      "T2_aligned_target_negative_study_mean": 0.16084047460089448,
+      "pooled_raw_hflip2_oof_auc": 0.8308495303342859
+    },
+    {
+      "class_id": 3,
+      "positive_studies": 942,
+      "raw_logits_quantiles": [
+        -15.125,
+        -13.0625,
+        -11.1875,
+        -3.34375,
+        2.875,
+        4.59375,
+        9.0625
+      ],
+      "raw_logits_std": 2.9859219999381588,
+      "unique_raw_logits": 2213,
+      "view_logits_mean_absolute_difference": 0.5269052982330322,
+      "exact_equal_view_logits_fraction": 0.014079398575573727,
+      "raw_sigmoid_view_mean_absolute_difference": 0.03646187066512351,
+      "raw_sigmoid_below_1e_6_fraction": 0.0003297283038776049,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.0005194575915148997,
+        0.0015851697704189777,
+        0.00392872898351855,
+        0.15948664849977667,
+        0.8050514387984338,
+        0.9031623016467871,
+        0.9854046828865285
+      ],
+      "T2_aligned_target_std": 0.20724542468201881,
+      "T2_aligned_target_study_equal_mean": 0.25536903816304923,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.6359502756381107,
+      "T2_aligned_target_positive_study_mean": 0.45711419826384825,
+      "T2_aligned_target_negative_study_mean": 0.24455326553684892,
+      "pooled_raw_hflip2_oof_auc": 0.7550336874078729
+    },
+    {
+      "class_id": 4,
+      "positive_studies": 1436,
+      "raw_logits_quantiles": [
+        -9.5,
+        -8.0,
+        -6.34375,
+        -1.28125,
+        2.765625,
+        3.974140625000018,
+        6.03125
+      ],
+      "raw_logits_std": 1.9055019898766081,
+      "unique_raw_logits": 2376,
+      "view_logits_mean_absolute_difference": 0.4029132127761841,
+      "exact_equal_view_logits_fraction": 0.008737800052756529,
+      "raw_sigmoid_view_mean_absolute_difference": 0.053251421648646186,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.00899180344353611,
+        0.019291656472464582,
+        0.0418471847517462,
+        0.3453776559450427,
+        0.7948099160986355,
+        0.874938859861557,
+        0.9473411681865485
+      ],
+      "T2_aligned_target_std": 0.1850102416964093,
+      "T2_aligned_target_study_equal_mean": 0.3701922927940864,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.8381162921660167,
+      "T2_aligned_target_positive_study_mean": 0.4860676059601781,
+      "T2_aligned_target_negative_study_mean": 0.36044837116227024,
+      "pooled_raw_hflip2_oof_auc": 0.6940026927028699
+    },
+    {
+      "class_id": 5,
+      "positive_studies": 2404,
+      "raw_logits_quantiles": [
+        -12.375,
+        -10.625,
+        -9.3125,
+        -2.828125,
+        3.71875,
+        5.0,
+        7.1875
+      ],
+      "raw_logits_std": 3.330900191971845,
+      "unique_raw_logits": 2275,
+      "view_logits_mean_absolute_difference": 0.3938085436820984,
+      "exact_equal_view_logits_fraction": 0.017178844632023214,
+      "raw_sigmoid_view_mean_absolute_difference": 0.030658963815283918,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.002536037763272718,
+        0.005086236297658086,
+        0.009559847378642176,
+        0.19615343584460967,
+        0.8642942550501977,
+        0.9221894977718692,
+        0.9695688447780081
+      ],
+      "T2_aligned_target_std": 0.2541534122994426,
+      "T2_aligned_target_study_equal_mean": 0.3211251495333831,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.6535499993607694,
+      "T2_aligned_target_positive_study_mean": 0.6368888239175126,
+      "T2_aligned_target_negative_study_mean": 0.27400267928572897,
+      "pooled_raw_hflip2_oof_auc": 0.8697364481094839
+    },
+    {
+      "class_id": 6,
+      "positive_studies": 3885,
+      "raw_logits_quantiles": [
+        -7.59375,
+        -6.71875,
+        -5.90625,
+        -0.78125,
+        3.0,
+        4.125,
+        5.6875
+      ],
+      "raw_logits_std": 2.135845766853582,
+      "unique_raw_logits": 2414,
+      "view_logits_mean_absolute_difference": 0.3152550160884857,
+      "exact_equal_view_logits_fraction": 0.012068055921920338,
+      "raw_sigmoid_view_mean_absolute_difference": 0.04280289097043629,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.025795513755268056,
+        0.034035533430229734,
+        0.050478259529383285,
+        0.4046066423815754,
+        0.8155538511684196,
+        0.886411357524427,
+        0.9372185667831884
+      ],
+      "T2_aligned_target_std": 0.20818654218964966,
+      "T2_aligned_target_study_equal_mean": 0.42453070373354596,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.8464879302200183,
+      "T2_aligned_target_positive_study_mean": 0.583094122359776,
+      "T2_aligned_target_negative_study_mean": 0.38241839300324054,
+      "pooled_raw_hflip2_oof_auc": 0.7885032636058066
+    },
+    {
+      "class_id": 7,
+      "positive_studies": 3968,
+      "raw_logits_quantiles": [
+        -7.90625,
+        -6.84375,
+        -5.78125,
+        -1.01953125,
+        2.84375,
+        3.640625,
+        4.75
+      ],
+      "raw_logits_std": 2.113468674357518,
+      "unique_raw_logits": 2350,
+      "view_logits_mean_absolute_difference": 0.29118406772613525,
+      "exact_equal_view_logits_fraction": 0.013189132155104194,
+      "raw_sigmoid_view_mean_absolute_difference": 0.03853697464814703,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.022811543476962563,
+        0.0322087895136608,
+        0.05316019091707717,
+        0.376075038385034,
+        0.8031444712183993,
+        0.8585466696070347,
+        0.9033679706215921
+      ],
+      "T2_aligned_target_std": 0.2078466834341767,
+      "T2_aligned_target_study_equal_mean": 0.415485720631534,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.8403444939854848,
+      "T2_aligned_target_positive_study_mean": 0.57908716886407,
+      "T2_aligned_target_negative_study_mean": 0.3708538508077659,
+      "pooled_raw_hflip2_oof_auc": 0.7941930077956065
+    },
+    {
+      "class_id": 8,
+      "positive_studies": 4508,
+      "raw_logits_quantiles": [
+        -5.375,
+        -4.53125,
+        -3.8125,
+        -0.388671875,
+        2.390625,
+        3.067890625000018,
+        3.953125
+      ],
+      "raw_logits_std": 1.5018421637407744,
+      "unique_raw_logits": 2383,
+      "view_logits_mean_absolute_difference": 0.24349257349967957,
+      "exact_equal_view_logits_fraction": 0.009759957794777103,
+      "raw_sigmoid_view_mean_absolute_difference": 0.041554536321734274,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.06467874976206991,
+        0.09648264769063576,
+        0.13027283857879338,
+        0.451572383643888,
+        0.7655280783940694,
+        0.8198410382437484,
+        0.8666353632930155
+      ],
+      "T2_aligned_target_std": 0.16577192731171625,
+      "T2_aligned_target_study_equal_mean": 0.462612678141673,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.9145784398344812,
+      "T2_aligned_target_positive_study_mean": 0.5622573875881337,
+      "T2_aligned_target_negative_study_mean": 0.43053853675041154,
+      "pooled_raw_hflip2_oof_auc": 0.7411209933579939
+    },
+    {
+      "class_id": 9,
+      "positive_studies": 4654,
+      "raw_logits_quantiles": [
+        -10.5,
+        -8.9375,
+        -7.90625,
+        -2.390625,
+        5.15625,
+        6.510781250000036,
+        8.1875
+      ],
+      "raw_logits_std": 3.3088441408864044,
+      "unique_raw_logits": 2182,
+      "view_logits_mean_absolute_difference": 0.37911298871040344,
+      "exact_equal_view_logits_fraction": 0.016255605381165918,
+      "raw_sigmoid_view_mean_absolute_difference": 0.029742118785668455,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.005566489346989762,
+        0.011721682942555529,
+        0.019382130983529294,
+        0.23338489382331068,
+        0.9288679095126811,
+        0.9617496554857481,
+        0.9830761942236211
+      ],
+      "T2_aligned_target_std": 0.2790288869872119,
+      "T2_aligned_target_study_equal_mean": 0.36594836743808834,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.674142649718897,
+      "T2_aligned_target_positive_study_mean": 0.6717719497482052,
+      "T2_aligned_target_negative_study_mean": 0.26324954702743253,
+      "pooled_raw_hflip2_oof_auc": 0.8999672960155247
+    },
+    {
+      "class_id": 10,
+      "positive_studies": 6683,
+      "raw_logits_quantiles": [
+        -6.59375,
+        -5.09375,
+        -4.15625,
+        -0.2333984375,
+        5.21875,
+        6.375,
+        7.59375
+      ],
+      "raw_logits_std": 2.573954902270525,
+      "unique_raw_logits": 2197,
+      "view_logits_mean_absolute_difference": 0.29866620898246765,
+      "exact_equal_view_logits_fraction": 0.01490371933526774,
+      "raw_sigmoid_view_mean_absolute_difference": 0.03458070845064385,
+      "raw_sigmoid_below_1e_6_fraction": 0.0,
+      "raw_sigmoid_above_1_minus_1e_6_fraction": 0.0,
+      "T2_aligned_target_quantiles": [
+        0.04227257099983806,
+        0.07466504341804231,
+        0.11188349868549162,
+        0.4709515189448272,
+        0.9302204816329653,
+        0.9595067766424523,
+        0.9746134744143254
+      ],
+      "T2_aligned_target_std": 0.2610233962550897,
+      "T2_aligned_target_study_equal_mean": 0.46156415087423086,
+      "T2_aligned_target_entropy_bits_study_equal_mean": 0.7902170491427603,
+      "T2_aligned_target_positive_study_mean": 0.6807416905205652,
+      "T2_aligned_target_negative_study_mean": 0.3377464418753761,
+      "pooled_raw_hflip2_oof_auc": 0.8757985243844888
+    }
+  ],
+  "recommendation": "No pathological cache/target distribution found; no repeat extraction or quality-driven hyperparameter change justified. Proceed with the predeclared KD512 versus BCE512 comparison after integrity audit.",
+  "limits": [
+    "OOF is not the untouched official-valid split. Different fold teachers, training sample amount and calibration prevent causal comparison with official-valid student/ensemble AUC.",
+    "Per-fold AUC here is post-training descriptive diagnosis, not selection of epochs, teachers or class weights. Do not use it to rewrite the fixed teacher protocol.",
+    "Pos-weight-aligned T2 targets are softened probabilities in the weighted-BCE student logit space, not estimates of class prevalence or calibrated medical probabilities.",
+    "Good OOF ranking or benign soft targets do not guarantee that alpha0.2 distillation improves the student."
+  ],
+  "models_loaded": false,
+  "gpu_used": false,
+  "training_started": false,
+  "teacher_or_target_parameters_fitted": false,
+  "test_used": false
+}

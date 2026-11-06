@@ -1,0 +1,13 @@
+{
+  "controller_state": "training",
+  "controller_updated_at": "2026-11-04T14:53:18.287063+08:00",
+  "log_bytes": 0,
+  "observed_at": "2026-11-04T14:53:36.583905+08:00",
+  "progress": {
+    "epoch": 0,
+    "state": "evaluating_inner_dev",
+    "studies_done": 385,
+    "studies_total": 3703,
+    "updated_at": "2026-11-04T14:53:29.229637+08:00"
+  }
+}

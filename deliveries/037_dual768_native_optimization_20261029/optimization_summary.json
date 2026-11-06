@@ -1,0 +1,263 @@
+{
+  "completed_hong_kong": "2026-10-30T03:20:57.043961+08:00",
+  "git_head": "d539db7278e2f4d28a84a676a236f3a056fa6255",
+  "benchmarks": {
+    "local_baseline_v1": {
+      "mean_ms": 124.75485697332715,
+      "round_mean_ms": [
+        123.01503533999494,
+        123.69050093999704,
+        127.55903463998948
+      ],
+      "p95_ms": 143.92061256661842,
+      "max_ms": 151.74270999993192
+    },
+    "local_native_pthread_v1": {
+      "mean_ms": 93.24780864000633,
+      "round_mean_ms": [
+        94.89919459999783,
+        89.49218016000032,
+        95.35205116002089
+      ],
+      "p95_ms": 109.89546938337753,
+      "max_ms": 121.17204566660196
+    },
+    "local_native_avx2_only_v1": {
+      "mean_ms": 84.63391796336509,
+      "round_mean_ms": [
+        89.69665149008506,
+        82.67415550995793,
+        81.53094689005229
+      ],
+      "p95_ms": 100.74609450160399,
+      "max_ms": 109.27130933123408
+    },
+    "local_native_avx2_lut_v1": {
+      "mean_ms": 81.50994598338002,
+      "round_mean_ms": [
+        79.69787513004121,
+        82.14922767016105,
+        82.6827351499378
+      ],
+      "p95_ms": 97.40073798329831,
+      "max_ms": 106.41068166781527
+    },
+    "nfs_native_avx2_lut_v1": {
+      "mean_ms": 80.78113692671953,
+      "round_mean_ms": [
+        79.84708775013132,
+        80.85582065985363,
+        81.64050237017364
+      ],
+      "p95_ms": 94.22966454912967,
+      "max_ms": 96.49616333384377
+    }
+  },
+  "packaged_project_benchmark": {
+    "mean_ms": 82.19088717006042,
+    "round_mean_ms": [
+      85.2905793800528,
+      75.75184231009189,
+      85.53023982003651
+    ],
+    "p95_ms": 97.28374653404899,
+    "max_ms": 108.46018800051145,
+    "image_and_study_CSV_byte_equal_all_rounds": true
+  },
+  "local_reduction_percent": 34.66390971791421,
+  "protected_assets": [
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/config.json",
+      "sha256": "9363149e143dec2871ac5fb4fbfdee4885f9f62add6a9f2acf4704635311b590",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_00_fp16.pt",
+      "sha256": "edef1f23e591bb52782a03efdc6ee76e10b4d9f115e90654e40f7dbf35f50269",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/fp16_hflip2/student_01_fp16.pt",
+      "sha256": "87ed41a966cf96144cc63acf50613a14c66fe8497b51625f120389a97a563489",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.csv",
+      "sha256": "ea83de14afb8a8438428dc071b29438b2201a7113cad03aa4181de09284b3661",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/valid_fp16_hflip2/valid_predictions.csv",
+      "sha256": "7000ce912c0c285fb36ca251897866a314b9c0d33b21c8ed1d92edc0f11a3f94",
+      "unchanged": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/033_dual_tiny768_seed43_25_seed44_75/test_predictions/submission.image_predictions.csv",
+      "sha256": "1190a18e468b56ff66d8b50e4adcb43bcf11edc95252cb28b98790b24f5af208",
+      "unchanged": true
+    }
+  ],
+  "all_three_round_outputs_byte_identical": true,
+  "prediction_files": [
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_baseline_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_pthread_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_only_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/local_native_avx2_lut_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_1.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_1.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_2.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_2.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_3.csv",
+      "sha256": "3cc3db76fed57a450817c76d11588e208e5473a8cbbbf388eb1327551203d6b1",
+      "byte_equal_v1": true
+    },
+    {
+      "path": "/home/featurize/work/deliveries/037_dual768_native_optimization_20261029/nfs_native_avx2_lut_v1/round_3.image_predictions.csv",
+      "sha256": "ed545c4170985d109574f459a019d07d77b01f3a14c79d4b4596616c7a7a943c",
+      "byte_equal_v1": true
+    }
+  ],
+  "production_weights_and_config_bytes": 128766272,
+  "training_runs": 0,
+  "test_prediction_regenerations": 0,
+  "uploads": 0,
+  "official_T4_certified": false,
+  "project_pending_items": [
+    "T4 cost_report.json"
+  ],
+  "full_valid_reexecuted_this_phase": false,
+  "implementation": "Pillow-equivalent native int32/22bit grayscale Lanczos with runtime AVX2/generic dispatch, max8 threads; exact uint8 FP16 lookup and one final D2H"
+}

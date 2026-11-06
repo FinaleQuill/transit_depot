@@ -1,0 +1,111 @@
+{
+  "checked_at_hong_kong": "2026-10-26T21:22:45.621890+08:00",
+  "complete": true,
+  "finished_at_hong_kong": "2026-10-26T21:18:00.232803+08:00",
+  "images": 1422,
+  "studies": 859,
+  "patients": 228,
+  "all_12_prediction_sets_hashes_CSV_NPZ_labels_AUC_verified": true,
+  "five_member_probability_mean_verified": true,
+  "results": [
+    {
+      "member": "fold_0",
+      "tta": "identity",
+      "macro_auc": 0.7713447476336297,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_0",
+      "tta": "hflip2",
+      "macro_auc": 0.774955760096513,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_1",
+      "tta": "identity",
+      "macro_auc": 0.7901741299781342,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_1",
+      "tta": "hflip2",
+      "macro_auc": 0.7899384892207875,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_2",
+      "tta": "identity",
+      "macro_auc": 0.7937600388163382,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_2",
+      "tta": "hflip2",
+      "macro_auc": 0.7946132711238152,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_3",
+      "tta": "identity",
+      "macro_auc": 0.7797138939328614,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_3",
+      "tta": "hflip2",
+      "macro_auc": 0.7794587413612944,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_4",
+      "tta": "identity",
+      "macro_auc": 0.7974334717672339,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "fold_4",
+      "tta": "hflip2",
+      "macro_auc": 0.7985976181660799,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "five_teacher_equal_probability_average",
+      "tta": "identity",
+      "macro_auc": 0.8016390623403039,
+      "studies": 859,
+      "csv_rows": 8590
+    },
+    {
+      "member": "five_teacher_equal_probability_average",
+      "tta": "hflip2",
+      "macro_auc": 0.8024670163998529,
+      "studies": 859,
+      "csv_rows": 8590
+    }
+  ],
+  "ensemble_tta_macro_gain": 0.0008279540595491852,
+  "per_class_tta_delta": [
+    0.005039920159680689,
+    0.0016439797461694772,
+    0.0002139151826301422,
+    -0.0018777422473416072,
+    4.6750818139429384e-05,
+    -0.0007455638948257182,
+    0.002333940157774439,
+    0.0016880388321379725,
+    -5.778862206240465e-05,
+    -5.909536810566607e-06
+  ],
+  "next_oof_output_exists": false,
+  "new_training_or_inference_started": false
+}

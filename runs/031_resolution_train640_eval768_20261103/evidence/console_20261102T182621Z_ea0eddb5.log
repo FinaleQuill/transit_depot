@@ -1,0 +1,92 @@
+student epoch=1 batch=1/7582 loss=0.888222 alpha=0.0000
+student epoch=1 batch=100/7582 loss=0.456399 alpha=0.0013
+student epoch=1 batch=200/7582 loss=0.461920 alpha=0.0026
+student epoch=1 batch=300/7582 loss=0.462788 alpha=0.0040
+student epoch=1 batch=400/7582 loss=0.457108 alpha=0.0053
+student epoch=1 batch=500/7582 loss=0.456367 alpha=0.0066
+student epoch=1 batch=600/7582 loss=0.453940 alpha=0.0079
+student epoch=1 batch=700/7582 loss=0.448936 alpha=0.0092
+student epoch=1 batch=800/7582 loss=0.446128 alpha=0.0106
+student epoch=1 batch=900/7582 loss=0.444714 alpha=0.0119
+student epoch=1 batch=1000/7582 loss=0.441289 alpha=0.0132
+Student stop requested: finishing the current epoch before checkpointing
+student epoch=1 batch=1100/7582 loss=0.443256 alpha=0.0145
+student epoch=1 batch=1200/7582 loss=0.444679 alpha=0.0158
+student epoch=1 batch=1300/7582 loss=0.445069 alpha=0.0171
+student epoch=1 batch=1400/7582 loss=0.445573 alpha=0.0185
+student epoch=1 batch=1500/7582 loss=0.445014 alpha=0.0198
+student epoch=1 batch=1600/7582 loss=0.443943 alpha=0.0211
+student epoch=1 batch=1700/7582 loss=0.444850 alpha=0.0224
+student epoch=1 batch=1800/7582 loss=0.441583 alpha=0.0237
+student epoch=1 batch=1900/7582 loss=0.442591 alpha=0.0251
+student epoch=1 batch=2000/7582 loss=0.442004 alpha=0.0264
+student epoch=1 batch=2100/7582 loss=0.440987 alpha=0.0277
+student epoch=1 batch=2200/7582 loss=0.441876 alpha=0.0290
+student epoch=1 batch=2300/7582 loss=0.442391 alpha=0.0303
+student epoch=1 batch=2400/7582 loss=0.440888 alpha=0.0317
+student epoch=1 batch=2500/7582 loss=0.441097 alpha=0.0330
+student epoch=1 batch=2600/7582 loss=0.439613 alpha=0.0343
+student epoch=1 batch=2700/7582 loss=0.438811 alpha=0.0356
+student epoch=1 batch=2800/7582 loss=0.439435 alpha=0.0369
+student epoch=1 batch=2900/7582 loss=0.438883 alpha=0.0382
+student epoch=1 batch=3000/7582 loss=0.437900 alpha=0.0396
+student epoch=1 batch=3100/7582 loss=0.437715 alpha=0.0409
+student epoch=1 batch=3200/7582 loss=0.436876 alpha=0.0422
+student epoch=1 batch=3300/7582 loss=0.436017 alpha=0.0435
+student epoch=1 batch=3400/7582 loss=0.434518 alpha=0.0448
+student epoch=1 batch=3500/7582 loss=0.433585 alpha=0.0462
+student epoch=1 batch=3600/7582 loss=0.433026 alpha=0.0475
+student epoch=1 batch=3700/7582 loss=0.433298 alpha=0.0488
+student epoch=1 batch=3800/7582 loss=0.432834 alpha=0.0501
+student epoch=1 batch=3900/7582 loss=0.432215 alpha=0.0514
+student epoch=1 batch=4000/7582 loss=0.431146 alpha=0.0528
+student epoch=1 batch=4100/7582 loss=0.430634 alpha=0.0541
+student epoch=1 batch=4200/7582 loss=0.430685 alpha=0.0554
+student epoch=1 batch=4300/7582 loss=0.430203 alpha=0.0567
+student epoch=1 batch=4400/7582 loss=0.430229 alpha=0.0580
+student epoch=1 batch=4500/7582 loss=0.430234 alpha=0.0594
+student epoch=1 batch=4600/7582 loss=0.429539 alpha=0.0607
+student epoch=1 batch=4700/7582 loss=0.429925 alpha=0.0620
+student epoch=1 batch=4800/7582 loss=0.429007 alpha=0.0633
+student epoch=1 batch=4900/7582 loss=0.427796 alpha=0.0646
+student epoch=1 batch=5000/7582 loss=0.427921 alpha=0.0659
+student epoch=1 batch=5100/7582 loss=0.426865 alpha=0.0673
+student epoch=1 batch=5200/7582 loss=0.426714 alpha=0.0686
+student epoch=1 batch=5300/7582 loss=0.425547 alpha=0.0699
+student epoch=1 batch=5400/7582 loss=0.425453 alpha=0.0712
+student epoch=1 batch=5500/7582 loss=0.425627 alpha=0.0725
+student epoch=1 batch=5600/7582 loss=0.425824 alpha=0.0739
+student epoch=1 batch=5700/7582 loss=0.425353 alpha=0.0752
+student epoch=1 batch=5800/7582 loss=0.424977 alpha=0.0765
+student epoch=1 batch=5900/7582 loss=0.424506 alpha=0.0778
+student epoch=1 batch=6000/7582 loss=0.424591 alpha=0.0791
+student epoch=1 batch=6100/7582 loss=0.425123 alpha=0.0805
+student epoch=1 batch=6200/7582 loss=0.425178 alpha=0.0818
+student epoch=1 batch=6300/7582 loss=0.424883 alpha=0.0831
+student epoch=1 batch=6400/7582 loss=0.424694 alpha=0.0844
+student epoch=1 batch=6500/7582 loss=0.424811 alpha=0.0857
+student epoch=1 batch=6600/7582 loss=0.424719 alpha=0.0870
+student epoch=1 batch=6700/7582 loss=0.423964 alpha=0.0884
+student epoch=1 batch=6800/7582 loss=0.423685 alpha=0.0897
+student epoch=1 batch=6900/7582 loss=0.423953 alpha=0.0910
+student epoch=1 batch=7000/7582 loss=0.424383 alpha=0.0923
+student epoch=1 batch=7100/7582 loss=0.424262 alpha=0.0936
+student epoch=1 batch=7200/7582 loss=0.423928 alpha=0.0950
+student epoch=1 batch=7300/7582 loss=0.423927 alpha=0.0963
+student epoch=1 batch=7400/7582 loss=0.423982 alpha=0.0976
+student epoch=1 batch=7500/7582 loss=0.423788 alpha=0.0989
+student epoch=1 valid_AUC=0.80322236 best=0.80322236@1
+{
+  "state": "paused",
+  "completed_epochs": 1,
+  "validated_epochs": 1,
+  "backward_batches": 7582,
+  "optimizer_updates": 947,
+  "ema_updates": 947,
+  "amp_skipped_steps": 1,
+  "best_auc": 0.8032223602009431,
+  "best_epoch": 1,
+  "last_checkpoint_sha256": "3a85ec562d66d11e3e6eec9ae3c0c6ef53abcc5f90d389756458fcad5ed3a5b8",
+  "best_checkpoint_sha256": "c0ab39552c5af89b8cda931aea67234340656cd0733a7be4c95fe69c5671a316",
+  "updated_utc": "2026-11-02T18:49:46.101530+00:00"
+}

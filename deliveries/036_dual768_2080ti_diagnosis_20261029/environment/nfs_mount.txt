@@ -1,0 +1,10 @@
+{
+   "filesystems": [
+      {
+         "target": "/home/featurize/work",
+         "source": "10.128.0.152:/featurize/a7Invjf5vrjsgRbnSseF6J7xlOrx2TIMbp8ytGSKaLelLj2S3Zqm6OJwgH7ZmSZJ",
+         "fstype": "nfs",
+         "options": "rw,relatime,vers=3,rsize=1048576,wsize=1048576,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.128.0.152,mountvers=3,mountport=45063,mountproto=udp,local_lock=all,addr=10.128.0.152"
+      }
+   ]
+}

@@ -1,0 +1,142 @@
+{
+  "cancelled_at": "2026-10-19T08:28:59+08:00",
+  "reason": "User requested the highest-scoring submission; 019 official validation AUC is lower than the existing 016 best. Stop unnecessary test inference and deliver 016.",
+  "official_valid_auc_019": 0.7934358232306844,
+  "official_valid_auc_016": 0.7999705530021188,
+  "inference_pid": 69047,
+  "signal": "SIGTERM",
+  "workers_also_stopped": true,
+  "training_already_stopped_at_epoch_boundary": true,
+  "prior_runner_status": {
+    "state": "inference_failed",
+    "updated_utc": "2026-10-19T00:28:24+00:00",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_mib": 24564
+    },
+    "folds": {
+      "0": {
+        "state": "paused",
+        "completed_epochs": 5,
+        "validated_epochs": 5,
+        "backward_batches": 15165,
+        "optimizer_updates": 3795,
+        "ema_updates": 3795,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.8024026369423698,
+        "best_epoch": 5,
+        "fold": 0,
+        "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_0",
+        "early_stopping": {
+          "reference_auc": 0.8024026369423698,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "1": {
+        "state": "paused",
+        "completed_epochs": 4,
+        "validated_epochs": 4,
+        "backward_batches": 12136,
+        "optimizer_updates": 3036,
+        "ema_updates": 3036,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.790213442591385,
+        "best_epoch": 4,
+        "fold": 1,
+        "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_1",
+        "early_stopping": {
+          "reference_auc": 0.790213442591385,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "2": {
+        "state": "paused",
+        "completed_epochs": 4,
+        "validated_epochs": 4,
+        "backward_batches": 12140,
+        "optimizer_updates": 3036,
+        "ema_updates": 3036,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.78871968652351,
+        "best_epoch": 4,
+        "fold": 2,
+        "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_2",
+        "early_stopping": {
+          "reference_auc": 0.78871968652351,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "3": {
+        "state": "paused",
+        "completed_epochs": 4,
+        "validated_epochs": 4,
+        "backward_batches": 12128,
+        "optimizer_updates": 3032,
+        "ema_updates": 3032,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.7987393447061854,
+        "best_epoch": 4,
+        "fold": 3,
+        "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_3",
+        "early_stopping": {
+          "reference_auc": 0.7987393447061854,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      },
+      "4": {
+        "state": "paused",
+        "completed_epochs": 4,
+        "validated_epochs": 4,
+        "backward_batches": 12132,
+        "optimizer_updates": 3036,
+        "ema_updates": 3036,
+        "amp_skipped_steps": 0,
+        "best_auc": 0.7945130910725757,
+        "best_epoch": 4,
+        "fold": 4,
+        "output": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/fold_4",
+        "early_stopping": {
+          "reference_auc": 0.7945130910725757,
+          "bad_epochs": 0,
+          "patience": 4,
+          "min_delta": 0.0001
+        }
+      }
+    },
+    "failures": {},
+    "microbatches": {
+      "0": 8,
+      "1": 8,
+      "2": 8,
+      "3": 8,
+      "4": 8
+    },
+    "valid_microbatches": {
+      "0": 8,
+      "1": 8,
+      "2": 8,
+      "3": 8,
+      "4": 8
+    },
+    "elapsed_seconds": 19482.8679698,
+    "hours_limit": 0,
+    "stop_reason": "STOP_file",
+    "error": "Ensemble official_valid: fold=0, epoch=5, weight=0.200000\nTTA completed: resolution=384, hflip=False, studies=859\nTTA completed: resolution=384, hflip=True, studies=859\nTTA completed: resolution=512, hflip=False, studies=859\nTTA completed: resolution=512, hflip=True, studies=859\nEnsemble official_valid: fold=1, epoch=4, weight=0.200000\nTTA completed: resolution=384, hflip=False, studies=859\nTTA completed: resolution=384, hflip=True, studies=859\nTTA completed: resolution=512, hflip=False, studies=859\nTTA completed: resolution=512, hflip=True, studies=859\nEnsemble official_valid: fold=2, epoch=4, weight=0.200000\nTTA completed: resolution=384, hflip=False, studies=859\nTTA completed: resolution=384, hflip=True, studies=859\nTTA completed: resolution=512, hflip=False, studies=859\nTTA completed: resolution=512, hflip=True, studies=859\nEnsemble official_valid: fold=3, epoch=4, weight=0.200000\nTTA completed: resolution=384, hflip=False, studies=859\nTTA completed: resolution=384, hflip=True, studies=859\nTTA completed: resolution=512, hflip=False, studies=859\nTTA completed: resolution=512, hflip=True, studies=859\nEnsemble official_valid: fold=4, epoch=4, weight=0.200000\nTTA completed: resolution=384, hflip=False, studies=859\nTTA completed: resolution=384, hflip=True, studies=859\nTTA completed: resolution=512, hflip=False, studies=859\nTTA completed: resolution=512, hflip=True, studies=859\nOfficial valid ensemble AUC=0.793436; starting test with frozen protocol\nEnsemble test: fold=0, epoch=5, weight=0.200000\n/environment/miniconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown\n  warnings.warn('resource_tracker: There appear to be %d '\n",
+    "ensemble_plan": "/home/featurize/work/runs/019_convnextv2_base512_cv5_4090/ensemble_plan.json"
+  },
+  "prior_delivery_status": {
+    "status": "test_running",
+    "ensemble_plan_sha256": "6d7804f39e86aca39953048d16bb6c08b0ca9a243ae9545d8e6a5008127945e0"
+  },
+  "validation_complete": true,
+  "test_inference_complete": false,
+  "test_submission_generated": false
+}

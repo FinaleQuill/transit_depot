@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-11-03T03:21:32.611614+00:00",
+  "state": "completed",
+  "completed_epochs": 3,
+  "history_sha256": "e7fcdbb1b1cd9b8ecc9f7900a869d696081642e331a5c2980c96fe411453020a",
+  "ledger_sha256": "24c31318be1b993c83fd4de93a68fcfbfa165956eba340987055612db206a58d",
+  "ledger_end_record_sha256": "ef5ca58fb490451199a735e227800bf19f4143ad36f33b44528d6670ce42ef03",
+  "checkpoints": {
+    "best": {
+      "path": "/home/featurize/work/runs/032_resolution_train768_eval768_20261103/best.pt",
+      "sha256": "7411c48b7d09ce5309cef86f33f9c35457d82658c60a53dd82bc4c277b4658b4"
+    },
+    "last": {
+      "path": "/home/featurize/work/runs/032_resolution_train768_eval768_20261103/last.pt",
+      "sha256": "07980cb5669876dddd97f5e3338c64504399f243dedc6b662d313845df02d97e"
+    }
+  },
+  "job_binding": {
+    "configuration_sha256": "0d03a8fa66c23cdcb3759ef90b2ad3d815a131c3e823a00f8c1a54832835702f",
+    "source_manifest_sha256": "69d55430f0d40cc8cea192f0dc3ca0fcd435ee435836ea33cd2c8ee88910f13e",
+    "session_id": "20261103T020926Z_9ceabc34d3e6"
+  },
+  "preregistration": {
+    "path": "/home/featurize/work/cloud_project_v2/artifacts/resolution_explore_20261103/prereg/train768_eval768.txt",
+    "sha256": "d755c48b4277b5a0ee88bcfb8a88cffc5a2cc3db293319df7299eb09da435124",
+    "observed_mtime_ns": 1793643906589997819
+  }
+}

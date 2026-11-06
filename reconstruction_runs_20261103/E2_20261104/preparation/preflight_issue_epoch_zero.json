@@ -1,0 +1,5 @@
+{
+  "issue": "Original compliance recorder rejects epoch 0 checkpoint; found by real lifecycle test before GPU execution",
+  "resolution": "New local_compliance adapter and actual file/hash-chain regression tests; frozen modules unchanged",
+  "training_started_during_issue": false
+}

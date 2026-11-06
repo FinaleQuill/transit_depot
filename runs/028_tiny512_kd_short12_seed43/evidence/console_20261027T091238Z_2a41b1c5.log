@@ -1,0 +1,14 @@
+student epoch=8 batch=1/3791 loss=0.738402 alpha=0.2000
+student epoch=8 batch=100/3791 loss=0.643758 alpha=0.2000
+student epoch=8 batch=200/3791 loss=0.637607 alpha=0.2000
+student epoch=8 batch=300/3791 loss=0.631079 alpha=0.2000
+student epoch=8 batch=400/3791 loss=0.611101 alpha=0.2000
+student epoch=8 batch=500/3791 loss=0.622898 alpha=0.2000
+student epoch=8 batch=600/3791 loss=0.627107 alpha=0.2000
+student epoch=8 batch=700/3791 loss=0.625831 alpha=0.2000
+student epoch=8 batch=800/3791 loss=0.624414 alpha=0.2000
+student epoch=8 batch=900/3791 loss=0.625259 alpha=0.2000
+student epoch=8 batch=1000/3791 loss=0.623061 alpha=0.2000
+student epoch=8 batch=1100/3791 loss=0.624098 alpha=0.2000
+student epoch=8 batch=1200/3791 loss=0.621972 alpha=0.2000
+student epoch=8 batch=1300/3791 loss=0.621672 alpha=0.2000

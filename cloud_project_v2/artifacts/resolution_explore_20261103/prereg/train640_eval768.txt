@@ -1,0 +1,4 @@
+Hypothesis: training Tiny at 640 and selecting at fixed 768+hflip2 is a lower-detail control.
+Expected effect: 640-vs-768 deployment Macro-AUC delta is below 0.005; class deltas below 0.01 are non-actionable.
+Cost: one full official-train student run, 3 epochs from the same verified 041/E9 EMA, plus fixed official-valid evaluation.
+Failure criterion: incomplete compliance, any train/valid/test boundary violation, or no valid class with |delta| >= 0.01 and patient CI excluding 0.

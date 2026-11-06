@@ -1,0 +1,11 @@
+{
+  "selected": {
+    "A_tiny": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/A_tiny",
+    "A_base": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/A_base",
+    "B_tiny": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/B_tiny",
+    "B_base": "/tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/B_base"
+  },
+  "amendment_sha256": "b550611d5e1a494d8f4621392af612dad5d2b7a09b9aaea94a1a78e3b5beadd8",
+  "selection_basis": "user-stopped B_base; AP-best among completed validated epochs; no new selection",
+  "test_used": false
+}

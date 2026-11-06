@@ -1,0 +1,58 @@
+{
+  "GPU_compute_processes": [],
+  "automatic_new_training_authorized": false,
+  "automatic_polling_goal": null,
+  "best_and_last_unchanged_from_complete_epoch2": true,
+  "best_epoch": 0,
+  "best_macro_auc": 0.7978381126852129,
+  "complete_local_epochs": 2,
+  "controller_state": "paused",
+  "epoch3_in_memory_weights_saved": false,
+  "epoch3_partial_progress_saved": true,
+  "preserved_files": {
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/controller/logs/local_checkpoint_speed_1793804428_90510.log": {
+      "bytes": 7284,
+      "sha256": "93fb914ff15b5d72cb29d2b692ebb8f3d446b443c282c7e04c2d10c29522f714"
+    },
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/best.pt": {
+      "bytes": 351548543,
+      "sha256": "3ce4d69eefe4dc1fbd3e0e92a42307367e075f074c58bcb225c2846fcc5c5b1a"
+    },
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/compliance/events.jsonl": {
+      "bytes": 25877,
+      "sha256": "6c6b9f9e6e686820d8dd95271675ab8fc9e58ee786454173ee9c9b9bc133f2fe"
+    },
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/history.jsonl": {
+      "bytes": 958,
+      "sha256": "f5a03550dd832fdbcb4f549b2ece13fcd418b844340a32151a1bd4bdb10b1488"
+    },
+    "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/last.pt": {
+      "bytes": 1406177141,
+      "sha256": "e232b0b67072afdec97a5a51f8c51e6cdff2680c511bace044a6d21167d5430a"
+    }
+  },
+  "resume_authorized": false,
+  "running_docker_containers": [],
+  "state": "stopped_and_verified",
+  "stop_record_dir": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/user_stop_20261104_231956",
+  "termination_signal": "SIGTERM",
+  "trainer_state": "interrupted",
+  "training_processes": [],
+  "verification": {
+    "baseline_macro_auc": 0.7978381126852129,
+    "best_epoch": 0,
+    "best_macro_auc": 0.7978381126852129,
+    "checkpoint_sha256": {
+      "best.pt": "3ce4d69eefe4dc1fbd3e0e92a42307367e075f074c58bcb225c2846fcc5c5b1a",
+      "last.pt": "e232b0b67072afdec97a5a51f8c51e6cdff2680c511bace044a6d21167d5430a"
+    },
+    "epochs": 2,
+    "history_sha256": "f5a03550dd832fdbcb4f549b2ece13fcd418b844340a32151a1bd4bdb10b1488",
+    "ledger_sha256": "6c6b9f9e6e686820d8dd95271675ab8fc9e58ee786454173ee9c9b9bc133f2fe",
+    "name": "global_local",
+    "prediction_path": "/home/featurize/work/reconstruction_runs_20261103/E2_20261104/global_local_seed20261104/epoch_00/predictions.npz",
+    "state": "interrupted",
+    "verified_at": "2026-11-04T23:21:26.029283+08:00"
+  },
+  "verified_at": "2026-11-04T23:21:31.343521+08:00"
+}

@@ -1,0 +1,415 @@
+{
+  "purpose": "2080Ti near-official local screening only; not official T4 timing certification",
+  "protocol": {
+    "split": "valid only; image paths/bytes only; no labels read",
+    "study_counts": {
+      "1": 30,
+      "2": 30,
+      "3": 30
+    },
+    "studies_per_image_count_per_round": 30,
+    "rounds": 3,
+    "warmup_studies_per_model": 5,
+    "study_batch": "all images from one Study in one FP16 model forward; no cross-Study batching",
+    "tta": "identity (single forward)",
+    "model_load_in_timing": false,
+    "timed_scope": "decode through Study probability mean and flushed image/Study CSV rows",
+    "max_concurrent_studies": 1,
+    "test_accessed": false,
+    "labels_accessed": false
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "pillow": "10.4.0",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_memory_bytes": 23078109184,
+    "compute_capability": [
+      7,
+      5
+    ],
+    "driver": "610.57.04",
+    "resize_implementation": "avx2",
+    "runtime_label": "near-official-local-2080ti",
+    "official_image_digest": "sha256:125d8bcb4ce5a2a9acec6d9838b37e2ae1e2014c09b848700f9530f2f7856a0b",
+    "gate_eligible": false
+  },
+  "inference_settings": {
+    "seed": 43,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "model_eval_required": true,
+    "random_inference_augmentation": false
+  },
+  "models": {
+    "Tiny768": {
+      "model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/A",
+      "config_sha256": "6a109c69ca9f15bc56fabf61002221e499e638cc09cdac9d0a7ecfba834fdffd",
+      "weights_sha256": "fea2350a479fc65883f687ce038289666345c5b0d5fc7da44576a5f995742b5f",
+      "single_forward_anchor": {
+        "warmup_forwards": 20,
+        "measured_forwards": 100,
+        "cuda_event_ms": {
+          "p50": 8.60323190689087,
+          "p95": 9.156599617004394,
+          "mean": 8.626005082130431
+        },
+        "measurement": "CUDA Event around model(x), FP16, batch=1, no sigmoid/TTA/H2D"
+      },
+      "study_batches": {
+        "1": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 44.445784005802125,
+            "p95": 64.17208820566884,
+            "mean": 47.16914377786452
+          },
+          "resize_ms": {
+            "p50": 10.697095000068657,
+            "p95": 16.294979943631912,
+            "mean": 11.637151567265391
+          },
+          "normalize_ms": {
+            "p50": 0.36759649630403146,
+            "p95": 0.5923178063647355,
+            "mean": 0.4039440781136768
+          },
+          "h2d_ms": {
+            "p50": 0.10897599905729294,
+            "p95": 0.1844559997320175,
+            "mean": 0.12272320008940167
+          },
+          "forward_ms": {
+            "p50": 10.03711986541748,
+            "p95": 17.284951210021973,
+            "mean": 10.906844870249431
+          },
+          "postprocess_ms": {
+            "p50": 0.16549250722164288,
+            "p95": 0.394830896402709,
+            "mean": 0.19830665567294797
+          },
+          "aggregate_ms": {
+            "p50": 0.1247649997822009,
+            "p95": 0.18982219698955305,
+            "mean": 0.13610586643658784
+          },
+          "write_ms": {
+            "p50": 0.1603720083949156,
+            "p95": 0.40126519452314774,
+            "mean": 0.1901002228906792
+          },
+          "total_ms": {
+            "p50": 68.39004399807891,
+            "p95": 95.3449555541738,
+            "mean": 71.28392659974958
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 164.44475769369632,
+            "p95": 184.65188237854096,
+            "mean": 162.87048616722535
+          }
+        },
+        "2": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 58.95512949791737,
+            "p95": 112.66385210110457,
+            "mean": 68.30593954445148
+          },
+          "resize_ms": {
+            "p50": 19.331224000779912,
+            "p95": 29.02203429621295,
+            "mean": 19.294733543776804
+          },
+          "normalize_ms": {
+            "p50": 0.803341997845564,
+            "p95": 1.198489924520254,
+            "mean": 0.8576117784134112
+          },
+          "h2d_ms": {
+            "p50": 0.20793600007891655,
+            "p95": 0.2930815976113081,
+            "mean": 0.21505742172400158
+          },
+          "forward_ms": {
+            "p50": 17.365375518798828,
+            "p95": 17.49655179977417,
+            "mean": 17.409977192348904
+          },
+          "postprocess_ms": {
+            "p50": 7.214822500827722,
+            "p95": 8.347804048389662,
+            "mean": 6.63345904564873
+          },
+          "aggregate_ms": {
+            "p50": 0.13687950558960438,
+            "p95": 0.2091127047606278,
+            "mean": 0.1500582338647089
+          },
+          "write_ms": {
+            "p50": 0.21508549980353564,
+            "p95": 0.39492335417889984,
+            "mean": 0.23909858896836844
+          },
+          "total_ms": {
+            "p50": 97.73526649951236,
+            "p95": 153.57554950023768,
+            "mean": 107.16845517745242
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 168.5554122046815,
+            "p95": 181.99588610460663,
+            "mean": 165.64509570102132
+          }
+        },
+        "3": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 116.71361500339117,
+            "p95": 162.71274365280988,
+            "mean": 114.81964452137214
+          },
+          "resize_ms": {
+            "p50": 30.532794997270685,
+            "p95": 44.318936254421715,
+            "mean": 30.817645256239402
+          },
+          "normalize_ms": {
+            "p50": 1.157511003257241,
+            "p95": 1.7596051504136994,
+            "mean": 1.248041025935931
+          },
+          "h2d_ms": {
+            "p50": 0.3025760017335415,
+            "p95": 0.43280160203576085,
+            "mean": 0.3180323549442821
+          },
+          "forward_ms": {
+            "p50": 25.39992046356201,
+            "p95": 25.493914127349854,
+            "mean": 25.405855645073785
+          },
+          "postprocess_ms": {
+            "p50": 15.213423997920472,
+            "p95": 16.20280530260061,
+            "mean": 14.108893433068362
+          },
+          "aggregate_ms": {
+            "p50": 0.14567700418410823,
+            "p95": 0.20802535436814648,
+            "mean": 0.1562128229933377
+          },
+          "write_ms": {
+            "p50": 0.2542474976507947,
+            "p95": 0.4315903985116165,
+            "mean": 0.2893317104381923
+          },
+          "total_ms": {
+            "p50": 178.18541800806997,
+            "p95": 228.12831684786943,
+            "mean": 173.91225941100856
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 166.25380514759897,
+            "p95": 179.08248761905185,
+            "mean": 164.83453219150465
+          }
+        }
+      },
+      "measurement_count_per_image_count": 90,
+      "raw_rows": 270
+    },
+    "Base768": {
+      "model_dir": "/home/featurize/work/deliveries/044_tiny_base_class1B_draft768_20261031/model/B",
+      "config_sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011",
+      "weights_sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411",
+      "single_forward_anchor": {
+        "warmup_forwards": 20,
+        "measured_forwards": 100,
+        "cuda_event_ms": {
+          "p50": 17.593392372131348,
+          "p95": 18.52759256362915,
+          "mean": 17.59253860473633
+        },
+        "measurement": "CUDA Event around model(x), FP16, batch=1, no sigmoid/TTA/H2D"
+      },
+      "study_batches": {
+        "1": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 44.77220999979181,
+            "p95": 58.23822729944368,
+            "mean": 44.70425107833257
+          },
+          "resize_ms": {
+            "p50": 9.97817349707475,
+            "p95": 14.926808554446325,
+            "mean": 10.66857264522696
+          },
+          "normalize_ms": {
+            "p50": 0.3778324899612926,
+            "p95": 0.47110519879497587,
+            "mean": 0.3859130981869789
+          },
+          "h2d_ms": {
+            "p50": 0.10892800241708755,
+            "p95": 0.15243360176682472,
+            "mean": 0.11544035582078828
+          },
+          "forward_ms": {
+            "p50": 21.05070400238037,
+            "p95": 22.711090850830075,
+            "mean": 20.73483698103163
+          },
+          "postprocess_ms": {
+            "p50": 1.6372449972550385,
+            "p95": 4.654892451799242,
+            "mean": 1.9938938326150593
+          },
+          "aggregate_ms": {
+            "p50": 0.12888250057585537,
+            "p95": 0.16209419845836237,
+            "mean": 0.13014221056235126
+          },
+          "write_ms": {
+            "p50": 0.15707200509496033,
+            "p95": 0.26919289521174505,
+            "mean": 0.17485922208935437
+          },
+          "total_ms": {
+            "p50": 77.54432450019522,
+            "p95": 91.68052935056039,
+            "mean": 77.48934930035223
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 158.59332966519372,
+            "p95": 176.12145484635278,
+            "mean": 158.7254096654358
+          }
+        },
+        "2": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 51.08976500923745,
+            "p95": 94.39951330568873,
+            "mean": 62.78857091124842
+          },
+          "resize_ms": {
+            "p50": 17.84096850315109,
+            "p95": 22.498954500042597,
+            "mean": 17.198272433112532
+          },
+          "normalize_ms": {
+            "p50": 0.8050749985850416,
+            "p95": 1.2752027281676417,
+            "mean": 0.8768093229284406
+          },
+          "h2d_ms": {
+            "p50": 0.21012800186872482,
+            "p95": 0.30492320396006106,
+            "mean": 0.22790080101953614
+          },
+          "forward_ms": {
+            "p50": 38.95680046081543,
+            "p95": 40.594171333312985,
+            "mean": 37.551742490132646
+          },
+          "postprocess_ms": {
+            "p50": 17.98036549735116,
+            "p95": 23.0853552937333,
+            "mean": 16.87017374481204
+          },
+          "aggregate_ms": {
+            "p50": 0.13997150381328538,
+            "p95": 0.18560194803285412,
+            "mean": 0.14647385477372962
+          },
+          "write_ms": {
+            "p50": 0.21397050295490772,
+            "p95": 0.4334588513302151,
+            "mean": 0.24881042304008993
+          },
+          "total_ms": {
+            "p50": 108.79602950444678,
+            "p95": 154.5329968066653,
+            "mean": 119.74940124507864
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 158.4495604560512,
+            "p95": 167.8983690400007,
+            "mean": 158.46105550368983
+          }
+        },
+        "3": {
+          "studies": 90,
+          "decode_ms": {
+            "p50": 114.1588384998613,
+            "p95": 142.62779869823135,
+            "mean": 105.7745127211092
+          },
+          "resize_ms": {
+            "p50": 28.969414997845888,
+            "p95": 35.903951399814105,
+            "mean": 28.039986221604824
+          },
+          "normalize_ms": {
+            "p50": 1.1362860110821202,
+            "p95": 1.6781057367217727,
+            "mean": 1.2283053554361687
+          },
+          "h2d_ms": {
+            "p50": 0.30027200281620026,
+            "p95": 0.394396798312664,
+            "mean": 0.31160817849967215
+          },
+          "forward_ms": {
+            "p50": 58.00851058959961,
+            "p95": 60.00606479644775,
+            "mean": 55.104086218939884
+          },
+          "postprocess_ms": {
+            "p50": 34.69954300089739,
+            "p95": 42.82015405333368,
+            "mean": 34.85125256572954
+          },
+          "aggregate_ms": {
+            "p50": 0.14099049440119416,
+            "p95": 0.18487614943296649,
+            "mean": 0.1516366330583373
+          },
+          "write_ms": {
+            "p50": 0.24714250321267173,
+            "p95": 0.37927090597804636,
+            "mean": 0.27064538864781046
+          },
+          "total_ms": {
+            "p50": 195.7439969992265,
+            "p95": 236.32327509840252,
+            "mean": 191.68672014542003
+          },
+          "cpu_utilization_one_core_percent": {
+            "p50": 159.84761150770947,
+            "p95": 168.99833440833018,
+            "mean": 159.8110594379819
+          }
+        }
+      },
+      "measurement_count_per_image_count": 90,
+      "raw_rows": 270
+    }
+  },
+  "stage_timing_boundary": "H2D and Tiny/Base forward are CUDA Event durations. Decode/resize/CPU normalize, postprocess D2H, aggregation, and CSV are wall durations. Stage values are diagnostic components and are not summed to replace the separately measured Study total. This script does not insert a CUDA sync between every component.",
+  "known_limits": [
+    "Current host is an RTX 2080 Ti, not the official T4 timing host; these results cannot certify T4 P95.",
+    "Study batching has not been cleared against the registered probability/AUC equivalence gates.",
+    "Per-image batch-vs-serial probability deltas and valid AUC deltas are not calculated here.",
+    "CSV writing uses a local two-file image/Study output; official runner overhead may differ."
+  ],
+  "outputs": {
+    "per_study_timings_csv": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/timing_gate/run_official_2080ti_v2/per_study_timings.csv",
+    "output_dir": "/home/featurize/work/cloud_project_v2/artifacts/new_study_cost_20261102/timing_gate/run_official_2080ti_v2"
+  }
+}

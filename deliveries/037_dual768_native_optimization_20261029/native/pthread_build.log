@@ -1,0 +1,6 @@
+running build_ext
+building 'native_lanczos._core' extension
+creating /tmp/dual768_2080ti_diagnosis/native_build/native_lanczos
+x86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/usr/include/python3.12 -c native_lanczos/resample.c -o /tmp/dual768_2080ti_diagnosis/native_build/native_lanczos/resample.o -O3 -pthread -fno-fast-math -ffp-contract=off
+x86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fwrapv -O2 /tmp/dual768_2080ti_diagnosis/native_build/native_lanczos/resample.o -L/usr/lib/x86_64-linux-gnu -o /tmp/dual768_2080ti_diagnosis/native_build_lib/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -pthread
+copying /tmp/dual768_2080ti_diagnosis/native_build_lib/native_lanczos/_core.cpython-312-x86_64-linux-gnu.so -> native_lanczos

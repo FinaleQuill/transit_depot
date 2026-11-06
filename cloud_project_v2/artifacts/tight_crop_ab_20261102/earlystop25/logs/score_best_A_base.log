@@ -1,0 +1,17 @@
+
+[2026-11-02T02:37:28.243772+00:00] command: bash /home/featurize/work/cloud_project_v2/run_tight_crop_environment.sh tight_crop_ab_earlystop_evaluate.py --action score --arm A --member base --source /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/A_base/best.pt --output /tmp/cloud_student_runs_20261030/tight_crop_ab_20261102/earlystop25/scores/A_base
+[A epoch score] 100/1422
+[A epoch score] 200/1422
+[A epoch score] 300/1422
+[A epoch score] 400/1422
+[A epoch score] 500/1422
+[A epoch score] 600/1422
+[A epoch score] 700/1422
+[A epoch score] 800/1422
+[A epoch score] 900/1422
+[A epoch score] 1000/1422
+[A epoch score] 1100/1422
+[A epoch score] 1200/1422
+[A epoch score] 1300/1422
+[A epoch score] 1400/1422
+[A epoch score] 1422/1422

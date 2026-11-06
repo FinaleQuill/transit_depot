@@ -1,0 +1,77 @@
+{
+  "time_hong_kong": "2026-11-01T20:27:57.406681+08:00",
+  "user_authorization": "按照最好成绩，生成一个csv，随后想办法继续提分，目标0.82",
+  "selection_before_test": true,
+  "selected_rule": "X1_B_class1_B",
+  "decoder": null,
+  "tta": "hflip2 each member",
+  "class_weights": [
+    [
+      0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      1,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "study_aggregation": "FP64 original-manifest-order mean",
+  "valid_macro_auc": 0.8171491901128627,
+  "development_2080ti_mean_ms": 93.49061585993091,
+  "T4_certified": false,
+  "model_directory": "/home/featurize/work/cloud_project_v2/artifacts/kd_v1/bounded_finetune_20261101/reviewed_models/full_decode",
+  "configuration_sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d",
+  "model_inventory": [
+    {
+      "path": "B/config.json",
+      "bytes": 5228541,
+      "sha256": "ec8d155fdf1b4a8ca5de7c914ab098efa5d75c449f3a986e950a811d0c632011"
+    },
+    {
+      "path": "B/student_fp16.pt",
+      "bytes": 175261029,
+      "sha256": "903ee9b95317536b6120d399d67ddcb1e82b82f7898cc174b2fd8b55d6f8e411"
+    },
+    {
+      "path": "X1/config.json",
+      "bytes": 5233693,
+      "sha256": "97e15972b8c2007db408c28d670f86b1b3832b09747480998b03c107677c6386"
+    },
+    {
+      "path": "X1/student_fp16.pt",
+      "bytes": 55712511,
+      "sha256": "791a956cdd3278a6cf231187b67dc75c08f21f91299963982f32141ff482fa16"
+    },
+    {
+      "path": "config.json",
+      "bytes": 9517,
+      "sha256": "09f2c96debb6afbb83e5a99c4c1e80b5fcbb6a2a87c343eb4c70c32659ec563d"
+    },
+    {
+      "path": "make_report.json",
+      "bytes": 3173,
+      "sha256": "dd8ac546bdc00802a60da24ff092b9c5d1711b41671752c0b35e9ac8ad4d73ec"
+    }
+  ],
+  "inference_bytes": 241448464,
+  "test_used_for_selection": false,
+  "generated_test_predictions_before_this_selection": false,
+  "platform_upload_authorized": false,
+  "caveat": "Small reused-valid gain; not proof of platform improvement; user explicitly selected highest valid."
+}
