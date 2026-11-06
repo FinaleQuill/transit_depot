@@ -1775,3 +1775,12 @@
 - 原18轮cosine保留，新增lr_schedule_epochs=18仅固定日程，第19–23轮沿用head2e-5末端低LR；min4/patience4/0.0002及best/meaningful/stale/Adam/EMA/scaler/RNG不重置，未新增数据或其他超参。
 - 显式receipt仅允许已绑定epoch18父断点和受控源码/配置变更，旧checkpoint不回写；14项回归+7项延期数值/恢复测试通过，源码9907af4。
 - 独立PID314314于10:26:14接续，核验epoch19/23、8350有效更新/0跳步/headLR2e-5，旧最佳字节不变；进度仍用原run路径，详见RAW_REBUILD_EXTENSION_23_20261106.md。
+
+
+### 2026-11-06 13:02（香港）· 用户停止原始数据DINO并完成效果分析
+
+- 12:55用户明确停止并分析；向当前容器SIGTERM，STOP保留，控制器exit130/KeyboardInterrupt是主动中断；已核验无GPU训练进程、不自动恢复，当前progress/status标stopped_by_user。
+- 完整1–21轮、best20=.804905332；epoch22仅5920Study/9736图，185次未保存更新不计完整轮；完整last21/最佳FP32及173.26MB FP16、源/数据/历史CSV SHA核验通过。
+- 相同3702Study/2211患者：CNN .795796，DINO .804905、差95%CI[.003442,.014204]；固定50:50 .808672、差[.010385,.015383]，融合对CNN的AP/单图/≥5次病例区间均正。旧基准少3图/2Study，非同图架构消融。
+- 新2000次CPU配对：20−18仅+.000270、区间跨零；21−20约−.000005，平台期停止合理。融合对DINO差+.003767的CI下界近零且两独立种子判断不同，明确披露边缘证据，不选择有利种子。
+- 完整复盘、逐类/切片、独立审查及训练曲线已保存；旧stage18保留历史，新停止诊断在stop_analysis/model_decision。未新推理officialvalid/test、未生成或替换CSV、未启动下一阶段；仅此训练停止不改变未来须原始未清洗规则。
