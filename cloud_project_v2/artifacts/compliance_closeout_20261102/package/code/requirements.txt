@@ -1,0 +1,5 @@
+# Packaging entrypoint, not a historical pip freeze.
+# Inference dependencies: preserve the organizer's installed CUDA-compatible core.
+-r requirements_inference.txt
+# Historical training dependencies: requirements_kd.txt and evidence/training.
+# Do not install this file over an official image without comparing its core versions.

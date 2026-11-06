@@ -1,0 +1,69 @@
+{
+  "_id": "653f35888a67c542ee1e8a9e",
+  "id": "timm/vit_base_patch14_reg4_dinov2.lvd142m",
+  "private": false,
+  "pipeline_tag": "image-feature-extraction",
+  "library_name": "timm",
+  "tags": [
+    "timm",
+    "pytorch",
+    "safetensors",
+    "image-feature-extraction",
+    "transformers",
+    "arxiv:2309.16588",
+    "arxiv:2304.07193",
+    "arxiv:2010.11929",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 549291,
+  "likes": 15,
+  "modelId": "timm/vit_base_patch14_reg4_dinov2.lvd142m",
+  "author": "timm",
+  "sha": "3b06466a5548c52b8b98822e1390987695fcbf82",
+  "lastModified": "2025-01-21T21:13:13.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "library_name": "timm",
+    "tags": [
+      "image-feature-extraction",
+      "timm",
+      "transformers"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModel"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    }
+  ],
+  "spaces": [
+    "ananthu-aniraj/pdiscoformer"
+  ],
+  "createdAt": "2023-10-30T04:48:08.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 86582016
+    },
+    "total": 86582016
+  },
+  "usedStorage": 692736046
+}

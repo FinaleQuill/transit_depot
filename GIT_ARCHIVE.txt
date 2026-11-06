@@ -1,0 +1,9 @@
+本地Git归档：/home/featurize/work/.project_history.git
+清理前完整内容分支：pre-cleanup-20261106
+清理前提交：751543b0f9f669de3da09a652b59c2545b7e71f0
+删除核验回执分支：cleanup-receipt-20261106
+内容命名空间：work/、data/；源码保留。
+原数据、大权重和压缩资源保持原位，未因仅存哈希而删除。
+远程目标已获授权，上传后按远程分支SHA核验。
+仅按用户要求恢复或读取旧思路材料。
+远程目标：https://github.com/FinaleQuill/transit_depot.git

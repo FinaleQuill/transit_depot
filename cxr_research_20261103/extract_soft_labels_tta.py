@@ -1,0 +1,201 @@
+"""合规 V1 Base 教师的严格折外逐视图 logits 提取；默认只显示计划。
+
+只有显式 --execute 才加载模型和图片。五个教师逐个加载，原始 train 之外
+的图片不得进入缓存；旧 V2、外折早停 best、未完成训练的教师一律拒绝。
+"""
+from __future__ import annotations
+
+import argparse
+import gc
+import json
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+from distill_tta_data import (canonical_tta, normalize_tta, sha256_file, teacher_evidence,
+                              validate_teacher_checkpoint, write_soft_labels)
+from teacher_collection import read_teacher_collection, validate_collection_checkpoint
+
+
+def _forward_raw_view_logits(model: Any, inputs: Any, *, tta: str, context_factory: Any) -> np.ndarray:
+    """One fixed model, declared views, raw FP32 outputs; usable with CPU test callables."""
+    import torch
+
+    if inputs.ndim != 4:
+        raise ValueError("Teacher view inputs must be NCHW tensors")
+    outputs = []
+    for view in normalize_tta(tta):
+        tensor = inputs if view == "identity" else torch.flip(inputs, dims=(-1,))
+        with context_factory():
+            logits = model(tensor)
+        if logits.shape != (inputs.shape[0], 10) or not bool(torch.isfinite(logits).all()):
+            raise FloatingPointError("Teacher extraction logits must be finite Nx10 per view")
+        outputs.append(logits.float().detach().cpu().numpy())
+    return np.stack(outputs, axis=1)
+
+
+def extract(*, fold_plan: str | Path, teachers_root: str | Path | None = None,
+            teacher_collection: str | Path | None = None,
+            image_root: str | Path, output: str | Path, batch_size: int = 4,
+            num_workers: int = 8, amp_dtype: str = "auto",
+            tta: str = "identity_hflip") -> Path:
+    """显式调用才执行前向；全部 logits 在内存完成后写一个新缓存目录。"""
+    tta = canonical_tta(tta)
+    views = normalize_tta(tta)
+    if type(batch_size) is not int or batch_size < 1:
+        raise ValueError("batch_size must be positive")
+    if type(num_workers) is not int or not 0 <= num_workers <= 12:
+        raise ValueError("num_workers must be in 0..12")
+    if amp_dtype not in {"auto", "bfloat16", "float16"}:
+        raise ValueError("Extraction AMP must be auto, bfloat16 or float16")
+    plan_path = Path(fold_plan).resolve(strict=True)
+    if (teachers_root is None) == (teacher_collection is None):
+        raise ValueError("Choose exactly one teachers_root or teacher_collection")
+    collection = (read_teacher_collection(teacher_collection, fold_plan_path=plan_path,
+                                        require_checkpoints=True)
+                  if teacher_collection is not None else None)
+    teacher_root = Path(teachers_root).resolve(strict=True) if teachers_root is not None else None
+    raw_root = Path(image_root).resolve(strict=True)
+    destination = Path(output).resolve()
+    if destination.exists():
+        raise FileExistsError(f"Soft-label output must be new: {destination}")
+    if destination == raw_root or destination.is_relative_to(raw_root):
+        raise ValueError("Soft labels must not be written into original data")
+    from cv_splits import load_fold_records, read_fold_plan
+    from dataset import read_manifest
+
+    plan = read_fold_plan(plan_path)
+    plan_hash = sha256_file(plan_path)
+    if collection is not None and collection["source_manifest_sha256"] != plan["source_manifest_sha256"]:
+        raise ValueError("Teacher collection source train manifest differs from fold plan")
+    records = read_manifest(plan["source_train_manifest"]["path"], split="train")
+    image_index = {row["image_id"]: index for index, row in enumerate(records)}
+    if len(image_index) != len(records):
+        raise ValueError("Train manifest image IDs are duplicated")
+    paths = ([Path(entry["checkpoint"]) for entry in collection["teachers"]]
+             if collection is not None else [teacher_root / f"fold_{fold}" / "best.pt" for fold in range(5)])
+    if any(not path.is_file() for path in paths):
+        raise FileNotFoundError("All five fixed-epoch fold_0..fold_4/best.pt files are required")
+    import torch
+    from dataset_overnight import make_overnight_loader
+    from model_overnight import build_overnight_model
+
+    if not torch.cuda.is_available():
+        raise RuntimeError("Teacher extraction requires a CUDA GPU; no silent CPU fallback")
+    device = torch.device("cuda", 0)
+    torch.cuda.set_device(device)
+    bf16 = torch.cuda.is_bf16_supported()
+    if amp_dtype == "bfloat16" and not bf16:
+        raise ValueError("The selected GPU does not support BF16")
+    precision = "bfloat16" if amp_dtype == "bfloat16" or amp_dtype == "auto" and bf16 else "float16"
+    dtype = torch.bfloat16 if precision == "bfloat16" else torch.float16
+    torch.set_num_threads(4)
+    values = np.empty((len(records), len(views), 10), dtype=np.float32)
+    seen: set[str] = set()
+    evidence: list[dict[str, Any]] = []
+    for fold, checkpoint_path in enumerate(paths):
+        digest = sha256_file(checkpoint_path)
+        checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+        if sha256_file(checkpoint_path) != digest:
+            raise RuntimeError("Teacher checkpoint changed while loading")
+        if collection is not None:
+            validate_collection_checkpoint(checkpoint, collection["teachers"][fold], plan=plan,
+                                           plan_hash=plan_hash, records=records)
+        else:
+            validate_teacher_checkpoint(checkpoint, fold=fold, plan=plan,
+                                        plan_hash=plan_hash, records=records)
+        fold_evidence = teacher_evidence(checkpoint, checkpoint_path=checkpoint_path,
+                                         checkpoint_sha256=digest, inference_precision=precision)
+        if collection is not None:
+            fold_evidence["collection_declaration"] = {
+                "collection_path": collection["collection_path"],
+                "collection_sha256": collection["collection_sha256"],
+                "declared_epochs": collection["teachers"][fold]["epochs"]}
+        state = checkpoint.pop("model_state_dict")
+        config = dict(checkpoint["model_config"])
+        del checkpoint
+        model = build_overnight_model(pretrained=False, **config)
+        model.load_state_dict(state, strict=True)
+        del state
+        model.set_grad_checkpointing(False)
+        model.eval().requires_grad_(False).to(device, memory_format=torch.channels_last)
+        held_out = load_fold_records(plan_path, fold, "valid")
+        expected = {row["image_id"] for row in held_out}
+        fold_seen: set[str] = set()
+        loader = make_overnight_loader(held_out, raw_root, training=False,
+            image_size=768, batch_size=batch_size, num_workers=num_workers,
+            prefetch_factor=1, seed=43)
+        try:
+            with torch.inference_mode():
+                for batch in loader:
+                    ids = batch["image_ids"]
+                    if (batch["split"] != "train" or len(set(ids)) != len(ids)
+                            or set(ids) & seen or not set(ids) <= expected):
+                        raise ValueError("Extraction batch leaks folds or original data splits")
+                    inputs = batch["images"].to(device, memory_format=torch.channels_last,
+                                               non_blocking=True)
+                    # Preserve each raw view separately. No sigmoid, class-weight
+                    # correction or temperature is applied by the extractor.
+                    array = _forward_raw_view_logits(model, inputs, tta=tta,
+                        context_factory=lambda: torch.autocast("cuda", dtype=dtype))
+                    for local_index, image_id in enumerate(ids):
+                        values[image_index[image_id]] = array[local_index]
+                    fold_seen.update(ids)
+                    seen.update(ids)
+            if fold_seen != expected:
+                raise RuntimeError("Held-out fold image coverage is incomplete")
+            evidence.append(fold_evidence)
+            print(f"OOF fold={fold} completed images={len(fold_seen)} views={list(views)} precision={precision}", flush=True)
+        finally:
+            del loader, model
+            gc.collect()
+            torch.cuda.empty_cache()
+        if sha256_file(plan_path) != plan_hash or sha256_file(checkpoint_path) != digest:
+            raise RuntimeError("Fold plan or teacher changed during OOF extraction")
+        if collection is not None and sha256_file(collection["collection_path"]) != collection["collection_sha256"]:
+            raise RuntimeError("Teacher collection changed during OOF extraction")
+    if seen != set(image_index):
+        raise RuntimeError("OOF extraction does not cover every original train image exactly once")
+    write_soft_labels(destination, plan_path, records, values, evidence, tta=tta)
+    return destination
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--fold-plan", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--teachers-root", type=Path)
+    source.add_argument("--teacher-collection", type=Path,
+                        help="Frozen five-fold collection with each teacher's own fixed training budget")
+    parser.add_argument("--image-root", type=Path, default=Path("/home/featurize/data/cxr_first"))
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--num-workers", type=int, default=8)
+    parser.add_argument("--amp-dtype", choices=("auto", "bfloat16", "float16"), default="auto")
+    parser.add_argument("--tta", choices=("identity", "identity_hflip", "hflip2"), default="identity_hflip")
+    parser.add_argument("--execute", action="store_true",
+                        help="Explicitly authorize loading teachers and running OOF extraction")
+    args = parser.parse_args(argv)
+    if not args.execute:
+        collection = (read_teacher_collection(args.teacher_collection, fold_plan_path=args.fold_plan)
+                      if args.teacher_collection is not None else None)
+        print(json.dumps({"execute": False, "fold_plan": str(args.fold_plan),
+            "teachers": collection["teachers"] if collection is not None else
+                [str(args.teachers_root / f"fold_{fold}" / "best.pt") for fold in range(5)],
+            "teacher_collection": str(args.teacher_collection) if collection is not None else None,
+            "source_split": "train", "image_size": 768, "tta": canonical_tta(args.tta),
+            "views": list(normalize_tta(args.tta)), "output_type": "per_view_raw_logits",
+            "temperature_applied": False, "class_weight_alignment_applied": False,
+            "output": str(args.output), "next": "Add --execute only after all teachers finish."},
+            ensure_ascii=False, indent=2))
+        return
+    result = extract(fold_plan=args.fold_plan, teachers_root=args.teachers_root,
+        teacher_collection=args.teacher_collection,
+        image_root=args.image_root, output=args.output, batch_size=args.batch_size,
+        num_workers=args.num_workers, amp_dtype=args.amp_dtype, tta=args.tta)
+    print(f"Strict OOF TTA cache complete: {result}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
