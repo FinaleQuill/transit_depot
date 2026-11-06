@@ -19,3 +19,9 @@
 需要停止时，实验根`STOP`会让训练在当前完整epoch保存后停止，并阻止队列下一个教师；若用户要求立即停止，应另对当前容器SIGTERM，最近完整epoch断点保留，中途更新不冒称完整保存。旧实验STOP保留且不读取为新实验授权。
 
 本次没有自动学生训练、第二外层/全量重训或submission生成。最新的正式启动核验与实际PID将写入实验根`BACKGROUND_VERIFIED.json`。
+
+## 正式启动核验（2026-11-06 15:47，香港）
+
+15:45:13启动，源码提交`cf0ed55`；控制器PID12157/PPID1/SID12157，stdin为`/dev/null`；容器`cxr-kd-20261106-dinov3-l-inner0`，容器宿主PID12194。两次观测真实optimizer_updates为4→7，0跳步，224 Study/367图已处理，loss=0.734500、梯度范数=3.3738，峰值分配约7.48GB。首轮未完整结束、尚无正式整轮checkpoint或AUC结果；当前粗略ETA不作为完整轮实测。
+
+核验回执：[BACKGROUND_VERIFIED.json](/home/featurize/work/reconstruction_runs_20261103/KD_REBUILD_20261106/BACKGROUND_VERIFIED.json)；数据/配置/队列/环境/训练源码SHA均绑定，受保护的规则、原CSV和旧提交七文件SHA未变。实时进展以后续`progress.json`为准；本节是启动快照。
