@@ -10,7 +10,7 @@
   "image_root": "/home/featurize/data/cxr_first",
   "seed": 20261105,
   "image_size": 518,
-  "epochs": 18,
+  "epochs": 23,
   "min_epochs": 4,
   "patience": 4,
   "min_delta": 0.0002,
@@ -43,5 +43,6 @@
   "selection_policy": "Study macro AUC; selected-best paired diagnostics gate second fold, never automatic submission",
   "official_train_csv_sha256": "3a07b4bb5c81758718d4ccb69885c9160103aeb55ab8206c71fef152de334f17",
   "reference_sha256": "7e862cefd95ad883294c6da418f6c6b66917cf0180d3a3a4a527038c5c7b30e0",
-  "reference_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd"
+  "reference_metadata_sha256": "39b8fd6014b989e7eb8905303410ac963ece1bb985816e29a52253a6b2c9e2bd",
+  "lr_schedule_epochs": 18
 }

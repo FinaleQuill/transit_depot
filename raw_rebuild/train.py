@@ -26,6 +26,7 @@ from sprint.train import publish_file, retain_compliance
 from training_hooks import compliance_run, start_run, epoch_completed
 from raw_rebuild.prepare_data import load_official
 from raw_rebuild.comparison import compare_files, stage_decision
+from raw_rebuild.extension import validate_extension, compatible_best_configuration
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -84,6 +85,7 @@ def source_files():
         'raw_rebuild/__init__.py', 'raw_rebuild/prepare_data.py',
         'raw_rebuild/train.py', 'raw_rebuild/runtime.py', 'raw_rebuild/launch.py',
         'raw_rebuild/comparison.py', 'breakthrough/model.py', 'breakthrough/train.py',
+        'raw_rebuild/extension.py',
         'breakthrough/runtime.py', 'breakthrough/launch.py',
         'breakthrough/generalization_monitor.py', 'reconstruction/data.py',
         'reconstruction/model.py', 'reconstruction/train.py', 'reconstruction/splits.py',
@@ -106,7 +108,7 @@ def save_best(ema, config, evidence, state, output, epoch, score):
 
 
 @compliance_run
-def run(config, *, resume=False, smoke=False):
+def run(config, *, resume=False, smoke=False, extension_receipt=None):
     train_rows, dev_rows, provenance = verify_inputs(config)
     output, state = Path(config['output']), Path(config['checkpoint_dir'])
     for directory in (output, state):
@@ -125,11 +127,19 @@ def run(config, *, resume=False, smoke=False):
         prior_medical_checkpoint_used=False, raw_images_retained=30344,
         original_H_reassigned_to_dev=True, mechanics_smoke=smoke)
     prior = torch.load(state / 'last.pt', map_location='cpu', weights_only=False) if resume else None
+    lineage = prior.get('epoch_extension') if prior is not None else None
+    if extension_receipt is not None:
+        if prior is None or smoke:
+            raise ValueError('Epoch extension requires a real full-state resume')
+        lineage = validate_extension(prior, evidence, state / 'last.pt', extension_receipt)
     if prior is not None and prior['evidence'] != evidence:
-        raise ValueError('Resume configuration/source/data mismatch')
+        if extension_receipt is None:
+            raise ValueError('Resume configuration/source/data mismatch')
     start_run(state, trainer='raw_rebuild.train', configuration=evidence,
               source_files=sources, resume=state / 'last.pt' if resume else None)
     write_json(output / 'configuration.json', evidence)
+    if lineage is not None:
+        write_json(output / 'epoch_extension_applied.json', lineage)
     random.seed(config['seed']); np.random.seed(config['seed']); torch.manual_seed(config['seed'])
     torch.cuda.manual_seed_all(config['seed'])
     torch.backends.cudnn.benchmark = False
@@ -161,13 +171,14 @@ def run(config, *, resume=False, smoke=False):
         best, meaningful, stale, best_epoch = (prior[k] for k in ('best', 'meaningful', 'stale', 'best_epoch'))
         restore_rng(prior['rng'])
         if best_epoch is not None:
-            if best_epoch == prior['epoch']:
+            if best_epoch == prior['epoch'] and extension_receipt is None:
                 # Recover an interrupted best save/publication from the already
                 # committed full checkpoint, without repeating any optimizer step.
                 save_best(ema, config, evidence, state, output, best_epoch, best)
             else:
                 portable = torch.load(state / 'best_fp16.pt', map_location='cpu', weights_only=False)
-                if portable['configuration'] != config or portable['epoch'] != best_epoch:
+                if (not compatible_best_configuration(portable['configuration'], config, lineage)
+                        or portable['epoch'] != best_epoch):
                     raise ValueError('Local best model does not match the recovery checkpoint')
                 del portable
                 publish_file(state / 'best_fp16.pt', output / 'best_fp16.pt')
@@ -183,7 +194,11 @@ def run(config, *, resume=False, smoke=False):
         train.groups = train.groups[:64]; dev.groups = dev.groups[:16]
     pos_weight = torch.tensor(weights, dtype=torch.float32, device='cuda')
     outcome = 'completed'
-    for epoch in range(start, config['epochs'] + 1):
+    epochs_to_run = range(start, config['epochs'] + 1)
+    if extension_receipt is not None and start - 1 >= config['min_epochs'] and stale >= config['patience']:
+        outcome = 'early_stopped'
+        epochs_to_run = ()
+    for epoch in epochs_to_run:
         metrics = train_epoch(model, ema, train, optimizer, scaler, pos_weight,
                               config, epoch, progress, output)
         report = evaluate(ema, dev, config, epoch, output)
@@ -203,7 +218,7 @@ def run(config, *, resume=False, smoke=False):
         save_checkpoint(state / 'last.pt', dict(model=model.state_dict(), ema=ema.state_dict(),
             optimizer=optimizer.state_dict(), scaler=scaler.state_dict(), evidence=evidence,
             progress=progress, epoch=epoch, best=best, meaningful=meaningful, stale=stale,
-            best_epoch=best_epoch, rng=rng_state()), epoch, 'last_full_state')
+            best_epoch=best_epoch, rng=rng_state(), epoch_extension=lineage), epoch, 'last_full_state')
         # Preserve the complete local recovery point before network publication
         # or CPU diagnostics, either of which may fail independently of training.
         if improved:
@@ -254,6 +269,7 @@ def main():
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--resume', action='store_true')
     parser.add_argument('--smoke', action='store_true')
+    parser.add_argument('--extension-receipt', type=Path)
     args = parser.parse_args(); config = json.loads(args.config.read_text())
     if not args.execute:
         print(json.dumps(config, indent=2)); return
@@ -263,7 +279,8 @@ def main():
         if (output / 'STOP').exists():
             raise RuntimeError('STOP exists; launch refused')
         try:
-            print(json.dumps(run(config, resume=args.resume, smoke=args.smoke)), flush=True)
+            print(json.dumps(run(config, resume=args.resume, smoke=args.smoke,
+                                 extension_receipt=args.extension_receipt)), flush=True)
         except BaseException as error:
             write_json(output / 'failure.json', dict(error=f'{type(error).__name__}: {error}', updated_at=now()))
             raise

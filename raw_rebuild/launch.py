@@ -14,7 +14,7 @@ from raw_rebuild.runtime import command
 from reconstruction.runtime import ROOT
 
 
-def control(config_path, *, resume=False):
+def control(config_path, *, resume=False, extension_receipt=None):
     config = json.loads(config_path.read_text()); output = Path(config['output'])
     with (output / '.controller.lock').open('a+b') as lock:
         fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -25,6 +25,10 @@ def control(config_path, *, resume=False):
         arguments = ['-m', 'raw_rebuild.train', '--config', str(config_path), '--execute']
         if resume:
             arguments.append('--resume')
+        if extension_receipt is not None:
+            if not resume:
+                raise ValueError('Epoch extension requires --resume')
+            arguments += ['--extension-receipt', str(extension_receipt)]
         name = 'cxr-raw-dinov2-20261105'
         cmd = command(arguments, config, name=name)
         receipt = dict(state='starting', started_at=now(), controller_pid=os.getpid(),
@@ -50,11 +54,12 @@ def main():
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--controller', action='store_true')
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--extension-receipt', type=Path)
     args = parser.parse_args(); config_path = args.config.resolve()
     config = json.loads(config_path.read_text()); output = Path(config['output'])
     output.mkdir(parents=True, exist_ok=True)
     if args.controller:
-        raise SystemExit(control(config_path, resume=args.resume))
+        raise SystemExit(control(config_path, resume=args.resume, extension_receipt=args.extension_receipt))
     if not args.execute:
         print(json.dumps(config, indent=2)); return
     with (output / '.launch.lock').open('a+b') as lock:
@@ -64,6 +69,10 @@ def main():
         cmd = [sys.executable, '-u', '-m', 'raw_rebuild.launch', '--config', str(config_path), '--controller']
         if args.resume:
             cmd.append('--resume')
+        if args.extension_receipt is not None:
+            if not args.resume:
+                raise ValueError('Epoch extension requires --resume')
+            cmd += ['--extension-receipt', str(args.extension_receipt.resolve(strict=True))]
         with (output / 'controller.log').open('a', buffering=1) as log:
             child = subprocess.Popen(cmd, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=log,
                 stderr=subprocess.STDOUT, start_new_session=True, close_fds=True)

@@ -126,7 +126,8 @@ def train_epoch(model, ema, dataset, optimizer, scaler, pos_weight, config, epoc
         total_loss += float(loss.detach())
         if boundary:
             factor = learning_rate_factor(progress['attempted_updates'],
-                math.ceil(len(loader) / config['effective_studies']), config['epochs'])
+                math.ceil(len(loader) / config['effective_studies']),
+                config.get('lr_schedule_epochs', config['epochs']))
             for group in optimizer.param_groups:
                 group['lr'] = group['base_lr'] * factor
             scaler.unscale_(optimizer)
